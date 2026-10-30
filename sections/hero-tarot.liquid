@@ -1,0 +1,14 @@
+<section class="hero">
+  <div class="page-width hero-grid">
+    <div class="hero-copy-column">
+      <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+      <h1>{{ section.settings.heading }}</h1>
+      <div class="hero-copy">{{ section.settings.copy }}</div>
+      <div class="hero-actions"><a class="button" href="{{ section.settings.primary_link | default: '#tarot-pull' }}">{{ section.settings.primary_label }}</a><a class="button button--ghost" href="{{ section.settings.secondary_link | default: routes.all_products_collection_url }}">{{ section.settings.secondary_label }}</a></div>
+    </div>
+    <div class="orb" aria-hidden="true"><div class="orb-symbol">☾</div></div>
+  </div>
+</section>
+{% schema %}
+{"name":"Mystic hero","settings":[{"type":"text","id":"eyebrow","label":"Eyebrow","default":"Clarity begins within"},{"type":"inline_richtext","id":"heading","label":"Heading","default":"Meet the wisdom <em>already inside you.</em>"},{"type":"richtext","id":"copy","label":"Text","default":"<p>Intuitive tarot readings for clear choices, grounded confidence, and a deeper relationship with your own inner knowing.</p>"},{"type":"text","id":"primary_label","label":"Primary button","default":"Pull a card"},{"type":"url","id":"primary_link","label":"Primary link"},{"type":"text","id":"secondary_label","label":"Secondary button","default":"Explore readings"},{"type":"url","id":"secondary_link","label":"Secondary link"}],"presets":[{"name":"Mystic hero"}]}
+{% endschema %}

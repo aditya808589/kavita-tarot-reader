@@ -1,0 +1,13 @@
+<footer class="site-footer">
+  <div class="page-width">
+    <div class="footer-grid">
+      <div><div class="brand footer-title"><span class="brand-mark">✦</span>{{ settings.tarot_brand_title | default: shop.name }}</div><p class="section-copy">{{ section.settings.copy }}</p></div>
+      <div><p class="eyebrow">Explore</p><div class="footer-links">{% for link in section.settings.menu.links %}<a href="{{ link.url }}">{{ link.title }}</a>{% endfor %}</div></div>
+      <div><p class="eyebrow">Connect</p><div class="footer-links">{% if settings.social_instagram != blank %}<a href="{{ settings.social_instagram }}">Instagram</a>{% endif %}{% if settings.social_tiktok != blank %}<a href="{{ settings.social_tiktok }}">TikTok</a>{% endif %}{% if settings.social_youtube != blank %}<a href="{{ settings.social_youtube }}">YouTube</a>{% endif %}</div></div>
+    </div>
+    <div class="footer-bottom"><span>© {{ 'now' | date: '%Y' }} {{ shop.name }}</span><span>{{ settings.tarot_disclaimer }}</span></div>
+  </div>
+</footer>
+{% schema %}
+{"name":"Footer","settings":[{"type":"textarea","id":"copy","label":"Description","default":"A calm space for intuitive readings, meaningful rituals, and honest self-reflection."},{"type":"link_list","id":"menu","label":"Menu","default":"footer"}]}
+{% endschema %}

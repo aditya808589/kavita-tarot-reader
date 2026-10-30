@@ -1,0 +1,7 @@
+{% assign featured = section.settings.product | default: settings.featured_reading_product %}
+{% if featured != blank %}
+<section class="section"><div class="page-width featured-product"><div class="featured-product__media">{% if featured.featured_image %}{{ featured.featured_image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '500, 800, 1200', sizes: '(min-width: 850px) 50vw, 100vw' }}{% else %}<span class="featured-product__placeholder">✦</span>{% endif %}</div><div><p class="eyebrow">{{ section.settings.eyebrow }}</p><h2 class="section-title">{{ featured.title }}</h2><div class="rte">{{ featured.description | truncatewords: 45 }}</div><div class="featured-product__price">{{ featured.price | money }}</div>{% form 'product', featured %}<input type="hidden" name="id" value="{{ featured.selected_or_first_available_variant.id }}"><input class="quantity" type="number" name="quantity" min="1" value="1" aria-label="Quantity"><button class="button" type="submit" {% unless featured.available %}disabled{% endunless %}>{% if featured.available %}Add to cart{% else %}Sold out{% endif %}</button>{% endform %}</div></div></section>
+{% endif %}
+{% schema %}
+{"name":"Featured product","settings":[{"type":"text","id":"eyebrow","label":"Eyebrow","default":"Featured ritual"},{"type":"product","id":"product","label":"Product"}],"presets":[{"name":"Featured product"}]}
+{% endschema %}
