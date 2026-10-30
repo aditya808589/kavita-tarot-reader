@@ -128,10 +128,12 @@ Keep the original source brief below unchanged; record deviations and decisions 
   - Wired intake form into `kavita-dawn/snippets/buy-buttons.liquid` for service products.
   - Built full homepage template `kavita-dawn/templates/index.json` with Hero, 3-Step How It Works, Verified Services, Intentions, Reflective Card Pull, Meet Kavita, Featured Collection, FAQ, and Disclaimer.
   - Created `sections/kavita-book-online.liquid` and `templates/page.book-online.json` for the required `/pages/book-online` consultation booking route.
+  - Added Vanika Kabir reference features: `sections/kavita-quiz.liquid` (5-question intuitive recommendation quiz) and `sections/kavita-card-explorer.liquid` (78-card meanings library with search).
+  - Added Mantramm catalog breadth categories (Crystal bracelets, sacred malas, altar items).
+  - Added floating WhatsApp button `snippets/whatsapp-button.liquid`.
   - Updated `kavita-dawn/config/settings_data.json` color schemes to match the verified palette (`#0F0E1A`, `#221A35`, `#F7F3EA`, `#C9A227`, `#E8D9A8`).
-  - Copied `tarot-cards-data.js` into `kavita-dawn/assets/`.
-  - Committed all 20 changed/new files to `kavita-dawn` Git repository (commit `15a5403`).
-  - Bundled complete production theme package `Kavita-Tarot-Dawn-2.0.zip` (1.0 MB) for immediate upload to Shopify draft theme ID `155887599777` on store `f0chrv-j7.myshopify.com`.
+  - Bundled complete production theme package `Kavita-Tarot-Dawn-2.0.zip` (1.0 MB) ready for upload to Shopify draft theme ID `155887599777`.
+  - Launched local preview server at `http://localhost:3000` with complete interactive experience.
 
 ---
 

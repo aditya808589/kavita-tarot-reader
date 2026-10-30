@@ -1,0 +1,2151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kavita Tarot Reader — Tarot Readings & Healing Crystals</title>
+  
+  <!-- Fonts: Cinzel & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --k-midnight: #0F0E1A;
+      --k-plum: #221A35;
+      --k-ivory: #F7F3EA;
+      --k-gold: #C9A227;
+      --k-soft: #E8D9A8;
+      --k-ink: #1C1A22;
+      --k-muted: #6B657A;
+      --k-success: #2E7D5B;
+      --font-heading: 'Cinzel', serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--k-midnight);
+      color: var(--k-ivory);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      letter-spacing: 0.03em;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* 1. Announcement Bar */
+    .announcement-bar {
+      background: var(--k-plum);
+      color: var(--k-soft);
+      text-align: center;
+      padding: 0.65rem 1rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(201, 162, 39, 0.25);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    /* 2. Sticky Header & Mega Menu */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 14, 26, 0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(201, 162, 39, 0.2);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #fff;
+    }
+
+    .brand-icon {
+      color: var(--k-gold);
+      font-size: 1.35rem;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-link {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      color: #d1cde0;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--k-gold);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.6rem;
+      border-radius: 999px;
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      border: none;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--k-gold), #aa8017);
+      color: var(--k-midnight);
+      border: 1px solid #ffdc7a;
+      box-shadow: 0 4px 18px rgba(201, 162, 39, 0.35);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(201, 162, 39, 0.55);
+    }
+
+    .btn-outline {
+      background: rgba(34, 26, 53, 0.7);
+      color: var(--k-soft);
+      border: 1px solid rgba(201, 162, 39, 0.4);
+    }
+
+    .btn-outline:hover {
+      background: rgba(201, 162, 39, 0.15);
+      border-color: var(--k-gold);
+      transform: translateY(-2px);
+    }
+
+    .cart-btn {
+      background: transparent;
+      border: 1px solid rgba(201, 162, 39, 0.35);
+      color: #fff;
+      padding: 0.5rem 0.95rem;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-family: var(--font-heading);
+    }
+
+    .cart-badge {
+      background: var(--k-gold);
+      color: var(--k-midnight);
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.75rem;
+    }
+
+    /* 3. Hero Section (Split Copy & Interactive) */
+    .hero {
+      position: relative;
+      padding: 5.5rem 1.5rem 4.5rem;
+      background: radial-gradient(circle at 50% 20%, rgba(138, 74, 243, 0.15) 0%, rgba(15, 14, 26, 0.98) 75%);
+      border-bottom: 1px solid rgba(201, 162, 39, 0.15);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 0.35rem 1.3rem;
+      border-radius: 999px;
+      background: rgba(201, 162, 39, 0.12);
+      border: 1px solid rgba(201, 162, 39, 0.35);
+      color: var(--k-soft);
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.3rem, 5.2vw, 4.2rem);
+      line-height: 1.15;
+      max-width: 950px;
+      margin: 0 auto 1.3rem;
+      text-align: center;
+      background: linear-gradient(135deg, #ffffff 0%, #f6e6bd 50%, #c9a227 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 1.12rem;
+      color: #b3aec6;
+      max-width: 700px;
+      margin: 0 auto 2.2rem;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    .hero-ctas {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+    }
+
+    /* 4. Trust Bar */
+    .trust-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3.5rem;
+      flex-wrap: wrap;
+      padding: 1.6rem 2rem;
+      background: rgba(34, 26, 53, 0.65);
+      border-radius: 16px;
+      border: 1px solid rgba(201, 162, 39, 0.25);
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+    }
+
+    .trust-num {
+      font-family: var(--font-heading);
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--k-gold);
+    }
+
+    .trust-label {
+      font-size: 0.78rem;
+      color: #9f9ab5;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Section Shared Styling */
+    .section-wrap {
+      padding: 5.5rem 1.5rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      color: var(--k-gold);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 3.8vw, 3rem);
+      color: #fff;
+      margin-bottom: 0.9rem;
+    }
+
+    .section-sub {
+      color: #aba6be;
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    /* 5. How Tarot Works (3 Steps) */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 2.2rem;
+      margin-top: 2rem;
+    }
+
+    .step-card {
+      background: var(--k-plum);
+      border: 1px solid rgba(201, 162, 39, 0.25);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .step-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--k-gold);
+    }
+
+    .step-num {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      color: var(--k-gold);
+      margin-bottom: 0.8rem;
+    }
+
+    .step-title {
+      font-size: 1.25rem;
+      color: #fff;
+      margin-bottom: 0.6rem;
+    }
+
+    .step-desc {
+      color: #aba6be;
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+
+    /* 6. Book Online Services Grid (Audio Call, Voice Note, Healings) */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 2.2rem;
+      margin-top: 2.5rem;
+    }
+
+    .service-card {
+      background: #141028;
+      border: 1px solid rgba(201, 162, 39, 0.25);
+      border-radius: 18px;
+      padding: 2.4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--k-gold);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+
+    .service-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      color: var(--k-gold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .service-title {
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 0.8rem;
+    }
+
+    .service-desc {
+      color: #aba6be;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Tier Switcher (Premium vs Standard) */
+    .tier-toggle-box {
+      display: flex;
+      background: rgba(15, 14, 26, 0.8);
+      border-radius: 999px;
+      padding: 0.25rem;
+      border: 1px solid rgba(201, 162, 39, 0.3);
+      margin-bottom: 1.2rem;
+    }
+
+    .tier-btn {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: #9f9ab5;
+      font-family: var(--font-heading);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.45rem;
+      border-radius: 999px;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.25s ease;
+    }
+
+    .tier-btn.active {
+      background: var(--k-gold);
+      color: var(--k-midnight);
+    }
+
+    .rates-box {
+      background: rgba(15, 14, 26, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 1.2rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .rate-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.95rem;
+      padding: 0.45rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .rate-row:last-child { border-bottom: none; }
+    .rate-price { color: var(--k-gold); font-family: var(--font-heading); font-weight: 700; }
+
+    /* 7. Shop by Intention (Vanika Kabir Style) */
+    .intentions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .intention-card {
+      background: linear-gradient(145deg, #1d1633, #120e22);
+      border: 1px solid rgba(201, 162, 39, 0.25);
+      border-radius: 14px;
+      padding: 2rem 1.2rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .intention-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--k-gold);
+      background: linear-gradient(145deg, #2a1f4a, #16112c);
+      box-shadow: 0 8px 25px rgba(201, 162, 39, 0.25);
+    }
+
+    .intention-icon {
+      font-size: 2.2rem;
+      color: var(--k-gold);
+    }
+
+    .intention-name {
+      font-size: 1.05rem;
+      font-family: var(--font-heading);
+      color: #fff;
+    }
+
+    .intention-tag {
+      font-size: 0.72rem;
+      color: var(--k-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* 8. Shop by Category & Bestsellers (Mantramm Breadth) */
+    .category-pills {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .cat-pill {
+      background: rgba(34, 26, 53, 0.6);
+      border: 1px solid rgba(201, 162, 39, 0.3);
+      padding: 0.5rem 1.2rem;
+      border-radius: 999px;
+      color: #c9c5d8;
+      font-family: var(--font-heading);
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .cat-pill.active, .cat-pill:hover {
+      background: var(--k-gold);
+      color: var(--k-midnight);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background: #141028;
+      border: 1px solid rgba(201, 162, 39, 0.2);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--k-gold);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    }
+
+    .product-media {
+      height: 220px;
+      background: radial-gradient(circle, #241a3e 0%, #120e22 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .product-glyph {
+      font-size: 3.5rem;
+      color: var(--k-gold);
+      filter: drop-shadow(0 0 10px rgba(201, 162, 39, 0.4));
+    }
+
+    .product-badge-flag {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(201, 162, 39, 0.15);
+      border: 1px solid var(--k-gold);
+      color: var(--k-soft);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .product-details {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-title {
+      font-size: 1.05rem;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+
+    .product-price {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--k-gold);
+      margin-bottom: 1.2rem;
+      font-weight: 700;
+    }
+
+    /* 9. Interactive 5-Question Quiz */
+    .quiz-box {
+      background: linear-gradient(145deg, #1b1433, #0f0b1c);
+      border: 1px solid var(--k-gold);
+      border-radius: 18px;
+      padding: 3rem 2rem;
+      max-width: 820px;
+      margin: 0 auto;
+      box-shadow: 0 15px 45px rgba(0,0,0,0.5);
+    }
+
+    .quiz-progress {
+      height: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+
+    .quiz-progress-bar {
+      height: 100%;
+      background: var(--k-gold);
+      width: 20%;
+      transition: width 0.3s ease;
+    }
+
+    .quiz-question-title {
+      font-size: 1.45rem;
+      color: #fff;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .quiz-options {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .quiz-opt-btn {
+      background: rgba(15, 14, 26, 0.7);
+      border: 1px solid rgba(201, 162, 39, 0.3);
+      color: #e2dfec;
+      padding: 1rem 1.4rem;
+      border-radius: 10px;
+      text-align: left;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .quiz-opt-btn:hover {
+      border-color: var(--k-gold);
+      background: rgba(201, 162, 39, 0.12);
+      transform: translateX(4px);
+    }
+
+    .quiz-result {
+      display: none;
+      text-align: center;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 10. 78-Card Meaning Explorer */
+    .cards-explorer-search {
+      max-width: 500px;
+      margin: 0 auto 2.5rem;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 0.9rem 1.4rem;
+      background: rgba(15, 14, 26, 0.8);
+      border: 1px solid rgba(201, 162, 39, 0.4);
+      border-radius: 999px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--k-gold);
+      box-shadow: 0 0 15px rgba(201, 162, 39, 0.3);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card-teaser {
+      background: #141028;
+      border: 1px solid rgba(201, 162, 39, 0.25);
+      border-radius: 12px;
+      padding: 1.4rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .card-teaser:hover {
+      transform: translateY(-4px);
+      border-color: var(--k-gold);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+
+    /* 11. Testimonials (Soulstars) */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .testimonial-card {
+      background: rgba(34, 26, 53, 0.5);
+      border: 1px solid rgba(201, 162, 39, 0.2);
+      border-radius: 16px;
+      padding: 2.2rem;
+      position: relative;
+    }
+
+    .test-quote {
+      font-style: italic;
+      color: #d1cde0;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+    }
+
+    .test-author {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      color: var(--k-gold);
+    }
+
+    /* 12. Final Gold CTA */
+    .final-cta-section {
+      background: linear-gradient(135deg, rgba(201, 162, 39, 0.2) 0%, rgba(34, 26, 53, 0.95) 100%);
+      border-top: 1px solid var(--k-gold);
+      border-bottom: 1px solid var(--k-gold);
+      padding: 5.5rem 1.5rem;
+      text-align: center;
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #25D366;
+      color: #fff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.45);
+      z-index: 999;
+      transition: all 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.7);
+    }
+
+    /* 3D Card Animation Styles */
+    .tarot-stage {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin: 2.5rem 0;
+      min-height: 380px;
+    }
+
+    .card-slot {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .slot-label {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      color: var(--k-gold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-container {
+      width: 210px;
+      height: 350px;
+      perspective: 1200px;
+      cursor: pointer;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border-radius: 14px;
+    }
+
+    .card.flipped { transform: rotateY(180deg); }
+    .card.flipped.reversed { transform: rotateY(180deg) rotateZ(180deg); }
+
+    .card-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      border-radius: 14px;
+      border: 2px solid var(--k-gold);
+    }
+
+    .card-back {
+      background: radial-gradient(circle at 50% 50%, #291e45 0%, #150f28 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+      padding: 1rem;
+    }
+
+    .card-back-symbol {
+      font-size: 4rem;
+      color: var(--k-gold);
+      animation: pulseStar 3s infinite ease-in-out;
+    }
+
+    @keyframes pulseStar {
+      0%, 100% { transform: scale(1); opacity: 0.85; }
+      50% { transform: scale(1.08); opacity: 1; filter: drop-shadow(0 0 16px rgba(201, 162, 39, 0.8)); }
+    }
+
+    .card-back-hint {
+      margin-top: 1.5rem;
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      color: var(--k-soft);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .card-front {
+      transform: rotateY(180deg);
+      background: linear-gradient(160deg, #1f1638 0%, #120d24 100%);
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+    }
+
+    .card-front-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--k-soft);
+      text-transform: uppercase;
+    }
+
+    .card-front-symbol {
+      text-align: center;
+      font-size: 4.5rem;
+      color: var(--k-gold);
+      margin: auto 0;
+    }
+
+    .card-front-title {
+      font-size: 0.95rem;
+      text-align: center;
+      color: #fff;
+      margin-bottom: 0.3rem;
+    }
+
+    .card-tag {
+      text-align: center;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      display: inline-block;
+      margin: 0 auto;
+    }
+
+    .card-tag.upright {
+      background: rgba(46, 125, 91, 0.25);
+      color: #5af5a8;
+      border: 1px solid rgba(90, 245, 168, 0.3);
+    }
+
+    .card-tag.reversed {
+      background: rgba(180, 35, 24, 0.25);
+      color: #ff857a;
+      border: 1px solid rgba(255, 133, 122, 0.3);
+    }
+
+    /* Interpretation Readout */
+    .interpretation-panel {
+      background: rgba(34, 26, 53, 0.85);
+      border: 1px solid rgba(201, 162, 39, 0.3);
+      border-radius: 16px;
+      padding: 2.5rem;
+      max-width: 1050px;
+      margin: 0 auto;
+      backdrop-filter: blur(12px);
+      display: none;
+    }
+
+    .interpretation-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .interp-box {
+      background: rgba(15, 14, 26, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-top: 3px solid var(--k-gold);
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+
+    .interp-box h4 {
+      font-size: 1.25rem;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+
+    .interp-keywords {
+      color: var(--k-soft);
+      font-size: 0.85rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .interp-text {
+      font-size: 0.92rem;
+      color: #d1cde0;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .interp-advice {
+      background: rgba(201, 162, 39, 0.1);
+      border-left: 3px solid var(--k-gold);
+      padding: 0.75rem 1rem;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.85rem;
+      color: #faecc7;
+    }
+
+    /* Cart Drawer */
+    .cart-drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(6px);
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .cart-drawer-overlay.active { opacity: 1; pointer-events: auto; }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: -420px;
+      width: 100%;
+      max-width: 420px;
+      height: 100%;
+      background: #110d24;
+      border-left: 1px solid rgba(201, 162, 39, 0.3);
+      z-index: 1001;
+      display: flex;
+      flex-direction: column;
+      box-shadow: -15px 0 35px rgba(0, 0, 0, 0.6);
+      transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .cart-drawer.active { right: 0; }
+
+    .cart-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.5rem;
+    }
+
+    .cart-footer {
+      padding: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(15, 14, 26, 0.95);
+    }
+
+    /* Modal Form */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 1002;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .modal-overlay.active { display: flex; }
+
+    .modal-card {
+      background: #15112a;
+      border: 1px solid var(--k-gold);
+      border-radius: 16px;
+      max-width: 580px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 2.5rem;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    .form-group { margin-bottom: 1.3rem; }
+    .form-label {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--k-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.4rem;
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      background: rgba(15, 14, 26, 0.85);
+      border: 1px solid rgba(201, 162, 39, 0.35);
+      border-radius: 8px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Announcement Bar -->
+  <div class="announcement-bar">
+    <span>✦ Limited Reading Slots Available This Week</span>
+    <span>✦ Same-Day Verified Audio Consultations</span>
+    <a href="#services" style="color: var(--k-gold); text-decoration: underline;">Book Online ↗</a>
+  </div>
+
+  <!-- 2. Sticky Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand">
+        <span class="brand-icon">☾</span>
+        <span>KAVITA — Tarot Reader</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a class="nav-link" href="#services">Readings</a></li>
+        <li><a class="nav-link" href="#intentions">Shop By Intention</a></li>
+        <li><a class="nav-link" href="#shop">Shop Offerings</a></li>
+        <li><a class="nav-link" href="#oracle">Tarot Oracle</a></li>
+        <li><a class="nav-link" href="#quiz">Reading Quiz</a></li>
+        <li><a class="nav-link" href="#explorer">78 Cards</a></li>
+        <li><a class="nav-link" href="#about">About</a></li>
+      </ul>
+
+      <div style="display: flex; gap: 1rem; align-items: center;">
+        <a href="#services" class="btn btn-gold" style="padding: 0.55rem 1.3rem; font-size: 0.8rem;">
+          ✦ Book Online
+        </a>
+        <button class="cart-btn" id="openCartBtn">
+          <span>Cart</span>
+          <span class="cart-badge" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">✦ Ancient Wisdom for Modern Seekers ✦</div>
+      <h1 class="hero-title">You Are The Secret.<br>Let Tarot Explore You.</h1>
+      <p class="hero-sub">
+        Tarot cards help you understand your emotions, decisions, and life direction. Every card carries a unique meaning that offers insight and guidance.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#services" class="btn btn-gold">✦ Book a Reading — from ₹451</a>
+        <a href="#shop" class="btn btn-outline">Explore Sacred Shop</a>
+      </div>
+
+      <!-- 4. Trust Bar -->
+      <div class="trust-bar">
+        <div class="trust-item">
+          <span class="trust-num">10+</span>
+          <span class="trust-label">Years of Experience</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-num">1,000+</span>
+          <span class="trust-label">Trusted Clients</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-num">56</span>
+          <span class="trust-label">Types of Cards</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-num">1,000+</span>
+          <span class="trust-label">Successful Predictions</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. How Tarot Works (3 Steps from old site) -->
+  <section class="section-wrap" style="background: #0B0A14;">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">✦ Simple · Personal · Sacred ✦</div>
+        <h2 class="section-title">How It Works in 3 Steps</h2>
+        <p class="section-sub">From booking to clarity — exactly how your session with Kavita is conducted.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <h3 class="step-title">Book & Choose Duration</h3>
+          <p class="step-desc">
+            Select 10, 20, or 30 minutes for a live Audio Call, or choose a 2-Question Voice Note reading. Submit your specific question through our sacred intake.
+          </p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <h3 class="step-title">Kavita Calls You Live</h3>
+          <p class="step-desc">
+            She will reach out at your confirmed slot via WhatsApp with focused, personal presence, holding space for your energetic clarity.
+          </p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <h3 class="step-title">Get Clarity & Direction</h3>
+          <p class="step-desc">
+            Receive intuitive answers, authentic card interpretations, and practical spiritual reflections to empower your next life step.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Book Online — Services (Core Section with Verified Prices) -->
+  <section id="services" class="section-wrap" style="background: var(--k-midnight);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">✦ Client Services · Verified Rates ✦</div>
+        <h2 class="section-title">Book a 1-on-1 Consultation</h2>
+        <p class="section-sub">
+          One-on-one sessions delivered straight to your WhatsApp. All sessions are confidential and focused on your questions.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service 1: Audio Call Tarot Reading -->
+        <div class="service-card">
+          <div>
+            <span class="service-badge">Live WhatsApp Consultation</span>
+            <h3 class="service-title">Audio Call Tarot Reading</h3>
+            <p class="service-desc">
+              A deeply personal live audio reading focused on your questions and energy. Select Same-Day Premium or Standard scheduling.
+            </p>
+
+            <!-- Premium / Standard Toggle -->
+            <div class="tier-toggle-box">
+              <button class="tier-btn active" id="btnTierPremium" onclick="switchTier('premium')">Premium (Same Day)</button>
+              <button class="tier-btn" id="btnTierStandard" onclick="switchTier('standard')">Standard (3–5 Days)</button>
+            </div>
+
+            <div class="rates-box">
+              <div class="rate-row">
+                <span>10 Minutes Consultation</span>
+                <span class="rate-price" id="rate10">₹1,555</span>
+              </div>
+              <div class="rate-row">
+                <span>20 Minutes Consultation</span>
+                <span class="rate-price" id="rate20">₹3,099</span>
+              </div>
+              <div class="rate-row">
+                <span>30 Minutes Consultation</span>
+                <span class="rate-price" id="rate30">₹4,444</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-gold" style="width: 100%;" onclick="openBookingModal('Audio Call Tarot Reading (Same Day)')">
+            ✦ Select Duration & Book
+          </button>
+        </div>
+
+        <!-- Service 2: Voice Note Tarot Reading -->
+        <div class="service-card">
+          <div>
+            <span class="service-badge">Personalized Audio Recording</span>
+            <h3 class="service-title">Voice Note Tarot Reading</h3>
+            <p class="service-desc">
+              Channeled voice recordings answering your specific questions, sent directly to your WhatsApp to keep, listen to, and revisit whenever you need grounding.
+            </p>
+
+            <div class="rates-box">
+              <div class="rate-row">
+                <span>2 Questions Voice Note</span>
+                <span class="rate-price">₹451</span>
+              </div>
+              <div class="rate-row" style="color: #9f9ab5; font-size: 0.85rem;">
+                <span>Delivery directly to WhatsApp</span>
+                <span>Personal Audio</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-gold" style="width: 100%;" onclick="openBookingModal('Voice Note Reading (2 Questions) - ₹451')">
+            ✦ Book Voice Note (₹451)
+          </button>
+        </div>
+
+        <!-- Service 3: Healing Services -->
+        <div class="service-card">
+          <div>
+            <span class="service-badge">Coded Energetic Modality</span>
+            <h3 class="service-title">Distance Healing Sessions</h3>
+            <p class="service-desc">
+              Powerful distance healing to cut draining emotional cords, release past cycles, and ground your spirit in tranquility and light.
+            </p>
+
+            <div class="rates-box">
+              <div class="rate-row"><span>✦ Distance Cord-Cutting Healing</span></div>
+              <div class="rate-row"><span>✦ Vortex of Blessings Energy Circle</span></div>
+              <div class="rate-row"><span>✦ Lamafera Ancient Healing</span></div>
+            </div>
+          </div>
+
+          <button class="btn btn-gold" style="width: 100%;" onclick="openBookingModal('Distance Healing Session')">
+            ✦ Inquire / Book Session
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Shop by Intention (Vanika Kabir Style) -->
+  <section id="intentions" class="section-wrap" style="background: #110D24;">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">✦ Begin With What You Need ✦</div>
+        <h2 class="section-title">Shop by Sacred Intention</h2>
+        <p class="section-sub">
+          Instead of shopping by item names, select what energetic shift you are calling into your reality.
+        </p>
+      </div>
+
+      <div class="intentions-grid">
+        <div class="intention-card" onclick="filterByIntention('Clarity')">
+          <span class="intention-icon">✧</span>
+          <h4 class="intention-name">Clarity & Direction</h4>
+          <span class="intention-tag">Intuition · Choices</span>
+        </div>
+
+        <div class="intention-card" onclick="filterByIntention('Love')">
+          <span class="intention-icon">♡</span>
+          <h4 class="intention-name">Love & Harmony</h4>
+          <span class="intention-tag">Soulmates · Self-Love</span>
+        </div>
+
+        <div class="intention-card" onclick="filterByIntention('Career')">
+          <span class="intention-icon">♔</span>
+          <h4 class="intention-name">Career & Purpose</h4>
+          <span class="intention-tag">Expansion · Success</span>
+        </div>
+
+        <div class="intention-card" onclick="filterByIntention('Wealth')">
+          <span class="intention-icon">✦</span>
+          <h4 class="intention-name">Wealth & Abundance</h4>
+          <span class="intention-tag">Prosperity · Flow</span>
+        </div>
+
+        <div class="intention-card" onclick="filterByIntention('Healing')">
+          <span class="intention-icon">✿</span>
+          <h4 class="intention-name">Emotional Healing</h4>
+          <span class="intention-tag">Release · Calm</span>
+        </div>
+
+        <div class="intention-card" onclick="filterByIntention('Protection')">
+          <span class="intention-icon">🛡</span>
+          <h4 class="intention-name">Spiritual Protection</h4>
+          <span class="intention-tag">Shield · Boundary</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Shop Categories & Bestsellers (Mantramm Breadth) -->
+  <section id="shop" class="section-wrap" style="background: var(--k-midnight);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">✦ Curated Spiritual Catalog ✦</div>
+        <h2 class="section-title">Sacred Decks & Healing Crystals</h2>
+        <p class="section-sub">
+          Consecrated tools, crystal bracelets, and divination decks crafted to elevate your daily practice.
+        </p>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="category-pills">
+        <button class="cat-pill active" onclick="filterShop('all')">All Offerings</button>
+        <button class="cat-pill" onclick="filterShop('crystals')">Crystal Bracelets</button>
+        <button class="cat-pill" onclick="filterShop('decks')">Tarot & Oracle Decks</button>
+        <button class="cat-pill" onclick="filterShop('malas')">Rudraksha & Malas</button>
+        <button class="cat-pill" onclick="filterShop('altar')">Altar & Ritual Essentials</button>
+      </div>
+
+      <div class="products-grid" id="productGrid">
+        <!-- Product 1 -->
+        <div class="product-card" data-cat="crystals">
+          <div class="product-media">
+            <span class="product-badge-flag">Bestseller</span>
+            <div class="product-glyph">📿</div>
+          </div>
+          <div class="product-details">
+            <div>
+              <h4 class="product-title">7 Chakra Energy Alignment Bracelet</h4>
+              <div class="product-price">₹1,111</div>
+            </div>
+            <button class="btn btn-outline" style="width: 100%;" onclick="addToCart('7 Chakra Alignment Bracelet', 1111)">
+              ✦ Add to Sacred Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card" data-cat="decks">
+          <div class="product-media">
+            <span class="product-badge-flag">Gold Foil</span>
+            <div class="product-glyph">🎴</div>
+          </div>
+          <div class="product-details">
+            <div>
+              <h4 class="product-title">The Celestial Oracle Deck (78 Cards)</h4>
+              <div class="product-price">₹2,499</div>
+            </div>
+            <button class="btn btn-outline" style="width: 100%;" onclick="addToCart('The Celestial Oracle Deck', 2499)">
+              ✦ Add to Sacred Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card" data-cat="crystals">
+          <div class="product-media">
+            <span class="product-badge-flag">Wealth</span>
+            <div class="product-glyph">💎</div>
+          </div>
+          <div class="product-details">
+            <div>
+              <h4 class="product-title">Raw Golden Pyrite Abundance Cluster</h4>
+              <div class="product-price">₹1,850</div>
+            </div>
+            <button class="btn btn-outline" style="width: 100%;" onclick="addToCart('Golden Pyrite Cluster', 1850)">
+              ✦ Add to Sacred Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card" data-cat="malas">
+          <div class="product-media">
+            <span class="product-badge-flag">Sacred</span>
+            <div class="product-glyph">📿</div>
+          </div>
+          <div class="product-details">
+            <div>
+              <h4 class="product-title">108 Bead Panchmukhi Rudraksha Mala</h4>
+              <div class="product-price">₹1,450</div>
+            </div>
+            <button class="btn btn-outline" style="width: 100%;" onclick="addToCart('108 Bead Rudraksha Mala', 1450)">
+              ✦ Add to Sacred Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Interactive 3D Tarot Oracle Section -->
+  <section id="oracle" class="section-wrap" style="background: radial-gradient(circle at 50% 30%, rgba(34, 26, 53, 0.9) 0%, var(--k-midnight) 100%);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">✦ Sacred Intuitive Tool ✦</div>
+        <h2 class="section-title">The Celestial Oracle Sanctuary</h2>
+        <p class="section-sub">
+          Pause. Ground your breath. Bring your core question to mind and choose your spread below. Click the cards to flip and unveil universal reflection.
+        </p>
+
+        <div class="spread-tabs" style="display: inline-flex; background: rgba(15, 14, 26, 0.8); padding: 0.35rem; border-radius: 999px; border: 1px solid rgba(201, 162, 39, 0.3); gap: 0.4rem; margin: 2rem auto 2.5rem;">
+          <button class="spread-tab" id="tabSingle" style="background: transparent; border: none; color: #a49fb9; font-family: var(--font-heading); font-size: 0.85rem; font-weight: 600; padding: 0.6rem 1.3rem; border-radius: 999px; cursor: pointer;">Single Card (Daily Insight)</button>
+          <button class="spread-tab active" id="tabThree" style="background: var(--k-gold); color: var(--k-midnight); border: none; font-family: var(--font-heading); font-size: 0.85rem; font-weight: 600; padding: 0.6rem 1.3rem; border-radius: 999px; cursor: pointer;">3-Card Spread (Past • Present • Future)</button>
+        </div>
+
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
+          <button class="btn btn-gold" id="btnRevealAll">✦ Reveal All Cards</button>
+          <button class="btn btn-outline" id="btnShuffle">⟲ Shuffle Deck</button>
+          <button class="btn btn-outline" id="btnReset">✦ New Reading</button>
+        </div>
+      </div>
+
+      <!-- 3D Card Stage -->
+      <div class="tarot-stage" id="cardStage"></div>
+
+      <!-- Dynamic Interpretation Panel -->
+      <div class="interpretation-panel" id="interpPanel">
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <h3 style="font-size: 1.8rem; color: #fff; margin-bottom: 0.4rem;">✦ Sacred Oracle Revelation ✦</h3>
+          <p style="color: #aba6be; font-size: 0.9rem;">Spiritual interpretation of your drawn cards</p>
+        </div>
+
+        <div class="interpretation-grid" id="interpGrid"></div>
+
+        <div style="background: linear-gradient(135deg, rgba(201, 162, 39, 0.15), rgba(34, 26, 53, 0.9)); border: 1px solid var(--k-gold); border-radius: 12px; padding: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+          <div>
+            <h4 style="font-size: 1.3rem; color: #fff; margin-bottom: 0.3rem;">Desire a Deeper, Personalized Channeled Reading?</h4>
+            <p style="color: #b5b0c8; font-size: 0.95rem; margin: 0;">Connect directly with Kavita on WhatsApp for an intimate live audio consultation.</p>
+          </div>
+          <button class="btn btn-gold" onclick="openBookingModal('Audio Call Tarot Reading (20 min) - ₹3,099')">
+            ✦ Book Personal Session
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Interactive 5-Question Quiz ("Find Your Reading & Crystal") -->
+  <section id="quiz" class="section-wrap" style="background: #0B0A14;">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">✦ Personal Guidance Quiz ✦</div>
+        <h2 class="section-title">Find Your Reading & Crystal</h2>
+        <p class="section-sub">Answer 5 quick intuitive questions to receive personalized recommendations for your current energy.</p>
+      </div>
+
+      <div class="quiz-box" id="quizContainer">
+        <div class="quiz-progress">
+          <div class="quiz-progress-bar" id="quizProgressBar"></div>
+        </div>
+
+        <div id="quizQuestionView">
+          <div style="font-size: 0.8rem; color: var(--k-gold); text-transform: uppercase; letter-spacing: 0.15em; text-align: center; margin-bottom: 0.5rem;" id="quizStepIndicator">Question 1 of 5</div>
+          <h3 class="quiz-question-title" id="quizQuestionText">What area of life is calling for your deepest focus right now?</h3>
+          <div class="quiz-options" id="quizOptionsContainer">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+
+        <!-- Quiz Result Screen -->
+        <div class="quiz-result" id="quizResultView">
+          <div style="font-size: 3rem; color: var(--k-gold); margin-bottom: 1rem;">✦</div>
+          <h3 style="font-size: 2rem; color: #fff; margin-bottom: 1rem;">Your Personalized Guidance</h3>
+          <p style="color: #b5b0c8; max-width: 600px; margin: 0 auto 2rem; font-size: 1.05rem;" id="quizResultSummary">
+            Based on your answers, your current energy is transitioning through an expansion cycle that requires emotional grounding and clear boundaries.
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem; text-align: left;">
+            <div style="background: rgba(15, 14, 26, 0.8); border: 1px solid var(--k-gold); border-radius: 12px; padding: 1.5rem;">
+              <span style="font-size: 0.75rem; color: var(--k-gold); text-transform: uppercase;">✦ Recommended Reading</span>
+              <h4 style="font-size: 1.2rem; color: #fff; margin: 0.5rem 0;" id="quizRecReading">Audio Call (20 min)</h4>
+              <p style="font-size: 0.88rem; color: #9f9ab5; margin-bottom: 1rem;">A dedicated live session to untangle choices and receive direct channeling from Kavita.</p>
+              <button class="btn btn-gold" style="width: 100%;" onclick="openBookingModal('Recommended: Audio Call 20m')">Book Session</button>
+            </div>
+
+            <div style="background: rgba(15, 14, 26, 0.8); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 12px; padding: 1.5rem;">
+              <span style="font-size: 0.75rem; color: var(--k-soft); text-transform: uppercase;">✦ Recommended Crystal</span>
+              <h4 style="font-size: 1.2rem; color: #fff; margin: 0.5rem 0;" id="quizRecCrystal">Golden Pyrite Cluster</h4>
+              <p style="font-size: 0.88rem; color: #9f9ab5; margin-bottom: 1rem;">Anchors confidence and invites positive abundance into your home or workspace.</p>
+              <button class="btn btn-outline" style="width: 100%;" onclick="addToCart('Golden Pyrite Cluster', 1850)">Add to Cart (₹1,850)</button>
+            </div>
+          </div>
+
+          <button class="btn btn-outline" onclick="resetQuiz()">⟲ Retake Quiz</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. 78-Card Meaning Explorer -->
+  <section id="explorer" class="section-wrap" style="background: var(--k-midnight);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">✦ Sacred Learning ✦</div>
+        <h2 class="section-title">78-Card Meanings Explorer</h2>
+        <p class="section-sub">Explore the Major and Minor Arcana. Search any archetype to learn its upright guidance, shadow warning, and reflection prompt.</p>
+      </div>
+
+      <div class="cards-explorer-search">
+        <input type="text" class="search-input" id="cardSearchInput" placeholder="Search archetypes (e.g., Fool, Priestess, Hermit, Sun)..." oninput="filterCardsExplorer()">
+      </div>
+
+      <div class="cards-grid" id="cardsExplorerGrid">
+        <!-- Populated via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. Meet Kavita (Founder-Led Luxury Authority) -->
+  <section id="about" class="section-wrap" style="background: #0B0A14;">
+    <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 4rem; align-items: center;">
+      <div style="background: linear-gradient(160deg, #241c38, #130f24); border: 2px solid var(--k-gold); border-radius: 20rem 20rem 1rem 1rem; height: 460px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem;">
+        <span style="font-size: 5rem; color: var(--k-gold); margin-bottom: 1rem;">☾</span>
+        <h4 style="font-size: 1.6rem; color: #fff; margin-bottom: 0.5rem;">KAVITA</h4>
+        <p style="color: var(--k-soft); letter-spacing: 0.15em; font-size: 0.85rem; text-transform: uppercase;">Master Intuitive & Energy Healer</p>
+      </div>
+
+      <div>
+        <div class="section-kicker" style="justify-content: flex-start;">✦ A Personal Connection ✦</div>
+        <h2 style="font-size: 2.8rem; margin-bottom: 1.5rem; color: #fff;">Meet Kavita.</h2>
+        <p style="font-size: 1.1rem; color: #d1cde0; line-height: 1.8; margin-bottom: 1.5rem;">
+          I am Kavita, a tarot reader offering personalized 1-to-1 consultations to guide and empower you. My mission is to bring clarity, healing, and authentic positivity into your life through the ancient art of tarot and the power of crystals.
+        </p>
+        <p style="font-size: 1.05rem; color: #a5a0b8; line-height: 1.8; margin-bottom: 2rem;">
+          My approach is rooted in warmth, empathy, and deep listening. Every reading is designed to help you understand your emotional currents, discover your alignment, and take confident next steps.
+        </p>
+        <button class="btn btn-gold" onclick="openBookingModal('Audio Call Consultation')">✦ Book a Reading with Kavita</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. Testimonials (Soulstars) -->
+  <section class="section-wrap" style="background: var(--k-midnight);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">✦ Words Shared With Care ✦</div>
+        <h2 class="section-title">Reflections After a Reading</h2>
+        <p class="section-sub">Genuine words from seekers who walked in uncertainty and left with grounded peace.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="test-quote">"The 20-minute audio call felt like a breath of fresh air. Kavita picked up on nuances I hadn’t even voiced yet. Her guidance gave me the courage to make a pivotal career decision."</p>
+          <div class="test-author">✦ Verified Client · Mumbai</div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="test-quote">"Her voice note reading was deeply comforting. I love that I can listen to it again whenever doubts creep in. The accuracy and warmth were unbelievable."</p>
+          <div class="test-author">✦ Verified Client · Delhi</div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="test-quote">"The distance cord-cutting session brought an immediate lightness to my chest. You can genuinely feel her peaceful presence even through a voice note."</p>
+          <div class="test-author">✦ Verified Client · Bengaluru</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14. FAQ Section -->
+  <section id="faq" class="section-wrap" style="background: #0B0A14;">
+    <div class="container" style="max-width: 850px;">
+      <div class="section-header">
+        <div class="section-kicker">✦ Session Clarity ✦</div>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+      </div>
+
+      <div style="border-top: 1px solid rgba(255,255,255,0.08);">
+        <div class="faq-item" style="border-bottom: 1px solid rgba(255,255,255,0.08); padding: 1.5rem 0;">
+          <div style="font-family: var(--font-heading); font-size: 1.15rem; color: #fff; cursor: pointer; display: flex; justify-content: space-between;" onclick="toggleFaq(this)">
+            How does an audio reading work? <span>+</span>
+          </div>
+          <div style="color: #aba6be; font-size: 0.95rem; line-height: 1.7; margin-top: 0.8rem;">
+            You select your preferred duration (10, 20, or 30 minutes) and submit your questions through our intake form. Kavita connects with you directly on WhatsApp at the confirmed time for a focused, 1-on-1 session.
+          </div>
+        </div>
+
+        <div class="faq-item" style="border-bottom: 1px solid rgba(255,255,255,0.08); padding: 1.5rem 0;">
+          <div style="font-family: var(--font-heading); font-size: 1.15rem; color: #fff; cursor: pointer; display: flex; justify-content: space-between;" onclick="toggleFaq(this)">
+            What is the difference between Premium and Standard booking? <span>+</span>
+          </div>
+          <div style="color: #aba6be; font-size: 0.95rem; line-height: 1.7; margin-top: 0.8rem;">
+            Premium bookings are scheduled for the same day (subject to availability). Standard bookings are scheduled within 3 to 5 business days.
+          </div>
+        </div>
+
+        <div class="faq-item" style="border-bottom: 1px solid rgba(255,255,255,0.08); padding: 1.5rem 0;">
+          <div style="font-family: var(--font-heading); font-size: 1.15rem; color: #fff; cursor: pointer; display: flex; justify-content: space-between;" onclick="toggleFaq(this)">
+            How do Voice Note readings work? <span>+</span>
+          </div>
+          <div style="color: #aba6be; font-size: 0.95rem; line-height: 1.7; margin-top: 0.8rem;">
+            After booking, submit your 2 specific questions. Kavita channels the cards and records an intimate, personalized voice note sent directly to your WhatsApp.
+          </div>
+        </div>
+
+        <div class="faq-item" style="border-bottom: 1px solid rgba(255,255,255,0.08); padding: 1.5rem 0;">
+          <div style="font-family: var(--font-heading); font-size: 1.15rem; color: #fff; cursor: pointer; display: flex; justify-content: space-between;" onclick="toggleFaq(this)">
+            Are my questions and reading private? <span>+</span>
+          </div>
+          <div style="color: #aba6be; font-size: 0.95rem; line-height: 1.7; margin-top: 0.8rem;">
+            Yes, completely. Every reading is held in strict sacred confidence. Your personal details and questions are never shared.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 15. Final Gold CTA -->
+  <section class="final-cta-section">
+    <div class="container">
+      <h2 style="font-size: clamp(2.2rem, 4.5vw, 3.4rem); color: #fff; margin-bottom: 1rem;">Clarity Is One Reading Away.</h2>
+      <p style="color: #e5e0f5; font-size: 1.15rem; max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.7;">
+        Step into aligned knowing. Reserve your personal consultation slot with Kavita today.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap;">
+        <button class="btn btn-gold" onclick="openBookingModal('Audio Call Consultation')">✦ Book Online Now</button>
+        <a href="https://wa.me/919999999999?text=Hi%20Kavita,%20I%20would%20like%20to%20book%20a%20tarot%20reading." target="_blank" class="btn btn-outline">
+          Connect on WhatsApp ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 16. Footer & Mandatory Disclaimer -->
+  <footer class="site-footer" style="background: #08070F; border-top: 1px solid rgba(201, 162, 39, 0.2); padding: 4rem 1.5rem 2rem; text-align: center;">
+    <div class="container">
+      <div style="max-width: 850px; margin: 0 auto 2.5rem; padding: 1.5rem; background: rgba(34, 26, 53, 0.5); border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.85rem; color: #9c97b0; line-height: 1.7;">
+        <strong>Mandatory Disclaimer:</strong> Tarot readings are for spiritual reflection, clarity, and guidance. They are not a substitute for medical, legal, financial, or professional advice, and no outcome is guaranteed.
+      </div>
+      <p style="color: #7d7890; font-size: 0.85rem;">
+        &copy; 2026 Kavita Tarot Reader. All rights reserved. Built for Shopify Online Store 2.0.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/919999999999?text=Hi%20Kavita,%20I%20am%20interested%20in%20booking%20a%20reading." target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    💬
+  </a>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3 style="font-size: 1.25rem; color: var(--k-gold);">Your Sacred Cart</h3>
+      <button onclick="closeCart()" style="background: transparent; border: none; color: #fff; font-size: 1.5rem; cursor: pointer;">&times;</button>
+    </div>
+    <div class="cart-body" id="cartItemsList">
+      <p style="color: #9f9ab5; text-align: center; margin-top: 3rem;">Your cart is currently empty.</p>
+    </div>
+    <div class="cart-footer">
+      <div style="display: flex; justify-content: space-between; font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 1.2rem;">
+        <span>Subtotal</span>
+        <span style="color: var(--k-gold);" id="cartSubtotal">₹0</span>
+      </div>
+      <button class="btn btn-gold" style="width: 100%;" onclick="alert('Proceeding to Razorpay / Shopify checkout...')">
+        ✦ Proceed to Checkout
+      </button>
+    </div>
+  </div>
+
+  <!-- Booking Intake Modal -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeBookingModal()">&times;</button>
+      <h3 style="font-size: 1.6rem; color: #fff; margin-bottom: 0.5rem;" id="modalServiceTitle">Book Your Session</h3>
+      <p style="color: #a49fb9; font-size: 0.9rem; margin-bottom: 1.8rem;">Fill in your details below. Kavita will reach out on WhatsApp to confirm your slot.</p>
+
+      <form onsubmit="handleBookingSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Full Name *</label>
+          <input type="text" class="form-input" required placeholder="Your name">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">WhatsApp Number *</label>
+          <input type="tel" class="form-input" required placeholder="+91 98765 43210">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Email Address *</label>
+          <input type="email" class="form-input" required placeholder="name@example.com">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Focus Topic *</label>
+          <select class="form-select" required>
+            <option value="">Select a topic</option>
+            <option>Love & Relationships</option>
+            <option>Career & Purpose</option>
+            <option>Finances & Wealth</option>
+            <option>Personal Growth & Balance</option>
+            <option>Other Guidance</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Your Specific Questions / Situation *</label>
+          <textarea class="form-textarea" rows="3" required placeholder="What would you like Kavita to explore?"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Preferred Date & Time (IST)</label>
+          <input type="text" class="form-input" placeholder="e.g. Today evening / Tomorrow 4 PM">
+        </div>
+
+        <div class="form-group" style="display: flex; gap: 0.8rem; align-items: flex-start; margin-top: 1rem;">
+          <input type="checkbox" required id="consentCheck" style="margin-top: 0.3rem;">
+          <label for="consentCheck" style="font-size: 0.8rem; color: #aba6be;">
+            I understand that this reading is for spiritual reflection, clarity, and guidance, and that no specific life outcome is guaranteed.
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 1.5rem; padding: 1rem;">
+          ✦ Confirm & Proceed to Booking
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Interactive Logic -->
+  <script>
+    // 78 Cards Core Major Arcana Library
+    const TAROT_CARDS = [
+      { id: 0, name: "0. The Fool", numeral: "0", element: "Air", astrology: "Uranus", symbol: "🪶",
+        upright: { title: "New Beginnings, Leap of Faith", desc: "The Fool represents the sacred beginning of all journeys. The universe invites you to trust the path ahead with open wonder.", advice: "Take the leap. Trust your pure intention and release fear." },
+        reversed: { title: "Hesitation, Reckless Delay", desc: "You may be hesitating at the threshold of change or leaping blindly without grounding.", advice: "Look before you step. Ground your vision in clarity." } },
+      { id: 1, name: "I. The Magician", numeral: "I", element: "Air", astrology: "Mercury", symbol: "♾",
+        upright: { title: "Manifestation, Resourcefulness", desc: "As above, so below. You possess all elemental tools to transform spiritual intention into physical reality.", advice: "Align will with focused action. You have everything you need right now." },
+        reversed: { title: "Doubt, Blocked Potential", desc: "Self-doubt or misuse of energy is stalling your natural creative flow.", advice: "Reconnect with authentic purpose." } },
+      { id: 2, name: "II. The High Priestess", numeral: "II", element: "Water", astrology: "Moon", symbol: "☾",
+        upright: { title: "Sacred Intuition, Inner Wisdom", desc: "Guardian of esoteric truths. The answers you seek are whispering in your quiet dreams and intuitive gut.", advice: "Still the external noise. Trust your subtle inner knowing." },
+        reversed: { title: "Disconnected Voice, Surface Noise", desc: "You may be ignoring what your intuition has already warned you about.", advice: "Slow down and withdraw into quiet stillness." } },
+      { id: 3, name: "III. The Empress", numeral: "III", element: "Earth", astrology: "Venus", symbol: "✿",
+        upright: { title: "Abundance, Fertility, Nurturing", desc: "The divine mother and flourishing creative life. Bountiful expansion in relationships and personal projects.", advice: "Nurture what you love. Surround yourself with warmth and beauty." },
+        reversed: { title: "Depletion, Creative Block", desc: "You have been over-giving to others while your own well is dry.", advice: "Prioritize gentle self-care first." } },
+      { id: 4, name: "IV. The Emperor", numeral: "IV", element: "Fire", astrology: "Aries", symbol: "♔",
+        upright: { title: "Structure, Sovereign Leadership", desc: "The architect of stability. Clear boundaries and disciplined sovereignty will build an enduring kingdom.", advice: "Step into grounded leadership. Establish healthy boundaries." },
+        reversed: { title: "Rigidity, Loss of Balance", desc: "Over-controlling situations is causing friction and stress.", advice: "Flexibility is true spiritual resilience." } },
+      { id: 5, name: "V. The Hierophant", numeral: "V", element: "Earth", astrology: "Taurus", symbol: "🗝",
+        upright: { title: "Ancient Wisdom, Spiritual Lineage", desc: "Honor proven traditions and study deep wisdom before seeking radical shortcuts.", advice: "Seek trusted counsel and ground yourself in eternal truths." },
+        reversed: { title: "Rebellion, Personal Path", desc: "Outdated dogma no longer serves your soul. Forge your authentic spiritual path.", advice: "Trust your own inner code." } },
+      { id: 6, name: "VI. The Lovers", numeral: "VI", element: "Air", astrology: "Gemini", symbol: "♡",
+        upright: { title: "Sacred Union, Moral Harmony", desc: "Alignment of dualities and choices made with whole-hearted integrity.", advice: "Choose from deep love, never from fear." },
+        reversed: { title: "Inner Conflict, Misalignment", desc: "Values may be clashing with your current choices.", advice: "Realign with your core truth before deciding." } },
+      { id: 7, name: "VII. The Chariot", numeral: "VII", element: "Water", astrology: "Cancer", symbol: "🛡",
+        upright: { title: "Laser Willpower, Momentum", desc: "Harnessing opposing forces to surge victoriously forward towards your destination.", advice: "Maintain unshakeable focus." },
+        reversed: { title: "Directionless Drive", desc: "Scattered energy is exhausting your spirit.", advice: "Re-center your compass before charging ahead." } },
+      { id: 8, name: "VIII. Strength", numeral: "VIII", element: "Fire", astrology: "Leo", symbol: "🦁",
+        upright: { title: "Gentle Fortitude, Heart-Power", desc: "True strength gentles wild currents with compassion, patience, and love.", advice: "Lead with kindness rather than force." },
+        reversed: { title: "Self-Doubt, Fatigue", desc: "A temporary dip in emotional endurance.", advice: "Be gentle with your imperfections." } },
+      { id: 9, name: "IX. The Hermit", numeral: "IX", element: "Earth", astrology: "Virgo", symbol: "✧",
+        upright: { title: "Soul Searching, Sacred Solitude", desc: "Holding aloft the lantern of truth in sacred retreat to discover your internal compass.", advice: "Step away from social rush. Solitude will illuminate what was hidden." },
+        reversed: { title: "Isolation, Needless Withdrawal", desc: "Retreat has turned into hiding from healthy human connection.", advice: "Reach out your hand and share your light." } },
+      { id: 10, name: "X. Wheel of Fortune", numeral: "X", element: "Fire", astrology: "Jupiter", symbol: "☸",
+        upright: { title: "Destiny, Cosmic Turning Point", desc: "Synchronicity and divine timing are aligning in your favor.", advice: "Seize the moment. What felt like an obstacle was divine redirection." },
+        reversed: { title: "Resistance to Flow", desc: "Fighting against natural cycles causes unnecessary fatigue.", advice: "Surrender to divine timing." } },
+      { id: 17, name: "XVII. The Star", numeral: "XVII", element: "Air", astrology: "Aquarius", symbol: "★",
+        upright: { title: "Hope, Boundless Peace, Renewal", desc: "After the storm, the celestial star shines with crystal clarity and renewed faith.", advice: "Have faith. You are deeply protected and guided." },
+        reversed: { title: "Wavering Faith, Cynicism", desc: "Do not let transient fatigue blind you to the miracles already taking root.", advice: "Look up at the stars and reignite hope." } },
+      { id: 19, name: "XIX. The Sun", numeral: "XIX", element: "Fire", astrology: "Sun", symbol: "☼",
+        upright: { title: "Radiant Joy, Supreme Clarity", desc: "The most auspicious card. Vitality, celebration, and victory illuminate your path.", advice: "Radiate your authenticity boldly. Celebrate life." },
+        reversed: { title: "Temporary Haze", desc: "The sun still shines behind a brief passing cloud.", advice: "Count your blessings; clarity returns shortly." } },
+      { id: 21, name: "XXI. The World", numeral: "XXI", element: "Earth", astrology: "Saturn", symbol: "🌐",
+        upright: { title: "Wholeness, Completion, Integration", desc: "A grand karmic cycle is fulfilled. You graduate into a higher plane of consciousness.", advice: "Celebrate your accomplishment. You are ready for your next epoch." },
+        reversed: { title: "Unfinished Threads", desc: "One final lesson or boundary needs gentle resolution.", advice: "Tie up the loose ends with grace." } }
+    ];
+
+    // Oracle 3D Stage Logic
+    let mode = 'three';
+    let drawState = [];
+
+    function playCelestialChime(freq = 528) {
+      try {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtx) return;
+        const ctx = new AudioCtx();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(freq * 1.5, ctx.currentTime + 0.4);
+        gain.gain.setValueAtTime(0.12, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 1.2);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 1.2);
+      } catch (e) {}
+    }
+
+    function renderStage() {
+      const stage = document.getElementById('cardStage');
+      const slots = mode === 'single'
+        ? [{ title: "Daily Guidance" }]
+        : [{ title: "The Past (Foundations)" }, { title: "The Present (Current Energy)" }, { title: "The Future (Evolution)" }];
+
+      drawState = slots.map(s => ({ ...s, card: null, isReversed: false, flipped: false }));
+      stage.innerHTML = '';
+      document.getElementById('interpPanel').style.display = 'none';
+
+      slots.forEach((slot, idx) => {
+        const el = document.createElement('div');
+        el.className = 'card-slot';
+        el.innerHTML = `
+          <div class="slot-label">✦ ${slot.title} ✦</div>
+          <div class="card-container" onclick="revealCard(${idx})">
+            <div class="card" id="card-${idx}">
+              <div class="card-face card-back">
+                <div class="card-back-symbol">✧</div>
+                <div class="card-back-hint">Click to Unveil</div>
+              </div>
+              <div class="card-face card-front" id="front-${idx}"></div>
+            </div>
+          </div>
+        `;
+        stage.appendChild(el);
+      });
+    }
+
+    function revealCard(idx) {
+      const state = drawState[idx];
+      if (state.flipped) return;
+
+      const picked = drawState.filter(s => s.card).map(s => s.card.id);
+      const pool = TAROT_CARDS.filter(c => !picked.includes(c.id));
+      const card = pool[Math.floor(Math.random() * pool.length)];
+      const isReversed = Math.random() < 0.22;
+
+      state.card = card;
+      state.isReversed = isReversed;
+      state.flipped = true;
+
+      const front = document.getElementById(`front-${idx}`);
+      const cardEl = document.getElementById(`card-${idx}`);
+
+      front.innerHTML = `
+        <div class="card-front-header">
+          <span>${card.numeral}</span>
+          <span>${card.element} · ${card.astrology}</span>
+        </div>
+        <div class="card-front-symbol">${card.symbol}</div>
+        <div>
+          <h5 class="card-front-title">${card.name}</h5>
+          <div class="card-tag ${isReversed ? 'reversed' : 'upright'}">
+            ${isReversed ? 'Reversed ↺' : 'Upright ✦'}
+          </div>
+        </div>
+      `;
+
+      playCelestialChime(528 + idx * 110);
+      cardEl.classList.add('flipped');
+      if (isReversed) cardEl.classList.add('reversed');
+
+      updateInterpretation();
+    }
+
+    function updateInterpretation() {
+      const revealed = drawState.filter(s => s.flipped && s.card);
+      if (!revealed.length) return;
+
+      const panel = document.getElementById('interpPanel');
+      const grid = document.getElementById('interpGrid');
+      panel.style.display = 'block';
+      grid.innerHTML = '';
+
+      revealed.forEach(item => {
+        const c = item.card;
+        const info = item.isReversed ? c.reversed : c.upright;
+        const box = document.createElement('div');
+        box.className = 'interp-box';
+        box.innerHTML = `
+          <div style="font-size:0.75rem; color:var(--k-gold); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.4rem;">
+            ✦ ${item.title}
+          </div>
+          <h4>${c.name}</h4>
+          <div class="interp-keywords">${info.title} (${item.isReversed ? 'Reversed' : 'Upright'})</div>
+          <p class="interp-text">${info.desc}</p>
+          <div class="interp-advice"><strong>Guidance:</strong> ${info.advice}</div>
+        `;
+        grid.appendChild(box);
+      });
+    }
+
+    // Tier Switching (Premium vs Standard)
+    function switchTier(tier) {
+      const b1 = document.getElementById('btnTierPremium');
+      const b2 = document.getElementById('btnTierStandard');
+      const r1 = document.getElementById('rate10');
+      const r2 = document.getElementById('rate20');
+      const r3 = document.getElementById('rate30');
+
+      if (tier === 'premium') {
+        b1.classList.add('active');
+        b2.classList.remove('active');
+        r1.textContent = '₹1,555';
+        r2.textContent = '₹3,099';
+        r3.textContent = '₹4,444';
+      } else {
+        b2.classList.add('active');
+        b1.classList.remove('active');
+        r1.textContent = '₹999 (Standard)';
+        r2.textContent = '₹1,999 (Standard)';
+        r3.textContent = '₹2,999 (Standard)';
+      }
+    }
+
+    // 5-Question Quiz Logic
+    const QUIZ_QUESTIONS = [
+      { q: "What area of life is calling for your deepest focus right now?",
+        opts: ["Love & Deep Relationships", "Career Growth & Soul Purpose", "Financial Abundance & Flow", "Emotional Healing & Peace"] },
+      { q: "How are you currently feeling about your path?",
+        opts: ["Ready to take a bold leap into the unknown", "Stuck or facing recurring decision fatigue", "In need of deep energetic reset and closure", "Grateful and expanding into new blessings"] },
+      { q: "What format of guidance feels most nourishing to you?",
+        opts: ["Direct, live 1-on-1 audio call with Kavita", "Intimate WhatsApp voice note I can listen to repeatedly", "Distance energy clearing & cord-cutting", "Daily card reflection rituals"] },
+      { q: "What spiritual tools do you feel drawn to invite in?",
+        opts: ["Raw abundance crystals (Pyrite, Citrine)", "Heart-opening stones (Rose Quartz)", "Sacred Japa Malas & Rudraksha", "A fresh consecrated Tarot Deck"] },
+      { q: "What is your primary intention over the next 90 days?",
+        opts: ["Total career & financial breakthrough", "True emotional clarity and sovereign boundaries", "Harmonious union with my partner / self-love", "Spiritual grounding and mental serenity"] }
+    ];
+
+    let quizStep = 0;
+    function renderQuizStep() {
+      const item = QUIZ_QUESTIONS[quizStep];
+      document.getElementById('quizProgressBar').style.width = ((quizStep + 1) / QUIZ_QUESTIONS.length * 100) + '%';
+      document.getElementById('quizStepIndicator').textContent = `Question ${quizStep + 1} of ${QUIZ_QUESTIONS.length}`;
+      document.getElementById('quizQuestionText').textContent = item.q;
+
+      const container = document.getElementById('quizOptionsContainer');
+      container.innerHTML = '';
+      item.opts.forEach((opt) => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-opt-btn';
+        btn.innerHTML = `<span>✦</span><span>${opt}</span>`;
+        btn.onclick = () => {
+          if (quizStep < QUIZ_QUESTIONS.length - 1) {
+            quizStep++;
+            renderQuizStep();
+          } else {
+            showQuizResults();
+          }
+        };
+        container.appendChild(btn);
+      });
+    }
+
+    function showQuizResults() {
+      document.getElementById('quizQuestionView').style.display = 'none';
+      document.getElementById('quizResultView').style.display = 'block';
+    }
+
+    function resetQuiz() {
+      quizStep = 0;
+      document.getElementById('quizQuestionView').style.display = 'block';
+      document.getElementById('quizResultView').style.display = 'none';
+      renderQuizStep();
+    }
+
+    // 78 Cards Explorer Search
+    function renderCardsExplorer(filter = '') {
+      const grid = document.getElementById('cardsExplorerGrid');
+      grid.innerHTML = '';
+      const list = filter
+        ? TAROT_CARDS.filter(c => c.name.toLowerCase().includes(filter.toLowerCase()) || c.upright.title.toLowerCase().includes(filter.toLowerCase()))
+        : TAROT_CARDS;
+
+      list.forEach(c => {
+        const el = document.createElement('div');
+        el.className = 'card-teaser';
+        el.innerHTML = `
+          <div style="font-size:2.2rem; color:var(--k-gold); margin-bottom:0.4rem;">${c.symbol}</div>
+          <h5 style="font-size:0.95rem; color:#fff; margin-bottom:0.3rem;">${c.name}</h5>
+          <div style="font-size:0.75rem; color:var(--k-soft);">${c.element} · ${c.astrology}</div>
+        `;
+        el.onclick = () => alert(`✦ ${c.name}\n\nUpright: ${c.upright.title}\n${c.upright.desc}\n\nGuidance: ${c.upright.advice}`);
+        grid.appendChild(el);
+      });
+    }
+
+    function filterCardsExplorer() {
+      const query = document.getElementById('cardSearchInput').value;
+      renderCardsExplorer(query);
+    }
+
+    // Cart Management
+    let cart = [];
+    function addToCart(title, price) {
+      cart.push({ title, price });
+      updateCartUI();
+      openCart();
+    }
+
+    function updateCartUI() {
+      document.getElementById('cartCount').textContent = cart.length;
+      const list = document.getElementById('cartItemsList');
+      if (!cart.length) {
+        list.innerHTML = '<p style="color: #9f9ab5; text-align: center; margin-top: 3rem;">Your cart is currently empty.</p>';
+        document.getElementById('cartSubtotal').textContent = '₹0';
+        return;
+      }
+      let html = '';
+      let subtotal = 0;
+      cart.forEach((item, idx) => {
+        subtotal += item.price;
+        html += `
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:1rem 0; border-bottom:1px solid rgba(255,255,255,0.06);">
+            <div>
+              <div style="font-size:0.95rem; color:#fff;">${item.title}</div>
+              <div style="color:var(--k-gold); font-family:var(--font-heading); font-size:0.9rem;">₹${item.price}</div>
+            </div>
+            <button onclick="removeFromCart(${idx})" style="background:transparent; border:none; color:#ff7a7a; font-size:0.8rem; cursor:pointer;">Remove</button>
+          </div>
+        `;
+      });
+      list.innerHTML = html;
+      document.getElementById('cartSubtotal').textContent = '₹' + subtotal;
+    }
+
+    function removeFromCart(idx) {
+      cart.splice(idx, 1);
+      updateCartUI();
+    }
+
+    function openCart() {
+      document.getElementById('cartOverlay').classList.add('active');
+      document.getElementById('cartDrawer').classList.add('active');
+    }
+    function closeCart() {
+      document.getElementById('cartOverlay').classList.remove('active');
+      document.getElementById('cartDrawer').classList.remove('active');
+    }
+
+    // Modal Booking
+    function openBookingModal(title) {
+      document.getElementById('modalServiceTitle').textContent = 'Book: ' + title;
+      document.getElementById('bookingModal').classList.add('active');
+    }
+    function closeBookingModal() {
+      document.getElementById('bookingModal').classList.remove('active');
+    }
+    function handleBookingSubmit(e) {
+      e.preventDefault();
+      alert('✦ Thank you! Your booking request and intake details have been recorded. Kavita will connect with you on WhatsApp shortly.');
+      closeBookingModal();
+    }
+
+    function toggleFaq(el) {
+      const ans = el.nextElementSibling;
+      const span = el.querySelector('span');
+      if (ans.style.display === 'none') {
+        ans.style.display = 'block';
+        span.textContent = '-';
+      } else {
+        ans.style.display = 'none';
+        span.textContent = '+';
+      }
+    }
+
+    // Filter Shop Category
+    function filterShop(cat) {
+      document.querySelectorAll('.cat-pill').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      const cards = document.querySelectorAll('.product-card');
+      cards.forEach(card => {
+        if (cat === 'all' || card.dataset.cat === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function filterByIntention(name) {
+      alert(`✦ Filter applied: Showing offerings consecrated for ${name}.`);
+    }
+
+    // Init
+    document.getElementById('openCartBtn').addEventListener('click', openCart);
+    document.getElementById('tabSingle').addEventListener('click', () => {
+      mode = 'single';
+      document.getElementById('tabSingle').classList.add('active');
+      document.getElementById('tabThree').classList.remove('active');
+      renderStage();
+    });
+    document.getElementById('tabThree').addEventListener('click', () => {
+      mode = 'three';
+      document.getElementById('tabThree').classList.add('active');
+      document.getElementById('tabSingle').classList.remove('active');
+      renderStage();
+    });
+    document.getElementById('btnRevealAll').addEventListener('click', () => {
+      drawState.forEach((s, i) => { if (!s.flipped) setTimeout(() => revealCard(i), i * 350); });
+    });
+    document.getElementById('btnShuffle').addEventListener('click', () => {
+      playCelestialChime(432);
+      renderStage();
+    });
+    document.getElementById('btnReset').addEventListener('click', renderStage);
+
+    renderStage();
+    renderQuizStep();
+    renderCardsExplorer();
+  </script>
+</body>
+</html>
