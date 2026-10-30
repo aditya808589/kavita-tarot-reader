@@ -1808,7 +1808,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Category Navigation Menu Bar */
 .kavita-hdr__nav-bar {
-  background: #FAFAFA;
+  background: #FFFFFF;
   border-bottom: 1px solid #ECE7DE;
   padding: 0;
 }
@@ -1816,10 +1816,11 @@ h1, h2, h3, h4, h5, h6 {
 .kavita-hdr__menu {
   display: flex;
   align-items: center;
+  justify-content: center;
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 1.35rem;
+  gap: 2.2rem;
   width: 100%;
 }
 
@@ -1830,16 +1831,17 @@ h1, h2, h3, h4, h5, h6 {
 .kavita-hdr__menu-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.42rem 0; /* Reduced slim luxury padding */
-  font-family: 'Cinzel', serif;
-  font-size: 0.76rem; /* Refined compact typography */
+  gap: 0.4rem;
+  padding: 0.95rem 0.25rem;
+  font-family: 'Cinzel', 'Playfair Display', serif;
+  font-size: 0.98rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  color: #332E2A;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #1C1917;
   text-decoration: none;
   position: relative;
-  transition: color 0.2s ease;
+  transition: all 0.25s ease;
 }
 
 .kavita-hdr__menu-link::after {
@@ -1848,8 +1850,8 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   left: 0;
   width: 0;
-  height: 2px;
-  background: #80142B;
+  height: 2.5px;
+  background: linear-gradient(90deg, #80142B, #C59B27);
   transition: width 0.25s ease;
 }
 
@@ -1937,16 +1939,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .kavita-slider-outer--contained {
-  max-width: 960px; /* Reduced contained width so desktop 16:9 banner is sleek & compact (~540px) without any cropping */
+  max-width: 1360px; /* Generous luxury width for 3:1 original size banners */
   margin: 1.25rem auto 1.75rem;
-  padding: 0 1rem;
+  padding: 0 1.25rem;
 }
 
 .kavita-slider-outer--contained .kavita-slider-wrap {
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.16);
-  border: 1px solid rgba(216, 180, 93, 0.3);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(197, 155, 39, 0.3);
 }
 
 @media (max-width: 991px) {
@@ -1970,8 +1972,9 @@ h1, h2, h3, h4, h5, h6 {
 .kavita-slider-wrap {
   position: relative;
   width: 100%;
+  aspect-ratio: 3 / 1; /* Exact 3:1 natural ratio of uploaded desktop banners (1024x341) */
   overflow: hidden;
-  background-color: #0B0614;
+  background-color: #0E0B12;
   user-select: none;
   -webkit-user-select: none;
 }
@@ -1979,6 +1982,7 @@ h1, h2, h3, h4, h5, h6 {
 .kavita-slider {
   position: relative;
   width: 100%;
+  height: 100%;
   display: flex;
   transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -1987,10 +1991,11 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   flex: 0 0 100%;
   width: 100%;
+  height: 100%;
   min-width: 100%;
   line-height: 0;
   overflow: hidden;
-  background: #0B0614;
+  background: #0E0B12;
 }
 
 .kavita-slider__link {
@@ -2003,33 +2008,26 @@ h1, h2, h3, h4, h5, h6 {
 .kavita-slider__picture {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .kavita-slider__img {
   display: block;
   width: 100%;
-  height: auto; /* Preserves natural 16:9 ratio - NEVER CROPPED */
-  max-height: 540px;
-  object-fit: contain; /* Absolutely zero cropping of top/bottom graphics */
+  height: 100%;
+  object-fit: contain; /* Exact original proportions - 100% UNTOUCHED, ZERO CROPPING */
   object-position: center;
   transition: transform 0.8s ease;
 }
 
-@media (max-width: 991px) {
-  .kavita-slider__img {
-    height: auto;
-    max-height: 480px;
-    object-fit: contain;
-  }
-}
-
 @media (max-width: 767px) {
+  .kavita-slider-wrap {
+    aspect-ratio: 4 / 5; /* Exact 4:5 natural ratio of mobile portrait banner (819x1024) */
+  }
   .kavita-slider__img {
-    height: auto;
-    max-height: none;
+    height: 100%;
     width: 100%;
-    object-fit: contain; /* Natural uncropped portrait on mobile */
+    object-fit: contain;
   }
 }
 
@@ -2346,16 +2344,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .luxury-intention-card {
   position: relative;
-  background: linear-gradient(135deg, #130B1C 0%, #1E102E 100%);
-  border: 1px solid rgba(216, 180, 93, 0.28);
-  border-radius: 14px;
-  padding: 1.85rem 1.6rem;
+  background: #FFFFFF;
+  border: 1px solid #E8DFD0;
+  border-radius: 16px;
+  padding: 2.2rem 1.8rem;
   text-decoration: none;
   display: flex;
   flex-direction: column;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(7, 4, 12, 0.3);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
 }
 
 .luxury-intention-card::before {
@@ -2364,16 +2362,16 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   left: 0;
   right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #FFDF78, transparent);
+  height: 3px;
+  background: linear-gradient(90deg, #80142B, #C59B27);
   opacity: 0;
   transition: opacity 0.35s ease;
 }
 
 .luxury-intention-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(216, 180, 93, 0.7);
-  box-shadow: 0 16px 36px rgba(7, 4, 12, 0.5), 0 0 20px rgba(216, 180, 93, 0.2);
+  transform: translateY(-6px);
+  border-color: #C59B27;
+  box-shadow: 0 16px 36px rgba(128, 20, 43, 0.08), 0 0 20px rgba(197, 155, 39, 0.15);
 }
 
 .luxury-intention-card:hover::before {
@@ -2381,39 +2379,41 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .luxury-intention-icon-wrap {
-  width: 52px;
-  height: 52px;
-  border-radius: 12px;
-  background: rgba(216, 180, 93, 0.12);
-  border: 1px solid rgba(216, 180, 93, 0.35);
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #FFF9ED;
+  border: 1.5px solid #E2CA88;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.25rem;
-  color: #FFDF78;
-  transition: all 0.3s ease;
+  margin-bottom: 1.4rem;
+  color: #80142B;
+  transition: all 0.35s ease;
+  box-shadow: 0 3px 10px rgba(197, 155, 39, 0.12);
 }
 
 .luxury-intention-card:hover .luxury-intention-icon-wrap {
-  background: rgba(216, 180, 93, 0.25);
-  border-color: #FFDF78;
+  background: #80142B;
+  border-color: #80142B;
+  color: #FFDF78;
   transform: scale(1.08) rotate(4deg);
 }
 
 .luxury-intention-title {
   font-family: 'Cinzel', serif;
-  font-size: 1.15rem;
+  font-size: 1.22rem;
   font-weight: 700;
-  color: #FFF9F0;
-  margin: 0 0 0.55rem;
-  letter-spacing: 0.04em;
+  color: #1C1917;
+  margin: 0 0 0.65rem;
+  letter-spacing: 0.03em;
 }
 
 .luxury-intention-desc {
-  font-size: 0.85rem;
-  line-height: 1.6;
-  color: #BDB3A7;
-  margin: 0 0 1.25rem;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: #5A524A;
+  margin: 0 0 1.5rem;
   flex-grow: 1;
 }
 
@@ -2421,26 +2421,26 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.76rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #D8B45D;
-  transition: gap 0.2s ease;
+  color: #80142B;
+  transition: gap 0.25s ease, color 0.25s ease;
 }
 
 .luxury-intention-card:hover .luxury-intention-meta {
-  gap: 0.75rem;
-  color: #FFDF78;
+  gap: 0.85rem;
+  color: #C59B27;
 }
 
 /* ==========================================================================
-   10. ULTRA-PREMIUM GROUNDED FOOTER
+   10. ULTRA-PREMIUM GROUNDED FOOTER (WARM OBSIDIAN & GOLD - NO PURPLE)
    ========================================================================== */
 .site-footer-premium {
-  background: #0B060F;
-  border-top: 1px solid rgba(216, 180, 93, 0.25);
-  color: #C0B7AE;
+  background: #141110;
+  border-top: 1px solid rgba(216, 180, 93, 0.3);
+  color: #C5BCB2;
   padding: 4.5rem 1.5rem 2.5rem;
   font-size: 0.88rem;
   position: relative;

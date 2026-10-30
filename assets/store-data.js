@@ -21,11 +21,11 @@ const STORE_PRODUCTS = [
     rating: 5.0,
     reviewsCount: 380,
     badge: "Core Service",
-    img: "assets/banner-1-mobile.jpg",
+    img: "assets/product-live-audio.jpg",
     images: [
-      "assets/banner-1-mobile.jpg",
-      "assets/card-moon.jpg",
-      "assets/card-empress.jpg"
+      "assets/product-live-audio.jpg",
+      "assets/product-situational.jpg",
+      "assets/deck-gold-tarot.jpg"
     ],
     description: "A deeply personal live one-on-one audio consultation delivered straight to your WhatsApp. Select duration (10, 20, or 30 mins) and choose Standard (within 3–5 days) or Premium Same-Day delivery. Kavita connects with you live to answer your specific questions on love, career, finances, and life crossroads.",
     sacredSignificance: "Channeled intuitive tarot reading connecting directly to your energetic field for grounded, empowered clarity.",
@@ -55,10 +55,10 @@ const STORE_PRODUCTS = [
     rating: 5.0,
     reviewsCount: 520,
     badge: "Swift Guidance",
-    img: "assets/banner-2-mobile.jpg",
+    img: "assets/product-voice-note.jpg",
     images: [
-      "assets/banner-2-mobile.jpg",
-      "assets/card-star.jpg"
+      "assets/product-voice-note.jpg",
+      "assets/deck-moon-oracle.jpg"
     ],
     description: "Need swift, compassionate clarity without scheduling a live call? Submit your 2 core questions. Kavita tunes into your energy, pulls your cards, and delivers a detailed, personalized 5–10 minute voice recording directly to your WhatsApp.",
     sacredSignificance: "Permanent audio recording that you can listen back to whenever you need reassurance and direction.",
@@ -83,10 +83,10 @@ const STORE_PRODUCTS = [
     rating: 4.9,
     reviewsCount: 215,
     badge: "Specialized Deep-Dive",
-    img: "assets/card-empress.jpg",
+    img: "assets/product-situational.jpg",
     images: [
-      "assets/card-empress.jpg",
-      "assets/card-moon.jpg"
+      "assets/product-situational.jpg",
+      "assets/deck-gold-tarot.jpg"
     ],
     description: "Curated for complex situations: toxic relationship crossroads, business/career shifts, family dynamics, or financial decisions. Comprehensive spread uncovering root causes, hidden influences, and recommended steps forward.",
     sacredSignificance: "Holistic situational analysis aligning karmic patterns, personal desires, and optimal timing.",
@@ -114,10 +114,10 @@ const STORE_PRODUCTS = [
     rating: 5.0,
     reviewsCount: 194,
     badge: "Emotional Freedom",
-    img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=700&q=80",
+    img: "assets/product-cord-cutting.jpg",
     images: [
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=700&q=80",
-      "assets/card-star.jpg"
+      "assets/product-cord-cutting.jpg",
+      "assets/crystal-selenite-wand.jpg"
     ],
     description: "A powerful distance energy healing session designed to energetically detach negative emotional ties, past relationship residue, toxic patterns, and psychic drains, freeing your vital energy and restoring peace.",
     sacredSignificance: "Severs ethereal cords connecting you to past lovers, toxic workplaces, or draining friendships while preserving genuine unconditional love.",
@@ -141,10 +141,10 @@ const STORE_PRODUCTS = [
     rating: 5.0,
     reviewsCount: 167,
     badge: "High Vibrational",
-    img: "assets/card-moon.jpg",
+    img: "assets/product-vortex-blessings.jpg",
     images: [
-      "assets/card-moon.jpg",
-      "assets/banner-2-desktop.jpg"
+      "assets/product-vortex-blessings.jpg",
+      "assets/crystal-amethyst.jpg"
     ],
     description: "A specialized, coded energy circle session channeled to open stagnant pathways, inviting high-frequency blessings, auspiciousness, peace, and abundance into your life and home.",
     sacredSignificance: "Harnesses sacred celestial alignments and focused vibrational intention to uplift your personal frequency.",
@@ -168,10 +168,10 @@ const STORE_PRODUCTS = [
     rating: 5.0,
     reviewsCount: 142,
     badge: "Ancient Modality",
-    img: "assets/kavita-hero-reference.jpg",
+    img: "assets/product-lamafera.jpg",
     images: [
-      "assets/kavita-hero-reference.jpg",
-      "assets/card-empress.jpg"
+      "assets/product-lamafera.jpg",
+      "assets/crystal-chakra-bracelet.jpg"
     ],
     description: "An ancient Tibetan energy-healing modality practiced for centuries by Buddhist monks. Clears deep-seated karmic blockages, negative vibrations, fear patterns, and heavy spiritual fatigue with sacred symbols.",
     sacredSignificance: "One of the fastest and most potent spiritual healing systems, channeling high-frequency Universal life force directly into your chakras.",
@@ -199,10 +199,10 @@ const STORE_PRODUCTS = [
     rating: 4.9,
     reviewsCount: 310,
     badge: "Wealth Magnet",
-    img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=700&q=80",
+    img: "assets/crystal-pyrite.jpg",
     images: [
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=700&q=80",
-      "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=700&q=80"
+      "assets/crystal-pyrite.jpg",
+      "assets/crystal-amethyst.jpg"
     ],
     description: "Genuine high-grade golden metallic Pyrite cluster, personally selected and spiritually cleansed. Known as 'Fool's Gold' but celebrated as a master stone of prosperity, career success, and solar energy.",
     sacredSignificance: "Resonates with the Solar Plexus Chakra (Manipura), amplifying willpower, financial confidence, and overcoming scarcity mindset.",
@@ -226,9 +226,10 @@ const STORE_PRODUCTS = [
     rating: 4.9,
     reviewsCount: 248,
     badge: "Intuition & Calm",
-    img: "https://images.unsplash.com/photo-1567696911980-2eed69a46042?auto=format&fit=crop&w=700&q=80",
+    img: "assets/crystal-amethyst.jpg",
     images: [
-      "https://images.unsplash.com/photo-1567696911980-2eed69a46042?auto=format&fit=crop&w=700&q=80"
+      "assets/crystal-amethyst.jpg",
+      "assets/crystal-pyrite.jpg"
     ],
     description: "Deep purple natural Uruguayan Amethyst specimen. Known as the stone of peace, emotional grounding, and psychic awakening. Excellent companion for tarot reading desks and meditation altars.",
     sacredSignificance: "Opens the Third Eye (Ajna) and Crown (Sahasrara) chakras, calming overactive minds and easing insomnia.",
@@ -252,9 +253,10 @@ const STORE_PRODUCTS = [
     rating: 4.9,
     reviewsCount: 482,
     badge: "Bestseller #1",
-    img: "https://images.unsplash.com/photo-1611591475870-85f8c85775c9?auto=format&fit=crop&w=700&q=80",
+    img: "assets/crystal-chakra-bracelet.jpg",
     images: [
-      "https://images.unsplash.com/photo-1611591475870-85f8c85775c9?auto=format&fit=crop&w=700&q=80"
+      "assets/crystal-chakra-bracelet.jpg",
+      "assets/crystal-amethyst.jpg"
     ],
     description: "Strung with natural Amethyst, Lapis Lazuli, Blue Turquoise, Green Aventurine, Tiger Eye, Carnelian, and Red Jasper beads. Consecrated to balance and harmonize all seven primary energy chakras.",
     sacredSignificance: "Aligns your core pranic centers from Muladhara to Sahasrara, clearing emotional stagnation.",
@@ -278,9 +280,10 @@ const STORE_PRODUCTS = [
     rating: 5.0,
     reviewsCount: 175,
     badge: "Aura Cleanser",
-    img: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=700&q=80",
+    img: "assets/crystal-selenite-wand.jpg",
     images: [
-      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=700&q=80"
+      "assets/crystal-selenite-wand.jpg",
+      "assets/crystal-pyrite.jpg"
     ],
     description: "Luminous white fibrous Selenite wand from Morocco. Selenite is self-cleansing and cleanses other stones, tarot cards, and personal auras simply by being near them.",
     sacredSignificance: "Connected to Moon energy and Archangel Michael. Clears stagnant psychic debris.",
@@ -308,11 +311,10 @@ const STORE_PRODUCTS = [
     rating: 5.0,
     reviewsCount: 228,
     badge: "Luxury Deck",
-    img: "assets/card-moon.jpg",
+    img: "assets/deck-gold-tarot.jpg",
     images: [
-      "assets/card-moon.jpg",
-      "assets/card-empress.jpg",
-      "assets/card-star.jpg"
+      "assets/deck-gold-tarot.jpg",
+      "assets/product-situational.jpg"
     ],
     description: "Premium 78-card tarot deck crafted with shimmering gold-foil detailing on velvety matte black cardstock. Designed for deep intuitive resonance, crisp shuffling, and lifelong spiritual companionship.",
     sacredSignificance: "Based on classic esoteric symbolism with elevated contemporary celestial aesthetics.",
@@ -336,10 +338,10 @@ const STORE_PRODUCTS = [
     rating: 4.9,
     reviewsCount: 164,
     badge: "Intuitive Guidance",
-    img: "assets/card-star.jpg",
+    img: "assets/deck-moon-oracle.jpg",
     images: [
-      "assets/card-star.jpg",
-      "assets/banner-1-desktop.jpg"
+      "assets/deck-moon-oracle.jpg",
+      "assets/product-voice-note.jpg"
     ],
     description: "A gentle, uplifting 44-card oracle deck focusing on lunar cycles, soul archetypes, and heart-centered affirmations. Ideal for daily one-card pulls, morning intentions, and evening reflection.",
     sacredSignificance: "Attunes your daily rhythm with natural moon phases and inner emotional wisdom.",
