@@ -1787,11 +1787,13 @@
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand-wrap">
-        <a href="index.html" class="brand">
-          <span class="brand-logo-icon">🕉</span>
-          <span>MANTRAMM</span>
+        <a href="index.html" class="brand" style="display: flex; align-items: center; gap: 0.75rem;">
+          <img src="assets/kavita-logo-gold.png" alt="Kavita Tarot & Spirituals" style="height: 48px; width: auto; object-fit: contain;">
+          <div style="display: flex; flex-direction: column;">
+            <span style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 800; letter-spacing: 0.14em; color: var(--m-text-dark); line-height: 1;">KAVITA</span>
+            <span class="brand-tagline" style="margin-top: 2px;">Tarot & Spirituals</span>
+          </div>
         </a>
-        <span class="brand-tagline">Vedic Sacred Store × Kavita Tarot</span>
       </div>
 
       <!-- Vani Kabir Multi-Level Dropdown Navigation -->
@@ -1829,59 +1831,288 @@
   </header>
 
   <!-- =========================================================
-       3. HERO SECTION — WARM SACRED IVORY & LUMINOUS GOLD
+       3. KAVITA CINEMATIC LUXURY TAROT HERO SECTION
   ========================================================= -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-eyebrow">
-        <span>✦</span> Consecrated Vedic Products & Channeled Tarot Consultations <span>✦</span>
-      </div>
-      <h1 class="hero-title">
-        Wear Your Energy.<br><span class="gold-gradient">Carry Your Intention.</span>
-      </h1>
-      <p class="hero-subtitle">
-        Authentic lab-certified Nepali Rudrakshas, healing gemstone bracelets, energized Vastu Yantras, and personal one-on-one Tarot guidance with Kavita.
-      </p>
+  <section id="kavita-hero-main" class="kavita-hero kavita-hero--floating" role="region" aria-label="Sacred Tarot, Modern Guidance">
+    <!-- Background Media & Overlays -->
+    <div class="kavita-hero__bg-wrap" aria-hidden="true">
+      <img
+        src="assets/kavita-hero-reference.jpg"
+        alt="Kavita Tarot Mystical Altar"
+        class="kavita-hero__bg-img"
+        loading="eager"
+        width="2400"
+        height="1350"
+      >
+      <div class="kavita-hero__overlay-editorial"></div>
+      <div class="kavita-hero__overlay-bottom"></div>
+      <div class="kavita-hero__ambient-glow"></div>
+    </div>
 
-      <div class="hero-ctas">
-        <a href="#shop" class="btn btn-maroon">✦ Explore Sacred Offerings</a>
-        <a href="#concerns" class="btn btn-outline">Shop by Concern / Problem</a>
-        <a href="#services" class="btn btn-gold">Book Tarot Reading (₹451)</a>
-      </div>
+    <!-- Floating Gold Celestial Particles -->
+    <div class="kavita-hero__particles-container" aria-hidden="true">
+      <span class="kavita-hero__particle p-1"></span>
+      <span class="kavita-hero__particle p-2"></span>
+      <span class="kavita-hero__particle p-3"></span>
+      <span class="kavita-hero__particle p-4"></span>
+      <span class="kavita-hero__particle p-5"></span>
+      <span class="kavita-hero__particle p-6"></span>
+      <span class="kavita-hero__particle p-7"></span>
+      <span class="kavita-hero__particle p-8"></span>
+      <span class="kavita-hero__particle p-9"></span>
+      <span class="kavita-hero__particle p-10"></span>
+      <span class="kavita-hero__particle p-11"></span>
+      <span class="kavita-hero__particle p-12"></span>
+      <span class="kavita-hero__particle p-13"></span>
+      <span class="kavita-hero__particle p-14"></span>
+    </div>
 
-      <!-- Mantramm 4 Pillars of Trust -->
-      <div class="hero-trust-grid">
-        <div class="trust-card">
-          <div class="trust-badge-icon">📜</div>
-          <div>
-            <h5>Govt. Lab Certified</h5>
-            <p>100% natural, tested with individual certificate & QR</p>
+    <!-- Main Hero Stage -->
+    <div class="kavita-hero__stage">
+      <div class="kavita-hero__inner">
+
+        <!-- Left Column: Editorial Luxury Copy -->
+        <div class="kavita-hero__content-col">
+          <div class="kavita-hero__brand-logo-wrap">
+            <img src="assets/kavita-logo-gold.png" alt="Kavita Tarot & Spirituals" class="kavita-hero__brand-logo" width="140" height="auto">
+          </div>
+
+          <div class="kavita-hero__eyebrow">
+            <span class="kavita-hero__eyebrow-line"></span>
+            <span class="kavita-hero__eyebrow-star">✦</span>
+            <span class="kavita-hero__eyebrow-text">ANCIENT WISDOM • MODERN GUIDANCE</span>
+            <span class="kavita-hero__eyebrow-star">✦</span>
+            <span class="kavita-hero__eyebrow-line"></span>
+          </div>
+
+          <h1 class="kavita-hero__heading">
+            <span class="kavita-hero__heading-gold">Sacred Tarot,</span><br>Modern Guidance
+          </h1>
+
+          <!-- Moon Crescent Divider -->
+          <div class="kavita-hero__crescent-divider" aria-hidden="true">
+            <span class="kavita-hero__crescent-wing"></span>
+            <svg width="28" height="22" viewBox="0 0 28 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 2C9.58 2 6 5.58 6 10C6 14.42 9.58 18 14 18C11.5 18 9.5 15.5 9.5 12C9.5 7.5 12 4 14 2Z" fill="url(#hero-gold-crescent)" />
+              <circle cx="19" cy="8" r="1.5" fill="#FFDF78" />
+              <circle cx="23" cy="14" r="1" fill="#D8B45D" />
+              <defs>
+                <linearGradient id="hero-gold-crescent" x1="6" y1="2" x2="14" y2="18" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FFDF78"/>
+                  <stop offset="0.5" stop-color="#D8B45D"/>
+                  <stop offset="1" stop-color="#C9A24B"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <span class="kavita-hero__crescent-wing"></span>
+          </div>
+
+          <p class="kavita-hero__desc">
+            Explore a curated collection of tarot decks, oracle cards, crystals and spiritual tools designed to bring clarity, balance and deeper meaning to your journey.
+          </p>
+
+          <div class="kavita-hero__ctas">
+            <a href="collections.html" class="kavita-hero__btn kavita-hero__btn--primary">
+              <span>Shop Tarot Collection</span>
+              <svg class="kavita-hero__btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M3.33334 8H12.6667" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8.66666 4L12.6667 8L8.66666 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="consultations.html" class="kavita-hero__btn kavita-hero__btn--secondary">
+              <span>Explore Readings</span>
+            </a>
           </div>
         </div>
-        <div class="trust-card">
-          <div class="trust-badge-icon">🕉</div>
-          <div>
-            <h5>Pran Pratishtha</h5>
-            <p>Energized with authentic Vedic mantras before dispatch</p>
+
+        <!-- Right Column: Visual Altar & 3 Floating Cards -->
+        <div class="kavita-hero__visual-col" id="heroVisualStage">
+
+          <!-- Rotating Celestial Orbit Rings -->
+          <div class="kavita-hero__celestial-orbit" aria-hidden="true">
+            <div class="kavita-hero__orbit-ring kavita-hero__orbit-ring--outer"></div>
+            <div class="kavita-hero__orbit-ring kavita-hero__orbit-ring--inner"></div>
+            <div class="kavita-hero__orbit-sparkle s-1">✦</div>
+            <div class="kavita-hero__orbit-sparkle s-2">✦</div>
+            <div class="kavita-hero__orbit-sparkle s-3">✧</div>
+            <div class="kavita-hero__orbit-sparkle s-4">✦</div>
+            <div class="kavita-hero__orbit-moon m-1">☾</div>
+            <div class="kavita-hero__orbit-moon m-2">○</div>
+            <div class="kavita-hero__orbit-moon m-3">☽</div>
           </div>
-        </div>
-        <div class="trust-card">
-          <div class="trust-badge-icon">📦</div>
-          <div>
-            <h5>Free Pan-India Delivery</h5>
-            <p>Free express delivery on all orders above ₹999 + COD</p>
+
+          <!-- The 3 Floating Tarot Cards -->
+          <div class="kavita-hero__cards-trio" id="heroCardsTrio">
+
+            <!-- Card 1: The Empress (III) -->
+            <div class="kavita-hero__card-anchor kavita-hero__card-anchor--left">
+              <a href="collections.html?cat=all" class="kavita-hero__card-link">
+                <div class="kavita-hero__card kavita-hero__card--1" tabindex="0">
+                  <div class="kavita-hero__card-sheen"></div>
+                  <div class="kavita-hero__card-frame">
+                    <div class="kavita-hero__card-inner">
+                      <img src="assets/card-empress.jpg" alt="The Empress Tarot Card" class="kavita-hero__card-img" width="320" height="540">
+                      <div class="kavita-hero__card-ribbon">
+                        <span class="kavita-hero__card-num">III</span>
+                        <span class="kavita-hero__card-title">THE EMPRESS</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Card 2: The Moon (XVIII) -->
+            <div class="kavita-hero__card-anchor kavita-hero__card-anchor--center">
+              <a href="collections.html?cat=all" class="kavita-hero__card-link">
+                <div class="kavita-hero__card kavita-hero__card--2" tabindex="0">
+                  <div class="kavita-hero__card-sheen"></div>
+                  <div class="kavita-hero__card-frame">
+                    <div class="kavita-hero__card-inner">
+                      <img src="assets/card-moon.jpg" alt="The Moon Tarot Card" class="kavita-hero__card-img" width="340" height="580">
+                      <div class="kavita-hero__card-ribbon">
+                        <span class="kavita-hero__card-num">XVIII</span>
+                        <span class="kavita-hero__card-title">THE MOON</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Card 3: The Star (XVII) -->
+            <div class="kavita-hero__card-anchor kavita-hero__card-anchor--right">
+              <a href="collections.html?cat=all" class="kavita-hero__card-link">
+                <div class="kavita-hero__card-link">
+                  <div class="kavita-hero__card kavita-hero__card--3" tabindex="0">
+                    <div class="kavita-hero__card-sheen"></div>
+                    <div class="kavita-hero__card-frame">
+                      <div class="kavita-hero__card-inner">
+                        <img src="assets/card-star.jpg" alt="The Star Tarot Card" class="kavita-hero__card-img" width="320" height="540">
+                        <div class="kavita-hero__card-ribbon">
+                          <span class="kavita-hero__card-num">XVII</span>
+                          <span class="kavita-hero__card-title">THE STAR</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
           </div>
+
+          <!-- Crystal Orb Illumination at Base -->
+          <div class="kavita-hero__orb-glow" aria-hidden="true">
+            <div class="kavita-hero__orb-sphere"></div>
+            <div class="kavita-hero__orb-pedestal-light"></div>
+          </div>
+
         </div>
-        <div class="trust-card">
-          <div class="trust-badge-icon">💬</div>
-          <div>
-            <h5>Astro-Tarot Guidance</h5>
-            <p>Free WhatsApp support to match your Janam Kundali</p>
+
+      </div>
+    </div>
+
+    <!-- Bottom Luxury Trust Strip -->
+    <div class="kavita-hero__trust-strip">
+      <div class="kavita-hero__trust-container">
+        <div class="kavita-hero__trust-grid">
+          <!-- Item 1: Authentic & Energized -->
+          <div class="kavita-hero__trust-item">
+            <div class="kavita-hero__trust-icon-box" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2C12 2 8 8 8 13C8 16 10 18 12 18C14 18 16 16 16 13C16 8 12 2 12 2Z"/>
+                <path d="M4 14C4 14 6 17 9 18C7.5 19.5 5 19.5 3 19"/>
+                <path d="M20 14C20 14 18 17 15 18C16.5 19.5 19 19.5 21 19"/>
+              </svg>
+            </div>
+            <div class="kavita-hero__trust-text">
+              <div class="kavita-hero__trust-title">Authentic & Energized</div>
+              <div class="kavita-hero__trust-sub">Carefully curated, spiritually cleansed</div>
+            </div>
+          </div>
+
+          <!-- Item 2: Worldwide Shipping -->
+          <div class="kavita-hero__trust-item">
+            <div class="kavita-hero__trust-icon-box" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 2L11 13"/>
+                <path d="M22 2L15 22L11 13L2 9L22 2Z"/>
+              </svg>
+            </div>
+            <div class="kavita-hero__trust-text">
+              <div class="kavita-hero__trust-title">Worldwide Shipping</div>
+              <div class="kavita-hero__trust-sub">Sacred products to your doorstep</div>
+            </div>
+          </div>
+
+          <!-- Item 3: Secure Payments -->
+          <div class="kavita-hero__trust-item">
+            <div class="kavita-hero__trust-icon-box" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22S4 18 4 12V5L12 2L20 5V12C20 18 12 22 12 22Z"/>
+                <path d="M9 12L11 14L15 10"/>
+              </svg>
+            </div>
+            <div class="kavita-hero__trust-text">
+              <div class="kavita-hero__trust-title">Secure Payments</div>
+              <div class="kavita-hero__trust-sub">Safe, encrypted checkout</div>
+            </div>
+          </div>
+
+          <!-- Item 4: Spiritual Guidance -->
+          <div class="kavita-hero__trust-item">
+            <div class="kavita-hero__trust-icon-box" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
+              </svg>
+            </div>
+            <div class="kavita-hero__trust-text">
+              <div class="kavita-hero__trust-title">Spiritual Guidance</div>
+              <div class="kavita-hero__trust-sub">Tools for a more aligned you</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <script>
+    // Lightweight mouse parallax for hero cards
+    (function() {
+      const visualStage = document.getElementById('heroVisualStage');
+      const cardsTrio = document.getElementById('heroCardsTrio');
+      if (!visualStage || !cardsTrio) return;
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReducedMotion || window.innerWidth < 992) return;
+
+      let targetX = 0, targetY = 0, curX = 0, curY = 0, isHover = false, rafId = null;
+
+      function onMouseMove(e) {
+        const rect = visualStage.getBoundingClientRect();
+        const relX = (e.clientX - rect.left) / rect.width - 0.5;
+        const relY = (e.clientY - rect.top) / rect.height - 0.5;
+        targetX = Math.max(-1, Math.min(1, relX)) * 14;
+        targetY = Math.max(-1, Math.min(1, relY)) * 12;
+      }
+
+      function update() {
+        curX += (targetX - curX) * 0.08;
+        curY += (targetY - curY) * 0.08;
+        cardsTrio.style.transform = `translate3d(${curX.toFixed(2)}px, ${curY.toFixed(2)}px, 0)`;
+        if (Math.abs(targetX - curX) > 0.05 || Math.abs(targetY - curY) > 0.05 || isHover) {
+          rafId = requestAnimationFrame(update);
+        } else {
+          rafId = null;
+        }
+      }
+
+      visualStage.addEventListener('mousemove', onMouseMove, { passive: true });
+      visualStage.addEventListener('mouseenter', () => { isHover = true; if (!rafId) update(); });
+      visualStage.addEventListener('mouseleave', () => { isHover = false; targetX = 0; targetY = 0; });
+    })();
+  </script>
 
   <!-- =========================================================
        4. MANTRAMM CIRCULAR CATEGORY NAVIGATION

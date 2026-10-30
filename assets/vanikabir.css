@@ -852,3 +852,722 @@ h1, h2, h3, h4, h5, h6 {
   .top-marquee-strip { font-size: 0.72rem; }
   .footer-grid { grid-template-columns: 1fr; }
 }
+
+/* ==========================================================================
+   KAVITA PREMIUM LUXURY CINEMATIC HERO SECTION
+   ========================================================================== */
+.kavita-hero {
+  --kh-bg: #07050C;
+  --kh-deep-plum: #0B0614;
+  --kh-purple-glow: rgba(43, 19, 74, 0.55);
+  --kh-gold-accent: #D8B45D;
+  --kh-gold-light: #FFDF78;
+  --kh-gold-dark: #A67D28;
+  --kh-gold-glow: rgba(216, 180, 93, 0.35);
+  --kh-heading-color: #F5EBDD;
+  --kh-body-color: #B9B0BF;
+  --kh-serif: 'Cinzel', 'Cormorant Garamond', Georgia, serif;
+  --kh-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  position: relative;
+  width: 100%;
+  min-height: 900px;
+  background-color: var(--kh-bg);
+  color: var(--kh-body-color);
+  font-family: var(--kh-sans);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+.kavita-hero * {
+  box-sizing: border-box;
+}
+
+/* Background Media & Overlays */
+.kavita-hero__bg-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.kavita-hero__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  display: block;
+  transform: scale(1.02);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.kavita-hero__overlay-editorial {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    #07050C 0%,
+    rgba(7, 5, 12, 0.98) 22%,
+    rgba(11, 6, 20, 0.88) 42%,
+    rgba(11, 6, 20, 0.45) 62%,
+    rgba(11, 6, 20, 0.1) 85%,
+    transparent 100%
+  );
+}
+
+.kavita-hero__overlay-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  background: linear-gradient(to top, #07050C 0%, rgba(7, 5, 12, 0.8) 40%, transparent 100%);
+}
+
+.kavita-hero__ambient-glow {
+  position: absolute;
+  top: 35%;
+  right: 25%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, var(--kh-purple-glow) 0%, rgba(216, 180, 93, 0.12) 45%, transparent 70%);
+  filter: blur(65px);
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+/* Floating Particles */
+.kavita-hero__particles-container {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.kavita-hero__particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, #FFF2CE 0%, var(--kh-gold-accent) 60%, transparent 100%);
+  box-shadow: 0 0 8px var(--kh-gold-light);
+  pointer-events: none;
+  animation: khParticleDrift linear infinite;
+}
+
+.kavita-hero__particle.p-1  { width: 4px; height: 4px; top: 18%; left: 52%; animation-duration: 9s;  animation-delay: 0s; }
+.kavita-hero__particle.p-2  { width: 3px; height: 3px; top: 38%; left: 62%; animation-duration: 12s; animation-delay: 1.5s; }
+.kavita-hero__particle.p-3  { width: 5px; height: 5px; top: 55%; left: 48%; animation-duration: 8s;  animation-delay: 3s; }
+.kavita-hero__particle.p-4  { width: 3px; height: 3px; top: 25%; left: 78%; animation-duration: 14s; animation-delay: 0.5s; }
+.kavita-hero__particle.p-5  { width: 4px; height: 4px; top: 68%; left: 82%; animation-duration: 10s; animation-delay: 2s; }
+.kavita-hero__particle.p-6  { width: 2px; height: 2px; top: 45%; left: 38%; animation-duration: 13s; animation-delay: 4s; }
+.kavita-hero__particle.p-7  { width: 4px; height: 4px; top: 80%; left: 60%; animation-duration: 11s; animation-delay: 2.5s; }
+.kavita-hero__particle.p-8  { width: 3px; height: 3px; top: 12%; left: 30%; animation-duration: 15s; animation-delay: 5s; }
+.kavita-hero__particle.p-9  { width: 4px; height: 4px; top: 32%; left: 90%; animation-duration: 9s;  animation-delay: 1.2s; }
+.kavita-hero__particle.p-10 { width: 3px; height: 3px; top: 72%; left: 42%; animation-duration: 11s; animation-delay: 3.8s; }
+.kavita-hero__particle.p-11 { width: 5px; height: 5px; top: 48%; left: 70%; animation-duration: 8.5s;animation-delay: 0.8s; }
+.kavita-hero__particle.p-12 { width: 3px; height: 3px; top: 60%; left: 92%; animation-duration: 12s; animation-delay: 4.2s; }
+.kavita-hero__particle.p-13 { width: 4px; height: 4px; top: 22%; left: 44%; animation-duration: 10s; animation-delay: 2.2s; }
+.kavita-hero__particle.p-14 { width: 3px; height: 3px; top: 85%; left: 75%; animation-duration: 14s; animation-delay: 1.8s; }
+
+@keyframes khParticleDrift {
+  0% { transform: translateY(0) translateX(0) scale(0.8); opacity: 0; }
+  15% { opacity: 0.85; }
+  85% { opacity: 0.85; }
+  100% { transform: translateY(-80px) translateX(25px) scale(1.15); opacity: 0; }
+}
+
+/* Hero Stage */
+.kavita-hero__stage {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 5.5rem 2.5rem 3.5rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.kavita-hero__inner {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 46% 54%;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+/* Left Column */
+.kavita-hero__content-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  max-width: 580px;
+}
+
+.kavita-hero__brand-logo-wrap {
+  margin-bottom: 1.35rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.kavita-hero__brand-logo {
+  width: 140px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 16px rgba(201, 162, 75, 0.28));
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.kavita-hero__brand-logo:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.kavita-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.4rem;
+}
+
+.kavita-hero__eyebrow-text {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--kh-gold-accent);
+}
+
+.kavita-hero__eyebrow-star {
+  font-size: 0.7rem;
+  color: var(--kh-gold-light);
+}
+
+.kavita-hero__eyebrow-line {
+  width: 28px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--kh-gold-accent));
+}
+
+.kavita-hero__heading {
+  font-family: var(--kh-serif);
+  font-size: clamp(38px, 4.4vw, 68px);
+  line-height: 1.14;
+  font-weight: 700;
+  letter-spacing: 0.015em;
+  color: var(--kh-heading-color);
+  margin: 0 0 1.2rem 0;
+}
+
+.kavita-hero__heading-gold {
+  background: linear-gradient(135deg, #FFF0CA 0%, #D8B45D 45%, #C9A24B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.kavita-hero__crescent-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.kavita-hero__crescent-wing {
+  width: 44px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(216, 180, 93, 0.4), transparent);
+}
+
+.kavita-hero__desc {
+  font-size: clamp(15px, 1.05vw, 17px);
+  line-height: 1.72;
+  color: var(--kh-body-color);
+  margin: 0 0 2.4rem 0;
+  max-width: 520px;
+}
+
+.kavita-hero__ctas {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+/* CTA Buttons */
+.kavita-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.92rem 2.2rem;
+  border-radius: 999px;
+  font-family: var(--kh-sans);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  white-space: nowrap;
+  border: none;
+}
+
+.kavita-hero__btn--primary {
+  background: linear-gradient(135deg, #EAD087 0%, #D8B45D 50%, #B88E33 100%);
+  color: #0A0512;
+  box-shadow: 0 4px 22px rgba(216, 180, 93, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.kavita-hero__btn--primary:hover {
+  background: linear-gradient(135deg, #FFF0B8 0%, #E6C26A 50%, #C99E3D 100%);
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(216, 180, 93, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.kavita-hero__btn-arrow {
+  transition: transform 0.25s ease;
+}
+
+.kavita-hero__btn--primary:hover .kavita-hero__btn-arrow {
+  transform: translateX(4px);
+}
+
+.kavita-hero__btn--secondary {
+  background: rgba(11, 6, 20, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--kh-heading-color);
+  border: 1.5px solid rgba(216, 180, 93, 0.45);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.kavita-hero__btn--secondary:hover {
+  background: rgba(216, 180, 93, 0.12);
+  border-color: var(--kh-gold-accent);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(216, 180, 93, 0.25);
+}
+
+/* Right Column Visual */
+.kavita-hero__visual-col {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 480px;
+}
+
+/* Celestial Orbit Effect */
+.kavita-hero__celestial-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 580px;
+  height: 580px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.kavita-hero__orbit-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px dashed rgba(216, 180, 93, 0.22);
+}
+
+.kavita-hero__orbit-ring--outer {
+  animation: khOrbitRotate 32s linear infinite;
+}
+
+.kavita-hero__orbit-ring--inner {
+  inset: 60px;
+  border: 1px solid rgba(216, 180, 93, 0.18);
+  animation: khOrbitRotateRev 24s linear infinite;
+}
+
+@keyframes khOrbitRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes khOrbitRotateRev {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.kavita-hero__orbit-sparkle,
+.kavita-hero__orbit-moon {
+  position: absolute;
+  color: var(--kh-gold-accent);
+  text-shadow: 0 0 10px var(--kh-gold-light);
+}
+
+.kavita-hero__orbit-sparkle.s-1 { top: 6%; left: 50%; font-size: 0.9rem; animation: khPulseGlow 3.5s infinite; }
+.kavita-hero__orbit-sparkle.s-2 { bottom: 12%; right: 18%; font-size: 0.8rem; animation: khPulseGlow 4s infinite 1s; }
+.kavita-hero__orbit-sparkle.s-3 { top: 38%; left: 4%; font-size: 0.75rem; animation: khPulseGlow 3s infinite 0.5s; }
+.kavita-hero__orbit-sparkle.s-4 { top: 44%; right: 4%; font-size: 0.85rem; animation: khPulseGlow 4.5s infinite 2s; }
+
+.kavita-hero__orbit-moon.m-1 { top: 18%; right: 22%; font-size: 1.1rem; }
+.kavita-hero__orbit-moon.m-2 { top: 4%; right: 48%; font-size: 0.9rem; }
+.kavita-hero__orbit-moon.m-3 { top: 22%; left: 18%; font-size: 1rem; }
+
+@keyframes khPulseGlow {
+  0%, 100% { opacity: 0.4; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.15); filter: drop-shadow(0 0 8px var(--kh-gold-light)); }
+}
+
+/* 3 Floating Tarot Cards Trio */
+.kavita-hero__cards-trio {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 580px;
+  height: 480px;
+  perspective: 1200px;
+}
+
+.kavita-hero__card-anchor {
+  position: absolute;
+  top: 50%;
+  transform-origin: center center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.kavita-hero__card-anchor--left {
+  left: 8%;
+  transform: translateY(-50%) rotate(-8deg);
+  z-index: 2;
+}
+
+.kavita-hero__card-anchor--center {
+  left: 50%;
+  transform: translate(-50%, -52%) rotate(0deg) scale(1.04);
+  z-index: 4;
+}
+
+.kavita-hero__card-anchor--right {
+  right: 8%;
+  transform: translateY(-50%) rotate(8deg);
+  z-index: 2;
+}
+
+.kavita-hero__card {
+  width: 172px;
+  height: 295px;
+  border-radius: 12px;
+  background: #0B0614;
+  border: 2px solid var(--kh-gold-accent);
+  box-shadow: 
+    0 12px 35px rgba(0, 0, 0, 0.65),
+    0 0 20px rgba(216, 180, 93, 0.22),
+    inset 0 0 12px rgba(216, 180, 93, 0.15);
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.kavita-hero__card--2 {
+  width: 188px;
+  height: 320px;
+  border-width: 2.5px;
+  box-shadow: 
+    0 20px 45px rgba(0, 0, 0, 0.75),
+    0 0 30px rgba(216, 180, 93, 0.32),
+    inset 0 0 15px rgba(216, 180, 93, 0.2);
+}
+
+.kavita-hero__card-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.kavita-hero__card-frame {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  position: relative;
+}
+
+.kavita-hero__card-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  background: #140B22;
+  border: 1px solid rgba(216, 180, 93, 0.4);
+}
+
+.kavita-hero__card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.kavita-hero__card-ribbon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(7, 5, 12, 0.95) 0%, rgba(7, 5, 12, 0.7) 70%, transparent 100%);
+  padding: 1.2rem 0.5rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.kavita-hero__card-num {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--kh-gold-accent);
+}
+
+.kavita-hero__card-title {
+  font-family: var(--kh-serif);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #FFF3D6;
+  margin-top: 1px;
+}
+
+.kavita-hero__card-sheen {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.22) 0%, transparent 45%, rgba(216, 180, 93, 0.15) 100%);
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.4s ease;
+}
+
+/* Card Floating Animations */
+.kavita-hero--floating .kavita-hero__card-anchor--left {
+  animation: khFloatCardLeft 6.8s ease-in-out infinite;
+}
+
+.kavita-hero--floating .kavita-hero__card-anchor--center {
+  animation: khFloatCardCenter 7.5s ease-in-out infinite 0.6s;
+}
+
+.kavita-hero--floating .kavita-hero__card-anchor--right {
+  animation: khFloatCardRight 8.2s ease-in-out infinite 1.2s;
+}
+
+@keyframes khFloatCardLeft {
+  0%, 100% { transform: translateY(-50%) rotate(-8deg); }
+  50% { transform: translateY(-58%) rotate(-5deg); }
+}
+
+@keyframes khFloatCardCenter {
+  0%, 100% { transform: translate(-50%, -52%) rotate(0deg) scale(1.04); }
+  50% { transform: translate(-50%, -60%) rotate(0deg) scale(1.07); }
+}
+
+@keyframes khFloatCardRight {
+  0%, 100% { transform: translateY(-50%) rotate(8deg); }
+  50% { transform: translateY(-57%) rotate(5deg); }
+}
+
+.kavita-hero__card:hover,
+.kavita-hero__card:focus-visible {
+  transform: translateY(-8px) scale(1.05);
+  border-color: var(--kh-gold-light);
+  box-shadow: 
+    0 24px 50px rgba(0, 0, 0, 0.8),
+    0 0 35px rgba(216, 180, 93, 0.55),
+    inset 0 0 15px rgba(255, 223, 120, 0.3);
+  z-index: 10;
+}
+
+.kavita-hero__card:hover .kavita-hero__card-img {
+  transform: scale(1.05);
+}
+
+/* Crystal Orb Pedestal Illumination */
+.kavita-hero__orb-glow {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 240px;
+  height: 120px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.kavita-hero__orb-sphere {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(162, 108, 245, 0.45) 0%, rgba(216, 180, 93, 0.25) 50%, transparent 75%);
+  filter: blur(20px);
+  animation: khOrbPulse 4s ease-in-out infinite;
+}
+
+.kavita-hero__orb-pedestal-light {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  height: 25px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(255, 223, 120, 0.55) 0%, rgba(216, 180, 93, 0.2) 60%, transparent 80%);
+  filter: blur(8px);
+}
+
+@keyframes khOrbPulse {
+  0%, 100% { opacity: 0.6; transform: translateX(-50%) scale(0.95); }
+  50% { opacity: 1; transform: translateX(-50%) scale(1.1); filter: blur(25px); }
+}
+
+/* Bottom Trust Strip */
+.kavita-hero__trust-strip {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  background: rgba(7, 5, 12, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid rgba(216, 180, 93, 0.25);
+  box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.kavita-hero__trust-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 1.4rem 2.5rem;
+}
+
+.kavita-hero__trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.8rem;
+  align-items: center;
+}
+
+.kavita-hero__trust-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 0.5rem;
+}
+
+.kavita-hero__trust-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(216, 180, 93, 0.08);
+  border: 1px solid rgba(216, 180, 93, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--kh-gold-accent);
+  flex-shrink: 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.kavita-hero__trust-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.kavita-hero__trust-title {
+  font-family: var(--kh-serif);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #FFF7EB;
+  line-height: 1.25;
+}
+
+.kavita-hero__trust-sub {
+  font-size: 0.76rem;
+  color: #A39D98;
+  margin-top: 0.25rem;
+  line-height: 1.35;
+}
+
+@media (max-width: 1200px) {
+  .kavita-hero__stage { padding: 4.5rem 2rem 3rem; }
+  .kavita-hero__inner { gap: 2.5rem; }
+  .kavita-hero__heading { font-size: clamp(34px, 4vw, 54px); }
+  .kavita-hero__card { width: 150px; height: 255px; }
+  .kavita-hero__card--2 { width: 165px; height: 280px; }
+}
+
+@media (max-width: 991px) {
+  .kavita-hero { min-height: auto; }
+  .kavita-hero__inner { grid-template-columns: 1fr; text-align: center; gap: 3.5rem; }
+  .kavita-hero__content-col { align-items: center; text-align: center; max-width: 100%; margin: 0 auto; }
+  .kavita-hero__desc { margin-left: auto; margin-right: auto; }
+  .kavita-hero__ctas { justify-content: center; }
+  .kavita-hero__visual-col { min-height: 420px; }
+  .kavita-hero__trust-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .kavita-hero__overlay-editorial {
+    background: linear-gradient(180deg, #07050C 0%, rgba(7, 5, 12, 0.92) 40%, rgba(11, 6, 20, 0.65) 75%, #07050C 100%);
+  }
+}
+
+@media (max-width: 767px) {
+  .kavita-hero__stage { padding: 3rem 1.25rem 2.5rem; }
+  .kavita-hero__inner { display: flex; flex-direction: column; gap: 2.2rem; }
+  .kavita-hero__content-col { display: contents; }
+  .kavita-hero__brand-logo-wrap { order: 0; margin-bottom: 0.8rem; }
+  .kavita-hero__brand-logo { width: 110px; }
+  .kavita-hero__eyebrow { order: 1; margin-bottom: 0.8rem; }
+  .kavita-hero__heading { order: 2; font-size: clamp(30px, 8vw, 42px); margin-bottom: 0.8rem; }
+  .kavita-hero__crescent-divider { order: 3; margin-bottom: 1rem; }
+  .kavita-hero__desc { order: 4; font-size: 0.92rem; margin-bottom: 1.5rem; }
+  .kavita-hero__visual-col { order: 5; min-height: 320px; width: 100%; margin: 0.5rem 0 1.5rem; }
+  .kavita-hero__ctas { order: 6; width: 100%; flex-direction: column; gap: 0.8rem; }
+  .kavita-hero__btn { width: 100%; padding: 0.95rem 1.5rem; min-height: 48px; }
+  .kavita-hero__card { width: 115px; height: 195px; }
+  .kavita-hero__card--2 { width: 128px; height: 218px; }
+  .kavita-hero__card-anchor--left { left: 2%; }
+  .kavita-hero__card-anchor--right { right: 2%; }
+  .kavita-hero__celestial-orbit { width: 360px; height: 360px; }
+  .kavita-hero__trust-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .kavita-hero__trust-container { padding: 1.2rem 1.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kavita-hero__particle,
+  .kavita-hero__orbit-ring,
+  .kavita-hero__card-anchor,
+  .kavita-hero__orb-sphere {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
