@@ -2188,26 +2188,56 @@ html, body {
     padding-bottom: 78px !important; /* Prevents mobile bottom nav bar from covering content */
   }
 
-  /* Fix Header Overflow on Mobile (No buttons outside screen) */
+  /* Fix Header Overflow on Mobile: ONLY LOGO SHOWS (NAME REMOVED, ALL BUTTONS VISIBLE) */
   .kavita-hdr__main {
-    padding: 0.55rem 0.75rem;
-    overflow-x: hidden;
+    padding: 0.55rem 0.75rem !important;
+    overflow-x: hidden !important;
   }
-  .kavita-hdr__util-link {
-    display: none !important; /* Hides desktop Book Online button on mobile so header never overflows */
+  .kavita-hdr__brand-name,
+  .kavita-hdr__brand-text,
+  .kavita-hdr__brand-sub {
+    display: none !important; /* ONLY LOGO SHOWS ON MOBILE AS REQUESTED */
   }
-  .kavita-hdr__actions {
-    gap: 0.65rem;
+  .kavita-hdr__brand {
+    flex: 0 0 auto !important;
+  }
+  .kavita-hdr__logo-link {
+    display: flex !important;
+    align-items: center !important;
   }
   .kavita-hdr__logo-img {
-    height: 36px;
+    height: 38px !important;
+    width: auto !important;
+    display: block !important;
   }
-  .kavita-hdr__brand-text {
-    font-size: 0.92rem;
-    letter-spacing: 0.05em;
+  .kavita-hdr__search-wrap {
+    display: none !important; /* Hide wide desktop search bar so all buttons fit */
   }
-  .kavita-hdr__brand-sub {
-    font-size: 0.6rem;
+  .kavita-hdr__actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.65rem !important;
+    margin-left: auto !important;
+  }
+  .kavita-hdr__util-link {
+    display: none !important;
+  }
+  .kavita-hdr__icon-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 35px !important;
+    height: 35px !important;
+    border-radius: 50% !important;
+    background: #F8F5EE !important;
+    border: 1px solid #DFD8CB !important;
+    color: #1C1917 !important;
+    padding: 0 !important;
+    flex-shrink: 0 !important;
+  }
+  .kavita-hdr__icon-btn--cart {
+    display: flex !important;
+    position: relative !important;
   }
 
   /* Slider Responsive Controls */
@@ -2288,77 +2318,124 @@ html, body {
 }
 
 @media (max-width: 767px) {
+  /* EXACTLY 2 PRODUCTS PER ROW - CLEAN FULL-WIDTH SLIDER WITH ZERO EDGE CUTOFF */
   .kavita-carousel-slide {
-    flex: 0 0 calc(50% - 0.45rem) !important; /* EXACTLY 2 IN ONE ROW */
-    min-width: 145px !important;
-    max-width: 50% !important;
-    scroll-snap-align: start;
+    flex: 0 0 calc(50% - 0.35rem) !important;
+    min-width: calc(50% - 0.35rem) !important;
+    max-width: calc(50% - 0.35rem) !important;
+    scroll-snap-align: start !important;
   }
   .kavita-carousel-track {
-    gap: 0.8rem !important;
-    padding: 0.5rem 0.2rem 1.25rem !important;
+    gap: 0.7rem !important;
+    padding: 0.5rem 0.5rem 1.35rem !important; /* Small, comfortable side padding so no cards are hidden */
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
   }
   .product-card {
-    border-radius: 14px !important;
+    border-radius: 12px !important;
+    background: #FFFFFF !important;
+    border: 1px solid #ECE7DE !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
   }
   .product-media {
     height: auto !important;
     aspect-ratio: 1 / 1 !important;
-    border-radius: 12px 12px 0 0 !important;
+    border-radius: 11px 11px 0 0 !important;
+    position: relative !important;
+  }
+  .product-wishlist-heart {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 0.95rem !important;
+    top: 6px !important;
+    right: 6px !important;
+  }
+  .product-badge-flag {
+    font-size: 0.62rem !important;
+    padding: 0.15rem 0.4rem !important;
+    top: 6px !important;
+    left: 6px !important;
   }
   .product-info-wrap {
-    padding: 0.65rem 0.5rem !important;
+    padding: 0.7rem 0.6rem 0.8rem !important; /* Good substantial card padding */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    flex: 1 !important;
   }
   .product-category-sub {
-    font-size: 0.62rem !important;
-    margin-bottom: 0.15rem !important;
+    font-size: 0.65rem !important;
+    color: #8C847B !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
+    margin-bottom: 0.2rem !important;
   }
   .product-title {
-    font-size: 0.82rem !important;
-    line-height: 1.25 !important;
-    min-height: 2.1em !important;
+    font-size: 0.88rem !important; /* Good substantial readable size */
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    min-height: 2.3em !important;
     display: -webkit-box !important;
     -webkit-line-clamp: 2 !important;
     -webkit-box-orient: vertical !important;
     overflow: hidden !important;
-    margin-bottom: 0.25rem !important;
+    margin-bottom: 0.35rem !important;
+    color: #1A1715 !important;
+  }
+  .product-title a {
+    color: inherit !important;
+    text-decoration: none !important;
   }
   .product-reviews-stars {
-    font-size: 0.68rem !important;
-    margin-bottom: 0.25rem !important;
+    font-size: 0.72rem !important;
+    color: #D8B45D !important;
+    margin-bottom: 0.35rem !important;
   }
   .product-reviews-count {
     display: none !important;
   }
   .product-pricing-row {
-    flex-wrap: wrap !important;
-    gap: 0.25rem !important;
+    display: flex !important;
     align-items: baseline !important;
-    margin-bottom: 0.35rem !important;
+    gap: 0.35rem !important;
+    margin-bottom: 0.45rem !important;
+    flex-wrap: wrap !important;
   }
   .current-price {
-    font-size: 0.92rem !important;
+    font-size: 0.98rem !important; /* Bold, clear, not miniature */
+    font-weight: 800 !important;
+    color: #80142B !important;
   }
   .compare-price {
-    font-size: 0.72rem !important;
+    font-size: 0.74rem !important;
+    color: #9A9289 !important;
+    text-decoration: line-through !important;
   }
   .discount-pill {
-    font-size: 0.6rem !important;
+    font-size: 0.62rem !important;
     padding: 0.12rem 0.35rem !important;
+    background: #FFF1F3 !important;
+    color: #80142B !important;
+    border: 1px solid rgba(128, 20, 43, 0.2) !important;
   }
   .product-features-bullet {
     display: none !important;
   }
   .product-card-actions {
-    margin-top: 0.35rem !important;
+    margin-top: 0.4rem !important;
     display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
   }
   .product-card-actions .btn {
     width: 100% !important;
-    padding: 0.52rem 0.3rem !important;
-    font-size: 0.72rem !important;
+    padding: 0.6rem 0.45rem !important; /* Good touch button */
+    font-size: 0.8rem !important; /* Good readable text */
+    font-weight: 700 !important;
     border-radius: 8px !important;
     text-align: center !important;
     white-space: nowrap !important;
@@ -2680,6 +2757,180 @@ html, body {
   color: #8A8177;
   margin-top: 0.3rem;
   line-height: 1.3;
+}
+
+/* ==========================================================================
+   AUTHENTIC CIRCULAR CATEGORIES (OLD ONE - FULL WIDTH WITH SMALL GAPS)
+   ========================================================================== */
+.categories-circle-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0.5rem 0.5rem 0.85rem;
+}
+
+.cat-circle-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  gap: 0.65rem;
+  flex: 0 0 130px;
+  text-align: center;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cat-circle-card:hover {
+  transform: translateY(-5px);
+}
+
+.cat-circle-avatar-wrap {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  padding: 2.5px;
+  background: linear-gradient(135deg, #FFDF78 0%, #C59B27 50%, #80142B 100%);
+  box-shadow: 0 4px 14px rgba(197, 155, 39, 0.28);
+  transition: all 0.35s ease;
+}
+
+.cat-circle-card:hover .cat-circle-avatar-wrap {
+  transform: scale(1.08);
+  box-shadow: 0 8px 22px rgba(128, 20, 43, 0.35);
+}
+
+.cat-circle-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #F4EFE6;
+  display: block;
+}
+
+.cat-circle-name {
+  font-family: 'Cinzel', serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1C1917;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+  transition: color 0.25s ease;
+}
+
+.cat-circle-card:hover .cat-circle-name {
+  color: #80142B;
+}
+
+@media (max-width: 991px) {
+  .categories-circle-row {
+    gap: 1rem;
+  }
+  .cat-circle-avatar-wrap {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 767px) {
+  .categories-circle-row {
+    display: flex !important;
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 0.75rem !important; /* SMALL GAPS ONLY */
+    padding: 0.4rem 0.85rem 0.85rem !important; /* SMALL GAPS ONLY FROM LEFT & RIGHT SIDE */
+    width: 100% !important;
+    scrollbar-width: none !important;
+  }
+  .categories-circle-row::-webkit-scrollbar {
+    display: none !important;
+  }
+  .cat-circle-card {
+    flex: 0 0 82px !important;
+    min-width: 82px !important;
+    max-width: 86px !important;
+    scroll-snap-align: start !important;
+    gap: 0.45rem !important;
+  }
+  .cat-circle-avatar-wrap {
+    width: 72px !important;
+    height: 72px !important;
+  }
+  .cat-circle-name {
+    font-size: 0.7rem !important;
+    line-height: 1.2 !important;
+  }
+}
+
+/* ==========================================================================
+   REFINED UNDERSTATED LUXURY HEADINGS (SMALL HEADINGS ACROSS ALL SECTIONS)
+   ========================================================================== */
+.section-title {
+  font-family: 'Cinzel', 'Playfair Display', serif !important;
+  font-size: clamp(1.3rem, 2vw, 1.65rem) !important; /* Small refined headings */
+  font-weight: 700 !important;
+  color: #1A1715 !important;
+  letter-spacing: 0.04em !important;
+  margin-bottom: 0.45rem !important;
+  line-height: 1.3 !important;
+}
+
+.section-kicker {
+  font-family: 'Cinzel', serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.16em !important;
+  color: #80142B !important;
+  text-transform: uppercase !important;
+  margin-bottom: 0.35rem !important;
+}
+
+.section-sub {
+  font-size: 0.86rem !important;
+  line-height: 1.55 !important;
+  color: #6B6258 !important;
+  max-width: 600px !important;
+  margin: 0 auto !important;
+}
+
+.section-header {
+  margin-bottom: 1.5rem !important;
+}
+
+@media (max-width: 767px) {
+  .section-title {
+    font-size: 1.15rem !important;
+  }
+  .section-kicker {
+    font-size: 0.66rem !important;
+    letter-spacing: 0.12em !important;
+  }
+  .section-sub {
+    font-size: 0.78rem !important;
+    line-height: 1.45 !important;
+    padding: 0 0.5rem !important;
+  }
+  .section-header {
+    margin-bottom: 1.15rem !important;
+  }
+}
+
+/* ==========================================================================
+   WHOLE WEBSITE CELESTIAL ICE EFFECT (SMALL CIRCLE ICE PARTICLES)
+   ========================================================================== */
+#kavitaIceCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9998;
 }
 
 /* ==========================================================================
