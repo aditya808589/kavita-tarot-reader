@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Sacred Cart — MANTRAMM × KAVITA</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/vanikabir.css">
+
+  <style>
+    .cart-page-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3.5rem;
+      padding: 3rem 0 5rem;
+    }
+
+    .cart-table-card {
+      background: #FFFFFF;
+      border: 1px solid var(--v-border);
+      border-radius: 20px;
+      padding: 2.2rem;
+      box-shadow: var(--v-shadow-sm);
+    }
+
+    .cart-summary-card {
+      background: #FFFFFF;
+      border: 2px solid var(--v-gold);
+      border-radius: 20px;
+      padding: 2.2rem;
+      box-shadow: var(--v-shadow-sm);
+      height: fit-content;
+      position: sticky;
+      top: 100px;
+    }
+
+    .cart-table-head {
+      display: grid;
+      grid-template-columns: 3fr 1fr 1.2fr 1fr;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--v-border);
+      font-size: 0.85rem;
+      color: var(--v-text-muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .cart-page-item {
+      display: grid;
+      grid-template-columns: 3fr 1fr 1.2fr 1fr;
+      align-items: center;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--v-border);
+    }
+
+    .cart-item-detail-wrap {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .cart-item-detail-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 1px solid var(--v-border);
+    }
+
+    @media (max-width: 900px) {
+      .cart-page-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .cart-table-head { display: none; }
+      .cart-page-item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP MARQUEE -->
+  <div class="top-marquee-strip">
+    <div class="top-marquee-track">
+      <div class="top-marquee-item"><span class="bullet">✦</span> 100% ORIGINAL & LAB CERTIFIED RUDRAKSHA</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> FREE SHIPPING ON ORDERS ABOVE ₹999</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> CASH ON DELIVERY AVAILABLE ACROSS INDIA</div>
+      <!-- Loop -->
+      <div class="top-marquee-item"><span class="bullet">✦</span> 100% ORIGINAL & LAB CERTIFIED RUDRAKSHA</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> FREE SHIPPING ON ORDERS ABOVE ₹999</div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-wrap">
+        <a href="index.html" class="brand">
+          <span class="brand-logo-icon">🕉</span>
+          <span>MANTRAMM</span>
+        </a>
+        <span class="brand-tagline">Vedic Sacred Store × Kavita Tarot</span>
+      </div>
+
+      <ul class="nav-menu">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="collections.html">Collections</a></li>
+        <li class="nav-item"><a class="nav-link" href="consultations.html">Consultations</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Kavita</a></li>
+        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ & Care</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <a href="cart.html" class="cart-btn" style="background: var(--v-maroon); color: #fff; border-color: var(--v-maroon);">
+          <span>Cart</span>
+          <span class="cart-badge" style="background: #fff; color: var(--v-maroon);" id="cartCount">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a> / <span>Your Sacred Cart</span>
+      </div>
+      <h1 class="page-hero-title">Your Sacred Cart</h1>
+      <p class="page-hero-sub">Review your consecrated items before entering your delivery details.</p>
+    </div>
+  </section>
+
+  <!-- MAIN CART -->
+  <main class="container">
+    <div class="cart-page-layout">
+      
+      <!-- Table Column -->
+      <div class="cart-table-card">
+        <div class="cart-progress-bar-wrap" style="border-radius: 10px; margin-bottom: 2rem;">
+          <div id="shippingProgressText">✦ Add ₹999 for FREE Express Delivery!</div>
+          <div class="cart-progress-bar">
+            <div class="cart-progress-fill" id="shippingProgressFill" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <div class="cart-table-head">
+          <div>Offering</div>
+          <div>Unit Price</div>
+          <div>Quantity</div>
+          <div style="text-align: right;">Total</div>
+        </div>
+
+        <div id="cartPageList">
+          <!-- Populated by JS -->
+        </div>
+
+        <div style="margin-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <a href="collections.html" class="btn btn-outline" style="font-size: 0.85rem;">
+            ← Continue Browsing
+          </a>
+          <button onclick="clearFullCart()" style="background: none; border: none; color: #d32f2f; font-weight: 700; cursor: pointer; font-size: 0.85rem;">
+            Clear All Items
+          </button>
+        </div>
+      </div>
+
+      <!-- Order Summary Column -->
+      <div class="cart-summary-card">
+        <h3 style="font-size: 1.45rem; color: var(--v-text-dark); margin-bottom: 1.5rem; border-bottom: 1px solid var(--v-border); padding-bottom: 0.8rem;">
+          Order Summary
+        </h3>
+
+        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; font-size: 0.95rem;">
+          <span>Subtotal:</span>
+          <span id="pageCartSubtotal" style="font-family: var(--font-heading); font-weight: 700; color: var(--v-text-dark);">₹0</span>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem; font-size: 0.95rem;">
+          <span>Delivery:</span>
+          <span style="color: var(--v-green); font-weight: 700;">FREE (Orders > ₹999)</span>
+        </div>
+
+        <div style="border-top: 2px solid var(--v-border); padding-top: 1.2rem; margin-bottom: 1.8rem; display: flex; justify-content: space-between; font-size: 1.3rem; font-family: var(--font-heading); font-weight: 800;">
+          <span>Grand Total:</span>
+          <span id="pageCartTotal" style="color: var(--v-maroon);">₹0</span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Special Sacred Note or Gifting Request</label>
+          <textarea class="form-textarea" rows="2" placeholder="e.g. Please energize with special Dhan Labh mantras in recipient name"></textarea>
+        </div>
+
+        <button class="btn btn-maroon" style="width: 100%; padding: 1.1rem; font-size: 0.95rem;" onclick="checkoutCart()">
+          ✦ Proceed to Checkout (COD Avail.)
+        </button>
+
+        <div style="text-align: center; font-size: 0.78rem; color: var(--v-text-muted); margin-top: 1rem;">
+          🔒 256-Bit SSL Encrypted · Tamper-proof packaging with Lab Certificate
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 MANTRAMM × KAVITA TAROT READER. All Rights Reserved.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="collections.html">Collections</a>
+          <a href="consultations.html">Consultations</a>
+          <a href="faq.html">FAQ & Care</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/store-data.js"></script>
+  <script>
+    function renderCartPage() {
+      const container = document.getElementById('cartPageList');
+      const subtotalEl = document.getElementById('pageCartSubtotal');
+      const totalEl = document.getElementById('pageCartTotal');
+
+      const subtotal = cart.reduce((acc, i) => acc + (i.price * i.qty), 0);
+      subtotalEl.innerText = '₹' + subtotal.toLocaleString('en-IN');
+      totalEl.innerText = '₹' + subtotal.toLocaleString('en-IN');
+
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div style="text-align: center; padding: 4rem 1rem; color: var(--v-text-muted);">
+            <div style="font-size: 3rem; margin-bottom: 1rem; color: var(--v-maroon);">📿</div>
+            <h3 style="color: var(--v-text-dark); margin-bottom: 0.5rem;">Your Cart is Empty</h3>
+            <p>You have not added any consecrated Rudrakshas or gemstones yet.</p>
+            <a href="collections.html" class="btn btn-maroon" style="margin-top: 1.5rem;">Browse Sacred Collections</a>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = cart.map((item, index) => `
+        <div class="cart-page-item">
+          <div class="cart-item-detail-wrap">
+            <img class="cart-item-detail-img" src="${item.img}" alt="${item.name}">
+            <div>
+              <div style="font-weight: 700; color: var(--v-text-dark); margin-bottom: 0.2rem;">${item.name}</div>
+              <button onclick="removeFromCart(${index}); renderCartPage();" style="background: none; border: none; color: #d32f2f; font-size: 0.78rem; cursor: pointer; font-weight: 600;">Remove</button>
+            </div>
+          </div>
+          <div style="color: var(--v-text-muted); font-size: 0.95rem;">
+            ₹${item.price.toLocaleString('en-IN')}
+          </div>
+          <div>
+            <div class="cart-qty-ctrl">
+              <button class="qty-btn" onclick="changeQty(${index}, -1); renderCartPage();">−</button>
+              <span style="font-size: 0.9rem; font-weight: bold;">${item.qty}</span>
+              <button class="qty-btn" onclick="changeQty(${index}, 1); renderCartPage();">+</button>
+            </div>
+          </div>
+          <div style="text-align: right; font-family: var(--font-heading); font-weight: 800; color: var(--v-maroon); font-size: 1.05rem;">
+            ₹${(item.price * item.qty).toLocaleString('en-IN')}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function clearFullCart() {
+      if (confirm('Are you sure you want to clear your cart?')) {
+        cart = [];
+        saveCart();
+        updateCartUI();
+        renderCartPage();
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', renderCartPage);
+  </script>
+</body>
+</html>

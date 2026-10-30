@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product Details — MANTRAMM × KAVITA</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/vanikabir.css">
+
+  <style>
+    .pdp-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 4rem;
+      padding: 3rem 0 5rem;
+    }
+
+    .pdp-gallery-wrap {
+      position: sticky;
+      top: 100px;
+    }
+
+    .pdp-main-img-box {
+      background: #FFFFFF;
+      border: 1px solid var(--v-border);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--v-shadow-sm);
+      height: 500px;
+      margin-bottom: 1rem;
+    }
+
+    .pdp-main-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .pdp-main-img:hover {
+      transform: scale(1.05);
+    }
+
+    .pdp-thumbs-row {
+      display: flex;
+      gap: 0.8rem;
+    }
+
+    .pdp-thumb {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 2px solid var(--v-border);
+      cursor: pointer;
+      opacity: 0.7;
+      transition: all 0.25s ease;
+    }
+
+    .pdp-thumb.active, .pdp-thumb:hover {
+      border-color: var(--v-maroon);
+      opacity: 1;
+    }
+
+    .pdp-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .pdp-info-col h1 {
+      font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+      color: var(--v-text-dark);
+      margin-bottom: 0.6rem;
+      line-height: 1.25;
+    }
+
+    .pdp-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 1.2rem;
+      margin: 1.2rem 0 1.5rem;
+    }
+
+    .pdp-price {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      color: var(--v-maroon);
+      font-weight: 800;
+    }
+
+    .pdp-compare {
+      font-size: 1.2rem;
+      color: var(--v-text-muted);
+      text-decoration: line-through;
+    }
+
+    .consecration-box {
+      background: #FFF8EA;
+      border: 1px solid var(--v-gold);
+      border-radius: 12px;
+      padding: 1.2rem;
+      margin: 1.5rem 0;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .qty-select-row {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin: 1.8rem 0;
+    }
+
+    .qty-box {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--v-border);
+      border-radius: 999px;
+      background: #FFFFFF;
+      padding: 0.3rem 0.6rem;
+    }
+
+    .qty-box button {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      padding: 0 0.6rem;
+      cursor: pointer;
+      color: var(--v-text-dark);
+    }
+
+    .qty-box span {
+      font-weight: 700;
+      font-size: 1rem;
+      min-width: 30px;
+      text-align: center;
+    }
+
+    /* Tabs */
+    .pdp-tabs-nav {
+      display: flex;
+      gap: 1.5rem;
+      border-bottom: 2px solid var(--v-border);
+      margin: 3.5rem 0 2rem;
+    }
+
+    .pdp-tab-btn {
+      background: none;
+      border: none;
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      color: var(--v-text-muted);
+      padding: 0.8rem 0;
+      cursor: pointer;
+      font-weight: 700;
+      position: relative;
+    }
+
+    .pdp-tab-btn.active {
+      color: var(--v-maroon);
+    }
+
+    .pdp-tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--v-maroon);
+    }
+
+    .pdp-tab-content {
+      display: none;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--v-text-body);
+    }
+
+    .pdp-tab-content.active {
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      .pdp-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .pdp-gallery-wrap {
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. TOP MARQUEE -->
+  <div class="top-marquee-strip">
+    <div class="top-marquee-track">
+      <div class="top-marquee-item"><span class="bullet">✦</span> 100% ORIGINAL & LAB CERTIFIED RUDRAKSHA</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> ENERGIZED WITH VEDIC PRAN PRATISHTHA</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> FREE SHIPPING ON ORDERS ABOVE ₹999</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> CASH ON DELIVERY AVAILABLE ACROSS INDIA</div>
+      <!-- Loop -->
+      <div class="top-marquee-item"><span class="bullet">✦</span> 100% ORIGINAL & LAB CERTIFIED RUDRAKSHA</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> ENERGIZED WITH VEDIC PRAN PRATISHTHA</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> FREE SHIPPING ON ORDERS ABOVE ₹999</div>
+    </div>
+  </div>
+
+  <!-- 2. STICKY HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-wrap">
+        <a href="index.html" class="brand">
+          <span class="brand-logo-icon">🕉</span>
+          <span>MANTRAMM</span>
+        </a>
+        <span class="brand-tagline">Vedic Sacred Store × Kavita Tarot</span>
+      </div>
+
+      <ul class="nav-menu">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="collections.html">Collections</a></li>
+        <li class="nav-item"><a class="nav-link" href="consultations.html">Consultations</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Kavita</a></li>
+        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ & Care</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <button class="cart-btn" id="openCartBtn">
+          <span>Cart</span>
+          <span class="cart-badge" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. MAIN PRODUCT DETAILS -->
+  <main class="container">
+    <div style="padding: 1.5rem 0 0.5rem;" class="breadcrumbs">
+      <a href="index.html">Home</a> / <a href="collections.html">Collections</a> / <span id="breadcrumbTitle">Product</span>
+    </div>
+
+    <div class="pdp-layout">
+      
+      <!-- Gallery Column -->
+      <div class="pdp-gallery-wrap">
+        <div class="pdp-main-img-box">
+          <img id="pdpMainImg" class="pdp-main-img" src="" alt="">
+        </div>
+        <div class="pdp-thumbs-row" id="pdpThumbsRow">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Info Column -->
+      <div class="pdp-info-col">
+        <div style="font-size: 0.8rem; color: var(--v-maroon); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.4rem;" id="pdpCategory">
+          Vedic Offering
+        </div>
+        <h1 id="pdpTitle">Loading Offering...</h1>
+
+        <div class="product-reviews-stars" style="font-size: 0.95rem;">
+          ★★★★★ <span class="product-reviews-count" id="pdpReviewCount">(482 verified devotee reviews)</span>
+        </div>
+
+        <div class="pdp-price-row">
+          <span class="pdp-price" id="pdpPrice">₹0</span>
+          <span class="pdp-compare" id="pdpCompare">₹0</span>
+          <span class="discount-pill" id="pdpDiscount">50% OFF</span>
+        </div>
+
+        <p style="color: var(--v-text-body); font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;" id="pdpDesc">
+          Loading sacred details...
+        </p>
+
+        <!-- Consecration Guarantee Callout -->
+        <div class="consecration-box">
+          <div style="font-size: 2rem; color: var(--v-maroon);">🕉</div>
+          <div style="font-size: 0.88rem; color: #6E5316;">
+            <b>Pran Pratishtha Energized:</b> Each item is ritually consecrated with sacred beeja mantras and Ganges water before dispatch by Varanasi Acharyas. Includes physical lab certificate.
+          </div>
+        </div>
+
+        <!-- Quantity & Add to Cart -->
+        <div class="qty-select-row">
+          <div class="qty-box">
+            <button onclick="decrementPDPQty()">−</button>
+            <span id="pdpQty">1</span>
+            <button onclick="incrementPDPQty()">+</button>
+          </div>
+          <button class="btn btn-maroon" style="flex: 1; padding: 0.9rem;" onclick="addCurrentProductToCart()">
+            ✦ Add to Cart — Free Delivery
+          </button>
+        </div>
+
+        <div style="display: flex; gap: 0.8rem; margin-top: 1rem;">
+          <button class="btn btn-gold" style="width: 100%;" onclick="buyViaWhatsApp()">
+            💬 Instant WhatsApp / COD Order
+          </button>
+        </div>
+
+        <!-- Trust Features -->
+        <div style="margin-top: 2rem; border-top: 1px solid var(--v-border); padding-top: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.85rem; color: var(--v-text-dark);">
+          <div>🚚 <b>Free Express Delivery</b> (Above ₹999)</div>
+          <div>💰 <b>Cash on Delivery</b> Available</div>
+          <div>📜 <b>100% Lab Certified</b> Natural Gemstone</div>
+          <div>🛡️ <b>7-Day Consecrated</b> Return Policy</div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- 4. TABBED DEEP DIVE SECTION -->
+    <div style="max-width: 900px; margin: 0 auto 5rem;">
+      <div class="pdp-tabs-nav">
+        <button class="pdp-tab-btn active" onclick="switchPDPTab(1, this)">Vedic Significance</button>
+        <button class="pdp-tab-btn" onclick="switchPDPTab(2, this)">How to Wear</button>
+        <button class="pdp-tab-btn" onclick="switchPDPTab(3, this)">Cleansing & Care</button>
+        <button class="pdp-tab-btn" onclick="switchPDPTab(4, this)">Lab Certificate</button>
+      </div>
+
+      <div class="pdp-tab-content active" id="tab1">
+        <p id="pdpSignificance">Loading sacred lore...</p>
+      </div>
+
+      <div class="pdp-tab-content" id="tab2">
+        <p id="pdpHowToWear">Loading wearing guidelines...</p>
+      </div>
+
+      <div class="pdp-tab-content" id="tab3">
+        <p>
+          To maintain the pristine spiritual energy of your stone or Rudraksha, cleanse it once a month on the Full Moon (Purnima) night under open moonlight, or purify it with fragrant Sage / Guggul smoke. Avoid spraying artificial chemical perfumes directly onto natural beads.
+        </p>
+      </div>
+
+      <div class="pdp-tab-content" id="tab4">
+        <p>
+          Every Rudraksha bead and healing crystal undergoes rigorous optical magnification, specific gravity, and gemological tests in ISO 9001:2015 accredited laboratories. Your order includes a printed certificate carrying an official verifiable QR code.
+        </p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- 5. FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand" style="color: #FFFFFF; margin-bottom: 0.8rem;">
+            <span class="brand-logo-icon" style="color: #FFDF78;">🕉</span>
+            <span>MANTRAMM</span>
+          </div>
+          <p style="line-height: 1.7; margin-bottom: 1.5rem; color: #A39D98;">
+            Dedicated to reviving authentic Vedic wisdom, original Nepali Rudraksha, energized healing gemstones, and intuitive Tarot guidance by Kavita. Handcrafted and energized with devotion.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h5>Shop Collections</h5>
+          <ul class="footer-links">
+            <li><a href="collections.html?cat=rudraksha">Nepali Rudraksha</a></li>
+            <li><a href="collections.html?cat=bracelets">Healing Bracelets</a></li>
+            <li><a href="collections.html?cat=vastu">Pyrite Vastu Frames</a></li>
+            <li><a href="consultations.html">Book Reading</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Customer Care</h5>
+          <p style="margin-bottom: 0.6rem; color: #D6D0CA;">WhatsApp: +91 98765 43210</p>
+          <p style="margin-bottom: 0.6rem; color: #D6D0CA;">Email: contact@mantramm.com</p>
+          <p style="color: #A39D98;">Hours: 9:00 AM – 8:00 PM IST (Mon–Sat)</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 MANTRAMM × KAVITA TAROT READER. All Rights Reserved.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+          <a href="faq.html">Lab Certification</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 6. CART DRAWER FLYOUT -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <div style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--v-text-dark); font-weight: 700;">
+        Your Sacred Cart (<span id="cartCountHeader">0</span>)
+      </div>
+      <button onclick="closeCart()" style="background: none; border: none; color: var(--v-text-dark); font-size: 1.5rem; cursor: pointer;">✕</button>
+    </div>
+    <div class="cart-progress-bar-wrap">
+      <div id="shippingProgressText">✦ Add ₹999 for FREE Express Delivery!</div>
+      <div class="cart-progress-bar">
+        <div class="cart-progress-fill" id="shippingProgressFill" style="width: 0%;"></div>
+      </div>
+    </div>
+    <div class="cart-body" id="cartItemsList"></div>
+    <div class="cart-footer">
+      <div class="cart-subtotal-row">
+        <span>Subtotal:</span>
+        <span id="cartSubtotal" style="color: var(--v-maroon);">₹0</span>
+      </div>
+      <button class="btn btn-maroon" style="width: 100%; padding: 0.95rem;" onclick="checkoutCart()">
+        ✦ Proceed to Secure Checkout (COD Avail.)
+      </button>
+    </div>
+  </div>
+
+  <!-- 7. FLOATING WHATSAPP -->
+  <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" rel="noopener">💬</a>
+
+  <!-- Script: PDP Engine -->
+  <script src="assets/store-data.js"></script>
+  <script>
+    let currentProduct = null;
+    let currentQty = 1;
+
+    function initPDP() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const idParam = parseInt(urlParams.get('id') || '1', 10);
+      currentProduct = STORE_PRODUCTS.find(p => p.id === idParam) || STORE_PRODUCTS[0];
+
+      document.title = `${currentProduct.title} — MANTRAMM × KAVITA`;
+      document.getElementById('breadcrumbTitle').innerText = currentProduct.title;
+      document.getElementById('pdpCategory').innerText = currentProduct.categoryLabel;
+      document.getElementById('pdpTitle').innerText = currentProduct.title;
+      document.getElementById('pdpReviewCount').innerText = `(${currentProduct.reviewsCount} verified devotee reviews)`;
+      document.getElementById('pdpPrice').innerText = `₹${currentProduct.price.toLocaleString('en-IN')}`;
+      document.getElementById('pdpCompare').innerText = `₹${currentProduct.comparePrice.toLocaleString('en-IN')}`;
+      document.getElementById('pdpDiscount').innerText = currentProduct.discount;
+      document.getElementById('pdpDesc').innerText = currentProduct.description;
+      document.getElementById('pdpSignificance').innerText = currentProduct.sacredSignificance;
+      document.getElementById('pdpHowToWear').innerText = currentProduct.howToWear;
+
+      // Images
+      const mainImg = document.getElementById('pdpMainImg');
+      mainImg.src = currentProduct.img;
+      mainImg.alt = currentProduct.title;
+
+      const thumbsRow = document.getElementById('pdpThumbsRow');
+      thumbsRow.innerHTML = currentProduct.images.map((imgUrl, i) => `
+        <div class="pdp-thumb ${i === 0 ? 'active' : ''}" onclick="changeMainImg('${imgUrl}', this)">
+          <img src="${imgUrl}" alt="${currentProduct.title}">
+        </div>
+      `).join('');
+    }
+
+    function changeMainImg(url, el) {
+      document.getElementById('pdpMainImg').src = url;
+      document.querySelectorAll('.pdp-thumb').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    function incrementPDPQty() {
+      currentQty += 1;
+      document.getElementById('pdpQty').innerText = currentQty;
+    }
+
+    function decrementPDPQty() {
+      if (currentQty > 1) {
+        currentQty -= 1;
+        document.getElementById('pdpQty').innerText = currentQty;
+      }
+    }
+
+    function addCurrentProductToCart() {
+      for (let i = 0; i < currentQty; i++) {
+        addToCart(currentProduct.title, currentProduct.price, currentProduct.img, currentProduct.handle);
+      }
+    }
+
+    function buyViaWhatsApp() {
+      const msg = `*ORDER REQUEST - MANTRAMM × KAVITA*%0A%0A*Item:* ${currentProduct.title}%0A*Quantity:* ${currentQty}%0A*Price:* ₹${currentProduct.price * currentQty}%0A%0APlease arrange immediate dispatch with Cash on Delivery / UPI!`;
+      window.open(`https://wa.me/919876543210?text=${msg}`, '_blank');
+    }
+
+    function switchPDPTab(tabIndex, el) {
+      document.querySelectorAll('.pdp-tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.pdp-tab-content').forEach(c => c.classList.remove('active'));
+      el.classList.add('active');
+      document.getElementById(`tab${tabIndex}`).classList.add('active');
+    }
+
+    window.addEventListener('DOMContentLoaded', initPDP);
+  </script>
+</body>
+</html>

@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>All Collections — MANTRAMM × KAVITA | Certified Rudraksha & Healing Crystals</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/vanikabir.css">
+
+  <style>
+    .collections-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 3rem;
+      padding: 3.5rem 0 5rem;
+    }
+
+    .filter-sidebar {
+      background: #FFFFFF;
+      border: 1px solid var(--v-border);
+      border-radius: 18px;
+      padding: 1.8rem;
+      height: fit-content;
+      position: sticky;
+      top: 100px;
+      box-shadow: var(--v-shadow-sm);
+    }
+
+    .filter-group {
+      border-bottom: 1px solid var(--v-border);
+      padding: 1.2rem 0;
+    }
+    .filter-group:first-child { padding-top: 0; }
+    .filter-group:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .filter-title {
+      font-size: 0.95rem;
+      color: var(--v-text-dark);
+      margin-bottom: 0.8rem;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .filter-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .filter-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+      color: var(--v-text-body);
+      cursor: pointer;
+    }
+
+    .filter-item input {
+      accent-color: var(--v-maroon);
+      cursor: pointer;
+    }
+
+    .filter-item:hover {
+      color: var(--v-maroon);
+    }
+
+    .toolbar-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid var(--v-border);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .results-count {
+      font-size: 0.9rem;
+      color: var(--v-text-muted);
+      font-weight: 600;
+    }
+
+    .sort-select {
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      border: 1px solid var(--v-border);
+      background: #FFFFFF;
+      font-family: inherit;
+      font-size: 0.85rem;
+      color: var(--v-text-dark);
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      .collections-layout {
+        grid-template-columns: 1fr;
+      }
+      .filter-sidebar {
+        position: static;
+        margin-bottom: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. TOP MARQUEE TICKER -->
+  <div class="top-marquee-strip">
+    <div class="top-marquee-track">
+      <div class="top-marquee-item"><span class="bullet">✦</span> 100% ORIGINAL & LAB CERTIFIED RUDRAKSHA</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> ENERGIZED WITH VEDIC PRAN PRATISHTHA</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> FREE SHIPPING ON ORDERS ABOVE ₹999</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> CASH ON DELIVERY AVAILABLE ACROSS INDIA</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> 1-ON-1 VEDIC ASTROLOGY & TAROT SESSIONS</div>
+      <!-- Loop -->
+      <div class="top-marquee-item"><span class="bullet">✦</span> 100% ORIGINAL & LAB CERTIFIED RUDRAKSHA</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> ENERGIZED WITH VEDIC PRAN PRATISHTHA</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> FREE SHIPPING ON ORDERS ABOVE ₹999</div>
+    </div>
+  </div>
+
+  <!-- 2. STICKY HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-wrap">
+        <a href="index.html" class="brand">
+          <span class="brand-logo-icon">🕉</span>
+          <span>MANTRAMM</span>
+        </a>
+        <span class="brand-tagline">Vedic Sacred Store × Kavita Tarot</span>
+      </div>
+
+      <!-- Navigation Menu -->
+      <ul class="nav-menu">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item">
+          <a class="nav-link active" href="collections.html">What's New ▾</a>
+          <ul class="nav-dropdown">
+            <li><a class="dropdown-link" href="collections.html?cat=all">All Sacred Offerings</a></li>
+            <li><a class="dropdown-link" href="collections.html?cat=bracelets">Crystal Bracelets</a></li>
+            <li><a class="dropdown-link" href="collections.html?cat=rudraksha">Nepali Rudraksha & Malas</a></li>
+            <li><a class="dropdown-link" href="collections.html?cat=vastu">Pyrite & Vastu Frames</a></li>
+            <li><a class="dropdown-link" href="collections.html?cat=yantras">24K Gold Sri Yantras</a></li>
+            <li><a class="dropdown-link" href="collections.html?cat=crystals">Raw Mineral Clusters</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="collections.html?cat=bracelets">Bracelets</a></li>
+        <li class="nav-item"><a class="nav-link" href="collections.html?cat=rudraksha">Rudraksha</a></li>
+        <li class="nav-item"><a class="nav-link" href="consultations.html">Consultations</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Kavita</a></li>
+        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ & Care</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <button class="search-pill-btn" onclick="openSearchModal()">
+          <span>🔍</span> Search...
+        </button>
+        <button class="cart-btn" id="openCartBtn">
+          <span>Cart</span>
+          <span class="cart-badge" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. PAGE HERO / BREADCRUMBS -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a> / <span>Collections</span>
+      </div>
+      <h1 class="page-hero-title">Sacred Vedic Offerings</h1>
+      <p class="page-hero-sub">
+        Explore 100% lab-certified Rudraksha beads, energized gemstone bracelets, and Vastu remedies consecrated by certified Varanasi Acharyas.
+      </p>
+    </div>
+  </section>
+
+  <!-- 4. MAIN COLLECTION WITH SIDEBAR FILTERS -->
+  <main class="container">
+    <div class="collections-layout">
+      
+      <!-- Filter Sidebar -->
+      <aside class="filter-sidebar">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem;">
+          <h4 style="font-size: 1.1rem; color: var(--v-text-dark);">Filter Offerings</h4>
+          <button onclick="resetFilters()" style="background: none; border: none; color: var(--v-maroon); font-size: 0.8rem; font-weight: 700; cursor: pointer;">Reset All</button>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="filter-group">
+          <div class="filter-title">Category</div>
+          <ul class="filter-list">
+            <li class="filter-item">
+              <input type="checkbox" id="cat_all" checked onchange="applyFilters()">
+              <label for="cat_all">All Categories (<span id="count_all">12</span>)</label>
+            </li>
+            <li class="filter-item">
+              <input type="checkbox" id="cat_bracelets" onchange="applyFilters()">
+              <label for="cat_bracelets">Crystal Bracelets (4)</label>
+            </li>
+            <li class="filter-item">
+              <input type="checkbox" id="cat_rudraksha" onchange="applyFilters()">
+              <label for="cat_rudraksha">Nepali Rudraksha (3)</label>
+            </li>
+            <li class="filter-item">
+              <input type="checkbox" id="cat_vastu" onchange="applyFilters()">
+              <label for="cat_vastu">Pyrite & Vastu (2)</label>
+            </li>
+            <li class="filter-item">
+              <input type="checkbox" id="cat_yantras" onchange="applyFilters()">
+              <label for="cat_yantras">Sacred Yantras (1)</label>
+            </li>
+            <li class="filter-item">
+              <input type="checkbox" id="cat_crystals" onchange="applyFilters()">
+              <label for="cat_crystals">Raw Crystals (2)</label>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Intention Filter -->
+        <div class="filter-group">
+          <div class="filter-title">Shop by Intention</div>
+          <ul class="filter-list">
+            <li class="filter-item">
+              <input type="checkbox" id="int_dhanlabh" onchange="applyFilters()">
+              <label for="int_dhanlabh">💰 Dhan Labh & Wealth</label>
+            </li>
+            <li class="filter-item">
+              <input type="checkbox" id="int_protection" onchange="applyFilters()">
+              <label for="int_protection">🧿 Nazar & Protection</label>
+            </li>
+            <li class="filter-item">
+              <input type="checkbox" id="int_peace" onchange="applyFilters()">
+              <label for="int_peace">🕊️ Peace & Anti-Anxiety</label>
+            </li>
+            <li class="filter-item">
+              <input type="checkbox" id="int_career" onchange="applyFilters()">
+              <label for="int_career">🚀 Career & Success</label>
+            </li>
+            <li class="filter-item">
+              <input type="checkbox" id="int_shani" onchange="applyFilters()">
+              <label for="int_shani">🪐 Shani Sade Sati</label>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Trust Features -->
+        <div class="filter-group">
+          <div class="filter-title">Authenticity</div>
+          <div style="font-size: 0.8rem; color: var(--v-text-muted); line-height: 1.5;">
+            ✓ 100% Lab Tested & Certified<br>
+            ✓ Vedic Pran Pratishtha Consecrated<br>
+            ✓ Cash on Delivery Available
+          </div>
+        </div>
+      </aside>
+
+      <!-- Products Area -->
+      <section>
+        <!-- Toolbar -->
+        <div class="toolbar-row">
+          <div class="results-count" id="displayResultsCount">
+            Showing all 12 sacred offerings
+          </div>
+          <div>
+            <label style="font-size: 0.85rem; color: var(--v-text-muted); margin-right: 0.4rem;">Sort By:</label>
+            <select class="sort-select" id="sortSelect" onchange="applySorting()">
+              <option value="featured">Featured & Bestselling</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Customer Rating</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="collectionGrid">
+          <!-- Injected via JavaScript -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- 5. FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand" style="color: #FFFFFF; margin-bottom: 0.8rem;">
+            <span class="brand-logo-icon" style="color: #FFDF78;">🕉</span>
+            <span>MANTRAMM</span>
+          </div>
+          <p style="line-height: 1.7; margin-bottom: 1.5rem; color: #A39D98;">
+            Dedicated to reviving authentic Vedic wisdom, original Nepali Rudraksha, energized healing gemstones, and intuitive Tarot guidance by Kavita. Handcrafted and energized with devotion.
+          </p>
+          <div style="font-size: 0.82rem; color: var(--v-gold-light);">
+            ✦ Consecrated at Varanasi & Haridwar Sanctums
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Shop Collections</h5>
+          <ul class="footer-links">
+            <li><a href="collections.html?cat=rudraksha">Nepali Rudraksha Beads</a></li>
+            <li><a href="collections.html?cat=bracelets">Healing Crystal Bracelets</a></li>
+            <li><a href="collections.html?cat=vastu">7 Horses Pyrite Frame</a></li>
+            <li><a href="collections.html?cat=yantras">24K Gold Sri Yantras</a></li>
+            <li><a href="collections.html?cat=crystals">Raw Amethyst Towers</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Consultations</h5>
+          <ul class="footer-links">
+            <li><a href="consultations.html">Audio Call (10/20/30 Mins)</a></li>
+            <li><a href="consultations.html">WhatsApp Voice Note (₹451)</a></li>
+            <li><a href="consultations.html">Distance Pranic Healing</a></li>
+            <li><a href="about.html">Meet Kavita</a></li>
+            <li><a href="faq.html">Vedic Care Guide</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Customer Care</h5>
+          <p style="margin-bottom: 0.6rem; color: #D6D0CA;">WhatsApp: +91 98765 43210</p>
+          <p style="margin-bottom: 0.6rem; color: #D6D0CA;">Email: contact@mantramm.com</p>
+          <p style="margin-bottom: 1.2rem; color: #A39D98;">Hours: 9:00 AM – 8:00 PM IST (Mon–Sat)</p>
+          <div style="font-size: 0.82rem; color: var(--v-gold-light);">
+            🔒 Pan-India Delivery + COD Available
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 MANTRAMM × KAVITA TAROT READER. All Rights Reserved.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Shipping & Returns</a>
+          <a href="faq.html">Lab Certificate Verification</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 6. CART DRAWER FLYOUT -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <div style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--v-text-dark); font-weight: 700;">
+        Your Sacred Cart (<span id="cartCountHeader">0</span>)
+      </div>
+      <button onclick="closeCart()" style="background: none; border: none; color: var(--v-text-dark); font-size: 1.5rem; cursor: pointer;">✕</button>
+    </div>
+
+    <div class="cart-progress-bar-wrap">
+      <div id="shippingProgressText">✦ Add ₹999 for FREE Express Delivery!</div>
+      <div class="cart-progress-bar">
+        <div class="cart-progress-fill" id="shippingProgressFill" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <div class="cart-body" id="cartItemsList"></div>
+
+    <div class="cart-footer">
+      <div class="cart-subtotal-row">
+        <span>Subtotal:</span>
+        <span id="cartSubtotal" style="color: var(--v-maroon);">₹0</span>
+      </div>
+      <button class="btn btn-maroon" style="width: 100%; padding: 0.95rem;" onclick="checkoutCart()">
+        ✦ Proceed to Secure Checkout (COD Avail.)
+      </button>
+      <div style="text-align: center; font-size: 0.74rem; color: var(--v-text-muted); margin-top: 0.8rem;">
+        🔒 256-Bit SSL Encrypted · 100% Authentic Consecrated Items
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/919876543210?text=Hello%20Mantramm%20%26%20Kavita%20Team%2C%20I%20need%20spiritual%20guidance%20choosing%20the%20right%20Rudraksha%20%2F%20Crystal%20remedy." target="_blank" rel="noopener" class="whatsapp-float" title="Chat on WhatsApp">
+    💬
+  </a>
+
+  <!-- Script: Catalog and Filtering -->
+  <script src="assets/store-data.js"></script>
+  <script>
+    let activeProducts = [...STORE_PRODUCTS];
+
+    function renderCollection(products) {
+      const grid = document.getElementById('collectionGrid');
+      const countEl = document.getElementById('displayResultsCount');
+      
+      countEl.innerText = `Showing ${products.length} sacred offerings`;
+
+      if (products.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem; color: var(--v-text-muted);">
+            <div style="font-size: 3rem; margin-bottom: 1rem; color: var(--v-maroon);">📿</div>
+            <h3 style="color: var(--v-text-dark); margin-bottom: 0.5rem;">No products match these filters</h3>
+            <p>Try resetting filters to explore our full energized catalogue.</p>
+            <button class="btn btn-maroon" style="margin-top: 1.5rem;" onclick="resetFilters()">Reset All Filters</button>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = products.map(p => `
+        <div class="product-card">
+          <div class="product-media">
+            <span class="product-badge-flag">${p.badge}</span>
+            <a href="product.html?id=${p.id}">
+              <img class="product-img" src="${p.img}" alt="${p.title}">
+            </a>
+          </div>
+          <div class="product-info-wrap">
+            <div>
+              <div class="product-category-sub">${p.categoryLabel}</div>
+              <h4 class="product-title">
+                <a href="product.html?id=${p.id}">${p.title}</a>
+              </h4>
+              <div class="product-reviews-stars">
+                ★★★★★ <span class="product-reviews-count">(${p.reviewsCount} reviews)</span>
+              </div>
+              <div class="product-pricing-row">
+                <span class="current-price">₹${p.price.toLocaleString('en-IN')}</span>
+                <span class="compare-price">₹${p.comparePrice.toLocaleString('en-IN')}</span>
+                <span class="discount-pill">${p.discount}</span>
+              </div>
+            </div>
+            <div style="display: flex; gap: 0.6rem;">
+              <button class="btn btn-maroon" style="flex: 1; padding: 0.65rem 1rem; font-size: 0.8rem;" onclick="addToCart('${p.title}', ${p.price}, '${p.img}', '${p.handle}')">
+                ✦ Add to Cart
+              </button>
+              <a href="product.html?id=${p.id}" class="btn btn-outline" style="padding: 0.65rem 0.9rem; font-size: 0.8rem;">
+                Details
+              </a>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function applyFilters() {
+      const catAll = document.getElementById('cat_all').checked;
+      const catBracelets = document.getElementById('cat_bracelets').checked;
+      const catRudraksha = document.getElementById('cat_rudraksha').checked;
+      const catVastu = document.getElementById('cat_vastu').checked;
+      const catYantras = document.getElementById('cat_yantras').checked;
+      const catCrystals = document.getElementById('cat_crystals').checked;
+
+      const intDhanlabh = document.getElementById('int_dhanlabh').checked;
+      const intProtection = document.getElementById('int_protection').checked;
+      const intPeace = document.getElementById('int_peace').checked;
+      const intCareer = document.getElementById('int_career').checked;
+      const intShani = document.getElementById('int_shani').checked;
+
+      activeProducts = STORE_PRODUCTS.filter(p => {
+        let catMatch = true;
+        if (!catAll) {
+          const matchedCats = [];
+          if (catBracelets) matchedCats.push('bracelets');
+          if (catRudraksha) matchedCats.push('rudraksha');
+          if (catVastu) matchedCats.push('vastu');
+          if (catYantras) matchedCats.push('yantras');
+          if (catCrystals) matchedCats.push('crystals');
+          if (matchedCats.length > 0) {
+            catMatch = matchedCats.includes(p.category);
+          }
+        }
+
+        let intMatch = true;
+        const matchedInts = [];
+        if (intDhanlabh) matchedInts.push('dhanlabh');
+        if (intProtection) matchedInts.push('protection');
+        if (intPeace) matchedInts.push('peace');
+        if (intCareer) matchedInts.push('career');
+        if (intShani) matchedInts.push('shani');
+        if (matchedInts.length > 0) {
+          intMatch = matchedInts.some(i => p.intention.includes(i));
+        }
+
+        return catMatch && intMatch;
+      });
+
+      applySorting();
+    }
+
+    function applySorting() {
+      const sortVal = document.getElementById('sortSelect').value;
+      if (sortVal === 'price-low') {
+        activeProducts.sort((a, b) => a.price - b.price);
+      } else if (sortVal === 'price-high') {
+        activeProducts.sort((a, b) => b.price - a.price);
+      } else if (sortVal === 'rating') {
+        activeProducts.sort((a, b) => b.rating - a.rating || b.reviewsCount - a.reviewsCount);
+      } else {
+        // Featured
+        activeProducts.sort((a, b) => a.id - b.id);
+      }
+      renderCollection(activeProducts);
+    }
+
+    function resetFilters() {
+      document.getElementById('cat_all').checked = true;
+      document.getElementById('cat_bracelets').checked = false;
+      document.getElementById('cat_rudraksha').checked = false;
+      document.getElementById('cat_vastu').checked = false;
+      document.getElementById('cat_yantras').checked = false;
+      document.getElementById('cat_crystals').checked = false;
+      document.getElementById('int_dhanlabh').checked = false;
+      document.getElementById('int_protection').checked = false;
+      document.getElementById('int_peace').checked = false;
+      document.getElementById('int_career').checked = false;
+      document.getElementById('int_shani').checked = false;
+      activeProducts = [...STORE_PRODUCTS];
+      renderCollection(activeProducts);
+    }
+
+    // URL parameter parsing for category pre-filtering
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const catParam = urlParams.get('cat');
+      if (catParam && catParam !== 'all') {
+        document.getElementById('cat_all').checked = false;
+        if (catParam === 'bracelets') document.getElementById('cat_bracelets').checked = true;
+        if (catParam === 'rudraksha') document.getElementById('cat_rudraksha').checked = true;
+        if (catParam === 'vastu') document.getElementById('cat_vastu').checked = true;
+        if (catParam === 'yantras') document.getElementById('cat_yantras').checked = true;
+        if (catParam === 'crystals') document.getElementById('cat_crystals').checked = true;
+        applyFilters();
+      } else {
+        renderCollection(STORE_PRODUCTS);
+      }
+    });
+  </script>
+</body>
+</html>

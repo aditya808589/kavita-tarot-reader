@@ -10,6 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- Shared Store Stylesheet -->
+  <link rel="stylesheet" href="assets/vanikabir.css">
+
   <style>
     /* =========================================================
        REFERENCE WEBSITE COLOR PALETTE (MANTRAMM & VANI KABIR)
@@ -182,14 +185,21 @@
       align-items: center;
     }
 
+    .nav-item {
+      position: relative;
+    }
+
     .nav-link {
       font-family: var(--font-heading);
       font-size: 0.84rem;
       letter-spacing: 0.06em;
       color: #332E2A;
-      padding: 0.4rem 0;
+      padding: 0.6rem 0;
       position: relative;
       font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
     }
 
     .nav-link::after {
@@ -209,6 +219,46 @@
 
     .nav-link:hover::after, .nav-link.active::after {
       width: 100%;
+    }
+
+    /* Multi-level Navigation Dropdowns */
+    .nav-dropdown {
+      position: absolute;
+      top: 100%;
+      left: -20px;
+      background: #FFFFFF;
+      border: 1px solid var(--m-border);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      padding: 0.8rem 0;
+      min-width: 250px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.25s ease;
+      z-index: 350;
+      list-style: none;
+    }
+
+    .nav-item:hover .nav-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-link {
+      display: block;
+      padding: 0.55rem 1.4rem;
+      font-size: 0.85rem;
+      color: var(--m-text-body);
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .dropdown-link:hover {
+      background: #FDF9F3;
+      color: var(--m-maroon);
+      padding-left: 1.7rem;
     }
 
     .header-actions {
@@ -1737,20 +1787,33 @@
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand-wrap">
-        <a href="#" class="brand">
+        <a href="index.html" class="brand">
           <span class="brand-logo-icon">🕉</span>
           <span>MANTRAMM</span>
         </a>
         <span class="brand-tagline">Vedic Sacred Store × Kavita Tarot</span>
       </div>
 
+      <!-- Vani Kabir Multi-Level Dropdown Navigation -->
       <ul class="nav-menu">
-        <li><a class="nav-link" href="#categories">Rudraksha</a></li>
-        <li><a class="nav-link" href="#shop">Gemstones</a></li>
-        <li><a class="nav-link" href="#spotlight">Pyrite & Vastu</a></li>
-        <li><a class="nav-link" href="#concerns">Shop by Concern</a></li>
-        <li><a class="nav-link" href="#services">Tarot Readings</a></li>
-        <li><a class="nav-link" href="#oracle">3D Oracle Deck</a></li>
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="collections.html">What's New ▾</a>
+          <ul class="nav-dropdown">
+            <li><a class="dropdown-link" href="collections.html?cat=all">✦ All Sacred Offerings</a></li>
+            <li><a class="dropdown-link" href="collections.html?cat=bracelets">Crystal Bracelets</a></li>
+            <li><a class="dropdown-link" href="collections.html?cat=rudraksha">Nepali Rudraksha & Malas</a></li>
+            <li><a class="dropdown-link" href="collections.html?cat=vastu">Pyrite & Vastu Frames</a></li>
+            <li><a class="dropdown-link" href="collections.html?cat=yantras">24K Gold Sri Yantras</a></li>
+            <li><a class="dropdown-link" href="collections.html?cat=crystals">Raw Mineral Clusters</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="collections.html?cat=bracelets">Bracelets</a></li>
+        <li class="nav-item"><a class="nav-link" href="collections.html?cat=rudraksha">Rudraksha</a></li>
+        <li class="nav-item"><a class="nav-link" href="consultations.html">Consultations</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Kavita</a></li>
+        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ & Care</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
 
       <div class="header-actions">
@@ -1833,60 +1896,60 @@
 
       <div class="categories-circle-row">
         <!-- 1. Nepali Rudraksha -->
-        <div class="cat-circle-card" onclick="filterShop('rudraksha')">
+        <a href="collections.html?cat=rudraksha" class="cat-circle-card">
           <div class="cat-circle-avatar-wrap">
             <img class="cat-circle-img" src="https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827?auto=format&fit=crop&w=300&q=80" alt="Nepali Rudraksha" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'96\' height=\'96\' viewBox=\'0 0 96 96\'><rect width=\'96\' height=\'96\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'55%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'40\' fill=\'%2380142B\'>📿</text></svg>'">
           </div>
           <div class="cat-circle-name">Nepali Rudraksha & Malas</div>
-        </div>
+        </a>
 
         <!-- 2. Gemstone Bracelets -->
-        <div class="cat-circle-card" onclick="filterShop('bracelets')">
+        <a href="collections.html?cat=bracelets" class="cat-circle-card">
           <div class="cat-circle-avatar-wrap">
             <img class="cat-circle-img" src="https://images.unsplash.com/photo-1611591475870-85f8c85775c9?auto=format&fit=crop&w=300&q=80" alt="Crystal Bracelets" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'96\' height=\'96\' viewBox=\'0 0 96 96\'><rect width=\'96\' height=\'96\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'55%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'40\' fill=\'%2380142B\'>💎</text></svg>'">
           </div>
           <div class="cat-circle-name">Healing Crystal Bracelets</div>
-        </div>
+        </a>
 
         <!-- 3. Pyrite & Vastu -->
-        <div class="cat-circle-card" onclick="filterShop('vastu')">
+        <a href="collections.html?cat=vastu" class="cat-circle-card">
           <div class="cat-circle-avatar-wrap">
             <img class="cat-circle-img" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=300&q=80" alt="Pyrite Vastu" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'96\' height=\'96\' viewBox=\'0 0 96 96\'><rect width=\'96\' height=\'96\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'55%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'40\' fill=\'%2380142B\'>🖼️</text></svg>'">
           </div>
           <div class="cat-circle-name">Pyrite & Vastu Frames</div>
-        </div>
+        </a>
 
         <!-- 4. Sacred Yantras -->
-        <div class="cat-circle-card" onclick="filterShop('yantras')">
+        <a href="collections.html?cat=yantras" class="cat-circle-card">
           <div class="cat-circle-avatar-wrap">
             <img class="cat-circle-img" src="https://images.unsplash.com/photo-1567225557594-88d73e55f2cb?auto=format&fit=crop&w=300&q=80" alt="Sacred Yantras" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'96\' height=\'96\' viewBox=\'0 0 96 96\'><rect width=\'96\' height=\'96\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'55%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'40\' fill=\'%2380142B\'>☸</text></svg>'">
           </div>
           <div class="cat-circle-name">24K Gold Sacred Yantras</div>
-        </div>
+        </a>
 
         <!-- 5. Energy Pyramids -->
-        <div class="cat-circle-card" onclick="filterShop('pyramids')">
+        <a href="collections.html?cat=pyramids" class="cat-circle-card">
           <div class="cat-circle-avatar-wrap">
             <img class="cat-circle-img" src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=300&q=80" alt="Energy Pyramids" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'96\' height=\'96\' viewBox=\'0 0 96 96\'><rect width=\'96\' height=\'96\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'55%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'40\' fill=\'%2380142B\'>🔺</text></svg>'">
           </div>
           <div class="cat-circle-name">Orgone & Quartz Pyramids</div>
-        </div>
+        </a>
 
         <!-- 6. Pooja & Jap Malas -->
-        <div class="cat-circle-card" onclick="filterShop('pooja')">
+        <a href="collections.html?cat=rudraksha" class="cat-circle-card">
           <div class="cat-circle-avatar-wrap">
             <img class="cat-circle-img" src="https://images.unsplash.com/photo-1609137144822-263e7925e0e0?auto=format&fit=crop&w=300&q=80" alt="Pooja Essentials" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'96\' height=\'96\' viewBox=\'0 0 96 96\'><rect width=\'96\' height=\'96\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'55%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'40\' fill=\'%2380142B\'>🪔</text></svg>'">
           </div>
           <div class="cat-circle-name">Pooja & Tulsi Japa Malas</div>
-        </div>
+        </a>
 
         <!-- 7. Tarot Consultations -->
-        <div class="cat-circle-card" onclick="location.href='#services'">
+        <a href="consultations.html" class="cat-circle-card">
           <div class="cat-circle-avatar-wrap">
             <img class="cat-circle-img" src="https://images.unsplash.com/photo-1601024445121-e5b82f020549?auto=format&fit=crop&w=300&q=80" alt="Tarot Consultations" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'96\' height=\'96\' viewBox=\'0 0 96 96\'><rect width=\'96\' height=\'96\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'55%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'40\' fill=\'%2380142B\'>🔮</text></svg>'">
           </div>
           <div class="cat-circle-name">1-on-1 Tarot Sessions</div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -1904,46 +1967,46 @@
 
       <div class="concerns-grid">
         <!-- 1. Nazar & Protection -->
-        <div class="concern-card" onclick="filterShop('protection')">
+        <a href="collections.html?intent=protection" class="concern-card">
           <div class="concern-icon">🧿</div>
           <h4 class="concern-title">Nazar & Protection</h4>
           <div class="concern-tagline">Shield Aura · Ward Evil Eye · Tourmaline</div>
-        </div>
+        </a>
 
         <!-- 2. Dhan Labh & Wealth -->
-        <div class="concern-card" onclick="filterShop('dhanlabh')">
+        <a href="collections.html?intent=wealth" class="concern-card">
           <div class="concern-icon">💰</div>
           <h4 class="concern-title">Dhan Labh & Wealth</h4>
           <div class="concern-tagline">Money Flow · Pyrite · Sri Yantra</div>
-        </div>
+        </a>
 
         <!-- 3. Love & Harmony -->
-        <div class="concern-card" onclick="filterShop('love')">
+        <a href="collections.html?intent=love" class="concern-card">
           <div class="concern-icon">❤️</div>
           <h4 class="concern-title">Love & Marriage</h4>
           <div class="concern-tagline">Rose Quartz · Gauri Shankar · Harmony</div>
-        </div>
+        </a>
 
         <!-- 4. Peace & Anxiety Relief -->
-        <div class="concern-card" onclick="filterShop('peace')">
+        <a href="collections.html?intent=clarity" class="concern-card">
           <div class="concern-icon">🕊️</div>
           <h4 class="concern-title">Peace & Anxiety Relief</h4>
           <div class="concern-tagline">Mental Calm · Amethyst · 5 Mukhi</div>
-        </div>
+        </a>
 
         <!-- 5. Career & Success -->
-        <div class="concern-card" onclick="filterShop('career')">
+        <a href="collections.html?intent=career" class="concern-card">
           <div class="concern-icon">🚀</div>
           <h4 class="concern-title">Career & Promotion</h4>
           <div class="concern-tagline">Tiger Eye · Citrine · Business Growth</div>
-        </div>
+        </a>
 
         <!-- 6. Shani Sade Sati -->
-        <div class="concern-card" onclick="filterShop('shani')">
+        <a href="collections.html?intent=shani" class="concern-card">
           <div class="concern-icon">🪐</div>
           <h4 class="concern-title">Shani & Graha Shanti</h4>
           <div class="concern-tagline">7 Mukhi Rudraksha · Rahu-Ketu Shanti</div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -1974,17 +2037,19 @@
         </div>
 
         <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-          <button class="btn btn-maroon" onclick="addToCart('7 Running Horses Natural Pyrite Wealth Frame', 2499, 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=400&q=80')">
-            ✦ Add to Cart — Free Express Delivery
+          <button class="btn btn-maroon" onclick="addToCart('7 Running Horses Natural Pyrite Wealth Frame', 2499, 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=400&q=80', '7-running-horses-natural-pyrite-frame')">
+            ✦ Add to Cart — Free Delivery
           </button>
-          <button class="btn btn-outline" onclick="openQuickView(3)">
-            View Vastu Guide
-          </button>
+          <a href="product.html?id=3" class="btn btn-outline">
+            Full Product Details & Vastu Guide →
+          </a>
         </div>
       </div>
 
       <div class="spotlight-img-wrap">
-        <img class="spotlight-img" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80" alt="7 Horses Pyrite Frame" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'400\' viewBox=\'0 0 600 400\'><rect width=\'600\' height=\'400\' fill=\'%23FAF7F2\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'36\' fill=\'%2380142B\'>7 Horses Pyrite Frame</text></svg>'">
+        <a href="product.html?id=3">
+          <img class="spotlight-img" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80" alt="7 Horses Pyrite Frame" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'400\' viewBox=\'0 0 600 400\'><rect width=\'600\' height=\'400\' fill=\'%23FAF7F2\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'36\' fill=\'%2380142B\'>7 Horses Pyrite Frame</text></svg>'">
+        </a>
       </div>
     </div>
   </section>
@@ -2017,13 +2082,17 @@
         <div class="product-card" data-category="bracelets chakra peace">
           <div class="product-media">
             <span class="product-badge-flag">Bestseller #1</span>
-            <img class="product-img" src="https://images.unsplash.com/photo-1611591475870-85f8c85775c9?auto=format&fit=crop&w=600&q=80" alt="7 Chakra Bracelet" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'270\' viewBox=\'0 0 300 270\'><rect width=\'300\' height=\'270\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'36\' fill=\'%2380142B\'>7 Chakra Band</text></svg>'">
+            <a href="product.html?id=1">
+              <img class="product-img" src="https://images.unsplash.com/photo-1611591475870-85f8c85775c9?auto=format&fit=crop&w=600&q=80" alt="7 Chakra Bracelet" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'270\' viewBox=\'0 0 300 270\'><rect width=\'300\' height=\'270\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'36\' fill=\'%2380142B\'>7 Chakra Band</text></svg>'">
+            </a>
             <button class="product-quick-view-btn" onclick="openQuickView(1)">Quick View</button>
           </div>
           <div class="product-info-wrap">
             <div>
               <div class="product-category-sub">Crystal Bracelet</div>
-              <h4 class="product-title">7 Chakra Radiance Healing Energy Bracelet</h4>
+              <h4 class="product-title">
+                <a href="product.html?id=1">7 Chakra Radiance Healing Energy Bracelet</a>
+              </h4>
               <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(482 reviews)</span></div>
               <div class="product-pricing-row">
                 <span class="current-price">₹899</span>
@@ -2035,9 +2104,14 @@
                 <span>Balances 7 Energy Chakras & Kundalini</span>
               </div>
             </div>
-            <button class="btn btn-maroon" style="width: 100%;" onclick="addToCart('7 Chakra Radiance Healing Bracelet', 899, 'https://images.unsplash.com/photo-1611591475870-85f8c85775c9?auto=format&fit=crop&w=600&q=80')">
-              ✦ Add to Cart (COD Avail.)
-            </button>
+            <div style="display: flex; gap: 0.5rem; width: 100%;">
+              <button class="btn btn-maroon" style="flex: 1;" onclick="addToCart('7 Chakra Radiance Healing Energy Bracelet', 899, 'https://images.unsplash.com/photo-1611591475870-85f8c85775c9?auto=format&fit=crop&w=600&q=80', '7-chakra-radiance-bracelet')">
+                ✦ Add to Cart
+              </button>
+              <a href="product.html?id=1" class="btn btn-outline" style="padding: 0.65rem 0.9rem; font-size: 0.8rem;">
+                Details
+              </a>
+            </div>
           </div>
         </div>
 
@@ -2045,13 +2119,17 @@
         <div class="product-card" data-category="rudraksha peace shani">
           <div class="product-media">
             <span class="product-badge-flag">Varanasi Consecrated</span>
-            <img class="product-img" src="https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827?auto=format&fit=crop&w=600&q=80" alt="Nepali Rudraksha Mala" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'270\' viewBox=\'0 0 300 270\'><rect width=\'300\' height=\'270\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'36\' fill=\'%2380142B\'>Nepali Rudraksha</text></svg>'">
+            <a href="product.html?id=2">
+              <img class="product-img" src="https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827?auto=format&fit=crop&w=600&q=80" alt="Nepali Rudraksha Mala" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'270\' viewBox=\'0 0 300 270\'><rect width=\'300\' height=\'270\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'36\' fill=\'%2380142B\'>Nepali Rudraksha</text></svg>'">
+            </a>
             <button class="product-quick-view-btn" onclick="openQuickView(2)">Quick View</button>
           </div>
           <div class="product-info-wrap">
             <div>
               <div class="product-category-sub">Nepali Rudraksha</div>
-              <h4 class="product-title">Original 5 Mukhi Nepali Rudraksha Mala (108+1)</h4>
+              <h4 class="product-title">
+                <a href="product.html?id=2">Original 5 Mukhi Nepali Rudraksha Mala (108+1)</a>
+              </h4>
               <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(614 reviews)</span></div>
               <div class="product-pricing-row">
                 <span class="current-price">₹1,299</span>
@@ -2063,9 +2141,14 @@
                 <span>Lord Shiva Blessings, Blood Pressure Control</span>
               </div>
             </div>
-            <button class="btn btn-maroon" style="width: 100%;" onclick="addToCart('Original 5 Mukhi Nepali Rudraksha Mala', 1299, 'https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827?auto=format&fit=crop&w=600&q=80')">
-              ✦ Add to Cart (COD Avail.)
-            </button>
+            <div style="display: flex; gap: 0.5rem; width: 100%;">
+              <button class="btn btn-maroon" style="flex: 1;" onclick="addToCart('Original 5 Mukhi Nepali Rudraksha Mala (108+1)', 1299, 'https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827?auto=format&fit=crop&w=600&q=80', 'original-5-mukhi-nepali-rudraksha-mala')">
+                ✦ Add to Cart
+              </button>
+              <a href="product.html?id=2" class="btn btn-outline" style="padding: 0.65rem 0.9rem; font-size: 0.8rem;">
+                Details
+              </a>
+            </div>
           </div>
         </div>
 
@@ -2073,13 +2156,17 @@
         <div class="product-card" data-category="vastu dhanlabh career">
           <div class="product-media">
             <span class="product-badge-flag">Vastu #1 Flagship</span>
-            <img class="product-img" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="7 Horses Pyrite Frame" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'270\' viewBox=\'0 0 300 270\'><rect width=\'300\' height=\'270\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'36\' fill=\'%2380142B\'>Pyrite Frame</text></svg>'">
+            <a href="product.html?id=3">
+              <img class="product-img" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="7 Horses Pyrite Frame" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'270\' viewBox=\'0 0 300 270\'><rect width=\'300\' height=\'270\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'36\' fill=\'%2380142B\'>Pyrite Frame</text></svg>'">
+            </a>
             <button class="product-quick-view-btn" onclick="openQuickView(3)">Quick View</button>
           </div>
           <div class="product-info-wrap">
             <div>
               <div class="product-category-sub">Vastu & Wealth Frame</div>
-              <h4 class="product-title">7 Running Horses Natural Pyrite Wealth Frame</h4>
+              <h4 class="product-title">
+                <a href="product.html?id=3">7 Running Horses Natural Pyrite Wealth Frame</a>
+              </h4>
               <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(520 reviews)</span></div>
               <div class="product-pricing-row">
                 <span class="current-price">₹2,499</span>
@@ -2091,9 +2178,14 @@
                 <span>Sparkling Natural Golden Pyrite Stones</span>
               </div>
             </div>
-            <button class="btn btn-maroon" style="width: 100%;" onclick="addToCart('7 Running Horses Pyrite Frame', 2499, 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80')">
-              ✦ Add to Cart (COD Avail.)
-            </button>
+            <div style="display: flex; gap: 0.5rem; width: 100%;">
+              <button class="btn btn-maroon" style="flex: 1;" onclick="addToCart('7 Running Horses Natural Pyrite Wealth Frame', 2499, 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80', '7-running-horses-natural-pyrite-frame')">
+                ✦ Add to Cart
+              </button>
+              <a href="product.html?id=3" class="btn btn-outline" style="padding: 0.65rem 0.9rem; font-size: 0.8rem;">
+                Details
+              </a>
+            </div>
           </div>
         </div>
 
@@ -2101,13 +2193,17 @@
         <div class="product-card" data-category="yantras dhanlabh">
           <div class="product-media">
             <span class="product-badge-flag">Vedic Geometry</span>
-            <img class="product-img" src="https://images.unsplash.com/photo-1567225557594-88d73e55f2cb?auto=format&fit=crop&w=600&q=80" alt="24k Gold Sri Yantra" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'270\' viewBox=\'0 0 300 270\'><rect width=\'300\' height=\'270\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'36\' fill=\'%2380142B\'>Sri Yantra Plate</text></svg>'">
+            <a href="product.html?id=4">
+              <img class="product-img" src="https://images.unsplash.com/photo-1567225557594-88d73e55f2cb?auto=format&fit=crop&w=600&q=80" alt="24k Gold Sri Yantra" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'270\' viewBox=\'0 0 300 270\'><rect width=\'300\' height=\'270\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'36\' fill=\'%2380142B\'>Sri Yantra Plate</text></svg>'">
+            </a>
             <button class="product-quick-view-btn" onclick="openQuickView(4)">Quick View</button>
           </div>
           <div class="product-info-wrap">
             <div>
               <div class="product-category-sub">Energized Yantra</div>
-              <h4 class="product-title">24K Gold Plated Maha Meru Shree Yantra Plate</h4>
+              <h4 class="product-title">
+                <a href="product.html?id=4">24K Gold Plated Maha Meru Shree Yantra Plate</a>
+              </h4>
               <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(340 reviews)</span></div>
               <div class="product-pricing-row">
                 <span class="current-price">₹1,499</span>
@@ -2119,9 +2215,14 @@
                 <span>Removes Financial Vastu Doshas at Home/Shop</span>
               </div>
             </div>
-            <button class="btn btn-maroon" style="width: 100%;" onclick="addToCart('24K Gold Plated Maha Meru Shree Yantra', 1499, 'https://images.unsplash.com/photo-1567225557594-88d73e55f2cb?auto=format&fit=crop&w=600&q=80')">
-              ✦ Add to Cart (COD Avail.)
-            </button>
+            <div style="display: flex; gap: 0.5rem; width: 100%;">
+              <button class="btn btn-maroon" style="flex: 1;" onclick="addToCart('24K Gold Plated Maha Meru Shree Yantra Plate', 1499, 'https://images.unsplash.com/photo-1567225557594-88d73e55f2cb?auto=format&fit=crop&w=600&q=80', '24k-gold-plated-shree-yantra')">
+                ✦ Add to Cart
+              </button>
+              <a href="product.html?id=4" class="btn btn-outline" style="padding: 0.65rem 0.9rem; font-size: 0.8rem;">
+                Details
+              </a>
+            </div>
           </div>
         </div>
 
@@ -2129,13 +2230,17 @@
         <div class="product-card" data-category="vastu dhanlabh career">
           <div class="product-media">
             <span class="product-badge-flag">Money Magnet</span>
-            <img class="product-img" src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=600&q=80" alt="Raw Pyrite Cluster" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'270\' viewBox=\'0 0 300 270\'><rect width=\'300\' height=\'270\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'36\' fill=\'%2380142B\'>Pyrite Stone</text></svg>'">
+            <a href="product.html?id=5">
+              <img class="product-img" src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=600&q=80" alt="Raw Pyrite Cluster" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'270\' viewBox=\'0 0 300 270\'><rect width=\'300\' height=\'270\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'36\' fill=\'%2380142B\'>Pyrite Stone</text></svg>'">
+            </a>
             <button class="product-quick-view-btn" onclick="openQuickView(5)">Quick View</button>
           </div>
           <div class="product-info-wrap">
             <div>
               <div class="product-category-sub">Raw Mineral Cluster</div>
-              <h4 class="product-title">Raw Natural Pyrite Stone Cluster (150-200g)</h4>
+              <h4 class="product-title">
+                <a href="product.html?id=5">Raw Natural Pyrite Stone Cluster (150-200g)</a>
+              </h4>
               <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(298 reviews)</span></div>
               <div class="product-pricing-row">
                 <span class="current-price">₹999</span>
@@ -2143,13 +2248,18 @@
                 <span class="discount-pill">50% OFF</span>
               </div>
               <div class="product-features-bullet">
-                <span>The Legendary "Fool\'s Gold" for Wealth Attraction</span>
+                <span>The Legendary "Fool's Gold" for Wealth Attraction</span>
                 <span>Keep in Cash Box, Office Desk, or Wallet Area</span>
               </div>
             </div>
-            <button class="btn btn-maroon" style="width: 100%;" onclick="addToCart('Raw Natural Pyrite Stone Cluster', 999, 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=600&q=80')">
-              ✦ Add to Cart (COD Avail.)
-            </button>
+            <div style="display: flex; gap: 0.5rem; width: 100%;">
+              <button class="btn btn-maroon" style="flex: 1;" onclick="addToCart('Raw Natural Pyrite Stone Cluster (150-200g)', 999, 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=600&q=80', 'raw-natural-pyrite-stone-cluster')">
+                ✦ Add to Cart
+              </button>
+              <a href="product.html?id=5" class="btn btn-outline" style="padding: 0.65rem 0.9rem; font-size: 0.8rem;">
+                Details
+              </a>
+            </div>
           </div>
         </div>
 
@@ -2157,13 +2267,17 @@
         <div class="product-card" data-category="bracelets protection">
           <div class="product-media">
             <span class="product-badge-flag">Evil Eye Shield</span>
-            <img class="product-img" src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80" alt="Triple Protection Bracelet" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'270\' viewBox=\'0 0 300 270\'><rect width=\'300\' height=\'270\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'36\' fill=\'%2380142B\'>Triple Protection</text></svg>'">
+            <a href="product.html?id=6">
+              <img class="product-img" src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80" alt="Triple Protection Bracelet" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'270\' viewBox=\'0 0 300 270\'><rect width=\'300\' height=\'270\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'36\' fill=\'%2380142B\'>Triple Protection</text></svg>'">
+            </a>
             <button class="product-quick-view-btn" onclick="openQuickView(6)">Quick View</button>
           </div>
           <div class="product-info-wrap">
             <div>
               <div class="product-category-sub">Crystal Bracelet</div>
-              <h4 class="product-title">Triple Protection Bracelet (Tiger Eye + Obsidian + Hematite)</h4>
+              <h4 class="product-title">
+                <a href="product.html?id=6">Triple Protection Bracelet (Tiger Eye + Obsidian + Hematite)</a>
+              </h4>
               <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(412 reviews)</span></div>
               <div class="product-pricing-row">
                 <span class="current-price">₹1,199</span>
@@ -2175,9 +2289,14 @@
                 <span>Grounding Energy & Unshakable Mental Clarity</span>
               </div>
             </div>
-            <button class="btn btn-maroon" style="width: 100%;" onclick="addToCart('Triple Protection Bracelet', 1199, 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80')">
-              ✦ Add to Cart (COD Avail.)
-            </button>
+            <div style="display: flex; gap: 0.5rem; width: 100%;">
+              <button class="btn btn-maroon" style="flex: 1;" onclick="addToCart('Triple Protection Bracelet (Tiger Eye + Obsidian + Hematite)', 1199, 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80', 'triple-protection-bracelet')">
+                ✦ Add to Cart
+              </button>
+              <a href="product.html?id=6" class="btn btn-outline" style="padding: 0.65rem 0.9rem; font-size: 0.8rem;">
+                Details
+              </a>
+            </div>
           </div>
         </div>
 
@@ -2185,13 +2304,17 @@
         <div class="product-card" data-category="bracelets protection">
           <div class="product-media">
             <span class="product-badge-flag">Nazar Shield</span>
-            <img class="product-img" src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80" alt="Black Tourmaline" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'270\' viewBox=\'0 0 300 270\'><rect width=\'300\' height=\'270\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'36\' fill=\'%2380142B\'>Black Tourmaline</text></svg>'">
+            <a href="product.html?id=7">
+              <img class="product-img" src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80" alt="Black Tourmaline" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'270\' viewBox=\'0 0 300 270\'><rect width=\'300\' height=\'270\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'36\' fill=\'%2380142B\'>Black Tourmaline</text></svg>'">
+            </a>
             <button class="product-quick-view-btn" onclick="openQuickView(7)">Quick View</button>
           </div>
           <div class="product-info-wrap">
             <div>
               <div class="product-category-sub">Aura Protection</div>
-              <h4 class="product-title">Raw Black Tourmaline Negative Energy Shield Pendant</h4>
+              <h4 class="product-title">
+                <a href="product.html?id=7">Raw Black Tourmaline Negative Energy Shield Pendant</a>
+              </h4>
               <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(285 reviews)</span></div>
               <div class="product-pricing-row">
                 <span class="current-price">₹799</span>
@@ -2203,9 +2326,14 @@
                 <span>Capped in Sacred Panchdhatu Silver Alloy</span>
               </div>
             </div>
-            <button class="btn btn-maroon" style="width: 100%;" onclick="addToCart('Raw Black Tourmaline Pendant', 799, 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80')">
-              ✦ Add to Cart (COD Avail.)
-            </button>
+            <div style="display: flex; gap: 0.5rem; width: 100%;">
+              <button class="btn btn-maroon" style="flex: 1;" onclick="addToCart('Raw Black Tourmaline Negative Energy Shield Pendant', 799, 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80', 'black-tourmaline-pendant')">
+                ✦ Add to Cart
+              </button>
+              <a href="product.html?id=7" class="btn btn-outline" style="padding: 0.65rem 0.9rem; font-size: 0.8rem;">
+                Details
+              </a>
+            </div>
           </div>
         </div>
 
@@ -2213,13 +2341,17 @@
         <div class="product-card" data-category="bracelets dhanlabh love">
           <div class="product-media">
             <span class="product-badge-flag">Heart Chakra</span>
-            <img class="product-img" src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=600&q=80" alt="Green Jade Bracelet" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'270\' viewBox=\'0 0 300 270\'><rect width=\'300\' height=\'270\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'36\' fill=\'%2380142B\'>Green Jade</text></svg>'">
+            <a href="product.html?id=8">
+              <img class="product-img" src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=600&q=80" alt="Green Jade Bracelet" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'270\' viewBox=\'0 0 300 270\'><rect width=\'300\' height=\'270\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'36\' fill=\'%2380142B\'>Green Jade</text></svg>'">
+            </a>
             <button class="product-quick-view-btn" onclick="openQuickView(8)">Quick View</button>
           </div>
           <div class="product-info-wrap">
             <div>
               <div class="product-category-sub">Crystal Bracelet</div>
-              <h4 class="product-title">Natural Green Jade Abundance & Good Fortune Bracelet</h4>
+              <h4 class="product-title">
+                <a href="product.html?id=8">Natural Green Jade Abundance & Good Fortune Bracelet</a>
+              </h4>
               <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(310 reviews)</span></div>
               <div class="product-pricing-row">
                 <span class="current-price">₹1,099</span>
@@ -2231,9 +2363,14 @@
                 <span>Calms the Nervous System & Harmonizes Love</span>
               </div>
             </div>
-            <button class="btn btn-maroon" style="width: 100%;" onclick="addToCart('Green Jade Abundance Bracelet', 1099, 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=600&q=80')">
-              ✦ Add to Cart (COD Avail.)
-            </button>
+            <div style="display: flex; gap: 0.5rem; width: 100%;">
+              <button class="btn btn-maroon" style="flex: 1;" onclick="addToCart('Natural Green Jade Abundance & Good Fortune Bracelet', 1099, 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=600&q=80', 'green-jade-abundance-bracelet')">
+                ✦ Add to Cart
+              </button>
+              <a href="product.html?id=8" class="btn btn-outline" style="padding: 0.65rem 0.9rem; font-size: 0.8rem;">
+                Details
+              </a>
+            </div>
           </div>
         </div>
 
@@ -2241,13 +2378,17 @@
         <div class="product-card" data-category="rudraksha dhanlabh shani">
           <div class="product-media">
             <span class="product-badge-flag">Mahalakshmi Swaroop</span>
-            <img class="product-img" src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?auto=format&fit=crop&w=600&q=80" alt="7 Mukhi Rudraksha" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'270\' viewBox=\'0 0 300 270\'><rect width=\'300\' height=\'270\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'36\' fill=\'%2380142B\'>7 Mukhi Bead</text></svg>'">
+            <a href="product.html?id=9">
+              <img class="product-img" src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?auto=format&fit=crop&w=600&q=80" alt="7 Mukhi Rudraksha" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'270\' viewBox=\'0 0 300 270\'><rect width=\'300\' height=\'270\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'36\' fill=\'%2380142B\'>7 Mukhi Bead</text></svg>'">
+            </a>
             <button class="product-quick-view-btn" onclick="openQuickView(9)">Quick View</button>
           </div>
           <div class="product-info-wrap">
             <div>
               <div class="product-category-sub">Rare Nepali Bead</div>
-              <h4 class="product-title">Original 7 Mukhi Nepali Rudraksha with Silver Capping</h4>
+              <h4 class="product-title">
+                <a href="product.html?id=9">Original 7 Mukhi Nepali Rudraksha with Silver Capping</a>
+              </h4>
               <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(194 reviews)</span></div>
               <div class="product-pricing-row">
                 <span class="current-price">₹2,199</span>
@@ -2259,9 +2400,14 @@
                 <span>Removes Financial Struggles & Shani Sade Sati</span>
               </div>
             </div>
-            <button class="btn btn-maroon" style="width: 100%;" onclick="addToCart('Original 7 Mukhi Nepali Rudraksha', 2199, 'https://images.unsplash.com/photo-1596704017254-9b121068fb31?auto=format&fit=crop&w=600&q=80')">
-              ✦ Add to Cart (COD Avail.)
-            </button>
+            <div style="display: flex; gap: 0.5rem; width: 100%;">
+              <button class="btn btn-maroon" style="flex: 1;" onclick="addToCart('Original 7 Mukhi Nepali Rudraksha with Silver Capping', 2199, 'https://images.unsplash.com/photo-1596704017254-9b121068fb31?auto=format&fit=crop&w=600&q=80', '7-mukhi-nepali-rudraksha-silver')">
+                ✦ Add to Cart
+              </button>
+              <a href="product.html?id=9" class="btn btn-outline" style="padding: 0.65rem 0.9rem; font-size: 0.8rem;">
+                Details
+              </a>
+            </div>
           </div>
         </div>
 
@@ -2269,13 +2415,17 @@
         <div class="product-card" data-category="pyramids yantras peace">
           <div class="product-media">
             <span class="product-badge-flag">Orgone Transmuter</span>
-            <img class="product-img" src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" alt="Orgone Pyramid" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'270\' viewBox=\'0 0 300 270\'><rect width=\'300\' height=\'270\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'36\' fill=\'%2380142B\'>Orgone Pyramid</text></svg>'">
+            <a href="product.html?id=10">
+              <img class="product-img" src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" alt="Orgone Pyramid" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'270\' viewBox=\'0 0 300 270\'><rect width=\'300\' height=\'270\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'36\' fill=\'%2380142B\'>Orgone Pyramid</text></svg>'">
+            </a>
             <button class="product-quick-view-btn" onclick="openQuickView(10)">Quick View</button>
           </div>
           <div class="product-info-wrap">
             <div>
               <div class="product-category-sub">Energy Pyramid</div>
-              <h4 class="product-title">Natural Orgone Sri Yantra Copper Coil Pyramid</h4>
+              <h4 class="product-title">
+                <a href="product.html?id=10">Natural Orgone Sri Yantra Copper Coil Pyramid</a>
+              </h4>
               <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(226 reviews)</span></div>
               <div class="product-pricing-row">
                 <span class="current-price">₹1,350</span>
@@ -2287,9 +2437,14 @@
                 <span>Suspended 24K Gold Sacred Sri Yantra Apex</span>
               </div>
             </div>
-            <button class="btn btn-maroon" style="width: 100%;" onclick="addToCart('Natural Orgone Sri Yantra Pyramid', 1350, 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80')">
-              ✦ Add to Cart (COD Avail.)
-            </button>
+            <div style="display: flex; gap: 0.5rem; width: 100%;">
+              <button class="btn btn-maroon" style="flex: 1;" onclick="addToCart('Natural Orgone Sri Yantra Copper Coil Pyramid', 1350, 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80', 'orgone-shree-yantra-pyramid')">
+                ✦ Add to Cart
+              </button>
+              <a href="product.html?id=10" class="btn btn-outline" style="padding: 0.65rem 0.9rem; font-size: 0.8rem;">
+                Details
+              </a>
+            </div>
           </div>
         </div>
 
@@ -2297,13 +2452,17 @@
         <div class="product-card" data-category="pyramids peace">
           <div class="product-media">
             <span class="product-badge-flag">Third Eye Chakra</span>
-            <img class="product-img" src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=80" alt="Amethyst Tower" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'270\' viewBox=\'0 0 300 270\'><rect width=\'300\' height=\'270\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'36\' fill=\'%2380142B\'>Amethyst Stone</text></svg>'">
+            <a href="product.html?id=11">
+              <img class="product-img" src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=80" alt="Amethyst Tower" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'270\' viewBox=\'0 0 300 270\'><rect width=\'300\' height=\'270\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'36\' fill=\'%2380142B\'>Amethyst Stone</text></svg>'">
+            </a>
             <button class="product-quick-view-btn" onclick="openQuickView(11)">Quick View</button>
           </div>
           <div class="product-info-wrap">
             <div>
               <div class="product-category-sub">Healing Quartz</div>
-              <h4 class="product-title">Raw Deep Purple Brazilian Amethyst Calming Tower</h4>
+              <h4 class="product-title">
+                <a href="product.html?id=11">Raw Deep Purple Brazilian Amethyst Calming Tower</a>
+              </h4>
               <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(378 reviews)</span></div>
               <div class="product-pricing-row">
                 <span class="current-price">₹1,150</span>
@@ -2315,9 +2474,14 @@
                 <span>Deep Meditation Anchor for Bedside or Altar</span>
               </div>
             </div>
-            <button class="btn btn-maroon" style="width: 100%;" onclick="addToCart('Brazilian Amethyst Calming Tower', 1150, 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=80')">
-              ✦ Add to Cart (COD Avail.)
-            </button>
+            <div style="display: flex; gap: 0.5rem; width: 100%;">
+              <button class="btn btn-maroon" style="flex: 1;" onclick="addToCart('Raw Deep Purple Brazilian Amethyst Calming Tower', 1150, 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=80', 'brazilian-amethyst-tower')">
+                ✦ Add to Cart
+              </button>
+              <a href="product.html?id=11" class="btn btn-outline" style="padding: 0.65rem 0.9rem; font-size: 0.8rem;">
+                Details
+              </a>
+            </div>
           </div>
         </div>
 
@@ -2325,13 +2489,17 @@
         <div class="product-card" data-category="rudraksha peace love">
           <div class="product-media">
             <span class="product-badge-flag">Vrindavan Dham</span>
-            <img class="product-img" src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80" alt="Tulsi Mala" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'270\' viewBox=\'0 0 300 270\'><rect width=\'300\' height=\'270\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'36\' fill=\'%2380142B\'>Tulsi Mala</text></svg>'">
+            <a href="product.html?id=12">
+              <img class="product-img" src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80" alt="Tulsi Mala" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'270\' viewBox=\'0 0 300 270\'><rect width=\'300\' height=\'270\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'36\' fill=\'%2380142B\'>Tulsi Mala</text></svg>'">
+            </a>
             <button class="product-quick-view-btn" onclick="openQuickView(12)">Quick View</button>
           </div>
           <div class="product-info-wrap">
             <div>
               <div class="product-category-sub">Sacred Japa Mala</div>
-              <h4 class="product-title">Original Vrindavan Holy Tulsi Wood Kanthi Mala</h4>
+              <h4 class="product-title">
+                <a href="product.html?id=12">Original Vrindavan Holy Tulsi Wood Kanthi Mala</a>
+              </h4>
               <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(532 reviews)</span></div>
               <div class="product-pricing-row">
                 <span class="current-price">₹599</span>
@@ -2343,12 +2511,24 @@
                 <span>Purifies the Mind, Nervous System & Aura</span>
               </div>
             </div>
-            <button class="btn btn-maroon" style="width: 100%;" onclick="addToCart('Original Vrindavan Tulsi Kanthi Mala', 599, 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80')">
-              ✦ Add to Cart (COD Avail.)
-            </button>
+            <div style="display: flex; gap: 0.5rem; width: 100%;">
+              <button class="btn btn-maroon" style="flex: 1;" onclick="addToCart('Original Vrindavan Holy Tulsi Wood Kanthi Mala', 599, 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80', 'vrindavan-tulsi-kanthi-mala')">
+                ✦ Add to Cart
+              </button>
+              <a href="product.html?id=12" class="btn btn-outline" style="padding: 0.65rem 0.9rem; font-size: 0.8rem;">
+                Details
+              </a>
+            </div>
           </div>
         </div>
 
+      </div>
+
+      <!-- Prominent Collections Hub CTA Button -->
+      <div style="text-align: center; margin-top: 3.5rem;">
+        <a href="collections.html" class="btn btn-maroon" style="padding: 1rem 2.8rem; font-size: 0.95rem; box-shadow: var(--m-shadow-md);">
+          ✦ View All Collections & Filter Full Catalogue (12+ Consecrated Offerings) →
+        </a>
       </div>
     </div>
   </section>
@@ -2462,6 +2642,13 @@
           </button>
         </div>
       </div>
+
+      <!-- Dedicated Consultations Portal Button -->
+      <div style="text-align: center; margin-top: 2.8rem;">
+        <a href="consultations.html" class="btn btn-maroon" style="padding: 0.95rem 2.4rem; font-size: 0.92rem; box-shadow: var(--m-shadow-md);">
+          ✦ View Dedicated Consultations Portal & Intake Form →
+        </a>
+      </div>
     </div>
   </section>
 
@@ -2572,7 +2759,7 @@
           <p style="color: var(--m-maroon); font-size: 1rem; font-weight: 700; margin-bottom: 1.2rem;">
             Desire a detailed analysis of these cards applied to your birth chart?
           </p>
-          <a href="#services" class="btn btn-maroon">✦ Book 1-on-1 Consultation with Kavita</a>
+          <a href="consultations.html" class="btn btn-maroon">✦ Book 1-on-1 Consultation with Kavita</a>
         </div>
       </div>
     </div>
@@ -2641,6 +2828,12 @@
           </div>
         </div>
       </div>
+
+      <div style="text-align: center; margin-top: 2.5rem;">
+        <a href="about.html" class="btn btn-outline" style="padding: 0.8rem 2.2rem;">
+          ✦ Read Kavita's Sacred Journey & Devotee Stories →
+        </a>
+      </div>
     </div>
   </section>
 
@@ -2696,6 +2889,12 @@
           </div>
         </div>
       </div>
+
+      <div style="text-align: center; margin-top: 2.8rem;">
+        <a href="faq.html" class="btn btn-maroon" style="padding: 0.95rem 2.4rem;">
+          ✦ View All 12+ Sacred FAQs & Care Guidelines →
+        </a>
+      </div>
     </div>
   </section>
 
@@ -2721,32 +2920,36 @@
         <div class="footer-col">
           <h5>Shop Categories</h5>
           <ul class="footer-links">
-            <li><a href="#categories" onclick="filterShop('rudraksha')">Nepali Rudraksha Beads</a></li>
-            <li><a href="#categories" onclick="filterShop('bracelets')">Healing Crystal Bracelets</a></li>
-            <li><a href="#spotlight">7 Horses Pyrite Frame</a></li>
-            <li><a href="#categories" onclick="filterShop('yantras')">24K Gold Sri Yantras</a></li>
-            <li><a href="#categories" onclick="filterShop('pyramids')">Orgone Pyramids</a></li>
-            <li><a href="#categories" onclick="filterShop('pooja')">Vrindavan Tulsi Malas</a></li>
+            <li><a href="collections.html?cat=rudraksha">Nepali Rudraksha Beads</a></li>
+            <li><a href="collections.html?cat=bracelets">Healing Crystal Bracelets</a></li>
+            <li><a href="product.html?id=3">7 Horses Pyrite Frame</a></li>
+            <li><a href="collections.html?cat=yantras">24K Gold Sri Yantras</a></li>
+            <li><a href="collections.html?cat=pyramids">Orgone Pyramids</a></li>
+            <li><a href="collections.html">All Sacred Offerings</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h5>Consultations</h5>
           <ul class="footer-links">
-            <li><a href="#services">Audio Call (10/20/30 Mins)</a></li>
-            <li><a href="#services">WhatsApp Voice Note (₹451)</a></li>
-            <li><a href="#services">Distance Pranic Healing</a></li>
+            <li><a href="consultations.html">Audio Call (10/20/30 Mins)</a></li>
+            <li><a href="consultations.html">WhatsApp Voice Note (₹451)</a></li>
+            <li><a href="consultations.html">Distance Pranic Healing</a></li>
             <li><a href="#oracle">Free 3-Card 3D Oracle</a></li>
-            <li><a href="#concerns">Astro-Remedy Finder</a></li>
+            <li><a href="about.html">Meet Kavita's Story</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h5>Customer Care</h5>
-          <p style="margin-bottom: 0.6rem; color: #D6D0CA;">WhatsApp Support: +91 98765 43210</p>
-          <p style="margin-bottom: 0.6rem; color: #D6D0CA;">Email: contact@mantramm.com</p>
-          <p style="margin-bottom: 1.2rem; color: #A39D98;">Hours: 9:00 AM – 8:00 PM IST (Mon–Sat)</p>
-          <div style="display: flex; gap: 0.8rem;">
+          <ul class="footer-links">
+            <li><a href="faq.html">FAQ & Care Guidelines</a></li>
+            <li><a href="contact.html">Contact & Sanctuaries</a></li>
+            <li><a href="cart.html">View Dedicated Cart</a></li>
+            <li><a href="https://wa.me/919876543210" target="_blank">WhatsApp Support: +91 98765 43210</a></li>
+            <li><a href="mailto:contact@mantramm.com">contact@mantramm.com</a></li>
+          </ul>
+          <div style="display: flex; gap: 0.8rem; margin-top: 1rem;">
             <span style="font-size: 1.4rem; color: var(--m-gold-light);">💳</span>
             <span style="font-size: 0.82rem; color: #A39D98; align-self: center;">UPI · GPay · PhonePe · COD · NetBanking</span>
           </div>
@@ -2758,10 +2961,9 @@
           © 2026 MANTRAMM × KAVITA TAROT READER. All Rights Reserved.
         </div>
         <div style="display: flex; gap: 1.5rem;">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Shipping & Returns</a>
-          <a href="#">Lab Certificate Verification</a>
+          <a href="faq.html">Privacy & Terms</a>
+          <a href="faq.html">Shipping & COD</a>
+          <a href="about.html">Lab Certificate Verification</a>
         </div>
       </div>
     </div>
@@ -2801,9 +3003,14 @@
         <span>Subtotal:</span>
         <span id="cartSubtotal" style="color: var(--m-maroon);">₹0</span>
       </div>
-      <button class="btn btn-maroon" style="width: 100%; padding: 0.95rem;" onclick="checkoutCart()">
-        ✦ Proceed to Secure Checkout (COD Avail.)
-      </button>
+      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+        <button class="btn btn-maroon" style="width: 100%; padding: 0.95rem;" onclick="checkoutCart()">
+          ✦ Proceed to Secure Checkout (COD Avail.)
+        </button>
+        <a href="cart.html" class="btn btn-outline" style="width: 100%; padding: 0.75rem; text-align: center; display: block;">
+          View Dedicated Cart Page
+        </a>
+      </div>
       <div style="text-align: center; font-size: 0.74rem; color: var(--m-text-muted); margin-top: 0.8rem;">
         🔒 256-Bit SSL Encrypted · 100% Authentic Consecrated Items
       </div>
@@ -2901,206 +3108,10 @@
   <!-- =========================================================
        JAVASCRIPT: FULL INTERACTIVITY, CART, & TAROT ENGINE
   ========================================================= -->
+  <!-- Persistent Store & Cart Engine -->
+  <script src="assets/store-data.js"></script>
+
   <script>
-    // Audio synthesis for sacred singing bowl chime
-    let audioCtx = null;
-    function playSacredChime(freq = 528) {
-      try {
-        const AudioContext = window.AudioContext || window.webkitAudioContext;
-        if (!AudioContext) return;
-        if (!audioCtx) audioCtx = new AudioContext();
-        if (audioCtx.state === 'suspended') audioCtx.resume();
-        
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-        
-        gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.2, audioCtx.currentTime + 0.05);
-        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 1.8);
-        
-        osc.connect(gain);
-        gain.connect(audioCtx.destination);
-        osc.start();
-        osc.stop(audioCtx.currentTime + 1.8);
-      } catch (e) {
-        console.warn('Audio not enabled:', e);
-      }
-    }
-
-    // Products Database for Quick View & Search
-    const PRODUCTS_DB = [
-      {
-        id: 1,
-        title: "7 Chakra Radiance Healing Energy Bracelet",
-        category: "Crystal Bracelet",
-        price: 899,
-        comparePrice: 1899,
-        img: "https://images.unsplash.com/photo-1611591475870-85f8c85775c9?auto=format&fit=crop&w=600&q=80",
-        description: "Expertly strung with natural Amethyst, Lapis Lazuli, Blue Turquoise, Green Aventurine, Tiger Eye, Carnelian, and Red Jasper beads. Consecrated to balance and harmonize all seven primary energy chakras.",
-        benefits: ["Kundalini energy balancing", "Harmonizes aura against negative vibrations", "Comfortable stretch cord for all wrist sizes"]
-      },
-      {
-        id: 2,
-        title: "Original 5 Mukhi Nepali Rudraksha Mala (108+1)",
-        category: "Nepali Rudraksha",
-        price: 1299,
-        comparePrice: 2599,
-        img: "https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827?auto=format&fit=crop&w=600&q=80",
-        description: "Directly sourced from Nepal and consecrated at the sanctum of Lord Shiva. Each bead displays natural five mukhi clefts and is strung with traditional knots and an auspicious red silk tassel.",
-        benefits: ["Bestows peace, self-discipline & mental focus", "Regulates blood pressure and heartbeat", "Includes ISO certified lab authenticity report"]
-      },
-      {
-        id: 3,
-        title: "7 Running Horses Natural Pyrite Wealth Frame",
-        category: "Vastu & Pyrite Frame",
-        price: 2499,
-        comparePrice: 4999,
-        img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80",
-        description: "The #1 Vastu remedy for fast commercial growth, job promotions, and relentless financial expansion. Hand-inlaid with natural shimmering golden pyrite minerals.",
-        benefits: ["Place on North/East wall for maximum money flow", "Eliminates stagnation in career and business deals", "Free Vastu directional guideline chart included"]
-      },
-      {
-        id: 4,
-        title: "24K Gold Plated Maha Meru Shree Yantra Plate",
-        category: "Sacred Yantra",
-        price: 1499,
-        comparePrice: 2999,
-        img: "https://images.unsplash.com/photo-1567225557594-88d73e55f2cb?auto=format&fit=crop&w=600&q=80",
-        description: "The Mother of all sacred geometry! Imbued with 24K pure gold coating over pure heavy brass, consecrated with the sacred Sri Suktam and Lakshmi mantras.",
-        benefits: ["Attracts Goddess Mahalakshmi blessings", "Neutralizes architectural and Vastu imbalances", "Ideal for home altar, cash registers & executive offices"]
-      },
-      {
-        id: 5,
-        title: "Raw Natural Pyrite Stone Cluster (150-200g)",
-        category: "Raw Mineral Cluster",
-        price: 999,
-        comparePrice: 1999,
-        img: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=600&q=80",
-        description: "Known since antiquity as 'The Fool's Gold' because of its golden luster. Pyrite holds strong masculine solar energy that stimulates confidence and wealth attraction.",
-        benefits: ["Shields your workspace from financial envy", "Boosts manifestation power for business goals", "Natural raw crystalline formations"]
-      },
-      {
-        id: 6,
-        title: "Triple Protection Bracelet (Tiger Eye + Obsidian + Hematite)",
-        category: "Crystal Bracelet",
-        price: 1199,
-        comparePrice: 2399,
-        img: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80",
-        description: "The most powerful energetic bodyguard in gemstone therapy. Combines Golden Tiger Eye, volcanic Black Obsidian, and metallic Hematite.",
-        benefits: ["Unbreakable defense against Evil Eye (Buri Nazar)", "Dissolves emotional tension and self-doubt", "Brings grounding and courage in tough negotiations"]
-      }
-    ];
-
-    // Shopping Cart State
-    let cart = [];
-
-    function updateCartUI() {
-      const cartCountEl = document.getElementById('cartCount');
-      const cartCountHeaderEl = document.getElementById('cartCountHeader');
-      const cartItemsListEl = document.getElementById('cartItemsList');
-      const cartSubtotalEl = document.getElementById('cartSubtotal');
-      const shippingTextEl = document.getElementById('shippingProgressText');
-      const shippingFillEl = document.getElementById('shippingProgressFill');
-
-      const totalItems = cart.reduce((acc, item) => acc + item.qty, 0);
-      const subtotal = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
-
-      cartCountEl.innerText = totalItems;
-      cartCountHeaderEl.innerText = totalItems;
-      cartSubtotalEl.innerText = '₹' + subtotal.toLocaleString('en-IN');
-
-      // Free shipping threshold ₹999
-      if (subtotal >= 999) {
-        shippingTextEl.innerHTML = '🎉 <b>CONGRATULATIONS!</b> You unlocked FREE Express Shipping!';
-        shippingFillEl.style.width = '100%';
-      } else {
-        const remaining = 999 - subtotal;
-        const pct = Math.min(100, Math.round((subtotal / 999) * 100));
-        shippingTextEl.innerHTML = `✦ Add <b>₹${remaining}</b> more for FREE Express Delivery!`;
-        shippingFillEl.style.width = pct + '%';
-      }
-
-      if (cart.length === 0) {
-        cartItemsListEl.innerHTML = `
-          <div style="text-align: center; color: var(--m-text-muted); padding: 3rem 1rem;">
-            <div style="font-size: 3rem; margin-bottom: 1rem; color: var(--m-maroon);">📿</div>
-            <p style="font-weight: 600; color: var(--m-text-dark);">Your cart is empty.</p>
-            <p style="font-size: 0.85rem; margin-top: 0.5rem;">Explore our energized Rudrakshas and healing gemstones.</p>
-          </div>
-        `;
-        return;
-      }
-
-      cartItemsListEl.innerHTML = cart.map((item, index) => `
-        <div class="cart-item-row">
-          <img class="cart-item-img" src="${item.img}" alt="${item.name}">
-          <div class="cart-item-info">
-            <div class="cart-item-title">${item.name}</div>
-            <div class="cart-item-price">₹${(item.price * item.qty).toLocaleString('en-IN')}</div>
-            <div class="cart-qty-ctrl">
-              <button class="qty-btn" onclick="changeQty(${index}, -1)">−</button>
-              <span style="font-size: 0.85rem; font-weight: bold;">${item.qty}</span>
-              <button class="qty-btn" onclick="changeQty(${index}, 1)">+</button>
-              <button onclick="removeFromCart(${index})" style="background: none; border: none; color: #d32f2f; font-size: 0.75rem; margin-left: 0.8rem; cursor: pointer; font-weight: 600;">Remove</button>
-            </div>
-          </div>
-        </div>
-      `).join('');
-    }
-
-    function addToCart(name, price, img = '') {
-      playSacredChime(639);
-      if (!img) img = 'https://images.unsplash.com/photo-1611591475870-85f8c85775c9?auto=format&fit=crop&w=200&q=80';
-      const existing = cart.find(i => i.name === name);
-      if (existing) {
-        existing.qty += 1;
-      } else {
-        cart.push({ name, price, qty: 1, img });
-      }
-      updateCartUI();
-      openCart();
-    }
-
-    function changeQty(index, delta) {
-      if (cart[index]) {
-        cart[index].qty += delta;
-        if (cart[index].qty <= 0) {
-          cart.splice(index, 1);
-        }
-      }
-      updateCartUI();
-    }
-
-    function removeFromCart(index) {
-      cart.splice(index, 1);
-      updateCartUI();
-    }
-
-    function openCart() {
-      document.getElementById('cartOverlay').classList.add('active');
-      document.getElementById('cartDrawer').classList.add('active');
-    }
-
-    function closeCart() {
-      document.getElementById('cartOverlay').classList.remove('active');
-      document.getElementById('cartDrawer').classList.remove('active');
-    }
-
-    document.getElementById('openCartBtn').addEventListener('click', openCart);
-
-    function checkoutCart() {
-      if (cart.length === 0) {
-        alert('Your cart is empty. Please select an energized item.');
-        return;
-      }
-      const subtotal = cart.reduce((acc, i) => acc + (i.price * i.qty), 0);
-      const itemsStr = cart.map(i => `${i.name} (x${i.qty}) - ₹${i.price * i.qty}`).join('%0A');
-      const waMsg = `*ORDER ENQUIRY - MANTRAMM × KAVITA*%0A%0A*Items:*%0A${itemsStr}%0A%0A*Total Amount:* ₹${subtotal}%0A%0APlease confirm availability & Cash on Delivery options!`;
-      window.open(`https://wa.me/919876543210?text=${waMsg}`, '_blank');
-    }
-
     // Filter Products by Category Tabs
     function filterProducts(category, btnEl) {
       if (btnEl) {
@@ -3121,42 +3132,10 @@
     // Filter Shop by clicking circles or concerns
     function filterShop(term) {
       const shopEl = document.getElementById('shop');
-      shopEl.scrollIntoView({ behavior: 'smooth' });
-      filterProducts(term);
-    }
-
-    // Quick View Modal
-    function openQuickView(id) {
-      const product = PRODUCTS_DB.find(p => p.id === id);
-      if (!product) return;
-      playSacredChime(432);
-      const content = `
-        <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
-          <img src="${product.img}" style="width: 200px; height: 200px; object-fit: cover; border-radius: 12px; border: 1px solid var(--m-border);" alt="${product.title}">
-          <div style="flex: 1; min-width: 250px;">
-            <div style="color: var(--m-gold-dark); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; margin-bottom: 0.3rem;">${product.category}</div>
-            <h3 style="font-size: 1.35rem; color: var(--m-text-dark); margin-bottom: 0.5rem;">${product.title}</h3>
-            <div style="display: flex; align-items: baseline; gap: 0.8rem; margin-bottom: 1rem;">
-              <span style="font-family: var(--font-heading); font-size: 1.45rem; color: var(--m-maroon); font-weight: 800;">₹${product.price}</span>
-              <span style="text-decoration: line-through; color: var(--m-text-muted); font-size: 0.94rem;">₹${product.comparePrice}</span>
-              <span style="color: var(--m-green); background: #E8F8F0; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">SAVE 50%</span>
-            </div>
-            <p style="color: #5C544D; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.2rem;">${product.description}</p>
-            <ul style="list-style: none; margin-bottom: 1.5rem; font-size: 0.85rem; color: var(--m-text-dark);">
-              ${product.benefits.map(b => `<li style="margin-bottom: 0.3rem;">✦ ${b}</li>`).join('')}
-            </ul>
-            <button class="btn btn-maroon" style="width: 100%;" onclick="addToCart('${product.title}', ${product.price}, '${product.img}'); closeQuickView();">
-              ✦ Add to Cart — Free Delivery
-            </button>
-          </div>
-        </div>
-      `;
-      document.getElementById('quickViewContent').innerHTML = content;
-      document.getElementById('quickViewModal').classList.add('active');
-    }
-
-    function closeQuickView() {
-      document.getElementById('quickViewModal').classList.remove('active');
+      if (shopEl) {
+        shopEl.scrollIntoView({ behavior: 'smooth' });
+        filterProducts(term);
+      }
     }
 
     // Booking Intake Modal
@@ -3206,44 +3185,6 @@
         r20.innerText = '₹1,999';
         r30.innerText = '₹2,999';
       }
-    }
-
-    // Search Modal
-    function openSearchModal() {
-      document.getElementById('searchModal').classList.add('active');
-      document.getElementById('searchBoxInput').focus();
-    }
-
-    function closeSearchModal() {
-      document.getElementById('searchModal').classList.remove('active');
-    }
-
-    function handleSearch(query) {
-      const container = document.getElementById('searchResultsList');
-      if (!query || query.trim().length === 0) {
-        container.innerHTML = '';
-        return;
-      }
-      const q = query.toLowerCase();
-      const matches = PRODUCTS_DB.filter(p => p.title.toLowerCase().includes(q) || p.category.toLowerCase().includes(q));
-      if (matches.length === 0) {
-        container.innerHTML = `<div style="color: var(--m-text-muted); font-size: 0.85rem; padding: 1rem 0;">No spiritual products matching "${query}".</div>`;
-        return;
-      }
-      container.innerHTML = matches.map(p => `
-        <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid var(--m-border);">
-          <div style="display: flex; align-items: center; gap: 0.8rem;">
-            <img src="${p.img}" style="width: 40px; height: 40px; border-radius: 6px; object-fit: cover;">
-            <div>
-              <div style="font-size: 0.88rem; color: var(--m-text-dark); font-weight: 700;">${p.title}</div>
-              <div style="font-size: 0.78rem; color: var(--m-maroon); font-family: var(--font-heading); font-weight: 700;">₹${p.price}</div>
-            </div>
-          </div>
-          <button class="btn btn-maroon" style="padding: 0.35rem 0.85rem; font-size: 0.75rem;" onclick="addToCart('${p.title}', ${p.price}, '${p.img}'); closeSearchModal();">
-            Add
-          </button>
-        </div>
-      `).join('');
     }
 
     // FAQ Accordion

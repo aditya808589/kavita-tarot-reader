@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ & Vedic Care Guide — MANTRAMM × KAVITA</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/vanikabir.css">
+
+  <style>
+    .faq-category-nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin: 3rem 0 3.5rem;
+    }
+
+    .faq-cat-pill {
+      background: #FFFFFF;
+      border: 1px solid var(--v-border);
+      padding: 0.6rem 1.4rem;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--v-text-muted);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .faq-cat-pill.active, .faq-cat-pill:hover {
+      background: var(--v-maroon);
+      color: #FFFFFF;
+      border-color: var(--v-maroon);
+    }
+
+    .faq-group-block {
+      max-width: 900px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .faq-item {
+      background: #FFFFFF;
+      border: 1px solid var(--v-border);
+      border-radius: 14px;
+      margin-bottom: 1.2rem;
+      overflow: hidden;
+      box-shadow: var(--v-shadow-sm);
+    }
+
+    .faq-question {
+      padding: 1.4rem 1.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      color: var(--v-text-dark);
+      font-weight: 700;
+    }
+
+    .faq-toggle-icon {
+      color: var(--v-maroon);
+      font-size: 1.4rem;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-toggle-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 1.8rem 1.6rem;
+      color: var(--v-text-body);
+      font-size: 0.96rem;
+      line-height: 1.7;
+      border-top: 1px solid var(--v-border);
+      padding-top: 1rem;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP MARQUEE -->
+  <div class="top-marquee-strip">
+    <div class="top-marquee-track">
+      <div class="top-marquee-item"><span class="bullet">✦</span> 100% ORIGINAL & LAB CERTIFIED RUDRAKSHA</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> ENERGIZED WITH VEDIC PRAN PRATISHTHA</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> FREE SHIPPING ON ORDERS ABOVE ₹999</div>
+      <!-- Loop -->
+      <div class="top-marquee-item"><span class="bullet">✦</span> 100% ORIGINAL & LAB CERTIFIED RUDRAKSHA</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> ENERGIZED WITH VEDIC PRAN PRATISHTHA</div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-wrap">
+        <a href="index.html" class="brand">
+          <span class="brand-logo-icon">🕉</span>
+          <span>MANTRAMM</span>
+        </a>
+        <span class="brand-tagline">Vedic Sacred Store × Kavita Tarot</span>
+      </div>
+
+      <ul class="nav-menu">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="collections.html">Collections</a></li>
+        <li class="nav-item"><a class="nav-link" href="consultations.html">Consultations</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Kavita</a></li>
+        <li class="nav-item"><a class="nav-link active" href="faq.html">FAQ & Care</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <button class="cart-btn" id="openCartBtn">
+          <span>Cart</span>
+          <span class="cart-badge" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a> / <span>FAQ & Care Guide</span>
+      </div>
+      <h1 class="page-hero-title">Sacred Care & Guidelines</h1>
+      <p class="page-hero-sub">
+        Everything you need to know about Vedic energization, cleansing crystals, Rudraksha wearing rules, and appointment scheduling.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <main class="container">
+    <div class="faq-category-nav">
+      <button class="faq-cat-pill active" onclick="filterFAQ('all', this)">All Questions</button>
+      <button class="faq-cat-pill" onclick="filterFAQ('pran', this)">Pran Pratishtha</button>
+      <button class="faq-cat-pill" onclick="filterFAQ('care', this)">How to Wear & Care</button>
+      <button class="faq-cat-pill" onclick="filterFAQ('consult', this)">Consultations</button>
+      <button class="faq-cat-pill" onclick="filterFAQ('shipping', this)">Shipping & COD</button>
+    </div>
+
+    <div class="faq-group-block">
+      
+      <!-- FAQ 1 -->
+      <div class="faq-item active" data-cat="pran">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>What is Vedic Pran Pratishtha and why is it essential?</span>
+          <span class="faq-toggle-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Pran Pratishtha is the sacred Vedic consecration ceremony through which an inert mineral or seed is spiritually infused with cosmic life force (Prana). In our Varanasi and Haridwar sanctums, certified priests bathe each item in Gangajal, Panchamrit, and offer dhoop while chanting ancient planetary beeja mantras. This ensures your crystal or Rudraksha arrives pulsating with pure divine vibration rather than factory dust.
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-item" data-cat="pran">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>How do I know my Rudraksha or Gemstone is genuine?</span>
+          <span class="faq-toggle-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Every piece is verified in government-recognized ISO 9001:2015 gemological laboratories. We include the physical laboratory report with microscopic magnification tests, specific gravity, refractive index, and a scannable QR code linking to the lab's online database.
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="faq-item" data-cat="care">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>Can women wear Rudraksha? Are there any menstrual restrictions?</span>
+          <span class="faq-toggle-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Yes, absolutely! Classical Vedic scriptures like the Shiva Purana and Srimad Devi Bhagavatam explicitly state that Rudraksha can and should be worn by everyone regardless of gender, caste, or age. Shiva's grace is universal. While some choose to take off beads during child-delivery or death ceremonies (Sutak period), daily wear is fully auspicious.
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="faq-item" data-cat="care">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>How often should I cleanse my crystal bracelets?</span>
+          <span class="faq-toggle-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Crystals absorb ambient energetic vibrations. Cleanse your bracelets once every 30 days under the gentle light of the Full Moon (Purnima) for 3 to 4 hours. You can also place them on a Selenite charging plate or pass them through sacred White Sage / Guggul smoke. Avoid submerging soft stones (like Selenite or Pyrite) in water.
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="faq-item" data-cat="consult">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>What is the difference between an Audio Call and Voice Note?</span>
+          <span class="faq-toggle-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          An Audio Call is a live 10, 20, or 30-minute interactive WhatsApp phone consultation where you can converse directly with Kavita, ask follow-up questions, and explore multiple life areas. A Voice Note (₹451) is an express recorded reading answering 1 specific question delivered within 4 hours.
+        </div>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="faq-item" data-cat="shipping">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>Is Cash on Delivery (COD) available in my city?</span>
+          <span class="faq-toggle-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Yes! We offer Cash on Delivery (COD) across more than 19,000 postal pin codes across all 28 states and Union Territories in India. We also offer Free Express Delivery on all orders above ₹999.
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand" style="color: #FFFFFF; margin-bottom: 0.8rem;">
+            <span class="brand-logo-icon" style="color: #FFDF78;">🕉</span>
+            <span>MANTRAMM</span>
+          </div>
+          <p style="line-height: 1.7; margin-bottom: 1.5rem; color: #A39D98;">
+            Dedicated to reviving authentic Vedic wisdom, original Nepali Rudraksha, energized healing gemstones, and intuitive Tarot guidance by Kavita. Handcrafted and energized with devotion.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h5>Shop Collections</h5>
+          <ul class="footer-links">
+            <li><a href="collections.html?cat=rudraksha">Nepali Rudraksha</a></li>
+            <li><a href="collections.html?cat=bracelets">Healing Bracelets</a></li>
+            <li><a href="collections.html?cat=vastu">Pyrite Vastu Frames</a></li>
+            <li><a href="consultations.html">Book Reading</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Customer Care</h5>
+          <p style="margin-bottom: 0.6rem; color: #D6D0CA;">WhatsApp: +91 98765 43210</p>
+          <p style="margin-bottom: 0.6rem; color: #D6D0CA;">Email: contact@mantramm.com</p>
+          <p style="color: #A39D98;">Hours: 9:00 AM – 8:00 PM IST (Mon–Sat)</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 MANTRAMM × KAVITA TAROT READER. All Rights Reserved.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+          <a href="faq.html">Lab Certification</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CART DRAWER -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <div style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--v-text-dark); font-weight: 700;">
+        Your Sacred Cart (<span id="cartCountHeader">0</span>)
+      </div>
+      <button onclick="closeCart()" style="background: none; border: none; color: var(--v-text-dark); font-size: 1.5rem; cursor: pointer;">✕</button>
+    </div>
+    <div class="cart-progress-bar-wrap">
+      <div id="shippingProgressText">✦ Add ₹999 for FREE Express Delivery!</div>
+      <div class="cart-progress-bar">
+        <div class="cart-progress-fill" id="shippingProgressFill" style="width: 0%;"></div>
+      </div>
+    </div>
+    <div class="cart-body" id="cartItemsList"></div>
+    <div class="cart-footer">
+      <div class="cart-subtotal-row">
+        <span>Subtotal:</span>
+        <span id="cartSubtotal" style="color: var(--v-maroon);">₹0</span>
+      </div>
+      <button class="btn btn-maroon" style="width: 100%; padding: 0.95rem;" onclick="checkoutCart()">
+        ✦ Proceed to Secure Checkout (COD Avail.)
+      </button>
+    </div>
+  </div>
+
+  <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" rel="noopener">💬</a>
+  <script src="assets/store-data.js"></script>
+  <script>
+    function toggleFAQ(el) {
+      const item = el.closest('.faq-item');
+      item.classList.toggle('active');
+    }
+
+    function filterFAQ(category, btnEl) {
+      document.querySelectorAll('.faq-cat-pill').forEach(b => b.classList.remove('active'));
+      btnEl.classList.add('active');
+
+      const items = document.querySelectorAll('.faq-item');
+      items.forEach(item => {
+        const cat = item.getAttribute('data-cat') || '';
+        if (category === 'all' || cat === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
