@@ -1935,8 +1935,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* =========================================================
-   RAJVIRA-STYLE INTERACTIVE BANNER SLIDER
+   RAJVIRA-STYLE INTERACTIVE BANNER SLIDER (BOXED CONTAINER)
 ========================================================= */
+.kavita-slider-outer {
+  width: 100%;
+  background: transparent;
+}
+
+.kavita-slider-outer--contained {
+  max-width: 1360px;
+  margin: 1.5rem auto 2.2rem;
+  padding: 0 1.5rem;
+}
+
+.kavita-slider-outer--contained .kavita-slider-wrap {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(216, 180, 93, 0.25);
+}
+
+@media (max-width: 767px) {
+  .kavita-slider-outer--contained {
+    padding: 0 0.85rem;
+    margin: 1rem auto 1.5rem;
+  }
+  .kavita-slider-outer--contained .kavita-slider-wrap {
+    border-radius: 14px;
+  }
+}
+
 .kavita-slider-wrap {
   position: relative;
   width: 100%;

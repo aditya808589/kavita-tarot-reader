@@ -139,32 +139,57 @@
   </div>
 
   <!-- HEADER -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand-wrap">
-        <a href="index.html" class="brand">
-          <span class="brand-logo-icon">🕉</span>
-          <span>MANTRAMM</span>
-        </a>
-        <span class="brand-tagline">Vedic Sacred Store × Kavita Tarot</span>
-      </div>
+  <header class="kavita-hdr">
+    <div class="kavita-hdr__main">
+      <div class="container kavita-hdr__container">
+        <div class="kavita-hdr__brand">
+          <a href="index.html" class="kavita-hdr__logo-link">
+            <img src="assets/kavita-logo-gold.png" alt="Kavita Tarot & Spirituals" class="kavita-hdr__logo-img">
+            <div class="kavita-hdr__brand-titles">
+              <span class="kavita-hdr__brand-name">KAVITA</span>
+              <span class="kavita-hdr__brand-sub">Tarot & Spirituals</span>
+            </div>
+          </a>
+        </div>
 
-      <ul class="nav-menu">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="collections.html">Collections</a></li>
-        <li class="nav-item"><a class="nav-link active" href="consultations.html">Consultations</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About Kavita</a></li>
-        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ & Care</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-      </ul>
+        <div class="kavita-hdr__search-wrap">
+          <form action="collections.html" method="get" class="kavita-hdr__search-form" onsubmit="event.preventDefault(); window.location.href='collections.html?search=' + encodeURIComponent(this.querySelector('input').value);">
+            <svg class="kavita-hdr__search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="search" class="kavita-hdr__search-input" placeholder="Search for tarot decks, crystals, readings & +1000 designs..." aria-label="Search store">
+            <button type="submit" class="kavita-hdr__search-btn">Search</button>
+          </form>
+        </div>
 
-      <div class="header-actions">
-        <button class="cart-btn" id="openCartBtn">
-          <span>Cart</span>
-          <span class="cart-badge" id="cartCount">0</span>
-        </button>
+        <div class="kavita-hdr__actions">
+          <a href="consultations.html" class="kavita-hdr__util-link"><span class="kavita-hdr__util-dot">●</span> Book Online</a>
+          <a href="collections.html?wishlist=1" class="kavita-hdr__icon-btn" aria-label="Wishlist">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            <span class="kavita-hdr__badge">0</span>
+          </a>
+          <a href="contact.html" class="kavita-hdr__icon-btn" aria-label="Account">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          </a>
+          <button class="kavita-hdr__icon-btn kavita-hdr__icon-btn--cart" id="openCartBtn" aria-label="Open Cart" style="background: none; border: none; cursor: pointer;">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="kavita-hdr__badge kavita-hdr__badge--cart" id="cartCount">0</span>
+          </button>
+        </div>
       </div>
     </div>
+
+    <nav class="kavita-hdr__nav-bar" aria-label="Category Navigation">
+      <div class="container kavita-hdr__container">
+        <ul class="kavita-hdr__menu">
+          <li class="kavita-hdr__menu-item"><a href="collections.html" class="kavita-hdr__menu-link">All Collections</a></li>
+          <li class="kavita-hdr__menu-item"><a href="consultations.html" class="kavita-hdr__menu-link" style="color: #80142B; font-weight: 800;">Consultations</a></li>
+          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=all" class="kavita-hdr__menu-link">Tarot Decks</a></li>
+          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=crystals" class="kavita-hdr__menu-link">Crystals & Gems</a></li>
+          <li class="kavita-hdr__menu-item"><a href="about.html" class="kavita-hdr__menu-link">About Kavita</a></li>
+          <li class="kavita-hdr__menu-item"><a href="faq.html" class="kavita-hdr__menu-link">FAQ & Care</a></li>
+          <li class="kavita-hdr__menu-item"><a href="contact.html" class="kavita-hdr__menu-link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
   </header>
 
   <!-- PAGE HERO -->
@@ -192,84 +217,128 @@
             Live WhatsApp Audio
           </div>
           <h3 style="font-size: 1.55rem; margin-bottom: 0.8rem;">Live Audio Call Tarot Reading</h3>
-          <p style="color: var(--v-text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
-            A personal live one-on-one session with Kavita focusing on your urgent crossroads, career decisions, and soulmate energies.
+          <p style="color: var(--v-text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem;">
+            A personal live one-on-one consultation with Kavita focusing on your urgent questions regarding love, career, finances, and life crossroads.
           </p>
 
-          <div style="background: #FAF7F2; border: 1px solid var(--v-border); border-radius: 12px; padding: 1.2rem; margin-bottom: 1.5rem;">
+          <div style="background: #FAF7F2; border: 1px solid var(--v-border); border-radius: 12px; padding: 1.2rem; margin-bottom: 1.5rem; font-size: 0.88rem;">
             <div style="display: flex; justify-content: space-between; padding: 0.45rem 0; border-bottom: 1px solid var(--v-border);">
-              <span>10 Minutes Express</span>
-              <span style="font-family: var(--font-heading); color: var(--v-maroon); font-weight: 800;">₹1,555</span>
+              <span>10 Mins (Standard / Premium)</span>
+              <span style="font-family: var(--font-heading); color: var(--v-maroon); font-weight: 800;">₹999 / ₹1,555</span>
             </div>
             <div style="display: flex; justify-content: space-between; padding: 0.45rem 0; border-bottom: 1px solid var(--v-border);">
-              <span>20 Minutes In-Depth</span>
-              <span style="font-family: var(--font-heading); color: var(--v-maroon); font-weight: 800;">₹3,099</span>
+              <span>20 Mins (Standard / Premium)</span>
+              <span style="font-family: var(--font-heading); color: var(--v-maroon); font-weight: 800;">₹2,299 / ₹3,099</span>
             </div>
             <div style="display: flex; justify-content: space-between; padding: 0.45rem 0;">
-              <span>30 Minutes Master Kundali</span>
-              <span style="font-family: var(--font-heading); color: var(--v-maroon); font-weight: 800;">₹4,444</span>
+              <span>30 Mins (Standard / Premium)</span>
+              <span style="font-family: var(--font-heading); color: var(--v-maroon); font-weight: 800;">₹3,369 / ₹4,444</span>
             </div>
           </div>
         </div>
 
-        <a href="#intakeForm" class="btn btn-maroon" style="width: 100%;" onclick="selectConsultation('Audio Call Tarot Reading')">
+        <a href="#intakeForm" class="btn btn-maroon" style="width: 100%;" onclick="selectConsultation('Audio Call Tarot Reading (Standard / Premium)')">
           ✦ Select Audio Call Slot
         </a>
       </div>
 
-      <!-- Package 2: Emergency Voice Note -->
+      <!-- Package 2: WhatsApp Voice Note -->
       <div class="service-box">
         <div>
           <div style="font-size: 0.74rem; color: var(--v-gold-dark); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5rem;">
             Direct WhatsApp Audio
           </div>
-          <h3 style="font-size: 1.55rem; margin-bottom: 0.8rem;">WhatsApp Voice Note</h3>
-          <p style="color: var(--v-text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
-            Need swift clarity without waiting days? Ask your single core question; Kavita channels your cards and sends an in-depth voice recording directly to your phone.
+          <h3 style="font-size: 1.55rem; margin-bottom: 0.8rem;">Personalised Voice Note</h3>
+          <p style="color: var(--v-text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem;">
+            Need swift, compassionate clarity without scheduling a call? Submit your 2 questions; Kavita channels your cards and delivers a personalized voice recording.
           </p>
 
-          <div style="background: #FAF7F2; border: 1px solid var(--v-border); border-radius: 12px; padding: 1.2rem; margin-bottom: 1.5rem;">
+          <div style="background: #FAF7F2; border: 1px solid var(--v-border); border-radius: 12px; padding: 1.2rem; margin-bottom: 1.5rem; font-size: 0.88rem;">
             <div style="display: flex; justify-content: space-between; padding: 0.45rem 0; border-bottom: 1px solid var(--v-border);">
-              <span>1 Core Question</span>
+              <span>2 Core Questions</span>
               <span style="font-family: var(--font-heading); color: var(--v-maroon); font-weight: 800;">₹451</span>
             </div>
             <div style="display: flex; justify-content: space-between; padding: 0.45rem 0;">
-              <span>Turnaround</span>
-              <span style="color: var(--v-green); font-weight: 700;">Within 4 Hours</span>
+              <span>Delivery Channel</span>
+              <span style="color: var(--v-green); font-weight: 700;">Direct to WhatsApp</span>
             </div>
           </div>
         </div>
 
-        <a href="#intakeForm" class="btn btn-gold" style="width: 100%;" onclick="selectConsultation('Voice Note Consultation (₹451)')">
+        <a href="#intakeForm" class="btn btn-gold" style="width: 100%;" onclick="selectConsultation('Personalised WhatsApp Voice Note (₹451)')">
           ✦ Book Voice Note (₹451)
         </a>
       </div>
 
-      <!-- Package 3: Distance Pranic Healing -->
+      <!-- Package 3: Distance Cord-Cutting -->
       <div class="service-box">
         <div>
           <div style="font-size: 0.74rem; color: var(--v-maroon); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5rem;">
-            Vedic Pranic Alignment
+            Aura & Karma Cleansing
           </div>
-          <h3 style="font-size: 1.55rem; margin-bottom: 0.8rem;">Distance Cord-Cutting & Healing</h3>
-          <p style="color: var(--v-text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
-            Comprehensive auric purification, toxic attachment cord-cutting, and chakra realignment performed with sacred Vedic mantras.
+          <h3 style="font-size: 1.55rem; margin-bottom: 0.8rem;">Distance Cord-Cutting</h3>
+          <p style="color: var(--v-text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem;">
+            A powerful distance energy healing session designed to energetically release toxic attachments, past relationship residue, and psychic draining ties.
           </p>
 
-          <div style="background: #FAF7F2; border: 1px solid var(--v-border); border-radius: 12px; padding: 1.2rem; margin-bottom: 1.5rem;">
-            <div style="display: flex; justify-content: space-between; padding: 0.45rem 0; border-bottom: 1px solid var(--v-border);">
-              <span>Single Deep Cleansing</span>
-              <span style="font-family: var(--font-heading); color: var(--v-maroon); font-weight: 800;">₹2,499</span>
-            </div>
+          <div style="background: #FAF7F2; border: 1px solid var(--v-border); border-radius: 12px; padding: 1.2rem; margin-bottom: 1.5rem; font-size: 0.88rem;">
             <div style="display: flex; justify-content: space-between; padding: 0.45rem 0;">
-              <span>3-Session Complete Karma</span>
-              <span style="font-family: var(--font-heading); color: var(--v-maroon); font-weight: 800;">₹5,999</span>
+              <span>Complete Healing Session</span>
+              <span style="font-family: var(--font-heading); color: var(--v-maroon); font-weight: 800;">₹2,499</span>
             </div>
           </div>
         </div>
 
-        <a href="#intakeForm" class="btn btn-outline" style="width: 100%;" onclick="selectConsultation('Distance Cord-Cutting & Healing')">
-          ✦ Reserve Healing Session
+        <a href="#intakeForm" class="btn btn-outline" style="width: 100%;" onclick="selectConsultation('Distance Cord-Cutting Healing (₹2,499)')">
+          ✦ Reserve Cord-Cutting
+        </a>
+      </div>
+
+      <!-- Package 4: Vortex of Blessings -->
+      <div class="service-box">
+        <div>
+          <div style="font-size: 0.74rem; color: var(--v-maroon); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5rem;">
+            Energy Manifestation
+          </div>
+          <h3 style="font-size: 1.55rem; margin-bottom: 0.8rem;">Vortex of Blessings</h3>
+          <p style="color: var(--v-text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem;">
+            A specialized, coded energy circle session channeled to open blocked pathways, inviting high-frequency blessings, peace, and abundance into your life.
+          </p>
+
+          <div style="background: #FAF7F2; border: 1px solid var(--v-border); border-radius: 12px; padding: 1.2rem; margin-bottom: 1.5rem; font-size: 0.88rem;">
+            <div style="display: flex; justify-content: space-between; padding: 0.45rem 0;">
+              <span>Coded Circle Ritual</span>
+              <span style="font-family: var(--font-heading); color: var(--v-maroon); font-weight: 800;">₹3,100</span>
+            </div>
+          </div>
+        </div>
+
+        <a href="#intakeForm" class="btn btn-outline" style="width: 100%;" onclick="selectConsultation('Vortex of Blessings Session (₹3,100)')">
+          ✦ Reserve Vortex Session
+        </a>
+      </div>
+
+      <!-- Package 5: Lamafera Healing -->
+      <div class="service-box">
+        <div>
+          <div style="font-size: 0.74rem; color: var(--v-gold-dark); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5rem;">
+            Ancient Tibetan Modality
+          </div>
+          <h3 style="font-size: 1.55rem; margin-bottom: 0.8rem;">Lamafera Ancient Healing</h3>
+          <p style="color: var(--v-text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem;">
+            Sacred Tibetan Buddhist energy-healing technique to clear negative vibrations, deep-seated karmic blockages, fear patterns, and heavy spiritual fatigue.
+          </p>
+
+          <div style="background: #FAF7F2; border: 1px solid var(--v-border); border-radius: 12px; padding: 1.2rem; margin-bottom: 1.5rem; font-size: 0.88rem;">
+            <div style="display: flex; justify-content: space-between; padding: 0.45rem 0;">
+              <span>Master Lamafera Session</span>
+              <span style="font-family: var(--font-heading); color: var(--v-maroon); font-weight: 800;">₹3,500</span>
+            </div>
+          </div>
+        </div>
+
+        <a href="#intakeForm" class="btn btn-outline" style="width: 100%;" onclick="selectConsultation('Lamafera Ancient Energy Healing (₹3,500)')">
+          ✦ Reserve Lamafera Session
         </a>
       </div>
 

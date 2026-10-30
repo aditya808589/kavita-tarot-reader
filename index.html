@@ -1902,65 +1902,69 @@
   </header>
 
   <!-- =========================================================
-       3. RAJVIRA-STYLE INTERACTIVE BANNER HERO SLIDER
+       3. RAJVIRA-STYLE INTERACTIVE BANNER HERO SLIDER (CONTAINED BOX)
        Featuring Desktop & Mobile Banner Pairs (Supplied by Client)
   ========================================================= -->
-  <section class="kavita-slider-wrap" id="kavitaBannerSlider" aria-label="Featured Sacred Banners">
-    <div class="kavita-slider" id="sliderTrack">
-      <!-- Slide 1 -->
-      <div class="kavita-slider__slide is-active" data-index="0">
-        <a href="collections.html" class="kavita-slider__link" aria-label="Sacred Tarot. Modern Guidance. - Shop Collection">
-          <picture class="kavita-slider__picture">
-            <source media="(max-width: 767px)" srcset="assets/banner-1-mobile.jpg">
-            <img
-              src="assets/banner-1-desktop.jpg"
-              alt="Sacred Tarot. Modern Guidance."
-              class="kavita-slider__img"
-              loading="eager"
-              fetchpriority="high"
-              width="2200"
-              height="1238"
-            >
-          </picture>
-        </a>
-      </div>
+  <div class="kavita-slider-outer kavita-slider-outer--contained">
+    <div class="kavita-slider-container">
+      <section class="kavita-slider-wrap" id="kavitaBannerSlider" aria-label="Featured Sacred Banners">
+        <div class="kavita-slider" id="sliderTrack">
+          <!-- Slide 1 -->
+          <div class="kavita-slider__slide is-active" data-index="0">
+            <a href="collections.html" class="kavita-slider__link" aria-label="Sacred Tarot. Modern Guidance. - Shop Collection">
+              <picture class="kavita-slider__picture">
+                <source media="(max-width: 767px)" srcset="assets/banner-1-mobile.jpg">
+                <img
+                  src="assets/banner-1-desktop.jpg"
+                  alt="Sacred Tarot. Modern Guidance."
+                  class="kavita-slider__img"
+                  loading="eager"
+                  fetchpriority="high"
+                  width="2200"
+                  height="1238"
+                >
+              </picture>
+            </a>
+          </div>
 
-      <!-- Slide 2 -->
-      <div class="kavita-slider__slide" data-index="1">
-        <a href="collections.html" class="kavita-slider__link" aria-label="Sacred Tarot for a Brighter Tomorrow - Shop Collection">
-          <picture class="kavita-slider__picture">
-            <source media="(max-width: 767px)" srcset="assets/banner-2-mobile.jpg">
-            <img
-              src="assets/banner-2-desktop.jpg"
-              alt="Sacred Tarot for a Brighter Tomorrow"
-              class="kavita-slider__img"
-              loading="lazy"
-              width="2200"
-              height="1238"
-            >
-          </picture>
-        </a>
-      </div>
+          <!-- Slide 2 -->
+          <div class="kavita-slider__slide" data-index="1">
+            <a href="collections.html" class="kavita-slider__link" aria-label="Sacred Tarot for a Brighter Tomorrow - Shop Collection">
+              <picture class="kavita-slider__picture">
+                <source media="(max-width: 767px)" srcset="assets/banner-2-mobile.jpg">
+                <img
+                  src="assets/banner-2-desktop.jpg"
+                  alt="Sacred Tarot for a Brighter Tomorrow"
+                  class="kavita-slider__img"
+                  loading="lazy"
+                  width="2200"
+                  height="1238"
+                >
+              </picture>
+            </a>
+          </div>
+        </div>
+
+        <!-- Rajvira Floating Navigation Arrows -->
+        <button type="button" class="kavita-slider__arrow kavita-slider__arrow--prev" id="sliderPrevBtn" aria-label="Previous Slide">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button type="button" class="kavita-slider__arrow kavita-slider__arrow--next" id="sliderNextBtn" aria-label="Next Slide">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+
+        <!-- Rajvira Pagination Indicator Dots -->
+        <div class="kavita-slider__dots" id="sliderDots" role="tablist">
+          <button type="button" class="kavita-slider__dot is-active" data-slide="0" aria-label="Go to slide 1" aria-selected="true"></button>
+          <button type="button" class="kavita-slider__dot" data-slide="1" aria-label="Go to slide 2" aria-selected="false"></button>
+        </div>
+      </section>
     </div>
-
-    <!-- Rajvira Floating Navigation Arrows -->
-    <button type="button" class="kavita-slider__arrow kavita-slider__arrow--prev" id="sliderPrevBtn" aria-label="Previous Slide">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="15 18 9 12 15 6"></polyline>
-      </svg>
-    </button>
-    <button type="button" class="kavita-slider__arrow kavita-slider__arrow--next" id="sliderNextBtn" aria-label="Next Slide">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="9 18 15 12 9 6"></polyline>
-      </svg>
-    </button>
-
-    <!-- Rajvira Pagination Indicator Dots -->
-    <div class="kavita-slider__dots" id="sliderDots" role="tablist">
-      <button type="button" class="kavita-slider__dot is-active" data-slide="0" aria-label="Go to slide 1" aria-selected="true"></button>
-      <button type="button" class="kavita-slider__dot" data-slide="1" aria-label="Go to slide 2" aria-selected="false"></button>
-    </div>
-  </section>
+  </div>
 
   <!-- =========================================================
        4. RAJVIRA LUXURY TRUST STRIP (BELOW SLIDER)
@@ -2094,72 +2098,67 @@
   </script>
 
   <!-- =========================================================
-       4. MANTRAMM CIRCULAR CATEGORY NAVIGATION
+       4. KAVITA OFFICIAL OFFERINGS (SERVICES & SACRED SHOP)
   ========================================================= -->
   <section id="categories" class="section-wrap" style="background: #FFFFFF; border-bottom: 1px solid var(--m-border);">
     <div class="container">
       <div class="section-header">
-        <div class="section-kicker">✦ Complete Vedic Catalogue ✦</div>
-        <h2 class="section-title">Shop by Category</h2>
-        <p class="section-sub">Browse sacred instruments energized through authentic Vedic practices by Varanasi Pandits.</p>
+        <div class="section-kicker">✦ Official Offerings & Services ✦</div>
+        <h2 class="section-title">Explore by Offering</h2>
+        <p class="section-sub">Personalized intuitive tarot consultations, ancient energy healing, and curated spiritual instruments by Kavita.</p>
       </div>
 
       <div class="categories-circle-row">
-        <!-- 1. Nepali Rudraksha -->
-        <a href="collections.html?cat=rudraksha" class="cat-circle-card">
-          <div class="cat-circle-avatar-wrap">
-            <img class="cat-circle-img" src="https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827?auto=format&fit=crop&w=300&q=80" alt="Nepali Rudraksha" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'96\' height=\'96\' viewBox=\'0 0 96 96\'><rect width=\'96\' height=\'96\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'55%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'40\' fill=\'%2380142B\'>📿</text></svg>'">
-          </div>
-          <div class="cat-circle-name">Nepali Rudraksha & Malas</div>
-        </a>
-
-        <!-- 2. Gemstone Bracelets -->
-        <a href="collections.html?cat=bracelets" class="cat-circle-card">
-          <div class="cat-circle-avatar-wrap">
-            <img class="cat-circle-img" src="https://images.unsplash.com/photo-1611591475870-85f8c85775c9?auto=format&fit=crop&w=300&q=80" alt="Crystal Bracelets" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'96\' height=\'96\' viewBox=\'0 0 96 96\'><rect width=\'96\' height=\'96\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'55%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'40\' fill=\'%2380142B\'>💎</text></svg>'">
-          </div>
-          <div class="cat-circle-name">Healing Crystal Bracelets</div>
-        </a>
-
-        <!-- 3. Pyrite & Vastu -->
-        <a href="collections.html?cat=vastu" class="cat-circle-card">
-          <div class="cat-circle-avatar-wrap">
-            <img class="cat-circle-img" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=300&q=80" alt="Pyrite Vastu" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'96\' height=\'96\' viewBox=\'0 0 96 96\'><rect width=\'96\' height=\'96\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'55%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'40\' fill=\'%2380142B\'>🖼️</text></svg>'">
-          </div>
-          <div class="cat-circle-name">Pyrite & Vastu Frames</div>
-        </a>
-
-        <!-- 4. Sacred Yantras -->
-        <a href="collections.html?cat=yantras" class="cat-circle-card">
-          <div class="cat-circle-avatar-wrap">
-            <img class="cat-circle-img" src="https://images.unsplash.com/photo-1567225557594-88d73e55f2cb?auto=format&fit=crop&w=300&q=80" alt="Sacred Yantras" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'96\' height=\'96\' viewBox=\'0 0 96 96\'><rect width=\'96\' height=\'96\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'55%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'40\' fill=\'%2380142B\'>☸</text></svg>'">
-          </div>
-          <div class="cat-circle-name">24K Gold Sacred Yantras</div>
-        </a>
-
-        <!-- 5. Energy Pyramids -->
-        <a href="collections.html?cat=pyramids" class="cat-circle-card">
-          <div class="cat-circle-avatar-wrap">
-            <img class="cat-circle-img" src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=300&q=80" alt="Energy Pyramids" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'96\' height=\'96\' viewBox=\'0 0 96 96\'><rect width=\'96\' height=\'96\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'55%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'40\' fill=\'%2380142B\'>🔺</text></svg>'">
-          </div>
-          <div class="cat-circle-name">Orgone & Quartz Pyramids</div>
-        </a>
-
-        <!-- 6. Pooja & Jap Malas -->
-        <a href="collections.html?cat=rudraksha" class="cat-circle-card">
-          <div class="cat-circle-avatar-wrap">
-            <img class="cat-circle-img" src="https://images.unsplash.com/photo-1609137144822-263e7925e0e0?auto=format&fit=crop&w=300&q=80" alt="Pooja Essentials" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'96\' height=\'96\' viewBox=\'0 0 96 96\'><rect width=\'96\' height=\'96\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'55%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'40\' fill=\'%2380142B\'>🪔</text></svg>'">
-          </div>
-          <div class="cat-circle-name">Pooja & Tulsi Japa Malas</div>
-        </a>
-
-        <!-- 7. Tarot Consultations -->
+        <!-- 1. Audio Call Consultations -->
         <a href="consultations.html" class="cat-circle-card">
           <div class="cat-circle-avatar-wrap">
-            <img class="cat-circle-img" src="https://images.unsplash.com/photo-1601024445121-e5b82f020549?auto=format&fit=crop&w=300&q=80" alt="Tarot Consultations" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'96\' height=\'96\' viewBox=\'0 0 96 96\'><rect width=\'96\' height=\'96\' fill=\'%23F4EFE6\'/><text x=\'50%25\' y=\'55%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'40\' fill=\'%2380142B\'>🔮</text></svg>'">
+            <img class="cat-circle-img" src="assets/banner-1-mobile.jpg" alt="Live Audio Consultations">
           </div>
-          <div class="cat-circle-name">1-on-1 Tarot Sessions</div>
+          <div class="cat-circle-name">Live Audio Readings</div>
         </a>
+
+        <!-- 2. WhatsApp Voice Notes -->
+        <a href="consultations.html" class="cat-circle-card">
+          <div class="cat-circle-avatar-wrap">
+            <img class="cat-circle-img" src="assets/banner-2-mobile.jpg" alt="WhatsApp Voice Note Readings">
+          </div>
+          <div class="cat-circle-name">WhatsApp Voice Notes</div>
+        </a>
+
+        <!-- 3. Energy Healing & Cord-Cutting -->
+        <a href="consultations.html" class="cat-circle-card">
+          <div class="cat-circle-avatar-wrap">
+            <img class="cat-circle-img" src="assets/card-star.jpg" alt="Distance Cord-Cutting & Healing">
+          </div>
+          <div class="cat-circle-name">Healing & Cord-Cutting</div>
+        </a>
+
+        <!-- 4. Natural Pyrite & Crystals -->
+        <a href="collections.html?cat=crystals" class="cat-circle-card">
+          <div class="cat-circle-avatar-wrap">
+            <img class="cat-circle-img" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=300&q=80" alt="Healing Crystals">
+          </div>
+          <div class="cat-circle-name">Healing Crystals</div>
+        </a>
+
+        <!-- 5. Sacred Tarot Decks -->
+        <a href="collections.html?cat=all" class="cat-circle-card">
+          <div class="cat-circle-avatar-wrap">
+            <img class="cat-circle-img" src="assets/card-moon.jpg" alt="Sacred Tarot Decks">
+          </div>
+          <div class="cat-circle-name">Sacred Tarot Decks</div>
+        </a>
+
+        <!-- 6. Intuition Oracle Cards -->
+        <a href="collections.html?cat=all" class="cat-circle-card">
+          <div class="cat-circle-avatar-wrap">
+            <img class="cat-circle-img" src="assets/card-empress.jpg" alt="Celestial Oracle Cards">
+          </div>
+          <div class="cat-circle-name">Celestial Oracle Cards</div>
+        </a>
+      </div>
+    </div>
+  </section>
       </div>
     </div>
   </section>
