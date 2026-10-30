@@ -3,6 +3,17 @@
 Last updated: 30 October 2026 (Asia/Kolkata).
 Purpose: durable handoff for another model, including actual progress, reference brief, and deployment state. Update this log after meaningful work and before handing off.
 
+## Color Palette Synchronization (30 October 2026)
+
+- Completed full transition to the reference website palette (Mantramm & Vanika Kabir Studio):
+  * Light, clean, luminous background: Warm Sacred Ivory (`#FAF7F2`) and Crisp Pure White (`#FFFFFF`).
+  * Top Marquee Bar: Sacred Royal Temple Maroon (`#731024` / `#8B172F`) with bright gold bullets and text (`#FFF3D6`).
+  * Header & Navigation: Clean Pure White (`#FFFFFF`), obsidian text (`#1C1917`), gold icon (`#C59B27`), maroon hover accents.
+  * Product & Concern Cards: Crisp White (`#FFFFFF`) with thin warm border (`#E8E2D5`) and subtle lift shadows.
+  * Primary CTAs: Sacred Royal Maroon (`#80142B`) and Burnished Vedic Gold (`#C59B27`).
+  * Tarot Oracle: Parchment ivory card faces on altar stage with gold accents.
+  * Both `index.html` (port 3000) and `kavita-dawn` theme package (`Kavita-Tarot-Dawn-2.0.zip`) synchronized.
+
 ## Start here
 
 The user's latest request is to record the reference websites and work/flow in a file so another model can continue. This turn documents the project; it does not implement the entire attached brief or publish anything.
