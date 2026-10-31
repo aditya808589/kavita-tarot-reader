@@ -1,7 +1,7 @@
 /**
  * KAVITA — Celestial Ice Crystal Dust Effect
- * Lightweight, high-performance background particle animation.
- * Soft glowing circular ice/crystal particles drifting continuously across the sanctuary.
+ * Pure brilliant white ice + dark obsidian crystal particles + stardust gold sheen.
+ * Runs smoothly at 60fps across both dark and light sections of the website.
  */
 (function() {
   function initIceEffect() {
@@ -9,6 +9,7 @@
     if (!canvas) {
       canvas = document.createElement('canvas');
       canvas.id = 'kavitaIceCanvas';
+      canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9998;';
       document.body.prepend(canvas);
     }
 
@@ -23,20 +24,34 @@
       height = canvas.height = window.innerHeight;
     }, { passive: true });
 
-    const particleCount = window.innerWidth < 768 ? 38 : 68;
+    const particleCount = window.innerWidth < 768 ? 42 : 78;
     const particles = [];
 
+    // Particle types:
+    // 0: Pure Brilliant White Ice (luminous, glowing)
+    // 1: Dark Obsidian / Cosmic Crystal (crisp contrast on white/cream sections)
+    // 2: Warm Stardust Gold (spiritual luxury warmth)
     for (let i = 0; i < particleCount; i++) {
+      const typeRand = Math.random();
+      let type = 0; // default pure white
+      if (typeRand < 0.42) {
+        type = 0; // 42% Pure White Ice
+      } else if (typeRand < 0.78) {
+        type = 1; // 36% Dark Celestial Ice (visible on light backgrounds)
+      } else {
+        type = 2; // 22% Sacred Warm Gold
+      }
+
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        radius: Math.random() * 2.2 + 1.1, // Small circular ice dots (1.1px to 3.3px)
-        speedY: Math.random() * 0.42 + 0.2, // Gentle downward drift
-        speedX: (Math.random() - 0.5) * 0.28,
-        opacity: Math.random() * 0.4 + 0.3,
+        radius: Math.random() * 2.0 + 1.1, // 1.1px to 3.1px circular particles
+        speedY: Math.random() * 0.45 + 0.22, // Slow gentle descent
+        speedX: (Math.random() - 0.5) * 0.26,
+        opacity: Math.random() * 0.45 + 0.35,
         pulse: Math.random() * Math.PI * 2,
-        pulseSpeed: Math.random() * 0.02 + 0.01,
-        isGold: Math.random() < 0.18 // 18% warm celestial gold, 82% glowing ice crystal
+        pulseSpeed: Math.random() * 0.024 + 0.012,
+        type: type
       });
     }
 
@@ -59,25 +74,34 @@
         p.x += Math.sin(p.pulse) * p.speedX;
         p.pulse += p.pulseSpeed;
 
-        if (p.y > height + 8) {
-          p.y = -8;
+        if (p.y > height + 10) {
+          p.y = -10;
           p.x = Math.random() * width;
         }
-        if (p.x > width + 8) p.x = -8;
-        if (p.x < -8) p.x = width + 8;
+        if (p.x > width + 10) p.x = -10;
+        if (p.x < -10) p.x = width + 10;
 
-        const currentOpacity = p.opacity + Math.sin(p.pulse) * 0.14;
+        const currentOpacity = Math.max(0.12, Math.min(0.9, p.opacity + Math.sin(p.pulse) * 0.18));
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
 
-        if (p.isGold) {
-          ctx.fillStyle = `rgba(255, 225, 130, ${Math.max(0.08, currentOpacity)})`;
-          ctx.shadowColor = 'rgba(216, 180, 93, 0.45)';
+        if (p.type === 0) {
+          // Pure White Ice
+          ctx.fillStyle = `rgba(255, 255, 255, ${currentOpacity})`;
+          ctx.shadowColor = 'rgba(255, 255, 255, 0.75)';
+          ctx.shadowBlur = 5;
+        } else if (p.type === 1) {
+          // Dark Celestial / Smoky Obsidian Ice
+          ctx.fillStyle = `rgba(50, 25, 35, ${currentOpacity * 0.85})`;
+          ctx.shadowColor = 'rgba(30, 15, 22, 0.3)';
+          ctx.shadowBlur = 3;
         } else {
-          ctx.fillStyle = `rgba(235, 248, 255, ${Math.max(0.08, currentOpacity)})`;
-          ctx.shadowColor = 'rgba(180, 225, 255, 0.45)';
+          // Warm Celestial Gold
+          ctx.fillStyle = `rgba(218, 178, 85, ${currentOpacity})`;
+          ctx.shadowColor = 'rgba(212, 175, 55, 0.6)';
+          ctx.shadowBlur = 4;
         }
-        ctx.shadowBlur = 4;
+
         ctx.fill();
       }
 

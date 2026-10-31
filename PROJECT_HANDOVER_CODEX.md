@@ -173,3 +173,55 @@ All dummy/marketplace items were removed. Only authentic offerings from `kavitat
 
 ---
 *Created for seamless handoff to OpenAI Codex / LLM agents.*
+
+
+---
+
+## Codex repair handover — 2026-10-31 (latest; supersedes layout claims above)
+
+### What is actually being edited
+- Working directory is `/Users/adityasingh/Desktop/TAROT READER `, with a literal trailing space.
+- Current visual repair targets the eight root HTML pages and their assets. These pages are a **static preview**, not the uploaded Shopify storefront.
+- `kavita-dawn/` is a separate, divergent Shopify implementation. Its index template currently references missing `kavita-categories` and `kavita-concerns` sections. Do not claim the existing ZIP is validated or ready to upload. No Shopify upload/publication occurred during this repair.
+- Previous catalogue authenticity/pricing claims in this document were not independently verified; some conflict with `store-data.js`. WhatsApp number `919876543210` remains an existing placeholder requiring the real business contact before production.
+
+### Latest user direction
+Categories must be a GRID, superseding the earlier slider request. Products must also be a grid, two per row on mobile. Add a boxy outlined 3D appearance with shadows and subtle scroll animation. Remove account/signup control, fix mobile clipping/navigation, compact buttons and section spacing, improve FAQ and footer.
+
+### Implemented
+- All root HTML pages load `assets/storefront-refinements.css` after existing page styles. This is the authoritative repair layer; existing `vanikabir.css` and inline legacy rules remain intact.
+- Categories: six desktop / three mobile columns. Intention cards: three desktop / two mobile columns. No slider controls for either grid. Hero image slider remains.
+- Products: three desktop columns; two mobile columns, including the collection page. Fixed the hidden mobile sidebar still consuming grid width. Removed homepage product carousel controls, unclamped product names, compacted buttons, added gold borders and layered depth shadows with desktop hover lift.
+- Logo enlarged; mobile menu button reveals every navigation link in two columns. Search expands a usable mobile input. Account icon removed. Footer replaced consistently across all eight pages with a burgundy three-column layout (brand + two link columns), mobile layout, and working internal links. Duplicate homepage story CTA removed.
+- FAQs use real buttons with `aria-expanded`, keyboard activation and uncropped answer height.
+- `assets/storefront-cart.js` supplies previously missing static cart functions, cart badges, quantity changes and removal. Uses existing sessionStorage cart, no payment submission. Checkout explicitly identifies the preview as unconnected to Shopify. Existing catalogue images are also used as a fallback when legacy homepage product handles differ.
+- `assets/storefront-ui.js` supplies mobile menu/search, persisted wishlist IDs, search/wishlist/oracle filtering, modal close functions, and IntersectionObserver scroll reveals. Reveals observe newly rendered product cards, run once, and respect reduced-motion preferences. No-JS content remains visible.
+- Existing user changes to `assets/ice-effect.js`, this handover, and the nested theme were preserved.
+
+### Verification / repeatable workflow
+1. Serve root locally: `python3 -m http.server 3002 --bind 127.0.0.1`. This turn's local preview is http://127.0.0.1:3002/ (server must remain running).
+2. Browser checks on all eight pages at 360, 390, 768 and 1440 px found no document horizontal overflow and no JavaScript page errors. New category layout additionally checked at 320 px.
+3. Browser interaction checks passed: search narrows results; wishlist persists across navigation; add-to-cart, cart navigation and quantity change; FAQ click/Enter; mobile menu exposes links. Check reduced-motion visibility when changing reveal rules.
+4. Visual screenshots reviewed for mobile header, product cards, footer, and category grid. Temporary QA scripts/screenshots are under `/tmp/kavita-*` and are not product dependencies.
+5. Do not copy static cart/UI JS into Shopify: it uses `.html` links and session storage. Port presentation to Liquid sections and native Shopify product/cart APIs as a separate deployment step, validate missing sections/schema, then upload as a draft for preview. Do not overwrite live theme from this static folder.
+
+### Remaining production integration
+Static cart checkout is intentionally unconnected. Confirm actual WhatsApp/contact, catalogue pricing, claims, and fulfilment details. Shopify theme parity, validation and deployment remain outstanding; local edits do not auto-sync. Existing root Liquid files and `Kavita-Tarot-Dawn-2.0.zip` were not rebuilt in this repair.
+
+### Category sizing follow-up
+Retained outlined 3D product cards, shadows, animations and the category grid. Fixed unequal category boxes caused by inherited `align-items: flex-start` and variable label lengths: grid now stretches equal-height rows, cards fill each cell, and labels reserve two lines with centered alignment. No fixed clipping height is used; longer text can expand all rows together.
+
+### Latest direction: restore the old look, preserve categories only
+User requested the original look everywhere except the category section. Restored root HTML presentation from the original Git HEAD (before this repair), including original header/footer, product layout and styling. Only `index.html` loads new `assets/category-grid.css`, preserving the equal-sized category grid and its appearance. The broader `storefront-refinements.css` and `storefront-ui.js` are retained on disk but are no longer loaded. Their styling/animation changes are NOT active. The shared static cart repair remains loaded; no Shopify deployment occurred. This entry supersedes the prior visual implementation summaries.
+
+### Confirmed correction — restored FIXED layout, not original buggy layout
+The user clarified: bring back the fixed two-column mobile product layout and improved menu/footer, but remove the later 3D product styling and scroll animations. Re-enabled the shared refinements stylesheet, UI repairs, consistent footer, compact buttons, mobile navigation/search, FAQ accessibility and cart repairs on all eight pages. Removed the layered gold product borders/shadows, perspective hover and IntersectionObserver reveal animation. Products now have the earlier simple white card appearance with a subtle shadow. Category section is unchanged: `category-grid.css` loads last on the homepage, retaining equal-sized grid boxes and category styling. No Shopify publication. This correction supersedes the immediately preceding restoration entry.
+
+### Intentions slider clarification
+The section BELOW categories (“Shop by Sacred Intention & Life Goal”) is restored to a horizontal snap slider with previous/next controls, swipe and keyboard navigation. Desktop shows three cards; mobile shows one card plus a preview of the next. Category boxes remain an equal-sized grid, products remain two per row on mobile, and no scroll-reveal or 3D product styling was reintroduced.
+
+### Popup and floating chat follow-up (shape clarification pending)
+Removed floating WhatsApp/chat anchors from all eight root HTML pages. Improved booking popup responsive width, scroll containment, title wrapping, input sizing, label associations and close-button accessibility. Mobile birth fields stack to avoid cropping. User's term “triangle” for popup/intention cards is ambiguous; asked whether rectangular straight corners or angled/cut corners. Do not assume this part is finished until the user answers. Category grid and existing product layout remain unchanged.
+
+### Popup/card shape confirmed
+User clarified “rectangular boxes with curved edges.” Applied 12px rounded rectangular panels to modal popups and the intention slider cards below categories, with restrained warm borders/shadows and larger readable responsive title/body text. Category grid and product grid are unchanged. Floating chat remains removed. Shape clarification is now resolved.
