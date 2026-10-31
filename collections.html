@@ -445,7 +445,7 @@
             <span class="product-badge-flag">${p.badge}</span>
             <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, ${p.id})">♡</button>
             <a href="product.html?id=${p.id}">
-              <img class="product-img" src="${p.img}" alt="${p.title}">
+              <img loading="lazy" decoding="async" class="product-img" src="${p.img}" alt="${p.title}">
             </a>
           </div>
           <div class="product-info-wrap">

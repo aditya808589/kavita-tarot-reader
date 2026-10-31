@@ -11,7 +11,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Shared Store Stylesheet -->
+  <link rel="preload" as="style" href="assets/vanikabir.css">
   <link rel="stylesheet" href="assets/vanikabir.css">
+
+  <!-- Preload Critical Above-The-Fold Hero Assets (<1.5s Load Time) -->
+  <link rel="preload" as="image" href="assets/banner-desktop-readings-3x1.jpg" media="(min-width: 768px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/banner-mobile-readings.jpg" media="(max-width: 767px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/kavita-logo-gold.png" type="image/png">
 
   <style>
     /* =========================================================
@@ -2081,7 +2087,7 @@
         <!-- 1. Live Audio Readings -->
         <a href="consultations.html" class="cat-circle-card">
           <div class="cat-circle-avatar-wrap">
-            <img class="cat-circle-img" src="assets/product-live-audio.jpg" alt="Live Audio Consultations">
+            <img loading="lazy" decoding="async" class="cat-circle-img" src="assets/product-live-audio.jpg" alt="Live Audio Consultations">
           </div>
           <div class="cat-circle-name">Live Audio Readings</div>
         </a>
@@ -2089,7 +2095,7 @@
         <!-- 2. WhatsApp Voice Notes -->
         <a href="consultations.html" class="cat-circle-card">
           <div class="cat-circle-avatar-wrap">
-            <img class="cat-circle-img" src="assets/product-voice-note.jpg" alt="WhatsApp Voice Note Readings">
+            <img loading="lazy" decoding="async" class="cat-circle-img" src="assets/product-voice-note.jpg" alt="WhatsApp Voice Note Readings">
           </div>
           <div class="cat-circle-name">Voice Notes</div>
         </a>
@@ -2097,7 +2103,7 @@
         <!-- 3. Cord-Cutting Healing -->
         <a href="consultations.html" class="cat-circle-card">
           <div class="cat-circle-avatar-wrap">
-            <img class="cat-circle-img" src="assets/product-cord-cutting.jpg" alt="Distance Cord-Cutting & Healing">
+            <img loading="lazy" decoding="async" class="cat-circle-img" src="assets/product-cord-cutting.jpg" alt="Distance Cord-Cutting & Healing">
           </div>
           <div class="cat-circle-name">Cord-Cutting</div>
         </a>
@@ -2105,7 +2111,7 @@
         <!-- 4. Tibetan Lamafera -->
         <a href="consultations.html" class="cat-circle-card">
           <div class="cat-circle-avatar-wrap">
-            <img class="cat-circle-img" src="assets/product-lamafera.jpg" alt="Tibetan Lamafera Energy Healing">
+            <img loading="lazy" decoding="async" class="cat-circle-img" src="assets/product-lamafera.jpg" alt="Tibetan Lamafera Energy Healing">
           </div>
           <div class="cat-circle-name">Lamafera Healing</div>
         </a>
@@ -2113,7 +2119,7 @@
         <!-- 5. Healing Crystals -->
         <a href="collections.html?cat=crystals" class="cat-circle-card">
           <div class="cat-circle-avatar-wrap">
-            <img class="cat-circle-img" src="assets/crystal-pyrite.jpg" alt="Healing Crystals">
+            <img loading="lazy" decoding="async" class="cat-circle-img" src="assets/crystal-pyrite.jpg" alt="Healing Crystals">
           </div>
           <div class="cat-circle-name">Healing Crystals</div>
         </a>
@@ -2121,7 +2127,7 @@
         <!-- 6. Sacred Tarot Decks -->
         <a href="collections.html?cat=tarot" class="cat-circle-card">
           <div class="cat-circle-avatar-wrap">
-            <img class="cat-circle-img" src="assets/deck-gold-tarot.jpg" alt="Sacred Tarot Decks">
+            <img loading="lazy" decoding="async" class="cat-circle-img" src="assets/deck-gold-tarot.jpg" alt="Sacred Tarot Decks">
           </div>
           <div class="cat-circle-name">Sacred Decks</div>
         </a>
@@ -2257,7 +2263,7 @@
                 <span class="product-badge-flag">Core Service · Live Audio</span>
                 <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 1)">♡</button>
                 <a href="product.html?id=1">
-                  <img class="product-img" src="assets/product-live-audio.jpg" alt="Live Audio Call Tarot Reading">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/product-live-audio.jpg" alt="Live Audio Call Tarot Reading">
                 </a>
               </div>
               <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
@@ -2295,7 +2301,7 @@
                 <span class="product-badge-flag">Swift Delivery · ₹451</span>
                 <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 2)">♡</button>
                 <a href="product.html?id=2">
-                  <img class="product-img" src="assets/product-voice-note.jpg" alt="WhatsApp Voice Note Tarot Reading">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/product-voice-note.jpg" alt="WhatsApp Voice Note Tarot Reading">
                 </a>
               </div>
               <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
@@ -2334,7 +2340,7 @@
                 <span class="product-badge-flag">Specialized Spread</span>
                 <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 3)">♡</button>
                 <a href="product.html?id=3">
-                  <img class="product-img" src="assets/product-situational.jpg" alt="Situational Tarot Deep Dive">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/product-situational.jpg" alt="Situational Tarot Deep Dive">
                 </a>
               </div>
               <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
@@ -2373,7 +2379,7 @@
                 <span class="product-badge-flag">Emotional Release</span>
                 <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 4)">♡</button>
                 <a href="product.html?id=4">
-                  <img class="product-img" src="assets/product-cord-cutting.jpg" alt="Distance Cord-Cutting Healing">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/product-cord-cutting.jpg" alt="Distance Cord-Cutting Healing">
                 </a>
               </div>
               <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
@@ -2412,7 +2418,7 @@
                 <span class="product-badge-flag">High Vibrational</span>
                 <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 5)">♡</button>
                 <a href="product.html?id=5">
-                  <img class="product-img" src="assets/product-vortex-blessings.jpg" alt="Vortex of Blessings">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/product-vortex-blessings.jpg" alt="Vortex of Blessings">
                 </a>
               </div>
               <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
@@ -2451,7 +2457,7 @@
                 <span class="product-badge-flag">Ancient Monk Modality</span>
                 <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 6)">♡</button>
                 <a href="product.html?id=6">
-                  <img class="product-img" src="assets/product-lamafera.jpg" alt="Lamafera Energy Healing">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/product-lamafera.jpg" alt="Lamafera Energy Healing">
                 </a>
               </div>
               <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
@@ -2521,7 +2527,7 @@
                 <span class="product-badge-flag">Wealth Magnet #1</span>
                 <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 7)">♡</button>
                 <a href="product.html?id=7">
-                  <img class="product-img" src="assets/crystal-pyrite.jpg" alt="Natural Golden Pyrite Cluster">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/crystal-pyrite.jpg" alt="Natural Golden Pyrite Cluster">
                 </a>
               </div>
               <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
@@ -2560,7 +2566,7 @@
                 <span class="product-badge-flag">Intuition & Peace</span>
                 <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 8)">♡</button>
                 <a href="product.html?id=8">
-                  <img class="product-img" src="assets/crystal-amethyst.jpg" alt="Raw Amethyst Third-Eye Cluster">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/crystal-amethyst.jpg" alt="Raw Amethyst Third-Eye Cluster">
                 </a>
               </div>
               <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
@@ -2599,7 +2605,7 @@
                 <span class="product-badge-flag">Bestseller Bracelet</span>
                 <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 9)">♡</button>
                 <a href="product.html?id=9">
-                  <img class="product-img" src="assets/crystal-chakra-bracelet.jpg" alt="7 Chakra Radiance Healing Bracelet">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/crystal-chakra-bracelet.jpg" alt="7 Chakra Radiance Healing Bracelet">
                 </a>
               </div>
               <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
@@ -2638,7 +2644,7 @@
                 <span class="product-badge-flag">Aura Cleanser</span>
                 <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 10)">♡</button>
                 <a href="product.html?id=10">
-                  <img class="product-img" src="assets/crystal-selenite-wand.jpg" alt="Moroccan Selenite Cleansing Wand">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/crystal-selenite-wand.jpg" alt="Moroccan Selenite Cleansing Wand">
                 </a>
               </div>
               <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
@@ -2677,7 +2683,7 @@
                 <span class="product-badge-flag">Luxury Deck</span>
                 <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 11)">♡</button>
                 <a href="product.html?id=11">
-                  <img class="product-img" src="assets/deck-gold-tarot.jpg" alt="Sacred Gold-Foil Tarot Deck">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/deck-gold-tarot.jpg" alt="Sacred Gold-Foil Tarot Deck">
                 </a>
               </div>
               <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
@@ -2716,7 +2722,7 @@
                 <span class="product-badge-flag">Intuition Deck</span>
                 <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 12)">♡</button>
                 <a href="product.html?id=12">
-                  <img class="product-img" src="assets/deck-moon-oracle.jpg" alt="Celestial Moon Oracle Cards">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/deck-moon-oracle.jpg" alt="Celestial Moon Oracle Cards">
                 </a>
               </div>
               <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
