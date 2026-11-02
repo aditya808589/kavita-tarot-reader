@@ -1,0 +1,15 @@
+{
+  "name": "Header",
+  "type": "header",
+  "sections": {
+    "main": {
+      "type": "kavita-rajvira-header",
+      "settings": {
+        "show_announcement": false
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

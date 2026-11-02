@@ -1,0 +1,13 @@
+{
+  "name": "Footer",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "kavita-refined-footer",
+      "settings": {}
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

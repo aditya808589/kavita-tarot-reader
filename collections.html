@@ -231,11 +231,39 @@
     <nav class="kavita-hdr__nav-bar" aria-label="Category Navigation">
       <div class="container kavita-hdr__container">
         <ul class="kavita-hdr__menu">
-          <li class="kavita-hdr__menu-item"><a href="collections.html" class="kavita-hdr__menu-link" style="color: #80142B; font-weight: 800;">All Collections</a></li>
-          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=tarot" class="kavita-hdr__menu-link">Tarot Decks</a></li>
-          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=oracle" class="kavita-hdr__menu-link">Oracle Cards</a></li>
-          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=crystals" class="kavita-hdr__menu-link">Crystals & Gems</a></li>
-          <li class="kavita-hdr__menu-item"><a href="consultations.html" class="kavita-hdr__menu-link">Readings</a></li>
+          <li class="kavita-hdr__menu-item"><a href="collections.html" class="kavita-hdr__menu-link">All Collections</a></li>
+          <li class="kavita-hdr__menu-item"><a href="consultations.html" class="kavita-hdr__menu-link">Tarot Readings</a></li>
+          <li class="kavita-hdr__menu-item kavita-hdr__menu-item--dropdown">
+            <a href="packages.html" class="kavita-hdr__menu-link">
+              Signature Packages
+              <svg class="kavita-hdr__caret" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </a>
+            <div class="kavita-hdr__dropdown">
+              <div class="kavita-hdr__dropdown-grid" style="grid-template-columns: repeat(2, 1fr); min-width: 520px; gap: 1.5rem;">
+                <div class="kavita-hdr__dropdown-col">
+                  <span class="kavita-hdr__dropdown-title">✦ Love &amp; Relationships</span>
+                  <a href="product.html?id=31">No Contact Situation (5 Card)</a>
+                  <a href="product.html?id=32">Future Spouse &amp; Destined Connection</a>
+                  <a href="product.html?id=33">Love &amp; Marriage Pack (8 Questions)</a>
+                  <a href="product.html?id=34">No Contact Situation (4 Questions)</a>
+                  <a href="product.html?id=37">Reunion Reading: Will They Return?</a>
+                </div>
+                <div class="kavita-hdr__dropdown-col">
+                  <span class="kavita-hdr__dropdown-title">✦ Healing &amp; Career Growth</span>
+                  <a href="product.html?id=35">Heart Consultation: 1:1 Healing</a>
+                  <a href="product.html?id=36">Career Growth &amp; Financial Path</a>
+                  <a href="product.html?id=38">Deep Insight Reading (8 Questions)</a>
+                  <div style="margin-top: 0.85rem; padding-top: 0.65rem; border-top: 1px dashed #ECE7DE;">
+                    <a href="packages.html" style="color: #80142B; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
+                      ✦ Explore All 8 Packages →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=bracelets" class="kavita-hdr__menu-link">Healing Bracelets</a></li>
+          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=crystals" class="kavita-hdr__menu-link">Crystals &amp; Carvings</a></li>
           <li class="kavita-hdr__menu-item"><a href="about.html" class="kavita-hdr__menu-link">About Kavita</a></li>
           <li class="kavita-hdr__menu-item"><a href="contact.html" class="kavita-hdr__menu-link">Contact</a></li>
         </ul>
@@ -284,23 +312,23 @@
           <ul class="filter-list">
             <li class="filter-item">
               <input type="checkbox" id="cat_all" checked onchange="applyFilters()">
-              <label for="cat_all">All Categories (<span id="count_all">12</span>)</label>
+              <label for="cat_all">All Offerings (<span id="count_all">38</span>)</label>
+            </li>
+            <li class="filter-item">
+              <input type="checkbox" id="cat_packages" onchange="applyFilters()">
+              <label for="cat_packages">Signature Packages (8)</label>
             </li>
             <li class="filter-item">
               <input type="checkbox" id="cat_readings" onchange="applyFilters()">
-              <label for="cat_readings">Tarot Readings (3)</label>
+              <label for="cat_readings">Consultations &amp; Readings (10)</label>
             </li>
             <li class="filter-item">
-              <input type="checkbox" id="cat_healings" onchange="applyFilters()">
-              <label for="cat_healings">Energy Healing (3)</label>
+              <input type="checkbox" id="cat_bracelets" onchange="applyFilters()">
+              <label for="cat_bracelets">Gemstone Bracelets (7)</label>
             </li>
             <li class="filter-item">
               <input type="checkbox" id="cat_crystals" onchange="applyFilters()">
-              <label for="cat_crystals">Healing Crystals (4)</label>
-            </li>
-            <li class="filter-item">
-              <input type="checkbox" id="cat_tarot" onchange="applyFilters()">
-              <label for="cat_tarot">Tarot & Oracle Decks (2)</label>
+              <label for="cat_crystals">Healing Crystals &amp; Sacred Talismans (13)</label>
             </li>
           </ul>
         </div>
@@ -404,7 +432,7 @@
         <span id="cartSubtotal" style="color: var(--v-maroon);">₹0</span>
       </div>
       <button class="btn btn-maroon" style="width: 100%; padding: 0.95rem;" onclick="checkoutCart()">
-        ✦ Proceed to Secure Checkout (COD Avail.)
+        ✦ Proceed to Secure Checkout
       </button>
       <div style="text-align: center; font-size: 0.74rem; color: var(--v-text-muted); margin-top: 0.8rem;">
         🔒 256-Bit SSL Encrypted · 100% Authentic Consecrated Items
@@ -498,12 +526,23 @@
       if (badge) badge.innerText = count;
     }
 
+    const packageHandles = [
+      'no-contact-situation-5-card-reading',
+      'future-spouse-reading',
+      'love-marriage-pack-8-questions',
+      'no-contact-situation-pack-4-questions',
+      'heart-consultation-private-healing',
+      'career-growth-reading',
+      'reunion-reading',
+      'deep-insight-reading-8-questions'
+    ];
+
     function applyFilters() {
-      const catAll = document.getElementById('cat_all').checked;
-      const catReadings = document.getElementById('cat_readings').checked;
-      const catHealings = document.getElementById('cat_healings').checked;
-      const catCrystals = document.getElementById('cat_crystals').checked;
-      const catTarot = document.getElementById('cat_tarot').checked;
+      const catAll = document.getElementById('cat_all') ? document.getElementById('cat_all').checked : false;
+      const catPackages = document.getElementById('cat_packages') ? document.getElementById('cat_packages').checked : false;
+      const catReadings = document.getElementById('cat_readings') ? document.getElementById('cat_readings').checked : false;
+      const catBracelets = document.getElementById('cat_bracelets') ? document.getElementById('cat_bracelets').checked : false;
+      const catCrystals = document.getElementById('cat_crystals') ? document.getElementById('cat_crystals').checked : false;
 
       const intDhanlabh = document.getElementById('int_dhanlabh').checked;
       const intProtection = document.getElementById('int_protection').checked;
@@ -514,13 +553,28 @@
       activeProducts = STORE_PRODUCTS.filter(p => {
         let catMatch = true;
         if (!catAll) {
-          const matchedCats = [];
-          if (catReadings) matchedCats.push('readings');
-          if (catHealings) matchedCats.push('healings');
-          if (catCrystals) matchedCats.push('crystals');
-          if (catTarot) matchedCats.push('tarot');
-          if (matchedCats.length > 0) {
-            catMatch = matchedCats.includes(p.category);
+          let matchesAnyCat = false;
+          let anyCatSelected = false;
+
+          if (catPackages) {
+            anyCatSelected = true;
+            if (packageHandles.includes(p.handle)) matchesAnyCat = true;
+          }
+          if (catReadings) {
+            anyCatSelected = true;
+            if (p.category === 'readings' && !packageHandles.includes(p.handle)) matchesAnyCat = true;
+          }
+          if (catBracelets) {
+            anyCatSelected = true;
+            if (p.category === 'bracelets') matchesAnyCat = true;
+          }
+          if (catCrystals) {
+            anyCatSelected = true;
+            if (p.category === 'crystals') matchesAnyCat = true;
+          }
+          
+          if (anyCatSelected) {
+            catMatch = matchesAnyCat;
           }
         }
 
@@ -532,7 +586,7 @@
         if (intCareer) matchedInts.push('career');
         if (intShani) matchedInts.push('shani');
         if (matchedInts.length > 0) {
-          intMatch = matchedInts.some(i => p.intention.includes(i));
+          intMatch = matchedInts.some(i => (p.intention || '').includes(i));
         }
 
         return catMatch && intMatch;
@@ -558,10 +612,10 @@
 
     function resetFilters() {
       document.getElementById('cat_all').checked = true;
+      if (document.getElementById('cat_packages')) document.getElementById('cat_packages').checked = false;
       document.getElementById('cat_readings').checked = false;
-      document.getElementById('cat_healings').checked = false;
+      document.getElementById('cat_bracelets').checked = false;
       document.getElementById('cat_crystals').checked = false;
-      document.getElementById('cat_tarot').checked = false;
       document.getElementById('int_dhanlabh').checked = false;
       document.getElementById('int_protection').checked = false;
       document.getElementById('int_peace').checked = false;
@@ -577,10 +631,12 @@
       const catParam = urlParams.get('cat');
       if (catParam && catParam !== 'all') {
         document.getElementById('cat_all').checked = false;
+        if (catParam === 'packages' && document.getElementById('cat_packages')) {
+          document.getElementById('cat_packages').checked = true;
+        }
         if (catParam === 'readings') document.getElementById('cat_readings').checked = true;
-        if (catParam === 'healings') document.getElementById('cat_healings').checked = true;
-        if (catParam === 'crystals') document.getElementById('cat_crystals').checked = true;
-        if (catParam === 'tarot' || catParam === 'oracle') document.getElementById('cat_tarot').checked = true;
+        if (catParam === 'bracelets') document.getElementById('cat_bracelets').checked = true;
+        if (catParam === 'crystals' || catParam === 'charms') document.getElementById('cat_crystals').checked = true;
         applyFilters();
       } else {
         renderCollection(STORE_PRODUCTS);
@@ -632,9 +688,58 @@
     </a>
   </nav>
 
+  <!-- =========================================================
+       SACRED SANCTUARY NEWSLETTER POP-UP (10% OFF FIRST ORDER)
+       Non-permanent: Appears once; dismissed permanently via localStorage
+  ========================================================= -->
+  <div id="kavitaNewsletterOverlay" class="kavita-welcome-overlay" role="dialog" aria-modal="true" aria-hidden="true" style="display: none;">
+    <div class="kavita-welcome-modal kavita-newsletter-modal">
+      <button type="button" class="kavita-welcome-close" id="kavitaNewsletterCloseBtn" aria-label="Close Pop-up">✕</button>
+      <div class="kavita-welcome-icon">💌</div>
+      <div class="kavita-welcome-badge">✦ SACRED SANCTUARY NEWSLETTER ✦</div>
+      <h3 class="kavita-welcome-title">Get 10% Off Your First Order</h3>
+      <p class="kavita-welcome-desc">
+        Subscribe to receive weekly cosmic horoscopes, moon ritual guidance, and an instant <strong>10% OFF coupon code</strong> for your first tarot consultation or crystal order.
+      </p>
+
+      <form id="kavitaNewsletterForm" class="kavita-newsletter-form" onsubmit="return handleNewsletterSubmit(event)">
+        <div class="kavita-newsletter-input-group">
+          <input
+            type="email"
+            id="kavitaNewsletterEmail"
+            name="email"
+            placeholder="Enter your email address..."
+            required
+            class="kavita-newsletter-input"
+            aria-label="Email address for sacred newsletter"
+          >
+          <button type="submit" class="kavita-newsletter-btn" id="kavitaNewsletterSubmitBtn">
+            Subscribe &amp; Get 10% Off
+          </button>
+        </div>
+      </form>
+
+      <div id="kavitaNewsletterSuccess" class="kavita-newsletter-success" style="display: none;">
+        <div class="kavita-newsletter-success-icon">✨</div>
+        <div class="kavita-newsletter-success-title">Welcome to the Sacred Circle!</div>
+        <div class="kavita-newsletter-success-code">Use Code: <strong>WELCOME10</strong> (10% OFF)</div>
+        <div class="kavita-newsletter-success-sub">Discount applied to your cart &amp; WhatsApp checkout!</div>
+      </div>
+
+      <div class="kavita-welcome-perks">
+        <span>✓ Weekly Cosmic Tarot Insights</span>
+        <span>✓ No Spam, Only Divine Guidance</span>
+      </div>
+      <div class="kavita-welcome-footer-note">
+        *We respect your privacy. You can unsubscribe at any time.
+      </div>
+    </div>
+  </div>
+
   <!-- Whole Website Celestial Ice Effect -->
   <script src="assets/ice-effect.js"></script>
   <script src="assets/storefront-ui.js"></script>
+  <script src="assets/sales-popup.js" defer></script>
 </body>
 </html>
 

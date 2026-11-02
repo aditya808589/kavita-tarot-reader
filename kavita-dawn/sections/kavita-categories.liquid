@@ -1,0 +1,193 @@
+<section class="k-section page-width categories-section-wrap" style="padding-top: 3.5rem; padding-bottom: 3.5rem;">
+  <div class="k-heading" style="text-align: center; margin-bottom: 2rem; display: block;">
+    <p class="k-kicker" style="color: #80142B; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 0.4rem;">{{ section.settings.eyebrow | default: 'Vedic Catalog' }}</p>
+    <h2 style="font-family: var(--font-heading, 'Cinzel', serif); font-size: 2.2rem; color: #1C1917; margin-bottom: 0.5rem;">{{ section.settings.heading | default: 'Shop by Category' }}</h2>
+    <p style="max-width: 650px; margin: 0 auto; color: #7D756D; font-size: 0.95rem;">
+      {{ section.settings.subheading | default: 'Browse sacred tools energized through authentic Vedic practices.' }}
+    </p>
+  </div>
+
+  <div class="k-categories-grid">
+    {% for block in section.blocks %}
+      {% assign col = block.settings.collection %}{% assign fallback_images = 'product-live-audio.jpg,product-voice-note.jpg,product-cord-cutting.jpg,product-lamafera.jpg,crystal-pyrite.jpg,deck-gold-tarot.jpg' | split: ',' %}{% assign fallback_links = '/products/live-audio-call-tarot-reading,/products/whatsapp-voice-note-tarot-reading,/products/distance-cord-cutting-healing,/products/lamafera-ancient-energy-healing,/products/natural-golden-pyrite-wealth-cluster,/products/sacred-gold-foil-major-arcana-deck' | split: ',' %}
+      <a
+        href="{% if col != blank %}{{ col.url }}{% else %}{{ fallback_links[forloop.index0] | default: routes.all_products_collection_url }}{% endif %}"
+        class="k-cat-card"
+        {{ block.shopify_attributes }}
+      >
+        <div class="k-cat-avatar-wrap">
+          {% if block.settings.image != blank %}
+            {{ block.settings.image | image_url: width: 200 | image_tag: class: 'k-cat-avatar-img' }}
+          {% else %}
+            <img class="k-cat-avatar-img" src="{{ fallback_images[forloop.index0] | asset_url }}" alt="{{ block.settings.title | escape }}" width="100" height="100" loading="lazy">
+          {% endif %}
+        </div>
+        <span class="k-cat-title">
+          {{ block.settings.title | escape }}
+        </span>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+.k-categories-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+  margin-top: 2rem;
+}
+.k-cat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 18px 8px 14px;
+  border: 1px solid #DFC9A4;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #FFFFFF, #FAF4E9);
+  box-shadow: inset 0 1px 0 #FFFFFF, 0 4px 0 #E8DDCE, 0 8px 18px rgba(90, 54, 20, 0.08);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.k-cat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: inset 0 1px 0 #FFFFFF, 0 6px 0 #E8DDCE, 0 14px 26px rgba(90, 54, 20, 0.14);
+}
+.k-cat-avatar-wrap {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, #FFDF78, #D4AF37, #7A5710);
+  box-shadow: 0 4px 12px rgba(109, 66, 37, 0.18), inset 0 1px 2px #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.k-cat-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.k-cat-avatar-fallback {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #F4EFE6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+.k-cat-title {
+  font-family: var(--font-heading, 'Cinzel', serif);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1C1917;
+  letter-spacing: 0.02em;
+  text-align: center;
+  line-height: 1.35;
+  min-height: 2.7em;
+  display: grid;
+  place-items: center;
+}
+@media (max-width: 991px) {
+  .k-categories-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+  }
+}
+@media (max-width: 640px) {
+  .k-categories-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .k-cat-card {
+    padding: 12px 6px 10px;
+    gap: 8px;
+  }
+  .k-cat-avatar-wrap {
+    width: 60px;
+    height: 60px;
+  }
+  .k-cat-title {
+    font-size: 0.72rem;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Circular Category Row",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Vedic Catalog"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shop by Category"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Browse sacred tools energized through authentic Vedic practices."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category Circle",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Category Circular Image"
+        },
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Fallback Emoji / Icon",
+          "default": "📿"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Category Title",
+          "default": "Rudraksha & Malas"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Circular Category Row",
+      "blocks": [
+        { "type": "category", "settings": { "icon": "📿", "title": "Rudraksha & Malas" } },
+        { "type": "category", "settings": { "icon": "✨", "title": "Crystal Bracelets" } },
+        { "type": "category", "settings": { "icon": "☸", "title": "Energized Yantras" } },
+        { "type": "category", "settings": { "icon": "🔺", "title": "Vastu & Pyramids" } },
+        { "type": "category", "settings": { "icon": "🕉", "title": "Spiritual Jewelry" } },
+        { "type": "category", "settings": { "icon": "🎴", "title": "Tarot & Oracle Decks" } },
+        { "type": "category", "settings": { "icon": "🌸", "title": "Pooja & Idols" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

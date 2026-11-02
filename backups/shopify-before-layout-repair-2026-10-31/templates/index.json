@@ -1,0 +1,533 @@
+{
+  "sections": {
+    "marquee": {
+      "type": "kavita-marquee",
+      "settings": {}
+    },
+    "hero_slider": {
+      "type": "kavita-hero-slider",
+      "blocks": {
+        "slide_1": {
+          "type": "slide",
+          "settings": {
+            "alt_text": "Sacred Tarot. Modern Guidance.",
+            "link": "\/collections\/tarot-decks"
+          }
+        },
+        "slide_2": {
+          "type": "slide",
+          "settings": {
+            "alt_text": "Sacred Tarot for a Brighter Tomorrow",
+            "link": "\/collections\/all"
+          }
+        }
+      },
+      "block_order": [
+        "slide_1",
+        "slide_2"
+      ],
+      "settings": {
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "show_arrows": true,
+        "show_dots": true
+      }
+    },
+    "trust_strip": {
+      "type": "kavita-trust-strip",
+      "settings": {}
+    },
+    "categories_row": {
+      "type": "kavita-categories",
+      "blocks": {
+        "c_rudraksha": {
+          "type": "category",
+          "settings": {
+            "icon": "📿",
+            "title": "Rudraksha & Malas"
+          }
+        },
+        "c_bracelets": {
+          "type": "category",
+          "settings": {
+            "icon": "✨",
+            "title": "Crystal Bracelets"
+          }
+        },
+        "c_yantras": {
+          "type": "category",
+          "settings": {
+            "icon": "☸",
+            "title": "Energized Yantras"
+          }
+        },
+        "c_vastu": {
+          "type": "category",
+          "settings": {
+            "icon": "🔺",
+            "title": "Vastu & Pyramids"
+          }
+        },
+        "c_jewelry": {
+          "type": "category",
+          "settings": {
+            "icon": "🕉",
+            "title": "Spiritual Jewelry"
+          }
+        },
+        "c_tarot": {
+          "type": "category",
+          "settings": {
+            "icon": "🎴",
+            "title": "Tarot & Oracle Decks"
+          }
+        },
+        "c_pooja": {
+          "type": "category",
+          "settings": {
+            "icon": "🌸",
+            "title": "Pooja & Idols"
+          }
+        }
+      },
+      "block_order": [
+        "c_rudraksha",
+        "c_bracelets",
+        "c_yantras",
+        "c_vastu",
+        "c_jewelry",
+        "c_tarot",
+        "c_pooja"
+      ],
+      "settings": {
+        "eyebrow": "Vedic Catalog",
+        "heading": "Shop by Category",
+        "subheading": "Browse sacred tools energized through authentic Vedic practices."
+      }
+    },
+    "concerns_grid": {
+      "type": "kavita-concerns",
+      "blocks": {
+        "p_wealth": {
+          "type": "concern",
+          "settings": {
+            "icon": "💰",
+            "title": "Dhan Labh & Wealth",
+            "tagline": "Money Flow · Business Growth"
+          }
+        },
+        "p_nazar": {
+          "type": "concern",
+          "settings": {
+            "icon": "🛡",
+            "title": "Nazar & Protection",
+            "tagline": "Shield Aura · Ward Evil Eye"
+          }
+        },
+        "p_love": {
+          "type": "concern",
+          "settings": {
+            "icon": "❤️",
+            "title": "Love & Harmony",
+            "tagline": "Relationship Peace · Soul Union"
+          }
+        },
+        "p_peace": {
+          "type": "concern",
+          "settings": {
+            "icon": "🕊",
+            "title": "Peace & Anxiety Relief",
+            "tagline": "Mental Calm · Sleep · Balance"
+          }
+        },
+        "p_career": {
+          "type": "concern",
+          "settings": {
+            "icon": "🚀",
+            "title": "Career & Promotion",
+            "tagline": "Success · Clear Decisions"
+          }
+        },
+        "p_chakra": {
+          "type": "concern",
+          "settings": {
+            "icon": "🧘",
+            "title": "Chakra Alignment",
+            "tagline": "Kundalini · Vital Energy"
+          }
+        }
+      },
+      "block_order": [
+        "p_wealth",
+        "p_nazar",
+        "p_love",
+        "p_peace",
+        "p_career",
+        "p_chakra"
+      ],
+      "settings": {
+        "eyebrow": "Target Your Energy",
+        "heading": "Shop by Concern & Goal",
+        "subheading": "Select the specific transformation or blessing you wish to call into your life."
+      }
+    },
+    "services": {
+      "type": "kavita-services",
+      "blocks": {
+        "service_1": {
+          "type": "service",
+          "settings": {
+            "label": "Audio Call Tarot Reading",
+            "summary": "A deeply personal live audio reading focused on your questions and energy."
+          }
+        },
+        "service_2": {
+          "type": "service",
+          "settings": {
+            "label": "Voice Note Tarot Reading",
+            "summary": "One-on-one personalized voice note guidance delivered straight to WhatsApp."
+          }
+        },
+        "service_3": {
+          "type": "service",
+          "settings": {
+            "label": "Distance Cord-Cutting Healing",
+            "summary": "A dedicated distance healing session to release attachments and restore balance."
+          }
+        }
+      },
+      "block_order": [
+        "service_1",
+        "service_2",
+        "service_3"
+      ],
+      "settings": {
+        "eyebrow": "Personal Guidance · WhatsApp Consultations",
+        "heading": "1-on-1 Consultations with Kavita",
+        "copy": "Deep, personalized intuitive guidance delivered straight to your WhatsApp. Select Same-Day Premium or Standard booking."
+      }
+    },
+    "how_it_works": {
+      "type": "kavita-how-it-works",
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "title": "Choose your session & duration",
+            "copy": "Select a 10, 20, or 30-minute audio call or a personalized voice note reading."
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "title": "Kavita connects directly",
+            "copy": "She will reach out at your confirmed slot via WhatsApp with focused, personal presence."
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "title": "Guidance & next steps",
+            "copy": "Receive intuitive clarity, deep card interpretations, and practical spiritual reflections."
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3"
+      ],
+      "settings": {
+        "eyebrow": "Simple. Personal. Thoughtful.",
+        "heading": "From Booking to Clarity in 3 Steps"
+      }
+    },
+    "card_pull": {
+      "type": "kavita-card-pull",
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "title": "The Fool",
+            "reflection": "What new chapter is quietly waiting for your courage to begin?",
+            "symbol": "✦"
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "title": "The High Priestess",
+            "reflection": "What truth is your inner intuition whispering that your mind is trying to rationalize?",
+            "symbol": "☾"
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "title": "The Empress",
+            "reflection": "How can you nurture your own creative energy and replenish your spirit today?",
+            "symbol": "✿"
+          }
+        },
+        "card_4": {
+          "type": "card",
+          "settings": {
+            "title": "The Hermit",
+            "reflection": "What wisdom emerges when you step back from noise into quiet stillness?",
+            "symbol": "✧"
+          }
+        },
+        "card_5": {
+          "type": "card",
+          "settings": {
+            "title": "The Star",
+            "reflection": "Where in your life are peace, hope, and cosmic alignment returning to you?",
+            "symbol": "★"
+          }
+        },
+        "card_6": {
+          "type": "card",
+          "settings": {
+            "title": "The Sun",
+            "reflection": "What authentic joy or radiant clarity is ready to be celebrated?",
+            "symbol": "☼"
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4",
+        "card_5",
+        "card_6"
+      ],
+      "settings": {
+        "eyebrow": "A moment to yourself",
+        "heading": "Pause. Breathe. Choose a card.",
+        "copy": "Bring a question to mind. Choose a card for a reflection prompt, not a prediction."
+      }
+    },
+    "quiz": {
+      "type": "kavita-quiz",
+      "settings": {
+        "eyebrow": "Personal Guidance Quiz",
+        "heading": "Find Your Reading & Crystal",
+        "copy": "Answer 5 intuitive questions to receive tailored suggestions for your current energy and life path."
+      }
+    },
+    "card_explorer": {
+      "type": "kavita-card-explorer",
+      "blocks": {
+        "c_1": {
+          "type": "card",
+          "settings": {
+            "title": "0. The Fool",
+            "arcana": "Major Arcana",
+            "element": "Air",
+            "summary": "A leap of faith into new beginnings, trusting universal flow."
+          }
+        },
+        "c_2": {
+          "type": "card",
+          "settings": {
+            "title": "I. The Magician",
+            "arcana": "Major Arcana",
+            "element": "Air",
+            "summary": "Manifestation power, resourcefulness, and alignment of conscious will."
+          }
+        },
+        "c_3": {
+          "type": "card",
+          "settings": {
+            "title": "II. The High Priestess",
+            "arcana": "Major Arcana",
+            "element": "Water",
+            "summary": "Sacred intuition, esoteric mysteries, and inner subconscious guidance."
+          }
+        },
+        "c_4": {
+          "type": "card",
+          "settings": {
+            "title": "III. The Empress",
+            "arcana": "Major Arcana",
+            "element": "Earth",
+            "summary": "Abundance, sensual joy, creative fertility, and motherly care."
+          }
+        },
+        "c_5": {
+          "type": "card",
+          "settings": {
+            "title": "IX. The Hermit",
+            "arcana": "Major Arcana",
+            "element": "Earth",
+            "summary": "Inner soul searching, contemplation, and sacred solitude."
+          }
+        },
+        "c_6": {
+          "type": "card",
+          "settings": {
+            "title": "XVII. The Star",
+            "arcana": "Major Arcana",
+            "element": "Air",
+            "summary": "Hope, cosmic blessing, renewed spiritual inspiration and serenity."
+          }
+        }
+      },
+      "block_order": [
+        "c_1",
+        "c_2",
+        "c_3",
+        "c_4",
+        "c_5",
+        "c_6"
+      ],
+      "settings": {
+        "eyebrow": "Sacred Knowledge",
+        "heading": "78-Card Meanings Library",
+        "copy": "Explore the ancient archetypes of the tarot. Search any card to discover its upright guidance, shadow warning, and reflection prompt."
+      }
+    },
+    "story": {
+      "type": "kavita-story",
+      "settings": {
+        "eyebrow": "A personal connection",
+        "heading": "Meet Kavita.",
+        "copy": "<p>I am Kavita, a tarot reader offering personalised one-to-one consultations to guide and empower you.<\/p><p>My approach begins with listening. Together, we explore your questions with warmth, empathy, and space for your own understanding.<\/p>",
+        "link_label": "Read my story"
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Bestselling Vedic & Crystal Offerings",
+        "heading_size": "h2",
+        "description": "<p>Authentic, lab-certified spiritual tools ready for immediate dispatch across India.<\/p>",
+        "show_description": true,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "swipe_on_mobile": true,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "testimonials": {
+      "type": "kavita-testimonials",
+      "blocks": {
+        "t_1": {
+          "type": "quote",
+          "settings": {
+            "quote": "The 20-minute audio call felt like a breath of fresh air. Kavita picked up on nuances I hadn't even voiced yet. Her guidance gave me the courage to make a pivotal career decision.",
+            "author": "✦ Verified Client · Mumbai"
+          }
+        },
+        "t_2": {
+          "type": "quote",
+          "settings": {
+            "quote": "Her voice note reading was deeply comforting. I love that I can listen to it again whenever doubts creep in. The accuracy and warmth were unbelievable.",
+            "author": "✦ Verified Client · Delhi"
+          }
+        },
+        "t_3": {
+          "type": "quote",
+          "settings": {
+            "quote": "The distance cord-cutting session brought an immediate lightness to my chest. You can genuinely feel her peaceful presence even through a voice note.",
+            "author": "✦ Verified Client · Bengaluru"
+          }
+        }
+      },
+      "block_order": [
+        "t_1",
+        "t_2",
+        "t_3"
+      ],
+      "settings": {
+        "eyebrow": "Words shared with care",
+        "heading": "Reflections after a reading."
+      }
+    },
+    "faq": {
+      "type": "kavita-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "How does an audio reading work?",
+            "answer": "<p>You select your preferred duration (10, 20, or 30 minutes) and submit your questions through our intake form. Kavita connects with you directly on WhatsApp at the confirmed time for a focused, 1-on-1 session.<\/p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the difference between Premium and Standard booking?",
+            "answer": "<p>Premium bookings are scheduled for the same day (subject to availability). Standard bookings are scheduled within 3 to 5 business days.<\/p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "How do Voice Note readings work?",
+            "answer": "<p>After booking, submit your specific questions. Kavita channels the cards and records an intimate, personalized voice note sent directly to your WhatsApp.<\/p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "Are my questions and reading private?",
+            "answer": "<p>Yes, completely. Every reading is held in strict sacred confidence. Your personal details and questions are never shared.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4"
+      ],
+      "settings": {
+        "eyebrow": "Before your reading",
+        "heading": "A little more clarity."
+      }
+    },
+    "disclaimer": {
+      "type": "kavita-disclaimer",
+      "settings": {}
+    },
+    "spotlight_pyrite": {
+      "type": "kavita-spotlight-pyrite",
+      "settings": {}
+    }
+  },
+  "order": [
+    "marquee",
+    "hero_slider",
+    "trust_strip",
+    "categories_row",
+    "concerns_grid",
+    "spotlight_pyrite",
+    "services",
+    "how_it_works",
+    "card_pull",
+    "quiz",
+    "card_explorer",
+    "story",
+    "featured_collection",
+    "testimonials",
+    "faq",
+    "disclaimer"
+  ]
+}

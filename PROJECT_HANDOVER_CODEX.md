@@ -225,3 +225,37 @@ Removed floating WhatsApp/chat anchors from all eight root HTML pages. Improved 
 
 ### Popup/card shape confirmed
 User clarified “rectangular boxes with curved edges.” Applied 12px rounded rectangular panels to modal popups and the intention slider cards below categories, with restrained warm borders/shadows and larger readable responsive title/body text. Category grid and product grid are unchanged. Floating chat remains removed. Shape clarification is now resolved.
+
+
+## 2026-11-01 — Cart, booking, and welcome popup repair
+
+Current public domain redirects to https://kavitatarotreader.com/. Active theme remains 155909324961. User asked to retain the existing design, stop Add to Cart redirecting to checkout, repair all booking selections, add a red/off-white crystal welcome offer, and add corner notifications.
+
+Changes deployed in `kavita-dawn/`:
+- `assets/parity-commerce.js`: add uses Shopify Ajax Cart, validates the product/variant, refreshes and opens the drawer; failures stay on page. Checkout only from the explicit checkout action.
+- `assets/parity-page.js`: exact title/handle resolution plus named aliases for the six homepage services; service detection uses category rather than old numeric IDs. PDP controls initialize after PDP data and open booking intake for readings. Selected variants and form properties are preserved. Bundle add no longer adds items twice.
+- `sections/parity-product.liquid`: removed embedded checkout redirects from cart/bundle actions; root `product.html` also has these corrections.
+- `assets/parity-ui.js`: repaired invalid quote escaping in predictive-search markup and removed calls to undefined welcome functions. Related syntax fixes also applied to root `assets/storefront-ui.js`. Old automatic newsletter launch disabled on live theme to avoid competing popups.
+- `layout/parity.liquid`: live catalog now comes from paginated collection products instead of exceeding the 20-handle all_products lookup limit. All 38 catalog entries now present. Restored integration CSS loading. Includes the new welcome snippet/styles/script.
+- `snippets/welcome-popup.liquid`, `assets/welcome.css`, `assets/welcome.js`: responsive centered dialog, existing crystal image, Cinzel/Plus Jakarta typography, 2-second delay, sessionStorage dismissal, Escape/close, native modal focus handling, reduced-motion support, WELCOME10 claim integration with Shopify cart. Corner card is explicitly a product recommendation, not a fabricated purchase event; dismissed card stays hidden for the current page.
+
+IMPORTANT DISCOUNT STATUS: App scopes only allow products/themes/files, not discounts/orders. User explicitly answered “u do this i will add offer later”. WELCOME10 discount creation and first-order eligibility configuration are therefore left to the owner. Claim submits WELCOME10 to Shopify but must not be described as an active 10% discount until owner configures it. No orders were read or fabricated.
+
+Checks: JS syntax; actual live mobile welcome and once-per-session behavior; all six homepage service aliases; actual video booking form -> correct cart item plus submitted properties; physical PDP Add -> exactly one item, same page; no completed orders or checkout submissions. Isolated QA carts cleared after tests. Desktop popup screenshot inspected; mobile width 360/390 checked. QA script `scripts/qa/welcome-booking-live.cjs` uses PLAYWRIGHT_MODULE or installed playwright. Backups of previously deployed changed core assets/layout are in `backups/2026-11-01-cart-welcome/`.
+
+Do not rerun the old deploy/build scripts blindly: they can overwrite these fixes with earlier static code and expose old checkout behavior. The live parity theme is the source for this feature. Root static preview has only the corresponding PDP/search repairs, not the new Shopify-specific popup integration.
+
+Final verification: all 18 service products resolve to the correct catalog record and a live Shopify variant; all four video-call options reference valid variants. Mobile dialog at 360×640 remains entirely within viewport; recommendation card appears; final browser run reported zero JavaScript errors. Explicit checkout action now carries a claimed WELCOME10 through Shopify's discount URL, allowing the owner's later activation to take effect.
+
+## 2026-11-01 — Follow-up: cart images and mobile header
+- Cart recommendation images/prices/titles now come from the hydrated Shopify catalog; removed broken relative asset paths and stale hardcoded recommendation prices. Already-added variants are excluded from recommendations.
+- Removed JS-created hamburger button. Mobile header now shows logo, wishlist, cart, plus a full-width search bar underneath. Existing category navigation stays available.
+- Deployed `assets/parity-cart-render.js`, `assets/parity-ui.js`, and `assets/parity-integration.css`. Root storefront UI also no longer creates the menu button.
+
+2026-11-01 follow-up: enlarged header logo to 92×80 desktop / 80×68 mobile (object-fit contain). Removed hero overlay arrow controls via `.kavita-slider__arrow`; slide dots retained. Deployed parity-integration.css.
+
+2026-11-01: Added a calendar/star “Book a reading” header icon immediately before wishlist/cart, including mobile. Links to /?view=consultations; accessible name and tooltip provided. Live parity-ui.js and parity-integration.css deployed; root storefront-ui.js uses consultations.html for local preview. Verified visible at 360px with no horizontal overflow and correct navigation.
+
+2026-11-01: Standard audio/video consultation options now explicitly say Standard Delivery (7–10 days), including dynamically updated duration card labels. Added explanatory session-delivery note to the audio booking card; PDP standard tier labels also show 7–10 days. Synced consultations.html/product.html and live parity sections. User requested fabricated purchase notifications; did not create false purchase claims. Corner popup keeps its product image/name format and now says Featured product. Real purchase notifications still require a verified order source.
+
+2026-11-01: At user's request removed the corner Featured product popup entirely: deleted productDiscovery markup and its timers/rotation JS. Welcome discount modal retained. Deployed assets/welcome.js and snippets/welcome-popup.liquid; JS syntax check passed.

@@ -1,0 +1,103 @@
+<section class="k-section page-width" style="padding-top: 4rem; padding-bottom: 3.5rem;">
+  <div class="k-heading" style="text-align: center; margin-bottom: 2rem; display: block;">
+    <p class="k-kicker">{{ section.settings.eyebrow | default: 'Vedic Catalog' }}</p>
+    <h2>{{ section.settings.heading | default: 'Shop by Category' }}</h2>
+    <p style="max-width: 650px; margin: 0 auto; color: var(--k-muted);">
+      {{ section.settings.subheading | default: 'Browse sacred tools energized through authentic Vedic practices.' }}
+    </p>
+  </div>
+
+  <div style="display: flex; justify-content: center; gap: 1.8rem; flex-wrap: wrap; margin-top: 2rem;">
+    {% for block in section.blocks %}
+      {% assign col = block.settings.collection %}
+      <a
+        href="{% if col != blank %}{{ col.url }}{% else %}/collections/all{% endif %}"
+        style="display: flex; flex-direction: column; align-items: center; gap: 0.8rem; width: 125px; text-align: center; color: inherit; text-decoration: none;"
+        {{ block.shopify_attributes }}
+      >
+        <div style="width: 96px; height: 96px; border-radius: 50%; padding: 3px; background: linear-gradient(135deg, #FFDF78, #D4AF37, #7A5710); box-shadow: 0 6px 20px rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+          {% if block.settings.image != blank %}
+            {{ block.settings.image | image_url: width: 200 | image_tag: style: 'width: 100%; height: 100%; border-radius: 50%; object-fit: cover;' }}
+          {% else %}
+            <div style="width: 100%; height: 100%; border-radius: 50%; background: #F4EFE6; display: flex; align-items: center; justify-content: center; font-size: 2.2rem;">
+              {{ block.settings.icon | default: '✦' }}
+            </div>
+          {% endif %}
+        </div>
+        <span style="font-family: var(--font-heading); font-size: 0.86rem; font-weight: 700; color: #1C1917; letter-spacing: 0.03em;">
+          {{ block.settings.title | escape }}
+        </span>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Circular Category Row",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Vedic Catalog"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shop by Category"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Browse sacred tools energized through authentic Vedic practices."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category Circle",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Category Circular Image"
+        },
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Fallback Emoji / Icon",
+          "default": "📿"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Category Title",
+          "default": "Rudraksha & Malas"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Circular Category Row",
+      "blocks": [
+        { "type": "category", "settings": { "icon": "📿", "title": "Rudraksha & Malas" } },
+        { "type": "category", "settings": { "icon": "✨", "title": "Crystal Bracelets" } },
+        { "type": "category", "settings": { "icon": "☸", "title": "Energized Yantras" } },
+        { "type": "category", "settings": { "icon": "🔺", "title": "Vastu & Pyramids" } },
+        { "type": "category", "settings": { "icon": "🕉", "title": "Spiritual Jewelry" } },
+        { "type": "category", "settings": { "icon": "🎴", "title": "Tarot & Oracle Decks" } },
+        { "type": "category", "settings": { "icon": "🌸", "title": "Pooja & Idols" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

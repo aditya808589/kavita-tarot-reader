@@ -1,0 +1,1719 @@
+/* Shared final layer: load after page-specific styles. Static storefront only. */
+:root { --store-ink: #29211f; --store-wine: #701b30; }
+img { max-width:100%; }
+button, input, select, textarea { font:inherit; }
+:focus-visible { outline:2px solid #9c7027; outline-offset:4px; }
+.container { width:100%; max-width:1280px; padding-inline:24px; }
+.section-wrap { padding-block:48px !important; }
+.section-header { margin-bottom:24px !important; }
+.section-title { line-height:1.35 !important; overflow-wrap:anywhere; }
+.section-sub { max-width:650px; margin-inline:auto; }
+.kavita-hdr__container { min-width:0; gap:20px; }
+.kavita-hdr__brand { min-width:max-content !important; flex-shrink:0 !important; }
+.kavita-hdr__logo-link { display:inline-flex !important; align-items:center !important; gap:10px !important; text-decoration:none !important; white-space:nowrap !important; }
+.kavita-hdr__logo-img { width:76px !important; height:76px !important; flex-shrink:0; }
+.kavita-hdr__brand-name { font-family:'Cinzel',serif !important; font-size:1.15rem !important; font-weight:800 !important; letter-spacing:0.07em !important; color:#1A1715 !important; white-space:nowrap !important; max-width:none !important; width:auto !important; display:inline-block; line-height:1 !important; overflow:visible !important; }
+.kavita-hdr__search-wrap { min-width:0; }
+.kavita-hdr__actions { gap:14px; flex-shrink:0; }
+.kavita-hdr__nav-bar { display:block !important; overflow:visible; }
+.kavita-hdr__menu { justify-content:center; flex-wrap:wrap; gap:0 22px; }
+.kavita-hdr__menu-item { position:relative; }
+.kavita-hdr__menu-link { color:#29211f !important; font-size:12px; line-height:1.5; white-space:nowrap; display:inline-flex; align-items:center; gap:4px; }
+.kavita-hdr__menu-link:hover { color:#80142b !important; }
+.kavita-hdr__caret { transition:transform 0.2s ease; margin-left:2px; }
+.kavita-hdr__menu-item:hover .kavita-hdr__caret { transform:rotate(180deg); }
+.kavita-hdr__menu-item--dropdown .kavita-hdr__dropdown {
+  position:absolute; top:100%; left:0; background:#FFFFFF; border:1px solid #E6E0D5;
+  border-radius:12px; box-shadow:0 14px 40px rgba(0,0,0,0.12); padding:1.25rem 1.5rem;
+  min-width:540px; opacity:0; visibility:hidden; transform:translateY(8px);
+  transition:all 0.25s cubic-bezier(0.16, 1, 0.3, 1); z-index:700; pointer-events:none;
+}
+.kavita-hdr__menu-item--dropdown .kavita-hdr__dropdown::before {
+  content:''; position:absolute; top:-12px; left:0; right:0; height:12px;
+}
+.kavita-hdr__menu-item--dropdown:hover .kavita-hdr__dropdown {
+  opacity:1 !important; visibility:visible !important; transform:translateY(0) !important; pointer-events:auto !important;
+}
+.kavita-hdr__dropdown-col a {
+  display:block !important; font-family:'Plus Jakarta Sans',sans-serif !important;
+  font-size:0.82rem !important; color:#3C3335 !important; text-decoration:none !important;
+  padding:0.4rem 0.55rem !important; border-radius:6px; transition:all 0.15s ease;
+}
+.kavita-hdr__dropdown-col a:hover {
+  background:#FFF8EE !important; color:#80142B !important; transform:translateX(3px);
+}
+@media(max-width:767px) {
+  .kavita-hdr__menu-item--dropdown .kavita-hdr__dropdown { display:none !important; }
+}
+.categories-circle-row { display:flex !important; flex-wrap:nowrap !important; justify-content:safe center !important; gap:24px !important; overflow-x:auto !important; scroll-snap-type:x mandatory; padding:12px 4px 18px !important; }
+.cat-circle-card { flex:0 0 140px !important; min-width:0 !important; max-width:none !important; scroll-snap-align:start; }
+.cat-circle-avatar-wrap { width:100px !important; height:100px !important; }
+.cat-circle-name { font-size:13px !important; line-height:1.5 !important; }
+.slider-controls { display:flex; justify-content:center; align-items:center; gap:16px; margin-top:14px; color:#6b5b50; font-size:12px; }
+.slider-controls button { width:40px; height:40px; border:1px solid #d8cbbb; border-radius:50%; background:#fff; color:#701b30; cursor:pointer; }
+.slider-controls button:disabled { opacity:.35; cursor:default; }
+.luxury-intentions-grid { display:grid !important; grid-auto-flow:column; grid-template-columns:none !important; grid-auto-columns:calc((100% - 40px)/3); gap:20px !important; overflow-x:auto; scroll-snap-type:x mandatory; padding:4px 2px 14px; }
+.luxury-intention-card { min-width:0; scroll-snap-align:start; padding:24px !important; }
+#consultationsTrack, #productsTrack, .products-grid { display:grid !important; grid-template-columns:repeat(3,minmax(0,1fr)) !important; gap:24px !important; overflow:visible !important; padding:0 !important; }
+.kavita-carousel-slide { width:auto !important; min-width:0 !important; max-width:none !important; }
+.product-card { min-width:0; border-radius:12px !important; overflow:hidden; }
+.product-media { aspect-ratio:1 / 1; height:auto !important; }
+.product-media > a { display:block; height:100%; }
+.product-img { width:100%; height:100%; object-fit:cover; }
+.product-info-wrap { padding:16px !important; gap:12px; }
+.product-title { display:block !important; height:auto !important; max-height:none !important; overflow:visible !important; -webkit-line-clamp:unset !important; font-size:16px !important; line-height:1.5 !important; }
+.product-pricing-row { flex-wrap:wrap; gap:6px 10px; }
+.product-card-actions { display:flex !important; flex-wrap:wrap; gap:8px !important; margin-top:auto; padding-top:12px; }
+.product-card-actions .btn { flex:1 1 auto; min-height:40px; height:auto !important; padding:9px 12px !important; font-size:12px !important; line-height:1.4 !important; border-radius:6px !important; white-space:normal; }
+.product-features-bullet { font-size:12px; }
+.product-badge-flag { max-width:calc(100% - 52px); white-space:normal; font-size:10px; }
+.faq-container, .faq-group-block { max-width:820px; margin-inline:auto; }
+.faq-item { border:0 !important; border-bottom:1px solid #ded5c9 !important; border-radius:0 !important; box-shadow:none !important; margin:0 !important; background:transparent !important; }
+.faq-question { display:flex; justify-content:space-between; gap:18px; width:100%; text-align:left; border:0; background:none; padding:22px 0 !important; font-size:15px !important; line-height:1.6; color:#29211f; cursor:pointer; }
+.faq-toggle-icon { flex:0 0 24px; text-align:center; }
+.faq-answer { display:none; padding:0 0 22px !important; max-height:none !important; font-size:14px !important; line-height:1.8 !important; border:0 !important; }
+.faq-item.active .faq-answer { display:block; }
+.faq-category-nav { flex-wrap:wrap; gap:8px; }
+.refined-footer { background:#321923; color:#f7eee6; padding:52px 0 24px; margin-top:24px; }
+.refined-footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr; gap:60px; }
+.refined-footer-brand img { width:80px; height:80px; object-fit:contain; }
+.refined-footer h2 { color:#f7eee6; font-size:26px; line-height:1.5; margin:16px 0; }
+.refined-footer p { max-width:370px; font-size:13px; line-height:1.8; color:#d8c8c8; }
+.refined-footer h3 { color:#d9b975; font-size:13px; margin:18px 0 22px; letter-spacing:.08em; }
+.refined-footer a { display:block; color:#eee0da; font-size:13px; padding-block:7px; line-height:1.6; }
+.refined-footer a:hover { color:#e8c98d; text-decoration:underline; }
+.refined-footer-note { border-top:1px solid #614650; padding-top:22px; margin-top:32px; max-width:850px; font-size:11px; color:#cdbabc; line-height:1.8; }
+.refined-footer-bottom { display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-top:24px; color:#cdbabc; font-size:11px; }
+@media(max-width:1000px) {
+ .kavita-hdr__brand-name { display:none !important; }
+ .kavita-hdr__menu { gap:0 15px; }
+ .collections-layout { grid-template-columns:220px minmax(0,1fr); gap:24px; }
+ .refined-footer-grid { gap:32px; }
+}
+@media(max-width:767px) {
+ .container { padding-inline:16px; }
+ .section-wrap { padding-block:32px !important; }
+ .section-header { margin-bottom:20px !important; }
+ .section-title { font-size:22px !important; }
+ .section-kicker { font-size:10px !important; letter-spacing:.1em !important; }
+ .section-sub { font-size:13px !important; line-height:1.7; }
+ .kavita-hdr__logo-img { width:64px !important; height:64px !important; }
+ .kavita-hdr__main { padding:8px 0 !important; }
+ .kavita-hdr__container { gap:10px; }
+ .kavita-hdr__search-wrap { display:none; }
+ .kavita-hdr__search-wrap.search-is-open { display:block !important; width:100%; order:3; flex-basis:100%; }
+ .kavita-hdr__main .kavita-hdr__container { flex-wrap:wrap; }
+ .kavita-hdr__menu { justify-content:flex-start !important; flex-wrap:nowrap; overflow-x:auto; width:100%; gap:20px; scrollbar-width:thin; }
+ .kavita-hdr__menu-item { flex:0 0 auto; }
+ .kavita-hdr__menu-link { font-size:11px; padding-block:12px; }
+ .categories-circle-row { justify-content:flex-start !important; gap:12px !important; padding-inline:2px !important; }
+ .cat-circle-card { flex-basis:calc((100% - 24px)/3) !important; }
+ .cat-circle-avatar-wrap { width:80px !important; height:80px !important; }
+ .cat-circle-name { font-size:11px !important; }
+ .luxury-intentions-grid { grid-auto-columns:86%; gap:14px !important; }
+ #consultationsTrack, #productsTrack, .products-grid { grid-template-columns:repeat(2,minmax(0,1fr)) !important; gap:16px 10px !important; }
+ .product-info-wrap { padding:12px 10px !important; }
+ .product-title { font-size:12px !important; line-height:1.6 !important; }
+ .product-category-sub { font-size:9px !important; white-space:normal; }
+ .product-pricing-row .current-price { font-size:14px !important; }
+ .product-pricing-row .compare-price, .discount-pill { font-size:10px !important; }
+ .product-card-actions { flex-direction:column; }
+ .product-card-actions .btn { flex:none; width:100%; padding:9px 6px !important; min-height:38px; font-size:11px !important; }
+ .product-reviews-stars { font-size:10px !important; }
+ .product-reviews-count { display:block; font-size:9px !important; }
+ .product-features-bullet { display:none; }
+ .booking-grid { grid-template-columns:minmax(0,1fr) !important; }
+ .faq-question { font-size:14px !important; padding-block:18px !important; }
+ .faq-cat-pill { white-space:normal; font-size:11px; padding:9px 12px; }
+ .refined-footer { padding-top:32px; }
+ .refined-footer-grid { grid-template-columns:1fr 1fr; gap:20px; }
+ .refined-footer-brand { grid-column:1 / -1; }
+ .refined-footer h2 { font-size:23px; }
+ .refined-footer h3 { font-size:11px; margin-bottom:12px; }
+ .refined-footer a { font-size:12px; }
+ .cart-drawer { width:min(100%,420px) !important; }
+ .modal-card { width:calc(100% - 24px) !important; max-height:85dvh; overflow:auto; padding:20px !important; }
+ .whatsapp-float { bottom:100px !important; }
+}
+@media(prefers-reduced-motion:reduce) { *, *::before, *::after { animation:none !important; scroll-behavior:auto !important; transition:none !important; } }
+/* Keep the collection content full-width when its sidebar becomes a drawer. */
+@media(max-width:991px) {
+ .collections-layout { grid-template-columns:minmax(0,1fr) !important; padding-block:24px; }
+ .collections-layout > * { min-width:0; }
+ .collections-layout .products-grid { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
+}
+@media(max-width:767px) {
+ .kavita-hdr__logo-img { width:86px !important; height:64px !important; }
+ .section-wrap > .container { padding-inline:16px !important; }
+ .section-wrap { padding-inline:0 !important; }
+ .btn { max-width:100%; white-space:normal; line-height:1.5; }
+ .section-wrap > .container > div > .btn { padding:12px 20px !important; border-radius:6px !important; font-size:11px !important; }
+}
+.slider-controls[hidden] { display:none; }
+.store-menu-toggle { display:none; }
+.product-info-wrap { justify-content:flex-start !important; }
+.product-card-actions { margin-top:auto !important; }
+.product-card-actions .btn { white-space:normal !important; overflow:visible !important; text-overflow:clip !important; box-shadow:none !important; }
+.page-hero { padding:40px 16px 32px; }
+@media(max-width:767px) {
+ .store-menu-toggle { display:none !important; place-items:center; width:36px; height:36px; border:1px solid #e3d8cb; border-radius:50%; background:#fffaf3; color:#29211f; cursor:pointer; }
+ .kavita-hdr__actions { gap:8px; }
+ .kavita-hdr__nav-bar {
+   display: block !important;
+   overflow-x: auto !important;
+   white-space: nowrap !important;
+   -webkit-overflow-scrolling: touch !important;
+   scrollbar-width: none !important;
+   background: #FAF7F2 !important;
+   border-bottom: 1px solid #E8E2D5 !important;
+   padding: 8px 0 !important;
+ }
+ .kavita-hdr__nav-bar::-webkit-scrollbar {
+   display: none !important;
+ }
+ .kavita-hdr__nav-bar .container {
+   padding-inline: 12px !important;
+ }
+ .kavita-hdr__menu {
+   display: flex !important;
+   flex-wrap: nowrap !important;
+   align-items: center !important;
+   gap: 8px !important;
+   padding: 0 4px !important;
+   margin: 0 !important;
+   list-style: none !important;
+ }
+ .kavita-hdr__menu-item {
+   flex: 0 0 auto !important;
+ }
+ .kavita-hdr__menu-link {
+   display: inline-flex !important;
+   align-items: center !important;
+   padding: 6px 14px !important;
+   background: #FFFFFF !important;
+   border: 1px solid #DFC9A4 !important;
+   border-radius: 20px !important;
+   font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif) !important;
+   font-size: 0.78rem !important;
+   font-weight: 600 !important;
+   color: #1C1917 !important;
+   text-decoration: none !important;
+   white-space: nowrap !important;
+   box-shadow: 0 2px 5px rgba(0,0,0,0.04) !important;
+   transition: all 0.2s ease !important;
+ }
+ .kavita-hdr__menu-link:active,
+ .kavita-hdr__menu-link:hover {
+   background: #80142B !important;
+   color: #FFFFFF !important;
+   border-color: #80142B !important;
+ }
+ .page-hero { padding:28px 0 20px; }
+ .page-hero-title { font-size:28px !important; line-height:1.35; }
+ .page-hero-sub { font-size:14px; line-height:1.7; }
+ .product-card .product-info-wrap { gap:8px; }
+ .product-card-actions { padding-top:4px; }
+ .product-pricing-row { margin-bottom:0 !important; }
+ .kavita-mobile-bottom-nav { padding-bottom:env(safe-area-inset-bottom, 0px); }
+}
+/* Keep the repaired layout without the later sculpted card treatment. */
+.product-card, .product-card:hover { transform:none; box-shadow:0 2px 10px rgba(0,0,0,.04) !important; }
+.luxury-intentions-grid { display:grid !important; grid-auto-flow:column; grid-template-columns:none !important; grid-auto-columns:calc((100% - 40px)/3); overflow-x:auto; scroll-snap-type:x mandatory; }
+@media(max-width:767px) {
+ .luxury-intentions-grid { grid-template-columns:none !important; grid-auto-columns:86%; gap:14px !important; }
+ .luxury-intention-card { padding:16px 12px !important; }
+ .luxury-intention-title { font-size:13px !important; line-height:1.5; }
+ .luxury-intention-desc { font-size:11px !important; line-height:1.7; }
+ .luxury-intention-meta { font-size:10px !important; flex-wrap:wrap; }
+}
+.luxury-intentions-grid { scroll-padding-inline:2px; }
+/* Booking popup: readable measure and mobile-safe form sizing. */
+.modal-overlay { padding:16px !important; }
+.modal-card { width:100% !important; max-width:600px; max-height:calc(100dvh - 32px); padding:32px !important; overscroll-behavior:contain; }
+#modalServiceTitle { padding-right:42px; font-size:clamp(18px,3vw,24px) !important; line-height:1.45; overflow-wrap:anywhere; }
+.modal-close { top:14px; right:14px; width:36px; height:36px; display:grid; place-items:center; line-height:1; }
+.modal-card p { line-height:1.7; }
+.modal-card .form-group { min-width:0; margin-bottom:16px; }
+.modal-card .form-label { font-size:11px; line-height:1.6; letter-spacing:.06em; }
+.modal-card input,.modal-card textarea { min-width:0; max-width:100%; font-size:16px; }
+@media(max-width:480px) {
+ .modal-overlay { padding:12px !important; }
+ .modal-card { width:100% !important; max-height:calc(100dvh - 24px); padding:24px 18px !important; }
+ #bookingForm > div[style*="grid"] { grid-template-columns:minmax(0,1fr) !important; gap:0 !important; }
+ .modal-card .btn { white-space:normal; font-size:12px; line-height:1.6; }
+}
+/* Confirmed shape: rectangular panels with softly curved edges. */
+.modal-card {
+ border:1px solid #d9c5a4 !important;
+ border-radius:12px !important;
+ background:#fffdf9;
+ box-shadow:0 20px 60px rgba(45,25,30,.2);
+}
+.luxury-intentions-grid { align-items:stretch; }
+.luxury-intention-card {
+ border:1px solid #e1d5c3 !important;
+ border-radius:12px !important;
+ background:#fffdf9;
+ padding:24px !important;
+ box-shadow:0 4px 14px rgba(60,40,25,.05);
+ min-width:0;
+}
+.luxury-intention-title { font-size:17px !important; line-height:1.5; overflow-wrap:anywhere; }
+.luxury-intention-desc { font-size:14px !important; line-height:1.75; }
+.luxury-intention-meta { font-size:11px !important; line-height:1.65; white-space:normal; flex-wrap:wrap; }
+@media(max-width:767px) {
+ .luxury-intention-card { padding:22px 20px !important; }
+ .luxury-intention-title { font-size:16px !important; }
+ .luxury-intention-desc { font-size:13px !important; }
+}
+
+
+/* ==========================================================================
+   CODEX REPAIR FOLLOW-UP: MODAL SCROLL, FOOTER WHITE SPACE & CUTOUT CART DRAWER
+   ========================================================================== */
+
+/* 1. Modal Overlay & Card: Full Responsiveness, Never Stuck, Button Always Accessible */
+.modal-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(18, 12, 14, 0.78) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  z-index: 10005 !important;
+  display: none;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  padding: 24px 14px 40px !important;
+  box-sizing: border-box !important;
+}
+
+.modal-overlay.active {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+}
+
+.modal-card {
+  margin: auto !important;
+  width: 100% !important;
+  max-width: 540px !important;
+  max-height: calc(100dvh - 48px) !important;
+  max-height: calc(100vh - 48px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior: contain !important;
+  background: #fffdf9 !important;
+  border: 1px solid #d4af37 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4) !important;
+  padding: 28px 24px !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  touch-action: pan-y !important;
+}
+
+@media (max-width: 480px) {
+  .modal-overlay {
+    padding: 12px 10px 30px !important;
+  }
+  .modal-card {
+    max-height: calc(100dvh - 24px) !important;
+    max-height: calc(100vh - 24px) !important;
+    padding: 20px 16px !important;
+    border-radius: 14px !important;
+  }
+  .modal-card .form-group {
+    margin-bottom: 12px !important;
+  }
+  .modal-card input, .modal-card select, .modal-card textarea {
+    font-size: 15px !important;
+    padding: 10px 12px !important;
+  }
+  .modal-card button[type="submit"] {
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+    box-shadow: 0 -4px 16px rgba(0,0,0,0.1);
+  }
+}
+
+/* 2. Page & Footer Layout: Eliminate White Space Below Footer Across All Pages */
+html {
+  height: 100% !important;
+}
+
+body {
+  min-height: 100% !important;
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  background: #fffdf9 !important;
+  margin: 0 !important;
+}
+
+main, .main-content, .page-hero + main {
+  flex: 1 0 auto !important;
+}
+
+.refined-footer {
+  margin-top: auto !important;
+  margin-bottom: 0 !important;
+  background: #321923 !important;
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 74px !important;
+  }
+  .refined-footer {
+    padding-bottom: 36px !important;
+  }
+}
+
+/* 3. Luxury Slide-Out Cart Drawer & Gemstone Cutout Items */
+.cart-drawer-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(18, 12, 14, 0.72) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  z-index: 99999 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity 0.35s ease !important;
+}
+
+.cart-drawer-overlay.active {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+.cart-drawer {
+  position: fixed !important;
+  top: 0 !important;
+  right: -520px !important;
+  width: 100% !important;
+  max-width: 440px !important;
+  height: 100% !important;
+  height: 100dvh !important;
+  background: #fffdf9 !important;
+  border-left: 1px solid #d4af37 !important;
+  box-shadow: -15px 0 50px rgba(0, 0, 0, 0.25) !important;
+  z-index: 100000 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  transition: right 0.38s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.cart-drawer.active {
+  right: 0 !important;
+}
+
+.cart-header {
+  padding: 18px 20px !important;
+  border-bottom: 1px solid #f0e6d6 !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  background: #faf6f0 !important;
+  flex-shrink: 0 !important;
+}
+
+.cart-progress-bar-wrap {
+  background: #fdf8f0 !important;
+  padding: 12px 20px 14px !important;
+  border-bottom: 1px solid #f0e6d6 !important;
+  flex-shrink: 0 !important;
+}
+
+#shippingProgressText {
+  font-size: 0.8rem !important;
+  color: #4a2830 !important;
+  margin-bottom: 8px !important;
+  letter-spacing: 0.02em !important;
+}
+
+.cart-progress-bar {
+  height: 6px !important;
+  background: #ebdcc9 !important;
+  border-radius: 999px !important;
+  overflow: hidden !important;
+}
+
+.cart-progress-fill {
+  height: 100% !important;
+  border-radius: 999px !important;
+  transition: width 0.4s ease !important;
+}
+
+.cart-body {
+  flex: 1 1 auto !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  padding: 16px 18px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+/* Distinctive Luxury Octagonal Cutout Cart Item Layout */
+.cart-item-cutout {
+  display: flex !important;
+  gap: 12px !important;
+  align-items: center !important;
+  background: #FFFFFF !important;
+  border: 1px solid #e5d8c8 !important;
+  padding: 12px 14px !important;
+  position: relative !important;
+  box-shadow: 0 4px 14px rgba(50, 25, 35, 0.04) !important;
+  clip-path: polygon(
+    0 8px, 8px 0, 
+    calc(100% - 8px) 0, 100% 8px, 
+    100% calc(100% - 8px), calc(100% - 8px) 100%, 
+    8px 100%, 0 calc(100% - 8px)
+  ) !important;
+  transition: transform 0.2s ease, border-color 0.2s ease !important;
+}
+
+.cart-item-cutout:hover {
+  border-color: #d4af37 !important;
+}
+
+.cart-item-thumb-box {
+  width: 66px !important;
+  height: 66px !important;
+  flex-shrink: 0 !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  border: 1px solid #e0d0be !important;
+  background: #fdfaf5 !important;
+}
+
+.cart-item-thumb {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+.cart-item-details {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+.cart-item-tag {
+  font-size: 0.65rem !important;
+  color: #80142b !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  margin-bottom: 2px !important;
+}
+
+.cart-item-title {
+  font-family: var(--font-heading, serif) !important;
+  font-size: 0.92rem !important;
+  color: #2d1820 !important;
+  line-height: 1.35 !important;
+  margin: 0 0 4px 0 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.cart-item-price {
+  font-size: 0.92rem !important;
+  color: #80142b !important;
+  font-weight: 800 !important;
+  margin-bottom: 6px !important;
+}
+
+.cart-item-bottom-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 8px !important;
+}
+
+.cart-qty-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  border: 1px solid #d9c8b4 !important;
+  border-radius: 999px !important;
+  background: #faf6f0 !important;
+  padding: 1px 4px !important;
+}
+
+.cart-qty-btn {
+  width: 22px !important;
+  height: 22px !important;
+  border-radius: 50% !important;
+  border: none !important;
+  background: transparent !important;
+  color: #321923 !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+}
+
+.cart-qty-btn:hover {
+  background: #ebdcc9 !important;
+}
+
+.cart-qty-num {
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  padding: 0 6px !important;
+  min-width: 14px !important;
+  text-align: center !important;
+  color: #2d1820 !important;
+}
+
+.cart-item-remove-btn {
+  background: transparent !important;
+  border: none !important;
+  color: #8c7880 !important;
+  font-size: 0.72rem !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 3px !important;
+  padding: 4px !important;
+}
+
+.cart-item-remove-btn:hover {
+  color: #b01b38 !important;
+}
+
+.cart-empty-state {
+  text-align: center !important;
+  padding: 44px 16px !important;
+}
+
+.cart-empty-icon {
+  font-size: 2.6rem !important;
+  margin-bottom: 10px !important;
+  display: block !important;
+}
+
+.cart-footer {
+  padding: 16px 20px 22px !important;
+  border-top: 1px solid #f0e6d6 !important;
+  background: #faf6f0 !important;
+  flex-shrink: 0 !important;
+}
+
+.cart-subtotal-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: baseline !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  color: #2d1820 !important;
+  margin-bottom: 12px !important;
+}
+
+/* =========================================================
+   CLEAN LUXURY BRAND LOGO — CRISP & ELEGANT (NO BLUR/GLOW)
+========================================================= */
+.kavita-hdr__logo-link {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  text-decoration: none !important;
+}
+
+.kavita-hdr__logo-img {
+  height: 48px !important;
+  width: auto !important;
+  max-width: 130px !important;
+  flex-shrink: 0 !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08)) !important;
+  transition: transform 0.25s ease, opacity 0.25s ease !important;
+  animation: none !important;
+}
+
+.kavita-hdr__logo-link:hover .kavita-hdr__logo-img {
+  transform: scale(1.03) !important;
+  opacity: 0.95 !important;
+  filter: drop-shadow(0 3px 6px rgba(197, 155, 39, 0.35)) !important;
+}
+
+.kavita-hdr__brand-name {
+  font-family: 'Cinzel', serif !important;
+  font-size: 1.15rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.07em !important;
+  color: #1A1715 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  max-width: none !important;
+  width: auto !important;
+  display: inline-block;
+  overflow: visible !important;
+}
+
+.kavita-hdr__logo-link:hover .kavita-hdr__brand-name {
+  color: #80142B !important;
+}
+
+@media (max-width: 767px) {
+  .kavita-hdr__logo-img {
+    height: 40px !important;
+    width: auto !important;
+  }
+}
+
+/* Ensure menu toggle button is completely hidden/removed */
+.store-menu-toggle {
+  display: none !important;
+}
+
+/* =========================================================
+   SEARCH BAR ENHANCEMENT & PREDICTIVE DROPDOWN
+========================================================= */
+.kavita-hdr__search-wrap {
+  position: relative !important;
+  z-index: 2000 !important;
+}
+
+.kavita-hdr__search-form {
+  position: relative !important;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease !important;
+}
+
+.kavita-hdr__search-form:focus-within {
+  border-color: #D4AF37 !important;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25), 0 4px 15px rgba(0,0,0,0.06) !important;
+}
+
+.kavita-search-dropdown {
+  position: absolute !important;
+  top: calc(100% + 8px) !important;
+  left: 0 !important;
+  right: 0 !important;
+  background: #FFFFFF !important;
+  border: 1px solid #D4AF37 !important;
+  border-radius: 14px !important;
+  box-shadow: 0 14px 35px rgba(28, 25, 23, 0.16), 0 4px 12px rgba(212, 175, 55, 0.2) !important;
+  max-height: 440px !important;
+  overflow-y: auto !important;
+  z-index: 10000 !important;
+  padding: 8px 0 !important;
+  display: none;
+  animation: searchDropdownFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes searchDropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.kavita-search-dropdown.active {
+  display: block !important;
+}
+
+.kavita-search-dropdown__header {
+  padding: 8px 16px 6px !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.12em !important;
+  color: #80142B !important;
+  border-bottom: 1px solid #F3EFEA !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.kavita-search-dropdown__item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 10px 16px !important;
+  text-decoration: none !important;
+  color: #1C1917 !important;
+  border-bottom: 1px solid #FAF7F2 !important;
+  transition: background 0.15s ease, transform 0.15s ease !important;
+  cursor: pointer !important;
+}
+
+.kavita-search-dropdown__item:hover,
+.kavita-search-dropdown__item.highlighted {
+  background: #FAF6EF !important;
+  transform: translateX(3px) !important;
+}
+
+.kavita-search-dropdown__thumb {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 8px !important;
+  object-fit: cover !important;
+  border: 1px solid #E8E2D5 !important;
+  background: #FAF7F2 !important;
+  flex-shrink: 0 !important;
+}
+
+.kavita-search-dropdown__info {
+  flex: 1 !important;
+  min-width: 0 !important;
+}
+
+.kavita-search-dropdown__title {
+  font-family: var(--font-heading, 'Cinzel', serif) !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  color: #1C1917 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  line-height: 1.3 !important;
+}
+
+.kavita-search-dropdown__meta {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-top: 3px !important;
+  font-size: 0.78rem !important;
+}
+
+.kavita-search-dropdown__badge {
+  background: rgba(128, 20, 43, 0.08) !important;
+  color: #80142B !important;
+  padding: 1px 6px !important;
+  border-radius: 4px !important;
+  font-size: 0.68rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+.kavita-search-dropdown__price {
+  font-weight: 700 !important;
+  color: #80142B !important;
+}
+
+.kavita-search-dropdown__compare-price {
+  color: #8C827A !important;
+  text-decoration: line-through !important;
+  font-size: 0.72rem !important;
+}
+
+.kavita-search-dropdown__quick-tag {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  padding: 6px 12px !important;
+  margin: 4px 4px !important;
+  background: #FAF7F2 !important;
+  border: 1px solid #E8E2D5 !important;
+  border-radius: 20px !important;
+  font-size: 0.78rem !important;
+  color: #4A443E !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+}
+
+.kavita-search-dropdown__quick-tag:hover {
+  background: #80142B !important;
+  color: #FFFFFF !important;
+  border-color: #80142B !important;
+}
+
+.kavita-search-dropdown__footer {
+  padding: 10px 16px !important;
+  background: #FAF7F2 !important;
+  text-align: center !important;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  color: #80142B !important;
+  border-top: 1px solid #E8E2D5 !important;
+  cursor: pointer !important;
+  transition: background 0.15s ease !important;
+}
+
+.kavita-search-dropdown__footer:hover {
+  background: #F4ECE0 !important;
+}
+
+.kavita-search-dropdown__empty {
+  padding: 20px 16px !important;
+  text-align: center !important;
+  color: #7D756D !important;
+  font-size: 0.86rem !important;
+}
+
+/* =========================================================
+   LUXURY MOBILE HAMBURGER BUTTON & SLIDE-OUT DRAWER
+========================================================= */
+.store-menu-toggle {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .store-menu-toggle {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 38px !important;
+    height: 38px !important;
+    border: 1px solid #DFC9A4 !important;
+    border-radius: 50% !important;
+    background: #FAF7F2 !important;
+    color: #80142B !important;
+    font-size: 1.15rem !important;
+    cursor: pointer !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04) !important;
+    transition: all 0.2s ease !important;
+  }
+  .store-menu-toggle:hover {
+    background: #80142B !important;
+    color: #FFFFFF !important;
+    border-color: #80142B !important;
+  }
+}
+
+.kavita-mobile-drawer {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 100050 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: visibility 0.3s ease !important;
+}
+
+.kavita-mobile-drawer.active {
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.kavita-mobile-drawer__overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: rgba(14, 11, 18, 0.65) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease !important;
+}
+
+.kavita-mobile-drawer.active .kavita-mobile-drawer__overlay {
+  opacity: 1 !important;
+}
+
+.kavita-mobile-drawer__panel {
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: min(85vw, 360px) !important;
+  background: #FFFFFF !important;
+  box-shadow: 5px 0 25px rgba(0, 0, 0, 0.25) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  transform: translateX(-100%) !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  overflow-y: auto !important;
+}
+
+.kavita-mobile-drawer.active .kavita-mobile-drawer__panel {
+  transform: translateX(0) !important;
+}
+
+.kavita-mobile-drawer__header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 18px 20px !important;
+  background: #FAF7F2 !important;
+  border-bottom: 1px solid #E8E2D5 !important;
+}
+
+.kavita-mobile-drawer__brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.kavita-mobile-drawer__close {
+  width: 34px !important;
+  height: 34px !important;
+  border: 1px solid #DFC9A4 !important;
+  border-radius: 50% !important;
+  background: #FFFFFF !important;
+  color: #80142B !important;
+  font-size: 1.1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.kavita-mobile-drawer__close:hover {
+  background: #80142B !important;
+  color: #FFFFFF !important;
+}
+
+.kavita-mobile-drawer__nav {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 12px 0 !important;
+}
+
+.kavita-mobile-drawer__link {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  padding: 13px 22px !important;
+  font-family: var(--font-heading, 'Cinzel', serif) !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  color: #1C1917 !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid #FAF7F2 !important;
+  transition: background 0.15s ease, color 0.15s ease !important;
+}
+
+.kavita-mobile-drawer__link:hover {
+  background: #FAF6EF !important;
+  color: #80142B !important;
+}
+
+.k-drawer-icon {
+  font-size: 1.15rem !important;
+}
+
+.kavita-mobile-drawer__footer {
+  margin-top: auto !important;
+  padding: 20px !important;
+  background: #FAF7F2 !important;
+  border-top: 1px solid #E8E2D5 !important;
+}
+
+.kavita-mobile-drawer__wa-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  width: 100% !important;
+  padding: 12px !important;
+  background: #1B7A43 !important;
+  color: #FFFFFF !important;
+  border-radius: 10px !important;
+  text-decoration: none !important;
+  font-weight: 700 !important;
+  font-size: 0.88rem !important;
+  box-shadow: 0 4px 12px rgba(27, 122, 67, 0.25) !important;
+  transition: background 0.2s ease !important;
+}
+
+.kavita-mobile-drawer__wa-btn:hover {
+  background: #145E33 !important;
+}
+
+/* ==========================================================================
+   LUXURY SHOP BY ZODIAC SIGN SECTION (MOBILE-FIRST RESPONSIVE ARCHITECTURE)
+   ========================================================================== */
+.zodiac-showcase-section {
+  background: #FAF7F2 !important;
+  border-top: 1px solid #E8E2D5;
+  border-bottom: 1px solid #E8E2D5;
+  padding: 3.5rem 0 !important;
+  position: relative;
+}
+
+.zodiac-showcase-card {
+  display: flex !important;
+  flex-direction: column !important;
+  background: #FFFDF9 !important;
+  border: 1.5px solid #D4AF37 !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  box-shadow: 0 12px 35px rgba(128, 20, 43, 0.08) !important;
+}
+
+.zodiac-showcase-media {
+  position: relative !important;
+  width: 100% !important;
+  min-height: 250px !important;
+  max-height: 320px !important;
+  background: #1A0D11 !important;
+  overflow: hidden !important;
+}
+
+.zodiac-showcase-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  transition: transform 0.6s ease !important;
+}
+
+.zodiac-showcase-card:hover .zodiac-showcase-img {
+  transform: scale(1.03) !important;
+}
+
+.zodiac-media-badge {
+  position: absolute !important;
+  bottom: 0.85rem !important;
+  left: 0.85rem !important;
+  right: 0.85rem !important;
+  background: rgba(26, 13, 17, 0.9) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  padding: 0.7rem 1rem !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(212, 175, 55, 0.45) !important;
+  text-align: center !important;
+}
+
+.zodiac-media-badge-title {
+  font-family: 'Cinzel', serif !important;
+  font-size: 0.95rem !important;
+  color: #E5C378 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 0.15rem !important;
+}
+
+.zodiac-media-badge-sub {
+  font-size: 0.74rem !important;
+  color: #E0D3C1 !important;
+  letter-spacing: 0.04em !important;
+}
+
+.zodiac-showcase-content {
+  padding: 2rem 1.4rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.zodiac-kicker {
+  font-size: 0.75rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.16em !important;
+  color: #80142B !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.zodiac-title {
+  font-family: 'Cinzel', serif !important;
+  font-size: 1.65rem !important;
+  color: #2D1820 !important;
+  line-height: 1.25 !important;
+  margin: 0 0 0.8rem !important;
+}
+
+.zodiac-desc {
+  color: #5A4840 !important;
+  font-size: 0.92rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 1.4rem !important;
+}
+
+.zodiac-chips-wrap {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 0.45rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.zodiac-chip {
+  background: #FAF6EF !important;
+  border: 1px solid #D8CBB8 !important;
+  color: #4A3B32 !important;
+  padding: 0.42rem 0.6rem !important;
+  border-radius: 8px !important;
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.3rem !important;
+  text-align: center !important;
+}
+
+.zodiac-chip:hover {
+  background: #80142B !important;
+  color: #FFFFFF !important;
+  border-color: #80142B !important;
+  transform: translateY(-1px) !important;
+}
+
+.zodiac-btn-row {
+  margin-top: 0.2rem !important;
+}
+
+.zodiac-btn-row .btn {
+  width: 100% !important;
+  justify-content: center !important;
+  padding: 0.85rem 1.8rem !important;
+}
+
+/* Desktop Expansion (min-width: 900px) */
+@media (min-width: 900px) {
+  .zodiac-showcase-section {
+    padding: 4.5rem 0 !important;
+  }
+  .zodiac-showcase-card {
+    display: grid !important;
+    grid-template-columns: 1.15fr 1fr !important;
+    flex-direction: row !important;
+    border-radius: 18px !important;
+  }
+  .zodiac-showcase-media {
+    min-height: 440px !important;
+    max-height: none !important;
+  }
+  .zodiac-media-badge {
+    bottom: 1.25rem !important;
+    left: 1.25rem !important;
+    right: 1.25rem !important;
+    padding: 0.9rem 1.2rem !important;
+    border-radius: 12px !important;
+    text-align: left !important;
+  }
+  .zodiac-media-badge-title {
+    font-size: 1.1rem !important;
+  }
+  .zodiac-media-badge-sub {
+    font-size: 0.8rem !important;
+  }
+  .zodiac-showcase-content {
+    padding: 3rem 2.8rem !important;
+    text-align: left !important;
+  }
+  .zodiac-title {
+    font-size: 2.15rem !important;
+  }
+  .zodiac-desc {
+    font-size: 0.98rem !important;
+    line-height: 1.7 !important;
+    margin-bottom: 1.6rem !important;
+  }
+  .zodiac-chips-wrap {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+    margin-bottom: 1.8rem !important;
+  }
+  .zodiac-chip {
+    padding: 0.42rem 0.85rem !important;
+    border-radius: 50px !important;
+    font-size: 0.82rem !important;
+    display: inline-flex !important;
+    width: auto !important;
+  }
+  .zodiac-btn-row .btn {
+    width: auto !important;
+    display: inline-flex !important;
+    padding: 0.95rem 2.4rem !important;
+  }
+}
+
+/* ==========================================================================
+   SACRED SANCTUARY NEWSLETTER POP-UP (10% OFF FIRST ORDER)
+   Non-permanent: Appears once; dismissed permanently via localStorage
+   ========================================================================== */
+.kavita-welcome-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(18, 12, 14, 0.78);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.kavita-welcome-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.kavita-welcome-modal {
+  position: relative;
+  background: #FFFDF9;
+  border: 1.5px solid #D4AF37;
+  border-radius: 20px;
+  max-width: 480px;
+  width: 100%;
+  padding: 2.4rem 2rem 2rem;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(212, 175, 55, 0.2);
+  transform: scale(0.92);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.kavita-welcome-overlay.active .kavita-welcome-modal {
+  transform: scale(1);
+}
+
+.kavita-welcome-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #FAF3E0;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: #80142B;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+
+.kavita-welcome-close:hover {
+  background: #80142B;
+  color: #FFFFFF;
+}
+
+.kavita-welcome-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  animation: floatLotus 3s ease-in-out infinite;
+}
+
+@keyframes floatLotus {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.kavita-welcome-badge {
+  display: inline-block;
+  background: #80142B;
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.9rem;
+  border-radius: 50px;
+  margin-bottom: 0.8rem;
+}
+
+.kavita-welcome-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.65rem;
+  color: #80142B;
+  margin: 0 0 0.6rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.kavita-welcome-desc {
+  font-size: 0.9rem;
+  color: #4A3B32;
+  line-height: 1.55;
+  margin: 0 0 1.25rem;
+}
+
+/* Newsletter Input & Submit */
+.kavita-newsletter-form {
+  margin: 0 0 1.25rem;
+}
+
+.kavita-newsletter-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.kavita-newsletter-input {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  border-radius: 10px;
+  border: 1.5px solid rgba(212, 175, 55, 0.45);
+  background: #FFFFFF;
+  color: #1C1917;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.92rem;
+  outline: none;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.kavita-newsletter-input:focus {
+  border-color: #80142B;
+  box-shadow: 0 0 0 3px rgba(128, 20, 43, 0.12);
+}
+
+.kavita-newsletter-btn {
+  width: 100%;
+  padding: 0.88rem 1.2rem;
+  background: #80142B;
+  color: #FFFFFF;
+  border: 1px solid #D4AF37;
+  border-radius: 10px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(128, 20, 43, 0.3);
+  transition: all 0.25s ease;
+}
+
+.kavita-newsletter-btn:hover {
+  background: #5B0D1E;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(128, 20, 43, 0.4);
+}
+
+.kavita-newsletter-success {
+  background: #F1F8F1;
+  border: 1.5px solid #2E7D32;
+  border-radius: 12px;
+  padding: 1.2rem 1rem;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+.kavita-newsletter-success-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.kavita-newsletter-success-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  color: #2E7D32;
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+}
+
+.kavita-newsletter-success-code {
+  font-size: 0.95rem;
+  color: #1C1917;
+  margin-bottom: 0.3rem;
+}
+
+.kavita-newsletter-success-sub {
+  font-size: 0.82rem;
+  color: #4A5568;
+}
+
+.kavita-welcome-perks {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  font-size: 0.78rem;
+  color: #6E5D53;
+  margin-bottom: 0.6rem;
+}
+
+.kavita-welcome-footer-note {
+  font-size: 0.72rem;
+  color: #8C7A70;
+  line-height: 1.4;
+}
+
+/* Floating badge disabled as user requested no permanent pop */
+.kavita-floating-gift-badge {
+  display: none !important;
+}
+
+/* =========================================================
+   1. MOBILE HEADER: ONE CLEAN ROW - LOGO ON LEFT, ICONS ON RIGHT
+========================================================= */
+@media (max-width: 768px) {
+  .kavita-hdr__main {
+    padding: 0.45rem 0 !important;
+    overflow: visible !important;
+  }
+  .kavita-hdr__main .kavita-hdr__container {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    padding: 0 1rem !important;
+    gap: 0.5rem !important;
+    box-sizing: border-box !important;
+  }
+  .kavita-hdr__brand {
+    flex: 0 0 auto !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+  }
+  .kavita-hdr__logo-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0 !important;
+  }
+  .kavita-hdr__logo-img {
+    height: 38px !important;
+    width: auto !important;
+    max-height: 38px !important;
+    max-width: 44px !important;
+    object-fit: contain !important;
+  }
+  .kavita-hdr__brand-name,
+  .kavita-hdr__brand-text,
+  .kavita-hdr__brand-sub {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+  .kavita-hdr__search-wrap {
+    display: none !important;
+  }
+  .kavita-hdr__search-wrap.search-is-open {
+    display: block !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 10px !important;
+    right: 10px !important;
+    z-index: 9999 !important;
+    background: #ffffff !important;
+    padding: 8px !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2) !important;
+  }
+  .kavita-hdr__util-link {
+    display: none !important;
+  }
+  .kr-menu-button {
+    display: none !important;
+  }
+  .kavita-hdr__actions {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 0.6rem !important;
+    margin-left: auto !important;
+    flex-shrink: 0 !important;
+    flex-wrap: nowrap !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  .kavita-hdr__icon-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    min-height: 36px !important;
+    border-radius: 50% !important;
+    background: #F8F5EE !important;
+    border: 1px solid #DFD8CB !important;
+    color: #1C1917 !important;
+    padding: 0 !important;
+    flex-shrink: 0 !important;
+    position: relative !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  .kavita-hdr__icon-btn--search-mobile,
+  .kavita-hdr__icon-btn--cart {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Crisp HD Image Rendering for Hero Banners */
+.kavita-slider__img {
+  image-rendering: -webkit-optimize-contrast !important;
+  image-rendering: crisp-edges !important;
+}
+
+/* =========================================================
+   2. MOBILE SIGNATURE PACKAGES: 2-COLUMN GRID (NOT SLIDER)
+========================================================= */
+@media (max-width: 768px) {
+  #signature-packages-slider .kavita-carousel-outer {
+    overflow: visible !important;
+    position: static !important;
+  }
+  #signature-packages-slider .kavita-carousel-arrow {
+    display: none !important;
+  }
+  #packagesTrack {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+    padding: 0.5rem 0 1.5rem !important;
+    overflow-x: visible !important;
+    scroll-snap-type: none !important;
+    width: 100% !important;
+    transform: none !important;
+  }
+  #packagesTrack .kavita-carousel-slide {
+    flex: none !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    scroll-snap-align: none !important;
+    padding: 0 !important;
+  }
+  #packagesTrack .product-card {
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  #packagesTrack .product-media img {
+    height: 175px !important;
+    object-fit: cover !important;
+  }
+  #packagesTrack .product-body {
+    padding: 0.65rem !important;
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+  #packagesTrack .product-title {
+    font-size: 0.86rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 0.35rem !important;
+  }
+}
+
+/* =========================================================
+   3. CONSULTATIONS INTERACTIVE VARIANT SELECTOR
+========================================================= */
+.speed-toggle-btn {
+  flex: 1;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-radius: 8px;
+  border: 1.5px solid #E2D9CF;
+  background: #FFF;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+.speed-toggle-btn:hover {
+  border-color: #D4AF37;
+}
+.speed-toggle-btn.active {
+  background: #80142B;
+  color: #FFF;
+  border-color: #80142B;
+  box-shadow: 0 2px 8px rgba(128, 20, 43, 0.25);
+}
+.variant-select-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-bottom: 0.85rem;
+}
+.variant-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 0.9rem;
+  background: #FAF7F2;
+  border: 1.5px solid #E8DFD5;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  gap: 0.7rem;
+  user-select: none;
+}
+.variant-card:hover {
+  border-color: #D4AF37;
+  background: #FFFDF8;
+}
+.variant-card.is-selected {
+  border-color: #80142B;
+  background: #FFF8F9;
+  box-shadow: 0 2px 10px rgba(128, 20, 43, 0.12);
+}
+.variant-card-radio {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #C4B5A5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+.variant-card.is-selected .variant-card-radio {
+  border-color: #80142B;
+  background: #80142B;
+}
+.variant-card.is-selected .variant-card-radio::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #FFF;
+}
+.variant-card-info {
+  flex: 1;
+}
+.variant-card-title {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #1A1715;
+}
+.variant-card-tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #7A6B62;
+  margin-left: 0.25rem;
+}
+.variant-card-sub {
+  font-size: 0.75rem;
+  color: #88786E;
+  margin-top: 0.15rem;
+}
+.variant-card-price {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: #80142B;
+  white-space: nowrap;
+}
+

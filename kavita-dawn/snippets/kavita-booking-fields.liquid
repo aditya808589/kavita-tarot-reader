@@ -1,0 +1,15 @@
+{% comment %}
+  Renders required service intake in an existing product form.
+  @param {string} form_id - Unique product form identifier.
+{% endcomment %}
+<fieldset class="k-intake"><legend>{{ 'kavita.intake' | t }}</legend>
+<label for="{{ form_id }}-name">{{ 'kavita.name' | t }}</label><input id="{{ form_id }}-name" name="properties[Full name]" autocomplete="name" required maxlength="100">
+<label for="{{ form_id }}-email">{{ 'kavita.email' | t }}</label><input id="{{ form_id }}-email" name="properties[Email]" type="email" autocomplete="email" required>
+<label for="{{ form_id }}-phone">{{ 'kavita.phone' | t }}</label><input id="{{ form_id }}-phone" name="properties[WhatsApp]" type="tel" autocomplete="tel" pattern="[+][0-9 ()-]{7,20}" required placeholder="+91">
+<label for="{{ form_id }}-topic">{{ 'kavita.topic' | t }}</label><select id="{{ form_id }}-topic" name="properties[Topic]" required><option value="">{{ 'kavita.choose' | t }}</option>{% assign topics = 'Love,Career,Money,Personal growth,Other' | split: ',' %}{% for topic in topics %}<option>{{ topic | escape }}</option>{% endfor %}</select>
+<label for="{{ form_id }}-questions">{{ 'kavita.questions' | t }}</label><textarea id="{{ form_id }}-questions" name="properties[Questions]" rows="4" required maxlength="2000"></textarea>
+<label for="{{ form_id }}-preference">{{ 'kavita.preference' | t }}</label><input id="{{ form_id }}-preference" name="properties[Preferred date and time (IST)]" maxlength="120" aria-describedby="{{ form_id }}-slot-note">
+<p id="{{ form_id }}-slot-note" class="k-small">{{ 'kavita.slot_note' | t }}</p>
+<label for="{{ form_id }}-language">{{ 'kavita.language' | t }}</label><input id="{{ form_id }}-language" name="properties[Preferred language]" maxlength="60">
+<label class="k-consent"><input type="checkbox" required name="properties[Reflection consent]" value="Accepted"> {{ 'kavita.consent' | t }}</label><p class="k-small">{{ 'kavita.privacy' | t }}</p>
+</fieldset>

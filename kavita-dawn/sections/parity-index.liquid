@@ -1,0 +1,3864 @@
+<style>
+    /* =========================================================
+       LUXURY COLOR PALETTE — KAVITA TAROT READER
+       Light, Clean, Warm Ivory / White, Royal Maroon & Sacred Gold
+    ========================================================= */
+    :root {
+      --m-bg-page: #FAF7F2;          /* Warm Sacred Ivory */
+      --m-bg-alt: #FFFFFF;           /* Pure Crisp White */
+      --m-card-bg: #FFFFFF;          /* Pure White Cards */
+      --m-card-inner: #FBF9F5;       /* Soft Sand Tint */
+      --m-border: #E8E2D5;           /* Delicate Warm Border */
+      --m-border-gold: #D4AF37;      /* Sacred Gold Border */
+      --m-text-dark: #1C1917;        /* Obsidian / Charcoal Headings */
+      --m-text-body: #4A443E;        /* Warm Dark Gray Body */
+      --m-text-muted: #7D756D;       /* Soft Taupe Muted */
+      --m-gold: #C59B27;             /* Burnished Vedic Gold */
+      --m-gold-light: #FFDF78;       /* Luminous Gold */
+      --m-gold-dark: #8A6414;        /* Deep Gold Ochre */
+      --m-gold-glow: rgba(197, 155, 39, 0.25);
+      --m-maroon: #80142B;           /* Sacred Royal Maroon */
+      --m-maroon-dark: #630E20;      /* Deep Temple Crimson */
+      --m-saffron: #D35400;          /* Auspicious Saffron */
+      --m-green: #1B7A43;            /* Certified Green */
+      --m-shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.04);
+      --m-shadow-md: 0 8px 25px rgba(0, 0, 0, 0.08);
+      --m-shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
+      --font-heading: 'Cinzel', serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--m-bg-page);
+      color: var(--m-text-body);
+      font-family: var(--font-body);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      letter-spacing: 0.02em;
+      font-weight: 700;
+      color: var(--m-text-dark);
+      line-height: 1.25;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* =========================================================
+       1. KAVITA TOP MARQUEE TICKER (ROYAL TEMPLE MAROON)
+    ========================================================= */
+    .marquee-strip {
+      background: linear-gradient(90deg, #731024, #8B172F, #731024);
+      border-bottom: 1px solid rgba(255, 223, 120, 0.3);
+      padding: 0.65rem 0;
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #FFF3D6;
+      font-weight: 600;
+    }
+
+    .marquee-track {
+      display: inline-flex;
+      animation: marqueeScroll 32s linear infinite;
+    }
+
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    .marquee-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0 2rem;
+    }
+
+    .marquee-item span.bullet {
+      color: var(--m-gold-light);
+      font-size: 1rem;
+    }
+
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* =========================================================
+       2. CLEAN LUXURY HEADER (WHITE WITH GOLD ACCENTS)
+    ========================================================= */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--m-border);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.03);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      gap: 1.5rem;
+    }
+
+    .brand-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      color: var(--m-text-dark);
+      line-height: 1;
+    }
+
+    .brand-logo-icon {
+      color: var(--m-maroon);
+      font-size: 1.7rem;
+    }
+
+    .brand-tagline {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--m-gold-dark);
+      margin-top: 0.25rem;
+      font-weight: 700;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 1.6rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      font-family: var(--font-heading);
+      font-size: 0.84rem;
+      letter-spacing: 0.06em;
+      color: #332E2A;
+      padding: 0.6rem 0;
+      position: relative;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--m-maroon);
+      transition: width 0.25s ease;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--m-maroon);
+    }
+
+    .nav-link:hover::after, .nav-link.active::after {
+      width: 100%;
+    }
+
+    /* Multi-level Navigation Dropdowns */
+    .nav-dropdown {
+      position: absolute;
+      top: 100%;
+      left: -20px;
+      background: #FFFFFF;
+      border: 1px solid var(--m-border);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      padding: 0.8rem 0;
+      min-width: 250px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.25s ease;
+      z-index: 350;
+      list-style: none;
+    }
+
+    .nav-item:hover .nav-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-link {
+      display: block;
+      padding: 0.55rem 1.4rem;
+      font-size: 0.85rem;
+      color: var(--m-text-body);
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .dropdown-link:hover {
+      background: #FDF9F3;
+      color: var(--m-maroon);
+      padding-left: 1.7rem;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .search-pill-btn {
+      background: #F4EFE6;
+      border: 1px solid var(--m-border);
+      border-radius: 999px;
+      padding: 0.5rem 1.1rem;
+      color: var(--m-text-muted);
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      font-weight: 500;
+    }
+
+    .search-pill-btn:hover {
+      border-color: var(--m-gold);
+      color: var(--m-text-dark);
+      background: #FFFBF4;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .cart-btn {
+      background: #FFFDF9;
+      border: 1.5px solid var(--m-gold);
+      color: var(--m-text-dark);
+      padding: 0.5rem 1.15rem;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      cursor: pointer;
+      font-size: 0.84rem;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      transition: all 0.25s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .cart-btn:hover {
+      background: var(--m-maroon);
+      color: #FFFFFF;
+      border-color: var(--m-maroon);
+      transform: translateY(-1px);
+    }
+
+    .cart-btn:hover .cart-badge {
+      background: #FFFFFF;
+      color: var(--m-maroon);
+    }
+
+    .cart-badge {
+      background: var(--m-maroon);
+      color: #FFFFFF;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.72rem;
+      transition: all 0.25s ease;
+    }
+
+    /* Common Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.82rem 1.8rem;
+      border-radius: 999px;
+      font-family: var(--font-heading);
+      font-size: 0.86rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      border: none;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #DFB743 0%, #C59B27 50%, #9E7412 100%);
+      color: #FFFFFF;
+      border: 1px solid #FFE699;
+      box-shadow: 0 4px 18px rgba(197, 155, 39, 0.35);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(197, 155, 39, 0.55);
+      filter: brightness(1.05);
+    }
+
+    .btn-maroon {
+      background: linear-gradient(135deg, #8B172F 0%, #731024 100%);
+      color: #FFFFFF;
+      box-shadow: 0 4px 18px rgba(115, 16, 36, 0.3);
+    }
+
+    .btn-maroon:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(115, 16, 36, 0.45);
+      filter: brightness(1.08);
+    }
+
+    .btn-outline {
+      background: #FFFFFF;
+      color: var(--m-gold-dark);
+      border: 1.5px solid var(--m-gold);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    }
+
+    .btn-outline:hover {
+      background: #FFF9EB;
+      color: var(--m-maroon);
+      border-color: var(--m-maroon);
+      transform: translateY(-2px);
+    }
+
+    /* =========================================================
+       3. HERO BANNER — WARM IVORY & LUMINOUS GOLD
+    ========================================================= */
+    .hero {
+      position: relative;
+      padding: 5.5rem 1.5rem 5rem;
+      background: radial-gradient(circle at 50% 15%, rgba(212, 175, 55, 0.12) 0%, rgba(250, 247, 242, 0.98) 75%),
+                  linear-gradient(180deg, #FFFFFF 0%, #FAF7F2 100%);
+      border-bottom: 1px solid var(--m-border);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.45rem 1.4rem;
+      border-radius: 999px;
+      background: #FFF8EA;
+      border: 1px solid var(--m-gold);
+      color: var(--m-gold-dark);
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 1.6rem;
+      box-shadow: 0 2px 12px rgba(197, 155, 39, 0.15);
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 5.2vw, 4.2rem);
+      line-height: 1.18;
+      max-width: 1020px;
+      margin: 0 auto 1.3rem;
+      color: var(--m-text-dark);
+      letter-spacing: -0.01em;
+    }
+
+    .hero-title span.gold-gradient {
+      background: linear-gradient(135deg, #1C1917 0%, #80142B 60%, #C59B27 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: #5C544D;
+      max-width: 760px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+      font-weight: 400;
+    }
+
+    .hero-ctas {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+    }
+
+    /* 4 Pillars of Sacred Trust */
+    .hero-trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.3rem;
+      background: #FFFFFF;
+      border: 1px solid var(--m-border);
+      border-radius: 18px;
+      padding: 1.8rem 2.2rem;
+      max-width: 1140px;
+      margin: 0 auto;
+      box-shadow: var(--m-shadow-sm);
+    }
+
+    .trust-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-align: left;
+    }
+
+    .trust-badge-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: #FFF8EA;
+      border: 1px solid var(--m-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--m-gold-dark);
+      flex-shrink: 0;
+    }
+
+    .trust-card h5 {
+      font-size: 0.94rem;
+      color: var(--m-text-dark);
+      margin-bottom: 0.15rem;
+      font-weight: 700;
+    }
+
+    .trust-card p {
+      font-size: 0.78rem;
+      color: var(--m-text-muted);
+      line-height: 1.35;
+    }
+
+    /* =========================================================
+       4. KAVITA CIRCULAR CATEGORY NAVIGATION
+    ========================================================= */
+    .section-wrap {
+      padding: 5.5rem 1.5rem;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.2rem;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.22em;
+      color: var(--m-maroon);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+      color: var(--m-text-dark);
+      margin-bottom: 0.45rem;
+      letter-spacing: 0.03em;
+    }
+
+    .section-sub {
+      color: var(--m-text-muted);
+      max-width: 620px;
+      margin: 0 auto;
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    .categories-circle-row {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .cat-circle-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.85rem;
+      cursor: pointer;
+      width: 135px;
+      text-align: center;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .cat-circle-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .cat-circle-avatar-wrap {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      padding: 3px;
+      background: linear-gradient(135deg, #FFDF78, #C59B27, #8A6414);
+      box-shadow: 0 4px 15px rgba(197, 155, 39, 0.25);
+      transition: all 0.35s ease;
+    }
+
+    .cat-circle-card:hover .cat-circle-avatar-wrap {
+      box-shadow: 0 6px 22px rgba(197, 155, 39, 0.5);
+      transform: scale(1.05);
+    }
+
+    .cat-circle-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #F4EFE6;
+      display: block;
+    }
+
+    .cat-circle-name {
+      font-family: var(--font-heading);
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--m-text-dark);
+      letter-spacing: 0.03em;
+      line-height: 1.3;
+    }
+
+    /* =========================================================
+       5. KAVITA SACRED INTENTIONS & LIFE GUIDANCE
+    ========================================================= */
+    .concerns-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+      gap: 1.3rem;
+      margin-top: 2.5rem;
+    }
+
+    .concern-card {
+      background: #FFFFFF;
+      border: 1px solid var(--m-border);
+      border-radius: 18px;
+      padding: 1.8rem 1.2rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--m-shadow-sm);
+    }
+
+    .concern-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--m-gold);
+      box-shadow: 0 10px 25px rgba(197, 155, 39, 0.2);
+      background: #FFFDF9;
+    }
+
+    .concern-icon {
+      font-size: 2.4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .concern-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      color: var(--m-text-dark);
+      margin-bottom: 0.35rem;
+      font-weight: 700;
+    }
+
+    .concern-tagline {
+      font-size: 0.74rem;
+      color: var(--m-gold-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      line-height: 1.4;
+      font-weight: 600;
+    }
+
+    /* =========================================================
+       6. FEATURED 1-ON-1 CONSULTATIONS SLIDER
+    ========================================================= */
+    .spotlight-banner {
+      background: linear-gradient(135deg, #FFFFFF 0%, #FDFBF7 100%);
+      border: 2px solid var(--m-gold);
+      border-radius: 24px;
+      padding: 3.5rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 3.5rem;
+      align-items: center;
+      box-shadow: 0 15px 40px rgba(197, 155, 39, 0.15);
+      margin: 4rem auto 0;
+      max-width: 1200px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .spotlight-badge {
+      display: inline-block;
+      background: var(--m-maroon);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.95rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+
+    .spotlight-title {
+      font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+      color: var(--m-text-dark);
+      margin-bottom: 1rem;
+      line-height: 1.25;
+    }
+
+    .spotlight-desc {
+      color: #5C544D;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 1.8rem;
+    }
+
+    .spotlight-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .spotlight-features li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.92rem;
+      color: var(--m-text-dark);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .spotlight-features li span {
+      color: var(--m-maroon);
+      font-weight: bold;
+    }
+
+    .spotlight-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .spotlight-price {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      color: var(--m-maroon);
+      font-weight: 800;
+    }
+
+    .spotlight-compare {
+      text-decoration: line-through;
+      color: var(--m-text-muted);
+      font-size: 1.2rem;
+    }
+
+    .spotlight-save {
+      background: #E8F8F0;
+      border: 1px solid var(--m-green);
+      color: var(--m-green);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .spotlight-img-wrap {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--m-border);
+      box-shadow: var(--m-shadow-md);
+      max-height: 440px;
+    }
+
+    .spotlight-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .spotlight-banner:hover .spotlight-img {
+      transform: scale(1.04);
+    }
+
+    /* =========================================================
+       7. CURATED CRYSTALS & DECKS SLIDER
+    ========================================================= */
+    .filter-tab-bar {
+      display: flex;
+      justify-content: center;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .filter-pill {
+      background: #FFFFFF;
+      border: 1px solid var(--m-border);
+      padding: 0.55rem 1.4rem;
+      border-radius: 999px;
+      color: #5C544D;
+      font-family: var(--font-heading);
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }
+
+    .filter-pill.active, .filter-pill:hover {
+      background: var(--m-maroon);
+      color: #FFFFFF;
+      border-color: var(--m-maroon);
+      box-shadow: 0 4px 15px rgba(115, 16, 36, 0.25);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2.2rem;
+    }
+
+    .product-card {
+      background: #FFFFFF;
+      border: 1px solid var(--m-border);
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      box-shadow: var(--m-shadow-sm);
+    }
+
+    .product-card:hover {
+      transform: translateY(-7px);
+      border-color: var(--m-gold);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.09);
+    }
+
+    .product-media {
+      height: 270px;
+      position: relative;
+      overflow: hidden;
+      background: #F7F4EE;
+    }
+
+    .product-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .product-card:hover .product-img {
+      transform: scale(1.07);
+    }
+
+    .product-badge-flag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: var(--m-maroon);
+      color: #FFFFFF;
+      padding: 0.25rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      z-index: 2;
+    }
+
+    .product-quick-view-btn {
+      position: absolute;
+      bottom: -45px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #FFFFFF;
+      border: 1px solid var(--m-border);
+      color: var(--m-text-dark);
+      padding: 0.45rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-family: var(--font-heading);
+      letter-spacing: 0.06em;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      z-index: 2;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card:hover .product-quick-view-btn {
+      bottom: 15px;
+    }
+
+    .product-quick-view-btn:hover {
+      background: var(--m-maroon);
+      color: #FFFFFF;
+      border-color: var(--m-maroon);
+    }
+
+    .product-info-wrap {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-category-sub {
+      font-size: 0.74rem;
+      color: var(--m-gold-dark);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+    }
+
+    .product-title {
+      font-size: 1.12rem;
+      color: var(--m-text-dark);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .product-reviews-stars {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      color: #E5A118;
+      margin-bottom: 0.9rem;
+    }
+
+    .product-reviews-count {
+      color: var(--m-text-muted);
+      font-size: 0.76rem;
+    }
+
+    .product-pricing-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .current-price {
+      font-family: var(--font-heading);
+      font-size: 1.45rem;
+      color: var(--m-maroon);
+      font-weight: 800;
+    }
+
+    .compare-price {
+      text-decoration: line-through;
+      color: var(--m-text-muted);
+      font-size: 0.94rem;
+    }
+
+    .discount-pill {
+      background: #E8F8F0;
+      border: 1px solid rgba(27, 122, 67, 0.3);
+      color: var(--m-green);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    .product-features-bullet {
+      font-size: 0.8rem;
+      color: #5C544D;
+      margin-bottom: 1.3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .product-features-bullet span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .product-features-bullet span::before {
+      content: '✓';
+      color: var(--m-maroon);
+      font-weight: bold;
+    }
+
+    /* =========================================================
+       8. KAVITA TAROT & ASTROLOGY CONSULTATIONS
+    ========================================================= */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.2rem;
+      margin-top: 3rem;
+    }
+
+    .service-card {
+      background: #FFFFFF;
+      border: 1px solid var(--m-border);
+      border-radius: 20px;
+      padding: 2.5rem 2.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.35s ease;
+      position: relative;
+      box-shadow: var(--m-shadow-sm);
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--m-gold);
+      box-shadow: 0 15px 35px rgba(197, 155, 39, 0.15);
+    }
+
+    .service-badge {
+      display: inline-block;
+      font-size: 0.74rem;
+      color: var(--m-maroon);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .service-title {
+      font-size: 1.55rem;
+      color: var(--m-text-dark);
+      margin-bottom: 0.8rem;
+    }
+
+    .service-desc {
+      color: #5C544D;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin-bottom: 1.6rem;
+    }
+
+    .tier-toggle-box {
+      display: flex;
+      background: #F4EFE6;
+      border-radius: 999px;
+      padding: 0.3rem;
+      border: 1px solid var(--m-border);
+      margin-bottom: 1.4rem;
+    }
+
+    .tier-btn {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: #6E665E;
+      font-family: var(--font-heading);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.5rem;
+      border-radius: 999px;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.25s ease;
+    }
+
+    .tier-btn.active {
+      background: var(--m-maroon);
+      color: #FFFFFF;
+    }
+
+    .rates-box {
+      background: #FDFBF7;
+      border: 1px solid var(--m-border);
+      border-radius: 12px;
+      padding: 1.2rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .rate-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.95rem;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid #EBE5DA;
+    }
+
+    .rate-row:last-child {
+      border-bottom: none;
+    }
+
+    .rate-price {
+      color: var(--m-maroon);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    /* =========================================================
+       9. INTERACTIVE 3D TAROT ORACLE READING
+    ========================================================= */
+    .tarot-stage {
+      display: flex;
+      justify-content: center;
+      gap: 2.2rem;
+      flex-wrap: wrap;
+      margin: 3rem 0;
+      min-height: 380px;
+    }
+
+    .card-slot {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .slot-label {
+      font-family: var(--font-heading);
+      font-size: 0.88rem;
+      color: var(--m-maroon);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+      font-weight: 700;
+    }
+
+    .card-container {
+      width: 220px;
+      height: 360px;
+      perspective: 1200px;
+      cursor: pointer;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border-radius: 16px;
+    }
+
+    .card.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .card.flipped.reversed {
+      transform: rotateY(180deg) rotateZ(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      border-radius: 16px;
+      border: 2px solid var(--m-gold);
+    }
+
+    /* Card Back: Deep Sacred Indigo/Maroon with Gold Foil Star */
+    .card-back {
+      background: radial-gradient(circle at 50% 50%, #2A173B 0%, #150920 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      padding: 1.2rem;
+    }
+
+    .card-back-symbol {
+      font-size: 4.2rem;
+      color: #FFDF78;
+      animation: pulseGlow 3s infinite ease-in-out;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1); opacity: 0.85; }
+      50% { transform: scale(1.08); opacity: 1; filter: drop-shadow(0 0 18px var(--m-gold-light)); }
+    }
+
+    .card-back-hint {
+      margin-top: 1.5rem;
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      color: #FFF3D6;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    /* Card Front: Warm Parchment Ivory with Gold Border & Dark Text */
+    .card-front {
+      transform: rotateY(180deg);
+      background: linear-gradient(165deg, #FFFFFF 0%, #FDFBF7 100%);
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-front-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--m-gold-dark);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .card-front-symbol {
+      text-align: center;
+      font-size: 4.5rem;
+      color: var(--m-maroon);
+      margin: auto 0;
+    }
+
+    .card-front-title {
+      font-size: 1.05rem;
+      text-align: center;
+      color: var(--m-text-dark);
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+    }
+
+    .card-tag {
+      text-align: center;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+      display: inline-block;
+      margin: 0 auto;
+      font-weight: 700;
+    }
+
+    .card-tag.upright {
+      background: #E8F8F0;
+      color: var(--m-green);
+      border: 1px solid rgba(27, 122, 67, 0.3);
+    }
+
+    .card-tag.reversed {
+      background: #FDF2F2;
+      color: #D32F2F;
+      border: 1px solid rgba(211, 47, 47, 0.3);
+    }
+
+    .interpretation-panel {
+      background: #FFFFFF;
+      border: 2px solid var(--m-gold);
+      border-radius: 20px;
+      padding: 2.8rem;
+      max-width: 1080px;
+      margin: 0 auto;
+      display: none;
+      box-shadow: var(--m-shadow-md);
+    }
+
+    .interpretation-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .interp-box {
+      background: #FDFBF7;
+      border: 1px solid var(--m-border);
+      border-top: 3px solid var(--m-maroon);
+      border-radius: 12px;
+      padding: 1.6rem;
+    }
+
+    .interp-box h4 {
+      font-size: 1.3rem;
+      color: var(--m-text-dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .interp-keywords {
+      color: var(--m-gold-dark);
+      font-size: 0.85rem;
+      margin-bottom: 0.8rem;
+      font-weight: 700;
+    }
+
+    .interp-text {
+      font-size: 0.94rem;
+      color: #5C544D;
+      line-height: 1.65;
+      margin-bottom: 1.2rem;
+    }
+
+    .interp-advice {
+      background: #FFF8EA;
+      border-left: 3px solid var(--m-gold);
+      padding: 0.85rem 1.1rem;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.88rem;
+      color: #664B11;
+      font-weight: 500;
+    }
+
+    /* =========================================================
+       10. DEVOTEE TESTIMONIALS & REVIEWS
+    ========================================================= */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .review-card {
+      background: #FFFFFF;
+      border: 1px solid var(--m-border);
+      border-radius: 18px;
+      padding: 2.2rem 1.8rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      box-shadow: var(--m-shadow-sm);
+    }
+
+    .review-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--m-gold);
+      box-shadow: var(--m-shadow-md);
+    }
+
+    .review-stars {
+      color: #E5A118;
+      font-size: 1.15rem;
+      margin-bottom: 1rem;
+    }
+
+    .review-text {
+      color: #5C544D;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      border-top: 1px solid var(--m-border);
+      padding-top: 1.2rem;
+    }
+
+    .review-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--m-maroon);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+      font-family: var(--font-heading);
+    }
+
+    .review-author-name {
+      font-size: 0.95rem;
+      color: var(--m-text-dark);
+      font-weight: 700;
+    }
+
+    .review-author-loc {
+      font-size: 0.78rem;
+      color: var(--m-text-muted);
+    }
+
+    .verified-buyer-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      color: var(--m-green);
+      font-size: 0.74rem;
+      font-weight: 700;
+      margin-top: 0.2rem;
+    }
+
+    /* =========================================================
+       11. VEDIC FAQ SECTION
+    ========================================================= */
+    .faq-container {
+      max-width: 860px;
+      margin: 3rem auto 0;
+    }
+
+    .faq-item {
+      background: #FFFFFF;
+      border: 1px solid var(--m-border);
+      border-radius: 14px;
+      margin-bottom: 1.2rem;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: var(--m-shadow-sm);
+    }
+
+    .faq-item:hover {
+      border-color: var(--m-gold);
+    }
+
+    .faq-question {
+      padding: 1.4rem 1.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      color: var(--m-text-dark);
+      font-weight: 700;
+    }
+
+    .faq-toggle-icon {
+      color: var(--m-maroon);
+      font-size: 1.4rem;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-toggle-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 1.8rem 1.6rem;
+      color: #5C544D;
+      font-size: 0.96rem;
+      line-height: 1.7;
+      border-top: 1px solid var(--m-border);
+      padding-top: 1rem;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* =========================================================
+       12. CART DRAWER & OVERLAYS
+    ========================================================= */
+    .cart-drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+
+    .cart-drawer-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: -460px;
+      width: 100%;
+      max-width: 460px;
+      height: 100%;
+      background: #FFFFFF;
+      border-left: 2px solid var(--m-maroon);
+      z-index: 1001;
+      display: flex;
+      flex-direction: column;
+      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
+      transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .cart-drawer.active {
+      right: 0;
+    }
+
+    .cart-header {
+      padding: 1.6rem;
+      border-bottom: 1px solid var(--m-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #FDFBF7;
+    }
+
+    .cart-progress-bar-wrap {
+      padding: 0.9rem 1.6rem;
+      background: #FFF8EA;
+      border-bottom: 1px solid rgba(197, 155, 39, 0.25);
+      font-size: 0.8rem;
+      color: #7A5710;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .cart-progress-bar {
+      height: 6px;
+      background: #E8E2D5;
+      border-radius: 999px;
+      margin-top: 0.5rem;
+      overflow: hidden;
+    }
+
+    .cart-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #C59B27, #1B7A43);
+      width: 100%;
+      border-radius: 999px;
+      transition: width 0.3s ease;
+    }
+
+    .cart-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.6rem;
+    }
+
+    .cart-item-row {
+      display: flex;
+      gap: 1.2rem;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--m-border);
+      align-items: center;
+    }
+
+    .cart-item-img {
+      width: 70px;
+      height: 70px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 1px solid var(--m-border);
+      flex-shrink: 0;
+    }
+
+    .cart-item-info {
+      flex: 1;
+    }
+
+    .cart-item-title {
+      font-size: 0.94rem;
+      color: var(--m-text-dark);
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .cart-item-price {
+      font-size: 0.98rem;
+      color: var(--m-maroon);
+      font-family: var(--font-heading);
+      font-weight: 700;
+    }
+
+    .cart-qty-ctrl {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 0.5rem;
+    }
+
+    .qty-btn {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #F4EFE6;
+      border: 1px solid var(--m-border);
+      color: var(--m-text-dark);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    .qty-btn:hover {
+      background: var(--m-maroon);
+      color: #FFFFFF;
+      border-color: var(--m-maroon);
+    }
+
+    .cart-footer {
+      padding: 1.6rem;
+      border-top: 1px solid var(--m-border);
+      background: #FDFBF7;
+    }
+
+    .cart-subtotal-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.2rem;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      color: var(--m-text-dark);
+      margin-bottom: 1.2rem;
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #25D366;
+      color: #fff;
+      border-radius: 50%;
+      width: 62px;
+      height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.45);
+      z-index: 999;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.12);
+      box-shadow: 0 10px 35px rgba(37, 211, 102, 0.7);
+    }
+
+    /* Modal Popups (Quick View & Booking Intake) */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(6px);
+      z-index: 1002;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-card {
+      background: #FFFFFF;
+      border: 2px solid var(--m-gold);
+      border-radius: 20px;
+      max-width: 620px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 2.5rem;
+      position: relative;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
+      background: transparent;
+      border: none;
+      color: var(--m-text-dark);
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    .form-group {
+      margin-bottom: 1.3rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--m-text-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 0.85rem 1.1rem;
+      background: #FAF7F2;
+      border: 1px solid var(--m-border);
+      border-radius: 8px;
+      color: var(--m-text-dark);
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--m-maroon);
+      background: #FFFFFF;
+      box-shadow: 0 0 10px rgba(128, 20, 43, 0.15);
+    }
+
+    /* Footer: Grounded Deep Slate Charcoal with Warm Gold Highlights */
+    .site-footer {
+      background: #181419;
+      border-top: 1px solid var(--m-border);
+      padding: 4.5rem 1.5rem 2.5rem;
+      color: #A39D98;
+      font-size: 0.9rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .footer-col h5 {
+      font-size: 1.05rem;
+      color: #FFFFFF;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.08em;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.65rem;
+    }
+
+    .footer-links a {
+      color: #A39D98;
+    }
+
+    .footer-links a:hover {
+      color: var(--m-gold-light);
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.82rem;
+    }
+
+    @media (max-width: 900px) {
+      .spotlight-banner { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu { display: none; }
+      .marquee-strip { font-size: 0.72rem; }
+      .card-container { width: 155px; height: 265px; }
+      .card-back-symbol { font-size: 2.8rem; }
+      .card-front-symbol { font-size: 3rem; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+{{ 'parity-storefront-refinements.css' | asset_url | stylesheet_tag }}
+{{ 'parity-category-grid.css' | asset_url | stylesheet_tag }}
+{{ 'parity-integration.css' | asset_url | stylesheet_tag }}
+
+
+  <!-- =========================================================
+       1. ROYAL MAROON TOP ANNOUNCEMENT TICKER (RAJVIRA STYLE)
+  ========================================================= -->
+  <div class="kavita-hdr__announcement">
+    <div class="kavita-hdr__announcement-track">
+      <div class="kavita-hdr__announcement-item"><span class="bullet">✦</span> CELEBRATING SACRED MOMENTS</div>
+      <div class="kavita-hdr__announcement-item"><span class="bullet">✦</span> A LEGACY OF SACRED TAROT & SPIRITUAL GUIDANCE</div>
+      <div class="kavita-hdr__announcement-item"><span class="bullet">✦</span> LIMITED READING SLOTS AVAILABLE — BOOK ONLINE</div>
+      <div class="kavita-hdr__announcement-item"><span class="bullet">✦</span> FREE WORLDWIDE SHIPPING ON SACRED TOOLS OVER ₹999</div>
+      <div class="kavita-hdr__announcement-item"><span class="bullet">✦</span> 100% ENERGIZED & SPIRITUALLY CLEANSED</div>
+      <div class="kavita-hdr__announcement-item"><span class="bullet">✦</span> CELEBRATING SACRED MOMENTS</div>
+      <div class="kavita-hdr__announcement-item"><span class="bullet">✦</span> A LEGACY OF SACRED TAROT & SPIRITUAL GUIDANCE</div>
+      <div class="kavita-hdr__announcement-item"><span class="bullet">✦</span> LIMITED READING SLOTS AVAILABLE — BOOK ONLINE</div>
+      <div class="kavita-hdr__announcement-item"><span class="bullet">✦</span> FREE WORLDWIDE SHIPPING ON SACRED TOOLS OVER ₹999</div>
+      <div class="kavita-hdr__announcement-item"><span class="bullet">✦</span> 100% ENERGIZED & SPIRITUALLY CLEANSED</div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       2. RAJVIRA 2-TIER LUXURY HEADER
+  ========================================================= -->
+  <header class="kavita-hdr">
+    <!-- Row 1: Brand Logo, Center Pill Search Bar, Quick Utilities & Cart -->
+    <div class="kavita-hdr__main">
+      <div class="container kavita-hdr__container">
+        <!-- Logo (Single-Line Brand Layout) -->
+        <div class="kavita-hdr__brand">
+          <a href="/" class="kavita-hdr__logo-link">
+            <img src="{{ 'kavita-logo-gold.png' | asset_url }}" alt="Kavita Tarot Reader" class="kavita-hdr__logo-img" width="600" height="600">
+            <span class="kavita-hdr__brand-name">KAVITA TAROT READER</span>
+          </a>
+        </div>
+
+        <!-- Center Search Bar -->
+        <div class="kavita-hdr__search-wrap">
+          <form action="/collections/all" method="get" class="kavita-hdr__search-form" onsubmit="event.preventDefault(); window.location.href='/collections/all?search=' + encodeURIComponent(this.querySelector('input').value);">
+            <svg class="kavita-hdr__search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input
+              type="search"
+              class="kavita-hdr__search-input"
+              placeholder="Search crystals, decks & readings"
+              aria-label="Search store"
+            >
+            <button type="submit" class="kavita-hdr__search-btn">
+              Search
+            </button>
+          </form>
+        </div>
+
+        <!-- Utilities & Icons -->
+        <div class="kavita-hdr__actions">
+          <!-- Mobile Search Trigger Button -->
+          <button type="button" class="kavita-hdr__icon-btn kavita-hdr__icon-btn--search-mobile" onclick="openSearchModal()" aria-label="Search Catalog" style="background: none; border: none; cursor: pointer;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+
+          <a href="/?view=consultations" class="kavita-hdr__util-link">
+            <span class="kavita-hdr__util-dot">●</span> Book Online
+          </a>
+
+          <!-- Wishlist -->
+          <a href="/collections/all?wishlist=1" class="kavita-hdr__icon-btn" aria-label="Wishlist">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+            <span class="kavita-hdr__badge">0</span>
+          </a>
+
+          <!-- Account -->
+          
+
+          <!-- Cart -->
+          <button class="kavita-hdr__icon-btn kavita-hdr__icon-btn--cart" id="openCartBtn" aria-label="Open Cart" style="background: none; border: none; cursor: pointer;">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="kavita-hdr__badge kavita-hdr__badge--cart" id="cartCount">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: Full-Width Horizontal Category Navigation Menu Bar -->
+    <nav class="kavita-hdr__nav-bar" aria-label="Category Navigation">
+      <div class="container kavita-hdr__container">
+        <ul class="kavita-hdr__menu">
+          <li class="kavita-hdr__menu-item"><a href="/collections/all" class="kavita-hdr__menu-link">All Collections</a></li>
+          <li class="kavita-hdr__menu-item"><a href="/?view=consultations" class="kavita-hdr__menu-link">Tarot Readings</a></li>
+          <li class="kavita-hdr__menu-item kavita-hdr__menu-item--dropdown">
+            <a href="/?view=packages" class="kavita-hdr__menu-link">
+              Signature Packages
+              <svg class="kavita-hdr__caret" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </a>
+            <div class="kavita-hdr__dropdown">
+              <div class="kavita-hdr__dropdown-grid" style="grid-template-columns: repeat(2, 1fr); min-width: 520px; gap: 1.5rem;">
+                <div class="kavita-hdr__dropdown-col">
+                  <span class="kavita-hdr__dropdown-title">✦ Love &amp; Relationships</span>
+                  <a href="/products/no-contact-situation-5-card-reading">No Contact Situation (5 Card)</a>
+                  <a href="/products/future-spouse-reading">Future Spouse &amp; Destined Connection</a>
+                  <a href="/products/love-marriage-pack-8-questions">Love &amp; Marriage Pack (8 Questions)</a>
+                  <a href="/products/no-contact-situation-pack-4-questions">No Contact Situation (4 Questions)</a>
+                  <a href="/products/reunion-reading">Reunion Reading: Will They Return?</a>
+                </div>
+                <div class="kavita-hdr__dropdown-col">
+                  <span class="kavita-hdr__dropdown-title">✦ Healing &amp; Career Growth</span>
+                  <a href="/products/heart-consultation-private-healing">Heart Consultation: 1:1 Healing</a>
+                  <a href="/products/career-growth-reading">Career Growth &amp; Financial Path</a>
+                  <a href="/products/deep-insight-reading-8-questions">Deep Insight Reading (8 Questions)</a>
+                  <div style="margin-top: 0.85rem; padding-top: 0.65rem; border-top: 1px dashed #ECE7DE;">
+                    <a href="/?view=packages" style="color: #80142B; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
+                      ✦ Explore All 8 Packages →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="kavita-hdr__menu-item"><a href="/collections/all?cat=bracelets" class="kavita-hdr__menu-link">Healing Bracelets</a></li>
+          <li class="kavita-hdr__menu-item"><a href="/collections/all?cat=crystals" class="kavita-hdr__menu-link">Crystals &amp; Carvings</a></li>
+          <li class="kavita-hdr__menu-item"><a href="/?view=about" class="kavita-hdr__menu-link">About Kavita</a></li>
+          <li class="kavita-hdr__menu-item"><a href="/pages/contact" class="kavita-hdr__menu-link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =========================================================
+       3. RAJVIRA-STYLE INTERACTIVE BANNER HERO SLIDER (CONTAINED BOX)
+       Featuring Desktop & Mobile Banner Pairs (Supplied by Client)
+  ========================================================= -->
+  <div class="kavita-slider-outer kavita-slider-outer--contained">
+    <div class="kavita-slider-container">
+      <section class="kavita-slider-wrap" id="kavitaBannerSlider" aria-label="Featured Sacred Banners">
+        <div class="kavita-slider" id="sliderTrack">
+          <!-- Slide 1: Crystal Healing (Align Your Mind, Body & Energy) -->
+          <div class="kavita-slider__slide is-active" data-index="0">
+            <a href="/collections/all?cat=crystals" class="kavita-slider__link" aria-label="Crystal Healing — Align Your Mind, Body & Energy — Explore Our Crystal Collection">
+              <picture class="kavita-slider__picture">
+                <source media="(max-width: 767px)" srcset="{{ 'banner-mobile-crystal-align-4x5.jpg' | asset_url }}">
+                <img
+                  src="{{ 'banner-desktop-crystal-align-3x1.jpg' | asset_url }}"
+                  alt="Crystal Healing — Align Your Mind, Body & Energy"
+                  class="kavita-slider__img"
+                  loading="eager"
+                  fetchpriority="high"
+                  width="2048"
+                  height="682"
+                >
+              </picture>
+            </a>
+          </div>
+
+          <!-- Slide 2: Crystal Healing (Dark Velvet — Balance · Cleanse · Energise) -->
+          <div class="kavita-slider__slide" data-index="1">
+            <a href="/collections/all?cat=crystals" class="kavita-slider__link" aria-label="Crystal Healing — Balance, Cleanse, Energise — Explore Our Collection">
+              <picture class="kavita-slider__picture">
+                <source media="(max-width: 767px)" srcset="{{ 'banner-mobile-crystal-velvet-4x5.jpg' | asset_url }}">
+                <img
+                  src="{{ 'banner-desktop-crystal-velvet-3x1.jpg' | asset_url }}"
+                  alt="Crystal Healing — Balance, Cleanse, Energise — Explore Sacred Crystals"
+                  class="kavita-slider__img"
+                  loading="lazy"
+                  width="2048"
+                  height="682"
+                >
+              </picture>
+            </a>
+          </div>
+
+          <!-- Slide 3: Discover the Power of Crystals (Natural Energy, Balance & Healing) -->
+          <div class="kavita-slider__slide" data-index="2">
+            <a href="/collections/all?cat=crystals" class="kavita-slider__link" aria-label="Discover the Power of Crystals — Natural Energy & Healing">
+              <picture class="kavita-slider__picture">
+                <source media="(max-width: 767px)" srcset="{{ 'banner-mobile-crystal-power-4x5.jpg' | asset_url }}">
+                <img
+                  src="{{ 'banner-desktop-crystal-power-3x1.jpg' | asset_url }}"
+                  alt="Discover the Power of Crystals — Natural Energy & Emotional Balance"
+                  class="kavita-slider__img"
+                  loading="lazy"
+                  width="2048"
+                  height="682"
+                >
+              </picture>
+            </a>
+          </div>
+
+          <!-- Slide 4: Sacred Tarot Readings (Clarity, Guidance, Higher Perspective) -->
+          <div class="kavita-slider__slide" data-index="3">
+            <a href="/?view=consultations" class="kavita-slider__link" aria-label="Sacred Tarot Readings — Clarity, Guidance & Higher Perspective">
+              <picture class="kavita-slider__picture">
+                <source media="(max-width: 767px)" srcset="{{ 'banner-mobile-readings.jpg' | asset_url }}">
+                <img
+                  src="{{ 'banner-desktop-readings-3x1.jpg' | asset_url }}"
+                  alt="Personalized Tarot Readings — Clarity, Guidance & Higher Perspective"
+                  class="kavita-slider__img"
+                  loading="lazy"
+                  width="2048"
+                  height="682"
+                >
+              </picture>
+            </a>
+          </div>
+        </div>
+
+        <!-- Rajvira Floating Navigation Arrows -->
+        <button type="button" class="kavita-slider__arrow kavita-slider__arrow--prev" id="sliderPrevBtn" aria-label="Previous Slide">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button type="button" class="kavita-slider__arrow kavita-slider__arrow--next" id="sliderNextBtn" aria-label="Next Slide">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+
+        <!-- Rajvira Pagination Indicator Dots -->
+        <div class="kavita-slider__dots" id="sliderDots" role="tablist">
+          <button type="button" class="kavita-slider__dot is-active" data-slide="0" aria-label="Go to slide 1" aria-selected="true"></button>
+          <button type="button" class="kavita-slider__dot" data-slide="1" aria-label="Go to slide 2" aria-selected="false"></button>
+          <button type="button" class="kavita-slider__dot" data-slide="2" aria-label="Go to slide 3" aria-selected="false"></button>
+          <button type="button" class="kavita-slider__dot" data-slide="3" aria-label="Go to slide 4" aria-selected="false"></button>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       4. LUXURY RUNNING MARQUEE TICKER (BELOW SLIDER)
+  ========================================================= -->
+  <div class="kavita-hero-submarquee" aria-label="Sacred Announcements">
+    <div class="kavita-hero-submarquee__track">
+      <span><span class="star">✦</span> AUTHENTIC & ENERGIZED SACRED OFFERINGS</span>
+      <span><span class="star">✦</span> WORLDWIDE SACRED SHIPPING</span>
+      <span><span class="star">✦</span> 100% PRIVATE & CONFIDENTIAL TAROT READINGS</span>
+      <span><span class="star">✦</span> 10,000+ SOULS GUIDED TOWARDS CLARITY</span>
+      <span><span class="star">✦</span> SACRED REIKI & LAMAFERA ENERGY HEALING</span>
+      <span><span class="star">✦</span> SECURE ENCRYPTED CHECKOUT</span>
+      <span><span class="star">✦</span> AUTHENTIC & ENERGIZED SACRED OFFERINGS</span>
+      <span><span class="star">✦</span> WORLDWIDE SACRED SHIPPING</span>
+      <span><span class="star">✦</span> 100% PRIVATE & CONFIDENTIAL TAROT READINGS</span>
+      <span><span class="star">✦</span> 10,000+ SOULS GUIDED TOWARDS CLARITY</span>
+      <span><span class="star">✦</span> SACRED REIKI & LAMAFERA ENERGY HEALING</span>
+      <span><span class="star">✦</span> SECURE ENCRYPTED CHECKOUT</span>
+    </div>
+  </div>
+
+  <!-- Interactive Slider Script -->
+  <script>
+    (function() {
+      const wrap = document.getElementById('kavitaBannerSlider');
+      if (!wrap) return;
+
+      const track = document.getElementById('sliderTrack');
+      const slides = wrap.querySelectorAll('.kavita-slider__slide');
+      const prevBtn = document.getElementById('sliderPrevBtn');
+      const nextBtn = document.getElementById('sliderNextBtn');
+      const dots = wrap.querySelectorAll('.kavita-slider__dot');
+
+      if (!track || slides.length === 0) return;
+
+      let currentIndex = 0;
+      let timer = null;
+      const count = slides.length;
+      const speed = 5000;
+
+      function goTo(index) {
+        if (index < 0) {
+          currentIndex = count - 1;
+        } else if (index >= count) {
+          currentIndex = 0;
+        } else {
+          currentIndex = index;
+        }
+
+        track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+
+        slides.forEach(function(s, idx) {
+          s.classList.toggle('is-active', idx === currentIndex);
+        });
+
+        dots.forEach(function(dot, idx) {
+          const active = idx === currentIndex;
+          dot.classList.toggle('is-active', active);
+          dot.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+      }
+
+      function next() { goTo(currentIndex + 1); }
+      function prev() { goTo(currentIndex - 1); }
+
+      function startAutoplay() {
+        stopAutoplay();
+        timer = setInterval(next, speed);
+      }
+
+      function stopAutoplay() {
+        if (timer) {
+          clearInterval(timer);
+          timer = null;
+        }
+      }
+
+      if (prevBtn) prevBtn.addEventListener('click', function() { prev(); startAutoplay(); });
+      if (nextBtn) nextBtn.addEventListener('click', function() { next(); startAutoplay(); });
+
+      dots.forEach(function(dot) {
+        dot.addEventListener('click', function(e) {
+          const idx = parseInt(e.currentTarget.getAttribute('data-slide'), 10);
+          goTo(idx);
+          startAutoplay();
+        });
+      });
+
+      wrap.addEventListener('mouseenter', stopAutoplay);
+      wrap.addEventListener('mouseleave', startAutoplay);
+
+      // Touch Swipe Gesture
+      let startX = 0;
+      let endX = 0;
+
+      wrap.addEventListener('touchstart', function(e) {
+        startX = e.changedTouches[0].screenX;
+        stopAutoplay();
+      }, { passive: true });
+
+      wrap.addEventListener('touchend', function(e) {
+        endX = e.changedTouches[0].screenX;
+        const diff = endX - startX;
+        if (Math.abs(diff) > 40) {
+          if (diff < 0) next();
+          else prev();
+        }
+        startAutoplay();
+      }, { passive: true });
+
+      startAutoplay();
+    })();
+  </script>
+
+  <!-- =========================================================
+       4. KAVITA OFFICIAL OFFERINGS (AUTHENTIC CIRCULAR CATEGORIES)
+       Full width with small gaps and clean side padding
+  ========================================================= -->
+  <section id="categories" class="section-wrap categories-section-wrap" style="background: #FFFFFF; border-bottom: 1px solid var(--m-border); padding: 1.8rem 0 2rem;">
+    <div style="width: 100%; max-width: 1360px; margin: 0 auto; padding: 0 0.85rem;">
+      <div class="section-header" style="margin-bottom: 1.25rem;">
+        <div class="section-kicker">✦ Official Offerings & Services ✦</div>
+        <h2 class="section-title">Explore by Offering</h2>
+        <p class="section-sub">Personalized intuitive tarot consultations, ancient energy healing, and curated spiritual instruments by Kavita.</p>
+      </div>
+
+      <div class="categories-circle-row">
+        <!-- 1. Live Audio Calls -->
+        <a href="/?view=consultations" class="cat-circle-card">
+          <div class="cat-circle-avatar-wrap">
+            <img loading="lazy" decoding="async" class="cat-circle-img" src="{{ 'product-call-10min.jpg' | asset_url }}" alt="Live Audio Consultations" width="600" height="600">
+          </div>
+          <div class="cat-circle-name">Audio Calls</div>
+        </a>
+
+        <!-- 2. Live Video Calls -->
+        <a href="/?view=consultations" class="cat-circle-card">
+          <div class="cat-circle-avatar-wrap">
+            <img loading="lazy" decoding="async" class="cat-circle-img" src="{{ 'product-call-30min.jpg' | asset_url }}" alt="Live Video Consultations" width="600" height="600">
+          </div>
+          <div class="cat-circle-name">Video Calls</div>
+        </a>
+
+        <!-- 3. WhatsApp Voice Notes -->
+        <a href="/?view=consultations" class="cat-circle-card">
+          <div class="cat-circle-avatar-wrap">
+            <img loading="lazy" decoding="async" class="cat-circle-img" src="{{ 'product-voice-2q.jpg' | asset_url }}" alt="Voice Note Readings" width="600" height="600">
+          </div>
+          <div class="cat-circle-name">Voice Notes</div>
+        </a>
+
+        <!-- 4. Sacred Energy Circles -->
+        <a href="/collections/all?cat=readings" class="cat-circle-card">
+          <div class="cat-circle-avatar-wrap">
+            <img loading="lazy" decoding="async" class="cat-circle-img" src="{{ 'product-energy-circle.jpg' | asset_url }}" alt="Personalised Energy Circles" width="600" height="600">
+          </div>
+          <div class="cat-circle-name">Energy Circles</div>
+        </a>
+
+        <!-- 5. Healing Gemstone Bracelets -->
+        <a href="/collections/all?cat=bracelets" class="cat-circle-card">
+          <div class="cat-circle-avatar-wrap">
+            <img loading="lazy" decoding="async" class="cat-circle-img" src="{{ 'product-seven-chakra-bracelet.png' | asset_url }}" alt="Healing Gemstone Bracelets" width="600" height="600">
+          </div>
+          <div class="cat-circle-name">Healing Bracelets</div>
+        </a>
+
+        <!-- 6. Healing Crystals & Carvings -->
+        <a href="/collections/all?cat=crystals" class="cat-circle-card">
+          <div class="cat-circle-avatar-wrap">
+            <img loading="lazy" decoding="async" class="cat-circle-img" src="{{ 'product-citrine.png' | asset_url }}" alt="Healing Crystals" width="600" height="600">
+          </div>
+          <div class="cat-circle-name">Healing Crystals</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       5. LUXURY "SHOP BY SACRED INTENTION & LIFE GOAL"
+       Redesigned with refined 24K Gold SVG Vector Linework
+  ========================================================= -->
+  <section id="intentions" class="section-wrap" style="background: #FAF7F2; border-bottom: 1px solid var(--m-border);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">✦ Divine Alignment & Sacred Clarity ✦</div>
+        <h2 class="section-title">Shop by Sacred Intention & Life Goal</h2>
+        <p class="section-sub">Select the specific life domain, energetic clearing, or cosmic blessing you wish to illuminate today.</p>
+      </div>
+
+      <div class="luxury-intentions-grid">
+        <!-- 1. Love & Soulmate Union -->
+        <a href="/?view=consultations" class="luxury-intention-card">
+          <div class="luxury-intention-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              <circle cx="12" cy="10" r="2"></circle>
+            </svg>
+          </div>
+          <h3 class="luxury-intention-title">Love & Soulmate Union</h3>
+          <p class="luxury-intention-desc">Heal emotional barriers, understand twin-flame dynamics, and attract grounded, unconditional love.</p>
+          <div class="luxury-intention-meta">Explore Love Guidance <span>→</span></div>
+        </a>
+
+        <!-- 2. Wealth & Career Abundance -->
+        <a href="/products/pyrite-golden-energy-booster" class="luxury-intention-card">
+          <div class="luxury-intention-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </div>
+          <h3 class="luxury-intention-title">Wealth & Career Abundance</h3>
+          <p class="luxury-intention-desc">Dissolve scarcity mindset, activate executive prosperity, and anchor golden financial momentum.</p>
+          <div class="luxury-intention-meta">Pyrite & Career Offerings <span>→</span></div>
+        </a>
+
+        <!-- 3. Clarity & Life Decisions -->
+        <a href="/?view=consultations" class="luxury-intention-card">
+          <div class="luxury-intention-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M12 2a10 10 0 0 1 10 10" stroke-dasharray="2 2"></path>
+            </svg>
+          </div>
+          <h3 class="luxury-intention-title">Clarity & Crossroads</h3>
+          <p class="luxury-intention-desc">Cut through mental fog, illuminate hidden factors, and receive confident direction on key life choices.</p>
+          <div class="luxury-intention-meta">Book 1-on-1 Audio Reading <span>→</span></div>
+        </a>
+
+        <!-- 4. Cord-Cutting & Emotional Release -->
+        <a href="/products/distance-cord-cutting-healing" class="luxury-intention-card">
+          <div class="luxury-intention-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
+            </svg>
+          </div>
+          <h3 class="luxury-intention-title">Cord-Cutting & Healing</h3>
+          <p class="luxury-intention-desc">Energetically detach draining emotional ties, release past karmic fatigue, and reclaim personal vitality.</p>
+          <div class="luxury-intention-meta">Reserve Distance Session <span>→</span></div>
+        </a>
+
+        <!-- 5. Aura Shielding & Purification -->
+        <a href="/products/clear-quartz-master-healer" class="luxury-intention-card">
+          <div class="luxury-intention-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <path d="M12 8v8"></path>
+              <path d="M8 12h8"></path>
+            </svg>
+          </div>
+          <h3 class="luxury-intention-title">Aura Shielding & Cleansing</h3>
+          <p class="luxury-intention-desc">Purify stagnant environmental energy, sweep away psychic debris, and protect your personal aura.</p>
+          <div class="luxury-intention-meta">Master Healer Quartz & Crystals <span>→</span></div>
+        </a>
+
+        <!-- 6. Spiritual Awakening & Guidance -->
+        <a href="/collections/all?cat=readings" class="luxury-intention-card">
+          <div class="luxury-intention-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <h3 class="luxury-intention-title">Spiritual Awakening & Decks</h3>
+          <p class="luxury-intention-desc">Attune your daily rhythm with celestial moon cycles, master divination, and awaken intuitive wisdom.</p>
+          <div class="luxury-intention-meta">Sacred Gold Decks & Oracle <span>→</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- =========================================================
+       7. INTERACTIVE SLIDER 2: CURATED CRYSTALS & SACRED DECKS
+       (All 6 Verified Products in Responsive Carousel)
+  ========================================================= -->
+  <section id="crystals-slider" class="section-wrap" style="background: #FAF7F2; border-top: 1px solid var(--m-border); border-bottom: 1px solid var(--m-border);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">✦ 100% Authentic & Spiritually Cleansed ✦</div>
+        <h2 class="section-title">Sacred Gemstone Talismans & Healing Crystals</h2>
+        <p class="section-sub">100% genuine natural mineral specimens and consecrated gemstone talismans hand-selected and cleansed before shipping.</p>
+      </div>
+
+      <div class="kavita-carousel-outer">
+        <!-- Navigation Chevrons -->
+        <button class="kavita-carousel-arrow prev" onclick="moveCarousel('productsTrack', -1)" aria-label="Previous Offerings">‹</button>
+        <button class="kavita-carousel-arrow next" onclick="moveCarousel('productsTrack', 1)" aria-label="Next Offerings">›</button>
+
+        <!-- Carousel Track -->
+        <div class="kavita-carousel-track" id="productsTrack">
+
+          <!-- 1. Meditation Crystal Tumbles -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag">Bestseller · Meditation</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 18)">♡</button>
+                <a href="/products/meditation-crystal-tumbles">
+                  <img loading="lazy" decoding="async" class="product-img" src="{{ 'product-meditation-tumbles.jpg' | asset_url }}" alt="Meditation Crystal Tumbles" width="600" height="600">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">Healing Crystals & Carvings</div>
+                  <h4 class="product-title">
+                    <a href="/products/meditation-crystal-tumbles">Meditation Crystal Tumbles</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(285 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹999</span>
+                    <span class="compare-price">₹1,888</span>
+                    <span class="discount-pill">47% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>Clear Quartz, Amethyst & Rose Quartz Set</span>
+                    <span>Deepens breathwork, focus & calm meditation</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="addToCart('Meditation Crystal Tumbles', 999, '{{ 'product-meditation-tumbles.jpg' | asset_url }}', 'meditation-crystal-tumbles')">
+                    ✦ Add to Bag
+                  </button>
+                  <a href="/products/meditation-crystal-tumbles" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Pyrite: The Golden Energy Booster -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag">Wealth Magnet #1</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 20)">♡</button>
+                <a href="/products/pyrite-golden-energy-booster">
+                  <img loading="lazy" decoding="async" class="product-img" src="{{ 'product-pyrite-booster.png' | asset_url }}" alt="Pyrite: The Golden Energy Booster" width="600" height="600">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">Authentic Mineral Specimen</div>
+                  <h4 class="product-title">
+                    <a href="/products/pyrite-golden-energy-booster">Pyrite: The Golden Energy Booster</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(410 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹2,121</span>
+                    <span class="compare-price">₹3,500</span>
+                    <span class="discount-pill">39% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>100% Genuine Natural Golden Pyrite</span>
+                    <span>Most powerful mineral linked to wealth attraction & luck</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="addToCart('Pyrite: The Golden Energy Booster', 2121, '{{ 'product-pyrite-booster.png' | asset_url }}', 'pyrite-golden-energy-booster')">
+                    ✦ Add to Bag
+                  </button>
+                  <a href="/products/pyrite-golden-energy-booster" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Citrine: The Stone of Joy & Abundance -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag">Merchant's Stone</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 21)">♡</button>
+                <a href="/products/citrine-stone-of-joy-abundance">
+                  <img loading="lazy" decoding="async" class="product-img" src="{{ 'product-citrine.png' | asset_url }}" alt="Citrine: The Stone of Joy and Abundance" width="600" height="600">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">Natural Solar Gemstone</div>
+                  <h4 class="product-title">
+                    <a href="/products/citrine-stone-of-joy-abundance">Citrine: The Stone of Joy & Abundance</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(360 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹2,555</span>
+                    <span class="compare-price">₹3,999</span>
+                    <span class="discount-pill">36% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>Radiates warm golden solar joy & prosperity</span>
+                    <span>Anchors positive vibrations in financial dealings</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="addToCart('Citrine: The Stone of Joy & Abundance', 2555, '{{ 'product-citrine.png' | asset_url }}', 'citrine-stone-of-joy-abundance')">
+                    ✦ Add to Bag
+                  </button>
+                  <a href="/products/citrine-stone-of-joy-abundance" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Clear Quartz: Master Healer & Energy Amplifier -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag">Master Healer</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 22)">♡</button>
+                <a href="/products/clear-quartz-master-healer">
+                  <img loading="lazy" decoding="async" class="product-img" src="{{ 'product-clear-quartz.jpg' | asset_url }}" alt="Clear Quartz: The Master Healer" width="600" height="600">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">High Vibrational Quartz</div>
+                  <h4 class="product-title">
+                    <a href="/products/clear-quartz-master-healer">Clear Quartz: Master Healer & Amplifier</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(290 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹1,555</span>
+                    <span class="compare-price">₹2,222</span>
+                    <span class="discount-pill">30% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>Universal energy amplifier & aura harmonizer</span>
+                    <span>Consecrated with Vedic mantras for deep focus</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="addToCart('Clear Quartz: Master Healer', 1555, '{{ 'product-clear-quartz.jpg' | asset_url }}', 'clear-quartz-master-healer')">
+                    ✦ Add to Bag
+                  </button>
+                  <a href="/products/clear-quartz-master-healer" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Rose Quartz Handcrafted Crystal Angel -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag">Guardian of Love</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 19)">♡</button>
+                <a href="/products/rose-quartz-small-angel">
+                  <img loading="lazy" decoding="async" class="product-img" src="{{ 'product-rose-quartz-angel.jpg' | asset_url }}" alt="Rose Quartz Small Angel" width="600" height="600">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">Sacred Carving</div>
+                  <h4 class="product-title">
+                    <a href="/products/rose-quartz-small-angel">Rose Quartz Handcrafted Crystal Angel</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(380 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹550</span>
+                    <span class="compare-price">₹999</span>
+                    <span class="discount-pill">45% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>Emissary of celestial comfort & heart healing</span>
+                    <span>Brings soothing peace to your personal altar or desk</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="addToCart('Rose Quartz Handcrafted Crystal Angel', 550, '{{ 'product-rose-quartz-angel.jpg' | asset_url }}', 'rose-quartz-small-angel')">
+                    ✦ Add to Bag
+                  </button>
+                  <a href="/products/rose-quartz-small-angel" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Seven Chakra Natural Stone Energy Alignment Bracelet -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag">Bestseller Bracelet</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 12)">♡</button>
+                <a href="/products/seven-chakra-bracelet">
+                  <img loading="lazy" decoding="async" class="product-img" src="{{ 'product-seven-chakra-bracelet.png' | asset_url }}" alt="Seven Chakra Natural Stone Energy Bracelet" width="600" height="600">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">Gemstone Talisman Bracelet</div>
+                  <h4 class="product-title">
+                    <a href="/products/seven-chakra-bracelet">Seven Chakra Natural Stone Energy Bracelet</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(510 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹1,555</span>
+                    <span class="compare-price">₹2,499</span>
+                    <span class="discount-pill">38% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>Natural Amethyst, Lapis, Carnelian, Jasper & Agate</span>
+                    <span>Aligns the 7 sacred body energy centers</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="addToCart('Seven Chakra Natural Stone Energy Bracelet', 1555, '{{ 'product-seven-chakra-bracelet.png' | asset_url }}', 'seven-chakra-bracelet')">
+                    ✦ Add to Bag
+                  </button>
+                  <a href="/products/seven-chakra-bracelet" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. Pyrite Money & Success Bracelet -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag">Abundance Booster</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 13)">♡</button>
+                <a href="/products/pyrite-money-success-bracelet">
+                  <img loading="lazy" decoding="async" class="product-img" src="{{ 'product-pyrite-money-bracelet.jpg' | asset_url }}" alt="Pyrite Money & Success Bracelet" width="600" height="600">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">Gemstone Talisman Bracelet</div>
+                  <h4 class="product-title">
+                    <a href="/products/pyrite-money-success-bracelet">Pyrite Money & Success Bracelet</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(470 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹1,555</span>
+                    <span class="compare-price">₹2,500</span>
+                    <span class="discount-pill">38% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>Vedic consecrated natural golden metallic pyrite beads</span>
+                    <span>Attracts prosperity, financial confidence & momentum</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="addToCart('Pyrite Money & Success Bracelet', 1555, '{{ 'product-pyrite-money-bracelet.jpg' | asset_url }}', 'pyrite-money-success-bracelet')">
+                    ✦ Add to Bag
+                  </button>
+                  <a href="/products/pyrite-money-success-bracelet" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 2.8rem;">
+        <a href="/collections/all" class="btn btn-maroon" style="padding: 0.95rem 2.5rem;">
+          ✦ Explore All Collections & Spiritual Tools →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       LUXURY SECTION: SHOP BY ZODIAC SIGN (AFTER ALL PRODUCTS)
+       Zodiac Gemstone Bracelets & Astrological Energy Alignment
+  ========================================================= -->
+  <section id="shop-by-zodiac" class="zodiac-showcase-section">
+    <div class="container">
+      <div class="zodiac-showcase-card">
+        
+        <!-- Left: Studio Image Banner -->
+        <div class="zodiac-showcase-media">
+          <img src="{{ 'banner-zodiac-bracelets.jpg' | asset_url }}" alt="Zodiac Bracelets - Align Your Energy With The Stars" class="zodiac-showcase-img" loading="lazy" width="600" height="600">
+          <div class="zodiac-media-badge">
+            <div class="zodiac-media-badge-title">Zodiac Bracelets</div>
+            <div class="zodiac-media-badge-sub">Align Your Energy With The Stars</div>
+          </div>
+        </div>
+
+        <!-- Right: Editorial & CTA -->
+        <div class="zodiac-showcase-content">
+          <div class="zodiac-kicker">✦ Celestial Energy Alignment ✦</div>
+          <h2 class="zodiac-title">Shop by Zodiac Sign</h2>
+          <p class="zodiac-desc">
+            Discover our exclusive <b>Zodiac Bracelet Collection</b>, thoughtfully designed to complement your zodiac sign and personal style. Find your perfect match with beautiful natural stones, unique zodiac symbols, and timeless designs consecrated with Vedic mantras.
+          </p>
+
+          <!-- 12 Zodiac Pills Selector -->
+          <div class="zodiac-chips-wrap">
+            <a href="/collections/all?cat=bracelets" class="zodiac-chip">♈ Aries</a>
+            <a href="/collections/all?cat=bracelets" class="zodiac-chip">♉ Taurus</a>
+            <a href="/collections/all?cat=bracelets" class="zodiac-chip">♊ Gemini</a>
+            <a href="/collections/all?cat=bracelets" class="zodiac-chip">♋ Cancer</a>
+            <a href="/collections/all?cat=bracelets" class="zodiac-chip">♌ Leo</a>
+            <a href="/collections/all?cat=bracelets" class="zodiac-chip">♍ Virgo</a>
+            <a href="/collections/all?cat=bracelets" class="zodiac-chip">♎ Libra</a>
+            <a href="/collections/all?cat=bracelets" class="zodiac-chip">♏ Scorpio</a>
+            <a href="/collections/all?cat=bracelets" class="zodiac-chip">♐ Sagittarius</a>
+            <a href="/collections/all?cat=bracelets" class="zodiac-chip">♑ Capricorn</a>
+            <a href="/collections/all?cat=bracelets" class="zodiac-chip">♒ Aquarius</a>
+            <a href="/collections/all?cat=bracelets" class="zodiac-chip">♓ Pisces</a>
+          </div>
+
+          <div class="zodiac-btn-row">
+            <a href="/collections/all?cat=bracelets" class="btn btn-gold" style="padding: 0.95rem 2.4rem; font-size: 0.92rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; display: inline-flex; align-items: center; gap: 0.6rem; border-radius: 8px;">
+              Shop Now <span>→</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       6. INTERACTIVE SLIDER: FEATURED 1-ON-1 READINGS & ENERGY HEALING
+       ✦ Personal Guidance Directly with Kavita ✦ (Placed After Zodiac Section)
+  ========================================================= -->
+  <section id="consultations-slider" class="section-wrap" style="background: #FFFFFF;">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">✦ Personal Guidance Directly with Kavita ✦</div>
+        <h2 class="section-title">Featured Consultations & Energy Sessions</h2>
+        <p class="section-sub">Private 1-on-1 intuitive audio and video readings straight to WhatsApp, alongside master distance energy healing sessions.</p>
+      </div>
+
+      <div class="kavita-carousel-outer">
+        <!-- Navigation Chevrons -->
+        <button class="kavita-carousel-arrow prev" onclick="moveCarousel('consultationsTrack', -1)" aria-label="Previous Offerings">‹</button>
+        <button class="kavita-carousel-arrow next" onclick="moveCarousel('consultationsTrack', 1)" aria-label="Next Offerings">›</button>
+
+        <!-- Carousel Track -->
+        <div class="kavita-carousel-track" id="consultationsTrack">
+
+          <!-- 1. Live Audio Call Tarot Reading -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag">Live Audio Consultation</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 1)">♡</button>
+                <a href="/products/10-minutes-call">
+                  <img loading="lazy" decoding="async" class="product-img" src="{{ 'product-call-10min.jpg' | asset_url }}" alt="Live Audio Call Tarot Reading" width="600" height="600">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">1-on-1 Live WhatsApp Audio</div>
+                  <h4 class="product-title">
+                    <a href="/products/10-minutes-call">Live Audio Call Tarot Reading with Kavita</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(420 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹999 – ₹4,444</span>
+                    <span class="discount-pill">Urgent (Within 24 Hrs) Avail.</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>10 Mins (₹999 / ₹1,555) · 20 Mins (₹2,299 / ₹3,099) · 30 Mins (₹3,369 / ₹4,444)</span>
+                    <span>Direct intuitive answers to pressing love, career & life questions</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="openBookingModal('Live Audio Call Tarot Reading')">
+                    ✦ Book Call
+                  </button>
+                  <a href="/?view=consultations" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Live Video Call Tarot Reading with Kavita -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column; border: 1.5px solid #D4AF37;">
+              <div class="product-media">
+                <span class="product-badge-flag" style="background: #80142B; color: #FFF;">Face to Face Clarity</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 3)">♡</button>
+                <a href="/?view=consultations">
+                  <img loading="lazy" decoding="async" class="product-img" src="{{ 'product-call-30min.jpg' | asset_url }}" alt="Live Video Call Tarot Reading with Kavita" width="600" height="600">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">Direct WhatsApp Video Session</div>
+                  <h4 class="product-title">
+                    <a href="/?view=consultations">Live Video Call Tarot Reading with Kavita</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(340 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹1,888 – ₹5,499</span>
+                    <span class="discount-pill">Standard & Urgent (24 Hrs)</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>10 Mins: Standard ₹1,888 | Urgent (Within 24 Hrs) ₹2,199</span>
+                    <span>30 Mins: Standard ₹4,499 | Urgent (Within 24 Hrs) ₹5,499</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-gold" onclick="openBookingModal('Live Video Call Tarot Reading')">
+                    ✦ Book Video Call
+                  </button>
+                  <a href="/?view=consultations" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. WhatsApp Voice Note Tarot Reading -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag">From ₹299 · 7 Days Delivery</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 4)">♡</button>
+                <a href="/products/voice-note-1-question">
+                  <img loading="lazy" decoding="async" class="product-img" src="{{ 'product-voice-2q.jpg' | asset_url }}" alt="WhatsApp Voice Note Tarot Reading" width="600" height="600">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">WhatsApp Voice Memo</div>
+                  <h4 class="product-title">
+                    <a href="/products/voice-note-1-question">Personalised WhatsApp Voice Note Reading</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(520 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">From ₹299</span>
+                    <span class="discount-pill">Urgent in 24 Hrs ₹499</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>1 Q ₹299 · 2 Qs ₹399 · 3 Qs ₹499 · Extra Qs ₹299 each</span>
+                    <span>Delivered as voice note in 7 days (or 24-hr urgent)</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="openBookingModal('WhatsApp Voice Note Reading (from ₹299)')">
+                    ✦ Book Note
+                  </button>
+                  <a href="/?view=consultations" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Distance Cord-Cutting Healing -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag">Complete Healing Session</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 10)">♡</button>
+                <a href="/products/distance-cord-cutting-healing">
+                  <img loading="lazy" decoding="async" class="product-img" src="{{ 'product-cord-cutting.jpg' | asset_url }}" alt="Distance Cord-Cutting Healing" width="600" height="600">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">Remote Pranic Healing</div>
+                  <h4 class="product-title">
+                    <a href="/products/distance-cord-cutting-healing">Distance Cord-Cutting Healing Session</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(194 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹5,001</span>
+                    <span class="compare-price">₹7,500</span>
+                    <span class="discount-pill">33% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>Severs ethereal ties to past relationships & toxic ties</span>
+                    <span>Restores emotional equilibrium & peace with Beeja Mantras</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="openBookingModal('Distance Cord-Cutting Session (₹5,001)')">
+                    ✦ Reserve Session
+                  </button>
+                  <a href="/products/distance-cord-cutting-healing" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Personalised Sacred Energy Circle -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag">Coded Energy Circle</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 8)">♡</button>
+                <a href="/products/personalised-energy-circle">
+                  <img loading="lazy" decoding="async" class="product-img" src="{{ 'product-energy-circle.jpg' | asset_url }}" alt="Personalised Sacred Energy Circle" width="600" height="600">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">Sacred Geometric Alignment</div>
+                  <h4 class="product-title">
+                    <a href="/products/personalised-energy-circle">Personalised Sacred Energy Circle</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(167 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹1,416</span>
+                    <span class="compare-price">₹1,888</span>
+                    <span class="discount-pill">25% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>Opens stagnant abundance pathways</span>
+                    <span>Personalized sacred symbol and switchword guidance</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="openBookingModal('Personalised Sacred Energy Circle')">
+                    ✦ Reserve Circle
+                  </button>
+                  <a href="/products/personalised-energy-circle" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Ancient Nordic Rune Reading -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag">Elder Futhark</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 7)">♡</button>
+                <a href="/products/rune-reading">
+                  <img loading="lazy" decoding="async" class="product-img" src="{{ 'product-rune-reading.jpg' | asset_url }}" alt="Ancient Nordic Rune Reading" width="600" height="600">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">Primal Norse Divination</div>
+                  <h4 class="product-title">
+                    <a href="/products/rune-reading">Ancient Nordic Rune Reading Session</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(118 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹3,333</span>
+                    <span class="compare-price">₹4,999</span>
+                    <span class="discount-pill">Special</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>Deep karmic roots, hidden obstacles & primal alignment</span>
+                    <span>Detailed photo spread and voice recording included</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="openBookingModal('Ancient Nordic Rune Reading')">
+                    ✦ Reserve Reading
+                  </button>
+                  <a href="/products/rune-reading" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 2.8rem;">
+        <a href="/?view=consultations" class="btn btn-maroon" style="padding: 0.95rem 2.5rem;">
+          ✦ View Dedicated Consultations Portal & Intake Form →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SIGNATURE TAROT READING & HEALING PACKAGES (8 TARGETED PACKAGES)
+  ========================================================= -->
+  <section id="signature-packages-slider" class="section-wrap" style="background: #FAF7F2; border-top: 1px solid var(--m-border); border-bottom: 1px solid var(--m-border);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">✦ Channeled Spiritual Solutions ✦</div>
+        <h2 class="section-title">Signature Reading & Healing Packages</h2>
+        <p class="section-sub">Targeted multi-card spreads, comprehensive soul guidance, and private healing sessions delivered to your WhatsApp within 3–4 days.</p>
+      </div>
+
+      <div class="kavita-carousel-outer">
+        <button class="kavita-carousel-arrow prev" onclick="moveCarousel('packagesTrack', -1)" aria-label="Previous Packages">‹</button>
+        <button class="kavita-carousel-arrow next" onclick="moveCarousel('packagesTrack', 1)" aria-label="Next Packages">›</button>
+
+        <div class="kavita-carousel-track" id="packagesTrack">
+
+          <!-- 1. No Contact Situation (5 Card) -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag">Bestseller · Relationship</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 31)">♡</button>
+                <a href="/products/no-contact-situation-5-card-reading">
+                  <img loading="lazy" decoding="async" class="product-img" src="{{ 'package-no-contact-5card.jpg' | asset_url }}" alt="No Contact Situation Tarot Reading" width="600" height="600">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">5 Card Voice Note Spread</div>
+                  <h4 class="product-title">
+                    <a href="/products/no-contact-situation-5-card-reading">No Contact Situation Tarot Reading</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(310 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹799</span>
+                    <span class="compare-price">₹1,499</span>
+                    <span class="discount-pill">47% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>What they feel but don't say · Will they contact again & when</span>
+                    <span>Detailed voice note sent directly to WhatsApp within 3–4 days</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="addToCart('No Contact Situation Tarot Reading (5 Card Spread)', 799, '{{ 'package-no-contact-5card.jpg' | asset_url }}', 'no-contact-situation-5-card-reading')">
+                    ✦ Add to Bag
+                  </button>
+                  <a href="/products/no-contact-situation-5-card-reading" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Future Spouse Reading -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag" style="background: #D4AF37; color: #1C1917;">Destined Connection</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 32)">♡</button>
+                <a href="/products/future-spouse-reading">
+                  <img loading="lazy" decoding="async" class="product-img" src="{{ 'package-future-spouse.jpg' | asset_url }}" alt="Future Spouse Reading" width="600" height="600">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">Soulmate & Marriage Destiny</div>
+                  <h4 class="product-title">
+                    <a href="/products/future-spouse-reading">Future Spouse & Destined Connection</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(460 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹1,499</span>
+                    <span class="compare-price">₹2,499</span>
+                    <span class="discount-pill">40% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>Who your spouse is (Looks, Personality) · How & where you meet</span>
+                    <span>Divine timeline of union & angel guidance (Sent in 3–4 days)</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="addToCart('Future Spouse & Destined Connection Tarot Reading', 1499, '{{ 'package-future-spouse.jpg' | asset_url }}', 'future-spouse-reading')">
+                    ✦ Add to Bag
+                  </button>
+                  <a href="/products/future-spouse-reading" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Love & Marriage Pack (8 Questions) -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag">High Accuracy · 8 Questions</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 33)">♡</button>
+                <a href="/products/love-marriage-pack-8-questions">
+                  <img loading="lazy" decoding="async" class="product-img" src="{{ 'package-love-marriage-8q.jpg' | asset_url }}" alt="Love & Marriage Pack" width="600" height="600">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">Comprehensive 8Q Spread</div>
+                  <h4 class="product-title">
+                    <a href="/products/love-marriage-pack-8-questions">Love & Marriage Pack (8 Questions)</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(520 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹1,999</span>
+                    <span class="compare-price">₹3,499</span>
+                    <span class="discount-pill">43% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>Partner true feelings · Timeline for proposal & wedding</span>
+                    <span>Love vs arranged · Blockages & remedies (Sent in 3–4 days)</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="addToCart('Love & Marriage Pack (8 Questions In-Depth Reading)', 1999, '{{ 'package-love-marriage-8q.jpg' | asset_url }}', 'love-marriage-pack-8-questions')">
+                    ✦ Add to Bag
+                  </button>
+                  <a href="/products/love-marriage-pack-8-questions" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. No Contact Situation Pack (4 Questions) -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag">Reconnection Clarity</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 34)">♡</button>
+                <a href="/products/no-contact-situation-pack-4-questions">
+                  <img loading="lazy" decoding="async" class="product-img" src="{{ 'package-no-contact-4q.jpg' | asset_url }}" alt="No Contact Situation Pack" width="600" height="600">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">4 Core Questions Reading</div>
+                  <h4 class="product-title">
+                    <a href="/products/no-contact-situation-pack-4-questions">No Contact Situation Pack (4 Questions)</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(275 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹799</span>
+                    <span class="compare-price">₹1,299</span>
+                    <span class="discount-pill">38% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>Why no-contact happened · What they feel now · Will they reach out</span>
+                    <span>Delivered as focused WhatsApp voice note within 3–4 days</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="addToCart('No Contact Situation Pack (4 Questions Reading)', 799, '{{ 'package-no-contact-4q.jpg' | asset_url }}', 'no-contact-situation-pack-4-questions')">
+                    ✦ Add to Bag
+                  </button>
+                  <a href="/products/no-contact-situation-pack-4-questions" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Heart Consultation -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column; border: 1.5px solid #80142B;">
+              <div class="product-media">
+                <span class="product-badge-flag" style="background: #80142B; color: #FFF;">VIP Deep Healing</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 35)">♡</button>
+                <a href="/products/heart-consultation-private-healing">
+                  <img loading="lazy" decoding="async" class="product-img" src="{{ 'package-heart-consultation.jpg' | asset_url }}" alt="Heart Consultation" width="600" height="600">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">1:1 Private Session + 7-Day Support</div>
+                  <h4 class="product-title">
+                    <a href="/products/heart-consultation-private-healing">Heart Consultation (Deep Transformation)</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(180 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹8,888</span>
+                    <span class="compare-price">₹12,999</span>
+                    <span class="discount-pill">32% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>1:1 30–45 Min Voice/Video Call · Chakra Scan & Heart Rituals</span>
+                    <span>Includes 7-Day continuous follow-up support directly with Kavita</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="addToCart('Heart Consultation: 1:1 Private Healing & Transformation', 8888, '{{ 'package-heart-consultation.jpg' | asset_url }}', 'heart-consultation-private-healing')">
+                    ✦ Add to Bag
+                  </button>
+                  <a href="/products/heart-consultation-private-healing" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Career Growth Reading -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag">Career & Wealth</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 36)">♡</button>
+                <a href="/products/career-growth-reading">
+                  <img loading="lazy" decoding="async" class="product-img" src="{{ 'package-career-growth.jpg' | asset_url }}" alt="Career Growth Reading" width="600" height="600">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">Professional & Financial Clarity</div>
+                  <h4 class="product-title">
+                    <a href="/products/career-growth-reading">Career Growth & Financial Trajectory</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(390 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹1,099</span>
+                    <span class="compare-price">₹1,899</span>
+                    <span class="discount-pill">42% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>Job change timing · Hidden talents · Financial outlook & remedies</span>
+                    <span>Delivered as personalized voice note within 3–4 days</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="addToCart('Career Growth & Professional Trajectory Tarot Reading', 1099, '{{ 'package-career-growth.jpg' | asset_url }}', 'career-growth-reading')">
+                    ✦ Add to Bag
+                  </button>
+                  <a href="/products/career-growth-reading" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. Reunion Reading -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag">Reunion & Timing</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 37)">♡</button>
+                <a href="/products/reunion-reading">
+                  <img loading="lazy" decoding="async" class="product-img" src="{{ 'package-reunion-reading.jpg' | asset_url }}" alt="Reunion Reading" width="600" height="600">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">Reconciliation Guidance</div>
+                  <h4 class="product-title">
+                    <a href="/products/reunion-reading">Reunion Reading: Path to Reconnection</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(415 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹1,099</span>
+                    <span class="compare-price">₹1,899</span>
+                    <span class="discount-pill">42% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>Chances of reunion · Their next move · Timeline & divine signs</span>
+                    <span>If no reunion, ask 3 custom questions! (Sent in 3–4 days)</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="addToCart('Reunion Reading: Path to Reconnection & Next Move', 1099, '{{ 'package-reunion-reading.jpg' | asset_url }}', 'reunion-reading')">
+                    ✦ Add to Bag
+                  </button>
+                  <a href="/products/reunion-reading" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8. Deep Insight Reading (8 Questions) -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag" style="background: #D4AF37; color: #1C1917;">Multi-Deck Soul Spread</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 38)">♡</button>
+                <a href="/products/deep-insight-reading-8-questions">
+                  <img loading="lazy" decoding="async" class="product-img" src="{{ 'package-deep-insight-8q.jpg' | asset_url }}" alt="Deep Insight Reading" width="600" height="600">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">8 Custom Questions</div>
+                  <h4 class="product-title">
+                    <a href="/products/deep-insight-reading-8-questions">Deep Insight Reading (8 Questions)</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(580 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹1,999</span>
+                    <span class="compare-price">₹3,299</span>
+                    <span class="discount-pill">39% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>Ask 8 questions on any topic · Multi-deck Tarot & Angel spread</span>
+                    <span>Comprehensive detailed voice recording (Sent in 3–4 days)</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="addToCart('Deep Insight Reading (8 Custom Questions of Your Choice)', 1999, '{{ 'package-deep-insight-8q.jpg' | asset_url }}', 'deep-insight-reading-8-questions')">
+                    ✦ Add to Bag
+                  </button>
+                  <a href="/products/deep-insight-reading-8-questions" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 2.8rem;">
+        <a href="/?view=consultations" class="btn btn-maroon" style="padding: 0.95rem 2.5rem;">
+          ✦ Explore All Reading Packages & Book Slot →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       8. DEVOTEE TESTIMONIALS AUTO-SCROLLING MARQUEE
+  ========================================================= -->
+  <section class="section-wrap" style="background: var(--m-bg-page); overflow: hidden;">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">✦ Devotee Words & Sacred Proof ✦</div>
+        <h2 class="section-title">Verified Devotee Experiences</h2>
+        <p class="section-sub">Over 10,000+ souls illuminated through personalized intuitive readings and energized spiritual instruments.</p>
+      </div>
+    </div>
+
+    <!-- Infinite Auto-Scrolling Testimonials Track (Marquee Effect) -->
+    <div class="kavita-testimonials-marquee" aria-label="Devotee Testimonials">
+      <div class="kavita-testimonials-track">
+        <!-- Review 1 -->
+        <div class="kavita-testimonial-card">
+          <div class="kavita-testimonial-stars">★★★★★</div>
+          <p class="kavita-testimonial-quote">
+            "A deeply transformative experience with Kavita. Her intuitive voice note provided immediate clarity on my relationship crossroads, and the energized Pyrite cluster radiates a grounding, prosperous energy in my home."
+          </p>
+          <div class="kavita-testimonial-author">
+            <div class="kavita-testimonial-avatar">S</div>
+            <div>
+              <div class="kavita-testimonial-name">Siddharth G.</div>
+              <div class="kavita-testimonial-meta">Bengaluru · Verified Reading & Pyrite</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="kavita-testimonial-card">
+          <div class="kavita-testimonial-stars">★★★★★</div>
+          <p class="kavita-testimonial-quote">
+            "The 1-on-1 audio call was pure magic. Kavita tuned straight into my unasked concerns without hesitation. Her guidance gave me the exact courage needed to navigate my corporate transition."
+          </p>
+          <div class="kavita-testimonial-author">
+            <div class="kavita-testimonial-avatar">A</div>
+            <div>
+              <div class="kavita-testimonial-name">Ananya Deshmukh</div>
+              <div class="kavita-testimonial-meta">Mumbai · Live Audio Call Consultation</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="kavita-testimonial-card">
+          <div class="kavita-testimonial-stars">★★★★★</div>
+          <p class="kavita-testimonial-quote">
+            "Ordered the 7 Chakra Radiance bracelet and Selenite wand. You can physically feel the cleansing vibration the second you open the package. Consecrated with genuine devotion."
+          </p>
+          <div class="kavita-testimonial-author">
+            <div class="kavita-testimonial-avatar">R</div>
+            <div>
+              <div class="kavita-testimonial-name">Dr. Rohit Verma</div>
+              <div class="kavita-testimonial-meta">Delhi · 7 Chakra & Selenite Wand</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="kavita-testimonial-card">
+          <div class="kavita-testimonial-stars">★★★★★</div>
+          <p class="kavita-testimonial-quote">
+            "The distance cord-cutting session brought an instant heaviness off my chest. I have been sleeping peacefully for the first time in 8 months. Kavita is truly gifted."
+          </p>
+          <div class="kavita-testimonial-author">
+            <div class="kavita-testimonial-avatar">P</div>
+            <div>
+              <div class="kavita-testimonial-name">Pooja Malhotra</div>
+              <div class="kavita-testimonial-meta">Pune · Distance Cord-Cutting Session</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="kavita-testimonial-card">
+          <div class="kavita-testimonial-stars">★★★★★</div>
+          <p class="kavita-testimonial-quote">
+            "The Gold-Foil Tarot deck is exquisite beyond words. Heavy, silky cardstock that shimmers in candlelight. Kavita's included interpretation card guide is wonderfully intuitive."
+          </p>
+          <div class="kavita-testimonial-author">
+            <div class="kavita-testimonial-avatar">K</div>
+            <div>
+              <div class="kavita-testimonial-name">Kavya Iyer</div>
+              <div class="kavita-testimonial-meta">Chennai · Sacred Gold-Foil Tarot Deck</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Loop Duplicate for Infinite Seamless Marquee -->
+        <!-- Review 1 Repeat -->
+        <div class="kavita-testimonial-card">
+          <div class="kavita-testimonial-stars">★★★★★</div>
+          <p class="kavita-testimonial-quote">
+            "A deeply transformative experience with Kavita. Her intuitive voice note provided immediate clarity on my relationship crossroads, and the energized Pyrite cluster radiates a grounding, prosperous energy in my home."
+          </p>
+          <div class="kavita-testimonial-author">
+            <div class="kavita-testimonial-avatar">S</div>
+            <div>
+              <div class="kavita-testimonial-name">Siddharth G.</div>
+              <div class="kavita-testimonial-meta">Bengaluru · Verified Reading & Pyrite</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 Repeat -->
+        <div class="kavita-testimonial-card">
+          <div class="kavita-testimonial-stars">★★★★★</div>
+          <p class="kavita-testimonial-quote">
+            "The 1-on-1 audio call was pure magic. Kavita tuned straight into my unasked concerns without hesitation. Her guidance gave me the exact courage needed to navigate my corporate transition."
+          </p>
+          <div class="kavita-testimonial-author">
+            <div class="kavita-testimonial-avatar">A</div>
+            <div>
+              <div class="kavita-testimonial-name">Ananya Deshmukh</div>
+              <div class="kavita-testimonial-meta">Mumbai · Live Audio Call Consultation</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 Repeat -->
+        <div class="kavita-testimonial-card">
+          <div class="kavita-testimonial-stars">★★★★★</div>
+          <p class="kavita-testimonial-quote">
+            "Ordered the 7 Chakra Radiance bracelet and Selenite wand. You can physically feel the cleansing vibration the second you open the package. Consecrated with genuine devotion."
+          </p>
+          <div class="kavita-testimonial-author">
+            <div class="kavita-testimonial-avatar">R</div>
+            <div>
+              <div class="kavita-testimonial-name">Dr. Rohit Verma</div>
+              <div class="kavita-testimonial-meta">Delhi · 7 Chakra & Selenite Wand</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 4 Repeat -->
+        <div class="kavita-testimonial-card">
+          <div class="kavita-testimonial-stars">★★★★★</div>
+          <p class="kavita-testimonial-quote">
+            "The distance cord-cutting session brought an instant heaviness off my chest. I have been sleeping peacefully for the first time in 8 months. Kavita is truly gifted."
+          </p>
+          <div class="kavita-testimonial-author">
+            <div class="kavita-testimonial-avatar">P</div>
+            <div>
+              <div class="kavita-testimonial-name">Pooja Malhotra</div>
+              <div class="kavita-testimonial-meta">Pune · Distance Cord-Cutting Session</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 5 Repeat -->
+        <div class="kavita-testimonial-card">
+          <div class="kavita-testimonial-stars">★★★★★</div>
+          <p class="kavita-testimonial-quote">
+            "The Gold-Foil Tarot deck is exquisite beyond words. Heavy, silky cardstock that shimmers in candlelight. Kavita's included interpretation card guide is wonderfully intuitive."
+          </p>
+          <div class="kavita-testimonial-author">
+            <div class="kavita-testimonial-avatar">K</div>
+            <div>
+              <div class="kavita-testimonial-name">Kavya Iyer</div>
+              <div class="kavita-testimonial-meta">Chennai · Sacred Gold-Foil Tarot Deck</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" style="text-align: center; margin-top: 1.5rem;">
+      <a href="/?view=about" class="btn btn-outline" style="padding: 0.8rem 2.2rem;">
+        ✦ Read Kavita's Sacred Journey & Devotee Stories →
+      </a>
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       11. VEDIC FREQUENTLY ASKED QUESTIONS
+  ========================================================= -->
+  <section class="section-wrap" style="background: #FFFFFF;">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">✦ Clarity & Guidelines ✦</div>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-sub">Learn how our products are authenticated, energized, and dispatched to your sanctuary.</p>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item active">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>What does Spiritual Cleansing and Energization mean?</span>
+            <span class="faq-toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Before any crystal, gemstone bracelet, or tarot deck leaves our sanctum, it undergoes ritual energetic cleansing with sacred white sage and Moroccan selenite, charged under natural moonlight, and blessed by Kavita with high-vibrational positive intention so that it arrives energetically cleared and aligned for your journey.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>How do I know my Crystals and Tarot Decks are 100% genuine?</span>
+            <span class="faq-toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Every crystal specimen and gemstone bead is 100% natural, ethically sourced, and examined for natural mineral authenticity. Every tarot and oracle deck is an authentic collector-grade edition crafted with premium cardstock and genuine gold-foil detailing.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>How does the 1-on-1 WhatsApp Tarot consultation work?</span>
+            <span class="faq-toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Upon selecting your consultation, you provide your name, date of birth, place of birth, and key questions in our secure intake form. Standard bookings are scheduled within 3 to 5 days, while Same-Day Premium slots are delivered within hours directly via WhatsApp live audio call or voice notes.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Is Cash on Delivery (COD) and Free Shipping available?</span>
+            <span class="faq-toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Yes! We offer Free Express Shipping on all orders above ₹999 across all 28 states and Union Territories in India. Cash on Delivery (COD) is available on all physical spiritual items with tamper-proof packaging.
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 2.8rem;">
+        <a href="/?view=faq" class="btn btn-maroon" style="padding: 0.95rem 2.4rem;">
+          ✦ View All 12+ Sacred FAQs & Care Guidelines →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       12. CONTAINED LUXURY FOOTER (WHITE & ROYAL RED THEME)
+  ========================================================= -->
+  <footer class="refined-footer">
+  <div class="container"><div class="refined-footer-grid">
+    <div class="refined-footer-brand"><a href="/"><img src="{{ 'kavita-logo-gold.png' | asset_url }}" alt="Kavita Tarot" width="80" height="80"></a><h2>A little clarity.<br>A deeper connection.</h2><p>Personal tarot guidance, thoughtful rituals and sacred tools for your everyday journey.</p></div>
+    <div><h3>Explore</h3><a href="/?view=consultations">Tarot & healing</a><a href="/collections/all?cat=crystals">Healing crystals</a><a href="/collections/all?cat=tarot">Tarot & oracle decks</a><a href="/?view=about">Meet Kavita</a></div>
+    <div><h3>Here to help</h3><a href="/pages/contact">Contact us</a><a href="/?view=faq">Questions & care</a><a href="/cart">Your bag</a><a href="/?view=consultations">Book a reading</a></div>
+  </div><div class="refined-footer-note">Tarot and energy practices offer personal and spiritual reflection. They do not replace professional medical, legal or financial advice.</div><div class="refined-footer-bottom"><span>© 2026 Kavita Tarot Reader</span><span>Thoughtfully chosen. Personally guided.</span></div></div>
+</footer>
+
+  <!-- =========================================================
+       13. CART DRAWER FLYOUT
+  ========================================================= -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <div style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--m-text-dark); font-weight: 700;">
+        Your Sacred Cart (<span id="cartCountHeader">0</span>)
+      </div>
+      <button onclick="closeCart()" style="background: none; border: none; color: var(--m-text-dark); font-size: 1.5rem; cursor: pointer;">✕</button>
+    </div>
+
+    <!-- Free Shipping Unlock Meter -->
+    <div class="cart-progress-bar-wrap">
+      <div id="shippingProgressText">✦ Add ₹999 for FREE Express Delivery & Vedic Gift!</div>
+      <div class="cart-progress-bar">
+        <div class="cart-progress-fill" id="shippingProgressFill" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <div class="cart-body" id="cartItemsList">
+      <!-- Populated by JavaScript -->
+      <div style="text-align: center; color: var(--m-text-muted); padding: 3rem 1rem;">
+        <div style="font-size: 3rem; margin-bottom: 1rem; color: var(--m-maroon);">📿</div>
+        <p style="font-weight: 600; color: var(--m-text-dark);">Your cart is empty.</p>
+        <p style="font-size: 0.85rem; margin-top: 0.5rem;">Explore our curated healing crystals and tarot decks.</p>
+      </div>
+    </div>
+
+    <div class="cart-footer">
+      <div id="cartReadingNotice" style="display: none; background: #FFF9F0; border-left: 3px solid #80142B; padding: 0.6rem 0.8rem; margin-bottom: 0.8rem; font-size: 0.8rem; color: #80142B; border-radius: 4px; text-align: left;">
+        ✦ <b>Channeled Consultation in Cart:</b> Readings & sessions are 100% prepaid online bookings (UPI / Cards). <i>Cash on Delivery (COD) is not available for readings.</i>
+      </div>
+      <div class="cart-subtotal-row">
+        <span>Subtotal:</span>
+        <span id="cartSubtotal" style="color: var(--m-maroon);">₹0</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+        <button class="btn btn-maroon checkout-cod-label" style="width: 100%; padding: 0.95rem;" onclick="checkoutCart()">
+          ✦ Proceed to Secure Checkout
+        </button>
+        <a href="/cart" class="btn btn-outline" style="width: 100%; padding: 0.75rem; text-align: center; display: block;">
+          View Dedicated Cart Page
+        </a>
+      </div>
+      <div style="text-align: center; font-size: 0.74rem; color: var(--m-text-muted); margin-top: 0.8rem;">
+        🔒 256-Bit SSL Encrypted · 100% Authentic Consecrated Items
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       14. QUICK VIEW PRODUCT MODAL
+  ========================================================= -->
+  <div class="modal-overlay" id="quickViewModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeQuickView()">✕</button>
+      <div id="quickViewContent">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       15. CONSULTATION INTAKE BOOKING MODAL (RESPONSIVE & SCROLLABLE)
+  ========================================================= -->
+  <div class="modal-overlay" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="modalServiceTitle">
+    <div class="modal-card">
+      <button type="button" class="modal-close" aria-label="Close booking" onclick="closeBookingModal()">✕</button>
+      
+      <div class="modal-header-section" style="padding-bottom: 0.75rem; border-bottom: 1px solid #f0e6d6; margin-bottom: 0.9rem;">
+        <div style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 700; color: var(--m-text-dark); margin-bottom: 0.2rem;" id="modalServiceTitle">
+          Book Tarot Consultation
+        </div>
+        <p style="color: var(--m-text-muted); font-size: 0.85rem; line-height: 1.5; margin: 0;">
+          Please share your birth details so Kavita can connect with your astrological energies.
+        </p>
+      </div>
+
+      <form id="bookingForm" onsubmit="handleBookingSubmit(event)" style="display: flex; flex-direction: column; flex: 1 1 auto; min-height: 0;">
+        <div class="modal-form-fields" style="overflow-y: auto; -webkit-overflow-scrolling: touch; padding-right: 4px; max-height: calc(85dvh - 190px); flex: 1 1 auto;">
+          <div class="form-group" style="margin-bottom: 0.9rem;">
+            <label class="form-label" for="clientName">Full Name *</label>
+            <input type="text" class="form-input" id="clientName" required placeholder="e.g. Priya Sharma">
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 0.9rem;">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" for="clientDob">Date of Birth *</label>
+              <input type="date" class="form-input" id="clientDob" required>
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" for="clientTime">Time of Birth</label>
+              <input type="time" class="form-input" id="clientTime" placeholder="If known">
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 0.9rem;">
+            <label class="form-label" for="clientPlace">Place of Birth *</label>
+            <input type="text" class="form-input" id="clientPlace" required placeholder="City, State (e.g. Pune, MH)">
+          </div>
+
+          <div class="form-group" style="margin-bottom: 0.9rem;">
+            <label class="form-label" for="clientPhone">WhatsApp Contact Number *</label>
+            <input type="tel" class="form-input" id="clientPhone" required placeholder="+91 93103 87104">
+          </div>
+
+          <div class="form-group" style="margin-bottom: 0.4rem;">
+            <label class="form-label" for="clientQuery">Core Life Question or Intention</label>
+            <textarea class="form-textarea" rows="2" id="clientQuery" placeholder="What area of life (Career, Relationship, Peace) requires deep clarity?"></textarea>
+          </div>
+        </div>
+
+        <div class="modal-action-footer" style="padding-top: 0.9rem; border-top: 1px solid #f0e6d6; margin-top: 0.75rem; flex-shrink: 0;">
+          <button type="submit" class="btn btn-maroon" style="width: 100%; padding: 0.9rem; font-weight: 700; font-size: 0.92rem; box-shadow: 0 4px 18px rgba(128, 20, 43, 0.25);">
+            ✦ Confirm & Connect on WhatsApp
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       16. QUICK SEARCH MODAL
+  ========================================================= -->
+  <div class="modal-overlay" id="searchModal">
+    <div class="modal-card" style="max-width: 520px;">
+      <button class="modal-close" onclick="closeSearchModal()">✕</button>
+      <div style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--m-text-dark); margin-bottom: 1.2rem;">
+        Search Sacred Store
+      </div>
+      <input type="text" class="form-input" id="searchBoxInput" placeholder="Type Tarot, Pyrite, Amethyst, Selenite, Readings..." oninput="handleSearch(this.value)" autofocus>
+      
+      <div id="searchResultsList" style="margin-top: 1.2rem; max-height: 280px; overflow-y: auto;">
+        <!-- Filter results -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       17. FLOATING WHATSAPP BUTTON
+  ========================================================= -->
+  
+
+  <!-- =========================================================
+       JAVASCRIPT: FULL INTERACTIVITY, CART, & TAROT ENGINE
+  ========================================================= -->
+  <!-- Persistent Store & Cart Engine -->
+  
+  
+
+  <script>
+
+    // Horizontal Carousel Smooth Scroll Helper
+    function scrollKavitaCarousel(trackId, direction) {
+      const track = document.getElementById(trackId);
+      if (!track) return;
+      const slide = track.querySelector('.kavita-carousel-slide');
+      const slideWidth = slide ? slide.offsetWidth : 320;
+      const amount = (slideWidth + 24) * direction;
+      track.scrollBy({ left: amount, behavior: 'smooth' });
+    }
+
+    // Filter Products by Category Tabs
+    function filterProducts(category, btnEl) {
+      if (btnEl) {
+        document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+        btnEl.classList.add('active');
+      }
+      const cards = document.querySelectorAll('.product-card');
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category') || '';
+        if (category === 'all' || cat.includes(category)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Filter Shop by clicking circles or concerns
+    function filterShop(term) {
+      const shopEl = document.getElementById('shop');
+      if (shopEl) {
+        shopEl.scrollIntoView({ behavior: 'smooth' });
+        filterProducts(term);
+      }
+    }
+
+    // Booking Intake Modal
+    function openBookingModal(serviceTitle) {
+      playSacredChime(528);
+      document.getElementById('modalServiceTitle').innerText = serviceTitle;
+      document.getElementById('bookingModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeBookingModal() {
+      document.getElementById('bookingModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function handleBookingSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('clientName').value;
+      const dob = document.getElementById('clientDob').value;
+      const time = document.getElementById('clientTime').value || 'Not provided';
+      const place = document.getElementById('clientPlace').value;
+      const phone = document.getElementById('clientPhone').value;
+      const query = document.getElementById('clientQuery').value || 'General life reading';
+      const service = document.getElementById('modalServiceTitle').innerText;
+
+      closeBookingModal();
+      
+      const p = typeof STORE_PRODUCTS !== 'undefined' ? (STORE_PRODUCTS.find(x => service.toLowerCase().includes(x.title.toLowerCase().slice(0, 10))) || STORE_PRODUCTS[0]) : null;
+      const vid = p?.variantId || 48490756374689;
+
+      fetch('/cart/update.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          note: `Booking: ${service} | Name: ${name} | Phone: ${phone} | DOB: ${dob} (${time}, ${place}) | Query: ${query}`,
+          attributes: {
+            'Client Name': name,
+            'Client Phone': phone,
+            'Date of Birth': dob,
+            'Birth Time & Place': `${time}, ${place}`,
+            'Reading Query': query
+          }
+        })
+      }).then(() => {
+        return fetch('/cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: vid, quantity: 1 })
+        });
+      }).then(() => {
+        window.location.href = '/checkout';
+      }).catch(() => {
+        window.location.href = '/checkout';
+      });
+    }
+
+    // Switch Premium / Standard Consultation Tiers
+    function switchTier(tier) {
+      const btnPrem = document.getElementById('btnTierPremium');
+      const btnStd = document.getElementById('btnTierStandard');
+      const r10 = document.getElementById('rate10');
+      const r20 = document.getElementById('rate20');
+      const r30 = document.getElementById('rate30');
+
+      if (tier === 'premium') {
+        btnPrem.classList.add('active');
+        btnStd.classList.remove('active');
+        r10.innerText = '₹1,555';
+        r20.innerText = '₹3,099';
+        r30.innerText = '₹4,444';
+      } else {
+        btnStd.classList.add('active');
+        btnPrem.classList.remove('active');
+        r10.innerText = '₹999';
+        r20.innerText = '₹1,999';
+        r30.innerText = '₹2,999';
+      }
+    }
+
+    // FAQ Accordion
+    function toggleFaq(el) {
+      const item = el.closest('.faq-item');
+      item.classList.toggle('active');
+    }
+
+    // Wishlist Heart Toggle
+    function toggleWishlist(btn, id) {
+      btn.classList.toggle('is-active');
+      const isActive = btn.classList.contains('is-active');
+      btn.innerHTML = isActive ? '♥' : '♡';
+      let count = parseInt(localStorage.getItem('kavita_wishlist_count') || '0', 10);
+      count = isActive ? count + 1 : Math.max(0, count - 1);
+      localStorage.setItem('kavita_wishlist_count', count);
+      const badge = document.getElementById('mobileWishlistCount');
+      if (badge) badge.innerText = count;
+    }
+
+    // Sync mobile cart count on load
+    document.addEventListener('DOMContentLoaded', function() {
+      const wCount = localStorage.getItem('kavita_wishlist_count') || '0';
+      const badge = document.getElementById('mobileWishlistCount');
+      if (badge) badge.innerText = wCount;
+    });
+  </script>
+
+  <!-- =========================================================
+       LUXURY MOBILE FLOATING BOTTOM NAVIGATION BAR
+       (With Highlighted Center Home Button)
+  ========================================================= -->
+  <nav class="kavita-mobile-bottom-nav" aria-label="Mobile Navigation">
+    <a href="/collections/all" class="mobile-nav-item">
+      <span class="mobile-nav-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+      </span>
+      <span class="mobile-nav-label">Shop</span>
+    </a>
+
+    <a href="/?view=consultations" class="mobile-nav-item">
+      <span class="mobile-nav-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+      </span>
+      <span class="mobile-nav-label">Readings</span>
+    </a>
+
+    <!-- Center Elevated Glowing Home Button -->
+    <a href="/" class="mobile-nav-item mobile-nav-item--center active" aria-label="Home">
+      <div class="mobile-nav-center-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+      </div>
+      <span class="mobile-nav-label">Home</span>
+    </a>
+
+    <a href="/collections/all" class="mobile-nav-item">
+      <span class="mobile-nav-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+      </span>
+      <span class="mobile-nav-label">Wishlist</span>
+      <span class="mobile-nav-badge" id="mobileWishlistCount">0</span>
+    </a>
+
+    <a href="javascript:void(0)" class="mobile-nav-item" onclick="openCart()">
+      <span class="mobile-nav-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+      </span>
+      <span class="mobile-nav-label">Cart</span>
+      <span class="mobile-nav-badge" id="mobileCartCount">0</span>
+    </a>
+  </nav>
+
+  <!-- =========================================================
+       SACRED SANCTUARY NEWSLETTER POP-UP (10% OFF FIRST ORDER)
+       Non-permanent: Appears once; dismissed permanently via localStorage
+  ========================================================= -->
+  <div id="kavitaNewsletterOverlay" class="kavita-welcome-overlay" role="dialog" aria-modal="true" aria-hidden="true" style="display: none;">
+    <div class="kavita-welcome-modal kavita-newsletter-modal">
+      <button type="button" class="kavita-welcome-close" id="kavitaNewsletterCloseBtn" aria-label="Close Pop-up">✕</button>
+      <div class="kavita-welcome-icon">💌</div>
+      <div class="kavita-welcome-badge">✦ SACRED SANCTUARY NEWSLETTER ✦</div>
+      <h3 class="kavita-welcome-title">Get 10% Off Your First Order</h3>
+      <p class="kavita-welcome-desc">
+        Subscribe to receive weekly cosmic horoscopes, moon ritual guidance, and an instant <strong>10% OFF coupon code</strong> for your first tarot consultation or crystal order.
+      </p>
+
+      <form id="kavitaNewsletterForm" class="kavita-newsletter-form" onsubmit="return handleNewsletterSubmit(event)">
+        <div class="kavita-newsletter-input-group">
+          <input
+            type="email"
+            id="kavitaNewsletterEmail"
+            name="email"
+            placeholder="Enter your email address..."
+            required
+            class="kavita-newsletter-input"
+            aria-label="Email address for sacred newsletter"
+          >
+          <button type="submit" class="kavita-newsletter-btn" id="kavitaNewsletterSubmitBtn">
+            Subscribe &amp; Get 10% Off
+          </button>
+        </div>
+      </form>
+
+      <div id="kavitaNewsletterSuccess" class="kavita-newsletter-success" style="display: none;">
+        <div class="kavita-newsletter-success-icon">✨</div>
+        <div class="kavita-newsletter-success-title">Welcome to the Sacred Circle!</div>
+        <div class="kavita-newsletter-success-code">Use Code: <strong>WELCOME10</strong> (10% OFF)</div>
+        <div class="kavita-newsletter-success-sub">Discount applied to your cart &amp; WhatsApp checkout!</div>
+      </div>
+
+      <div class="kavita-welcome-perks">
+        <span>✓ Weekly Cosmic Tarot Insights</span>
+        <span>✓ No Spam, Only Divine Guidance</span>
+      </div>
+      <div class="kavita-welcome-footer-note">
+        *We respect your privacy. You can unsubscribe at any time.
+      </div>
+    </div>
+  </div>
+
+  <!-- Whole Website Celestial Ice Effect -->
+  <script defer src="{{ 'ice-effect.js' | asset_url }}"></script>
+  
+  <script defer src="{{ 'sales-popup.js' | asset_url }}" defer></script>
+
+<script defer src="{{ 'parity-ui.js' | asset_url }}"></script><script defer src="{{ 'parity-page.js' | asset_url }}"></script>
+{% schema %}
+{"name": "Preview index", "settings": []}
+{% endschema %}

@@ -15,8 +15,8 @@
   <link rel="stylesheet" href="assets/vanikabir.css">
 
   <!-- Preload Critical Above-The-Fold Hero Assets (<1.5s Load Time) -->
-  <link rel="preload" as="image" href="assets/banner-desktop-readings-3x1.jpg" media="(min-width: 768px)" fetchpriority="high">
-  <link rel="preload" as="image" href="assets/banner-mobile-readings.jpg" media="(max-width: 767px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/banner-desktop-crystal-align-3x1.jpg" media="(min-width: 768px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/banner-mobile-crystal-align-4x5.jpg" media="(max-width: 767px)" fetchpriority="high">
   <link rel="preload" as="image" href="assets/kavita-logo-gold.png" type="image/png">
 
   <style>
@@ -1864,10 +1864,38 @@
       <div class="container kavita-hdr__container">
         <ul class="kavita-hdr__menu">
           <li class="kavita-hdr__menu-item"><a href="collections.html" class="kavita-hdr__menu-link">All Collections</a></li>
-          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=tarot" class="kavita-hdr__menu-link">Tarot Decks</a></li>
-          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=oracle" class="kavita-hdr__menu-link">Oracle Cards</a></li>
-          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=crystals" class="kavita-hdr__menu-link">Crystals & Gems</a></li>
-          <li class="kavita-hdr__menu-item"><a href="consultations.html" class="kavita-hdr__menu-link">Readings</a></li>
+          <li class="kavita-hdr__menu-item"><a href="consultations.html" class="kavita-hdr__menu-link">Tarot Readings</a></li>
+          <li class="kavita-hdr__menu-item kavita-hdr__menu-item--dropdown">
+            <a href="packages.html" class="kavita-hdr__menu-link">
+              Signature Packages
+              <svg class="kavita-hdr__caret" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </a>
+            <div class="kavita-hdr__dropdown">
+              <div class="kavita-hdr__dropdown-grid" style="grid-template-columns: repeat(2, 1fr); min-width: 520px; gap: 1.5rem;">
+                <div class="kavita-hdr__dropdown-col">
+                  <span class="kavita-hdr__dropdown-title">✦ Love &amp; Relationships</span>
+                  <a href="product.html?id=31">No Contact Situation (5 Card)</a>
+                  <a href="product.html?id=32">Future Spouse &amp; Destined Connection</a>
+                  <a href="product.html?id=33">Love &amp; Marriage Pack (8 Questions)</a>
+                  <a href="product.html?id=34">No Contact Situation (4 Questions)</a>
+                  <a href="product.html?id=37">Reunion Reading: Will They Return?</a>
+                </div>
+                <div class="kavita-hdr__dropdown-col">
+                  <span class="kavita-hdr__dropdown-title">✦ Healing &amp; Career Growth</span>
+                  <a href="product.html?id=35">Heart Consultation: 1:1 Healing</a>
+                  <a href="product.html?id=36">Career Growth &amp; Financial Path</a>
+                  <a href="product.html?id=38">Deep Insight Reading (8 Questions)</a>
+                  <div style="margin-top: 0.85rem; padding-top: 0.65rem; border-top: 1px dashed #ECE7DE;">
+                    <a href="packages.html" style="color: #80142B; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
+                      ✦ Explore All 8 Packages →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=bracelets" class="kavita-hdr__menu-link">Healing Bracelets</a></li>
+          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=crystals" class="kavita-hdr__menu-link">Crystals &amp; Carvings</a></li>
           <li class="kavita-hdr__menu-item"><a href="about.html" class="kavita-hdr__menu-link">About Kavita</a></li>
           <li class="kavita-hdr__menu-item"><a href="contact.html" class="kavita-hdr__menu-link">Contact</a></li>
         </ul>
@@ -1883,53 +1911,70 @@
     <div class="kavita-slider-container">
       <section class="kavita-slider-wrap" id="kavitaBannerSlider" aria-label="Featured Sacred Banners">
         <div class="kavita-slider" id="sliderTrack">
-          <!-- Slide 1: Tarot Readings (Clarity, Guidance, Higher Perspective) -->
+          <!-- Slide 1: Crystal Healing (Align Your Mind, Body & Energy) -->
           <div class="kavita-slider__slide is-active" data-index="0">
-            <a href="consultations.html" class="kavita-slider__link" aria-label="Tarot Readings - Clarity, Guidance, Higher Perspective">
+            <a href="collections.html?cat=crystals" class="kavita-slider__link" aria-label="Crystal Healing — Align Your Mind, Body & Energy — Explore Our Crystal Collection">
+              <picture class="kavita-slider__picture">
+                <source media="(max-width: 767px)" srcset="assets/banner-mobile-crystal-align-4x5.jpg">
+                <img
+                  src="assets/banner-desktop-crystal-align-3x1.jpg"
+                  alt="Crystal Healing — Align Your Mind, Body & Energy"
+                  class="kavita-slider__img"
+                  loading="eager"
+                  fetchpriority="high"
+                  width="2048"
+                  height="682"
+                >
+              </picture>
+            </a>
+          </div>
+
+          <!-- Slide 2: Crystal Healing (Dark Velvet — Balance · Cleanse · Energise) -->
+          <div class="kavita-slider__slide" data-index="1">
+            <a href="collections.html?cat=crystals" class="kavita-slider__link" aria-label="Crystal Healing — Balance, Cleanse, Energise — Explore Our Collection">
+              <picture class="kavita-slider__picture">
+                <source media="(max-width: 767px)" srcset="assets/banner-mobile-crystal-velvet-4x5.jpg">
+                <img
+                  src="assets/banner-desktop-crystal-velvet-3x1.jpg"
+                  alt="Crystal Healing — Balance, Cleanse, Energise — Explore Sacred Crystals"
+                  class="kavita-slider__img"
+                  loading="lazy"
+                  width="2048"
+                  height="682"
+                >
+              </picture>
+            </a>
+          </div>
+
+          <!-- Slide 3: Discover the Power of Crystals (Natural Energy, Balance & Healing) -->
+          <div class="kavita-slider__slide" data-index="2">
+            <a href="collections.html?cat=crystals" class="kavita-slider__link" aria-label="Discover the Power of Crystals — Natural Energy & Healing">
+              <picture class="kavita-slider__picture">
+                <source media="(max-width: 767px)" srcset="assets/banner-mobile-crystal-power-4x5.jpg">
+                <img
+                  src="assets/banner-desktop-crystal-power-3x1.jpg"
+                  alt="Discover the Power of Crystals — Natural Energy & Emotional Balance"
+                  class="kavita-slider__img"
+                  loading="lazy"
+                  width="2048"
+                  height="682"
+                >
+              </picture>
+            </a>
+          </div>
+
+          <!-- Slide 4: Sacred Tarot Readings (Clarity, Guidance, Higher Perspective) -->
+          <div class="kavita-slider__slide" data-index="3">
+            <a href="consultations.html" class="kavita-slider__link" aria-label="Sacred Tarot Readings — Clarity, Guidance & Higher Perspective">
               <picture class="kavita-slider__picture">
                 <source media="(max-width: 767px)" srcset="assets/banner-mobile-readings.jpg">
                 <img
                   src="assets/banner-desktop-readings-3x1.jpg"
-                  alt="Tarot Readings — Clarity, Guidance, Higher Perspective"
-                  class="kavita-slider__img"
-                  loading="eager"
-                  fetchpriority="high"
-                  width="1024"
-                  height="341"
-                >
-              </picture>
-            </a>
-          </div>
-
-          <!-- Slide 2: Sacred Tarot for a Brighter Tomorrow -->
-          <div class="kavita-slider__slide" data-index="1">
-            <a href="collections.html" class="kavita-slider__link" aria-label="Sacred Tarot for a Brighter Tomorrow — Shop Collection">
-              <picture class="kavita-slider__picture">
-                <source media="(max-width: 767px)" srcset="assets/banner-1-mobile.jpg">
-                <img
-                  src="assets/banner-desktop-collection-3x1.jpg"
-                  alt="Sacred Tarot for a Brighter Tomorrow"
+                  alt="Personalized Tarot Readings — Clarity, Guidance & Higher Perspective"
                   class="kavita-slider__img"
                   loading="lazy"
-                  width="1024"
-                  height="341"
-                >
-              </picture>
-            </a>
-          </div>
-
-          <!-- Slide 3: Let The Cards Reveal Your Guidance -->
-          <div class="kavita-slider__slide" data-index="2">
-            <a href="consultations.html" class="kavita-slider__link" aria-label="Let The Cards Reveal Your Guidance, Clarity & A Brighter Tomorrow">
-              <picture class="kavita-slider__picture">
-                <source media="(max-width: 767px)" srcset="assets/banner-2-mobile.jpg">
-                <img
-                  src="assets/banner-desktop-guidance-3x1.jpg"
-                  alt="Let The Cards Reveal Your Guidance, Clarity & A Brighter Tomorrow"
-                  class="kavita-slider__img"
-                  loading="lazy"
-                  width="1024"
-                  height="341"
+                  width="2048"
+                  height="682"
                 >
               </picture>
             </a>
@@ -1953,6 +1998,7 @@
           <button type="button" class="kavita-slider__dot is-active" data-slide="0" aria-label="Go to slide 1" aria-selected="true"></button>
           <button type="button" class="kavita-slider__dot" data-slide="1" aria-label="Go to slide 2" aria-selected="false"></button>
           <button type="button" class="kavita-slider__dot" data-slide="2" aria-label="Go to slide 3" aria-selected="false"></button>
+          <button type="button" class="kavita-slider__dot" data-slide="3" aria-label="Go to slide 4" aria-selected="false"></button>
         </div>
       </section>
     </div>
@@ -2084,52 +2130,52 @@
       </div>
 
       <div class="categories-circle-row">
-        <!-- 1. Live Audio Readings -->
+        <!-- 1. Live Audio Calls -->
         <a href="consultations.html" class="cat-circle-card">
           <div class="cat-circle-avatar-wrap">
-            <img loading="lazy" decoding="async" class="cat-circle-img" src="assets/product-live-audio.jpg" alt="Live Audio Consultations">
+            <img loading="lazy" decoding="async" class="cat-circle-img" src="assets/product-call-10min.jpg" alt="Live Audio Consultations">
           </div>
-          <div class="cat-circle-name">Live Audio Readings</div>
+          <div class="cat-circle-name">Audio Calls</div>
         </a>
 
-        <!-- 2. WhatsApp Voice Notes -->
+        <!-- 2. Live Video Calls -->
         <a href="consultations.html" class="cat-circle-card">
           <div class="cat-circle-avatar-wrap">
-            <img loading="lazy" decoding="async" class="cat-circle-img" src="assets/product-voice-note.jpg" alt="WhatsApp Voice Note Readings">
+            <img loading="lazy" decoding="async" class="cat-circle-img" src="assets/product-call-30min.jpg" alt="Live Video Consultations">
+          </div>
+          <div class="cat-circle-name">Video Calls</div>
+        </a>
+
+        <!-- 3. WhatsApp Voice Notes -->
+        <a href="consultations.html" class="cat-circle-card">
+          <div class="cat-circle-avatar-wrap">
+            <img loading="lazy" decoding="async" class="cat-circle-img" src="assets/product-voice-2q.jpg" alt="Voice Note Readings">
           </div>
           <div class="cat-circle-name">Voice Notes</div>
         </a>
 
-        <!-- 3. Cord-Cutting Healing -->
-        <a href="consultations.html" class="cat-circle-card">
+        <!-- 4. Sacred Energy Circles -->
+        <a href="collections.html?cat=readings" class="cat-circle-card">
           <div class="cat-circle-avatar-wrap">
-            <img loading="lazy" decoding="async" class="cat-circle-img" src="assets/product-cord-cutting.jpg" alt="Distance Cord-Cutting & Healing">
+            <img loading="lazy" decoding="async" class="cat-circle-img" src="assets/product-energy-circle.jpg" alt="Personalised Energy Circles">
           </div>
-          <div class="cat-circle-name">Cord-Cutting</div>
+          <div class="cat-circle-name">Energy Circles</div>
         </a>
 
-        <!-- 4. Tibetan Lamafera -->
-        <a href="consultations.html" class="cat-circle-card">
+        <!-- 5. Healing Gemstone Bracelets -->
+        <a href="collections.html?cat=bracelets" class="cat-circle-card">
           <div class="cat-circle-avatar-wrap">
-            <img loading="lazy" decoding="async" class="cat-circle-img" src="assets/product-lamafera.jpg" alt="Tibetan Lamafera Energy Healing">
+            <img loading="lazy" decoding="async" class="cat-circle-img" src="assets/product-seven-chakra-bracelet.png" alt="Healing Gemstone Bracelets">
           </div>
-          <div class="cat-circle-name">Lamafera Healing</div>
+          <div class="cat-circle-name">Healing Bracelets</div>
         </a>
 
-        <!-- 5. Healing Crystals -->
+        <!-- 6. Healing Crystals & Carvings -->
         <a href="collections.html?cat=crystals" class="cat-circle-card">
           <div class="cat-circle-avatar-wrap">
-            <img loading="lazy" decoding="async" class="cat-circle-img" src="assets/crystal-pyrite.jpg" alt="Healing Crystals">
+            <img loading="lazy" decoding="async" class="cat-circle-img" src="assets/product-citrine.png" alt="Healing Crystals">
           </div>
           <div class="cat-circle-name">Healing Crystals</div>
-        </a>
-
-        <!-- 6. Sacred Tarot Decks -->
-        <a href="collections.html?cat=tarot" class="cat-circle-card">
-          <div class="cat-circle-avatar-wrap">
-            <img loading="lazy" decoding="async" class="cat-circle-img" src="assets/deck-gold-tarot.jpg" alt="Sacred Tarot Decks">
-          </div>
-          <div class="cat-circle-name">Sacred Decks</div>
         </a>
       </div>
     </div>
@@ -2162,7 +2208,7 @@
         </a>
 
         <!-- 2. Wealth & Career Abundance -->
-        <a href="product.html?id=7" class="luxury-intention-card">
+        <a href="product.html?id=20" class="luxury-intention-card">
           <div class="luxury-intention-icon-wrap">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="5"></circle>
@@ -2196,7 +2242,7 @@
         </a>
 
         <!-- 4. Cord-Cutting & Emotional Release -->
-        <a href="product.html?id=4" class="luxury-intention-card">
+        <a href="product.html?id=10" class="luxury-intention-card">
           <div class="luxury-intention-icon-wrap">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
@@ -2208,7 +2254,7 @@
         </a>
 
         <!-- 5. Aura Shielding & Purification -->
-        <a href="product.html?id=10" class="luxury-intention-card">
+        <a href="product.html?id=22" class="luxury-intention-card">
           <div class="luxury-intention-icon-wrap">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
@@ -2218,11 +2264,11 @@
           </div>
           <h3 class="luxury-intention-title">Aura Shielding & Cleansing</h3>
           <p class="luxury-intention-desc">Purify stagnant environmental energy, sweep away psychic debris, and protect your personal aura.</p>
-          <div class="luxury-intention-meta">Selenite & Crystal Cleansers <span>→</span></div>
+          <div class="luxury-intention-meta">Master Healer Quartz & Crystals <span>→</span></div>
         </a>
 
         <!-- 6. Spiritual Awakening & Guidance -->
-        <a href="collections.html?cat=tarot" class="luxury-intention-card">
+        <a href="collections.html?cat=readings" class="luxury-intention-card">
           <div class="luxury-intention-icon-wrap">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
@@ -2236,22 +2282,380 @@
     </div>
   </section>
 
+  
+
   <!-- =========================================================
-       6. INTERACTIVE SLIDER 1: FEATURED 1-ON-1 READINGS & ENERGY HEALING
-       (All 6 Verified Services in Responsive Carousel)
+       7. INTERACTIVE SLIDER 2: CURATED CRYSTALS & SACRED DECKS
+       (All 6 Verified Products in Responsive Carousel)
+  ========================================================= -->
+  <section id="crystals-slider" class="section-wrap" style="background: #FAF7F2; border-top: 1px solid var(--m-border); border-bottom: 1px solid var(--m-border);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">✦ 100% Authentic & Spiritually Cleansed ✦</div>
+        <h2 class="section-title">Sacred Gemstone Talismans & Healing Crystals</h2>
+        <p class="section-sub">100% genuine natural mineral specimens and consecrated gemstone talismans hand-selected and cleansed before shipping.</p>
+      </div>
+
+      <div class="kavita-carousel-outer">
+        <!-- Navigation Chevrons -->
+        <button class="kavita-carousel-arrow prev" onclick="moveCarousel('productsTrack', -1)" aria-label="Previous Offerings">‹</button>
+        <button class="kavita-carousel-arrow next" onclick="moveCarousel('productsTrack', 1)" aria-label="Next Offerings">›</button>
+
+        <!-- Carousel Track -->
+        <div class="kavita-carousel-track" id="productsTrack">
+
+          <!-- 1. Meditation Crystal Tumbles -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag">Bestseller · Meditation</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 18)">♡</button>
+                <a href="product.html?id=18">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/product-meditation-tumbles.jpg" alt="Meditation Crystal Tumbles">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">Healing Crystals & Carvings</div>
+                  <h4 class="product-title">
+                    <a href="product.html?id=18">Meditation Crystal Tumbles</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(285 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹999</span>
+                    <span class="compare-price">₹1,888</span>
+                    <span class="discount-pill">47% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>Clear Quartz, Amethyst & Rose Quartz Set</span>
+                    <span>Deepens breathwork, focus & calm meditation</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="addToCart('Meditation Crystal Tumbles', 999, 'assets/product-meditation-tumbles.jpg', 'meditation-crystal-tumbles')">
+                    ✦ Add to Bag
+                  </button>
+                  <a href="product.html?id=18" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Pyrite: The Golden Energy Booster -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag">Wealth Magnet #1</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 20)">♡</button>
+                <a href="product.html?id=20">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/product-pyrite-booster.png" alt="Pyrite: The Golden Energy Booster">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">Authentic Mineral Specimen</div>
+                  <h4 class="product-title">
+                    <a href="product.html?id=20">Pyrite: The Golden Energy Booster</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(410 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹2,121</span>
+                    <span class="compare-price">₹3,500</span>
+                    <span class="discount-pill">39% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>100% Genuine Natural Golden Pyrite</span>
+                    <span>Most powerful mineral linked to wealth attraction & luck</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="addToCart('Pyrite: The Golden Energy Booster', 2121, 'assets/product-pyrite-booster.png', 'pyrite-golden-energy-booster')">
+                    ✦ Add to Bag
+                  </button>
+                  <a href="product.html?id=20" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Citrine: The Stone of Joy & Abundance -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag">Merchant's Stone</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 21)">♡</button>
+                <a href="product.html?id=21">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/product-citrine.png" alt="Citrine: The Stone of Joy and Abundance">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">Natural Solar Gemstone</div>
+                  <h4 class="product-title">
+                    <a href="product.html?id=21">Citrine: The Stone of Joy & Abundance</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(360 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹2,555</span>
+                    <span class="compare-price">₹3,999</span>
+                    <span class="discount-pill">36% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>Radiates warm golden solar joy & prosperity</span>
+                    <span>Anchors positive vibrations in financial dealings</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="addToCart('Citrine: The Stone of Joy & Abundance', 2555, 'assets/product-citrine.png', 'citrine-stone-of-joy-abundance')">
+                    ✦ Add to Bag
+                  </button>
+                  <a href="product.html?id=21" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Clear Quartz: Master Healer & Energy Amplifier -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag">Master Healer</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 22)">♡</button>
+                <a href="product.html?id=22">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/product-clear-quartz.jpg" alt="Clear Quartz: The Master Healer">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">High Vibrational Quartz</div>
+                  <h4 class="product-title">
+                    <a href="product.html?id=22">Clear Quartz: Master Healer & Amplifier</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(290 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹1,555</span>
+                    <span class="compare-price">₹2,222</span>
+                    <span class="discount-pill">30% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>Universal energy amplifier & aura harmonizer</span>
+                    <span>Consecrated with Vedic mantras for deep focus</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="addToCart('Clear Quartz: Master Healer', 1555, 'assets/product-clear-quartz.jpg', 'clear-quartz-master-healer')">
+                    ✦ Add to Bag
+                  </button>
+                  <a href="product.html?id=22" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Rose Quartz Handcrafted Crystal Angel -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag">Guardian of Love</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 19)">♡</button>
+                <a href="product.html?id=19">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/product-rose-quartz-angel.jpg" alt="Rose Quartz Small Angel">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">Sacred Carving</div>
+                  <h4 class="product-title">
+                    <a href="product.html?id=19">Rose Quartz Handcrafted Crystal Angel</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(380 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹550</span>
+                    <span class="compare-price">₹999</span>
+                    <span class="discount-pill">45% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>Emissary of celestial comfort & heart healing</span>
+                    <span>Brings soothing peace to your personal altar or desk</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="addToCart('Rose Quartz Handcrafted Crystal Angel', 550, 'assets/product-rose-quartz-angel.jpg', 'rose-quartz-small-angel')">
+                    ✦ Add to Bag
+                  </button>
+                  <a href="product.html?id=19" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Seven Chakra Natural Stone Energy Alignment Bracelet -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag">Bestseller Bracelet</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 12)">♡</button>
+                <a href="product.html?id=12">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/product-seven-chakra-bracelet.png" alt="Seven Chakra Natural Stone Energy Bracelet">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">Gemstone Talisman Bracelet</div>
+                  <h4 class="product-title">
+                    <a href="product.html?id=12">Seven Chakra Natural Stone Energy Bracelet</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(510 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹1,555</span>
+                    <span class="compare-price">₹2,499</span>
+                    <span class="discount-pill">38% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>Natural Amethyst, Lapis, Carnelian, Jasper & Agate</span>
+                    <span>Aligns the 7 sacred body energy centers</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="addToCart('Seven Chakra Natural Stone Energy Bracelet', 1555, 'assets/product-seven-chakra-bracelet.png', 'seven-chakra-bracelet')">
+                    ✦ Add to Bag
+                  </button>
+                  <a href="product.html?id=12" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. Pyrite Money & Success Bracelet -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag">Abundance Booster</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 13)">♡</button>
+                <a href="product.html?id=13">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/product-pyrite-money-bracelet.jpg" alt="Pyrite Money & Success Bracelet">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">Gemstone Talisman Bracelet</div>
+                  <h4 class="product-title">
+                    <a href="product.html?id=13">Pyrite Money & Success Bracelet</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(470 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹1,555</span>
+                    <span class="compare-price">₹2,500</span>
+                    <span class="discount-pill">38% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>Vedic consecrated natural golden metallic pyrite beads</span>
+                    <span>Attracts prosperity, financial confidence & momentum</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="addToCart('Pyrite Money & Success Bracelet', 1555, 'assets/product-pyrite-money-bracelet.jpg', 'pyrite-money-success-bracelet')">
+                    ✦ Add to Bag
+                  </button>
+                  <a href="product.html?id=13" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 2.8rem;">
+        <a href="collections.html" class="btn btn-maroon" style="padding: 0.95rem 2.5rem;">
+          ✦ Explore All Collections & Spiritual Tools →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       LUXURY SECTION: SHOP BY ZODIAC SIGN (AFTER ALL PRODUCTS)
+       Zodiac Gemstone Bracelets & Astrological Energy Alignment
+  ========================================================= -->
+  <section id="shop-by-zodiac" class="zodiac-showcase-section">
+    <div class="container">
+      <div class="zodiac-showcase-card">
+        
+        <!-- Left: Studio Image Banner -->
+        <div class="zodiac-showcase-media">
+          <img src="assets/banner-zodiac-bracelets.jpg" alt="Zodiac Bracelets - Align Your Energy With The Stars" class="zodiac-showcase-img" loading="lazy">
+          <div class="zodiac-media-badge">
+            <div class="zodiac-media-badge-title">Zodiac Bracelets</div>
+            <div class="zodiac-media-badge-sub">Align Your Energy With The Stars</div>
+          </div>
+        </div>
+
+        <!-- Right: Editorial & CTA -->
+        <div class="zodiac-showcase-content">
+          <div class="zodiac-kicker">✦ Celestial Energy Alignment ✦</div>
+          <h2 class="zodiac-title">Shop by Zodiac Sign</h2>
+          <p class="zodiac-desc">
+            Discover our exclusive <b>Zodiac Bracelet Collection</b>, thoughtfully designed to complement your zodiac sign and personal style. Find your perfect match with beautiful natural stones, unique zodiac symbols, and timeless designs consecrated with Vedic mantras.
+          </p>
+
+          <!-- 12 Zodiac Pills Selector -->
+          <div class="zodiac-chips-wrap">
+            <a href="collections.html?cat=bracelets" class="zodiac-chip">♈ Aries</a>
+            <a href="collections.html?cat=bracelets" class="zodiac-chip">♉ Taurus</a>
+            <a href="collections.html?cat=bracelets" class="zodiac-chip">♊ Gemini</a>
+            <a href="collections.html?cat=bracelets" class="zodiac-chip">♋ Cancer</a>
+            <a href="collections.html?cat=bracelets" class="zodiac-chip">♌ Leo</a>
+            <a href="collections.html?cat=bracelets" class="zodiac-chip">♍ Virgo</a>
+            <a href="collections.html?cat=bracelets" class="zodiac-chip">♎ Libra</a>
+            <a href="collections.html?cat=bracelets" class="zodiac-chip">♏ Scorpio</a>
+            <a href="collections.html?cat=bracelets" class="zodiac-chip">♐ Sagittarius</a>
+            <a href="collections.html?cat=bracelets" class="zodiac-chip">♑ Capricorn</a>
+            <a href="collections.html?cat=bracelets" class="zodiac-chip">♒ Aquarius</a>
+            <a href="collections.html?cat=bracelets" class="zodiac-chip">♓ Pisces</a>
+          </div>
+
+          <div class="zodiac-btn-row">
+            <a href="collections.html?cat=bracelets" class="btn btn-gold" style="padding: 0.95rem 2.4rem; font-size: 0.92rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; display: inline-flex; align-items: center; gap: 0.6rem; border-radius: 8px;">
+              Shop Now <span>→</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       6. INTERACTIVE SLIDER: FEATURED 1-ON-1 READINGS & ENERGY HEALING
+       ✦ Personal Guidance Directly with Kavita ✦ (Placed After Zodiac Section)
   ========================================================= -->
   <section id="consultations-slider" class="section-wrap" style="background: #FFFFFF;">
     <div class="container">
       <div class="section-header">
         <div class="section-kicker">✦ Personal Guidance Directly with Kavita ✦</div>
         <h2 class="section-title">Featured Consultations & Energy Sessions</h2>
-        <p class="section-sub">Private 1-on-1 intuitive audio readings straight to WhatsApp, alongside master distance energy healing sessions.</p>
+        <p class="section-sub">Private 1-on-1 intuitive audio and video readings straight to WhatsApp, alongside master distance energy healing sessions.</p>
       </div>
 
       <div class="kavita-carousel-outer">
         <!-- Navigation Chevrons -->
-        
-        
+        <button class="kavita-carousel-arrow prev" onclick="moveCarousel('consultationsTrack', -1)" aria-label="Previous Offerings">‹</button>
+        <button class="kavita-carousel-arrow next" onclick="moveCarousel('consultationsTrack', 1)" aria-label="Next Offerings">›</button>
 
         <!-- Carousel Track -->
         <div class="kavita-carousel-track" id="consultationsTrack">
@@ -2260,33 +2664,33 @@
           <div class="kavita-carousel-slide">
             <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
               <div class="product-media">
-                <span class="product-badge-flag">Core Service · Live Audio</span>
+                <span class="product-badge-flag">Live Audio Consultation</span>
                 <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 1)">♡</button>
                 <a href="product.html?id=1">
-                  <img loading="lazy" decoding="async" class="product-img" src="assets/product-live-audio.jpg" alt="Live Audio Call Tarot Reading">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/product-call-10min.jpg" alt="Live Audio Call Tarot Reading">
                 </a>
               </div>
               <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                  <div class="product-category-sub">1-on-1 Live WhatsApp Session</div>
+                  <div class="product-category-sub">1-on-1 Live WhatsApp Audio</div>
                   <h4 class="product-title">
                     <a href="product.html?id=1">Live Audio Call Tarot Reading with Kavita</a>
                   </h4>
-                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(380 reviews)</span></div>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(420 reviews)</span></div>
                   <div class="product-pricing-row">
                     <span class="current-price">₹999 – ₹4,444</span>
-                    <span class="discount-pill">Standard & Premium</span>
+                    <span class="discount-pill">Urgent (Within 24 Hrs) Avail.</span>
                   </div>
                   <div class="product-features-bullet">
-                    <span>10, 20, or 30 Mins Live Audio Call</span>
-                    <span>Direct intuitive answers to your questions</span>
+                    <span>10 Mins (₹999 / ₹1,555) · 20 Mins (₹2,299 / ₹3,099) · 30 Mins (₹3,369 / ₹4,444)</span>
+                    <span>Direct intuitive answers to pressing love, career & life questions</span>
                   </div>
                 </div>
                 <div class="product-card-actions">
                   <button class="btn btn-maroon" onclick="openBookingModal('Live Audio Call Tarot Reading')">
                     ✦ Book Call
                   </button>
-                  <a href="product.html?id=1" class="btn btn-outline">
+                  <a href="consultations.html" class="btn btn-outline">
                     Details
                   </a>
                 </div>
@@ -2294,77 +2698,75 @@
             </div>
           </div>
 
-          <!-- 2. WhatsApp Voice Note Tarot Reading -->
+          <!-- 2. Live Video Call Tarot Reading with Kavita -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column; border: 1.5px solid #D4AF37;">
+              <div class="product-media">
+                <span class="product-badge-flag" style="background: #80142B; color: #FFF;">Face to Face Clarity</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 3)">♡</button>
+                <a href="consultations.html">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/product-call-30min.jpg" alt="Live Video Call Tarot Reading with Kavita">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">Direct WhatsApp Video Session</div>
+                  <h4 class="product-title">
+                    <a href="consultations.html">Live Video Call Tarot Reading with Kavita</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(340 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹1,888 – ₹5,499</span>
+                    <span class="discount-pill">Standard & Urgent (24 Hrs)</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>10 Mins: Standard ₹1,888 | Urgent (Within 24 Hrs) ₹2,199</span>
+                    <span>30 Mins: Standard ₹4,499 | Urgent (Within 24 Hrs) ₹5,499</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-gold" onclick="openBookingModal('Live Video Call Tarot Reading')">
+                    ✦ Book Video Call
+                  </button>
+                  <a href="consultations.html" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. WhatsApp Voice Note Tarot Reading -->
           <div class="kavita-carousel-slide">
             <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
               <div class="product-media">
-                <span class="product-badge-flag">Swift Delivery · ₹451</span>
-                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 2)">♡</button>
-                <a href="product.html?id=2">
-                  <img loading="lazy" decoding="async" class="product-img" src="assets/product-voice-note.jpg" alt="WhatsApp Voice Note Tarot Reading">
+                <span class="product-badge-flag">From ₹299 · 7 Days Delivery</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 4)">♡</button>
+                <a href="product.html?id=4">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/product-voice-2q.jpg" alt="WhatsApp Voice Note Tarot Reading">
                 </a>
               </div>
               <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
                   <div class="product-category-sub">WhatsApp Voice Memo</div>
                   <h4 class="product-title">
-                    <a href="product.html?id=2">Personalised WhatsApp Voice Note Reading (2 Qs)</a>
+                    <a href="product.html?id=4">Personalised WhatsApp Voice Note Reading</a>
                   </h4>
                   <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(520 reviews)</span></div>
                   <div class="product-pricing-row">
-                    <span class="current-price">₹451</span>
-                    <span class="compare-price">₹999</span>
-                    <span class="discount-pill">55% OFF</span>
+                    <span class="current-price">From ₹299</span>
+                    <span class="discount-pill">Urgent in 24 Hrs ₹499</span>
                   </div>
                   <div class="product-features-bullet">
-                    <span>Submit 2 Urgent Life Questions</span>
-                    <span>5–10 min detailed voice memo straight to WhatsApp</span>
+                    <span>1 Q ₹299 · 2 Qs ₹399 · 3 Qs ₹499 · Extra Qs ₹299 each</span>
+                    <span>Delivered as voice note in 7 days (or 24-hr urgent)</span>
                   </div>
                 </div>
                 <div class="product-card-actions">
-                  <button class="btn btn-maroon" onclick="openBookingModal('WhatsApp Voice Note Reading (₹451)')">
+                  <button class="btn btn-maroon" onclick="openBookingModal('WhatsApp Voice Note Reading (from ₹299)')">
                     ✦ Book Note
                   </button>
-                  <a href="product.html?id=2" class="btn btn-outline">
-                    Details
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 3. Situational Tarot Deep Dive -->
-          <div class="kavita-carousel-slide">
-            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
-              <div class="product-media">
-                <span class="product-badge-flag">Specialized Spread</span>
-                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 3)">♡</button>
-                <a href="product.html?id=3">
-                  <img loading="lazy" decoding="async" class="product-img" src="assets/product-situational.jpg" alt="Situational Tarot Deep Dive">
-                </a>
-              </div>
-              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                  <div class="product-category-sub">In-Depth Consultation</div>
-                  <h4 class="product-title">
-                    <a href="product.html?id=3">Situational Tarot Deep Dive Package</a>
-                  </h4>
-                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(215 reviews)</span></div>
-                  <div class="product-pricing-row">
-                    <span class="current-price">₹1,999</span>
-                    <span class="compare-price">₹3,499</span>
-                    <span class="discount-pill">43% OFF</span>
-                  </div>
-                  <div class="product-features-bullet">
-                    <span>Love, Career or Toxic Crossroads</span>
-                    <span>Includes card photos & action remedies</span>
-                  </div>
-                </div>
-                <div class="product-card-actions">
-                  <button class="btn btn-maroon" onclick="openBookingModal('Situational Tarot Deep Dive')">
-                    ✦ Book Session
-                  </button>
-                  <a href="product.html?id=3" class="btn btn-outline">
+                  <a href="consultations.html" class="btn btn-outline">
                     Details
                   </a>
                 </div>
@@ -2376,9 +2778,9 @@
           <div class="kavita-carousel-slide">
             <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
               <div class="product-media">
-                <span class="product-badge-flag">Emotional Release</span>
-                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 4)">♡</button>
-                <a href="product.html?id=4">
+                <span class="product-badge-flag">Complete Healing Session</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 10)">♡</button>
+                <a href="product.html?id=10">
                   <img loading="lazy" decoding="async" class="product-img" src="assets/product-cord-cutting.jpg" alt="Distance Cord-Cutting Healing">
                 </a>
               </div>
@@ -2386,24 +2788,24 @@
                 <div>
                   <div class="product-category-sub">Remote Pranic Healing</div>
                   <h4 class="product-title">
-                    <a href="product.html?id=4">Distance Cord-Cutting Healing Session</a>
+                    <a href="product.html?id=10">Distance Cord-Cutting Healing Session</a>
                   </h4>
                   <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(194 reviews)</span></div>
                   <div class="product-pricing-row">
-                    <span class="current-price">₹2,499</span>
-                    <span class="compare-price">₹3,999</span>
-                    <span class="discount-pill">38% OFF</span>
+                    <span class="current-price">₹5,001</span>
+                    <span class="compare-price">₹7,500</span>
+                    <span class="discount-pill">33% OFF</span>
                   </div>
                   <div class="product-features-bullet">
-                    <span>Severs ethereal ties to past relationships</span>
-                    <span>Restores emotional equilibrium & peace</span>
+                    <span>Severs ethereal ties to past relationships & toxic ties</span>
+                    <span>Restores emotional equilibrium & peace with Beeja Mantras</span>
                   </div>
                 </div>
                 <div class="product-card-actions">
-                  <button class="btn btn-maroon" onclick="openBookingModal('Distance Cord-Cutting Session')">
+                  <button class="btn btn-maroon" onclick="openBookingModal('Distance Cord-Cutting Session (₹5,001)')">
                     ✦ Reserve Session
                   </button>
-                  <a href="product.html?id=4" class="btn btn-outline">
+                  <a href="product.html?id=10" class="btn btn-outline">
                     Details
                   </a>
                 </div>
@@ -2411,38 +2813,38 @@
             </div>
           </div>
 
-          <!-- 5. Vortex of Blessings -->
+          <!-- 5. Personalised Sacred Energy Circle -->
           <div class="kavita-carousel-slide">
             <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
               <div class="product-media">
-                <span class="product-badge-flag">High Vibrational</span>
-                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 5)">♡</button>
-                <a href="product.html?id=5">
-                  <img loading="lazy" decoding="async" class="product-img" src="assets/product-vortex-blessings.jpg" alt="Vortex of Blessings">
+                <span class="product-badge-flag">Coded Energy Circle</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 8)">♡</button>
+                <a href="product.html?id=8">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/product-energy-circle.jpg" alt="Personalised Sacred Energy Circle">
                 </a>
               </div>
               <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                  <div class="product-category-sub">Coded Energy Circle</div>
+                  <div class="product-category-sub">Sacred Geometric Alignment</div>
                   <h4 class="product-title">
-                    <a href="product.html?id=5">Vortex of Blessings — Coded Energy Circle</a>
+                    <a href="product.html?id=8">Personalised Sacred Energy Circle</a>
                   </h4>
                   <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(167 reviews)</span></div>
                   <div class="product-pricing-row">
-                    <span class="current-price">₹3,100</span>
-                    <span class="compare-price">₹4,500</span>
-                    <span class="discount-pill">31% OFF</span>
+                    <span class="current-price">₹1,416</span>
+                    <span class="compare-price">₹1,888</span>
+                    <span class="discount-pill">25% OFF</span>
                   </div>
                   <div class="product-features-bullet">
                     <span>Opens stagnant abundance pathways</span>
-                    <span>Personalized sacred symbol guidance</span>
+                    <span>Personalized sacred symbol and switchword guidance</span>
                   </div>
                 </div>
                 <div class="product-card-actions">
-                  <button class="btn btn-maroon" onclick="openBookingModal('Vortex of Blessings Circle')">
-                    ✦ Reserve Session
+                  <button class="btn btn-maroon" onclick="openBookingModal('Personalised Sacred Energy Circle')">
+                    ✦ Reserve Circle
                   </button>
-                  <a href="product.html?id=5" class="btn btn-outline">
+                  <a href="product.html?id=8" class="btn btn-outline">
                     Details
                   </a>
                 </div>
@@ -2450,38 +2852,38 @@
             </div>
           </div>
 
-          <!-- 6. Lamafera Ancient Tibetan Healing -->
+          <!-- 6. Ancient Nordic Rune Reading -->
           <div class="kavita-carousel-slide">
             <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
               <div class="product-media">
-                <span class="product-badge-flag">Ancient Monk Modality</span>
-                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 6)">♡</button>
-                <a href="product.html?id=6">
-                  <img loading="lazy" decoding="async" class="product-img" src="assets/product-lamafera.jpg" alt="Lamafera Energy Healing">
+                <span class="product-badge-flag">Elder Futhark</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 7)">♡</button>
+                <a href="product.html?id=7">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/product-rune-reading.jpg" alt="Ancient Nordic Rune Reading">
                 </a>
               </div>
               <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                  <div class="product-category-sub">Sacred Tibetan Healing</div>
+                  <div class="product-category-sub">Primal Norse Divination</div>
                   <h4 class="product-title">
-                    <a href="product.html?id=6">Lamafera Ancient Tibetan Energy Healing</a>
+                    <a href="product.html?id=7">Ancient Nordic Rune Reading Session</a>
                   </h4>
-                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(142 reviews)</span></div>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(118 reviews)</span></div>
                   <div class="product-pricing-row">
-                    <span class="current-price">₹3,500</span>
-                    <span class="compare-price">₹5,500</span>
-                    <span class="discount-pill">36% OFF</span>
+                    <span class="current-price">₹3,333</span>
+                    <span class="compare-price">₹4,999</span>
+                    <span class="discount-pill">Special</span>
                   </div>
                   <div class="product-features-bullet">
-                    <span>Dissolves deep karmic & fear blockages</span>
-                    <span>Infused with sacred Tibetan symbols</span>
+                    <span>Deep karmic roots, hidden obstacles & primal alignment</span>
+                    <span>Detailed photo spread and voice recording included</span>
                   </div>
                 </div>
                 <div class="product-card-actions">
-                  <button class="btn btn-maroon" onclick="openBookingModal('Lamafera Ancient Tibetan Healing')">
-                    ✦ Reserve Session
+                  <button class="btn btn-maroon" onclick="openBookingModal('Ancient Nordic Rune Reading')">
+                    ✦ Reserve Reading
                   </button>
-                  <a href="product.html?id=6" class="btn btn-outline">
+                  <a href="product.html?id=7" class="btn btn-outline">
                     Details
                   </a>
                 </div>
@@ -2501,213 +2903,93 @@
   </section>
 
   <!-- =========================================================
-       7. INTERACTIVE SLIDER 2: CURATED CRYSTALS & SACRED DECKS
-       (All 6 Verified Products in Responsive Carousel)
+       SIGNATURE TAROT READING & HEALING PACKAGES (8 TARGETED PACKAGES)
   ========================================================= -->
-  <section id="crystals-slider" class="section-wrap" style="background: #FAF7F2; border-top: 1px solid var(--m-border); border-bottom: 1px solid var(--m-border);">
+  <section id="signature-packages-slider" class="section-wrap" style="background: #FAF7F2; border-top: 1px solid var(--m-border); border-bottom: 1px solid var(--m-border);">
     <div class="container">
       <div class="section-header">
-        <div class="section-kicker">✦ 100% Authentic & Spiritually Cleansed ✦</div>
-        <h2 class="section-title">Curated Crystals & Sacred Tarot Decks</h2>
-        <p class="section-sub">Genuine mineral specimens and gold-foil tarot instruments hand-selected and cleansed before shipping.</p>
+        <div class="section-kicker">✦ Channeled Spiritual Solutions ✦</div>
+        <h2 class="section-title">Signature Reading & Healing Packages</h2>
+        <p class="section-sub">Targeted multi-card spreads, comprehensive soul guidance, and private healing sessions delivered to your WhatsApp within 3–4 days.</p>
       </div>
 
       <div class="kavita-carousel-outer">
-        <!-- Navigation Chevrons -->
-        
-        
+        <button class="kavita-carousel-arrow prev" onclick="moveCarousel('packagesTrack', -1)" aria-label="Previous Packages">‹</button>
+        <button class="kavita-carousel-arrow next" onclick="moveCarousel('packagesTrack', 1)" aria-label="Next Packages">›</button>
 
-        <!-- Carousel Track -->
-        <div class="kavita-carousel-track" id="productsTrack">
+        <div class="kavita-carousel-track" id="packagesTrack">
 
-          <!-- 1. Natural Golden Pyrite Wealth Cluster -->
+          <!-- 1. No Contact Situation (5 Card) -->
           <div class="kavita-carousel-slide">
             <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
               <div class="product-media">
-                <span class="product-badge-flag">Wealth Magnet #1</span>
-                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 7)">♡</button>
-                <a href="product.html?id=7">
-                  <img loading="lazy" decoding="async" class="product-img" src="assets/crystal-pyrite.jpg" alt="Natural Golden Pyrite Cluster">
+                <span class="product-badge-flag">Bestseller · Relationship</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 31)">♡</button>
+                <a href="product.html?id=31">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/package-no-contact-5card.jpg" alt="No Contact Situation Tarot Reading">
                 </a>
               </div>
               <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                  <div class="product-category-sub">Healing Mineral Cluster</div>
+                  <div class="product-category-sub">5 Card Voice Note Spread</div>
                   <h4 class="product-title">
-                    <a href="product.html?id=7">Natural Golden Pyrite Wealth & Abundance Cluster</a>
+                    <a href="product.html?id=31">No Contact Situation Tarot Reading</a>
                   </h4>
                   <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(310 reviews)</span></div>
                   <div class="product-pricing-row">
+                    <span class="current-price">₹799</span>
+                    <span class="compare-price">₹1,499</span>
+                    <span class="discount-pill">47% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>What they feel but don't say · Will they contact again & when</span>
+                    <span>Detailed voice note sent directly to WhatsApp within 3–4 days</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="addToCart('No Contact Situation Tarot Reading (5 Card Spread)', 799, 'assets/package-no-contact-5card.jpg', 'no-contact-situation-5-card-reading')">
+                    ✦ Add to Bag
+                  </button>
+                  <a href="product.html?id=31" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Future Spouse Reading -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag" style="background: #D4AF37; color: #1C1917;">Destined Connection</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 32)">♡</button>
+                <a href="product.html?id=32">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/package-future-spouse.jpg" alt="Future Spouse Reading">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">Soulmate & Marriage Destiny</div>
+                  <h4 class="product-title">
+                    <a href="product.html?id=32">Future Spouse & Destined Connection</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(460 reviews)</span></div>
+                  <div class="product-pricing-row">
                     <span class="current-price">₹1,499</span>
-                    <span class="compare-price">₹2,899</span>
-                    <span class="discount-pill">48% OFF</span>
-                  </div>
-                  <div class="product-features-bullet">
-                    <span>100% Natural Golden Metallic Mineral</span>
-                    <span>Amplifies workplace wealth & solar confidence</span>
-                  </div>
-                </div>
-                <div class="product-card-actions">
-                  <button class="btn btn-maroon" onclick="addToCart('Natural Golden Pyrite Wealth Cluster', 1499, 'assets/crystal-pyrite.jpg', 'natural-golden-pyrite-wealth-cluster')">
-                    ✦ Add to Cart
-                  </button>
-                  <a href="product.html?id=7" class="btn btn-outline">
-                    Details
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 2. Natural Raw Amethyst Cluster -->
-          <div class="kavita-carousel-slide">
-            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
-              <div class="product-media">
-                <span class="product-badge-flag">Intuition & Peace</span>
-                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 8)">♡</button>
-                <a href="product.html?id=8">
-                  <img loading="lazy" decoding="async" class="product-img" src="assets/crystal-amethyst.jpg" alt="Raw Amethyst Third-Eye Cluster">
-                </a>
-              </div>
-              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                  <div class="product-category-sub">Healing Mineral Cluster</div>
-                  <h4 class="product-title">
-                    <a href="product.html?id=8">Natural Raw Amethyst Calming & Third-Eye Cluster</a>
-                  </h4>
-                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(248 reviews)</span></div>
-                  <div class="product-pricing-row">
-                    <span class="current-price">₹1,299</span>
                     <span class="compare-price">₹2,499</span>
-                    <span class="discount-pill">48% OFF</span>
-                  </div>
-                  <div class="product-features-bullet">
-                    <span>Calms overactive minds & deepens sleep</span>
-                    <span>Ideal companion for meditation altars</span>
-                  </div>
-                </div>
-                <div class="product-card-actions">
-                  <button class="btn btn-maroon" onclick="addToCart('Natural Raw Amethyst Cluster', 1299, 'assets/crystal-amethyst.jpg', 'raw-amethyst-calming-intuition-cluster')">
-                    ✦ Add to Cart
-                  </button>
-                  <a href="product.html?id=8" class="btn btn-outline">
-                    Details
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 3. 7 Chakra Radiance Bracelet -->
-          <div class="kavita-carousel-slide">
-            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
-              <div class="product-media">
-                <span class="product-badge-flag">Bestseller Bracelet</span>
-                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 9)">♡</button>
-                <a href="product.html?id=9">
-                  <img loading="lazy" decoding="async" class="product-img" src="assets/crystal-chakra-bracelet.jpg" alt="7 Chakra Radiance Healing Bracelet">
-                </a>
-              </div>
-              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                  <div class="product-category-sub">Energized Gemstone Bracelet</div>
-                  <h4 class="product-title">
-                    <a href="product.html?id=9">7 Chakra Radiance Healing Energy Bracelet</a>
-                  </h4>
-                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(482 reviews)</span></div>
-                  <div class="product-pricing-row">
-                    <span class="current-price">₹899</span>
-                    <span class="compare-price">₹1,899</span>
-                    <span class="discount-pill">52% OFF</span>
-                  </div>
-                  <div class="product-features-bullet">
-                    <span>Natural Amethyst, Lapis, Carnelian & Jasper</span>
-                    <span>Balances 7 body chakras & kundalini flow</span>
-                  </div>
-                </div>
-                <div class="product-card-actions">
-                  <button class="btn btn-maroon" onclick="addToCart('7 Chakra Radiance Energy Bracelet', 899, 'assets/crystal-chakra-bracelet.jpg', '7-chakra-radiance-bracelet')">
-                    ✦ Add to Cart
-                  </button>
-                  <a href="product.html?id=9" class="btn btn-outline">
-                    Details
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 4. Raw Moroccan Selenite Wand -->
-          <div class="kavita-carousel-slide">
-            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
-              <div class="product-media">
-                <span class="product-badge-flag">Aura Cleanser</span>
-                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 10)">♡</button>
-                <a href="product.html?id=10">
-                  <img loading="lazy" decoding="async" class="product-img" src="assets/crystal-selenite-wand.jpg" alt="Moroccan Selenite Cleansing Wand">
-                </a>
-              </div>
-              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                  <div class="product-category-sub">Aura & Deck Cleanser</div>
-                  <h4 class="product-title">
-                    <a href="product.html?id=10">Raw Moroccan Selenite Energy Cleansing Wand</a>
-                  </h4>
-                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(175 reviews)</span></div>
-                  <div class="product-pricing-row">
-                    <span class="current-price">₹699</span>
-                    <span class="compare-price">₹1,299</span>
-                    <span class="discount-pill">46% OFF</span>
-                  </div>
-                  <div class="product-features-bullet">
-                    <span>Self-cleansing crystal from Morocco</span>
-                    <span>Cleanses tarot decks & personal aura</span>
-                  </div>
-                </div>
-                <div class="product-card-actions">
-                  <button class="btn btn-maroon" onclick="addToCart('Raw Moroccan Selenite Cleansing Wand', 699, 'assets/crystal-selenite-wand.jpg', 'moroccan-selenite-cleansing-wand')">
-                    ✦ Add to Cart
-                  </button>
-                  <a href="product.html?id=10" class="btn btn-outline">
-                    Details
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 5. Sacred Gold-Foil Tarot Deck -->
-          <div class="kavita-carousel-slide">
-            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
-              <div class="product-media">
-                <span class="product-badge-flag">Luxury Deck</span>
-                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 11)">♡</button>
-                <a href="product.html?id=11">
-                  <img loading="lazy" decoding="async" class="product-img" src="assets/deck-gold-tarot.jpg" alt="Sacred Gold-Foil Tarot Deck">
-                </a>
-              </div>
-              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                  <div class="product-category-sub">78-Card Tarot Set</div>
-                  <h4 class="product-title">
-                    <a href="product.html?id=11">Sacred Gold-Foil Tarot Deck (Major & Minor)</a>
-                  </h4>
-                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(228 reviews)</span></div>
-                  <div class="product-pricing-row">
-                    <span class="current-price">₹1,899</span>
-                    <span class="compare-price">₹3,200</span>
                     <span class="discount-pill">40% OFF</span>
                   </div>
                   <div class="product-features-bullet">
-                    <span>Shimmering gold-foil detailing on velvety matte</span>
-                    <span>Includes upright & reversed guidebook</span>
+                    <span>Who your spouse is (Looks, Personality) · How & where you meet</span>
+                    <span>Divine timeline of union & angel guidance (Sent in 3–4 days)</span>
                   </div>
                 </div>
                 <div class="product-card-actions">
-                  <button class="btn btn-maroon" onclick="addToCart('Sacred Gold-Foil Tarot Deck', 1899, 'assets/deck-gold-tarot.jpg', 'sacred-gold-foil-major-arcana-deck')">
-                    ✦ Add to Cart
+                  <button class="btn btn-maroon" onclick="addToCart('Future Spouse & Destined Connection Tarot Reading', 1499, 'assets/package-future-spouse.jpg', 'future-spouse-reading')">
+                    ✦ Add to Bag
                   </button>
-                  <a href="product.html?id=11" class="btn btn-outline">
+                  <a href="product.html?id=32" class="btn btn-outline">
                     Details
                   </a>
                 </div>
@@ -2715,38 +2997,233 @@
             </div>
           </div>
 
-          <!-- 6. Celestial Moon Oracle Cards -->
+          <!-- 3. Love & Marriage Pack (8 Questions) -->
           <div class="kavita-carousel-slide">
             <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
               <div class="product-media">
-                <span class="product-badge-flag">Intuition Deck</span>
-                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 12)">♡</button>
-                <a href="product.html?id=12">
-                  <img loading="lazy" decoding="async" class="product-img" src="assets/deck-moon-oracle.jpg" alt="Celestial Moon Oracle Cards">
+                <span class="product-badge-flag">High Accuracy · 8 Questions</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 33)">♡</button>
+                <a href="product.html?id=33">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/package-love-marriage-8q.jpg" alt="Love & Marriage Pack">
                 </a>
               </div>
               <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                  <div class="product-category-sub">44 Affirmation Cards</div>
+                  <div class="product-category-sub">Comprehensive 8Q Spread</div>
                   <h4 class="product-title">
-                    <a href="product.html?id=12">Celestial Moon & Intuition Oracle Cards</a>
+                    <a href="product.html?id=33">Love & Marriage Pack (8 Questions)</a>
                   </h4>
-                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(164 reviews)</span></div>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(520 reviews)</span></div>
                   <div class="product-pricing-row">
-                    <span class="current-price">₹1,499</span>
-                    <span class="compare-price">₹2,600</span>
-                    <span class="discount-pill">42% OFF</span>
+                    <span class="current-price">₹1,999</span>
+                    <span class="compare-price">₹3,499</span>
+                    <span class="discount-pill">43% OFF</span>
                   </div>
                   <div class="product-features-bullet">
-                    <span>Lunar cycles & heart-centered affirmations</span>
-                    <span>Ideal for morning pulls & evening reflection</span>
+                    <span>Partner true feelings · Timeline for proposal & wedding</span>
+                    <span>Love vs arranged · Blockages & remedies (Sent in 3–4 days)</span>
                   </div>
                 </div>
                 <div class="product-card-actions">
-                  <button class="btn btn-maroon" onclick="addToCart('Celestial Moon Oracle Cards', 1499, 'assets/deck-moon-oracle.jpg', 'celestial-moon-intuition-oracle-cards')">
-                    ✦ Add to Cart
+                  <button class="btn btn-maroon" onclick="addToCart('Love & Marriage Pack (8 Questions In-Depth Reading)', 1999, 'assets/package-love-marriage-8q.jpg', 'love-marriage-pack-8-questions')">
+                    ✦ Add to Bag
                   </button>
-                  <a href="product.html?id=12" class="btn btn-outline">
+                  <a href="product.html?id=33" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. No Contact Situation Pack (4 Questions) -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag">Reconnection Clarity</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 34)">♡</button>
+                <a href="product.html?id=34">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/package-no-contact-4q.jpg" alt="No Contact Situation Pack">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">4 Core Questions Reading</div>
+                  <h4 class="product-title">
+                    <a href="product.html?id=34">No Contact Situation Pack (4 Questions)</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(275 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹799</span>
+                    <span class="compare-price">₹1,299</span>
+                    <span class="discount-pill">38% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>Why no-contact happened · What they feel now · Will they reach out</span>
+                    <span>Delivered as focused WhatsApp voice note within 3–4 days</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="addToCart('No Contact Situation Pack (4 Questions Reading)', 799, 'assets/package-no-contact-4q.jpg', 'no-contact-situation-pack-4-questions')">
+                    ✦ Add to Bag
+                  </button>
+                  <a href="product.html?id=34" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Heart Consultation -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column; border: 1.5px solid #80142B;">
+              <div class="product-media">
+                <span class="product-badge-flag" style="background: #80142B; color: #FFF;">VIP Deep Healing</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 35)">♡</button>
+                <a href="product.html?id=35">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/package-heart-consultation.jpg" alt="Heart Consultation">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">1:1 Private Session + 7-Day Support</div>
+                  <h4 class="product-title">
+                    <a href="product.html?id=35">Heart Consultation (Deep Transformation)</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(180 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹8,888</span>
+                    <span class="compare-price">₹12,999</span>
+                    <span class="discount-pill">32% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>1:1 30–45 Min Voice/Video Call · Chakra Scan & Heart Rituals</span>
+                    <span>Includes 7-Day continuous follow-up support directly with Kavita</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="addToCart('Heart Consultation: 1:1 Private Healing & Transformation', 8888, 'assets/package-heart-consultation.jpg', 'heart-consultation-private-healing')">
+                    ✦ Add to Bag
+                  </button>
+                  <a href="product.html?id=35" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Career Growth Reading -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag">Career & Wealth</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 36)">♡</button>
+                <a href="product.html?id=36">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/package-career-growth.jpg" alt="Career Growth Reading">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">Professional & Financial Clarity</div>
+                  <h4 class="product-title">
+                    <a href="product.html?id=36">Career Growth & Financial Trajectory</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(390 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹1,099</span>
+                    <span class="compare-price">₹1,899</span>
+                    <span class="discount-pill">42% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>Job change timing · Hidden talents · Financial outlook & remedies</span>
+                    <span>Delivered as personalized voice note within 3–4 days</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="addToCart('Career Growth & Professional Trajectory Tarot Reading', 1099, 'assets/package-career-growth.jpg', 'career-growth-reading')">
+                    ✦ Add to Bag
+                  </button>
+                  <a href="product.html?id=36" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. Reunion Reading -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag">Reunion & Timing</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 37)">♡</button>
+                <a href="product.html?id=37">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/package-reunion-reading.jpg" alt="Reunion Reading">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">Reconciliation Guidance</div>
+                  <h4 class="product-title">
+                    <a href="product.html?id=37">Reunion Reading: Path to Reconnection</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(415 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹1,099</span>
+                    <span class="compare-price">₹1,899</span>
+                    <span class="discount-pill">42% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>Chances of reunion · Their next move · Timeline & divine signs</span>
+                    <span>If no reunion, ask 3 custom questions! (Sent in 3–4 days)</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="addToCart('Reunion Reading: Path to Reconnection & Next Move', 1099, 'assets/package-reunion-reading.jpg', 'reunion-reading')">
+                    ✦ Add to Bag
+                  </button>
+                  <a href="product.html?id=37" class="btn btn-outline">
+                    Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8. Deep Insight Reading (8 Questions) -->
+          <div class="kavita-carousel-slide">
+            <div class="product-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="product-media">
+                <span class="product-badge-flag" style="background: #D4AF37; color: #1C1917;">Multi-Deck Soul Spread</span>
+                <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, 38)">♡</button>
+                <a href="product.html?id=38">
+                  <img loading="lazy" decoding="async" class="product-img" src="assets/package-deep-insight-8q.jpg" alt="Deep Insight Reading">
+                </a>
+              </div>
+              <div class="product-info-wrap" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="product-category-sub">8 Custom Questions</div>
+                  <h4 class="product-title">
+                    <a href="product.html?id=38">Deep Insight Reading (8 Questions)</a>
+                  </h4>
+                  <div class="product-reviews-stars">★★★★★ <span class="product-reviews-count">(580 reviews)</span></div>
+                  <div class="product-pricing-row">
+                    <span class="current-price">₹1,999</span>
+                    <span class="compare-price">₹3,299</span>
+                    <span class="discount-pill">39% OFF</span>
+                  </div>
+                  <div class="product-features-bullet">
+                    <span>Ask 8 questions on any topic · Multi-deck Tarot & Angel spread</span>
+                    <span>Comprehensive detailed voice recording (Sent in 3–4 days)</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn btn-maroon" onclick="addToCart('Deep Insight Reading (8 Custom Questions of Your Choice)', 1999, 'assets/package-deep-insight-8q.jpg', 'deep-insight-reading-8-questions')">
+                    ✦ Add to Bag
+                  </button>
+                  <a href="product.html?id=38" class="btn btn-outline">
                     Details
                   </a>
                 </div>
@@ -2758,8 +3235,8 @@
       </div>
 
       <div style="text-align: center; margin-top: 2.8rem;">
-        <a href="collections.html" class="btn btn-maroon" style="padding: 0.95rem 2.5rem;">
-          ✦ Explore All Collections & Spiritual Tools →
+        <a href="consultations.html" class="btn btn-maroon" style="padding: 0.95rem 2.5rem;">
+          ✦ Explore All Reading Packages & Book Slot →
         </a>
       </div>
     </div>
@@ -3043,13 +3520,16 @@
     </div>
 
     <div class="cart-footer">
+      <div id="cartReadingNotice" style="display: none; background: #FFF9F0; border-left: 3px solid #80142B; padding: 0.6rem 0.8rem; margin-bottom: 0.8rem; font-size: 0.8rem; color: #80142B; border-radius: 4px; text-align: left;">
+        ✦ <b>Channeled Consultation in Cart:</b> Readings & sessions are 100% prepaid online bookings (UPI / Cards). <i>Cash on Delivery (COD) is not available for readings.</i>
+      </div>
       <div class="cart-subtotal-row">
         <span>Subtotal:</span>
         <span id="cartSubtotal" style="color: var(--m-maroon);">₹0</span>
       </div>
       <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-        <button class="btn btn-maroon" style="width: 100%; padding: 0.95rem;" onclick="checkoutCart()">
-          ✦ Proceed to Secure Checkout (COD Avail.)
+        <button class="btn btn-maroon checkout-cod-label" style="width: 100%; padding: 0.95rem;" onclick="checkoutCart()">
+          ✦ Proceed to Secure Checkout
         </button>
         <a href="cart.html" class="btn btn-outline" style="width: 100%; padding: 0.75rem; text-align: center; display: block;">
           View Dedicated Cart Page
@@ -3114,7 +3594,7 @@
 
           <div class="form-group" style="margin-bottom: 0.9rem;">
             <label class="form-label" for="clientPhone">WhatsApp Contact Number *</label>
-            <input type="tel" class="form-input" id="clientPhone" required placeholder="+91 98765 43210">
+            <input type="tel" class="form-input" id="clientPhone" required placeholder="+91 93103 87104">
           </div>
 
           <div class="form-group" style="margin-bottom: 0.4rem;">
@@ -3222,9 +3702,35 @@
       const query = document.getElementById('clientQuery').value || 'General life reading';
       const service = document.getElementById('modalServiceTitle').innerText;
 
-      const waMsg = `*NEW BOOKING: ${service}*%0A%0A*Name:* ${name}%0A*DOB:* ${dob}%0A*Time:* ${time}%0A*Place:* ${place}%0A*Phone:* ${phone}%0A*Question:* ${query}%0A%0APlease confirm my appointment schedule!`;
-      window.open(`https://wa.me/919876543210?text=${waMsg}`, '_blank');
       closeBookingModal();
+      
+      const p = typeof STORE_PRODUCTS !== 'undefined' ? (STORE_PRODUCTS.find(x => service.toLowerCase().includes(x.title.toLowerCase().slice(0, 10))) || STORE_PRODUCTS[0]) : null;
+      const vid = p?.variantId || 48490756374689;
+
+      fetch('/cart/update.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          note: `Booking: ${service} | Name: ${name} | Phone: ${phone} | DOB: ${dob} (${time}, ${place}) | Query: ${query}`,
+          attributes: {
+            'Client Name': name,
+            'Client Phone': phone,
+            'Date of Birth': dob,
+            'Birth Time & Place': `${time}, ${place}`,
+            'Reading Query': query
+          }
+        })
+      }).then(() => {
+        return fetch('/cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: vid, quantity: 1 })
+        });
+      }).then(() => {
+        window.location.href = '/checkout';
+      }).catch(() => {
+        window.location.href = '/checkout';
+      });
     }
 
     // Switch Premium / Standard Consultation Tiers
@@ -3320,8 +3826,57 @@
     </a>
   </nav>
 
+  <!-- =========================================================
+       SACRED SANCTUARY NEWSLETTER POP-UP (10% OFF FIRST ORDER)
+       Non-permanent: Appears once; dismissed permanently via localStorage
+  ========================================================= -->
+  <div id="kavitaNewsletterOverlay" class="kavita-welcome-overlay" role="dialog" aria-modal="true" aria-hidden="true" style="display: none;">
+    <div class="kavita-welcome-modal kavita-newsletter-modal">
+      <button type="button" class="kavita-welcome-close" id="kavitaNewsletterCloseBtn" aria-label="Close Pop-up">✕</button>
+      <div class="kavita-welcome-icon">💌</div>
+      <div class="kavita-welcome-badge">✦ SACRED SANCTUARY NEWSLETTER ✦</div>
+      <h3 class="kavita-welcome-title">Get 10% Off Your First Order</h3>
+      <p class="kavita-welcome-desc">
+        Subscribe to receive weekly cosmic horoscopes, moon ritual guidance, and an instant <strong>10% OFF coupon code</strong> for your first tarot consultation or crystal order.
+      </p>
+
+      <form id="kavitaNewsletterForm" class="kavita-newsletter-form" onsubmit="return handleNewsletterSubmit(event)">
+        <div class="kavita-newsletter-input-group">
+          <input
+            type="email"
+            id="kavitaNewsletterEmail"
+            name="email"
+            placeholder="Enter your email address..."
+            required
+            class="kavita-newsletter-input"
+            aria-label="Email address for sacred newsletter"
+          >
+          <button type="submit" class="kavita-newsletter-btn" id="kavitaNewsletterSubmitBtn">
+            Subscribe &amp; Get 10% Off
+          </button>
+        </div>
+      </form>
+
+      <div id="kavitaNewsletterSuccess" class="kavita-newsletter-success" style="display: none;">
+        <div class="kavita-newsletter-success-icon">✨</div>
+        <div class="kavita-newsletter-success-title">Welcome to the Sacred Circle!</div>
+        <div class="kavita-newsletter-success-code">Use Code: <strong>WELCOME10</strong> (10% OFF)</div>
+        <div class="kavita-newsletter-success-sub">Discount applied to your cart &amp; WhatsApp checkout!</div>
+      </div>
+
+      <div class="kavita-welcome-perks">
+        <span>✓ Weekly Cosmic Tarot Insights</span>
+        <span>✓ No Spam, Only Divine Guidance</span>
+      </div>
+      <div class="kavita-welcome-footer-note">
+        *We respect your privacy. You can unsubscribe at any time.
+      </div>
+    </div>
+  </div>
+
   <!-- Whole Website Celestial Ice Effect -->
   <script src="assets/ice-effect.js"></script>
   <script src="assets/storefront-ui.js"></script>
+  <script src="assets/sales-popup.js" defer></script>
 </body>
 </html>

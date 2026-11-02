@@ -1,0 +1,160 @@
+<section class="k-section page-width">
+  <div class="k-heading" style="text-align: center; margin-bottom: 2.5rem; display: block;">
+    <p class="k-kicker">{{ section.settings.eyebrow | escape }}</p>
+    <h2>{{ section.settings.heading | escape }}</h2>
+    <p style="max-width: 650px; margin: 0 auto; color: var(--k-muted);">
+      {{ section.settings.copy | escape }}
+    </p>
+  </div>
+
+  <div class="k-quiz-card" style="background: var(--k-plum); border: 1px solid var(--k-gold); border-radius: 18px; padding: 3rem 2rem; max-width: 800px; margin: 0 auto; box-shadow: 0 15px 40px rgba(0,0,0,0.5);" data-kavita-quiz>
+    <div style="height: 4px; background: rgba(255, 255, 255, 0.1); border-radius: 999px; margin-bottom: 2rem; overflow: hidden;">
+      <div style="height: 100%; background: var(--k-gold); width: 20%;" data-quiz-bar></div>
+    </div>
+
+    <div data-quiz-step-view>
+      <div style="font-size: 0.8rem; color: var(--k-gold); text-transform: uppercase; letter-spacing: 0.15em; text-align: center; margin-bottom: 0.5rem;" data-quiz-indicator>Question 1 of 5</div>
+      <h3 style="font-size: 1.4rem; color: #fff; margin-bottom: 1.5rem; text-align: center;" data-quiz-title>What area of life is calling for your deepest focus right now?</h3>
+      <div style="display: grid; gap: 1rem; margin-bottom: 1.5rem;" data-quiz-options></div>
+    </div>
+
+    <div style="display: none; text-align: center;" data-quiz-result>
+      <div style="font-size: 3rem; color: var(--k-gold); margin-bottom: 0.5rem;">✦</div>
+      <h3 style="font-size: 1.8rem; color: #fff; margin-bottom: 1rem;">Your Suggested Guidance</h3>
+      <p style="color: var(--k-muted); max-width: 550px; margin: 0 auto 2rem; font-size: 0.95rem;">
+        Suggested for your current reflection. Connect with Kavita for a personal reading or explore supportive crystals.
+      </p>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; text-align: left; margin-bottom: 2rem;">
+        <div style="background: var(--k-midnight); border: 1px solid var(--k-gold); border-radius: 12px; padding: 1.5rem;">
+          <span style="font-size: 0.75rem; color: var(--k-gold); text-transform: uppercase;">✦ Suggested Reading</span>
+          <h4 style="font-size: 1.2rem; color: #fff; margin: 0.5rem 0;">Audio Call Tarot Reading</h4>
+          <p style="font-size: 0.85rem; color: var(--k-muted); margin-bottom: 1rem;">Personal 1-on-1 audio session on WhatsApp focused on your questions.</p>
+          {% if section.settings.reading_product != blank %}
+            <a class="button" href="{{ section.settings.reading_product.url }}">Select Duration & Book</a>
+          {% else %}
+            <a class="button" href="/pages/book-online">Book Online</a>
+          {% endif %}
+        </div>
+
+        <div style="background: var(--k-midnight); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 1.5rem;">
+          <span style="font-size: 0.75rem; color: var(--k-soft); text-transform: uppercase;">✦ Supporting Offering</span>
+          <h4 style="font-size: 1.2rem; color: #fff; margin: 0.5rem 0;">Energy Balancing Crystal</h4>
+          <p style="font-size: 0.85rem; color: var(--k-muted); margin-bottom: 1rem;">Consecrated to support emotional grounding and clarity.</p>
+          {% if section.settings.crystal_product != blank %}
+            <a class="button button--secondary" href="{{ section.settings.crystal_product.url }}">View Offering</a>
+          {% else %}
+            <a class="button button--secondary" href="/collections/all">Explore Shop</a>
+          {% endif %}
+        </div>
+      </div>
+
+      <button type="button" class="k-link" data-quiz-reset style="background: transparent; border: none; cursor: pointer;">⟲ Retake Quiz</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function() {
+    const questions = [
+      { q: "What area of life is calling for your deepest focus right now?", opts: ["Love & Deep Relationships", "Career Growth & Soul Purpose", "Financial Abundance & Flow", "Emotional Healing & Peace"] },
+      { q: "How are you currently feeling about your path?", opts: ["Ready to take a bold leap into the unknown", "Stuck or facing recurring decision fatigue", "In need of deep energetic reset and closure", "Grateful and expanding into new blessings"] },
+      { q: "What format of guidance feels most nourishing to you?", opts: ["Direct, live 1-on-1 audio call with Kavita", "Intimate WhatsApp voice note I can listen to repeatedly", "Distance energy clearing & cord-cutting", "Daily card reflection rituals"] },
+      { q: "What spiritual tools do you feel drawn to invite in?", opts: ["Raw abundance crystals (Pyrite, Citrine)", "Heart-opening stones (Rose Quartz)", "Sacred Japa Malas & Rudraksha", "A fresh consecrated Tarot Deck"] },
+      { q: "What is your primary intention over the next 90 days?", opts: ["Total career & financial breakthrough", "True emotional clarity and sovereign boundaries", "Harmonious union with my partner / self-love", "Spiritual grounding and mental serenity"] }
+    ];
+
+    let current = 0;
+    const card = document.querySelector('[data-kavita-quiz]');
+    if (!card) return;
+
+    const bar = card.querySelector('[data-quiz-bar]');
+    const indicator = card.querySelector('[data-quiz-indicator]');
+    const title = card.querySelector('[data-quiz-title]');
+    const optsBox = card.querySelector('[data-quiz-options]');
+    const stepView = card.querySelector('[data-quiz-step-view]');
+    const resultView = card.querySelector('[data-quiz-result]');
+    const resetBtn = card.querySelector('[data-quiz-reset]');
+
+    function render() {
+      const q = questions[current];
+      bar.style.width = ((current + 1) / questions.length * 100) + '%';
+      indicator.textContent = `Question ${current + 1} of ${questions.length}`;
+      title.textContent = q.q;
+      optsBox.innerHTML = '';
+      q.opts.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'button button--secondary';
+        btn.style.width = '100%';
+        btn.style.textAlign = 'left';
+        btn.style.justifyContent = 'flex-start';
+        btn.style.padding = '1.2rem 1.6rem';
+        btn.textContent = '✦ ' + opt;
+        btn.onclick = () => {
+          if (current < questions.length - 1) {
+            current++;
+            render();
+          } else {
+            stepView.style.display = 'none';
+            resultView.style.display = 'block';
+          }
+        };
+        optsBox.appendChild(btn);
+      });
+    }
+
+    if (resetBtn) {
+      resetBtn.onclick = () => {
+        current = 0;
+        stepView.style.display = 'block';
+        resultView.style.display = 'none';
+        render();
+      };
+    }
+
+    render();
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Guidance Quiz",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Personal Guidance Quiz"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Find Your Reading & Crystal"
+    },
+    {
+      "type": "textarea",
+      "id": "copy",
+      "label": "Description",
+      "default": "Answer 5 intuitive questions to receive tailored suggestions for your current energy and life path."
+    },
+    {
+      "type": "product",
+      "id": "reading_product",
+      "label": "Recommended Reading Product"
+    },
+    {
+      "type": "product",
+      "id": "crystal_product",
+      "label": "Recommended Crystal Offering"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Guidance Quiz"
+    }
+  ]
+}
+{% endschema %}
+

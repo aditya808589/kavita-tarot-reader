@@ -1,0 +1,1659 @@
+{% comment %}
+  KAVITA — Premium Luxury Tarot & Spirituals Hero Section
+  File: sections/kavita-premium-hero.liquid
+  Compatible with Shopify Online Store 2.0 (Dawn and all modern themes)
+{% endcomment %}
+
+{%- liquid
+  assign section_id = section.id | replace: '-', '_'
+  assign desktop_h = section.settings.desktop_height | default: '900px'
+  assign overlay_opacity = section.settings.overlay_strength | divided_by: 100.0
+-%}
+
+<div
+  id="kavita-hero-{{ section.id }}"
+  class="kavita-hero kavita-hero--{{ section.id }}"
+  data-section-id="{{ section.id }}"
+  data-enable-parallax="{{ section.settings.enable_mouse_parallax }}"
+  data-enable-floating="{{ section.settings.enable_floating_cards }}"
+  data-enable-particles="{{ section.settings.enable_particles }}"
+  role="region"
+  aria-label="{{ section.settings.heading | default: 'Sacred Tarot, Modern Guidance' | escape }}"
+>
+  {% comment %} --- Background Media & Overlays --- {% endcomment %}
+  <div class="kavita-hero__bg-wrap" aria-hidden="true">
+    {%- if section.settings.hero_bg != blank -%}
+      <picture>
+        {%- if section.settings.mobile_hero_bg != blank -%}
+          <source media="(max-width: 767px)" srcset="{{ section.settings.mobile_hero_bg | image_url: width: 900 }}">
+        {%- endif -%}
+        {{ section.settings.hero_bg | image_url: width: 2400 | image_tag: 
+          class: 'kavita-hero__bg-img', 
+          loading: 'eager', 
+          fetchpriority: 'high',
+          widths: '750, 1100, 1500, 1920, 2400',
+          sizes: '100vw',
+          alt: section.settings.heading | escape
+        }}
+      </picture>
+    {%- else -%}
+      {% comment %} Default reference luxury background fallback {% endcomment %}
+      <img
+        src="{{ 'kavita-hero-bg.jpg' | asset_url }}"
+        alt="Kavita Tarot Mystical Sacred Altar"
+        class="kavita-hero__bg-img"
+        loading="eager"
+        fetchpriority="high"
+        width="2400"
+        height="1350"
+        onerror="this.style.display='none';"
+      >
+    {%- endif -%}
+
+    {% comment %} Cinematic Dark Celestial Vignettes {% endcomment %}
+    <div class="kavita-hero__overlay-editorial"></div>
+    <div class="kavita-hero__overlay-radial"></div>
+    <div class="kavita-hero__overlay-bottom"></div>
+    <div class="kavita-hero__ambient-glow"></div>
+  </div>
+
+  {% comment %} --- Floating Golden Particles --- {% endcomment %}
+  {%- if section.settings.enable_particles -%}
+    <div class="kavita-hero__particles-container" aria-hidden="true" id="particles-{{ section.id }}">
+      <span class="kavita-hero__particle p-1"></span>
+      <span class="kavita-hero__particle p-2"></span>
+      <span class="kavita-hero__particle p-3"></span>
+      <span class="kavita-hero__particle p-4"></span>
+      <span class="kavita-hero__particle p-5"></span>
+      <span class="kavita-hero__particle p-6"></span>
+      <span class="kavita-hero__particle p-7"></span>
+      <span class="kavita-hero__particle p-8"></span>
+      <span class="kavita-hero__particle p-9"></span>
+      <span class="kavita-hero__particle p-10"></span>
+      <span class="kavita-hero__particle p-11"></span>
+      <span class="kavita-hero__particle p-12"></span>
+      <span class="kavita-hero__particle p-13"></span>
+      <span class="kavita-hero__particle p-14"></span>
+    </div>
+  {%- endif -%}
+
+  {% comment %} --- Main Hero Stage --- {% endcomment %}
+  <div class="kavita-hero__stage">
+    <div class="kavita-hero__inner">
+
+      {% comment %} LEFT COLUMN: Editorial Luxury Copy {% endcomment %}
+      <div class="kavita-hero__content-col">
+        
+        {% comment %} Brand Logo (Shopify Image Picker Setting "logo") {% endcomment %}
+        {%- if section.settings.show_logo or section.settings.logo != blank -%}
+          <div class="kavita-hero__brand-logo-wrap">
+            {%- if section.settings.logo != blank -%}
+              {{ section.settings.logo | image_url: width: 500 | image_tag:
+                class: 'kavita-hero__brand-logo',
+                loading: 'eager',
+                widths: '120, 180, 240, 320, 480',
+                alt: shop.name | default: 'Kavita Tarot & Spirituals' | escape
+              }}
+            {%- else -%}
+              <img
+                src="{{ 'kavita-logo-gold.png' | asset_url }}"
+                alt="Kavita Tarot & Spirituals"
+                class="kavita-hero__brand-logo"
+                loading="eager"
+                width="{{ section.settings.logo_width | default: 140 }}"
+                height="auto"
+                onerror="this.style.display='none';"
+              >
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+        {% comment %} Eyebrow with Celestial Diamonds {% endcomment %}
+        {%- if section.settings.eyebrow != blank -%}
+          <div class="kavita-hero__eyebrow">
+            <span class="kavita-hero__eyebrow-line"></span>
+            <span class="kavita-hero__eyebrow-star">✦</span>
+            <span class="kavita-hero__eyebrow-text">{{ section.settings.eyebrow }}</span>
+            <span class="kavita-hero__eyebrow-star">✦</span>
+            <span class="kavita-hero__eyebrow-line"></span>
+          </div>
+        {%- endif -%}
+
+        {% comment %} Main Headline with Dual Gold & Ivory Styling {% endcomment %}
+        <h1 class="kavita-hero__heading">
+          {%- if section.settings.heading != blank -%}
+            {{ section.settings.heading | newline_to_br }}
+          {%- else -%}
+            <span class="kavita-hero__heading-gold">Sacred Tarot,</span><br>Modern Guidance
+          {%- endif -%}
+        </h1>
+
+        {% comment %} Delicate Celestial Crescent Divider {% endcomment %}
+        <div class="kavita-hero__crescent-divider" aria-hidden="true">
+          <span class="kavita-hero__crescent-wing"></span>
+          <svg class="kavita-hero__crescent-svg" width="28" height="22" viewBox="0 0 28 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 2C9.58 2 6 5.58 6 10C6 14.42 9.58 18 14 18C11.5 18 9.5 15.5 9.5 12C9.5 7.5 12 4 14 2Z" fill="url(#kavita-gold-grad-{{ section.id }})" />
+            <circle cx="19" cy="8" r="1.5" fill="#FFDF78" />
+            <circle cx="23" cy="14" r="1" fill="#D8B45D" />
+            <defs>
+              <linearGradient id="kavita-gold-grad-{{ section.id }}" x1="6" y1="2" x2="14" y2="18" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FFDF78"/>
+                <stop offset="0.5" stop-color="#D8B45D"/>
+                <stop offset="1" stop-color="#C9A24B"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <span class="kavita-hero__crescent-wing"></span>
+        </div>
+
+        {% comment %} Supporting Editorial Copy {% endcomment %}
+        {%- if section.settings.description != blank -%}
+          <p class="kavita-hero__desc">
+            {{ section.settings.description }}
+          </p>
+        {%- endif -%}
+
+        {% comment %} CTA Buttons (Shop Tarot + Explore Readings) {% endcomment %}
+        <div class="kavita-hero__ctas">
+          {%- if section.settings.primary_button_label != blank -%}
+            <a
+              href="{{ section.settings.primary_button_link | default: routes.all_products_collection_url }}"
+              class="kavita-hero__btn kavita-hero__btn--primary"
+            >
+              <span>{{ section.settings.primary_button_label }}</span>
+              <svg class="kavita-hero__btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M3.33334 8H12.6667" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8.66666 4L12.6667 8L8.66666 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          {%- endif -%}
+
+          {%- if section.settings.secondary_button_label != blank -%}
+            <a
+              href="{{ section.settings.secondary_button_link | default: '#services' }}"
+              class="kavita-hero__btn kavita-hero__btn--secondary"
+            >
+              <span>{{ section.settings.secondary_button_label }}</span>
+            </a>
+          {%- endif -%}
+        </div>
+
+      </div>
+
+      {% comment %} RIGHT COLUMN: Mystical Altar, Celestial Orbit & 3 Floating Tarot Cards {% endcomment %}
+      <div class="kavita-hero__visual-col" id="cards-stage-{{ section.id }}">
+
+        {% comment %} Rotating Celestial Orbit Rings & Moon Phases {% endcomment %}
+        {%- if section.settings.enable_celestial_orbit -%}
+          <div class="kavita-hero__celestial-orbit" aria-hidden="true">
+            <div class="kavita-hero__orbit-ring kavita-hero__orbit-ring--outer"></div>
+            <div class="kavita-hero__orbit-ring kavita-hero__orbit-ring--inner"></div>
+            <div class="kavita-hero__orbit-sparkle s-1">✦</div>
+            <div class="kavita-hero__orbit-sparkle s-2">✦</div>
+            <div class="kavita-hero__orbit-sparkle s-3">✧</div>
+            <div class="kavita-hero__orbit-sparkle s-4">✦</div>
+            <div class="kavita-hero__orbit-moon m-1">☾</div>
+            <div class="kavita-hero__orbit-moon m-2">○</div>
+            <div class="kavita-hero__orbit-moon m-3">☽</div>
+          </div>
+        {%- endif -%}
+
+        {% comment %} The 3 Floating Consecrated Tarot Cards {% endcomment %}
+        <div class="kavita-hero__cards-trio" id="cards-trio-{{ section.id }}">
+
+          {% comment %} CARD 1 (LEFT): The Empress (III) {% endcomment %}
+          <div class="kavita-hero__card-anchor kavita-hero__card-anchor--left" data-tilt="-8">
+            <div class="kavita-hero__card kavita-hero__card--1" tabindex="0" role="article" aria-label="{{ section.settings.card_1_label | default: 'The Empress Tarot Card' }}">
+              {%- if section.settings.card_1_link != blank -%}<a href="{{ section.settings.card_1_link }}" class="kavita-hero__card-link" aria-label="{{ section.settings.card_1_label }}">{%- endif -%}
+              <div class="kavita-hero__card-sheen"></div>
+              <div class="kavita-hero__card-frame">
+                <div class="kavita-hero__card-inner">
+                  {%- if section.settings.card_1_image != blank -%}
+                    {{ section.settings.card_1_image | image_url: width: 600 | image_tag: 
+                      class: 'kavita-hero__card-img', 
+                      loading: 'eager', 
+                      alt: section.settings.card_1_label | default: 'The Empress'
+                    }}
+                  {%- else -%}
+                    <img
+                      src="{{ 'card-empress.jpg' | asset_url }}"
+                      alt="The Empress (III) - Kavita Tarot"
+                      class="kavita-hero__card-img"
+                      loading="eager"
+                      width="320"
+                      height="540"
+                      onerror="this.src='https://images.unsplash.com/photo-1611591475870-85f8c85775c9?auto=format&fit=crop&w=600&q=80';"
+                    >
+                  {%- endif -%}
+                  <div class="kavita-hero__card-ribbon">
+                    <span class="kavita-hero__card-num">III</span>
+                    <span class="kavita-hero__card-title">{{ section.settings.card_1_label | default: 'THE EMPRESS' }}</span>
+                  </div>
+                </div>
+              </div>
+              {%- if section.settings.card_1_link != blank -%}</a>{%- endif -%}
+            </div>
+          </div>
+
+          {% comment %} CARD 2 (CENTER): The Moon (XVIII) - Forward in depth {% endcomment %}
+          <div class="kavita-hero__card-anchor kavita-hero__card-anchor--center" data-tilt="0">
+            <div class="kavita-hero__card kavita-hero__card--2" tabindex="0" role="article" aria-label="{{ section.settings.card_2_label | default: 'The Moon Tarot Card' }}">
+              {%- if section.settings.card_2_link != blank -%}<a href="{{ section.settings.card_2_link }}" class="kavita-hero__card-link" aria-label="{{ section.settings.card_2_label }}">{%- endif -%}
+              <div class="kavita-hero__card-sheen"></div>
+              <div class="kavita-hero__card-frame">
+                <div class="kavita-hero__card-inner">
+                  {%- if section.settings.card_2_image != blank -%}
+                    {{ section.settings.card_2_image | image_url: width: 600 | image_tag: 
+                      class: 'kavita-hero__card-img', 
+                      loading: 'eager', 
+                      alt: section.settings.card_2_label | default: 'The Moon'
+                    }}
+                  {%- else -%}
+                    <img
+                      src="{{ 'card-moon.jpg' | asset_url }}"
+                      alt="The Moon (XVIII) - Kavita Tarot"
+                      class="kavita-hero__card-img"
+                      loading="eager"
+                      width="340"
+                      height="580"
+                      onerror="this.src='https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80';"
+                    >
+                  {%- endif -%}
+                  <div class="kavita-hero__card-ribbon">
+                    <span class="kavita-hero__card-num">XVIII</span>
+                    <span class="kavita-hero__card-title">{{ section.settings.card_2_label | default: 'THE MOON' }}</span>
+                  </div>
+                </div>
+              </div>
+              {%- if section.settings.card_2_link != blank -%}</a>{%- endif -%}
+            </div>
+          </div>
+
+          {% comment %} CARD 3 (RIGHT): The Star (XVII) {% endcomment %}
+          <div class="kavita-hero__card-anchor kavita-hero__card-anchor--right" data-tilt="8">
+            <div class="kavita-hero__card kavita-hero__card--3" tabindex="0" role="article" aria-label="{{ section.settings.card_3_label | default: 'The Star Tarot Card' }}">
+              {%- if section.settings.card_3_link != blank -%}<a href="{{ section.settings.card_3_link }}" class="kavita-hero__card-link" aria-label="{{ section.settings.card_3_label }}">{%- endif -%}
+              <div class="kavita-hero__card-sheen"></div>
+              <div class="kavita-hero__card-frame">
+                <div class="kavita-hero__card-inner">
+                  {%- if section.settings.card_3_image != blank -%}
+                    {{ section.settings.card_3_image | image_url: width: 600 | image_tag: 
+                      class: 'kavita-hero__card-img', 
+                      loading: 'eager', 
+                      alt: section.settings.card_3_label | default: 'The Star'
+                    }}
+                  {%- else -%}
+                    <img
+                      src="{{ 'card-star.jpg' | asset_url }}"
+                      alt="The Star (XVII) - Kavita Tarot"
+                      class="kavita-hero__card-img"
+                      loading="eager"
+                      width="320"
+                      height="540"
+                      onerror="this.src='https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80';"
+                    >
+                  {%- endif -%}
+                  <div class="kavita-hero__card-ribbon">
+                    <span class="kavita-hero__card-num">XVII</span>
+                    <span class="kavita-hero__card-title">{{ section.settings.card_3_label | default: 'THE STAR' }}</span>
+                  </div>
+                </div>
+              </div>
+              {%- if section.settings.card_3_link != blank -%}</a>{%- endif -%}
+            </div>
+          </div>
+
+        </div>
+
+        {% comment %} Crystal Orb Pedestal Illumination at Base of Cards {% endcomment %}
+        <div class="kavita-hero__orb-glow" aria-hidden="true">
+          <div class="kavita-hero__orb-sphere"></div>
+          <div class="kavita-hero__orb-pedestal-light"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  {% comment %} --- Bottom Luxury Trust / Feature Strip --- {% endcomment %}
+  {%- if section.blocks.size > 0 -%}
+    <div class="kavita-hero__trust-strip">
+      <div class="kavita-hero__trust-container">
+        <div class="kavita-hero__trust-grid">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'trust_item' -%}
+              <div class="kavita-hero__trust-item" {{ block.shopify_attributes }}>
+                <div class="kavita-hero__trust-icon-box" aria-hidden="true">
+                  {%- case block.settings.icon -%}
+                    {%- when 'lotus' -%}
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2C12 2 8 8 8 13C8 16 10 18 12 18C14 18 16 16 16 13C16 8 12 2 12 2Z"/>
+                        <path d="M4 14C4 14 6 17 9 18C7.5 19.5 5 19.5 3 19"/>
+                        <path d="M20 14C20 14 18 17 15 18C16.5 19.5 19 19.5 21 19"/>
+                      </svg>
+                    {%- when 'shipping' -%}
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 2L11 13"/>
+                        <path d="M22 2L15 22L11 13L2 9L22 2Z"/>
+                      </svg>
+                    {%- when 'shield' -%}
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22S4 18 4 12V5L12 2L20 5V12C20 18 12 22 12 22Z"/>
+                        <path d="M9 12L11 14L15 10"/>
+                      </svg>
+                    {%- when 'moon' -%}
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
+                      </svg>
+                    {%- else -%}
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                      </svg>
+                  {%- endcase -%}
+                </div>
+                <div class="kavita-hero__trust-text">
+                  <div class="kavita-hero__trust-title">{{ block.settings.title }}</div>
+                  <div class="kavita-hero__trust-sub">{{ block.settings.subtitle }}</div>
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+
+{% comment %} ==========================================================================
+   SCOPED PRODUCTION CSS FOR KAVITA HERO
+   ========================================================================== {% endcomment %}
+<style>
+  #kavita-hero-{{ section.id }} {
+    --kh-bg: {{ section.settings.bg_base_color | default: '#07050C' }};
+    --kh-deep-plum: #0B0614;
+    --kh-purple-glow: rgba(43, 19, 74, 0.55);
+    --kh-gold-accent: {{ section.settings.gold_accent_color | default: '#D8B45D' }};
+    --kh-gold-light: #FFDF78;
+    --kh-gold-dark: #A67D28;
+    --kh-gold-glow: rgba(216, 180, 93, 0.35);
+    --kh-heading-color: {{ section.settings.heading_color | default: '#F5EBDD' }};
+    --kh-body-color: {{ section.settings.body_color | default: '#B9B0BF' }};
+    --kh-serif: 'Cinzel', 'Cormorant Garamond', Georgia, serif;
+    --kh-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    position: relative;
+    width: 100%;
+    min-height: {{ desktop_h }};
+    background-color: var(--kh-bg);
+    color: var(--kh-body-color);
+    font-family: var(--kh-sans);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #kavita-hero-{{ section.id }} * {
+    box-sizing: border-box;
+  }
+
+  /* --- Background Media & Overlays --- */
+  .kavita-hero__bg-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .kavita-hero__bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center right;
+    display: block;
+    transform: scale(1.02);
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Editorial Dark Vignette: keeps left text 100% crisp & readable */
+  .kavita-hero__overlay-editorial {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      #07050C 0%,
+      rgba(7, 5, 12, 0.98) 22%,
+      rgba(11, 6, 20, 0.88) 42%,
+      rgba(11, 6, 20, 0.45) 62%,
+      rgba(11, 6, 20, 0.1) 85%,
+      transparent 100%
+    );
+  }
+
+  /* Top & Bottom Cinematic Edge Vignettes */
+  .kavita-hero__overlay-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 180px;
+    background: linear-gradient(to top, #07050C 0%, rgba(7, 5, 12, 0.8) 40%, transparent 100%);
+  }
+
+  .kavita-hero__ambient-glow {
+    position: absolute;
+    top: 35%;
+    right: 25%;
+    width: 550px;
+    height: 550px;
+    background: radial-gradient(circle, var(--kh-purple-glow) 0%, rgba(216, 180, 93, 0.12) 45%, transparent 70%);
+    filter: blur(65px);
+    pointer-events: none;
+    opacity: 0.85;
+  }
+
+  /* --- Floating Particles --- */
+  .kavita-hero__particles-container {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .kavita-hero__particle {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, #FFF2CE 0%, var(--kh-gold-accent) 60%, transparent 100%);
+    box-shadow: 0 0 8px var(--kh-gold-light);
+    pointer-events: none;
+    animation: khParticleDrift linear infinite;
+  }
+
+  .kavita-hero__particle.p-1  { width: 4px; height: 4px; top: 18%; left: 52%; animation-duration: 9s;  animation-delay: 0s; }
+  .kavita-hero__particle.p-2  { width: 3px; height: 3px; top: 38%; left: 62%; animation-duration: 12s; animation-delay: 1.5s; }
+  .kavita-hero__particle.p-3  { width: 5px; height: 5px; top: 55%; left: 48%; animation-duration: 8s;  animation-delay: 3s; }
+  .kavita-hero__particle.p-4  { width: 3px; height: 3px; top: 25%; left: 78%; animation-duration: 14s; animation-delay: 0.5s; }
+  .kavita-hero__particle.p-5  { width: 4px; height: 4px; top: 68%; left: 82%; animation-duration: 10s; animation-delay: 2s; }
+  .kavita-hero__particle.p-6  { width: 2px; height: 2px; top: 45%; left: 38%; animation-duration: 13s; animation-delay: 4s; }
+  .kavita-hero__particle.p-7  { width: 4px; height: 4px; top: 80%; left: 60%; animation-duration: 11s; animation-delay: 2.5s; }
+  .kavita-hero__particle.p-8  { width: 3px; height: 3px; top: 12%; left: 30%; animation-duration: 15s; animation-delay: 5s; }
+  .kavita-hero__particle.p-9  { width: 4px; height: 4px; top: 32%; left: 90%; animation-duration: 9s;  animation-delay: 1.2s; }
+  .kavita-hero__particle.p-10 { width: 3px; height: 3px; top: 72%; left: 42%; animation-duration: 11s; animation-delay: 3.8s; }
+  .kavita-hero__particle.p-11 { width: 5px; height: 5px; top: 48%; left: 70%; animation-duration: 8.5s;animation-delay: 0.8s; }
+  .kavita-hero__particle.p-12 { width: 3px; height: 3px; top: 60%; left: 92%; animation-duration: 12s; animation-delay: 4.2s; }
+  .kavita-hero__particle.p-13 { width: 4px; height: 4px; top: 22%; left: 44%; animation-duration: 10s; animation-delay: 2.2s; }
+  .kavita-hero__particle.p-14 { width: 3px; height: 3px; top: 85%; left: 75%; animation-duration: 14s; animation-delay: 1.8s; }
+
+  @keyframes khParticleDrift {
+    0% {
+      transform: translateY(0) translateX(0) scale(0.8);
+      opacity: 0;
+    }
+    15% {
+      opacity: 0.85;
+    }
+    85% {
+      opacity: 0.85;
+    }
+    100% {
+      transform: translateY(-80px) translateX(25px) scale(1.15);
+      opacity: 0;
+    }
+  }
+
+  /* --- Main Hero Stage --- */
+  .kavita-hero__stage {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 5.5rem 2.5rem 3.5rem;
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .kavita-hero__inner {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 46% 54%;
+    align-items: center;
+    gap: 3.5rem;
+  }
+
+  /* --- Left Column: Copy & CTAs --- */
+  .kavita-hero__content-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    max-width: 580px;
+  }
+
+  .kavita-hero__brand-logo-wrap {
+    margin-bottom: 1.35rem;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .kavita-hero__brand-logo {
+    width: {{ section.settings.logo_width | default: 140 }}px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 16px rgba(201, 162, 75, 0.28));
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .kavita-hero__brand-logo:hover {
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  .kavita-hero__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .kavita-hero__eyebrow-text {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--kh-gold-accent);
+  }
+
+  .kavita-hero__eyebrow-star {
+    font-size: 0.7rem;
+    color: var(--kh-gold-light);
+  }
+
+  .kavita-hero__eyebrow-line {
+    width: 28px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--kh-gold-accent));
+  }
+
+  .kavita-hero__heading {
+    font-family: var(--kh-serif);
+    font-size: clamp(38px, 4.4vw, 68px);
+    line-height: 1.14;
+    font-weight: 700;
+    letter-spacing: 0.015em;
+    color: var(--kh-heading-color);
+    margin: 0 0 1.2rem 0;
+  }
+
+  .kavita-hero__heading-gold {
+    background: linear-gradient(135deg, #FFF0CA 0%, #D8B45D 45%, #C9A24B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+  }
+
+  .kavita-hero__crescent-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .kavita-hero__crescent-wing {
+    width: 44px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(216, 180, 93, 0.4), transparent);
+  }
+
+  .kavita-hero__desc {
+    font-size: clamp(15px, 1.05vw, 17px);
+    line-height: 1.72;
+    color: var(--kh-body-color);
+    margin: 0 0 2.4rem 0;
+    max-width: 520px;
+  }
+
+  .kavita-hero__ctas {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  /* Buttons */
+  .kavita-hero__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    padding: 0.92rem 2.2rem;
+    border-radius: 999px;
+    font-family: var(--kh-sans);
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    white-space: nowrap;
+    border: none;
+  }
+
+  /* Primary Gold CTA */
+  .kavita-hero__btn--primary {
+    background: linear-gradient(135deg, #EAD087 0%, #D8B45D 50%, #B88E33 100%);
+    color: #0A0512;
+    box-shadow: 0 4px 22px rgba(216, 180, 93, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+
+  .kavita-hero__btn--primary:hover {
+    background: linear-gradient(135deg, #FFF0B8 0%, #E6C26A 50%, #C99E3D 100%);
+    color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(216, 180, 93, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  }
+
+  .kavita-hero__btn-arrow {
+    transition: transform 0.25s ease;
+  }
+
+  .kavita-hero__btn--primary:hover .kavita-hero__btn-arrow {
+    transform: translateX(4px);
+  }
+
+  /* Secondary Outline CTA */
+  .kavita-hero__btn--secondary {
+    background: rgba(11, 6, 20, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--kh-heading-color);
+    border: 1.5px solid rgba(216, 180, 93, 0.45);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  }
+
+  .kavita-hero__btn--secondary:hover {
+    background: rgba(216, 180, 93, 0.12);
+    border-color: var(--kh-gold-accent);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(216, 180, 93, 0.25);
+  }
+
+  /* --- Right Column: Visual Altar & 3 Floating Cards --- */
+  .kavita-hero__visual-col {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 480px;
+  }
+
+  /* Celestial Orbit Effect */
+  .kavita-hero__celestial-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 580px;
+    height: 580px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .kavita-hero__orbit-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1px dashed rgba(216, 180, 93, 0.22);
+  }
+
+  .kavita-hero__orbit-ring--outer {
+    animation: khOrbitRotate 32s linear infinite;
+  }
+
+  .kavita-hero__orbit-ring--inner {
+    inset: 60px;
+    border: 1px solid rgba(216, 180, 93, 0.18);
+    animation: khOrbitRotateRev 24s linear infinite;
+  }
+
+  @keyframes khOrbitRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes khOrbitRotateRev {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+  .kavita-hero__orbit-sparkle,
+  .kavita-hero__orbit-moon {
+    position: absolute;
+    color: var(--kh-gold-accent);
+    text-shadow: 0 0 10px var(--kh-gold-light);
+  }
+
+  .kavita-hero__orbit-sparkle.s-1 { top: 6%; left: 50%; font-size: 0.9rem; animation: khPulseGlow 3.5s infinite; }
+  .kavita-hero__orbit-sparkle.s-2 { bottom: 12%; right: 18%; font-size: 0.8rem; animation: khPulseGlow 4s infinite 1s; }
+  .kavita-hero__orbit-sparkle.s-3 { top: 38%; left: 4%; font-size: 0.75rem; animation: khPulseGlow 3s infinite 0.5s; }
+  .kavita-hero__orbit-sparkle.s-4 { top: 44%; right: 4%; font-size: 0.85rem; animation: khPulseGlow 4.5s infinite 2s; }
+
+  .kavita-hero__orbit-moon.m-1 { top: 18%; right: 22%; font-size: 1.1rem; }
+  .kavita-hero__orbit-moon.m-2 { top: 4%; right: 48%; font-size: 0.9rem; }
+  .kavita-hero__orbit-moon.m-3 { top: 22%; left: 18%; font-size: 1rem; }
+
+  @keyframes khPulseGlow {
+    0%, 100% { opacity: 0.4; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.15); filter: drop-shadow(0 0 8px var(--kh-gold-light)); }
+  }
+
+  /* --- The 3 Floating Tarot Cards Trio --- */
+  .kavita-hero__cards-trio {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 580px;
+    height: 480px;
+    perspective: 1200px;
+  }
+
+  .kavita-hero__card-anchor {
+    position: absolute;
+    top: 50%;
+    transform-origin: center center;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Desktop Positioning */
+  .kavita-hero__card-anchor--left {
+    left: 8%;
+    transform: translateY(-50%) rotate(-8deg);
+    z-index: 2;
+  }
+
+  .kavita-hero__card-anchor--center {
+    left: 50%;
+    transform: translate(-50%, -52%) rotate(0deg) scale(1.04);
+    z-index: 4;
+  }
+
+  .kavita-hero__card-anchor--right {
+    right: 8%;
+    transform: translateY(-50%) rotate(8deg);
+    z-index: 2;
+  }
+
+  /* Card Container */
+  .kavita-hero__card {
+    width: 172px;
+    height: 295px;
+    border-radius: 12px;
+    background: #0B0614;
+    border: 2px solid var(--kh-gold-accent);
+    box-shadow: 
+      0 12px 35px rgba(0, 0, 0, 0.65),
+      0 0 20px rgba(216, 180, 93, 0.22),
+      inset 0 0 12px rgba(216, 180, 93, 0.15);
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+  }
+
+  /* Center Card is slightly taller & bolder */
+  .kavita-hero__card--2 {
+    width: 188px;
+    height: 320px;
+    border-width: 2.5px;
+    box-shadow: 
+      0 20px 45px rgba(0, 0, 0, 0.75),
+      0 0 30px rgba(216, 180, 93, 0.32),
+      inset 0 0 15px rgba(216, 180, 93, 0.2);
+  }
+
+  .kavita-hero__card-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .kavita-hero__card-frame {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    position: relative;
+  }
+
+  .kavita-hero__card-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    background: #140B22;
+    border: 1px solid rgba(216, 180, 93, 0.4);
+  }
+
+  .kavita-hero__card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .kavita-hero__card-ribbon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(7, 5, 12, 0.95) 0%, rgba(7, 5, 12, 0.7) 70%, transparent 100%);
+    padding: 1.2rem 0.5rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .kavita-hero__card-num {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--kh-gold-accent);
+  }
+
+  .kavita-hero__card-title {
+    font-family: var(--kh-serif);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #FFF3D6;
+    margin-top: 1px;
+  }
+
+  .kavita-hero__card-sheen {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.22) 0%, transparent 45%, rgba(216, 180, 93, 0.15) 100%);
+    pointer-events: none;
+    z-index: 2;
+    transition: opacity 0.4s ease;
+  }
+
+  /* Card Continuous Floating Animations */
+  .kavita-hero--floating .kavita-hero__card-anchor--left {
+    animation: khFloatCardLeft 6.8s ease-in-out infinite;
+  }
+
+  .kavita-hero--floating .kavita-hero__card-anchor--center {
+    animation: khFloatCardCenter 7.5s ease-in-out infinite 0.6s;
+  }
+
+  .kavita-hero--floating .kavita-hero__card-anchor--right {
+    animation: khFloatCardRight 8.2s ease-in-out infinite 1.2s;
+  }
+
+  @keyframes khFloatCardLeft {
+    0%, 100% {
+      transform: translateY(-50%) rotate(-8deg);
+    }
+    50% {
+      transform: translateY(-58%) rotate(-5deg);
+    }
+  }
+
+  @keyframes khFloatCardCenter {
+    0%, 100% {
+      transform: translate(-50%, -52%) rotate(0deg) scale(1.04);
+    }
+    50% {
+      transform: translate(-50%, -60%) rotate(0deg) scale(1.07);
+    }
+  }
+
+  @keyframes khFloatCardRight {
+    0%, 100% {
+      transform: translateY(-50%) rotate(8deg);
+    }
+    50% {
+      transform: translateY(-57%) rotate(5deg);
+    }
+  }
+
+  /* Card Desktop Hover Reaction */
+  .kavita-hero__card:hover,
+  .kavita-hero__card:focus-visible {
+    transform: translateY(-8px) scale(1.05);
+    border-color: var(--kh-gold-light);
+    box-shadow: 
+      0 24px 50px rgba(0, 0, 0, 0.8),
+      0 0 35px rgba(216, 180, 93, 0.55),
+      inset 0 0 15px rgba(255, 223, 120, 0.3);
+    z-index: 10;
+  }
+
+  .kavita-hero__card:hover .kavita-hero__card-img {
+    transform: scale(1.05);
+  }
+
+  /* Crystal Orb Pedestal Illumination */
+  .kavita-hero__orb-glow {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 240px;
+    height: 120px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .kavita-hero__orb-sphere {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(162, 108, 245, 0.45) 0%, rgba(216, 180, 93, 0.25) 50%, transparent 75%);
+    filter: blur(20px);
+    animation: khOrbPulse 4s ease-in-out infinite;
+  }
+
+  .kavita-hero__orb-pedestal-light {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    height: 25px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(255, 223, 120, 0.55) 0%, rgba(216, 180, 93, 0.2) 60%, transparent 80%);
+    filter: blur(8px);
+  }
+
+  @keyframes khOrbPulse {
+    0%, 100% { opacity: 0.6; transform: translateX(-50%) scale(0.95); }
+    50% { opacity: 1; transform: translateX(-50%) scale(1.1); filter: blur(25px); }
+  }
+
+  /* --- Bottom Trust Strip --- */
+  .kavita-hero__trust-strip {
+    position: relative;
+    z-index: 4;
+    width: 100%;
+    background: rgba(7, 5, 12, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-top: 1px solid rgba(216, 180, 93, 0.25);
+    box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.35);
+  }
+
+  .kavita-hero__trust-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 1.4rem 2.5rem;
+  }
+
+  .kavita-hero__trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.8rem;
+    align-items: center;
+  }
+
+  .kavita-hero__trust-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .kavita-hero__trust-icon-box {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(216, 180, 93, 0.08);
+    border: 1px solid rgba(216, 180, 93, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--kh-gold-accent);
+    flex-shrink: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  }
+
+  .kavita-hero__trust-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .kavita-hero__trust-title {
+    font-family: var(--kh-serif);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #FFF7EB;
+    line-height: 1.25;
+  }
+
+  .kavita-hero__trust-sub {
+    font-size: 0.76rem;
+    color: #A39D98;
+    margin-top: 0.25rem;
+    line-height: 1.35;
+  }
+
+  /* --- Responsive Styles --- */
+  @media (max-width: 1200px) {
+    .kavita-hero__stage {
+      padding: 4.5rem 2rem 3rem;
+    }
+    .kavita-hero__inner {
+      gap: 2.5rem;
+    }
+    .kavita-hero__heading {
+      font-size: clamp(34px, 4vw, 54px);
+    }
+    .kavita-hero__card {
+      width: 150px;
+      height: 255px;
+    }
+    .kavita-hero__card--2 {
+      width: 165px;
+      height: 280px;
+    }
+  }
+
+  @media (max-width: 991px) {
+    #kavita-hero-{{ section.id }} {
+      min-height: auto;
+    }
+    .kavita-hero__inner {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 3.5rem;
+    }
+    .kavita-hero__content-col {
+      align-items: center;
+      text-align: center;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    .kavita-hero__desc {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .kavita-hero__ctas {
+      justify-content: center;
+    }
+    .kavita-hero__visual-col {
+      min-height: 420px;
+    }
+    .kavita-hero__trust-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .kavita-hero__overlay-editorial {
+      background: linear-gradient(
+        180deg,
+        #07050C 0%,
+        rgba(7, 5, 12, 0.92) 40%,
+        rgba(11, 6, 20, 0.65) 75%,
+        #07050C 100%
+      );
+    }
+  }
+
+  @media (max-width: 767px) {
+    .kavita-hero__stage {
+      padding: 3rem 1.25rem 2.5rem;
+    }
+    .kavita-hero__inner {
+      display: flex;
+      flex-direction: column;
+      gap: 2.2rem;
+    }
+    /* Mobile Redesigned Order:
+       0. Brand Logo
+       1. Eyebrow
+       2. Headline
+       3. Paragraph
+       4. Animated Tarot Visual
+       5. Primary CTA
+       6. Secondary CTA
+       7. Trust Strip
+    */
+    .kavita-hero__content-col {
+      display: contents; /* Allows re-ordering with flex children */
+    }
+    .kavita-hero__brand-logo-wrap {
+      order: 0;
+      margin-bottom: 0.8rem;
+    }
+    .kavita-hero__brand-logo {
+      width: {{ section.settings.mobile_logo_width | default: 110 }}px;
+    }
+    .kavita-hero__eyebrow {
+      order: 1;
+      margin-bottom: 0.8rem;
+    }
+    .kavita-hero__heading {
+      order: 2;
+      font-size: clamp(30px, 8vw, 42px);
+      margin-bottom: 0.8rem;
+    }
+    .kavita-hero__crescent-divider {
+      order: 3;
+      margin-bottom: 1rem;
+    }
+    .kavita-hero__desc {
+      order: 4;
+      font-size: 0.92rem;
+      margin-bottom: 1.5rem;
+    }
+    .kavita-hero__visual-col {
+      order: 5;
+      min-height: 320px;
+      width: 100%;
+      margin: 0.5rem 0 1.5rem;
+    }
+    .kavita-hero__ctas {
+      order: 6;
+      width: 100%;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .kavita-hero__btn {
+      width: 100%;
+      padding: 0.95rem 1.5rem;
+      min-height: 48px;
+    }
+    .kavita-hero__card {
+      width: 115px;
+      height: 195px;
+    }
+    .kavita-hero__card--2 {
+      width: 128px;
+      height: 218px;
+    }
+    .kavita-hero__card-anchor--left {
+      left: 2%;
+    }
+    .kavita-hero__card-anchor--right {
+      right: 2%;
+    }
+    .kavita-hero__celestial-orbit {
+      width: 360px;
+      height: 360px;
+    }
+    .kavita-hero__trust-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .kavita-hero__trust-container {
+      padding: 1.2rem 1.25rem;
+    }
+  }
+
+  /* Accessibility: Prefers Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .kavita-hero__particle,
+    .kavita-hero__orbit-ring,
+    .kavita-hero__card-anchor,
+    .kavita-hero__orb-sphere {
+      animation: none !important;
+      transition: none !important;
+    }
+    .kavita-hero__card-anchor--left {
+      transform: translateY(-50%) rotate(-8deg) !important;
+    }
+    .kavita-hero__card-anchor--center {
+      transform: translate(-50%, -52%) rotate(0deg) scale(1.04) !important;
+    }
+    .kavita-hero__card-anchor--right {
+      transform: translateY(-50%) rotate(8deg) !important;
+    }
+  }
+</style>
+
+{% comment %} ==========================================================================
+   SCOPED PRODUCTION VANILLA JAVASCRIPT (POINTER PARALLAX & LIFECYCLE)
+   ========================================================================== {% endcomment %}
+<script>
+  (function() {
+    function initKavitaHero(sectionContainer) {
+      if (!sectionContainer) return;
+
+      const enableParallax = sectionContainer.dataset.enableParallax === 'true';
+      const enableFloating = sectionContainer.dataset.enableFloating === 'true';
+      
+      // Floating class toggle
+      if (enableFloating) {
+        sectionContainer.classList.add('kavita-hero--floating');
+      }
+
+      // Check reduced motion preference
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReducedMotion || !enableParallax || window.innerWidth < 992) {
+        return;
+      }
+
+      const visualCol = sectionContainer.querySelector('.kavita-hero__visual-col');
+      const cardsTrio = sectionContainer.querySelector('.kavita-hero__cards-trio');
+      const orbitEl = sectionContainer.querySelector('.kavita-hero__celestial-orbit');
+
+      if (!visualCol || !cardsTrio) return;
+
+      let mouseX = 0;
+      let mouseY = 0;
+      let targetX = 0;
+      let targetY = 0;
+      let isHovering = false;
+      let rAF = null;
+
+      function onMouseMove(e) {
+        const rect = visualCol.getBoundingClientRect();
+        // Normalized coordinates from center (-1 to 1)
+        const relX = (e.clientX - rect.left) / rect.width - 0.5;
+        const relY = (e.clientY - rect.top) / rect.height - 0.5;
+
+        // Subtle 14px maximum translation
+        targetX = Math.max(-1, Math.min(1, relX)) * 14;
+        targetY = Math.max(-1, Math.min(1, relY)) * 12;
+      }
+
+      function onMouseEnter() {
+        isHovering = true;
+        if (!rAF) updateParallax();
+      }
+
+      function onMouseLeave() {
+        isHovering = false;
+        targetX = 0;
+        targetY = 0;
+      }
+
+      function updateParallax() {
+        // Smooth linear interpolation (lerp factor 0.08)
+        mouseX += (targetX - mouseX) * 0.08;
+        mouseY += (targetY - mouseY) * 0.08;
+
+        cardsTrio.style.transform = `translate3d(${mouseX.toFixed(2)}px, ${mouseY.toFixed(2)}px, 0)`;
+
+        if (orbitEl) {
+          orbitEl.style.transform = `translate(-50%, -50%) translate3d(${(-mouseX * 0.4).toFixed(2)}px, ${(-mouseY * 0.4).toFixed(2)}px, 0)`;
+        }
+
+        if (Math.abs(targetX - mouseX) > 0.05 || Math.abs(targetY - mouseY) > 0.05 || isHovering) {
+          rAF = requestAnimationFrame(updateParallax);
+        } else {
+          rAF = null;
+        }
+      }
+
+      visualCol.addEventListener('mousemove', onMouseMove, { passive: true });
+      visualCol.addEventListener('mouseenter', onMouseEnter, { passive: true });
+      visualCol.addEventListener('mouseleave', onMouseLeave, { passive: true });
+    }
+
+    // Initialize on DOM Ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() {
+        initKavitaHero(document.getElementById('kavita-hero-{{ section.id }}'));
+      });
+    } else {
+      initKavitaHero(document.getElementById('kavita-hero-{{ section.id }}'));
+    }
+
+    // Support Shopify Theme Editor dynamic section events
+    document.addEventListener('shopify:section:load', function(e) {
+      if (e.detail.sectionId === '{{ section.id }}') {
+        initKavitaHero(document.getElementById('kavita-hero-{{ section.id }}'));
+      }
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Kavita Premium Hero",
+  "tag": "section",
+  "class": "section-kavita-premium-hero",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Brand Logo"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_logo",
+      "label": "Display brand logo above eyebrow",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Brand logo",
+      "info": "Upload the Kavita Tarot logo transparent PNG. If left blank, uses bundled gold lotus logo asset."
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 60,
+      "max": 280,
+      "step": 5,
+      "unit": "px",
+      "label": "Desktop logo width",
+      "default": 140
+    },
+    {
+      "type": "range",
+      "id": "mobile_logo_width",
+      "min": 50,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile logo width",
+      "default": 110
+    },
+    {
+      "type": "header",
+      "content": "Editorial Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "ANCIENT WISDOM • MODERN GUIDANCE"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Sacred Tarot,\nModern Guidance",
+      "info": "Use line breaks for editorial cadence."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Supporting text",
+      "default": "Explore a curated collection of tarot decks, oracle cards, crystals and spiritual tools designed to bring clarity, balance and deeper meaning to your journey."
+    },
+    {
+      "type": "header",
+      "content": "Action Buttons"
+    },
+    {
+      "type": "text",
+      "id": "primary_button_label",
+      "label": "Primary button label",
+      "default": "Shop Tarot Collection"
+    },
+    {
+      "type": "url",
+      "id": "primary_button_link",
+      "label": "Primary button URL",
+      "info": "Select your Tarot or Bestseller collection."
+    },
+    {
+      "type": "text",
+      "id": "secondary_button_label",
+      "label": "Secondary button label",
+      "default": "Explore Readings"
+    },
+    {
+      "type": "url",
+      "id": "secondary_button_link",
+      "label": "Secondary button URL",
+      "info": "Select your Consultations or Tarot Readings page."
+    },
+    {
+      "type": "header",
+      "content": "Imagery & Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_bg",
+      "label": "Desktop background image",
+      "info": "Recommended: 2400 x 1350px (WebP or JPG). If left blank, uses bundled reference altar artwork."
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_hero_bg",
+      "label": "Mobile background image",
+      "info": "Recommended: 900 x 1400px (portrait WebP or JPG)."
+    },
+    {
+      "type": "range",
+      "id": "overlay_strength",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Dark vignette strength",
+      "default": 85
+    },
+    {
+      "type": "select",
+      "id": "desktop_height",
+      "label": "Desktop section height",
+      "options": [
+        { "value": "820px", "label": "Compact (820px)" },
+        { "value": "900px", "label": "Cinematic (900px)" },
+        { "value": "100vh", "label": "Full Screen (100vh)" }
+      ],
+      "default": "900px"
+    },
+    {
+      "type": "header",
+      "content": "Tarot Card 1 (Left - The Empress)"
+    },
+    {
+      "type": "image_picker",
+      "id": "card_1_image",
+      "label": "Card 1 image (The Empress)",
+      "info": "Recommended: 600 x 1000px transparent PNG or WebP."
+    },
+    {
+      "type": "text",
+      "id": "card_1_label",
+      "label": "Card 1 label",
+      "default": "THE EMPRESS"
+    },
+    {
+      "type": "url",
+      "id": "card_1_link",
+      "label": "Card 1 link (optional)"
+    },
+    {
+      "type": "header",
+      "content": "Tarot Card 2 (Center - The Moon)"
+    },
+    {
+      "type": "image_picker",
+      "id": "card_2_image",
+      "label": "Card 2 image (The Moon)",
+      "info": "Recommended: 600 x 1000px transparent PNG or WebP."
+    },
+    {
+      "type": "text",
+      "id": "card_2_label",
+      "label": "Card 2 label",
+      "default": "THE MOON"
+    },
+    {
+      "type": "url",
+      "id": "card_2_link",
+      "label": "Card 2 link (optional)"
+    },
+    {
+      "type": "header",
+      "content": "Tarot Card 3 (Right - The Star)"
+    },
+    {
+      "type": "image_picker",
+      "id": "card_3_image",
+      "label": "Card 3 image (The Star)",
+      "info": "Recommended: 600 x 1000px transparent PNG or WebP."
+    },
+    {
+      "type": "text",
+      "id": "card_3_label",
+      "label": "Card 3 label",
+      "default": "THE STAR"
+    },
+    {
+      "type": "url",
+      "id": "card_3_link",
+      "label": "Card 3 link (optional)"
+    },
+    {
+      "type": "header",
+      "content": "Animation & Motion"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_floating_cards",
+      "label": "Enable continuous floating card animation",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_mouse_parallax",
+      "label": "Enable subtle desktop mouse parallax",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_particles",
+      "label": "Enable floating gold celestial particles",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_celestial_orbit",
+      "label": "Enable rotating celestial orbit rings",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Color Palette Overrides"
+    },
+    {
+      "type": "color",
+      "id": "bg_base_color",
+      "label": "Base background color",
+      "default": "#07050C"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading text color",
+      "default": "#F5EBDD"
+    },
+    {
+      "type": "color",
+      "id": "gold_accent_color",
+      "label": "Gold accent color",
+      "default": "#D8B45D"
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "Body text color",
+      "default": "#B9B0BF"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "trust_item",
+      "name": "Trust Feature",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "lotus", "label": "Sacred Lotus" },
+            { "value": "shipping", "label": "Worldwide Shipping (Paper plane)" },
+            { "value": "shield", "label": "Secure Payments (Shield)" },
+            { "value": "moon", "label": "Spiritual Guidance (Moon)" },
+            { "value": "star", "label": "Star" }
+          ],
+          "default": "lotus"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Authentic & Energized"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Carefully curated with spiritual care"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Kavita Premium Hero",
+      "blocks": [
+        {
+          "type": "trust_item",
+          "settings": {
+            "icon": "lotus",
+            "title": "Authentic & Energized",
+            "subtitle": "Carefully curated, spiritually cleansed"
+          }
+        },
+        {
+          "type": "trust_item",
+          "settings": {
+            "icon": "shipping",
+            "title": "Worldwide Shipping",
+            "subtitle": "Sacred products to your doorstep"
+          }
+        },
+        {
+          "type": "trust_item",
+          "settings": {
+            "icon": "shield",
+            "title": "Secure Payments",
+            "subtitle": "Safe, encrypted checkout"
+          }
+        },
+        {
+          "type": "trust_item",
+          "settings": {
+            "icon": "moon",
+            "title": "Spiritual Guidance",
+            "subtitle": "Tools for a more aligned you"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

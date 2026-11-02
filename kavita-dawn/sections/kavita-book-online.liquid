@@ -1,0 +1,138 @@
+<section class="k-section page-width">
+  <div class="k-heading">
+    <div>
+      <p class="k-kicker">{{ section.settings.eyebrow | escape }}</p>
+      <h1>{{ section.settings.heading | escape }}</h1>
+    </div>
+    <p>{{ section.settings.subheading | escape }}</p>
+  </div>
+
+  <div class="k-grid" style="margin-bottom: 4rem;">
+    <!-- Service 1: Audio Call -->
+    <article class="k-service">
+      <span class="k-index">01 · Live Consultation</span>
+      <h3>Audio Call Tarot Reading</h3>
+      <p>A deeply personal one-on-one live audio session delivered straight to your WhatsApp with Kavita.</p>
+      
+      <div style="background: rgba(34, 26, 53, 0.04); border-radius: 1rem; padding: 1.5rem; margin: 1.5rem 0;">
+        <div style="font-weight: 600; font-size: 1.3rem; margin-bottom: 0.8rem; color: var(--k-midnight);">
+          Verified Rates (Standard vs Premium Same-Day):
+        </div>
+        <ul style="list-style: none; padding: 0; margin: 0; font-size: 1.3rem; line-height: 1.8;">
+          <li>✦ 10 Minutes — <strong>₹999 / ₹1,555</strong></li>
+          <li>✦ 20 Minutes — <strong>₹2,299 / ₹3,099</strong></li>
+          <li>✦ 30 Minutes — <strong>₹3,369 / ₹4,444</strong></li>
+        </ul>
+        <p class="k-small" style="margin-top: 1rem;">Direct live WhatsApp call at your confirmed time slot.</p>
+      </div>
+
+      <div class="k-service-bottom">
+        {% if section.settings.audio_product != blank %}
+          <a class="button button--primary" href="{{ section.settings.audio_product.url }}">Select Duration & Book</a>
+        {% else %}
+          <a class="button button--primary" href="/collections/all">Select Duration & Book</a>
+        {% endif %}
+      </div>
+    </article>
+
+    <!-- Service 2: Voice Note -->
+    <article class="k-service">
+      <span class="k-index">02 · WhatsApp Audio</span>
+      <h3>Voice Note Tarot Reading</h3>
+      <p>Intimate, channeled voice recordings answering your specific life questions, sent directly to your WhatsApp to keep and revisit.</p>
+      
+      <div style="background: rgba(34, 26, 53, 0.04); border-radius: 1rem; padding: 1.5rem; margin: 1.5rem 0;">
+        <div style="font-weight: 600; font-size: 1.3rem; margin-bottom: 0.8rem; color: var(--k-midnight);">
+          Verified Rate:
+        </div>
+        <ul style="list-style: none; padding: 0; margin: 0; font-size: 1.3rem; line-height: 1.8;">
+          <li>✦ 2 Questions Voice Note — <strong>₹451</strong></li>
+          <li>✦ Extended packs — <span class="k-small">[Client to confirm]</span></li>
+        </ul>
+        <p class="k-small" style="margin-top: 1rem;">Delivery: Sent directly to your WhatsApp.</p>
+      </div>
+
+      <div class="k-service-bottom">
+        {% if section.settings.voicenote_product != blank %}
+          <a class="button button--primary" href="{{ section.settings.voicenote_product.url }}">Choose Questions & Book</a>
+        {% else %}
+          <a class="button button--primary" href="/collections/all">Choose Questions & Book</a>
+        {% endif %}
+      </div>
+    </article>
+
+    <!-- Service 3: Healing Services -->
+    <article class="k-service">
+      <span class="k-index">03 · Sacred Energy</span>
+      <h3>Distance Healing Sessions</h3>
+      <p>Ancient and coded energy modalities designed to clear energetic cords, dissolve heavy burdens, and restore serenity.</p>
+      
+      <div style="background: rgba(34, 26, 53, 0.04); border-radius: 1rem; padding: 1.5rem; margin: 1.5rem 0;">
+        <div style="font-weight: 600; font-size: 1.3rem; margin-bottom: 0.8rem; color: var(--k-midnight);">
+          Verified Healing Modalities:
+        </div>
+        <ul style="list-style: none; padding: 0; margin: 0; font-size: 1.3rem; line-height: 1.8;">
+          <li>✦ Distance Cord-Cutting — <strong>₹2,499</strong></li>
+          <li>✦ Vortex of Blessings Circle — <strong>₹3,100</strong></li>
+          <li>✦ Lamafera Ancient Healing — <strong>₹3,500</strong></li>
+        </ul>
+        <p class="k-small" style="margin-top: 1rem;">Conducted remotely with pre-session intention & voice debrief.</p>
+      </div>
+
+      <div class="k-service-bottom">
+        {% if section.settings.healing_product != blank %}
+          <a class="button button--primary" href="{{ section.settings.healing_product.url }}">Inquire / Book Session</a>
+        {% else %}
+          <a class="button button--primary" href="/pages/contact">Inquire / Book Session</a>
+        {% endif %}
+      </div>
+    </article>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Book Online Overview",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Sacred Consultations"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Book Your Personal Session"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Choose your consultation format. All sessions are conducted with utmost confidentiality, empathy, and intuitive presence."
+    },
+    {
+      "type": "product",
+      "id": "audio_product",
+      "label": "Audio Call Product"
+    },
+    {
+      "type": "product",
+      "id": "voicenote_product",
+      "label": "Voice Note Product"
+    },
+    {
+      "type": "product",
+      "id": "healing_product",
+      "label": "Healing Product"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Book Online Overview"
+    }
+  ]
+}
+{% endschema %}
+

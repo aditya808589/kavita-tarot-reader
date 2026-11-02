@@ -1,0 +1,427 @@
+/* Match the preview's root scale, isolated from Dawn. */
+html{font-size:16px}body{margin:0}#bookingModal{height:100dvh;max-height:100dvh;padding:12px!important;overflow:hidden;z-index:10020}#bookingModal .modal-card{display:flex;flex-direction:column;width:min(100%,600px)!important;max-height:calc(100dvh - 24px)!important;overflow:hidden!important;margin:auto;box-sizing:border-box}#bookingModal .modal-header-section{flex:0 0 auto;padding-right:34px}#bookingForm{display:flex;flex-direction:column;flex:1 1 auto;min-height:0;overflow:hidden}#bookingModal .modal-form-fields{flex:1 1 auto;min-height:0;max-height:none!important;overflow-y:auto!important;overscroll-behavior:contain;touch-action:pan-y}#bookingModal .modal-action-footer{flex:0 0 auto;background:#fffdf9}#bookingModal input,#bookingModal textarea{font-size:16px}#bookingModal .modal-close{z-index:2}#cartDrawer{z-index:10010}#cartOverlay{z-index:10009}#storeStatus:not([hidden]){position:fixed;bottom:100px;left:16px;right:16px;padding:14px;max-width:450px;margin:auto;background:#321923;color:white;z-index:10030;border-radius:8px}
+@media(max-height:550px){#bookingModal .modal-header-section p{display:none}#bookingModal .modal-card{padding:14px!important}#bookingModal .modal-header-section{margin-bottom:8px!important}#bookingModal #modalServiceTitle{font-size:17px!important}}
+
+.story-portrait-img{object-position:center top}.modal-overlay.active~.kavita-mobile-bottom-nav{visibility:hidden}
+body:has(.modal-overlay.active) .kavita-mobile-bottom-nav,body:has(#cartDrawer.active) .kavita-mobile-bottom-nav{visibility:hidden!important;pointer-events:none!important}#bookingModal{z-index:100100!important}#cartDrawer{z-index:100100!important}#cartOverlay{z-index:100099!important}#bookingModal .modal-card{max-height:calc(100dvh - 24px)!important}
+
+/* =========================================================
+   CLEAN LUXURY BRAND LOGO — CRISP & ELEGANT (NO BLUR/GLOW)
+========================================================= */
+.kavita-hdr__logo-link {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  text-decoration: none !important;
+}
+
+.kavita-hdr__logo-img {
+  height: 48px !important;
+  width: auto !important;
+  max-width: 130px !important;
+  flex-shrink: 0 !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08)) !important;
+  transition: transform 0.25s ease, opacity 0.25s ease !important;
+  animation: none !important;
+}
+
+.kavita-hdr__logo-link:hover .kavita-hdr__logo-img {
+  transform: scale(1.03) !important;
+  opacity: 0.95 !important;
+  filter: drop-shadow(0 3px 6px rgba(197, 155, 39, 0.35)) !important;
+}
+
+.kavita-hdr__brand {
+  min-width: max-content !important;
+  flex-shrink: 0 !important;
+}
+
+.kavita-hdr__logo-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+}
+
+.kavita-hdr__brand-name {
+  font-family: 'Cinzel', serif !important;
+  font-size: 1.15rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.07em !important;
+  color: #1A1715 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  max-width: none !important;
+  width: auto !important;
+  display: inline-block !important;
+  overflow: visible !important;
+}
+
+.kavita-hdr__logo-link:hover .kavita-hdr__brand-name {
+  color: #80142B !important;
+}
+
+@media (max-width: 767px) {
+  .kavita-hdr__logo-img {
+    height: 40px !important;
+    width: auto !important;
+  }
+}
+
+/* Ensure menu toggle button is completely hidden/removed */
+.store-menu-toggle {
+  display: none !important;
+}
+
+/* =========================================================
+   SEARCH BAR ENHANCEMENT & PREDICTIVE DROPDOWN
+========================================================= */
+.kavita-hdr__search-wrap {
+  position: relative !important;
+  z-index: 2000 !important;
+}
+
+.kavita-hdr__search-form {
+  position: relative !important;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease !important;
+}
+
+.kavita-hdr__search-form:focus-within {
+  border-color: #D4AF37 !important;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25), 0 4px 15px rgba(0,0,0,0.06) !important;
+}
+
+.kavita-search-dropdown {
+  position: absolute !important;
+  top: calc(100% + 8px) !important;
+  left: 0 !important;
+  right: 0 !important;
+  background: #FFFFFF !important;
+  border: 1px solid #D4AF37 !important;
+  border-radius: 14px !important;
+  box-shadow: 0 14px 35px rgba(28, 25, 23, 0.16), 0 4px 12px rgba(212, 175, 55, 0.2) !important;
+  max-height: 440px !important;
+  overflow-y: auto !important;
+  z-index: 10000 !important;
+  padding: 8px 0 !important;
+  display: none;
+  animation: searchDropdownFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes searchDropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.kavita-search-dropdown.active {
+  display: block !important;
+}
+
+.kavita-search-dropdown__header {
+  padding: 8px 16px 6px !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.12em !important;
+  color: #80142B !important;
+  border-bottom: 1px solid #F3EFEA !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.kavita-search-dropdown__item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 10px 16px !important;
+  text-decoration: none !important;
+  color: #1C1917 !important;
+  border-bottom: 1px solid #FAF7F2 !important;
+  transition: background 0.15s ease, transform 0.15s ease !important;
+  cursor: pointer !important;
+}
+
+.kavita-search-dropdown__item:hover,
+.kavita-search-dropdown__item.highlighted {
+  background: #FAF6EF !important;
+  transform: translateX(3px) !important;
+}
+
+.kavita-search-dropdown__thumb {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 8px !important;
+  object-fit: cover !important;
+  border: 1px solid #E8E2D5 !important;
+  background: #FAF7F2 !important;
+  flex-shrink: 0 !important;
+}
+
+.kavita-search-dropdown__info {
+  flex: 1 !important;
+  min-width: 0 !important;
+}
+
+.kavita-search-dropdown__title {
+  font-family: var(--font-heading, 'Cinzel', serif) !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  color: #1C1917 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  line-height: 1.3 !important;
+}
+
+.kavita-search-dropdown__meta {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-top: 3px !important;
+  font-size: 0.78rem !important;
+}
+
+.kavita-search-dropdown__badge {
+  background: rgba(128, 20, 43, 0.08) !important;
+  color: #80142B !important;
+  padding: 1px 6px !important;
+  border-radius: 4px !important;
+  font-size: 0.68rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+.kavita-search-dropdown__price {
+  font-weight: 700 !important;
+  color: #80142B !important;
+}
+
+.kavita-search-dropdown__compare-price {
+  color: #8C827A !important;
+  text-decoration: line-through !important;
+  font-size: 0.72rem !important;
+}
+
+.kavita-search-dropdown__quick-tag {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  padding: 6px 12px !important;
+  margin: 4px 4px !important;
+  background: #FAF7F2 !important;
+  border: 1px solid #E8E2D5 !important;
+  border-radius: 20px !important;
+  font-size: 0.78rem !important;
+  color: #4A443E !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+}
+
+.kavita-search-dropdown__quick-tag:hover {
+  background: #80142B !important;
+  color: #FFFFFF !important;
+  border-color: #80142B !important;
+}
+
+.kavita-search-dropdown__footer {
+  padding: 10px 16px !important;
+  background: #FAF7F2 !important;
+  text-align: center !important;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  color: #80142B !important;
+  border-top: 1px solid #E8E2D5 !important;
+  cursor: pointer !important;
+  transition: background 0.15s ease !important;
+}
+
+.kavita-search-dropdown__footer:hover {
+  background: #F4ECE0 !important;
+}
+
+.kavita-search-dropdown__empty {
+  padding: 20px 16px !important;
+  text-align: center !important;
+  color: #7D756D !important;
+  font-size: 0.86rem !important;
+}
+
+/* =========================================================
+   LUXURY MOBILE HAMBURGER BUTTON & SLIDE-OUT DRAWER
+========================================================= */
+.store-menu-toggle {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .store-menu-toggle {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 38px !important;
+    height: 38px !important;
+    border: 1px solid #DFC9A4 !important;
+    border-radius: 50% !important;
+    background: #FAF7F2 !important;
+    color: #80142B !important;
+    font-size: 1.15rem !important;
+    cursor: pointer !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04) !important;
+    transition: all 0.2s ease !important;
+  }
+  .store-menu-toggle:hover {
+    background: #80142B !important;
+    color: #FFFFFF !important;
+    border-color: #80142B !important;
+  }
+}
+
+.kavita-mobile-drawer {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 100050 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: visibility 0.3s ease !important;
+}
+
+.kavita-mobile-drawer.active {
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.kavita-mobile-drawer__overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: rgba(14, 11, 18, 0.65) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease !important;
+}
+
+.kavita-mobile-drawer.active .kavita-mobile-drawer__overlay {
+  opacity: 1 !important;
+}
+
+.kavita-mobile-drawer__panel {
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: min(85vw, 360px) !important;
+  background: #FFFFFF !important;
+  box-shadow: 5px 0 25px rgba(0, 0, 0, 0.25) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  transform: translateX(-100%) !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  overflow-y: auto !important;
+}
+
+.kavita-mobile-drawer.active .kavita-mobile-drawer__panel {
+  transform: translateX(0) !important;
+}
+
+.kavita-mobile-drawer__header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 18px 20px !important;
+  background: #FAF7F2 !important;
+  border-bottom: 1px solid #E8E2D5 !important;
+}
+
+.kavita-mobile-drawer__brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.kavita-mobile-drawer__close {
+  width: 34px !important;
+  height: 34px !important;
+  border: 1px solid #DFC9A4 !important;
+  border-radius: 50% !important;
+  background: #FFFFFF !important;
+  color: #80142B !important;
+  font-size: 1.1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.kavita-mobile-drawer__close:hover {
+  background: #80142B !important;
+  color: #FFFFFF !important;
+}
+
+.kavita-mobile-drawer__nav {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 12px 0 !important;
+}
+
+.kavita-mobile-drawer__link {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  padding: 13px 22px !important;
+  font-family: var(--font-heading, 'Cinzel', serif) !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  color: #1C1917 !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid #FAF7F2 !important;
+  transition: background 0.15s ease, color 0.15s ease !important;
+}
+
+.kavita-mobile-drawer__link:hover {
+  background: #FAF6EF !important;
+  color: #80142B !important;
+}
+
+.k-drawer-icon {
+  font-size: 1.15rem !important;
+}
+
+.kavita-mobile-drawer__footer {
+  margin-top: auto !important;
+  padding: 20px !important;
+  background: #FAF7F2 !important;
+  border-top: 1px solid #E8E2D5 !important;
+}
+
+.kavita-mobile-drawer__wa-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  width: 100 !important;
+  padding: 12px !important;
+  background: #1B7A43 !important;
+  color: #FFFFFF !important;
+  border-radius: 10px !important;
+  text-decoration: none !important;
+  font-weight: 700 !important;
+  font-size: 0.88rem !important;
+  box-shadow: 0 4px 12px rgba(27, 122, 67, 0.25) !important;
+  transition: background 0.2s ease !important;
+}
+
+.kavita-mobile-drawer__wa-btn:hover {
+  background: #145E33 !important;
+}

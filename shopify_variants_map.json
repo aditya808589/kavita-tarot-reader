@@ -1,0 +1,371 @@
+{
+  "10-minutes-call": {
+    "productId": 8828643737761,
+    "variantId": 48233537798305,
+    "price": 999.0,
+    "comparePrice": 1555.0,
+    "title": "10 Minutes Live Audio Call Tarot Reading with Kavita",
+    "variants": [
+      {
+        "title": "10 Minutes (Standard Delivery)",
+        "id": 48490756374689,
+        "price": 999.0
+      },
+      {
+        "title": "10 Minutes (Urgent Within 24 Hrs)",
+        "id": 48490756407457,
+        "price": 1555.0
+      },
+      {
+        "title": "20 Minutes (Standard Delivery)",
+        "id": 48490756440225,
+        "price": 2299.0
+      },
+      {
+        "title": "20 Minutes (Urgent Within 24 Hrs)",
+        "id": 48490756472993,
+        "price": 3099.0
+      },
+      {
+        "title": "30 Minutes (Standard Delivery)",
+        "id": 48490756505761,
+        "price": 3369.0
+      },
+      {
+        "title": "30 Minutes (Urgent Within 24 Hrs)",
+        "id": 48490756538529,
+        "price": 4444.0
+      }
+    ]
+  },
+  "30-minutes-call": {
+    "productId": 8828644196513,
+    "variantId": 48233538289825,
+    "price": 3369.0,
+    "comparePrice": 4444.0,
+    "title": "30 Minutes Comprehensive Live Audio Call Tarot Reading"
+  },
+  "amethyst-clear-quartz-bracelet": {
+    "productId": 8828644720801,
+    "variantId": 48233538945185,
+    "price": 1222.0,
+    "comparePrice": 1222.0,
+    "title": "Amethyst and Clear Quartz Mixed Harmony Bracelet"
+  },
+  "amethyst-clear-rose-quartz-bracelet": {
+    "productId": 8828644950177,
+    "variantId": 48233539240097,
+    "price": 1222.0,
+    "comparePrice": 1222.0,
+    "title": "Amethyst, Clear Quartz & Rose Quartz Triad Bracelet"
+  },
+  "rune-reading": {
+    "productId": 8828645114017,
+    "variantId": 48233539403937,
+    "price": 3333.0,
+    "comparePrice": 3333.0,
+    "title": "Ancient Nordic Rune Reading Session"
+  },
+  "bhai-bhabhi-money-magnet-rakhi": {
+    "productId": 8828647342241,
+    "variantId": 48233541664929,
+    "price": 315.0,
+    "comparePrice": 315.0,
+    "title": "Bhai Bhabhi Money Magnet Crystal Rakhi Pair"
+  },
+  "bhai-bhabhi-rudraksha-rakhi": {
+    "productId": 8828647243937,
+    "variantId": 48233541599393,
+    "price": 250.0,
+    "comparePrice": 250.0,
+    "title": "Bhai Bhabhi Sacred Rudraksha Rakhi Pair"
+  },
+  "black-tourmaline-bracelet": {
+    "productId": 8828645015713,
+    "variantId": 48233539305633,
+    "price": 1222.0,
+    "comparePrice": 1222.0,
+    "title": "Black Tourmaline Bracelet: A Gateway to Protection & Positive Energy"
+  },
+  "career-growth-reading": {
+    "productId": 8844187500705,
+    "variantId": 48490448060577,
+    "price": 1099.0,
+    "comparePrice": 1899.0,
+    "title": "Career Growth & Professional Trajectory Tarot Reading"
+  },
+  "career-reading-labradorite-bundle": {
+    "productId": 8828645769377,
+    "variantId": 48233540124833,
+    "price": 1899.05,
+    "comparePrice": 1999.0,
+    "title": "Career Reading + Energized Labradorite Crystal Bundle"
+  },
+  "carnelian-vitality-stone": {
+    "productId": 8828644819105,
+    "variantId": 48233539043489,
+    "price": 1222.0,
+    "comparePrice": 1222.0,
+    "title": "Carnelian Natural Crystal \u2013 The Flame of Vitality & Passion"
+  },
+  "citrine-stone-of-joy-abundance": {
+    "productId": 8828646031521,
+    "variantId": 48233540386977,
+    "price": 2555.0,
+    "comparePrice": 2555.0,
+    "title": "Citrine: The Stone of Joy, Abundance & Success"
+  },
+  "clear-quartz-master-healer": {
+    "productId": 8828645507233,
+    "variantId": 48233539862689,
+    "price": 1555.0,
+    "comparePrice": 1555.0,
+    "title": "Clear Quartz: The Master Healer & Energy Amplifier"
+  },
+  "deep-insight-reading-8-questions": {
+    "productId": 8844187599009,
+    "variantId": 48490448158881,
+    "price": 1999.0,
+    "comparePrice": 3299.0,
+    "title": "Deep Insight Reading (8 Custom Questions of Your Choice)"
+  },
+  "distance-cord-cutting-healing": {
+    "productId": 8844094111905,
+    "variantId": 48489067544737,
+    "price": 5001.0,
+    "comparePrice": 7500.0,
+    "title": "Distance Cord-Cutting Healing Session"
+  },
+  "wulou-and-5-coins-keychain": {
+    "productId": 8828646621345,
+    "variantId": 48233540976801,
+    "price": 666.0,
+    "comparePrice": 666.0,
+    "title": "Feng Shui Wulou & 5 Emperor Coins Protection Keychain"
+  },
+  "future-spouse-reading": {
+    "productId": 8844187336865,
+    "variantId": 48490447241377,
+    "price": 1499.0,
+    "comparePrice": 2499.0,
+    "title": "Future Spouse & Destined Connection Tarot Reading"
+  },
+  "heart-consultation-private-healing": {
+    "productId": 8844187467937,
+    "variantId": 48490447437985,
+    "price": 8888.0,
+    "comparePrice": 12999.0,
+    "title": "Heart Consultation: 1:1 Private Healing & Transformation"
+  },
+  "kunzite-bracelet": {
+    "productId": 8828643311777,
+    "variantId": 48233537339553,
+    "price": 3555.0,
+    "comparePrice": 3555.0,
+    "title": "Kunzite Bracelet \u2013 Embrace Love, Peace & Emotional Healing"
+  },
+  "video-call-tarot-reading": {
+    "productId": 8844148605089,
+    "variantId": 48489124659361,
+    "price": 1888.0,
+    "comparePrice": 2499.0,
+    "title": "Live Video Call Tarot Reading with Kavita"
+  },
+  "love-marriage-pack-8-questions": {
+    "productId": 8844187369633,
+    "variantId": 48490447274145,
+    "price": 1999.0,
+    "comparePrice": 3499.0,
+    "title": "Love & Marriage Pack (8 Questions In-Depth Reading)"
+  },
+  "malachite-transformation-protection": {
+    "productId": 8828646228129,
+    "variantId": 48233540583585,
+    "price": 2121.0,
+    "comparePrice": 2121.0,
+    "title": "Malachite: The Stone of Transformation & Protection"
+  },
+  "meditation-crystal-tumbles": {
+    "productId": 8844156043425,
+    "variantId": 48489137864865,
+    "price": 999.0,
+    "comparePrice": 1888.0,
+    "title": "Meditation Crystal Tumbles"
+  },
+  "money-magnet-rakhi-1": {
+    "productId": 8828646817953,
+    "variantId": 48233541173409,
+    "price": 220.0,
+    "comparePrice": 220.0,
+    "title": "Money Magnet Crystal Rakhi (Classic Edition)"
+  },
+  "money-magnet-rakhi-2": {
+    "productId": 8828646916257,
+    "variantId": 48233541271713,
+    "price": 220.0,
+    "comparePrice": 220.0,
+    "title": "Money Magnet Crystal Rakhi (Golden Aura Edition)"
+  },
+  "no-contact-situation-pack-4-questions": {
+    "productId": 8844187402401,
+    "variantId": 48490447306913,
+    "price": 799.0,
+    "comparePrice": 1299.0,
+    "title": "No Contact Situation Pack (4 Questions Reading)"
+  },
+  "no-contact-situation-5-card-reading": {
+    "productId": 8844187304097,
+    "variantId": 48490447208609,
+    "price": 799.0,
+    "comparePrice": 1499.0,
+    "title": "No Contact Situation Tarot Reading (5 Card Spread)"
+  },
+  "personalised-energy-circle": {
+    "productId": 8828645605537,
+    "variantId": 48233539960993,
+    "price": 1416.0,
+    "comparePrice": 1888.0,
+    "title": "Personalised Sacred Energy Circle"
+  },
+  "pixiu-money-luck-abundance-bracelet": {
+    "productId": 8828645212321,
+    "variantId": 48233539502241,
+    "price": 1777.0,
+    "comparePrice": 1777.0,
+    "title": "Pixiu Money Luck & Abundance Bracelet"
+  },
+  "pyrite-money-success-bracelet": {
+    "productId": 8828645310625,
+    "variantId": 48233539567777,
+    "price": 1555.0,
+    "comparePrice": 1555.0,
+    "title": "Pyrite Money & Success Bracelet \u2013 Unlock Prosperity! \ud83d\udcb0\u2728"
+  },
+  "pyrite-golden-energy-booster": {
+    "productId": 8828646424737,
+    "variantId": 48233540780193,
+    "price": 2121.0,
+    "comparePrice": 2121.0,
+    "title": "Pyrite: The Golden Energy Booster & Wealth Magnet"
+  },
+  "red-jasper-strength-stability": {
+    "productId": 8828645408929,
+    "variantId": 48233539764385,
+    "price": 1222.0,
+    "comparePrice": 1222.0,
+    "title": "Red Jasper: Stone of Physical Strength & Stability"
+  },
+  "reunion-reading": {
+    "productId": 8844187566241,
+    "variantId": 48490448126113,
+    "price": 1099.0,
+    "comparePrice": 1899.0,
+    "title": "Reunion Reading: Path to Reconnection & Next Move"
+  },
+  "rhodonite-emotional-balance": {
+    "productId": 8828646719649,
+    "variantId": 48233541075105,
+    "price": 2222.0,
+    "comparePrice": 2222.0,
+    "title": "Rhodonite: The Rescue Stone of Emotional Balance"
+  },
+  "rose-quartz-small-angel": {
+    "productId": 8828643213473,
+    "variantId": 48233537241249,
+    "price": 550.0,
+    "comparePrice": 550.0,
+    "title": "Rose Quartz Handcrafted Crystal Angel \u2013 Guardian of Love & Healing"
+  },
+  "rose-quartz-raw": {
+    "productId": 8828643410081,
+    "variantId": 48233537437857,
+    "price": 1222.0,
+    "comparePrice": 1222.0,
+    "title": "Rose Quartz Natural Crystal \u2013 The Heart Stone"
+  },
+  "seven-chakra-rakhi": {
+    "productId": 8828647145633,
+    "variantId": 48233541501089,
+    "price": 220.0,
+    "comparePrice": 220.0,
+    "title": "Seven Chakra Balance & Harmony Crystal Rakhi"
+  },
+  "seven-chakra-bracelet": {
+    "productId": 8828643541153,
+    "variantId": 48233537634465,
+    "price": 1555.0,
+    "comparePrice": 1555.0,
+    "title": "Seven Chakra Natural Stone Energy Alignment Bracelet"
+  },
+  "sulemani-hakik-shield-stabilizer": {
+    "productId": 8828645933217,
+    "variantId": 48233540288673,
+    "price": 2121.0,
+    "comparePrice": 2121.0,
+    "title": "Sulemani Hakik: The Sacred Shield & Spiritual Stabilizer"
+  },
+  "tiger-eye-stone-of-courage": {
+    "productId": 8828643639457,
+    "variantId": 48233537732769,
+    "price": 1222.0,
+    "comparePrice": 1222.0,
+    "title": "Tiger Eye Crystal \u2013 The Stone of Courage & Confidence"
+  },
+  "triple-protection-bhai-bhabhi-rakhi": {
+    "productId": 8828647407777,
+    "variantId": 48233541763233,
+    "price": 235.0,
+    "comparePrice": 235.0,
+    "title": "Triple Protection Bhai Bhabhi Rakhi Pair"
+  },
+  "triple-protection-rakhi": {
+    "productId": 8828647047329,
+    "variantId": 48233541402785,
+    "price": 215.0,
+    "comparePrice": 215.0,
+    "title": "Triple Protection Sacred Crystal Rakhi"
+  },
+  "voice-note-5-questions-angel-guidance": {
+    "productId": 8828644622497,
+    "variantId": 48233538846881,
+    "price": 888.0,
+    "comparePrice": 888.0,
+    "title": "Voice Note (5 Questions) + Angelic Guidance"
+  },
+  "voice-note-1-question": {
+    "productId": 8828644294817,
+    "variantId": 48233538388129,
+    "price": 299.0,
+    "comparePrice": 499.0,
+    "title": "WhatsApp Voice Note Tarot Reading (1 Question)",
+    "variants": [
+      {
+        "title": "1 Question (Delivery within 7 days)",
+        "id": 48490758537377,
+        "price": 299.0
+      },
+      {
+        "title": "2 Questions (Delivery within 7 days)",
+        "id": 48490758570145,
+        "price": 399.0
+      },
+      {
+        "title": "3 Questions (Delivery within 7 days)",
+        "id": 48490758602913,
+        "price": 499.0
+      },
+      {
+        "title": "Urgent Voice Note (Within 24 Hours)",
+        "id": 48490758635681,
+        "price": 499.0
+      }
+    ]
+  },
+  "voice-note-2-questions": {
+    "productId": 8828644393121,
+    "variantId": 48233538486433,
+    "price": 399.0,
+    "comparePrice": 699.0,
+    "title": "WhatsApp Voice Note Tarot Reading (2 Questions)"
+  }
+}

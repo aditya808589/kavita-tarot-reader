@@ -142,12 +142,39 @@
       <div class="container kavita-hdr__container">
         <ul class="kavita-hdr__menu">
           <li class="kavita-hdr__menu-item"><a href="collections.html" class="kavita-hdr__menu-link">All Collections</a></li>
-          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=tarot" class="kavita-hdr__menu-link">Tarot Decks</a></li>
-          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=oracle" class="kavita-hdr__menu-link">Oracle Cards</a></li>
-          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=crystals" class="kavita-hdr__menu-link">Crystals & Gems</a></li>
-          <li class="kavita-hdr__menu-item"><a href="consultations.html" class="kavita-hdr__menu-link">Readings</a></li>
+          <li class="kavita-hdr__menu-item"><a href="consultations.html" class="kavita-hdr__menu-link">Tarot Readings</a></li>
+          <li class="kavita-hdr__menu-item kavita-hdr__menu-item--dropdown">
+            <a href="packages.html" class="kavita-hdr__menu-link">
+              Signature Packages
+              <svg class="kavita-hdr__caret" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </a>
+            <div class="kavita-hdr__dropdown">
+              <div class="kavita-hdr__dropdown-grid" style="grid-template-columns: repeat(2, 1fr); min-width: 520px; gap: 1.5rem;">
+                <div class="kavita-hdr__dropdown-col">
+                  <span class="kavita-hdr__dropdown-title">✦ Love &amp; Relationships</span>
+                  <a href="product.html?id=31">No Contact Situation (5 Card)</a>
+                  <a href="product.html?id=32">Future Spouse &amp; Destined Connection</a>
+                  <a href="product.html?id=33">Love &amp; Marriage Pack (8 Questions)</a>
+                  <a href="product.html?id=34">No Contact Situation (4 Questions)</a>
+                  <a href="product.html?id=37">Reunion Reading: Will They Return?</a>
+                </div>
+                <div class="kavita-hdr__dropdown-col">
+                  <span class="kavita-hdr__dropdown-title">✦ Healing &amp; Career Growth</span>
+                  <a href="product.html?id=35">Heart Consultation: 1:1 Healing</a>
+                  <a href="product.html?id=36">Career Growth &amp; Financial Path</a>
+                  <a href="product.html?id=38">Deep Insight Reading (8 Questions)</a>
+                  <div style="margin-top: 0.85rem; padding-top: 0.65rem; border-top: 1px dashed #ECE7DE;">
+                    <a href="packages.html" style="color: #80142B; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
+                      ✦ Explore All 8 Packages →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=bracelets" class="kavita-hdr__menu-link">Healing Bracelets</a></li>
+          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=crystals" class="kavita-hdr__menu-link">Crystals &amp; Carvings</a></li>
           <li class="kavita-hdr__menu-item"><a href="about.html" class="kavita-hdr__menu-link">About Kavita</a></li>
-          
           <li class="kavita-hdr__menu-item"><a href="contact.html" class="kavita-hdr__menu-link">Contact</a></li>
         </ul>
       </div>
@@ -197,6 +224,9 @@
             Clear All Items
           </button>
         </div>
+
+        <!-- FREQUENTLY BOUGHT TOGETHER SECTION ON CART PAGE -->
+        <div id="cartPageBoughtTogether"></div>
       </div>
 
       <!-- Order Summary Column -->
@@ -225,8 +255,12 @@
           <textarea class="form-textarea" rows="2" placeholder="e.g. Please energize with special Dhan Labh mantras in recipient name"></textarea>
         </div>
 
-        <button class="btn btn-maroon" style="width: 100%; padding: 1.1rem; font-size: 0.95rem;" onclick="checkoutCart()">
-          ✦ Proceed to Checkout (COD Avail.)
+        <div id="cartReadingNotice" style="display: none; background: #FFF9F0; border-left: 3px solid #80142B; padding: 0.7rem 0.9rem; margin-bottom: 1.2rem; font-size: 0.85rem; color: #80142B; border-radius: 4px;">
+          ✦ <b>Channeled Consultation in Cart:</b> Readings & energy sessions are 100% prepaid online bookings (UPI / Cards). <i>Cash on Delivery (COD) is not available for readings.</i>
+        </div>
+
+        <button class="btn btn-maroon checkout-cod-label" style="width: 100%; padding: 1.1rem; font-size: 0.95rem;" onclick="checkoutCart()">
+          ✦ Proceed to Checkout
         </button>
 
         <div style="text-align: center; font-size: 0.78rem; color: var(--v-text-muted); margin-top: 1rem;">
@@ -294,6 +328,74 @@
           </div>
         </div>
       `).join('');
+
+      // Render "These Are Bought Together" on cart page
+      function resolveCartAssetImg(imgPath, handle) {
+        if (typeof window !== 'undefined' && window.KAVITA_LIVE_PRODUCTS && handle && window.KAVITA_LIVE_PRODUCTS[handle]) {
+          const lp = window.KAVITA_LIVE_PRODUCTS[handle];
+          if (lp.featured_image) return lp.featured_image;
+          if (lp.images && lp.images.length > 0) return lp.images[0];
+        }
+        if (typeof STORE_PRODUCTS !== 'undefined' && handle) {
+          const sp = STORE_PRODUCTS.find(p => p.handle === handle);
+          if (sp && sp.img && (sp.img.startsWith('http') || sp.img.startsWith('//'))) return sp.img;
+        }
+        if (imgPath && (imgPath.startsWith('http://') || imgPath.startsWith('https://') || imgPath.startsWith('//'))) {
+          return imgPath;
+        }
+        if (typeof window !== 'undefined' && window.KAVITA_ASSET_BASE && imgPath) {
+          const filename = imgPath.split('/').pop();
+          return window.KAVITA_ASSET_BASE + filename;
+        }
+        return imgPath;
+      }
+
+      const btContainer = document.getElementById('cartPageBoughtTogether');
+      if (btContainer) {
+        const upsellCandidates = [
+          { handle: 'meditation-crystal-tumbles', name: 'Meditation Crystal Tumbles (Set of 7)', price: 599, compare: 999, img: 'assets/product-meditation-tumbles.jpg' },
+          { handle: 'pyrite-golden-energy-booster', name: 'Natural Golden Pyrite Wealth Cluster', price: 899, compare: 1499, img: 'assets/product-pyrite-booster.png' },
+          { handle: 'pyrite-money-success-bracelet', name: 'Pyrite Money Magnet Healing Bracelet', price: 799, compare: 1299, img: 'assets/product-pyrite-money-bracelet.jpg' },
+          { handle: 'seven-chakra-bracelet', name: '7 Chakra Healing & Harmony Bracelet', price: 699, compare: 1199, img: 'assets/product-seven-chakra-bracelet.png' },
+          { handle: 'rose-quartz-raw', name: 'Raw Rose Quartz Unconditional Love Stone', price: 799, compare: 1199, img: 'assets/product-rose-quartz-love.png' }
+        ];
+
+        const cartHandles = cart.map(i => (i.handle || i.name || i.title || '').toLowerCase());
+        const eligibleUpsells = upsellCandidates.filter(u => !cartHandles.some(ch => ch.includes(u.handle.toLowerCase()) || ch.includes(u.name.toLowerCase()))).slice(0, 3);
+
+        if (eligibleUpsells.length > 0) {
+          btContainer.innerHTML = `
+            <div style="margin-top: 2.5rem; background: #FFFDF9; border: 1.5px dashed #D4AF37; border-radius: 14px; padding: 1.4rem;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; border-bottom: 1px solid #EEDFCA; padding-bottom: 0.6rem;">
+                <div>
+                  <span style="font-size: 0.72rem; font-weight: 700; color: #80142B; text-transform: uppercase; letter-spacing: 0.1em; display: block;">✦ Spiritual Pairings</span>
+                  <h4 style="font-family: 'Cinzel', serif; font-size: 1.15rem; color: #2A1D1A; margin: 2px 0 0;">These Are Frequently Bought Together</h4>
+                </div>
+                <span style="background: #FFF3D6; color: #80142B; font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 50px;">Special Add-on Price</span>
+              </div>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
+                ${eligibleUpsells.map(u => {
+                  const uImg = resolveCartAssetImg(u.img, u.handle);
+                  return `
+                  <div style="background: #FFF; border: 1px solid #E5DCCE; border-radius: 10px; padding: 0.85rem; display: flex; align-items: center; gap: 0.85rem;">
+                    <img src="${uImg}" alt="${u.name}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 8px; flex-shrink: 0; border: 1px solid #EFE6D8;" onerror="this.onerror=null; this.src=(window.KAVITA_ASSET_BASE ? window.KAVITA_ASSET_BASE + 'kavita-logo-gold.png' : 'assets/kavita-logo-gold.png');">
+                    <div style="flex: 1; min-width: 0;">
+                      <div style="font-size: 0.82rem; font-weight: 700; color: #2A1D1A; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${u.name}</div>
+                      <div style="font-size: 0.85rem; font-weight: 800; color: #80142B; margin-top: 2px;">₹${u.price.toLocaleString('en-IN')} <span style="font-size: 0.72rem; color: #888; text-decoration: line-through; font-weight: 400;">₹${u.compare.toLocaleString('en-IN')}</span></div>
+                      <button type="button" onclick="addToCart('${u.name}', ${u.price}, '${uImg}', '${u.handle}'); renderCartPage();" class="btn btn-maroon" style="padding: 0.3rem 0.75rem; font-size: 0.75rem; border-radius: 6px; margin-top: 5px; cursor: pointer; border: none;">
+                        + Add to Bag
+                      </button>
+                    </div>
+                  </div>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+          `;
+        } else {
+          btContainer.innerHTML = '';
+        }
+      }
     }
 
     function clearFullCart() {
@@ -335,6 +437,7 @@
   </nav>
   <script src="assets/ice-effect.js"></script>
   <script src="assets/storefront-ui.js"></script>
+  <script src="assets/sales-popup.js" defer></script>
 </body>
 </html>
 

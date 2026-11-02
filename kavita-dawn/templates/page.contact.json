@@ -1,0 +1,12 @@
+{
+  "layout": "parity",
+  "sections": {
+    "main": {
+      "type": "parity-contact",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,95 @@
+<section class="k-section page-width" style="padding-top: 4rem; padding-bottom: 4rem;">
+  <div class="k-heading" style="text-align: center; margin-bottom: 2rem; display: block;">
+    <p class="k-kicker">{{ section.settings.eyebrow | default: 'Target Your Energy' }}</p>
+    <h2>{{ section.settings.heading | default: 'Shop by Concern & Goal' }}</h2>
+    <p style="max-width: 650px; margin: 0 auto; color: var(--k-muted);">
+      {{ section.settings.subheading | default: 'Select the specific transformation or blessing you wish to call into your life.' }}
+    </p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.2rem; margin-top: 2.5rem;">
+    {% for block in section.blocks %}
+      {% assign col = block.settings.collection %}
+      <a
+        href="{% if col != blank %}{{ col.url }}{% else %}/collections/all{% endif %}"
+        style="background: #FFFFFF; border: 1px solid #E8E2D5; border-radius: 18px; padding: 1.8rem 1.2rem; text-align: center; color: inherit; text-decoration: none; display: block; box-shadow: 0 4px 15px rgba(0,0,0,0.04); transition: all 0.3s ease;"
+        {{ block.shopify_attributes }}
+      >
+        <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">{{ block.settings.icon | default: '✦' }}</div>
+        <h4 style="font-family: var(--font-heading); font-size: 1.05rem; color: #1C1917; margin-bottom: 0.35rem; font-weight: 700;">{{ block.settings.title | escape }}</h4>
+        <div style="font-size: 0.74rem; color: #8A6414; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;">{{ block.settings.tagline | escape }}</div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Shop by Concern Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Target Your Energy"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shop by Concern & Goal"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Select the specific transformation or blessing you wish to call into your life."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "concern",
+      "name": "Concern Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon Emoji",
+          "default": "💰"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Concern Title",
+          "default": "Dhan Labh & Wealth"
+        },
+        {
+          "type": "text",
+          "id": "tagline",
+          "label": "Subtitle",
+          "default": "Money Flow · Business Growth"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop by Concern Grid",
+      "blocks": [
+        { "type": "concern", "settings": { "icon": "💰", "title": "Dhan Labh & Wealth", "tagline": "Money Flow · Business Growth" } },
+        { "type": "concern", "settings": { "icon": "🛡", "title": "Nazar & Protection", "tagline": "Shield Aura · Ward Evil Eye" } },
+        { "type": "concern", "settings": { "icon": "❤️", "title": "Love & Harmony", "tagline": "Relationship Peace · Soul Union" } },
+        { "type": "concern", "settings": { "icon": "🕊", "title": "Peace & Anxiety Relief", "tagline": "Mental Calm · Sleep · Balance" } },
+        { "type": "concern", "settings": { "icon": "🚀", "title": "Career & Promotion", "tagline": "Success · Clear Decisions" } },
+        { "type": "concern", "settings": { "icon": "🧘", "title": "Chakra Alignment", "tagline": "Kundalini · Vital Energy" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

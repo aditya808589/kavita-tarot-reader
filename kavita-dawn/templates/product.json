@@ -1,0 +1,12 @@
+{
+  "layout": "parity",
+  "sections": {
+    "main": {
+      "type": "parity-product",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

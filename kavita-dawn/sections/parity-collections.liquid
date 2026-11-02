@@ -1,0 +1,733 @@
+<style>
+    .collections-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 3rem;
+      padding: 3.5rem 0 5rem;
+    }
+
+    .filter-sidebar {
+      background: #FFFFFF;
+      border: 1px solid var(--v-border);
+      border-radius: 18px;
+      padding: 1.8rem;
+      height: fit-content;
+      position: sticky;
+      top: 100px;
+      box-shadow: var(--v-shadow-sm);
+    }
+
+    .filter-group {
+      border-bottom: 1px solid var(--v-border);
+      padding: 1.2rem 0;
+    }
+    .filter-group:first-child { padding-top: 0; }
+    .filter-group:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .filter-title {
+      font-size: 0.95rem;
+      color: var(--v-text-dark);
+      margin-bottom: 0.8rem;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .filter-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .filter-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+      color: var(--v-text-body);
+      cursor: pointer;
+    }
+
+    .filter-item input {
+      accent-color: var(--v-maroon);
+      cursor: pointer;
+    }
+
+    .filter-item:hover {
+      color: var(--v-maroon);
+    }
+
+    .toolbar-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid var(--v-border);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .results-count {
+      font-size: 0.9rem;
+      color: var(--v-text-muted);
+      font-weight: 600;
+    }
+
+    .sort-select {
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      border: 1px solid var(--v-border);
+      background: #FFFFFF;
+      font-family: inherit;
+      font-size: 0.85rem;
+      color: var(--v-text-dark);
+      cursor: pointer;
+    }
+
+    /* Mobile Filter Drawer */
+    .mobile-filter-bar {
+      display: none;
+    }
+    @media (max-width: 900px) {
+      .mobile-filter-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.25rem;
+        gap: 0.75rem;
+      }
+      .mobile-filter-btn {
+        flex: 1;
+        background: #FFFFFF;
+        border: 1.5px solid #80142B;
+        color: #80142B;
+        font-family: 'Cinzel', serif;
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        padding: 0.65rem 1rem;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(128, 20, 43, 0.08);
+      }
+      .filter-overlay {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 99990;
+        backdrop-filter: blur(2px);
+      }
+      .filter-overlay.active {
+        display: block;
+      }
+      .filter-sidebar {
+        position: fixed !important;
+        top: 0 !important;
+        left: -320px !important;
+        width: 300px !important;
+        height: 100vh !important;
+        background: #FFFFFF !important;
+        z-index: 99995 !important;
+        overflow-y: auto !important;
+        padding: 1.5rem !important;
+        box-shadow: 4px 0 24px rgba(0,0,0,0.2) !important;
+        transition: left 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        margin-bottom: 0 !important;
+      }
+      .filter-sidebar.active {
+        left: 0 !important;
+      }
+      .filter-close-btn {
+        display: block !important;
+      }
+      .collections-layout {
+        grid-template-columns: 1fr;
+      }
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr) !important; /* EXACTLY 2 IN ONE ROW ON MOBILE */
+        gap: 0.75rem !important;
+      }
+    }
+  </style>
+{{ 'parity-storefront-refinements.css' | asset_url | stylesheet_tag }}
+{{ 'parity-category-grid.css' | asset_url | stylesheet_tag }}
+{{ 'parity-integration.css' | asset_url | stylesheet_tag }}
+
+
+  <!-- 1. TOP MARQUEE TICKER -->
+  <div class="top-marquee-strip">
+    <div class="top-marquee-track">
+      <div class="top-marquee-item"><span class="bullet">✦</span> 100% GENUINE & ENERGIZED HEALING CRYSTALS</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> AUTHENTIC SACRED TAROT & ORACLE DECKS</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> FREE SHIPPING ON ORDERS ABOVE ₹999</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> CASH ON DELIVERY AVAILABLE ACROSS INDIA</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> 1-ON-1 AUDIO READINGS DIRECT TO WHATSAPP</div>
+      <!-- Loop -->
+      <div class="top-marquee-item"><span class="bullet">✦</span> 100% GENUINE & ENERGIZED HEALING CRYSTALS</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> AUTHENTIC SACRED TAROT & ORACLE DECKS</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> FREE SHIPPING ON ORDERS ABOVE ₹999</div>
+    </div>
+  </div>
+
+  <!-- 2. RAJVIRA 2-TIER LUXURY HEADER -->
+  <header class="kavita-hdr">
+    <div class="kavita-hdr__main">
+      <div class="container kavita-hdr__container">
+        <div class="kavita-hdr__brand">
+          <a href="/" class="kavita-hdr__logo-link">
+            <img src="{{ 'kavita-logo-gold.png' | asset_url }}" alt="Kavita Tarot Reader" class="kavita-hdr__logo-img" width="600" height="600">
+            <span class="kavita-hdr__brand-name">KAVITA TAROT READER</span>
+          </a>
+        </div>
+
+        <div class="kavita-hdr__search-wrap">
+          <form action="/collections/all" method="get" class="kavita-hdr__search-form" onsubmit="event.preventDefault(); window.location.href='/collections/all?search=' + encodeURIComponent(this.querySelector('input').value);">
+            <svg class="kavita-hdr__search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="search" class="kavita-hdr__search-input" placeholder="Search crystals, decks & readings" aria-label="Search store">
+            <button type="submit" class="kavita-hdr__search-btn">Search</button>
+          </form>
+        </div>
+
+        <div class="kavita-hdr__actions">
+          <a href="/collections/all?search=1" class="kavita-hdr__icon-btn kavita-hdr__icon-btn--search-mobile" onclick="event.preventDefault(); document.querySelector('.kavita-hdr__search-input')?.focus();" aria-label="Search">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </a>
+          <a href="/?view=consultations" class="kavita-hdr__util-link"><span class="kavita-hdr__util-dot">●</span> Book Online</a>
+          <a href="/collections/all?wishlist=1" class="kavita-hdr__icon-btn" aria-label="Wishlist">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            <span class="kavita-hdr__badge">0</span>
+          </a>
+          
+          <button class="kavita-hdr__icon-btn kavita-hdr__icon-btn--cart" id="openCartBtn" aria-label="Open Cart" style="background: none; border: none; cursor: pointer;">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="kavita-hdr__badge kavita-hdr__badge--cart" id="cartCount">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="kavita-hdr__nav-bar" aria-label="Category Navigation">
+      <div class="container kavita-hdr__container">
+        <ul class="kavita-hdr__menu">
+          <li class="kavita-hdr__menu-item"><a href="/collections/all" class="kavita-hdr__menu-link">All Collections</a></li>
+          <li class="kavita-hdr__menu-item"><a href="/?view=consultations" class="kavita-hdr__menu-link">Tarot Readings</a></li>
+          <li class="kavita-hdr__menu-item kavita-hdr__menu-item--dropdown">
+            <a href="/?view=packages" class="kavita-hdr__menu-link">
+              Signature Packages
+              <svg class="kavita-hdr__caret" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </a>
+            <div class="kavita-hdr__dropdown">
+              <div class="kavita-hdr__dropdown-grid" style="grid-template-columns: repeat(2, 1fr); min-width: 520px; gap: 1.5rem;">
+                <div class="kavita-hdr__dropdown-col">
+                  <span class="kavita-hdr__dropdown-title">✦ Love &amp; Relationships</span>
+                  <a href="/products/no-contact-situation-5-card-reading">No Contact Situation (5 Card)</a>
+                  <a href="/products/future-spouse-reading">Future Spouse &amp; Destined Connection</a>
+                  <a href="/products/love-marriage-pack-8-questions">Love &amp; Marriage Pack (8 Questions)</a>
+                  <a href="/products/no-contact-situation-pack-4-questions">No Contact Situation (4 Questions)</a>
+                  <a href="/products/reunion-reading">Reunion Reading: Will They Return?</a>
+                </div>
+                <div class="kavita-hdr__dropdown-col">
+                  <span class="kavita-hdr__dropdown-title">✦ Healing &amp; Career Growth</span>
+                  <a href="/products/heart-consultation-private-healing">Heart Consultation: 1:1 Healing</a>
+                  <a href="/products/career-growth-reading">Career Growth &amp; Financial Path</a>
+                  <a href="/products/deep-insight-reading-8-questions">Deep Insight Reading (8 Questions)</a>
+                  <div style="margin-top: 0.85rem; padding-top: 0.65rem; border-top: 1px dashed #ECE7DE;">
+                    <a href="/?view=packages" style="color: #80142B; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
+                      ✦ Explore All 8 Packages →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="kavita-hdr__menu-item"><a href="/collections/all?cat=bracelets" class="kavita-hdr__menu-link">Healing Bracelets</a></li>
+          <li class="kavita-hdr__menu-item"><a href="/collections/all?cat=crystals" class="kavita-hdr__menu-link">Crystals &amp; Carvings</a></li>
+          <li class="kavita-hdr__menu-item"><a href="/?view=about" class="kavita-hdr__menu-link">About Kavita</a></li>
+          <li class="kavita-hdr__menu-item"><a href="/pages/contact" class="kavita-hdr__menu-link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 3. PAGE HERO / BREADCRUMBS -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="/">Home</a> / <span>Collections</span>
+      </div>
+      <h1 class="page-hero-title">Sacred Tarot & Crystal Collections</h1>
+      <p class="page-hero-sub">
+        Explore genuine hand-selected healing crystals, consecrated gemstone bracelets, and authentic tarot decks curated and spiritually cleansed by Kavita.
+      </p>
+    </div>
+  </section>
+
+  <!-- 4. MAIN COLLECTION WITH SIDEBAR FILTERS -->
+  <main class="container">
+    <!-- Mobile Filter Trigger -->
+    <div class="mobile-filter-bar">
+      <button type="button" class="mobile-filter-btn" onclick="toggleMobileFilter()">
+        <span>⚡ Filter Offerings</span>
+      </button>
+    </div>
+    <div class="filter-overlay" id="filterOverlay" onclick="toggleMobileFilter()"></div>
+
+    <div class="collections-layout">
+      
+      <!-- Filter Sidebar -->
+      <aside class="filter-sidebar" id="filterSidebar">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem;">
+          <h4 style="font-size: 1.1rem; color: var(--v-text-dark); margin: 0;">Filter Offerings</h4>
+          <div style="display: flex; align-items: center; gap: 0.8rem;">
+            <button onclick="resetFilters()" style="background: none; border: none; color: var(--v-maroon); font-size: 0.8rem; font-weight: 700; cursor: pointer;">Reset All</button>
+            <button onclick="toggleMobileFilter()" style="display: none; background: none; border: none; font-size: 1.3rem; color: #80142B; cursor: pointer; line-height: 1;" class="filter-close-btn" aria-label="Close Filter">✕</button>
+          </div>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="filter-group">
+          <div class="filter-title">Category</div>
+          <ul class="filter-list">
+            <li class="filter-item">
+              <input type="checkbox" id="cat_all" checked onchange="applyFilters()">
+              <label for="cat_all">All Offerings (<span id="count_all">38</span>)</label>
+            </li>
+            <li class="filter-item">
+              <input type="checkbox" id="cat_packages" onchange="applyFilters()">
+              <label for="cat_packages">Signature Packages (8)</label>
+            </li>
+            <li class="filter-item">
+              <input type="checkbox" id="cat_readings" onchange="applyFilters()">
+              <label for="cat_readings">Consultations &amp; Readings (10)</label>
+            </li>
+            <li class="filter-item">
+              <input type="checkbox" id="cat_bracelets" onchange="applyFilters()">
+              <label for="cat_bracelets">Gemstone Bracelets (7)</label>
+            </li>
+            <li class="filter-item">
+              <input type="checkbox" id="cat_crystals" onchange="applyFilters()">
+              <label for="cat_crystals">Healing Crystals &amp; Sacred Talismans (13)</label>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Intention Filter -->
+        <div class="filter-group">
+          <div class="filter-title">Shop by Intention</div>
+          <ul class="filter-list">
+            <li class="filter-item">
+              <input type="checkbox" id="int_dhanlabh" onchange="applyFilters()">
+              <label for="int_dhanlabh">💰 Dhan Labh & Wealth</label>
+            </li>
+            <li class="filter-item">
+              <input type="checkbox" id="int_protection" onchange="applyFilters()">
+              <label for="int_protection">🧿 Nazar & Protection</label>
+            </li>
+            <li class="filter-item">
+              <input type="checkbox" id="int_peace" onchange="applyFilters()">
+              <label for="int_peace">🕊️ Peace & Anti-Anxiety</label>
+            </li>
+            <li class="filter-item">
+              <input type="checkbox" id="int_career" onchange="applyFilters()">
+              <label for="int_career">🚀 Career & Success</label>
+            </li>
+            <li class="filter-item">
+              <input type="checkbox" id="int_shani" onchange="applyFilters()">
+              <label for="int_shani">🪐 Shani Sade Sati</label>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Trust Features -->
+        <div class="filter-group">
+          <div class="filter-title">Authenticity</div>
+          <div style="font-size: 0.8rem; color: var(--v-text-muted); line-height: 1.5;">
+            ✓ 100% Lab Tested & Certified<br>
+            ✓ Vedic Pran Pratishtha Consecrated<br>
+            ✓ Cash on Delivery Available
+          </div>
+        </div>
+      </aside>
+
+      <!-- Products Area -->
+      <section>
+        <!-- Toolbar -->
+        <div class="toolbar-row">
+          <div class="results-count" id="displayResultsCount">
+            Showing all 12 sacred offerings
+          </div>
+          <div>
+            <label style="font-size: 0.85rem; color: var(--v-text-muted); margin-right: 0.4rem;">Sort By:</label>
+            <select class="sort-select" id="sortSelect" onchange="applySorting()">
+              <option value="featured">Featured & Bestselling</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Customer Rating</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="collectionGrid">
+          <!-- Injected via JavaScript -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- 5. CONTAINED LUXURY FOOTER (WHITE & ROYAL RED THEME) -->
+  <footer class="refined-footer">
+  <div class="container"><div class="refined-footer-grid">
+    <div class="refined-footer-brand"><a href="/"><img src="{{ 'kavita-logo-gold.png' | asset_url }}" alt="Kavita Tarot" width="80" height="80"></a><h2>A little clarity.<br>A deeper connection.</h2><p>Personal tarot guidance, thoughtful rituals and sacred tools for your everyday journey.</p></div>
+    <div><h3>Explore</h3><a href="/?view=consultations">Tarot & healing</a><a href="/collections/all?cat=crystals">Healing crystals</a><a href="/collections/all?cat=tarot">Tarot & oracle decks</a><a href="/?view=about">Meet Kavita</a></div>
+    <div><h3>Here to help</h3><a href="/pages/contact">Contact us</a><a href="/?view=faq">Questions & care</a><a href="/cart">Your bag</a><a href="/?view=consultations">Book a reading</a></div>
+  </div><div class="refined-footer-note">Tarot and energy practices offer personal and spiritual reflection. They do not replace professional medical, legal or financial advice.</div><div class="refined-footer-bottom"><span>© 2026 Kavita Tarot Reader</span><span>Thoughtfully chosen. Personally guided.</span></div></div>
+</footer>
+
+  <!-- 6. CART DRAWER FLYOUT -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <div style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--v-text-dark); font-weight: 700;">
+        Your Sacred Cart (<span id="cartCountHeader">0</span>)
+      </div>
+      <button onclick="closeCart()" style="background: none; border: none; color: var(--v-text-dark); font-size: 1.5rem; cursor: pointer;">✕</button>
+    </div>
+
+    <div class="cart-progress-bar-wrap">
+      <div id="shippingProgressText">✦ Add ₹999 for FREE Express Delivery!</div>
+      <div class="cart-progress-bar">
+        <div class="cart-progress-fill" id="shippingProgressFill" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <div class="cart-body" id="cartItemsList"></div>
+
+    <div class="cart-footer">
+      <div class="cart-subtotal-row">
+        <span>Subtotal:</span>
+        <span id="cartSubtotal" style="color: var(--v-maroon);">₹0</span>
+      </div>
+      <button class="btn btn-maroon" style="width: 100%; padding: 0.95rem;" onclick="checkoutCart()">
+        ✦ Proceed to Secure Checkout
+      </button>
+      <div style="text-align: center; font-size: 0.74rem; color: var(--v-text-muted); margin-top: 0.8rem;">
+        🔒 256-Bit SSL Encrypted · 100% Authentic Consecrated Items
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. FLOATING WHATSAPP BUTTON -->
+  
+
+  <!-- Script: Catalog and Filtering -->
+  
+  
+  <script>
+    let activeProducts = [...STORE_PRODUCTS];
+
+    function renderCollection(products) {
+      const grid = document.getElementById('collectionGrid');
+      const countEl = document.getElementById('displayResultsCount');
+      
+      countEl.innerText = `Showing ${products.length} sacred offerings`;
+
+      if (products.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem; color: var(--v-text-muted);">
+            <div style="font-size: 3rem; margin-bottom: 1rem; color: var(--v-maroon);">📿</div>
+            <h3 style="color: var(--v-text-dark); margin-bottom: 0.5rem;">No products match these filters</h3>
+            <p>Try resetting filters to explore our full energized catalogue.</p>
+            <button class="btn btn-maroon" style="margin-top: 1.5rem;" onclick="resetFilters()">Reset All Filters</button>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = products.map(p => `
+        <div class="product-card">
+          <div class="product-media">
+            <span class="product-badge-flag">${p.badge}</span>
+            <button type="button" class="product-wishlist-heart" aria-label="Add to Wishlist" onclick="toggleWishlist(this, ${p.id})">♡</button>
+            <a href="/products/${p.handle}">
+              <img loading="lazy" decoding="async" class="product-img" src="${p.img}" alt="${p.title}" width="600" height="600">
+            </a>
+          </div>
+          <div class="product-info-wrap">
+            <div>
+              <div class="product-category-sub">${p.categoryLabel}</div>
+              <h4 class="product-title">
+                <a href="/products/${p.handle}">${p.title}</a>
+              </h4>
+              <div class="product-reviews-stars">
+                ★★★★★ <span class="product-reviews-count">(${p.reviewsCount} reviews)</span>
+              </div>
+              <div class="product-pricing-row">
+                <span class="current-price">₹${p.price.toLocaleString('en-IN')}</span>
+                <span class="compare-price">₹${p.comparePrice.toLocaleString('en-IN')}</span>
+                <span class="discount-pill">${p.discount}</span>
+              </div>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-maroon" onclick="addToCart('${p.title}', ${p.price}, '${p.img}', '${p.handle}')">
+                ✦ Add to Cart
+              </button>
+              <a href="/products/${p.handle}" class="btn btn-outline">
+                Details
+              </a>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Toggle Mobile Filter Drawer
+    function toggleMobileFilter() {
+      const sidebar = document.getElementById('filterSidebar');
+      const overlay = document.getElementById('filterOverlay');
+      if (sidebar && overlay) {
+        sidebar.classList.toggle('active');
+        overlay.classList.toggle('active');
+      }
+    }
+
+    // Toggle Wishlist Heart
+    function toggleWishlist(btn, id) {
+      btn.classList.toggle('is-active');
+      const isActive = btn.classList.contains('is-active');
+      btn.innerHTML = isActive ? '♥' : '♡';
+      let count = parseInt(localStorage.getItem('kavita_wishlist_count') || '0', 10);
+      count = isActive ? count + 1 : Math.max(0, count - 1);
+      localStorage.setItem('kavita_wishlist_count', count);
+      const badge = document.getElementById('mobileWishlistCount');
+      if (badge) badge.innerText = count;
+    }
+
+    const packageHandles = [
+      'no-contact-situation-5-card-reading',
+      'future-spouse-reading',
+      'love-marriage-pack-8-questions',
+      'no-contact-situation-pack-4-questions',
+      'heart-consultation-private-healing',
+      'career-growth-reading',
+      'reunion-reading',
+      'deep-insight-reading-8-questions'
+    ];
+
+    function applyFilters() {
+      const catAll = document.getElementById('cat_all') ? document.getElementById('cat_all').checked : false;
+      const catPackages = document.getElementById('cat_packages') ? document.getElementById('cat_packages').checked : false;
+      const catReadings = document.getElementById('cat_readings') ? document.getElementById('cat_readings').checked : false;
+      const catBracelets = document.getElementById('cat_bracelets') ? document.getElementById('cat_bracelets').checked : false;
+      const catCrystals = document.getElementById('cat_crystals') ? document.getElementById('cat_crystals').checked : false;
+
+      const intDhanlabh = document.getElementById('int_dhanlabh').checked;
+      const intProtection = document.getElementById('int_protection').checked;
+      const intPeace = document.getElementById('int_peace').checked;
+      const intCareer = document.getElementById('int_career').checked;
+      const intShani = document.getElementById('int_shani').checked;
+
+      activeProducts = STORE_PRODUCTS.filter(p => {
+        let catMatch = true;
+        if (!catAll) {
+          let matchesAnyCat = false;
+          let anyCatSelected = false;
+
+          if (catPackages) {
+            anyCatSelected = true;
+            if (packageHandles.includes(p.handle)) matchesAnyCat = true;
+          }
+          if (catReadings) {
+            anyCatSelected = true;
+            if (p.category === 'readings' && !packageHandles.includes(p.handle)) matchesAnyCat = true;
+          }
+          if (catBracelets) {
+            anyCatSelected = true;
+            if (p.category === 'bracelets') matchesAnyCat = true;
+          }
+          if (catCrystals) {
+            anyCatSelected = true;
+            if (p.category === 'crystals') matchesAnyCat = true;
+          }
+          
+          if (anyCatSelected) {
+            catMatch = matchesAnyCat;
+          }
+        }
+
+        let intMatch = true;
+        const matchedInts = [];
+        if (intDhanlabh) matchedInts.push('dhanlabh');
+        if (intProtection) matchedInts.push('protection');
+        if (intPeace) matchedInts.push('peace');
+        if (intCareer) matchedInts.push('career');
+        if (intShani) matchedInts.push('shani');
+        if (matchedInts.length > 0) {
+          intMatch = matchedInts.some(i => (p.intention || '').includes(i));
+        }
+
+        return catMatch && intMatch;
+      });
+
+      applySorting();
+    }
+
+    function applySorting() {
+      const sortVal = document.getElementById('sortSelect').value;
+      if (sortVal === 'price-low') {
+        activeProducts.sort((a, b) => a.price - b.price);
+      } else if (sortVal === 'price-high') {
+        activeProducts.sort((a, b) => b.price - a.price);
+      } else if (sortVal === 'rating') {
+        activeProducts.sort((a, b) => b.rating - a.rating || b.reviewsCount - a.reviewsCount);
+      } else {
+        // Featured
+        activeProducts.sort((a, b) => a.id - b.id);
+      }
+      renderCollection(activeProducts);
+    }
+
+    function resetFilters() {
+      document.getElementById('cat_all').checked = true;
+      if (document.getElementById('cat_packages')) document.getElementById('cat_packages').checked = false;
+      document.getElementById('cat_readings').checked = false;
+      document.getElementById('cat_bracelets').checked = false;
+      document.getElementById('cat_crystals').checked = false;
+      document.getElementById('int_dhanlabh').checked = false;
+      document.getElementById('int_protection').checked = false;
+      document.getElementById('int_peace').checked = false;
+      document.getElementById('int_career').checked = false;
+      document.getElementById('int_shani').checked = false;
+      activeProducts = [...STORE_PRODUCTS];
+      renderCollection(activeProducts);
+    }
+
+    // URL parameter parsing for category pre-filtering
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const catParam = urlParams.get('cat');
+      if (catParam && catParam !== 'all') {
+        document.getElementById('cat_all').checked = false;
+        if (catParam === 'packages' && document.getElementById('cat_packages')) {
+          document.getElementById('cat_packages').checked = true;
+        }
+        if (catParam === 'readings') document.getElementById('cat_readings').checked = true;
+        if (catParam === 'bracelets') document.getElementById('cat_bracelets').checked = true;
+        if (catParam === 'crystals' || catParam === 'charms') document.getElementById('cat_crystals').checked = true;
+        applyFilters();
+      } else {
+        renderCollection(STORE_PRODUCTS);
+      }
+      const wCount = localStorage.getItem('kavita_wishlist_count') || '0';
+      const badge = document.getElementById('mobileWishlistCount');
+      if (badge) badge.innerText = wCount;
+    });
+  </script>
+
+  <!-- LUXURY MOBILE FLOATING BOTTOM NAVIGATION BAR -->
+  <nav class="kavita-mobile-bottom-nav" aria-label="Mobile Navigation">
+    <a href="/collections/all" class="mobile-nav-item active">
+      <span class="mobile-nav-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+      </span>
+      <span class="mobile-nav-label">Shop</span>
+    </a>
+
+    <a href="/?view=consultations" class="mobile-nav-item">
+      <span class="mobile-nav-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+      </span>
+      <span class="mobile-nav-label">Readings</span>
+    </a>
+
+    <!-- Center Elevated Glowing Home Button -->
+    <a href="/" class="mobile-nav-item mobile-nav-item--center" aria-label="Home">
+      <div class="mobile-nav-center-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+      </div>
+      <span class="mobile-nav-label">Home</span>
+    </a>
+
+    <a href="/collections/all" class="mobile-nav-item">
+      <span class="mobile-nav-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+      </span>
+      <span class="mobile-nav-label">Wishlist</span>
+      <span class="mobile-nav-badge" id="mobileWishlistCount">0</span>
+    </a>
+
+    <a href="javascript:void(0)" class="mobile-nav-item" onclick="openCart()">
+      <span class="mobile-nav-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+      </span>
+      <span class="mobile-nav-label">Cart</span>
+      <span class="mobile-nav-badge" id="mobileCartCount">0</span>
+    </a>
+  </nav>
+
+  <!-- =========================================================
+       SACRED SANCTUARY NEWSLETTER POP-UP (10% OFF FIRST ORDER)
+       Non-permanent: Appears once; dismissed permanently via localStorage
+  ========================================================= -->
+  <div id="kavitaNewsletterOverlay" class="kavita-welcome-overlay" role="dialog" aria-modal="true" aria-hidden="true" style="display: none;">
+    <div class="kavita-welcome-modal kavita-newsletter-modal">
+      <button type="button" class="kavita-welcome-close" id="kavitaNewsletterCloseBtn" aria-label="Close Pop-up">✕</button>
+      <div class="kavita-welcome-icon">💌</div>
+      <div class="kavita-welcome-badge">✦ SACRED SANCTUARY NEWSLETTER ✦</div>
+      <h3 class="kavita-welcome-title">Get 10% Off Your First Order</h3>
+      <p class="kavita-welcome-desc">
+        Subscribe to receive weekly cosmic horoscopes, moon ritual guidance, and an instant <strong>10% OFF coupon code</strong> for your first tarot consultation or crystal order.
+      </p>
+
+      <form id="kavitaNewsletterForm" class="kavita-newsletter-form" onsubmit="return handleNewsletterSubmit(event)">
+        <div class="kavita-newsletter-input-group">
+          <input
+            type="email"
+            id="kavitaNewsletterEmail"
+            name="email"
+            placeholder="Enter your email address..."
+            required
+            class="kavita-newsletter-input"
+            aria-label="Email address for sacred newsletter"
+          >
+          <button type="submit" class="kavita-newsletter-btn" id="kavitaNewsletterSubmitBtn">
+            Subscribe &amp; Get 10% Off
+          </button>
+        </div>
+      </form>
+
+      <div id="kavitaNewsletterSuccess" class="kavita-newsletter-success" style="display: none;">
+        <div class="kavita-newsletter-success-icon">✨</div>
+        <div class="kavita-newsletter-success-title">Welcome to the Sacred Circle!</div>
+        <div class="kavita-newsletter-success-code">Use Code: <strong>WELCOME10</strong> (10% OFF)</div>
+        <div class="kavita-newsletter-success-sub">Discount applied to your cart &amp; WhatsApp checkout!</div>
+      </div>
+
+      <div class="kavita-welcome-perks">
+        <span>✓ Weekly Cosmic Tarot Insights</span>
+        <span>✓ No Spam, Only Divine Guidance</span>
+      </div>
+      <div class="kavita-welcome-footer-note">
+        *We respect your privacy. You can unsubscribe at any time.
+      </div>
+    </div>
+  </div>
+
+  <!-- Whole Website Celestial Ice Effect -->
+  <script defer src="{{ 'ice-effect.js' | asset_url }}"></script>
+  
+  <script defer src="{{ 'sales-popup.js' | asset_url }}" defer></script>
+
+<script defer src="{{ 'parity-ui.js' | asset_url }}"></script><script defer src="{{ 'parity-page.js' | asset_url }}"></script>
+{% schema %}
+{"name": "Preview collections", "settings": []}
+{% endschema %}

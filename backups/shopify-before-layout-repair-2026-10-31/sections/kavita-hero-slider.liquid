@@ -1,0 +1,634 @@
+{% comment %}
+  KAVITA — Rajvira-Style Interactive Banner Hero Slider
+  File: sections/kavita-hero-slider.liquid
+  Compatible with Shopify Online Store 2.0
+{% endcomment %}
+
+{%- liquid
+  assign section_id = section.id | replace: '-', '_'
+  assign autoplay = section.settings.autoplay | default: true
+  assign speed = section.settings.autoplay_speed | default: 5 | times: 1000
+  assign full_width = section.settings.full_width | default: false
+-%}
+
+<div class="kavita-slider-outer {% unless full_width %}kavita-slider-outer--contained{% endunless %}">
+  <div class="kavita-slider-container">
+    <div
+      id="kavita-slider-{{ section.id }}"
+      class="kavita-slider-wrap kavita-slider-wrap--{{ section.id }}"
+      data-section-id="{{ section.id }}"
+      data-autoplay="{{ autoplay }}"
+      data-speed="{{ speed }}"
+      role="region"
+      aria-label="Kavita Tarot Featured Banners"
+    >
+  <div class="kavita-slider" id="slider-track-{{ section.id }}">
+    {%- if section.blocks.size > 0 -%}
+      {%- for block in section.blocks -%}
+        <div
+          class="kavita-slider__slide {% if forloop.first %}is-active{% endif %}"
+          data-slide-index="{{ forloop.index0 }}"
+          {{ block.shopify_attributes }}
+        >
+          {%- if block.settings.link != blank -%}
+            <a href="{{ block.settings.link }}" class="kavita-slider__link" aria-label="{{ block.settings.alt_text | default: 'Shop Collection' | escape }}">
+          {%- endif -%}
+
+          <picture class="kavita-slider__picture">
+            {%- if block.settings.mobile_image != blank -%}
+              <source media="(max-width: 767px)" srcset="{{ block.settings.mobile_image | image_url: width: 1000 }}">
+            {%- elsif forloop.index == 1 -%}
+              <source media="(max-width: 767px)" srcset="{{ 'banner-mobile-readings.jpg' | asset_url }}">
+            {%- elsif forloop.index == 2 -%}
+              <source media="(max-width: 767px)" srcset="{{ 'banner-1-mobile.jpg' | asset_url }}">
+            {%- elsif forloop.index == 3 -%}
+              <source media="(max-width: 767px)" srcset="{{ 'banner-2-mobile.jpg' | asset_url }}">
+            {%- endif -%}
+
+            {%- if block.settings.desktop_image != blank -%}
+              {{ block.settings.desktop_image | image_url: width: 2200 | image_tag:
+                class: 'kavita-slider__img',
+                loading: forloop.first | ternary: 'eager', 'lazy',
+                fetchpriority: forloop.first | ternary: 'high', 'auto',
+                widths: '750, 1100, 1500, 1920, 2200',
+                sizes: '100vw',
+                alt: block.settings.alt_text | default: 'Kavita Tarot & Spirituals' | escape
+              }}
+            {%- elsif forloop.index == 1 -%}
+              <img
+                src="{{ 'banner-desktop-readings-3x1.jpg' | asset_url }}"
+                alt="Tarot Readings — Clarity, Guidance, Higher Perspective"
+                class="kavita-slider__img"
+                loading="eager"
+                fetchpriority="high"
+                width="1024"
+                height="341"
+              >
+            {%- elsif forloop.index == 2 -%}
+              <img
+                src="{{ 'banner-desktop-collection-3x1.jpg' | asset_url }}"
+                alt="Sacred Tarot for a Brighter Tomorrow"
+                class="kavita-slider__img"
+                loading="lazy"
+                width="1024"
+                height="341"
+              >
+            {%- elsif forloop.index == 3 -%}
+              <img
+                src="{{ 'banner-desktop-guidance-3x1.jpg' | asset_url }}"
+                alt="Let The Cards Reveal Your Guidance"
+                class="kavita-slider__img"
+                loading="lazy"
+                width="1024"
+                height="341"
+              >
+            {%- endif -%}
+          </picture>
+
+          {%- if block.settings.link != blank -%}
+            </a>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    {%- else -%}
+      {% comment %} Fallback Default 3 Slides with 3:1 Banners {% endcomment %}
+      <div class="kavita-slider__slide is-active" data-slide-index="0">
+        <a href="/collections/all" class="kavita-slider__link" aria-label="Tarot Readings — Clarity, Guidance, Higher Perspective">
+          <picture class="kavita-slider__picture">
+            <source media="(max-width: 767px)" srcset="{{ 'banner-mobile-readings.jpg' | asset_url }}">
+            <img
+              src="{{ 'banner-desktop-readings-3x1.jpg' | asset_url }}"
+              alt="Tarot Readings — Clarity, Guidance, Higher Perspective"
+              class="kavita-slider__img"
+              loading="eager"
+              fetchpriority="high"
+              width="1024"
+              height="341"
+            >
+          </picture>
+        </a>
+      </div>
+
+      <div class="kavita-slider__slide" data-slide-index="1">
+        <a href="/collections/all" class="kavita-slider__link" aria-label="Sacred Tarot for a Brighter Tomorrow">
+          <picture class="kavita-slider__picture">
+            <source media="(max-width: 767px)" srcset="{{ 'banner-1-mobile.jpg' | asset_url }}">
+            <img
+              src="{{ 'banner-desktop-collection-3x1.jpg' | asset_url }}"
+              alt="Sacred Tarot for a Brighter Tomorrow"
+              class="kavita-slider__img"
+              loading="lazy"
+              width="1024"
+              height="341"
+            >
+          </picture>
+        </a>
+      </div>
+
+      <div class="kavita-slider__slide" data-slide-index="2">
+        <a href="/collections/all" class="kavita-slider__link" aria-label="Let The Cards Reveal Your Guidance">
+          <picture class="kavita-slider__picture">
+            <source media="(max-width: 767px)" srcset="{{ 'banner-2-mobile.jpg' | asset_url }}">
+            <img
+              src="{{ 'banner-desktop-guidance-3x1.jpg' | asset_url }}"
+              alt="Let The Cards Reveal Your Guidance"
+              class="kavita-slider__img"
+              loading="lazy"
+              width="1024"
+              height="341"
+            >
+          </picture>
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+
+  {% comment %} Rajvira-Style Circular Navigation Arrows {% endcomment %}
+  {%- if section.settings.show_arrows -%}
+    <button
+      type="button"
+      class="kavita-slider__arrow kavita-slider__arrow--prev"
+      id="slider-prev-{{ section.id }}"
+      aria-label="Previous slide"
+    >
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    <button
+      type="button"
+      class="kavita-slider__arrow kavita-slider__arrow--next"
+      id="slider-next-{{ section.id }}"
+      aria-label="Next slide"
+    >
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+  {%- endif -%}
+
+  {% comment %} Rajvira-Style Pagination Dots {% endcomment %}
+  {%- if section.settings.show_dots -%}
+    <div class="kavita-slider__dots" id="slider-dots-{{ section.id }}" role="tablist">
+      {%- assign total_slides = section.blocks.size -%}
+      {%- if total_slides == 0 -%}{%- assign total_slides = 2 -%}{%- endif -%}
+      {%- for i in (1..total_slides) -%}
+        {%- assign idx = i | minus: 1 -%}
+        <button
+          type="button"
+          class="kavita-slider__dot {% if forloop.first %}is-active{% endif %}"
+          data-goto="{{ idx }}"
+          role="tab"
+          aria-label="Go to slide {{ i }}"
+          aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+        ></button>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+    </div>
+  </div>
+
+  {%- if section.settings.show_submarquee != false -%}
+    <div class="kavita-hero-submarquee" aria-label="Sacred Announcements">
+      <div class="kavita-hero-submarquee__track">
+        <span><span class="star">✦</span> AUTHENTIC & ENERGIZED SACRED OFFERINGS</span>
+        <span><span class="star">✦</span> WORLDWIDE SACRED SHIPPING</span>
+        <span><span class="star">✦</span> 100% PRIVATE & CONFIDENTIAL TAROT READINGS</span>
+        <span><span class="star">✦</span> 10,000+ SOULS GUIDED TOWARDS CLARITY</span>
+        <span><span class="star">✦</span> SACRED REIKI & LAMAFERA ENERGY HEALING</span>
+        <span><span class="star">✦</span> SECURE ENCRYPTED CHECKOUT</span>
+        <span><span class="star">✦</span> AUTHENTIC & ENERGIZED SACRED OFFERINGS</span>
+        <span><span class="star">✦</span> WORLDWIDE SACRED SHIPPING</span>
+        <span><span class="star">✦</span> 100% PRIVATE & CONFIDENTIAL TAROT READINGS</span>
+        <span><span class="star">✦</span> 10,000+ SOULS GUIDED TOWARDS CLARITY</span>
+        <span><span class="star">✦</span> SACRED REIKI & LAMAFERA ENERGY HEALING</span>
+        <span><span class="star">✦</span> SECURE ENCRYPTED CHECKOUT</span>
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+
+<style>
+  .kavita-slider-outer {
+    width: 100%;
+    background: transparent;
+  }
+
+  .kavita-slider-outer--contained {
+    max-width: 960px; /* Reduced contained width so desktop 16:9 banner is sleek & compact (~540px) without any cropping */
+    margin: 1.25rem auto 1.75rem;
+    padding: 0 1rem;
+  }
+
+  .kavita-slider-outer--contained .kavita-slider-wrap {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.16);
+    border: 1px solid rgba(216, 180, 93, 0.3);
+  }
+
+  @media (max-width: 991px) {
+    .kavita-slider-outer--contained {
+      max-width: 100%;
+      padding: 0 0.85rem;
+      margin: 1rem auto 1.25rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .kavita-slider-outer--contained {
+      padding: 0 0.5rem;
+      margin: 0.75rem auto 1rem;
+    }
+    .kavita-slider-outer--contained .kavita-slider-wrap {
+      border-radius: 12px;
+    }
+  }
+
+  .kavita-slider-wrap--{{ section.id }} {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: #0B0614;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .kavita-slider {
+    position: relative;
+    width: 100%;
+    display: flex;
+    transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .kavita-slider__slide {
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 100%;
+    line-height: 0;
+    overflow: hidden;
+    background: #0B0614;
+  }
+
+  .kavita-slider__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  .kavita-slider__picture {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .kavita-slider__img {
+    display: block;
+    width: 100%;
+    height: auto; /* Preserves natural 16:9 ratio - NEVER CROPPED */
+    max-height: 540px;
+    object-fit: contain; /* Absolutely zero cropping of top/bottom graphics */
+    object-position: center;
+    transition: transform 0.8s ease;
+  }
+
+  @media (max-width: 991px) {
+    .kavita-slider__img {
+      height: auto;
+      max-height: 480px;
+      object-fit: contain;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .kavita-slider__img {
+      height: auto;
+      max-height: none;
+      width: 100%;
+      object-fit: contain; /* Natural uncropped portrait on mobile */
+    }
+  }
+
+  .kavita-slider__slide:hover .kavita-slider__img {
+    transform: scale(1.015);
+  }
+
+  /* Rajvira Floating Navigation Arrows */
+  .kavita-slider__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(18, 12, 28, 0.72);
+    border: 1px solid rgba(216, 180, 93, 0.4);
+    color: #FFF7EB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+  }
+
+  .kavita-slider__arrow:hover {
+    background: rgba(128, 20, 43, 0.95);
+    border-color: #D8B45D;
+    color: #FFFFFF;
+    transform: translateY(-50%) scale(1.08);
+    box-shadow: 0 6px 24px rgba(216, 180, 93, 0.35);
+  }
+
+  .kavita-slider__arrow--prev {
+    left: 24px;
+  }
+
+  .kavita-slider__arrow--next {
+    right: 24px;
+  }
+
+  /* Rajvira Pagination Dots */
+  .kavita-slider__dots {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 10;
+    padding: 6px 14px;
+    background: rgba(7, 5, 12, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 999px;
+    border: 1px solid rgba(216, 180, 93, 0.25);
+  }
+
+  .kavita-slider__dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .kavita-slider__dot:hover {
+    background: #FFDF78;
+    transform: scale(1.2);
+  }
+
+  .kavita-slider__dot.is-active {
+    width: 26px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #FFDF78, #C9A24B);
+    box-shadow: 0 0 10px rgba(216, 180, 93, 0.6);
+  }
+
+  @media (max-width: 767px) {
+    .kavita-slider__arrow {
+      width: 38px;
+      height: 38px;
+    }
+    .kavita-slider__arrow--prev {
+      left: 10px;
+    }
+    .kavita-slider__arrow--next {
+      right: 10px;
+    }
+    .kavita-slider__dots {
+      bottom: 14px;
+      padding: 5px 10px;
+      gap: 7px;
+    }
+    .kavita-slider__dot {
+      width: 7px;
+      height: 7px;
+    }
+    .kavita-slider__dot.is-active {
+      width: 20px;
+    }
+  }
+</style>
+
+<script>
+  (function() {
+    function initSlider(wrap) {
+      if (!wrap || wrap.dataset.initialized === 'true') return;
+      wrap.dataset.initialized = 'true';
+
+      const track = wrap.querySelector('.kavita-slider');
+      const slides = wrap.querySelectorAll('.kavita-slider__slide');
+      const prevBtn = wrap.querySelector('.kavita-slider__arrow--prev');
+      const nextBtn = wrap.querySelector('.kavita-slider__arrow--next');
+      const dots = wrap.querySelectorAll('.kavita-slider__dot');
+
+      if (!track || slides.length === 0) return;
+
+      let currentIndex = 0;
+      let timer = null;
+      const count = slides.length;
+      const isAutoplay = wrap.dataset.autoplay === 'true';
+      const speed = parseInt(wrap.dataset.speed, 10) || 5000;
+
+      function goTo(index) {
+        if (index < 0) {
+          currentIndex = count - 1;
+        } else if (index >= count) {
+          currentIndex = 0;
+        } else {
+          currentIndex = index;
+        }
+
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        slides.forEach((s, idx) => {
+          s.classList.toggle('is-active', idx === currentIndex);
+        });
+
+        dots.forEach((dot, idx) => {
+          const active = idx === currentIndex;
+          dot.classList.toggle('is-active', active);
+          dot.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+      }
+
+      function next() { goTo(currentIndex + 1); }
+      function prev() { goTo(currentIndex - 1); }
+
+      function startAutoplay() {
+        if (!isAutoplay || count <= 1) return;
+        stopAutoplay();
+        timer = setInterval(next, speed);
+      }
+
+      function stopAutoplay() {
+        if (timer) {
+          clearInterval(timer);
+          timer = null;
+        }
+      }
+
+      if (prevBtn) prevBtn.addEventListener('click', () => { prev(); startAutoplay(); });
+      if (nextBtn) nextBtn.addEventListener('click', () => { next(); startAutoplay(); });
+
+      dots.forEach((dot) => {
+        dot.addEventListener('click', (e) => {
+          const idx = parseInt(e.currentTarget.dataset.goto, 10);
+          goTo(idx);
+          startAutoplay();
+        });
+      });
+
+      wrap.addEventListener('mouseenter', stopAutoplay);
+      wrap.addEventListener('mouseleave', startAutoplay);
+
+      // Touch Swipe Support
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      wrap.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAutoplay();
+      }, { passive: true });
+
+      wrap.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+        startAutoplay();
+      }, { passive: true });
+
+      function handleSwipe() {
+        const diff = touchEndX - touchStartX;
+        if (Math.abs(diff) > 40) {
+          if (diff < 0) next();
+          else prev();
+        }
+      }
+
+      startAutoplay();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() {
+        initSlider(document.getElementById('kavita-slider-{{ section.id }}'));
+      });
+    } else {
+      initSlider(document.getElementById('kavita-slider-{{ section.id }}'));
+    }
+
+    document.addEventListener('shopify:section:load', function(e) {
+      if (e.detail.sectionId === '{{ section.id }}') {
+        initSlider(document.getElementById('kavita-slider-{{ section.id }}'));
+      }
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Kavita Banner Slider",
+  "tag": "section",
+  "class": "section-kavita-banner-slider",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width layout (edge to edge)",
+      "default": false,
+      "info": "Leave disabled for a premium boxed container with margins like luxury jewelry stores."
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Auto-rotate slides",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "label": "Change slide every",
+      "default": 5
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show navigation arrows",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "Show pagination dots",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Banner Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "desktop_image",
+          "label": "Desktop banner image",
+          "info": "Recommended: 2200 x 1238px (16:9 ratio)"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Mobile banner image",
+          "info": "Recommended: 819 x 1024px (portrait ratio)"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Slide click URL",
+          "default": "/collections/all"
+        },
+        {
+          "type": "text",
+          "id": "alt_text",
+          "label": "Image description (Alt text)",
+          "default": "Kavita Tarot & Spirituals"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Kavita Banner Slider",
+      "blocks": [
+        {
+          "type": "slide",
+          "settings": {
+            "alt_text": "Sacred Tarot. Modern Guidance.",
+            "link": "/collections/all"
+          }
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "alt_text": "Sacred Tarot for a Brighter Tomorrow",
+            "link": "/collections/all"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

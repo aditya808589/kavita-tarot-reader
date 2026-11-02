@@ -1,0 +1,12 @@
+{
+  "layout": "parity",
+  "sections": {
+    "main": {
+      "type": "parity-faq",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

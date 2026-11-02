@@ -1,0 +1,1290 @@
+<style>
+    .booking-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.2rem;
+      margin: 3.5rem 0 4rem;
+    }
+
+    .service-box {
+      background: #FFFFFF;
+      border: 1px solid var(--v-border);
+      border-radius: 20px;
+      padding: 2.5rem 2.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--v-shadow-sm);
+      transition: all 0.3s ease;
+    }
+
+    .service-box:hover {
+      transform: translateY(-6px);
+      border-color: var(--v-gold);
+      box-shadow: var(--v-shadow-md);
+    }
+
+    .service-box.featured {
+      border: 2px solid var(--v-maroon);
+      position: relative;
+    }
+
+    .featured-flag {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--v-maroon);
+      color: #FFFFFF;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 0.25rem 0.9rem;
+      border-radius: 999px;
+    }
+
+    .booking-form-wrap {
+      background: #FFFFFF;
+      border: 2px solid var(--v-gold);
+      border-radius: 24px;
+      padding: 3.5rem 3rem;
+      max-width: 820px;
+      margin: 2rem auto 5rem;
+      box-shadow: var(--v-shadow-md);
+    }
+
+    .form-group {
+      margin-bottom: 1.4rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--v-text-dark);
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 0.9rem 1.1rem;
+      border: 1px solid var(--v-border);
+      border-radius: 10px;
+      background: #FAF7F2;
+      color: var(--v-text-dark);
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--v-maroon);
+      background: #FFFFFF;
+      box-shadow: 0 0 10px rgba(128, 20, 43, 0.15);
+    }
+
+    .step-item {
+      display: flex;
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .step-num {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--v-maroon);
+      color: #FFFFFF;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      .booking-form-wrap { padding: 2rem 1.5rem; }
+    }
+  </style>
+{{ 'parity-storefront-refinements.css' | asset_url | stylesheet_tag }}
+{{ 'parity-category-grid.css' | asset_url | stylesheet_tag }}
+{{ 'parity-integration.css' | asset_url | stylesheet_tag }}
+
+
+  <!-- TOP MARQUEE -->
+  <div class="top-marquee-strip">
+    <div class="top-marquee-track">
+      <div class="top-marquee-item"><span class="bullet">✦</span> 100% PRIVATE 1-ON-1 INTUITIVE CONSULTATIONS</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> SAME-DAY & STANDARD WHATSAPP AUDIO SESSIONS</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> GENUINE HEALING CRYSTALS & SACRED TAROT DECKS</div>
+      <!-- Loop -->
+      <div class="top-marquee-item"><span class="bullet">✦</span> 100% PRIVATE 1-ON-1 INTUITIVE CONSULTATIONS</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> SAME-DAY & STANDARD WHATSAPP AUDIO SESSIONS</div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="kavita-hdr">
+    <div class="kavita-hdr__main">
+      <div class="container kavita-hdr__container">
+        <div class="kavita-hdr__brand">
+          <a href="/" class="kavita-hdr__logo-link">
+            <img src="{{ 'kavita-logo-gold.png' | asset_url }}" alt="Kavita Tarot Reader" class="kavita-hdr__logo-img" width="600" height="600">
+            <span class="kavita-hdr__brand-name">KAVITA TAROT READER</span>
+          </a>
+        </div>
+
+        <div class="kavita-hdr__search-wrap">
+          <form action="/collections/all" method="get" class="kavita-hdr__search-form" onsubmit="event.preventDefault(); window.location.href='/collections/all?search=' + encodeURIComponent(this.querySelector('input').value);">
+            <svg class="kavita-hdr__search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="search" class="kavita-hdr__search-input" placeholder="Search crystals, decks & readings" aria-label="Search store">
+            <button type="submit" class="kavita-hdr__search-btn">Search</button>
+          </form>
+        </div>
+
+        <div class="kavita-hdr__actions">
+          <a href="/collections/all?search=1" class="kavita-hdr__icon-btn kavita-hdr__icon-btn--search-mobile" onclick="event.preventDefault(); document.querySelector('.kavita-hdr__search-input')?.focus();" aria-label="Search">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </a>
+          <a href="/?view=consultations" class="kavita-hdr__util-link"><span class="kavita-hdr__util-dot">●</span> Book Online</a>
+          <a href="/collections/all?wishlist=1" class="kavita-hdr__icon-btn" aria-label="Wishlist">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            <span class="kavita-hdr__badge">0</span>
+          </a>
+          
+          <button class="kavita-hdr__icon-btn kavita-hdr__icon-btn--cart" id="openCartBtn" aria-label="Open Cart" style="background: none; border: none; cursor: pointer;">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="kavita-hdr__badge kavita-hdr__badge--cart" id="cartCount">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="kavita-hdr__nav-bar" aria-label="Category Navigation">
+      <div class="container kavita-hdr__container">
+        <ul class="kavita-hdr__menu">
+          <li class="kavita-hdr__menu-item"><a href="/collections/all" class="kavita-hdr__menu-link">All Collections</a></li>
+          <li class="kavita-hdr__menu-item"><a href="/?view=consultations" class="kavita-hdr__menu-link">Tarot Readings</a></li>
+          <li class="kavita-hdr__menu-item kavita-hdr__menu-item--dropdown">
+            <a href="/?view=packages" class="kavita-hdr__menu-link">
+              Signature Packages
+              <svg class="kavita-hdr__caret" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </a>
+            <div class="kavita-hdr__dropdown">
+              <div class="kavita-hdr__dropdown-grid" style="grid-template-columns: repeat(2, 1fr); min-width: 520px; gap: 1.5rem;">
+                <div class="kavita-hdr__dropdown-col">
+                  <span class="kavita-hdr__dropdown-title">✦ Love &amp; Relationships</span>
+                  <a href="/products/no-contact-situation-5-card-reading">No Contact Situation (5 Card)</a>
+                  <a href="/products/future-spouse-reading">Future Spouse &amp; Destined Connection</a>
+                  <a href="/products/love-marriage-pack-8-questions">Love &amp; Marriage Pack (8 Questions)</a>
+                  <a href="/products/no-contact-situation-pack-4-questions">No Contact Situation (4 Questions)</a>
+                  <a href="/products/reunion-reading">Reunion Reading: Will They Return?</a>
+                </div>
+                <div class="kavita-hdr__dropdown-col">
+                  <span class="kavita-hdr__dropdown-title">✦ Healing &amp; Career Growth</span>
+                  <a href="/products/heart-consultation-private-healing">Heart Consultation: 1:1 Healing</a>
+                  <a href="/products/career-growth-reading">Career Growth &amp; Financial Path</a>
+                  <a href="/products/deep-insight-reading-8-questions">Deep Insight Reading (8 Questions)</a>
+                  <div style="margin-top: 0.85rem; padding-top: 0.65rem; border-top: 1px dashed #ECE7DE;">
+                    <a href="/?view=packages" style="color: #80142B; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
+                      ✦ Explore All 8 Packages →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="kavita-hdr__menu-item"><a href="/collections/all?cat=bracelets" class="kavita-hdr__menu-link">Healing Bracelets</a></li>
+          <li class="kavita-hdr__menu-item"><a href="/collections/all?cat=crystals" class="kavita-hdr__menu-link">Crystals &amp; Carvings</a></li>
+          <li class="kavita-hdr__menu-item"><a href="/?view=about" class="kavita-hdr__menu-link">About Kavita</a></li>
+          <li class="kavita-hdr__menu-item"><a href="/pages/contact" class="kavita-hdr__menu-link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="/">Home</a> / <span>Consultations</span>
+      </div>
+      <h1 class="page-hero-title">1-on-1 Consultations with Kavita</h1>
+      <p class="page-hero-sub">
+        Personal, channeled intuitive tarot and Vedic astrology guidance delivered straight to your WhatsApp. Select Same-Day Premium or Standard slots.
+      </p>
+    </div>
+  </section>
+
+  <!-- PACKAGES GRID -->
+  <main class="container">
+
+    <!-- URGENT VOICE NOTE READING PROMINENT HIGHLIGHT BANNER -->
+    <div class="urgent-voice-note-highlight-banner" style="background: linear-gradient(135deg, #FFF9ED 0%, #FFF3DB 100%); border: 2px solid #D4AF37; border-radius: 16px; padding: 1.5rem 2rem; margin-bottom: 2.5rem; box-shadow: 0 8px 24px rgba(212, 175, 55, 0.18); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem;">
+      <div style="flex: 1; min-width: 280px;">
+        <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: #80142B; color: #FFF; font-size: 0.74rem; font-weight: 700; padding: 0.28rem 0.8rem; border-radius: 50px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.6rem;">
+          <span>⚡ Urgent Priority</span> · <span>Delivered in 24 Hours</span>
+        </div>
+        <h2 style="font-family: 'Cinzel', serif; font-size: 1.45rem; color: #80142B; margin: 0 0 0.4rem; font-weight: 700;">
+          Urgent Voice Note Reading — Answer in 24 Hours
+        </h2>
+        <p style="color: #4A3B32; font-size: 0.95rem; margin: 0; line-height: 1.55;">
+          Need immediate guidance without waiting? Kavita tunes directly into your field and sends an in-depth, personalized voice recording to your WhatsApp within 24 hours.
+        </p>
+      </div>
+      <div style="display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;">
+        <div style="text-align: right;">
+          <div style="font-size: 0.78rem; color: #7A6553; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">Express Charge</div>
+          <div style="font-size: 1.75rem; font-weight: 800; color: #80142B; font-family: 'Cinzel', serif; line-height: 1.1;">
+            ₹499 <span style="font-size: 0.85rem; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; color: #666;">/ voice note</span>
+          </div>
+        </div>
+        <button type="button" onclick="bookConsultationDirect(48490758635681)" class="btn btn-gold" style="padding: 0.9rem 1.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.88rem; box-shadow: 0 4px 14px rgba(212,175,55,0.4); border: none; cursor: pointer; border-radius: 8px;">
+          ✦ Book Urgent (₹499) →
+        </button>
+      </div>
+    </div>
+
+    <div class="booking-grid">
+      
+      <!-- Package 1: Live Audio Call -->
+      <div class="service-box featured" id="audioCallBox">
+        <span class="featured-flag">Most Popular</span>
+        <div>
+          <div style="font-size: 0.74rem; color: var(--v-maroon); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5rem;">
+            1. Live Audio Call Reading
+          </div>
+          <h3 style="font-size: 1.55rem; margin-bottom: 0.8rem;">Live Audio Call Tarot Reading</h3>
+          <p style="color: var(--v-text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem;">
+            Talk directly to Kavita for real-time guidance. A personal live 1-on-1 consultation addressing love, career, finances, and life crossroads with immediate answers.
+          </p>
+
+          <!-- Speed Mode Toggle: Standard vs Urgent -->
+          <div style="margin-bottom: 1rem;">
+            <label style="display: block; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--v-maroon); margin-bottom: 0.45rem;">
+              Choose Delivery Speed:
+            </label>
+            <div style="display: flex; gap: 0.5rem;">
+              <button type="button" class="speed-toggle-btn active" id="audioSpeedStd" onclick="setAudioSpeed('standard')">
+                🌿 Standard Delivery (7–10 days)
+              </button>
+              <button type="button" class="speed-toggle-btn" id="audioSpeedUrg" onclick="setAudioSpeed('urgent')">
+                ⚡ Urgent (Within 24 Hrs)
+              </button>
+            </div>
+          </div>
+
+          <p class="standard-session-note" style="font-size:0.82rem;line-height:1.6;color:#80142B;margin:0 0 1rem;">Standard delivery: your session will be provided within 7–10 days.</p>
+          <!-- Duration Variant Selector Cards -->
+          <label style="display: block; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--v-maroon); margin-bottom: 0.45rem;">
+            Select Session Duration:
+          </label>
+          <div class="variant-select-group" id="audioVariantsGroup">
+            <div class="variant-card is-selected" onclick="selectAudioDuration(10)" id="audioCard10">
+              <div class="variant-card-radio"></div>
+              <div class="variant-card-info">
+                <div class="variant-card-title">10 Minutes <span class="variant-card-tag">(3 Questions only)</span></div>
+                <div class="variant-card-sub" id="audioCard10Sub">Standard Delivery (7–10 days)</div>
+              </div>
+              <div class="variant-card-price" id="audioCard10Price">₹999</div>
+            </div>
+
+            <div class="variant-card" onclick="selectAudioDuration(20)" id="audioCard20">
+              <div class="variant-card-radio"></div>
+              <div class="variant-card-info">
+                <div class="variant-card-title">20 Minutes <span class="variant-card-tag">(In-Depth Clarity)</span></div>
+                <div class="variant-card-sub" id="audioCard20Sub">Standard Delivery (7–10 days)</div>
+              </div>
+              <div class="variant-card-price" id="audioCard20Price">₹2,299</div>
+            </div>
+
+            <div class="variant-card" onclick="selectAudioDuration(30)" id="audioCard30">
+              <div class="variant-card-radio"></div>
+              <div class="variant-card-info">
+                <div class="variant-card-title">30 Minutes <span class="variant-card-tag">(Deep Comprehensive)</span></div>
+                <div class="variant-card-sub" id="audioCard30Sub">Standard Delivery (7–10 days)</div>
+              </div>
+              <div class="variant-card-price" id="audioCard30Price">₹3,369</div>
+            </div>
+          </div>
+
+          <div style="font-size: 0.78rem; color: #80142B; margin-top: 0.6rem; margin-bottom: 1.2rem; font-style: italic;">
+            ✦ Direct 1-on-1 audio call with Kavita. Instant booking confirmed via checkout.
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-maroon" style="width: 100%; font-size: 0.92rem; padding: 0.9rem;" onclick="bookSelectedAudioCall()" id="audioBookingBtn">
+          ✦ Book 10 Min Slot (Standard) — ₹999 &amp; Checkout
+        </button>
+      </div>
+
+      <!-- Package 2: Live Video Call Reading -->
+      <div class="service-box" style="border: 1.5px solid #D4AF37; background: #FFFCF7;" id="videoCallBox">
+        <div>
+          <div style="font-size: 0.74rem; color: #80142B; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5rem;">
+            2. Video Call Reading · Face to Face Deeper Clarity
+          </div>
+          <h3 style="font-size: 1.55rem; margin-bottom: 0.8rem;">Live Video Call Tarot Reading with Kavita</h3>
+          <p style="color: var(--v-text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem;">
+            Experience face-to-face deep immersion. See each card revealed live in front of you as Kavita channels personalized energy, remedies, and timeline clarity.
+          </p>
+
+          <!-- Speed Mode Toggle -->
+          <div style="margin-bottom: 1rem;">
+            <label style="display: block; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--v-maroon); margin-bottom: 0.45rem;">
+              Choose Delivery Speed:
+            </label>
+            <div style="display: flex; gap: 0.5rem;">
+              <button type="button" class="speed-toggle-btn active" id="videoSpeedStd" onclick="setVideoSpeed('standard')">
+                🌿 Standard Delivery (7–10 days)
+              </button>
+              <button type="button" class="speed-toggle-btn" id="videoSpeedUrg" onclick="setVideoSpeed('urgent')">
+                ⚡ Urgent (Within 24 Hrs)
+              </button>
+            </div>
+          </div>
+
+          <p class="standard-session-note" style="font-size:0.82rem;line-height:1.6;color:#80142B;margin:0 0 1rem;">Standard delivery: your session will be provided within 7–10 days.</p>
+          <!-- Duration Variant Selector Cards -->
+          <label style="display: block; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--v-maroon); margin-bottom: 0.45rem;">
+            Select Session Duration:
+          </label>
+          <div class="variant-select-group" id="videoVariantsGroup">
+            <div class="variant-card is-selected" onclick="selectVideoDuration(10)" id="videoCard10">
+              <div class="variant-card-radio"></div>
+              <div class="variant-card-info">
+                <div class="variant-card-title">10 Minutes <span class="variant-card-tag">(Direct Focus)</span></div>
+                <div class="variant-card-sub" id="videoCard10Sub">Standard Delivery (7–10 days)</div>
+              </div>
+              <div class="variant-card-price" id="videoCard10Price">₹1,888</div>
+            </div>
+
+            <div class="variant-card" onclick="selectVideoDuration(30)" id="videoCard30">
+              <div class="variant-card-radio"></div>
+              <div class="variant-card-info">
+                <div class="variant-card-title">30 Minutes <span class="variant-card-tag">(Deep Soul Immersion)</span></div>
+                <div class="variant-card-sub" id="videoCard30Sub">Standard Delivery (7–10 days)</div>
+              </div>
+              <div class="variant-card-price" id="videoCard30Price">₹4,499</div>
+            </div>
+          </div>
+
+          <div style="font-size: 0.78rem; color: #80142B; margin-top: 0.6rem; margin-bottom: 1.2rem; font-style: italic;">
+            ✦ Conducted live 1-on-1 via WhatsApp Video Call. Prepaid booking confirmed via secure checkout.
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-gold" style="width: 100%; font-size: 0.92rem; padding: 0.9rem;" onclick="bookSelectedVideoCall()" id="videoBookingBtn">
+          ✦ Book 10 Min Video Slot (Standard) — ₹1,888 &amp; Checkout
+        </button>
+      </div>
+
+      <!-- Package 3: Voice Note / Written Guidance -->
+      <div class="service-box" id="voiceNoteBox">
+        <div>
+          <div style="font-size: 0.74rem; color: var(--v-gold-dark); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5rem;">
+            3. Voice Note / Written Guidance
+          </div>
+          <h3 style="font-size: 1.55rem; margin-bottom: 0.8rem;">Personalised Voice Note Reading</h3>
+          <p style="color: var(--v-text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
+            Detailed guidance in your own time. Submit your specific questions; Kavita channels your cards and delivers an audio voice note directly to your WhatsApp.
+          </p>
+
+          <!-- Variant Selector Cards for Voice Notes -->
+          <label style="display: block; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--v-maroon); margin-bottom: 0.45rem;">
+            Select Questions / Guidance Option:
+          </label>
+          <div class="variant-select-group" id="voiceVariantsGroup">
+            <div class="variant-card is-selected" onclick="selectVoiceVariant(1)" id="voiceCard1">
+              <div class="variant-card-radio"></div>
+              <div class="variant-card-info">
+                <div class="variant-card-title">1 Question</div>
+                <div class="variant-card-sub">Delivery within 7 days</div>
+              </div>
+              <div class="variant-card-price">₹299</div>
+            </div>
+
+            <div class="variant-card" onclick="selectVoiceVariant(2)" id="voiceCard2">
+              <div class="variant-card-radio"></div>
+              <div class="variant-card-info">
+                <div class="variant-card-title">2 Questions</div>
+                <div class="variant-card-sub">Delivery within 7 days</div>
+              </div>
+              <div class="variant-card-price">₹399</div>
+            </div>
+
+            <div class="variant-card" onclick="selectVoiceVariant(3)" id="voiceCard3">
+              <div class="variant-card-radio"></div>
+              <div class="variant-card-info">
+                <div class="variant-card-title">3 Questions</div>
+                <div class="variant-card-sub">Delivery within 7 days</div>
+              </div>
+              <div class="variant-card-price">₹499</div>
+            </div>
+
+            <div class="variant-card" onclick="selectVoiceVariant('urgent')" id="voiceCardUrg" style="border-color: #D4AF37; background: #FFFDF9;">
+              <div class="variant-card-radio"></div>
+              <div class="variant-card-info">
+                <div class="variant-card-title" style="color: #80142B; font-weight: 700;">⚡ Urgent Voice Note <span class="variant-card-tag" style="background: #80142B; color: #fff;">Priority</span></div>
+                <div class="variant-card-sub" style="color: #80142B; font-weight: 600;">Answer delivered in 24 Hours</div>
+              </div>
+              <div class="variant-card-price" style="color: #80142B;">₹499</div>
+            </div>
+          </div>
+
+          <div style="font-size: 0.78rem; color: #80142B; margin-top: 0.6rem; margin-bottom: 1.2rem; font-style: italic;">
+            ✦ Audio voice notes delivered directly to your WhatsApp with card photos &amp; divine insights.
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-outline" style="width: 100%; font-size: 0.92rem; padding: 0.9rem;" onclick="bookSelectedVoiceNote()" id="voiceBookingBtn">
+          ✦ Book 1 Question (7 Days) — ₹299 &amp; Checkout
+        </button>
+      </div>
+
+      <!-- Package 3: Ancient Nordic Rune Reading -->
+      <div class="service-box">
+        <div>
+          <div style="font-size: 0.74rem; color: var(--v-maroon); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5rem;">
+            Sacred Ancient Divination
+          </div>
+          <h3 style="font-size: 1.55rem; margin-bottom: 0.8rem;">Ancient Nordic Rune Reading</h3>
+          <p style="color: var(--v-text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem;">
+            Sacred Elder Futhark rune casting uncovering deep karmic influences, unseen barriers, and primal destiny alignments.
+          </p>
+
+          <div style="background: #FAF7F2; border: 1px solid var(--v-border); border-radius: 12px; padding: 1.2rem; margin-bottom: 1.5rem; font-size: 0.88rem;">
+            <div style="display: flex; justify-content: space-between; padding: 0.45rem 0;">
+              <span>Full Rune Casting Consultation</span>
+              <span style="font-family: var(--font-heading); color: var(--v-maroon); font-weight: 800;">₹3,333</span>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-outline" style="width: 100%; font-size: 0.92rem; padding: 0.9rem;" onclick="bookConsultationDirect(48233539403937)">
+          ✦ Book Rune Reading — ₹3,333 &amp; Checkout
+        </button>
+      </div>
+
+      <!-- Package 4: Personalised Energy Circle -->
+      <div class="service-box">
+        <div>
+          <div style="font-size: 0.74rem; color: var(--v-maroon); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5rem;">
+            Energy Realignment & Manifestation
+          </div>
+          <h3 style="font-size: 1.55rem; margin-bottom: 0.8rem;">Personalised Sacred Energy Circle</h3>
+          <p style="color: var(--v-text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem;">
+            Coded geometric energy circle tailored with sacred switchwords and frequencies to attract wealth, heal relationships, or clear life obstacles.
+          </p>
+
+          <div style="background: #FAF7F2; border: 1px solid var(--v-border); border-radius: 12px; padding: 1.2rem; margin-bottom: 1.5rem; font-size: 0.88rem;">
+            <div style="display: flex; justify-content: space-between; padding: 0.45rem 0;">
+              <span>Coded Custom Energy Circle</span>
+              <div>
+                <span style="text-decoration: line-through; color: #999; font-size: 0.85rem; margin-right: 0.35rem;">₹1,888</span>
+                <span style="font-family: var(--font-heading); color: var(--v-maroon); font-weight: 800;">₹1,416</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-outline" style="width: 100%; font-size: 0.92rem; padding: 0.9rem;" onclick="bookConsultationDirect(48233539960993)">
+          ✦ Book Energy Circle — ₹1,416 &amp; Checkout
+        </button>
+      </div>
+
+      <!-- Package 5: Career Reading + Labradorite Bundle -->
+      <div class="service-box">
+        <div>
+          <div style="font-size: 0.74rem; color: var(--v-gold-dark); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5rem;">
+            Reading + Charged Physical Gemstone
+          </div>
+          <h3 style="font-size: 1.55rem; margin-bottom: 0.8rem;">Career Reading + Labradorite Bundle</h3>
+          <p style="color: var(--v-text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem;">
+            Comprehensive career breakthrough tarot consultation paired with a natural energized Labradorite stone shipped directly to your doorstep.
+          </p>
+
+          <div style="background: #FAF7F2; border: 1px solid var(--v-border); border-radius: 12px; padding: 1.2rem; margin-bottom: 1.5rem; font-size: 0.88rem;">
+            <div style="display: flex; justify-content: space-between; padding: 0.45rem 0;">
+              <span>Reading + Shipped Labradorite</span>
+              <div>
+                <span style="text-decoration: line-through; color: #999; font-size: 0.85rem; margin-right: 0.35rem;">₹1,999</span>
+                <span style="font-family: var(--font-heading); color: var(--v-maroon); font-weight: 800;">₹1,899</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-outline" style="width: 100%; font-size: 0.92rem; padding: 0.9rem;" onclick="bookConsultationDirect(48233540124833)">
+          ✦ Book Career Bundle — ₹1,899 &amp; Checkout
+        </button>
+      </div>
+
+      <!-- Package 6: Distance Cord-Cutting Healing -->
+      <div class="service-box">
+        <div>
+          <div style="font-size: 0.74rem; color: var(--v-maroon); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5rem;">
+            Aura & Karma Cleansing
+          </div>
+          <h3 style="font-size: 1.55rem; margin-bottom: 0.8rem;">Distance Cord-Cutting Healing</h3>
+          <p style="color: var(--v-text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem;">
+            A powerful distance energy healing session designed to energetically release toxic attachments, past relationship residue, and psychic draining ties, freeing your vital energy and restoring peace.
+          </p>
+
+          <div style="background: #FAF7F2; border: 1px solid var(--v-border); border-radius: 12px; padding: 1.2rem; margin-bottom: 1.5rem; font-size: 0.88rem;">
+            <div style="display: flex; justify-content: space-between; padding: 0.45rem 0;">
+              <span>Complete Healing Session</span>
+              <div>
+                <span style="text-decoration: line-through; color: #999; font-size: 0.85rem; margin-right: 0.35rem;">₹7,500</span>
+                <span style="font-family: var(--font-heading); color: var(--v-maroon); font-weight: 800;">₹5,001</span>
+              </div>
+            </div>
+          </div>
+          <div style="font-size: 0.8rem; color: #80142B; margin-bottom: 1.2rem; font-style: italic;">
+            ✦ Performed remotely with Vedic Beeja Mantras. Channeled audio diagnosis & guidance included. (Prepaid only — No COD).
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-maroon" style="width: 100%; font-size: 0.92rem; padding: 0.9rem;" onclick="bookConsultationDirect(48489067544737)">
+          ✦ Book Cord-Cutting — ₹5,001 &amp; Checkout
+        </button>
+      </div>
+
+    </div>
+
+    <!-- =========================================================
+         SIGNATURE INTUITIVE PACKAGES (8 TARGETED PACKAGES)
+    ========================================================= -->
+    <div style="margin: 4.5rem 0 3.5rem; border-top: 1px solid var(--v-border); padding-top: 3.5rem;">
+      <div style="text-align: center; max-width: 760px; margin: 0 auto 3rem;">
+        <div style="font-size: 0.74rem; color: #80142B; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 0.5rem;">
+          ✦ Channeled Spiritual Solutions ✦
+        </div>
+        <h2 style="font-family: 'Cinzel', serif; font-size: 2.2rem; color: #1C1917; margin: 0 0 0.8rem; font-weight: 700;">
+          Signature Reading & Healing Packages
+        </h2>
+        <p style="color: #6E5D53; font-size: 0.98rem; line-height: 1.6; margin: 0;">
+          Targeted multi-card spreads, in-depth voice recordings, and private healing sessions delivered straight to your WhatsApp within 3–4 days.
+        </p>
+      </div>
+
+      <div class="booking-grid" style="margin-top: 1rem;">
+        
+        <!-- Package 1: No Contact Situation (5 Card Reading) -->
+        <div class="service-box" style="position: relative; overflow: hidden; border: 1.5px solid #E8DFD8;">
+          <span style="position: absolute; top: 12px; right: 12px; background: #80142B; color: #FFF; font-size: 0.7rem; font-weight: 700; padding: 0.22rem 0.7rem; border-radius: 50px; text-transform: uppercase; letter-spacing: 0.05em;">Bestseller · Relationship</span>
+          <div style="margin-bottom: 1rem;">
+            <img src="{{ 'package-no-contact-5card.jpg' | asset_url }}" alt="No Contact Situation Tarot Reading" style="width: 100%; height: 260px; object-fit: cover; border-radius: 12px; margin-bottom: 1rem;" width="600" height="600">
+            <div style="font-size: 0.74rem; color: #80142B; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.35rem;">
+              5 Card Voice Note Spread
+            </div>
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem; line-height: 1.3;">No Contact Situation Reading</h3>
+            <p style="font-size: 0.88rem; color: #7A6553; font-style: italic; margin-bottom: 0.9rem;">
+              "When your person has pulled away and you need clarity."
+            </p>
+            <ul style="padding-left: 1.15rem; font-size: 0.86rem; color: #4A3B32; line-height: 1.6; margin-bottom: 1.2rem;">
+              <li>What they feel but don't say</li>
+              <li>Will they contact again & when</li>
+              <li>What's blocking communication</li>
+              <li>Advice from the Universe</li>
+              <li>💌 Understand the silence & destiny reunion</li>
+            </ul>
+            <div style="background: #FAF7F2; border: 1px solid var(--v-border); border-radius: 10px; padding: 0.8rem 1rem; margin-bottom: 1.2rem; display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <span style="font-size: 0.74rem; color: #888; text-transform: uppercase; display: block;">Delivery in 3–4 Days</span>
+                <span style="font-size: 0.82rem; color: #2E7D32; font-weight: 600;">Detailed Voice Note</span>
+              </div>
+              <div style="text-align: right;">
+                <span style="font-size: 0.82rem; color: #999; text-decoration: line-through;">₹1,499</span>
+                <span style="font-family: 'Cinzel', serif; font-size: 1.4rem; color: #80142B; font-weight: 800; display: block;">₹799</span>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-maroon" style="width: 100%; font-size: 0.92rem; padding: 0.9rem;" onclick="bookConsultationDirect(48490447208609)">
+            ✦ Book Slot — ₹799 &amp; Proceed to Checkout
+          </button>
+        </div>
+
+        <!-- Package 2: Future Spouse Reading -->
+        <div class="service-box" style="position: relative; overflow: hidden; border: 1.5px solid #D4AF37; background: #FFFCF7;">
+          <span style="position: absolute; top: 12px; right: 12px; background: #D4AF37; color: #1C1917; font-size: 0.7rem; font-weight: 800; padding: 0.22rem 0.7rem; border-radius: 50px; text-transform: uppercase; letter-spacing: 0.05em;">Destined Connection</span>
+          <div style="margin-bottom: 1rem;">
+            <img src="{{ 'package-future-spouse.jpg' | asset_url }}" alt="Future Spouse Reading" style="width: 100%; height: 260px; object-fit: cover; border-radius: 12px; margin-bottom: 1rem;" width="600" height="600">
+            <div style="font-size: 0.74rem; color: #80142B; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.35rem;">
+              Soulmate & Marriage Destiny
+            </div>
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem; line-height: 1.3;">Future Spouse Reading</h3>
+            <p style="font-size: 0.88rem; color: #7A6553; font-style: italic; margin-bottom: 0.9rem;">
+              "For singles curious about their divine partner & destined union."
+            </p>
+            <ul style="padding-left: 1.15rem; font-size: 0.86rem; color: #4A3B32; line-height: 1.6; margin-bottom: 1.2rem;">
+              <li>Who Your Future Spouse Is (Personality, Looks, Aura)</li>
+              <li>Nature & Emotional Traits</li>
+              <li>How & Where You'll Meet</li>
+              <li>Timeline of Union & Soul Purpose</li>
+              <li>Future Married Life & Angel Guidance</li>
+            </ul>
+            <div style="background: #FAF7F2; border: 1px solid var(--v-border); border-radius: 10px; padding: 0.8rem 1rem; margin-bottom: 1.2rem; display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <span style="font-size: 0.74rem; color: #888; text-transform: uppercase; display: block;">Delivery in 3–4 Days</span>
+                <span style="font-size: 0.82rem; color: #2E7D32; font-weight: 600;">Detailed Voice Note</span>
+              </div>
+              <div style="text-align: right;">
+                <span style="font-size: 0.82rem; color: #999; text-decoration: line-through;">₹2,499</span>
+                <span style="font-family: 'Cinzel', serif; font-size: 1.4rem; color: #80142B; font-weight: 800; display: block;">₹1,499</span>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-gold" style="width: 100%; font-size: 0.92rem; padding: 0.9rem;" onclick="bookConsultationDirect(48490447241377)">
+            ✦ Book Slot — ₹1,499 &amp; Proceed to Checkout
+          </button>
+        </div>
+
+        <!-- Package 3: Love & Marriage Pack (8 Questions) -->
+        <div class="service-box featured" style="position: relative; overflow: hidden;">
+          <span class="featured-flag">High Accuracy · 8 Questions</span>
+          <div style="margin-bottom: 1rem;">
+            <img src="{{ 'package-love-marriage-8q.jpg' | asset_url }}" alt="Love & Marriage Pack" style="width: 100%; height: 260px; object-fit: cover; border-radius: 12px; margin-bottom: 1rem;" width="600" height="600">
+            <div style="font-size: 0.74rem; color: #80142B; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.35rem;">
+              Comprehensive 8Q Spread
+            </div>
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem; line-height: 1.3;">Love & Marriage Pack (8 Questions)</h3>
+            <p style="font-size: 0.88rem; color: #7A6553; font-style: italic; margin-bottom: 0.9rem;">
+              "Designed for those manifesting commitment and divine union."
+            </p>
+            <ul style="padding-left: 1.15rem; font-size: 0.86rem; color: #4A3B32; line-height: 1.6; margin-bottom: 1.2rem;">
+              <li>Current energy of love & partner's true feelings</li>
+              <li>Will this lead to marriage / long-term commitment?</li>
+              <li>Divine timeline for proposal or wedding</li>
+              <li>Will it be love or arranged marriage?</li>
+              <li>Blockages, karmic lessons & angel remedies ✨</li>
+            </ul>
+            <div style="background: #FAF7F2; border: 1px solid var(--v-border); border-radius: 10px; padding: 0.8rem 1rem; margin-bottom: 1.2rem; display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <span style="font-size: 0.74rem; color: #888; text-transform: uppercase; display: block;">Delivery in 3–4 Days</span>
+                <span style="font-size: 0.82rem; color: #2E7D32; font-weight: 600;">Detailed Voice Note</span>
+              </div>
+              <div style="text-align: right;">
+                <span style="font-size: 0.82rem; color: #999; text-decoration: line-through;">₹3,499</span>
+                <span style="font-family: 'Cinzel', serif; font-size: 1.4rem; color: #80142B; font-weight: 800; display: block;">₹1,999</span>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-maroon" style="width: 100%; font-size: 0.92rem; padding: 0.9rem;" onclick="bookConsultationDirect(48490447274145)">
+            ✦ Book Slot — ₹1,999 &amp; Proceed to Checkout
+          </button>
+        </div>
+
+        <!-- Package 4: No Contact Situation Pack (4 Questions) -->
+        <div class="service-box" style="position: relative; overflow: hidden; border: 1.5px solid #E8DFD8;">
+          <span style="position: absolute; top: 12px; right: 12px; background: #4A3B32; color: #FFF; font-size: 0.7rem; font-weight: 700; padding: 0.22rem 0.7rem; border-radius: 50px; text-transform: uppercase; letter-spacing: 0.05em;">Reconnection Clarity</span>
+          <div style="margin-bottom: 1rem;">
+            <img src="{{ 'package-no-contact-4q.jpg' | asset_url }}" alt="No Contact Situation Pack" style="width: 100%; height: 260px; object-fit: cover; border-radius: 12px; margin-bottom: 1rem;" width="600" height="600">
+            <div style="font-size: 0.74rem; color: #80142B; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.35rem;">
+              4 Questions Reading
+            </div>
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem; line-height: 1.3;">No Contact Situation Pack (4 Questions)</h3>
+            <p style="font-size: 0.88rem; color: #7A6553; font-style: italic; margin-bottom: 0.9rem;">
+              "Perfect for those waiting for clarity and reconnection."
+            </p>
+            <ul style="padding-left: 1.15rem; font-size: 0.86rem; color: #4A3B32; line-height: 1.6; margin-bottom: 1.2rem;">
+              <li>Why no-contact happened</li>
+              <li>What they're feeling for you now</li>
+              <li>Will they reach out again & when</li>
+              <li>Angel guidance to handle the situation</li>
+            </ul>
+            <div style="background: #FAF7F2; border: 1px solid var(--v-border); border-radius: 10px; padding: 0.8rem 1rem; margin-bottom: 1.2rem; display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <span style="font-size: 0.74rem; color: #888; text-transform: uppercase; display: block;">Delivery in 3–4 Days</span>
+                <span style="font-size: 0.82rem; color: #2E7D32; font-weight: 600;">Detailed Voice Note</span>
+              </div>
+              <div style="text-align: right;">
+                <span style="font-size: 0.82rem; color: #999; text-decoration: line-through;">₹1,299</span>
+                <span style="font-family: 'Cinzel', serif; font-size: 1.4rem; color: #80142B; font-weight: 800; display: block;">₹799</span>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-maroon" style="width: 100%; font-size: 0.92rem; padding: 0.9rem;" onclick="bookConsultationDirect(48490447306913)">
+            ✦ Book Slot — ₹799 &amp; Proceed to Checkout
+          </button>
+        </div>
+
+        <!-- Package 5: Heart Consultation -->
+        <div class="service-box" style="position: relative; overflow: hidden; border: 2px solid #80142B; background: #FFFDF9;">
+          <span style="position: absolute; top: 12px; right: 12px; background: #80142B; color: #FFF; font-size: 0.7rem; font-weight: 800; padding: 0.22rem 0.7rem; border-radius: 50px; text-transform: uppercase; letter-spacing: 0.05em;">VIP Healing · 7-Day Support</span>
+          <div style="margin-bottom: 1rem;">
+            <img src="{{ 'package-heart-consultation.jpg' | asset_url }}" alt="Heart Consultation" style="width: 100%; height: 260px; object-fit: cover; border-radius: 12px; margin-bottom: 1rem;" width="600" height="600">
+            <div style="font-size: 0.74rem; color: #80142B; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.35rem;">
+              1:1 Private Consultation + Energy Healing
+            </div>
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem; line-height: 1.3;">Heart Consultation (Deep Transformation)</h3>
+            <p style="font-size: 0.88rem; color: #7A6553; font-style: italic; margin-bottom: 0.9rem;">
+              "🌹 A sacred healing journey for your heart — personally guided by Kavita."
+            </p>
+            <ul style="padding-left: 1.15rem; font-size: 0.86rem; color: #4A3B32; line-height: 1.6; margin-bottom: 1.2rem;">
+              <li>1:1 Private Consultation (30–45 mins Voice or Video Call)</li>
+              <li>Past-Present-Future emotional pattern reading</li>
+              <li>Energy + Chakra Scan for aura & heart blockages</li>
+              <li>Customized healing rituals, affirmations & crystal remedies</li>
+              <li>✨ <b>7-Day Follow-up Support</b> for continued alignment</li>
+            </ul>
+            <div style="background: #FAF7F2; border: 1px solid var(--v-border); border-radius: 10px; padding: 0.8rem 1rem; margin-bottom: 1.2rem; display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <span style="font-size: 0.74rem; color: #888; text-transform: uppercase; display: block;">Live 1-on-1 + Follow-Up</span>
+                <span style="font-size: 0.82rem; color: #2E7D32; font-weight: 600;">Voice / Video Call</span>
+              </div>
+              <div style="text-align: right;">
+                <span style="font-size: 0.82rem; color: #999; text-decoration: line-through;">₹12,999</span>
+                <span style="font-family: 'Cinzel', serif; font-size: 1.4rem; color: #80142B; font-weight: 800; display: block;">₹8,888</span>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-gold" style="width: 100%; font-size: 0.92rem; padding: 0.9rem;" onclick="bookConsultationDirect(48490447437985)">
+            ✦ Book VIP Session — ₹8,888 &amp; Proceed to Checkout
+          </button>
+        </div>
+
+        <!-- Package 6: Career Growth Reading -->
+        <div class="service-box" style="position: relative; overflow: hidden; border: 1.5px solid #E8DFD8;">
+          <span style="position: absolute; top: 12px; right: 12px; background: #D4AF37; color: #1C1917; font-size: 0.7rem; font-weight: 800; padding: 0.22rem 0.7rem; border-radius: 50px; text-transform: uppercase; letter-spacing: 0.05em;">Career & Wealth</span>
+          <div style="margin-bottom: 1rem;">
+            <img src="{{ 'package-career-growth.jpg' | asset_url }}" alt="Career Growth Reading" style="width: 100%; height: 260px; object-fit: cover; border-radius: 12px; margin-bottom: 1rem;" width="600" height="600">
+            <div style="font-size: 0.74rem; color: #80142B; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.35rem;">
+              Professional & Financial Trajectory
+            </div>
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem; line-height: 1.3;">Career Growth Reading</h3>
+            <p style="font-size: 0.88rem; color: #7A6553; font-style: italic; margin-bottom: 0.9rem;">
+              "Perfect for career confusion, job changes, promotion & business clarity."
+            </p>
+            <ul style="padding-left: 1.15rem; font-size: 0.86rem; color: #4A3B32; line-height: 1.6; margin-bottom: 1.2rem;">
+              <li>Current career energy & hidden strengths</li>
+              <li>Upcoming opportunities & challenges</li>
+              <li>Financial outlook & wealth stability</li>
+              <li>Divine guidance for long-term success</li>
+              <li>Vedic remedies & manifestation tips</li>
+            </ul>
+            <div style="background: #FAF7F2; border: 1px solid var(--v-border); border-radius: 10px; padding: 0.8rem 1rem; margin-bottom: 1.2rem; display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <span style="font-size: 0.74rem; color: #888; text-transform: uppercase; display: block;">Delivery in 3–4 Days</span>
+                <span style="font-size: 0.82rem; color: #2E7D32; font-weight: 600;">Detailed Voice Note</span>
+              </div>
+              <div style="text-align: right;">
+                <span style="font-size: 0.82rem; color: #999; text-decoration: line-through;">₹1,899</span>
+                <span style="font-family: 'Cinzel', serif; font-size: 1.4rem; color: #80142B; font-weight: 800; display: block;">₹1,099</span>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-maroon" style="width: 100%; font-size: 0.92rem; padding: 0.9rem;" onclick="bookConsultationDirect(48490448060577)">
+            ✦ Book Slot — ₹1,099 &amp; Proceed to Checkout
+          </button>
+        </div>
+
+        <!-- Package 7: Reunion Reading -->
+        <div class="service-box" style="position: relative; overflow: hidden; border: 1.5px solid #E8DFD8;">
+          <span style="position: absolute; top: 12px; right: 12px; background: #80142B; color: #FFF; font-size: 0.7rem; font-weight: 700; padding: 0.22rem 0.7rem; border-radius: 50px; text-transform: uppercase; letter-spacing: 0.05em;">Reunion & Timing</span>
+          <div style="margin-bottom: 1rem;">
+            <img src="{{ 'package-reunion-reading.jpg' | asset_url }}" alt="Reunion Reading" style="width: 100%; height: 260px; object-fit: cover; border-radius: 12px; margin-bottom: 1rem;" width="600" height="600">
+            <div style="font-size: 0.74rem; color: #80142B; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.35rem;">
+              Reconciliation & Next Move
+            </div>
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem; line-height: 1.3;">Reunion Reading</h3>
+            <p style="font-size: 0.88rem; color: #7A6553; font-style: italic; margin-bottom: 0.9rem;">
+              "Perfect for those hoping to reconnect with their person."
+            </p>
+            <ul style="padding-left: 1.15rem; font-size: 0.86rem; color: #4A3B32; line-height: 1.6; margin-bottom: 1.2rem;">
+              <li>Current connection energy & their hidden feelings</li>
+              <li>Intentions & next move</li>
+              <li>Chances of Reunion (If Yes: reunion guidance / If No: ask 3 custom questions!)</li>
+              <li>Timeline & divine signs to observe</li>
+              <li>Spiritual guidance & remedies</li>
+            </ul>
+            <div style="background: #FAF7F2; border: 1px solid var(--v-border); border-radius: 10px; padding: 0.8rem 1rem; margin-bottom: 1.2rem; display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <span style="font-size: 0.74rem; color: #888; text-transform: uppercase; display: block;">Delivery in 3–4 Days</span>
+                <span style="font-size: 0.82rem; color: #2E7D32; font-weight: 600;">Detailed Voice Note</span>
+              </div>
+              <div style="text-align: right;">
+                <span style="font-size: 0.82rem; color: #999; text-decoration: line-through;">₹1,899</span>
+                <span style="font-family: 'Cinzel', serif; font-size: 1.4rem; color: #80142B; font-weight: 800; display: block;">₹1,099</span>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-maroon" style="width: 100%; font-size: 0.92rem; padding: 0.9rem;" onclick="bookConsultationDirect(48490448126113)">
+            ✦ Book Slot — ₹1,099 &amp; Proceed to Checkout
+          </button>
+        </div>
+
+        <!-- Package 8: Deep Insight Reading (8 Questions) -->
+        <div class="service-box" style="position: relative; overflow: hidden; border: 1.5px solid #D4AF37; background: #FFFCF7;">
+          <span style="position: absolute; top: 12px; right: 12px; background: #D4AF37; color: #1C1917; font-size: 0.7rem; font-weight: 800; padding: 0.22rem 0.7rem; border-radius: 50px; text-transform: uppercase; letter-spacing: 0.05em;">Multi-Deck Soul Session</span>
+          <div style="margin-bottom: 1rem;">
+            <img src="{{ 'package-deep-insight-8q.jpg' | asset_url }}" alt="Deep Insight Reading" style="width: 100%; height: 260px; object-fit: cover; border-radius: 12px; margin-bottom: 1rem;" width="600" height="600">
+            <div style="font-size: 0.74rem; color: #80142B; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.35rem;">
+              8 Custom Questions of Your Choice
+            </div>
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem; line-height: 1.3;">Deep Insight Reading (8 Questions)</h3>
+            <p style="font-size: 0.88rem; color: #7A6553; font-style: italic; margin-bottom: 0.9rem;">
+              "🌠 A complete soul guidance session when you're ready for clarity on all fronts."
+            </p>
+            <ul style="padding-left: 1.15rem; font-size: 0.86rem; color: #4A3B32; line-height: 1.6; margin-bottom: 1.2rem;">
+              <li>8 Custom Questions across love, career, destiny & purpose</li>
+              <li>Multi-deck intuitive reading (Tarot, Oracle & Angel cards)</li>
+              <li>Detailed, thorough voice recording directly to WhatsApp</li>
+              <li>Personalized remedies & energetic guidance</li>
+            </ul>
+            <div style="background: #FAF7F2; border: 1px solid var(--v-border); border-radius: 10px; padding: 0.8rem 1rem; margin-bottom: 1.2rem; display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <span style="font-size: 0.74rem; color: #888; text-transform: uppercase; display: block;">Delivery in 3–4 Days</span>
+                <span style="font-size: 0.82rem; color: #2E7D32; font-weight: 600;">Detailed Voice Note</span>
+              </div>
+              <div style="text-align: right;">
+                <span style="font-size: 0.82rem; color: #999; text-decoration: line-through;">₹3,299</span>
+                <span style="font-family: 'Cinzel', serif; font-size: 1.4rem; color: #80142B; font-weight: 800; display: block;">₹1,999</span>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-gold" style="width: 100%; font-size: 0.92rem; padding: 0.9rem;" onclick="bookConsultationDirect(48490448158881)">
+            ✦ Book Slot — ₹1,999 &amp; Proceed to Checkout
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- INTAKE BOOKING FORM -->
+    <div class="booking-form-wrap" id="intakeForm">
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <div style="font-size: 0.8rem; color: var(--v-maroon); font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;">Direct Connection</div>
+        <h2 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Client Intake & Scheduling</h2>
+        <p style="color: var(--v-text-muted);">Please provide your accurate birth details so Kavita can prepare your energetic chart.</p>
+      </div>
+
+      <form onsubmit="handleConsultationSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Selected Consultation *</label>
+          <input type="text" class="form-input" id="selectedServiceInput" value="Audio Call Tarot Reading (20 Mins - ₹3,099)" required>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;">
+          <div class="form-group">
+            <label class="form-label">Full Name *</label>
+            <input type="text" class="form-input" id="clientFullName" required placeholder="e.g. Priya Sharma">
+          </div>
+          <div class="form-group">
+            <label class="form-label">WhatsApp Contact Number *</label>
+            <input type="tel" class="form-input" id="clientMobile" required placeholder="+91 93103 87104">
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem;">
+          <div class="form-group">
+            <label class="form-label">Date of Birth *</label>
+            <input type="date" class="form-input" id="clientBirthDate" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Time of Birth</label>
+            <input type="time" class="form-input" id="clientBirthTime">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Place of Birth *</label>
+            <input type="text" class="form-input" id="clientBirthPlace" required placeholder="City, State">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Preferred Time Window *</label>
+          <select class="form-select" id="clientSlot">
+            <option>Morning (10:00 AM – 1:00 PM IST)</option>
+            <option>Afternoon (2:00 PM – 5:00 PM IST)</option>
+            <option>Evening (6:00 PM – 9:00 PM IST)</option>
+            <option>Emergency Same-Day (Within 4 Hours)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Your Specific Question or Life Area</label>
+          <textarea class="form-textarea" rows="3" id="clientQuestions" placeholder="Describe the decision, relationship, or career situation you need guidance on..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-maroon" style="width: 100%; padding: 1.1rem; font-size: 0.95rem;">
+          ✦ Confirm & Connect on WhatsApp (Direct Appointment)
+        </button>
+      </form>
+    </div>
+
+    <!-- WHAT TO EXPECT SECTION -->
+    <div style="max-width: 820px; margin: 0 auto 5rem;">
+      <h3 style="font-size: 1.8rem; text-align: center; margin-bottom: 2.5rem;">How Your Session Unfolds</h3>
+
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div>
+          <h4 style="font-size: 1.15rem; margin-bottom: 0.3rem;">Confirmation & Muhurat Matching</h4>
+          <p style="color: var(--v-text-muted); font-size: 0.92rem; line-height: 1.6;">
+            Upon submitting your intake form, our sanctuary team locks your slot on WhatsApp and confirms your exact call time.
+          </p>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div>
+          <h4 style="font-size: 1.15rem; margin-bottom: 0.3rem;">Channeled Tarot & Astrological Spread</h4>
+          <p style="color: var(--v-text-muted); font-size: 0.92rem; line-height: 1.6;">
+            Kavita pulls dedicated cards for your past karmic foundation, present obstacles, and outcome possibilities, backed by your Kundali planetary transits.
+          </p>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div>
+          <h4 style="font-size: 1.15rem; margin-bottom: 0.3rem;">Spiritual Guidance & Card Remedies</h4>
+          <p style="color: var(--v-text-muted); font-size: 0.92rem; line-height: 1.6;">
+            At the close of your session, Kavita provides grounded spiritual guidance and recommends specific healing crystals or energy rituals customized to your path.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- CONTAINED LUXURY FOOTER (WHITE & ROYAL RED THEME) -->
+  <footer class="refined-footer">
+  <div class="container"><div class="refined-footer-grid">
+    <div class="refined-footer-brand"><a href="/"><img src="{{ 'kavita-logo-gold.png' | asset_url }}" alt="Kavita Tarot" width="80" height="80"></a><h2>A little clarity.<br>A deeper connection.</h2><p>Personal tarot guidance, thoughtful rituals and sacred tools for your everyday journey.</p></div>
+    <div><h3>Explore</h3><a href="/?view=consultations">Tarot & healing</a><a href="/collections/all?cat=crystals">Healing crystals</a><a href="/collections/all?cat=tarot">Tarot & oracle decks</a><a href="/?view=about">Meet Kavita</a></div>
+    <div><h3>Here to help</h3><a href="/pages/contact">Contact us</a><a href="/?view=faq">Questions & care</a><a href="/cart">Your bag</a><a href="/?view=consultations">Book a reading</a></div>
+  </div><div class="refined-footer-note">Tarot and energy practices offer personal and spiritual reflection. They do not replace professional medical, legal or financial advice.</div><div class="refined-footer-bottom"><span>© 2026 Kavita Tarot Reader</span><span>Thoughtfully chosen. Personally guided.</span></div></div>
+</footer>
+
+  <!-- CART DRAWER -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <div style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--v-text-dark); font-weight: 700;">
+        Your Sacred Cart (<span id="cartCountHeader">0</span>)
+      </div>
+      <button onclick="closeCart()" style="background: none; border: none; color: var(--v-text-dark); font-size: 1.5rem; cursor: pointer;">✕</button>
+    </div>
+    <div class="cart-progress-bar-wrap">
+      <div id="shippingProgressText">✦ Add ₹999 for FREE Express Delivery!</div>
+      <div class="cart-progress-bar">
+        <div class="cart-progress-fill" id="shippingProgressFill" style="width: 0%;"></div>
+      </div>
+    </div>
+    <div class="cart-body" id="cartItemsList"></div>
+    <div class="cart-footer">
+      <div class="cart-subtotal-row">
+        <span>Subtotal:</span>
+        <span id="cartSubtotal" style="color: var(--v-maroon);">₹0</span>
+      </div>
+      <button class="btn btn-maroon" style="width: 100%; padding: 0.95rem;" onclick="checkoutCart()">
+        ✦ Proceed to Secure Checkout
+      </button>
+    </div>
+  </div>
+
+  
+  
+  
+  <script>
+    let audioSpeed = 'standard';
+    let audioMinutes = 10;
+    const audioVariants = {
+      standard: {
+        10: { price: 999, id: 48490756374689, label: '10 Minutes (Standard)' },
+        20: { price: 2299, id: 48490756440225, label: '20 Minutes (Standard)' },
+        30: { price: 3369, id: 48490756505761, label: '30 Minutes (Standard)' }
+      },
+      urgent: {
+        10: { price: 1555, id: 48490756407457, label: '10 Minutes (Urgent 24h)' },
+        20: { price: 3099, id: 48490756472993, label: '20 Minutes (Urgent 24h)' },
+        30: { price: 4444, id: 48490756538529, label: '30 Minutes (Urgent 24h)' }
+      }
+    };
+
+    function setAudioSpeed(speed) {
+      audioSpeed = speed;
+      document.getElementById('audioSpeedStd')?.classList.toggle('active', speed === 'standard');
+      document.getElementById('audioSpeedUrg')?.classList.toggle('active', speed === 'urgent');
+      
+      const subText = speed === 'urgent' ? '⚡ Urgent (Within 24 Hrs)' : 'Standard Delivery (7–10 days)';
+      if (document.getElementById('audioCard10Sub')) document.getElementById('audioCard10Sub').textContent = subText;
+      if (document.getElementById('audioCard20Sub')) document.getElementById('audioCard20Sub').textContent = subText;
+      if (document.getElementById('audioCard30Sub')) document.getElementById('audioCard30Sub').textContent = subText;
+      
+      if (document.getElementById('audioCard10Price')) document.getElementById('audioCard10Price').textContent = '₹' + audioVariants[speed][10].price.toLocaleString('en-IN');
+      if (document.getElementById('audioCard20Price')) document.getElementById('audioCard20Price').textContent = '₹' + audioVariants[speed][20].price.toLocaleString('en-IN');
+      if (document.getElementById('audioCard30Price')) document.getElementById('audioCard30Price').textContent = '₹' + audioVariants[speed][30].price.toLocaleString('en-IN');
+      
+      updateAudioBtn();
+    }
+
+    function selectAudioDuration(mins) {
+      audioMinutes = mins;
+      document.querySelectorAll('#audioVariantsGroup .variant-card').forEach(c => c.classList.remove('is-selected'));
+      document.getElementById('audioCard' + mins)?.classList.add('is-selected');
+      updateAudioBtn();
+    }
+
+    function updateAudioBtn() {
+      const item = audioVariants[audioSpeed][audioMinutes];
+      const speedLabel = audioSpeed === 'urgent' ? 'Urgent (24 Hrs)' : 'Standard';
+      const btn = document.getElementById('audioBookingBtn');
+      if (btn) {
+        btn.innerHTML = `✦ Book ${audioMinutes} Min Slot (${speedLabel}) — ₹${item.price.toLocaleString('en-IN')} &amp; Checkout`;
+      }
+      const input = document.getElementById('selectedServiceInput');
+      if (input) input.value = `Live Audio Call (${audioMinutes} Mins - ${speedLabel} - ₹${item.price})`;
+    }
+
+    function bookSelectedAudioCall() {
+      const item = audioVariants[audioSpeed][audioMinutes];
+      bookConsultationDirect(item.id);
+    }
+
+    let videoSpeed = 'standard';
+    let videoMinutes = 10;
+    const videoVariants = {
+      standard: {
+        10: { price: 1888, id: 48489124659361, label: '10 Minutes (Standard)' },
+        30: { price: 4499, id: 48489124724897, label: '30 Minutes (Standard)' }
+      },
+      urgent: {
+        10: { price: 2199, id: 48489124692129, label: '10 Minutes (Urgent 24h)' },
+        30: { price: 5499, id: 48489124757665, label: '30 Minutes (Urgent 24h)' }
+      }
+    };
+
+    function setVideoSpeed(speed) {
+      videoSpeed = speed;
+      document.getElementById('videoSpeedStd')?.classList.toggle('active', speed === 'standard');
+      document.getElementById('videoSpeedUrg')?.classList.toggle('active', speed === 'urgent');
+      
+      const subText = speed === 'urgent' ? '⚡ Urgent (Within 24 Hrs)' : 'Standard Delivery (7–10 days)';
+      if (document.getElementById('videoCard10Sub')) document.getElementById('videoCard10Sub').textContent = subText;
+      if (document.getElementById('videoCard30Sub')) document.getElementById('videoCard30Sub').textContent = subText;
+      
+      if (document.getElementById('videoCard10Price')) document.getElementById('videoCard10Price').textContent = '₹' + videoVariants[speed][10].price.toLocaleString('en-IN');
+      if (document.getElementById('videoCard30Price')) document.getElementById('videoCard30Price').textContent = '₹' + videoVariants[speed][30].price.toLocaleString('en-IN');
+      
+      updateVideoBtn();
+    }
+
+    function selectVideoDuration(mins) {
+      videoMinutes = mins;
+      document.querySelectorAll('#videoVariantsGroup .variant-card').forEach(c => c.classList.remove('is-selected'));
+      document.getElementById('videoCard' + mins)?.classList.add('is-selected');
+      updateVideoBtn();
+    }
+
+    function updateVideoBtn() {
+      const item = videoVariants[videoSpeed][videoMinutes];
+      const speedLabel = videoSpeed === 'urgent' ? 'Urgent (24 Hrs)' : 'Standard';
+      const btn = document.getElementById('videoBookingBtn');
+      if (btn) {
+        btn.innerHTML = `✦ Book ${videoMinutes} Min Video Slot (${speedLabel}) — ₹${item.price.toLocaleString('en-IN')} &amp; Checkout`;
+      }
+      const input = document.getElementById('selectedServiceInput');
+      if (input) input.value = `Live Video Call (${videoMinutes} Mins - ${speedLabel} - ₹${item.price})`;
+    }
+
+    function bookSelectedVideoCall() {
+      const item = videoVariants[videoSpeed][videoMinutes];
+      bookConsultationDirect(item.id);
+    }
+
+    let voiceChoice = 1;
+    const voiceVariants = {
+      1: { price: 299, id: 48490758537377, label: '1 Question (7 Days)' },
+      2: { price: 399, id: 48490758570145, label: '2 Questions (7 Days)' },
+      3: { price: 499, id: 48490758602913, label: '3 Questions (7 Days)' },
+      'urgent': { price: 499, id: 48490758635681, label: '⚡ Urgent Voice Note (24 Hours)' }
+    };
+
+    function selectVoiceVariant(choice) {
+      voiceChoice = choice;
+      document.querySelectorAll('#voiceVariantsGroup .variant-card').forEach(c => c.classList.remove('is-selected'));
+      const target = choice === 'urgent' ? document.getElementById('voiceCardUrg') : document.getElementById('voiceCard' + choice);
+      if (target) target.classList.add('is-selected');
+      
+      const item = voiceVariants[choice];
+      const btn = document.getElementById('voiceBookingBtn');
+      if (btn) {
+        btn.innerHTML = `✦ Book ${item.label} — ₹${item.price.toLocaleString('en-IN')} &amp; Checkout`;
+      }
+      const input = document.getElementById('selectedServiceInput');
+      if (input) input.value = `Voice Note Reading (${item.label} - ₹${item.price})`;
+    }
+
+    function bookSelectedVoiceNote() {
+      const item = voiceVariants[voiceChoice];
+      bookConsultationDirect(item.id);
+    }
+
+    function bookConsultationDirect(variantId) {
+      if (!variantId) {
+        window.location.href = '/checkout';
+        return;
+      }
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: variantId, quantity: 1 })
+      }).then(() => {
+        window.location.href = '/checkout';
+      }).catch(() => {
+        window.location.href = '/checkout';
+      });
+    }
+
+    function selectConsultation(name, variantId) {
+      document.getElementById('selectedServiceInput').value = name;
+      if (variantId) {
+        window.lastSelectedVariantId = variantId;
+      }
+      document.getElementById('intakeForm').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function handleConsultationSubmit(e) {
+      e.preventDefault();
+      const service = document.getElementById('selectedServiceInput')?.value || 'Consultation Session';
+      const name = document.getElementById('clientFullName')?.value || '';
+      const phone = document.getElementById('clientMobile')?.value || '';
+      const dob = document.getElementById('clientBirthDate')?.value || '';
+      const time = document.getElementById('clientBirthTime')?.value || 'Not provided';
+      const place = document.getElementById('clientBirthPlace')?.value || '';
+      const slot = document.getElementById('clientSlot')?.value || '';
+      const q = document.getElementById('clientQuestions')?.value || 'General reading';
+
+      const vid = window.lastSelectedVariantId || audioVariants[audioSpeed][audioMinutes].id;
+      
+      fetch('/cart/update.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          note: `Consultation Booking: ${service} | Name: ${name} | WhatsApp: ${phone} | DOB: ${dob} (${time}, ${place}) | Slot: ${slot} | Query: ${q}`,
+          attributes: {
+            'Client Name': name,
+            'WhatsApp Number': phone,
+            'Date of Birth': dob,
+            'Birth Time & Place': `${time}, ${place}`,
+            'Preferred Slot': slot,
+            'Consultation Query': q,
+            'Booked Service': service
+          }
+        })
+      }).then(() => {
+        return fetch('/cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: vid, quantity: 1 })
+        });
+      }).then(() => {
+        window.location.href = '/checkout';
+      }).catch(() => {
+        window.location.href = '/checkout';
+      });
+    }
+  </script>
+
+  <!-- LUXURY MOBILE FLOATING BOTTOM NAVIGATION BAR -->
+  <nav class="kavita-mobile-bottom-nav" aria-label="Mobile Navigation">
+    <a href="/collections/all" class="mobile-nav-item">
+      <span class="mobile-nav-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+      </span>
+      <span class="mobile-nav-label">Shop</span>
+    </a>
+
+    <a href="/?view=consultations" class="mobile-nav-item active">
+      <span class="mobile-nav-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+      </span>
+      <span class="mobile-nav-label">Readings</span>
+    </a>
+
+    <!-- Center Elevated Glowing Home Button -->
+    <a href="/" class="mobile-nav-item mobile-nav-item--center" aria-label="Home">
+      <div class="mobile-nav-center-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+      </div>
+      <span class="mobile-nav-label">Home</span>
+    </a>
+
+    <a href="/collections/all" class="mobile-nav-item">
+      <span class="mobile-nav-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+      </span>
+      <span class="mobile-nav-label">Wishlist</span>
+      <span class="mobile-nav-badge" id="mobileWishlistCount">0</span>
+    </a>
+
+    <a href="javascript:void(0)" class="mobile-nav-item" onclick="openCart()">
+      <span class="mobile-nav-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+      </span>
+      <span class="mobile-nav-label">Cart</span>
+      <span class="mobile-nav-badge" id="mobileCartCount">0</span>
+    </a>
+  </nav>
+
+  <!-- =========================================================
+       SACRED SANCTUARY NEWSLETTER POP-UP (10% OFF FIRST ORDER)
+       Non-permanent: Appears once; dismissed permanently via localStorage
+  ========================================================= -->
+  <div id="kavitaNewsletterOverlay" class="kavita-welcome-overlay" role="dialog" aria-modal="true" aria-hidden="true" style="display: none;">
+    <div class="kavita-welcome-modal kavita-newsletter-modal">
+      <button type="button" class="kavita-welcome-close" id="kavitaNewsletterCloseBtn" aria-label="Close Pop-up">✕</button>
+      <div class="kavita-welcome-icon">💌</div>
+      <div class="kavita-welcome-badge">✦ SACRED SANCTUARY NEWSLETTER ✦</div>
+      <h3 class="kavita-welcome-title">Get 10% Off Your First Order</h3>
+      <p class="kavita-welcome-desc">
+        Subscribe to receive weekly cosmic horoscopes, moon ritual guidance, and an instant <strong>10% OFF coupon code</strong> for your first tarot consultation or crystal order.
+      </p>
+
+      <form id="kavitaNewsletterForm" class="kavita-newsletter-form" onsubmit="return handleNewsletterSubmit(event)">
+        <div class="kavita-newsletter-input-group">
+          <input
+            type="email"
+            id="kavitaNewsletterEmail"
+            name="email"
+            placeholder="Enter your email address..."
+            required
+            class="kavita-newsletter-input"
+            aria-label="Email address for sacred newsletter"
+          >
+          <button type="submit" class="kavita-newsletter-btn" id="kavitaNewsletterSubmitBtn">
+            Subscribe &amp; Get 10% Off
+          </button>
+        </div>
+      </form>
+
+      <div id="kavitaNewsletterSuccess" class="kavita-newsletter-success" style="display: none;">
+        <div class="kavita-newsletter-success-icon">✨</div>
+        <div class="kavita-newsletter-success-title">Welcome to the Sacred Circle!</div>
+        <div class="kavita-newsletter-success-code">Use Code: <strong>WELCOME10</strong> (10% OFF)</div>
+        <div class="kavita-newsletter-success-sub">Discount applied to your cart &amp; WhatsApp checkout!</div>
+      </div>
+
+      <div class="kavita-welcome-perks">
+        <span>✓ Weekly Cosmic Tarot Insights</span>
+        <span>✓ No Spam, Only Divine Guidance</span>
+      </div>
+      <div class="kavita-welcome-footer-note">
+        *We respect your privacy. You can unsubscribe at any time.
+      </div>
+    </div>
+  </div>
+
+  <!-- Whole Website Celestial Ice Effect -->
+  <script defer src="{{ 'ice-effect.js' | asset_url }}"></script>
+  
+  <script defer src="{{ 'sales-popup.js' | asset_url }}" defer></script>
+
+<script defer src="{{ 'parity-ui.js' | asset_url }}"></script><script defer src="{{ 'parity-page.js' | asset_url }}"></script>
+{% schema %}
+{"name": "Preview consultations", "settings": []}
+{% endschema %}

@@ -1,0 +1,538 @@
+{% comment %}
+  KAVITA — Rajvira-Style 2-Tier Header & Category Navigation Bar
+  File: sections/kavita-rajvira-header.liquid
+  Compatible with Shopify Online Store 2.0
+{% endcomment %}
+
+<div id="kavita-rajvira-header-{{ section.id }}" class="kavita-hdr">
+  {% comment %} --- Tier 0: Royal Temple Maroon Announcement Bar --- {% endcomment %}
+  {%- if section.settings.show_announcement -%}
+    <div class="kavita-hdr__announcement">
+      <div class="kavita-hdr__announcement-track">
+        <div class="kavita-hdr__announcement-item"><span class="bullet">✦</span> CELEBRATING SACRED MOMENTS</div>
+        <div class="kavita-hdr__announcement-item"><span class="bullet">✦</span> A LEGACY OF SACRED TAROT & SPIRITUAL GUIDANCE</div>
+        <div class="kavita-hdr__announcement-item"><span class="bullet">✦</span> LIMITED READING SLOTS AVAILABLE — BOOK ONLINE</div>
+        <div class="kavita-hdr__announcement-item"><span class="bullet">✦</span> FREE WORLDWIDE SHIPPING ON SACRED TOOLS OVER ₹999</div>
+        <div class="kavita-hdr__announcement-item"><span class="bullet">✦</span> 100% ENERGIZED & SPIRITUALLY CLEANSED</div>
+        {% comment %} Duplicate for infinite marquee scroll {% endcomment %}
+        <div class="kavita-hdr__announcement-item"><span class="bullet">✦</span> CELEBRATING SACRED MOMENTS</div>
+        <div class="kavita-hdr__announcement-item"><span class="bullet">✦</span> A LEGACY OF SACRED TAROT & SPIRITUAL GUIDANCE</div>
+        <div class="kavita-hdr__announcement-item"><span class="bullet">✦</span> LIMITED READING SLOTS AVAILABLE — BOOK ONLINE</div>
+        <div class="kavita-hdr__announcement-item"><span class="bullet">✦</span> FREE WORLDWIDE SHIPPING ON SACRED TOOLS OVER ₹999</div>
+        <div class="kavita-hdr__announcement-item"><span class="bullet">✦</span> 100% ENERGIZED & SPIRITUALLY CLEANSED</div>
+      </div>
+    </div>
+  {%- endif -%}
+
+  {% comment %} --- Tier 1: Main Header (Logo, Wide Center Search Bar, Icons) --- {% endcomment %}
+  <div class="kavita-hdr__main">
+    <div class="kavita-hdr__container">
+      {% comment %} Left: Brand Logo {% endcomment %}
+      <div class="kavita-hdr__brand">
+        <a href="{{ routes.root_url }}" class="kavita-hdr__logo-link">
+          {%- if section.settings.logo != blank -%}
+            {{ section.settings.logo | image_url: width: 320 | image_tag:
+              class: 'kavita-hdr__logo-img',
+              loading: 'eager',
+              alt: shop.name | escape
+            }}
+          {%- else -%}
+            <img
+              src="{{ 'kavita-logo-gold.png' | asset_url }}"
+              alt="Kavita Tarot & Spirituals"
+              class="kavita-hdr__logo-img"
+              loading="eager"
+              width="150"
+              height="48"
+              onerror="this.style.display='none';"
+            >
+          {%- endif -%}
+          <span class="kavita-hdr__brand-name">KAVITA TAROT READER</span>
+        </a>
+      </div>
+
+      {% comment %} Center: Wide Search Input Pill {% endcomment %}
+      <div class="kavita-hdr__search-wrap">
+        <form action="{{ routes.search_url }}" method="get" role="search" class="kavita-hdr__search-form">
+          <svg class="kavita-hdr__search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input
+            type="search"
+            name="q"
+            class="kavita-hdr__search-input"
+            placeholder="Search for tarot decks, crystals, readings & +1000 designs..."
+            aria-label="Search store"
+            autocomplete="off"
+          >
+          <button type="submit" class="kavita-hdr__search-btn" aria-label="Submit search">
+            Search
+          </button>
+        </form>
+      </div>
+
+      {% comment %} Right: Utilities & Icons {% endcomment %}
+      <div class="kavita-hdr__actions">
+        <a href="/pages/book-online" class="kavita-hdr__util-link">
+          <span class="kavita-hdr__util-dot">●</span> Book Online
+        </a>
+
+        {% comment %} Wishlist {% endcomment %}
+        <a href="/pages/wishlist" class="kavita-hdr__icon-btn" aria-label="Wishlist">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="kavita-hdr__badge">0</span>
+        </a>
+
+        {% comment %} Account {% endcomment %}
+        <a href="{{ routes.account_url }}" class="kavita-hdr__icon-btn" aria-label="Account">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </a>
+
+        {% comment %} Cart {% endcomment %}
+        <a href="{{ routes.cart_url }}" class="kavita-hdr__icon-btn kavita-hdr__icon-btn--cart" aria-label="Cart">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="kavita-hdr__badge kavita-hdr__badge--cart" id="kavita-cart-badge">{{ cart.item_count }}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  {% comment %} --- Tier 2: Dedicated Horizontal Category Navigation Menu Bar --- {% endcomment %}
+  <nav class="kavita-hdr__nav-bar" aria-label="Category Navigation">
+    <div class="kavita-hdr__container">
+      <ul class="kavita-hdr__menu">
+        <li class="kavita-hdr__menu-item">
+          <a href="/collections/all" class="kavita-hdr__menu-link">All Collections</a>
+        </li>
+        <li class="kavita-hdr__menu-item">
+          <a href="/collections/tarot-decks" class="kavita-hdr__menu-link">Tarot Decks</a>
+        </li>
+        <li class="kavita-hdr__menu-item">
+          <a href="/collections/oracle-cards" class="kavita-hdr__menu-link">Oracle Cards</a>
+        </li>
+        <li class="kavita-hdr__menu-item">
+          <a href="/collections/crystals" class="kavita-hdr__menu-link">Crystals & Gems</a>
+        </li>
+        <li class="kavita-hdr__menu-item">
+          <a href="/pages/book-online" class="kavita-hdr__menu-link">Readings</a>
+        </li>
+        <li class="kavita-hdr__menu-item">
+          <a href="/pages/about" class="kavita-hdr__menu-link">About Kavita</a>
+        </li>
+        <li class="kavita-hdr__menu-item">
+          <a href="/pages/contact" class="kavita-hdr__menu-link">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<style>
+  .kavita-hdr {
+    position: sticky;
+    top: 0;
+    z-index: 500;
+    background: #FFFFFF;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05);
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  .kavita-hdr__container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Announcement Ticker */
+  .kavita-hdr__announcement {
+    background: linear-gradient(90deg, #701325, #88182F, #701325);
+    color: #FFF2D6;
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.6rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: 1px solid rgba(216, 180, 93, 0.35);
+  }
+
+  .kavita-hdr__announcement-track {
+    display: inline-flex;
+    animation: kavitaMarquee 35s linear infinite;
+  }
+
+  .kavita-hdr__announcement-track:hover {
+    animation-play-state: paused;
+  }
+
+  .kavita-hdr__announcement-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0 2rem;
+  }
+
+  .kavita-hdr__announcement-item .bullet {
+    color: #FFDF78;
+    font-size: 0.9rem;
+  }
+
+  @keyframes kavitaMarquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* Main Header Row */
+  .kavita-hdr__main {
+    padding: 0.85rem 0;
+    border-bottom: 1px solid #ECE7DE;
+    background: #FFFFFF;
+  }
+
+  .kavita-hdr__brand {
+    flex: 0 0 auto;
+  }
+
+  .kavita-hdr__logo-link {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .kavita-hdr__logo-img {
+    height: 46px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .kavita-hdr__brand-titles {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .kavita-hdr__brand-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: #1A1715;
+    line-height: 1;
+  }
+
+  .kavita-hdr__brand-sub {
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #8A6414;
+    margin-top: 3px;
+  }
+
+  /* Center Search Bar */
+  .kavita-hdr__search-wrap {
+    flex: 1 1 540px;
+    max-width: 580px;
+    margin: 0 2rem;
+  }
+
+  .kavita-hdr__search-form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: #F8F5EE;
+    border: 1px solid #DFD8CB;
+    border-radius: 999px;
+    padding: 4px 6px 4px 16px;
+    transition: all 0.25s ease;
+  }
+
+  .kavita-hdr__search-form:focus-within {
+    background: #FFFFFF;
+    border-color: #C9A24B;
+    box-shadow: 0 0 0 3px rgba(201, 162, 75, 0.18);
+  }
+
+  .kavita-hdr__search-icon {
+    color: #8A8175;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+
+  .kavita-hdr__search-input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 0.85rem;
+    color: #24201D;
+    font-family: inherit;
+  }
+
+  .kavita-hdr__search-input::placeholder {
+    color: #8C8478;
+    font-size: 0.82rem;
+  }
+
+  .kavita-hdr__search-btn {
+    background: #80142B;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 999px;
+    padding: 0.5rem 1.15rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    flex-shrink: 0;
+  }
+
+  .kavita-hdr__search-btn:hover {
+    background: #600E1F;
+    transform: translateY(-1px);
+  }
+
+  /* Utilities & Icons */
+  .kavita-hdr__actions {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex: 0 0 auto;
+  }
+
+  .kavita-hdr__util-link {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #80142B;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    background: #FBF7EE;
+    border: 1px solid #E8DFCE;
+    transition: all 0.25s ease;
+  }
+
+  .kavita-hdr__util-link:hover {
+    background: #80142B;
+    color: #FFFFFF;
+    border-color: #80142B;
+  }
+
+  .kavita-hdr__util-dot {
+    color: #D8B45D;
+    font-size: 0.65rem;
+  }
+
+  .kavita-hdr__icon-btn {
+    position: relative;
+    color: #2A2421;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+  }
+
+  .kavita-hdr__icon-btn:hover {
+    background: #F4EFE6;
+    color: #80142B;
+    transform: translateY(-1px);
+  }
+
+  .kavita-hdr__badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: #80142B;
+    color: #FFFFFF;
+    font-size: 0.65rem;
+    font-weight: 800;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    border: 1.5px solid #FFFFFF;
+  }
+
+  /* Category Navigation Menu Bar */
+  .kavita-hdr__nav-bar {
+    background: #FAFAFA;
+    border-bottom: 1px solid #ECE7DE;
+  }
+
+  .kavita-hdr__menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.35rem;
+    width: 100%;
+  }
+
+  .kavita-hdr__menu-item {
+    position: relative;
+  }
+
+  .kavita-hdr__menu-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.42rem 0; /* Reduced slim luxury padding */
+    font-family: 'Cinzel', serif;
+    font-size: 0.76rem; /* Refined compact typography */
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #332E2A;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.2s ease;
+  }
+
+  .kavita-hdr__menu-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #80142B;
+    transition: width 0.25s ease;
+  }
+
+  .kavita-hdr__menu-link:hover,
+  .kavita-hdr__menu-item:hover > .kavita-hdr__menu-link {
+    color: #80142B;
+  }
+
+  .kavita-hdr__menu-link:hover::after,
+  .kavita-hdr__menu-item:hover > .kavita-hdr__menu-link::after {
+    width: 100%;
+  }
+
+  .kavita-hdr__caret {
+    transition: transform 0.2s ease;
+  }
+
+  .kavita-hdr__menu-item:hover .kavita-hdr__caret {
+    transform: rotate(180deg);
+  }
+
+  /* Dropdown Menu */
+  .kavita-hdr__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #FFFFFF;
+    border: 1px solid #E6E0D5;
+    border-radius: 10px;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    min-width: 620px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 600;
+  }
+
+  .kavita-hdr__menu-item:hover .kavita-hdr__dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .kavita-hdr__dropdown-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .kavita-hdr__dropdown-title {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: #80142B;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid #ECE7DE;
+  }
+
+  .kavita-hdr__dropdown-col a {
+    display: block;
+    padding: 0.35rem 0;
+    font-size: 0.82rem;
+    color: #4A443E;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+
+  .kavita-hdr__dropdown-col a:hover {
+    color: #80142B;
+    padding-left: 4px;
+  }
+
+  @media (max-width: 991px) {
+    .kavita-hdr__search-wrap {
+      display: none;
+    }
+    .kavita-hdr__nav-bar {
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+    .kavita-hdr__menu {
+      gap: 1.25rem;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Kavita Rajvira Header",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_announcement",
+      "label": "Show top announcement bar",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Brand logo image"
+    }
+  ]
+}
+{% endschema %}
+

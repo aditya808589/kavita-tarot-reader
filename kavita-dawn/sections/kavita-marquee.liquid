@@ -1,0 +1,47 @@
+<div class="k-marquee-strip" style="background: linear-gradient(90deg, #731024, #8B172F, #731024); border-bottom: 1px solid rgba(255, 223, 120, 0.3); padding: 0.65rem 0; overflow: hidden; white-space: nowrap; position: relative; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: #FFF3D6; font-weight: 600;">
+  <div class="k-marquee-track" style="display: inline-flex; animation: kMarquee 32s linear infinite;">
+    <div style="display: inline-flex; align-items: center; gap: 0.65rem; padding: 0 2rem;"><span style="color: #FFDF78;">✦</span> 100% ORIGINAL & LAB CERTIFIED RUDRAKSHA</div>
+    <div style="display: inline-flex; align-items: center; gap: 0.65rem; padding: 0 2rem;"><span style="color: #FFDF78;">✦</span> ENERGIZED WITH VEDIC PRAN PRATISHTHA</div>
+    <div style="display: inline-flex; align-items: center; gap: 0.65rem; padding: 0 2rem;"><span style="color: #FFDF78;">✦</span> FREE SHIPPING ON ORDERS ABOVE ₹999</div>
+    <div style="display: inline-flex; align-items: center; gap: 0.65rem; padding: 0 2rem;"><span style="color: #FFDF78;">✦</span> CASH ON DELIVERY AVAILABLE ACROSS INDIA</div>
+    <div style="display: inline-flex; align-items: center; gap: 0.65rem; padding: 0 2rem;"><span style="color: #FFDF78;">✦</span> 1-ON-1 VEDIC ASTROLOGY & TAROT SESSIONS</div>
+    <div style="display: inline-flex; align-items: center; gap: 0.65rem; padding: 0 2rem;"><span style="color: #FFDF78;">✦</span> JOIN 1,20,000+ DEVOTEES & SEEKERS</div>
+    <!-- Loop repetition -->
+    <div style="display: inline-flex; align-items: center; gap: 0.65rem; padding: 0 2rem;"><span style="color: #FFDF78;">✦</span> 100% ORIGINAL & LAB CERTIFIED RUDRAKSHA</div>
+    <div style="display: inline-flex; align-items: center; gap: 0.65rem; padding: 0 2rem;"><span style="color: #FFDF78;">✦</span> ENERGIZED WITH VEDIC PRAN PRATISHTHA</div>
+    <div style="display: inline-flex; align-items: center; gap: 0.65rem; padding: 0 2rem;"><span style="color: #FFDF78;">✦</span> FREE SHIPPING ON ORDERS ABOVE ₹999</div>
+    <div style="display: inline-flex; align-items: center; gap: 0.65rem; padding: 0 2rem;"><span style="color: #FFDF78;">✦</span> CASH ON DELIVERY AVAILABLE ACROSS INDIA</div>
+    <div style="display: inline-flex; align-items: center; gap: 0.65rem; padding: 0 2rem;"><span style="color: #FFDF78;">✦</span> 1-ON-1 VEDIC ASTROLOGY & TAROT SESSIONS</div>
+    <div style="display: inline-flex; align-items: center; gap: 0.65rem; padding: 0 2rem;"><span style="color: #FFDF78;">✦</span> JOIN 1,20,000+ DEVOTEES & SEEKERS</div>
+  </div>
+</div>
+
+<style>
+@keyframes kMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.k-marquee-strip:hover .k-marquee-track {
+  animation-play-state: paused;
+}
+</style>
+
+{% schema %}
+{
+  "name": "Kavita Marquee Bar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_marquee",
+      "label": "Show Ticker Strip",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Kavita Marquee Bar"
+    }
+  ]
+}
+{% endschema %}
+

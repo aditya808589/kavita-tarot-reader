@@ -1,0 +1,115 @@
+<section class="k-section page-width">
+  <div class="k-heading" style="text-align: center; margin-bottom: 2.5rem; display: block;">
+    <p class="k-kicker">{{ section.settings.eyebrow | escape }}</p>
+    <h2>{{ section.settings.heading | escape }}</h2>
+    <p style="max-width: 650px; margin: 0 auto; color: var(--k-muted);">
+      {{ section.settings.copy | escape }}
+    </p>
+  </div>
+
+  <div style="max-width: 500px; margin: 0 auto 2.5rem;">
+    <input
+      type="text"
+      placeholder="Search archetypes (e.g. Fool, Priestess, Hermit, Sun)..."
+      style="width: 100%; padding: 1.2rem 1.6rem; border-radius: 999px; background: var(--k-midnight); border: 1px solid var(--k-gold); color: #fff; font: inherit;"
+      data-card-search
+    >
+  </div>
+
+  <div class="k-grid" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));" data-card-grid>
+    {% for block in section.blocks %}
+      <article
+        class="k-service"
+        style="padding: 2rem 1.5rem; text-align: center; cursor: pointer;"
+        {{ block.shopify_attributes }}
+        data-card-item="{{ block.settings.title | downcase }}"
+      >
+        <div style="font-size: 2.5rem; color: var(--k-gold); margin-bottom: 0.5rem;">✦</div>
+        <h4 style="font-size: 1.2rem; color: #fff; margin-bottom: 0.3rem;">{{ block.settings.title | escape }}</h4>
+        <span class="k-index">{{ block.settings.arcana | escape }} · {{ block.settings.element | escape }}</span>
+        <p style="font-size: 0.88rem; margin-top: 0.8rem; color: var(--k-muted);">{{ block.settings.summary | escape }}</p>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<script>
+  (function() {
+    const input = document.querySelector('[data-card-search]');
+    const grid = document.querySelector('[data-card-grid]');
+    if (!input || !grid) return;
+
+    input.addEventListener('input', () => {
+      const q = input.value.trim().toLowerCase();
+      const items = grid.querySelectorAll('[data-card-item]');
+      items.forEach(el => {
+        const text = el.dataset.cardItem || '';
+        el.style.display = (!q || text.includes(q)) ? '' : 'none';
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Card Meanings Explorer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Sacred Knowledge"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "78-Card Meanings Library"
+    },
+    {
+      "type": "textarea",
+      "id": "copy",
+      "label": "Description",
+      "default": "Explore the ancient archetypes of the tarot. Search any card to discover its upright guidance, shadow warning, and reflection prompt."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Tarot Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Card Name",
+          "default": "The Fool"
+        },
+        {
+          "type": "text",
+          "id": "arcana",
+          "label": "Arcana",
+          "default": "Major Arcana (0)"
+        },
+        {
+          "type": "text",
+          "id": "element",
+          "label": "Element",
+          "default": "Air"
+        },
+        {
+          "type": "textarea",
+          "id": "summary",
+          "label": "Core Meaning",
+          "default": "A leap of faith into new beginnings, trusting universal flow."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Card Meanings Explorer"
+    }
+  ]
+}
+{% endschema %}
+

@@ -1,0 +1,366 @@
+<style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3.5rem;
+      padding: 3.5rem 0 5rem;
+    }
+
+    .contact-info-card {
+      background: #FFFFFF;
+      border: 1px solid var(--v-border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: var(--v-shadow-sm);
+    }
+
+    .contact-pill-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-icon-box {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: #FFF8EA;
+      border: 1px solid var(--v-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--v-maroon);
+      flex-shrink: 0;
+    }
+
+    .contact-form-card {
+      background: #FFFFFF;
+      border: 2px solid var(--v-border);
+      border-radius: 20px;
+      padding: 2.8rem 2.5rem;
+      box-shadow: var(--v-shadow-md);
+    }
+
+    .form-group {
+      margin-bottom: 1.3rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--v-text-dark);
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 0.85rem 1.1rem;
+      border: 1px solid var(--v-border);
+      border-radius: 8px;
+      background: #FAF7F2;
+      color: var(--v-text-dark);
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--v-maroon);
+      background: #FFFFFF;
+      box-shadow: 0 0 10px rgba(128, 20, 43, 0.15);
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+  </style>
+{{ 'parity-storefront-refinements.css' | asset_url | stylesheet_tag }}
+{{ 'parity-category-grid.css' | asset_url | stylesheet_tag }}
+{{ 'parity-integration.css' | asset_url | stylesheet_tag }}
+
+
+  <!-- TOP MARQUEE -->
+  <div class="top-marquee-strip">
+    <div class="top-marquee-track">
+      <div class="top-marquee-item"><span class="bullet">✦</span> 100% ORIGINAL & LAB CERTIFIED RUDRAKSHA</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> 24/7 WHATSAPP DEVOTEE ASSISTANCE</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> FREE SHIPPING ON ORDERS ABOVE ₹999</div>
+      <!-- Loop -->
+      <div class="top-marquee-item"><span class="bullet">✦</span> 100% ORIGINAL & LAB CERTIFIED RUDRAKSHA</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> 24/7 WHATSAPP DEVOTEE ASSISTANCE</div>
+    </div>
+  </div>
+
+  <!-- 2. RAJVIRA 2-TIER LUXURY HEADER -->
+  <header class="kavita-hdr">
+    <div class="kavita-hdr__main">
+      <div class="container kavita-hdr__container">
+        <div class="kavita-hdr__brand">
+          <a href="/" class="kavita-hdr__logo-link">
+            <img src="{{ 'kavita-logo-gold.png' | asset_url }}" alt="Kavita Tarot Reader" class="kavita-hdr__logo-img" width="600" height="600">
+            <span class="kavita-hdr__brand-name">KAVITA TAROT READER</span>
+          </a>
+        </div>
+
+        <div class="kavita-hdr__search-wrap">
+          <form action="/collections/all" method="get" class="kavita-hdr__search-form" onsubmit="event.preventDefault(); window.location.href='/collections/all?search=' + encodeURIComponent(this.querySelector('input').value);">
+            <svg class="kavita-hdr__search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="search" class="kavita-hdr__search-input" placeholder="Search crystals, decks & readings" aria-label="Search store">
+            <button type="submit" class="kavita-hdr__search-btn">Search</button>
+          </form>
+        </div>
+
+        <div class="kavita-hdr__actions">
+          <a href="/?view=consultations" class="kavita-hdr__util-link"><span class="kavita-hdr__util-dot">●</span> Book Online</a>
+          <a href="/collections/all?wishlist=1" class="kavita-hdr__icon-btn" aria-label="Wishlist">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            <span class="kavita-hdr__badge">0</span>
+          </a>
+          
+          <button class="kavita-hdr__icon-btn kavita-hdr__icon-btn--cart" id="openCartBtn" aria-label="Open Cart" style="background: none; border: none; cursor: pointer;">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="kavita-hdr__badge kavita-hdr__badge--cart" id="cartCount">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="kavita-hdr__nav-bar" aria-label="Category Navigation">
+      <div class="container kavita-hdr__container">
+        <ul class="kavita-hdr__menu">
+          <li class="kavita-hdr__menu-item"><a href="/collections/all" class="kavita-hdr__menu-link">All Collections</a></li>
+          <li class="kavita-hdr__menu-item"><a href="/?view=consultations" class="kavita-hdr__menu-link">Tarot Readings</a></li>
+          <li class="kavita-hdr__menu-item kavita-hdr__menu-item--dropdown">
+            <a href="/?view=packages" class="kavita-hdr__menu-link">
+              Signature Packages
+              <svg class="kavita-hdr__caret" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </a>
+            <div class="kavita-hdr__dropdown">
+              <div class="kavita-hdr__dropdown-grid" style="grid-template-columns: repeat(2, 1fr); min-width: 520px; gap: 1.5rem;">
+                <div class="kavita-hdr__dropdown-col">
+                  <span class="kavita-hdr__dropdown-title">✦ Love &amp; Relationships</span>
+                  <a href="/products/no-contact-situation-5-card-reading">No Contact Situation (5 Card)</a>
+                  <a href="/products/future-spouse-reading">Future Spouse &amp; Destined Connection</a>
+                  <a href="/products/love-marriage-pack-8-questions">Love &amp; Marriage Pack (8 Questions)</a>
+                  <a href="/products/no-contact-situation-pack-4-questions">No Contact Situation (4 Questions)</a>
+                  <a href="/products/reunion-reading">Reunion Reading: Will They Return?</a>
+                </div>
+                <div class="kavita-hdr__dropdown-col">
+                  <span class="kavita-hdr__dropdown-title">✦ Healing &amp; Career Growth</span>
+                  <a href="/products/heart-consultation-private-healing">Heart Consultation: 1:1 Healing</a>
+                  <a href="/products/career-growth-reading">Career Growth &amp; Financial Path</a>
+                  <a href="/products/deep-insight-reading-8-questions">Deep Insight Reading (8 Questions)</a>
+                  <div style="margin-top: 0.85rem; padding-top: 0.65rem; border-top: 1px dashed #ECE7DE;">
+                    <a href="/?view=packages" style="color: #80142B; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
+                      ✦ Explore All 8 Packages →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="kavita-hdr__menu-item"><a href="/collections/all?cat=bracelets" class="kavita-hdr__menu-link">Healing Bracelets</a></li>
+          <li class="kavita-hdr__menu-item"><a href="/collections/all?cat=crystals" class="kavita-hdr__menu-link">Crystals &amp; Carvings</a></li>
+          <li class="kavita-hdr__menu-item"><a href="/?view=about" class="kavita-hdr__menu-link">About Kavita</a></li>
+          <li class="kavita-hdr__menu-item"><a href="/pages/contact" class="kavita-hdr__menu-link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="/">Home</a> / <span>Contact Sanctuary</span>
+      </div>
+      <h1 class="page-hero-title">We Are Here For Your Journey</h1>
+      <p class="page-hero-sub">
+        Need assistance with your order, guidance on choosing a gemstone, or help booking a tarot session? Reach out directly.
+      </p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTACT CONTENT -->
+  <main class="container">
+    <div class="contact-grid">
+      
+      <!-- Contact Info Details -->
+      <div class="contact-info-card">
+        <h3 style="font-size: 1.6rem; color: var(--v-text-dark); margin-bottom: 1.8rem;">Sanctuary Channels</h3>
+
+        <div class="contact-pill-item">
+          <div class="contact-icon-box">💬</div>
+          <div>
+            <h5 style="font-size: 1.05rem; margin-bottom: 0.2rem;">WhatsApp Astrologer Support</h5>
+            <p style="color: var(--v-text-muted); font-size: 0.92rem; margin-bottom: 0.4rem;">Fastest assistance for readings, orders & consultations.</p>
+            <a href="https://wa.me/919310387104" target="_blank" style="color: var(--v-maroon); font-weight: 700; font-size: 0.95rem;">
+              +91 93103 87104 (Click to Chat) →
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-pill-item">
+          <div class="contact-icon-box">📧</div>
+          <div>
+            <h5 style="font-size: 1.05rem; margin-bottom: 0.2rem;">Direct Email Support</h5>
+            <p style="color: var(--v-text-muted); font-size: 0.92rem; margin-bottom: 0.4rem;">For session appointments and general inquiries.</p>
+            <a href="mailto:kavitatarotreader@gmail.com" style="color: var(--v-maroon); font-weight: 700; font-size: 0.95rem;">
+              kavitatarotreader@gmail.com →
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-pill-item" style="margin-bottom: 0;">
+          <div class="contact-icon-box">⏰</div>
+          <div>
+            <h5 style="font-size: 1.05rem; margin-bottom: 0.2rem;">Hours of Session</h5>
+            <p style="color: var(--v-text-muted); font-size: 0.92rem;">
+              Monday to Sunday: 11:00 AM – 5:00 PM IST<br>
+              Channeled Consultations & Healing Sessions by Prior Appointment
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Message Form -->
+      <div class="contact-form-card">
+        <h3 style="font-size: 1.6rem; color: var(--v-text-dark); margin-bottom: 0.4rem;">Send a Sacred Note</h3>
+        <p style="color: var(--v-text-muted); font-size: 0.92rem; margin-bottom: 1.8rem;">
+          Fill out this form and our team will get in touch on WhatsApp or Email within 24 hours.
+        </p>
+
+        <form onsubmit="handleContactSubmit(event)">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;">
+            <div class="form-group">
+              <label class="form-label">Full Name *</label>
+              <input type="text" class="form-input" id="cName" required placeholder="e.g. Rahul Sharma">
+            </div>
+            <div class="form-group">
+              <label class="form-label">WhatsApp Number *</label>
+              <input type="tel" class="form-input" id="cPhone" required placeholder="+91 93103 87104">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Email Address *</label>
+            <input type="email" class="form-input" id="cEmail" required placeholder="name@domain.com">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Inquiry Subject *</label>
+            <select class="form-select" id="cSubject">
+              <option>Choosing the Right Rudraksha / Crystal</option>
+              <option>Existing Order & Tracking Status</option>
+              <option>Booking a Tarot Reading with Kavita</option>
+              <option>Bulk Pooja / Corporate Gifting</option>
+              <option>Other Spiritual Question</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Your Message *</label>
+            <textarea class="form-textarea" rows="4" id="cMsg" required placeholder="How can we assist your spiritual journey?"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-maroon" style="width: 100%; padding: 0.95rem;">
+            ✦ Send Message via WhatsApp
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="refined-footer">
+  <div class="container"><div class="refined-footer-grid">
+    <div class="refined-footer-brand"><a href="/"><img src="{{ 'kavita-logo-gold.png' | asset_url }}" alt="Kavita Tarot" width="80" height="80"></a><h2>A little clarity.<br>A deeper connection.</h2><p>Personal tarot guidance, thoughtful rituals and sacred tools for your everyday journey.</p></div>
+    <div><h3>Explore</h3><a href="/?view=consultations">Tarot & healing</a><a href="/collections/all?cat=crystals">Healing crystals</a><a href="/collections/all?cat=tarot">Tarot & oracle decks</a><a href="/?view=about">Meet Kavita</a></div>
+    <div><h3>Here to help</h3><a href="/pages/contact">Contact us</a><a href="/?view=faq">Questions & care</a><a href="/cart">Your bag</a><a href="/?view=consultations">Book a reading</a></div>
+  </div><div class="refined-footer-note">Tarot and energy practices offer personal and spiritual reflection. They do not replace professional medical, legal or financial advice.</div><div class="refined-footer-bottom"><span>© 2026 Kavita Tarot Reader</span><span>Thoughtfully chosen. Personally guided.</span></div></div>
+</footer>
+
+  <!-- CART DRAWER -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <div style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--v-text-dark); font-weight: 700;">
+        Your Sacred Cart (<span id="cartCountHeader">0</span>)
+      </div>
+      <button onclick="closeCart()" style="background: none; border: none; color: var(--v-text-dark); font-size: 1.5rem; cursor: pointer;">✕</button>
+    </div>
+    <div class="cart-progress-bar-wrap">
+      <div id="shippingProgressText">✦ Add ₹999 for FREE Express Delivery!</div>
+      <div class="cart-progress-bar">
+        <div class="cart-progress-fill" id="shippingProgressFill" style="width: 0%;"></div>
+      </div>
+    </div>
+    <div class="cart-body" id="cartItemsList"></div>
+    <div class="cart-footer">
+      <div class="cart-subtotal-row">
+        <span>Subtotal:</span>
+        <span id="cartSubtotal" style="color: var(--v-maroon);">₹0</span>
+      </div>
+      <button class="btn btn-maroon" style="width: 100%; padding: 0.95rem;" onclick="checkoutCart()">
+        ✦ Proceed to Secure Checkout
+      </button>
+    </div>
+  </div>
+
+  <nav class="kavita-mobile-bottom-nav" aria-label="Mobile Navigation">
+    <a href="/collections/all" class="mobile-nav-item">
+      <span class="mobile-nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg></span>
+      <span class="mobile-nav-label">Shop</span>
+    </a>
+    <a href="/?view=consultations" class="mobile-nav-item">
+      <span class="mobile-nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span>
+      <span class="mobile-nav-label">Readings</span>
+    </a>
+    <a href="/" class="mobile-nav-item mobile-nav-item--center" aria-label="Home">
+      <div class="mobile-nav-center-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+      </div>
+      <span class="mobile-nav-label">Home</span>
+    </a>
+    <a href="/collections/all?wishlist=1" class="mobile-nav-item">
+      <span class="mobile-nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></span>
+      <span class="mobile-nav-label">Wishlist</span>
+      <span class="mobile-nav-badge" id="mobileWishlistCount">0</span>
+    </a>
+    <a href="javascript:void(0)" class="mobile-nav-item mobile-nav-cart" onclick="openCart()">
+      <span class="mobile-nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg></span>
+      <span class="mobile-nav-label">Cart</span>
+      <span class="mobile-nav-badge" id="mobileCartCount">0</span>
+    </a>
+  </nav>
+
+  <script defer src="{{ 'ice-effect.js' | asset_url }}"></script>
+  
+  
+  <script>
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('cName').value;
+      const phone = document.getElementById('cPhone').value;
+      const email = document.getElementById('cEmail').value;
+      const sub = document.getElementById('cSubject').value;
+      const msg = document.getElementById('cMsg').value;
+
+      const waMsg = `*NEW CONTACT MESSAGE*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Email:* ${email}%0A*Subject:* ${sub}%0A*Message:* ${msg}`;
+      window.open(`https://wa.me/919310387104?text=${waMsg}`, '_blank');
+    }
+  </script>
+  
+  <script defer src="{{ 'sales-popup.js' | asset_url }}" defer></script>
+
+<script defer src="{{ 'parity-ui.js' | asset_url }}"></script><script defer src="{{ 'parity-page.js' | asset_url }}"></script>
+{% schema %}
+{"name": "Preview contact", "settings": []}
+{% endschema %}

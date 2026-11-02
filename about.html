@@ -168,12 +168,39 @@
       <div class="container kavita-hdr__container">
         <ul class="kavita-hdr__menu">
           <li class="kavita-hdr__menu-item"><a href="collections.html" class="kavita-hdr__menu-link">All Collections</a></li>
-          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=tarot" class="kavita-hdr__menu-link">Tarot Decks</a></li>
-          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=oracle" class="kavita-hdr__menu-link">Oracle Cards</a></li>
-          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=crystals" class="kavita-hdr__menu-link">Crystals & Gems</a></li>
-          <li class="kavita-hdr__menu-item"><a href="consultations.html" class="kavita-hdr__menu-link">Readings</a></li>
-          <li class="kavita-hdr__menu-item"><a href="about.html" class="kavita-hdr__menu-link" style="color: #80142B; font-weight: 800;">About Kavita</a></li>
-          
+          <li class="kavita-hdr__menu-item"><a href="consultations.html" class="kavita-hdr__menu-link">Tarot Readings</a></li>
+          <li class="kavita-hdr__menu-item kavita-hdr__menu-item--dropdown">
+            <a href="packages.html" class="kavita-hdr__menu-link">
+              Signature Packages
+              <svg class="kavita-hdr__caret" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </a>
+            <div class="kavita-hdr__dropdown">
+              <div class="kavita-hdr__dropdown-grid" style="grid-template-columns: repeat(2, 1fr); min-width: 520px; gap: 1.5rem;">
+                <div class="kavita-hdr__dropdown-col">
+                  <span class="kavita-hdr__dropdown-title">✦ Love &amp; Relationships</span>
+                  <a href="product.html?id=31">No Contact Situation (5 Card)</a>
+                  <a href="product.html?id=32">Future Spouse &amp; Destined Connection</a>
+                  <a href="product.html?id=33">Love &amp; Marriage Pack (8 Questions)</a>
+                  <a href="product.html?id=34">No Contact Situation (4 Questions)</a>
+                  <a href="product.html?id=37">Reunion Reading: Will They Return?</a>
+                </div>
+                <div class="kavita-hdr__dropdown-col">
+                  <span class="kavita-hdr__dropdown-title">✦ Healing &amp; Career Growth</span>
+                  <a href="product.html?id=35">Heart Consultation: 1:1 Healing</a>
+                  <a href="product.html?id=36">Career Growth &amp; Financial Path</a>
+                  <a href="product.html?id=38">Deep Insight Reading (8 Questions)</a>
+                  <div style="margin-top: 0.85rem; padding-top: 0.65rem; border-top: 1px dashed #ECE7DE;">
+                    <a href="packages.html" style="color: #80142B; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
+                      ✦ Explore All 8 Packages →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=bracelets" class="kavita-hdr__menu-link">Healing Bracelets</a></li>
+          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=crystals" class="kavita-hdr__menu-link">Crystals &amp; Carvings</a></li>
+          <li class="kavita-hdr__menu-item"><a href="about.html" class="kavita-hdr__menu-link">About Kavita</a></li>
           <li class="kavita-hdr__menu-item"><a href="contact.html" class="kavita-hdr__menu-link">Contact</a></li>
         </ul>
       </div>
@@ -327,7 +354,7 @@
       </div>
       <div style="display: flex; flex-direction: column; gap: 0.6rem;">
         <button class="btn btn-maroon" style="width: 100%; padding: 0.85rem;" onclick="checkoutCart()">
-          ✦ Proceed to Secure Checkout (COD Avail.)
+          ✦ Proceed to Secure Checkout
         </button>
         <button type="button" class="btn btn-whatsapp" style="width: 100%; padding: 0.75rem; background: #25d366; color: #ffffff; border: none; font-weight: 700; border-radius: 8px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer;" onclick="whatsappCheckout()">
           <span>💬</span> Quick Order via WhatsApp
@@ -379,6 +406,7 @@
   <script src="assets/store-data.js"></script>
   <script src="assets/storefront-cart.js"></script>
   <script src="assets/storefront-ui.js"></script>
+  <script src="assets/sales-popup.js" defer></script>
 </body>
 </html>
 

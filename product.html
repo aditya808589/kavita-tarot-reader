@@ -259,12 +259,39 @@
       <div class="container kavita-hdr__container">
         <ul class="kavita-hdr__menu">
           <li class="kavita-hdr__menu-item"><a href="collections.html" class="kavita-hdr__menu-link">All Collections</a></li>
-          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=tarot" class="kavita-hdr__menu-link">Tarot Decks</a></li>
-          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=oracle" class="kavita-hdr__menu-link">Oracle Cards</a></li>
-          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=crystals" class="kavita-hdr__menu-link">Crystals & Gems</a></li>
-          <li class="kavita-hdr__menu-item"><a href="consultations.html" class="kavita-hdr__menu-link">Readings</a></li>
+          <li class="kavita-hdr__menu-item"><a href="consultations.html" class="kavita-hdr__menu-link">Tarot Readings</a></li>
+          <li class="kavita-hdr__menu-item kavita-hdr__menu-item--dropdown">
+            <a href="packages.html" class="kavita-hdr__menu-link">
+              Signature Packages
+              <svg class="kavita-hdr__caret" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </a>
+            <div class="kavita-hdr__dropdown">
+              <div class="kavita-hdr__dropdown-grid" style="grid-template-columns: repeat(2, 1fr); min-width: 520px; gap: 1.5rem;">
+                <div class="kavita-hdr__dropdown-col">
+                  <span class="kavita-hdr__dropdown-title">✦ Love &amp; Relationships</span>
+                  <a href="product.html?id=31">No Contact Situation (5 Card)</a>
+                  <a href="product.html?id=32">Future Spouse &amp; Destined Connection</a>
+                  <a href="product.html?id=33">Love &amp; Marriage Pack (8 Questions)</a>
+                  <a href="product.html?id=34">No Contact Situation (4 Questions)</a>
+                  <a href="product.html?id=37">Reunion Reading: Will They Return?</a>
+                </div>
+                <div class="kavita-hdr__dropdown-col">
+                  <span class="kavita-hdr__dropdown-title">✦ Healing &amp; Career Growth</span>
+                  <a href="product.html?id=35">Heart Consultation: 1:1 Healing</a>
+                  <a href="product.html?id=36">Career Growth &amp; Financial Path</a>
+                  <a href="product.html?id=38">Deep Insight Reading (8 Questions)</a>
+                  <div style="margin-top: 0.85rem; padding-top: 0.65rem; border-top: 1px dashed #ECE7DE;">
+                    <a href="packages.html" style="color: #80142B; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
+                      ✦ Explore All 8 Packages →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=bracelets" class="kavita-hdr__menu-link">Healing Bracelets</a></li>
+          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=crystals" class="kavita-hdr__menu-link">Crystals &amp; Carvings</a></li>
           <li class="kavita-hdr__menu-item"><a href="about.html" class="kavita-hdr__menu-link">About Kavita</a></li>
-          
           <li class="kavita-hdr__menu-item"><a href="contact.html" class="kavita-hdr__menu-link">Contact</a></li>
         </ul>
       </div>
@@ -306,6 +333,19 @@
           <span class="discount-pill" id="pdpDiscount">50% OFF</span>
         </div>
 
+        <!-- Question / Tier Selector for Voice Notes & Readings -->
+        <div id="readingTierSelector" style="display: none; margin-bottom: 1.4rem; background: #FAF7F2; border: 1px solid var(--v-border); border-radius: 10px; padding: 1rem;">
+          <label style="display: block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--v-maroon); margin-bottom: 0.6rem;">
+            Choose Guidance Option:
+          </label>
+          <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;" id="readingTierPills">
+            <!-- Dynamic buttons populated by JS -->
+          </div>
+          <div id="readingDeliveryNote" style="font-size: 0.82rem; color: #80142B; margin-top: 0.75rem; font-weight: 600; line-height: 1.5;">
+            ✦ Answer delivered as voice note within 7–10 days. For urgent connect on WhatsApp (+91 93103 87104).
+          </div>
+        </div>
+
         <p style="color: var(--v-text-body); font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;" id="pdpDesc">
           Loading sacred details...
         </p>
@@ -313,8 +353,25 @@
         <!-- Consecration Guarantee Callout -->
         <div class="consecration-box">
           <div style="font-size: 2rem; color: var(--v-maroon);">✦</div>
-          <div style="font-size: 0.88rem; color: #6E5316;">
+          <div style="font-size: 0.88rem; color: #6E5316;" id="pdpAssuranceNote">
             <b>Spiritually Cleansed & Energized:</b> Each crystal and deck is cleansed with white sage and charged with moonlight by Kavita before dispatch.
+          </div>
+        </div>
+
+        <!-- URGENT VOICE NOTE CALLOUT (Highlighted for Readings) -->
+        <div id="urgentVoiceNoteCallout" style="display: none; background: linear-gradient(135deg, #FFF9F0, #FFF3E0); border: 2px solid #D4AF37; border-radius: 12px; padding: 1.2rem; margin-bottom: 1.5rem; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15);">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem;">
+            <div>
+              <span style="background: #80142B; color: #FFF; font-size: 0.72rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 50px; text-transform: uppercase; letter-spacing: 0.5px;">⚡ Express Priority</span>
+              <h4 style="font-family: 'Cinzel', serif; color: #80142B; margin: 0.35rem 0 0.15rem; font-size: 1.1rem;">Urgent Voice Note Reading</h4>
+              <p style="color: #4A3B32; font-size: 0.88rem; margin: 0;"><b>Answer delivered in 24 Hours</b> — Direct priority guidance to your WhatsApp.</p>
+            </div>
+            <div style="text-align: right; display: flex; align-items: center; gap: 0.6rem;">
+              <div style="font-size: 1.25rem; font-weight: 800; color: #80142B;">₹499 <span style="font-size: 0.75rem; color: #7A6B62; font-weight: 400;">/ voice note</span></div>
+              <button type="button" onclick="bookConsultationDirect(48490758635681)" class="btn btn-maroon" style="padding: 0.55rem 1rem; font-size: 0.82rem; border-radius: 8px; border: none; cursor: pointer; white-space: nowrap;">
+                Book in 24 Hrs →
+              </button>
+            </div>
           </div>
         </div>
 
@@ -325,28 +382,34 @@
             <span id="pdpQty">1</span>
             <button onclick="incrementPDPQty()">+</button>
           </div>
-          <button class="btn btn-maroon" style="flex: 1; padding: 0.9rem;" onclick="addCurrentProductToCart()">
-            ✦ Add to Cart — Free Delivery
+          <button class="btn btn-outline" style="flex: 1; padding: 0.9rem; font-weight: 700; border: 1.5px solid var(--v-maroon); color: var(--v-maroon); background: #FFF;" onclick="addCurrentProductToCart()" id="pdpAddToCartBtn">
+            ✦ Add to Bag
           </button>
         </div>
 
-        <div style="display: flex; gap: 0.8rem; margin-top: 1rem;">
-          <button class="btn btn-gold" style="width: 100%;" onclick="buyViaWhatsApp()">
-            💬 Instant WhatsApp / COD Order
+        <!-- Direct Checkout / Buy Now Button -->
+        <div style="margin-top: 0.75rem;">
+          <button class="btn btn-maroon" id="pdpDirectCheckoutBtn" onclick="buyNowDirectCheckout()" style="width: 100%; padding: 1rem; font-size: 1rem; font-weight: 700; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 15px rgba(128, 20, 43, 0.25);">
+            ✦ Proceed to Checkout — Buy Now
           </button>
         </div>
 
-        <!-- Trust Features -->
-        <div style="margin-top: 2rem; border-top: 1px solid var(--v-border); padding-top: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.85rem; color: var(--v-text-dark);">
-          <div>🚚 <b>Free Express Delivery</b> (Above ₹999)</div>
-          <div>💰 <b>Cash on Delivery</b> Available</div>
-          <div>📜 <b>100% Lab Certified</b> Natural Gemstone</div>
-          <div>🛡️ <b>7-Day Consecrated</b> Return Policy</div>
+
+
+        <!-- Trust Features (Dynamic based on product type: COD removed for readings) -->
+        <div id="pdpTrustFeatures" style="margin-top: 2rem; border-top: 1px solid var(--v-border); padding-top: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.85rem; color: var(--v-text-dark);">
+          <div id="trustFeat1">🚚 <b>Free Express Delivery</b> (Above ₹999)</div>
+          <div id="trustFeat2">💰 <b>Cash on Delivery</b> Available</div>
+          <div id="trustFeat3">📜 <b>100% Lab Certified</b> Natural Gemstone</div>
+          <div id="trustFeat4">🛡️ <b>7-Day Consecrated</b> Return Policy</div>
         </div>
 
       </div>
 
     </div>
+
+    <!-- FREQUENTLY BOUGHT TOGETHER / THESE ARE BOUGHT TOGETHER SECTION -->
+    <div id="boughtTogetherContainer"></div>
 
     <!-- 4. TABBED DEEP DIVE SECTION -->
     <div style="max-width: 900px; margin: 0 auto 5rem;">
@@ -411,7 +474,7 @@
         <span id="cartSubtotal" style="color: var(--v-maroon);">₹0</span>
       </div>
       <button class="btn btn-maroon" style="width: 100%; padding: 0.95rem;" onclick="checkoutCart()">
-        ✦ Proceed to Secure Checkout (COD Avail.)
+        ✦ Proceed to Secure Checkout
       </button>
     </div>
   </div>
@@ -428,8 +491,23 @@
 
     function initPDP() {
       const urlParams = new URLSearchParams(window.location.search);
-      const idParam = parseInt(urlParams.get('id') || '1', 10);
-      currentProduct = STORE_PRODUCTS.find(p => p.id === idParam) || STORE_PRODUCTS[0];
+      const idParam = parseInt(urlParams.get('id') || '0', 10);
+      const pathSegments = window.location.pathname.split('/').filter(Boolean);
+      const pathHandle = pathSegments.length > 0 ? pathSegments[pathSegments.length - 1] : '';
+      const handleParam = urlParams.get('handle') || window.KAVITA_HANDLE || (pathHandle && pathHandle !== 'product' && pathHandle !== 'product.html' ? pathHandle : null);
+      
+      if (handleParam) {
+        currentProduct = STORE_PRODUCTS.find(p => p.handle === handleParam);
+      }
+      if (!currentProduct && idParam > 0) {
+        currentProduct = STORE_PRODUCTS.find(p => p.id === idParam);
+      }
+      if (!currentProduct && pathHandle) {
+        currentProduct = STORE_PRODUCTS.find(p => p.handle === pathHandle);
+      }
+      if (!currentProduct) {
+        currentProduct = STORE_PRODUCTS[0];
+      }
 
       document.title = `${currentProduct.title} — KAVITA TAROT READER`;
       document.getElementById('breadcrumbTitle').innerText = currentProduct.title;
@@ -437,8 +515,24 @@
       document.getElementById('pdpTitle').innerText = currentProduct.title;
       document.getElementById('pdpReviewCount').innerText = `(${currentProduct.reviewsCount} verified devotee reviews)`;
       document.getElementById('pdpPrice').innerText = `₹${currentProduct.price.toLocaleString('en-IN')}`;
-      document.getElementById('pdpCompare').innerText = `₹${currentProduct.comparePrice.toLocaleString('en-IN')}`;
-      document.getElementById('pdpDiscount').innerText = currentProduct.discount;
+      const compEl = document.getElementById('pdpCompare');
+      const discEl = document.getElementById('pdpDiscount');
+      if (compEl) {
+        if (currentProduct.comparePrice && currentProduct.comparePrice > currentProduct.price) {
+          compEl.innerText = `₹${currentProduct.comparePrice.toLocaleString('en-IN')}`;
+          compEl.style.display = 'inline-block';
+        } else {
+          compEl.style.display = 'none';
+        }
+      }
+      if (discEl) {
+        if (currentProduct.discount) {
+          discEl.innerText = currentProduct.discount;
+          discEl.style.display = 'inline-block';
+        } else {
+          discEl.style.display = 'none';
+        }
+      }
       document.getElementById('pdpDesc').innerText = currentProduct.description;
       document.getElementById('pdpSignificance').innerText = currentProduct.sacredSignificance;
       document.getElementById('pdpHowToWear').innerText = currentProduct.howToWear;
@@ -449,11 +543,261 @@
       mainImg.alt = currentProduct.title;
 
       const thumbsRow = document.getElementById('pdpThumbsRow');
-      thumbsRow.innerHTML = currentProduct.images.map((imgUrl, i) => `
+      thumbsRow.innerHTML = (currentProduct.images || [currentProduct.img]).map((imgUrl, i) => `
         <div class="pdp-thumb ${i === 0 ? 'active' : ''}" onclick="changeMainImg('${imgUrl}', this)">
           <img src="${imgUrl}" alt="${currentProduct.title}">
         </div>
       `).join('');
+
+      // Customization for Readings vs Physical Items (COD removed on readings)
+      const isReading = currentProduct.category === 'readings' || currentProduct.handle.includes('call') || currentProduct.handle.includes('voice-note') || currentProduct.handle.includes('reading') || currentProduct.handle.includes('bundle') || currentProduct.handle.includes('circle') || currentProduct.handle.includes('cord');
+      
+      const urgentBox = document.getElementById('urgentVoiceNoteCallout');
+      if (urgentBox) {
+        if (isReading) {
+          urgentBox.style.display = 'block';
+        } else {
+          urgentBox.style.display = 'none';
+        }
+      }
+
+      // Voice Note / Reading Tier Selector
+      const tierSelector = document.getElementById('readingTierSelector');
+      const tierPills = document.getElementById('readingTierPills');
+      if (tierSelector && tierPills) {
+        if (currentProduct.handle.includes('voice-note')) {
+          tierSelector.style.display = 'block';
+          const tiers = [
+            { label: '1 Question', price: 299, compare: 499, variantId: 48490758537377, note: 'Answer delivered as voice note within 7 days directly to your WhatsApp.' },
+            { label: '2 Questions', price: 399, compare: 699, variantId: 48490758570145, note: 'Answer delivered as voice note within 7 days directly to your WhatsApp.' },
+            { label: '3 Questions', price: 499, compare: 899, variantId: 48490758602913, note: 'Answer delivered as voice note within 7 days directly to your WhatsApp.' },
+            { label: '⚡ Urgent (24 Hrs)', price: 499, compare: 999, variantId: 48490758635681, note: '⚡ Prioritized reading delivered directly to your WhatsApp within 24 hours.' }
+          ];
+
+          tierPills.innerHTML = tiers.map((t, idx) => `
+            <button type="button" class="tier-pill-btn ${idx === (currentProduct.handle === 'voice-note-2-questions' ? 1 : 0) ? 'active' : ''}" onclick="selectVoiceTier(${t.price}, ${t.compare}, '${t.note}', ${t.variantId}, this)" style="padding: 0.5rem 0.9rem; border-radius: 8px; border: 1.5px solid var(--v-maroon); background: ${idx === (currentProduct.handle === 'voice-note-2-questions' ? 1 : 0) ? 'var(--v-maroon)' : '#FFF'}; color: ${idx === (currentProduct.handle === 'voice-note-2-questions' ? 1 : 0) ? '#FFF' : 'var(--v-maroon)'}; font-weight: 700; font-size: 0.82rem; cursor: pointer;">
+              ${t.label} — ₹${t.price}
+            </button>
+          `).join('');
+        } else if (currentProduct.handle === 'video-call-tarot-reading') {
+          tierSelector.style.display = 'block';
+          const videoTiers = [
+            { label: '10 Min (Standard · 7–10 days)', price: 1888, compare: 2499, variantId: 48489124659361 },
+            { label: '10 Min (⚡ Urgent 24h)', price: 2199, compare: 2799, variantId: 48489124692129 },
+            { label: '30 Min (Standard · 7–10 days)', price: 4499, compare: 5499, variantId: 48489124724897 },
+            { label: '30 Min (⚡ Urgent 24h)', price: 5499, compare: 6499, variantId: 48489124757665 }
+          ];
+          tierPills.innerHTML = videoTiers.map((t, idx) => `
+            <button type="button" class="tier-pill-btn ${idx === 0 ? 'active' : ''}" onclick="selectVoiceTier(${t.price}, ${t.compare}, 'Direct face-to-face video session with Kavita.', ${t.variantId}, this)" style="padding: 0.5rem 0.9rem; border-radius: 8px; border: 1.5px solid var(--v-maroon); background: ${idx === 0 ? 'var(--v-maroon)' : '#FFF'}; color: ${idx === 0 ? '#FFF' : 'var(--v-maroon)'}; font-weight: 700; font-size: 0.82rem; cursor: pointer;">
+              ${t.label} — ₹${t.price}
+            </button>
+          `).join('');
+        } else if (currentProduct.handle === '10-minutes-call' || currentProduct.handle === '30-minutes-call') {
+          tierSelector.style.display = 'block';
+          const callTiers = [
+            { label: '10 Min (Standard · 7–10 days)', price: 999, compare: 1555, variantId: 48490756374689 },
+            { label: '10 Min (⚡ Urgent 24h)', price: 1555, compare: 1999, variantId: 48490756407457 },
+            { label: '20 Min (Standard · 7–10 days)', price: 2299, compare: 2899, variantId: 48490756440225 },
+            { label: '20 Min (⚡ Urgent 24h)', price: 3099, compare: 3599, variantId: 48490756472993 },
+            { label: '30 Min (Standard · 7–10 days)', price: 3369, compare: 4444, variantId: 48490756505761 },
+            { label: '30 Min (⚡ Urgent 24h)', price: 4444, compare: 5555, variantId: 48490756538529 }
+          ];
+          const initIdx = currentProduct.handle === '30-minutes-call' ? 4 : 0;
+          tierPills.innerHTML = callTiers.map((t, idx) => `
+            <button type="button" class="tier-pill-btn ${idx === initIdx ? 'active' : ''}" onclick="selectVoiceTier(${t.price}, ${t.compare}, 'Direct 1-on-1 private live audio call with Kavita.', ${t.variantId}, this)" style="padding: 0.5rem 0.9rem; border-radius: 8px; border: 1.5px solid var(--v-maroon); background: ${idx === initIdx ? 'var(--v-maroon)' : '#FFF'}; color: ${idx === initIdx ? '#FFF' : 'var(--v-maroon)'}; font-weight: 700; font-size: 0.82rem; cursor: pointer;">
+              ${t.label} — ₹${t.price}
+            </button>
+          `).join('');
+          document.getElementById('readingDeliveryNote').innerText = '✦ Direct 1-on-1 private live audio call with Kavita. Instant booking confirmed via checkout.';
+        } else {
+          tierSelector.style.display = 'none';
+        }
+      }
+
+      const assurance = document.getElementById('pdpAssuranceNote');
+      const addBtn = document.getElementById('pdpAddToCartBtn');
+      const waBtn = document.getElementById('pdpWhatsAppBtn');
+      const feat1 = document.getElementById('trustFeat1');
+      const feat2 = document.getElementById('trustFeat2');
+      const feat3 = document.getElementById('trustFeat3');
+      const feat4 = document.getElementById('trustFeat4');
+
+      if (isReading) {
+        if (assurance) assurance.innerHTML = '<b>100% Channeled &amp; Confidential:</b> Every reading is personally tuned to your energetic field by Kavita. Delivered with sacred remedies &amp; actionable clarity.';
+        if (addBtn) addBtn.innerText = 'Book this session';
+        if (waBtn) waBtn.innerText = 'Add to bag';
+        if (feat1) feat1.innerHTML = '⚡ <b>100% Confidential</b> Channeled Session';
+        if (feat2) feat2.innerHTML = '💳 <b>Prepaid Booking Only</b> (No COD for Readings)';
+        if (feat3) feat3.innerHTML = '📱 <b>Direct WhatsApp</b> Delivery / Call';
+        if (feat4) feat4.innerHTML = '🔮 <b>Vedic Remedies</b> &amp; Guidance Included';
+      } else {
+        if (assurance) assurance.innerHTML = '<b>Spiritually Cleansed &amp; Energized:</b> Each crystal and bracelet is cleansed with white sage and charged with moonlight by Kavita before dispatch.';
+        if (addBtn) addBtn.innerText = 'Add to bag';
+        if (waBtn) waBtn.innerText = 'Add to bag';
+        if (feat1) feat1.innerHTML = '🚚 <b>Free Express Delivery</b> (Above ₹999)';
+        if (feat2) feat2.innerHTML = '💰 <b>Cash on Delivery</b> Available';
+        if (feat3) feat3.innerHTML = '📜 <b>100% Lab Certified</b> Natural Gemstone';
+        if (feat4) feat4.innerHTML = '🛡️ <b>7-Day Consecrated</b> Return Policy';
+      }
+
+      renderBoughtTogetherSection(currentProduct);
+    }
+
+    function resolveCartAssetImg(imgPath, handle) {
+      if (typeof window !== 'undefined' && window.KAVITA_LIVE_PRODUCTS && handle && window.KAVITA_LIVE_PRODUCTS[handle]) {
+        const lp = window.KAVITA_LIVE_PRODUCTS[handle];
+        if (lp.featured_image) return lp.featured_image;
+        if (lp.images && lp.images.length > 0) return lp.images[0];
+      }
+      if (typeof STORE_PRODUCTS !== 'undefined' && handle) {
+        const sp = STORE_PRODUCTS.find(p => p.handle === handle);
+        if (sp && sp.img && (sp.img.startsWith('http') || sp.img.startsWith('//'))) return sp.img;
+      }
+      if (imgPath && (imgPath.startsWith('http://') || imgPath.startsWith('https://') || imgPath.startsWith('//'))) {
+        return imgPath;
+      }
+      if (typeof window !== 'undefined' && window.KAVITA_ASSET_BASE && imgPath) {
+        const filename = imgPath.split('/').pop();
+        return window.KAVITA_ASSET_BASE + filename;
+      }
+      return imgPath;
+    }
+
+    function renderBoughtTogetherSection(prod) {
+      const container = document.getElementById('boughtTogetherContainer');
+      if (!container || !prod) return;
+
+      let pair = null;
+      if (typeof STORE_PRODUCTS !== 'undefined' && STORE_PRODUCTS.length > 0) {
+        if (prod.category === 'bracelets') {
+          pair = STORE_PRODUCTS.find(p => p.handle === 'meditation-crystal-tumbles') ||
+                 STORE_PRODUCTS.find(p => p.handle === 'pyrite-golden-energy-booster') ||
+                 STORE_PRODUCTS.find(p => p.handle === 'clear-quartz-master-healer');
+        } else if (prod.category === 'crystals') {
+          pair = STORE_PRODUCTS.find(p => p.handle === 'pyrite-money-success-bracelet') ||
+                 STORE_PRODUCTS.find(p => p.handle === 'seven-chakra-bracelet') ||
+                 STORE_PRODUCTS.find(p => p.handle === 'meditation-crystal-tumbles');
+        } else {
+          pair = STORE_PRODUCTS.find(p => p.handle === 'pyrite-money-success-bracelet') ||
+                 STORE_PRODUCTS.find(p => p.handle === 'meditation-crystal-tumbles') ||
+                 STORE_PRODUCTS.find(p => p.handle === 'rose-quartz-raw');
+        }
+      }
+
+      if (!pair || pair.handle === prod.handle) {
+        pair = (typeof STORE_PRODUCTS !== 'undefined') ? STORE_PRODUCTS.find(p => p.handle !== prod.handle && p.price > 0) : null;
+      }
+      if (!pair) return;
+
+      window.currentPairProduct = pair;
+      const totalPrice = prod.price + pair.price;
+      const totalCompare = (prod.comparePrice || prod.price) + (pair.comparePrice || pair.price);
+      const totalSavings = Math.max(0, totalCompare - totalPrice);
+
+      const prodImg = resolveCartAssetImg(prod.img, prod.handle);
+      const pairImg = resolveCartAssetImg(pair.img, pair.handle);
+
+      container.innerHTML = `
+        <section class="bought-together-section" style="max-width: 900px; margin: 3rem auto 4rem; background: #FFFDF9; border: 1.5px solid #D4AF37; border-radius: 16px; padding: 1.8rem; box-shadow: 0 8px 30px rgba(128, 20, 43, 0.06);">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.6rem; border-bottom: 1px solid #EEDFCA; padding-bottom: 1rem; margin-bottom: 1.5rem;">
+            <div>
+              <span style="font-size: 0.72rem; font-weight: 700; color: #80142B; text-transform: uppercase; letter-spacing: 0.12em; display: block; margin-bottom: 4px;">✦ Divine Cosmic Pairing</span>
+              <h3 style="font-family: 'Cinzel', serif; font-size: 1.35rem; color: #2A1D1A; margin: 0; font-weight: 700;">These Are Frequently Bought Together</h3>
+            </div>
+            <div style="background: #FFF3D6; color: #80142B; font-weight: 700; font-size: 0.78rem; padding: 0.35rem 0.85rem; border-radius: 50px; border: 1px solid #D4AF37; display: flex; align-items: center; gap: 5px;">
+              <span>⚡ Save ₹${totalSavings.toLocaleString('en-IN')} with Bundle</span>
+            </div>
+          </div>
+
+          <div class="bought-together-bundle" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;">
+            <div style="display: flex; align-items: center; gap: 1rem; flex: 1; min-width: 280px; flex-wrap: wrap;">
+              <!-- Item 1: Current Product -->
+              <div style="display: flex; align-items: center; gap: 0.85rem; background: #FFF; border: 1px solid #E5DCCE; border-radius: 12px; padding: 0.85rem; flex: 1; min-width: 220px;">
+                <input type="checkbox" id="btCheckMain" checked disabled style="accent-color: #80142B; width: 18px; height: 18px; cursor: not-allowed;">
+                <img src="${prodImg}" alt="${prod.title}" style="width: 58px; height: 58px; object-fit: cover; border-radius: 8px; flex-shrink: 0; border: 1px solid #F0E6D8;" onerror="this.onerror=null; this.src=(window.KAVITA_ASSET_BASE ? window.KAVITA_ASSET_BASE + 'kavita-logo-gold.png' : 'assets/kavita-logo-gold.png');">
+                <div style="min-width: 0;">
+                  <span style="font-size: 0.68rem; color: #80142B; font-weight: 700; text-transform: uppercase;">This Item</span>
+                  <div style="font-size: 0.88rem; font-weight: 700; color: #2A1D1A; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">${prod.title}</div>
+                  <div style="font-size: 0.92rem; font-weight: 800; color: #80142B; margin-top: 3px;">₹${prod.price.toLocaleString('en-IN')}</div>
+                </div>
+              </div>
+
+              <div style="font-size: 1.5rem; font-weight: 700; color: #D4AF37; display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; background: #FAF5EA; flex-shrink: 0;">+</div>
+
+              <!-- Item 2: Complementary Pair -->
+              <div style="display: flex; align-items: center; gap: 0.85rem; background: #FFF; border: 1px solid #E5DCCE; border-radius: 12px; padding: 0.85rem; flex: 1; min-width: 220px;">
+                <input type="checkbox" id="btCheckPair" checked onchange="toggleBoughtTogetherPair(this)" style="accent-color: #80142B; width: 18px; height: 18px; cursor: pointer;">
+                <img src="${pairImg}" alt="${pair.title}" style="width: 58px; height: 58px; object-fit: cover; border-radius: 8px; flex-shrink: 0; border: 1px solid #F0E6D8;" onerror="this.onerror=null; this.src=(window.KAVITA_ASSET_BASE ? window.KAVITA_ASSET_BASE + 'kavita-logo-gold.png' : 'assets/kavita-logo-gold.png');">
+                <div style="min-width: 0;">
+                  <span style="font-size: 0.68rem; color: #2E7D32; font-weight: 700; text-transform: uppercase;">Complementary Choice</span>
+                  <div style="font-size: 0.88rem; font-weight: 700; color: #2A1D1A; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">${pair.title}</div>
+                  <div style="font-size: 0.92rem; font-weight: 800; color: #80142B; margin-top: 3px;">₹${pair.price.toLocaleString('en-IN')} <span style="font-size: 0.75rem; color: #888; text-decoration: line-through; font-weight: 400;">₹${(pair.comparePrice || pair.price).toLocaleString('en-IN')}</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Bundle Summary & Add Both to Bag -->
+            <div style="background: #FAF7F2; border: 1px solid #D4AF37; border-radius: 12px; padding: 1.1rem 1.4rem; text-align: center; min-width: 220px; flex: 0 0 240px; box-sizing: border-box;">
+              <div style="font-size: 0.75rem; color: #6E5316; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Total Bundle Price:</div>
+              <div style="font-size: 1.45rem; font-weight: 800; color: #80142B; margin: 4px 0;" id="btTotalPrice">₹${totalPrice.toLocaleString('en-IN')}</div>
+              <div style="font-size: 0.78rem; color: #2E7D32; font-weight: 700; margin-bottom: 0.75rem;" id="btSavingsText">Includes Moonlight Cleansing Ritual</div>
+              <button type="button" class="btn btn-maroon" id="btAddBothBtn" onclick="addBoughtTogetherBundle()" style="width: 100%; padding: 0.75rem 1rem; font-size: 0.88rem; border-radius: 8px; font-weight: 700; cursor: pointer; border: none;">
+                ✦ Add Both to Bag
+              </button>
+            </div>
+          </div>
+        </section>
+      `;
+    }
+
+    function toggleBoughtTogetherPair(checkbox) {
+      const pair = window.currentPairProduct;
+      const prod = currentProduct;
+      if (!prod || !pair) return;
+
+      const priceEl = document.getElementById('btTotalPrice');
+      const btn = document.getElementById('btAddBothBtn');
+      if (checkbox.checked) {
+        priceEl.textContent = '₹' + (prod.price + pair.price).toLocaleString('en-IN');
+        btn.textContent = '✦ Add Both to Bag';
+      } else {
+        priceEl.textContent = '₹' + prod.price.toLocaleString('en-IN');
+        btn.textContent = '✦ Add Selected to Bag';
+      }
+    }
+
+    async function addBoughtTogetherBundle() {
+      try {
+        const prod=currentProduct, pair=window.currentPairProduct;
+        if(prod) await addToCart(prod.title,prod.price,prod.img,prod.handle,{},currentQty||1);
+        if(pair && document.getElementById('btCheckPair')?.checked) await addToCart(pair.title,pair.price,pair.img,pair.handle);
+      } catch(error) { if(typeof parityError==='function') parityError(error); }
+    }
+
+    async function buyNowDirectCheckout() {
+      if (!currentProduct) return;
+      const vid = currentProduct.variantId;
+      const qty = currentQty || 1;
+      try {
+        if (typeof parityRequest === 'function' && vid) {
+          await parityRequest('cart/add.js', { items: [{ id: vid, quantity: qty }] });
+          window.location.href = '/checkout';
+          return;
+        }
+        if (typeof fetch === 'function' && vid) {
+          await fetch('/cart/add.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ items: [{ id: vid, quantity: qty }] })
+          });
+          window.location.href = '/checkout';
+          return;
+        }
+      } catch (e) {}
+      if (typeof addToCart === 'function') {
+        addToCart(currentProduct.title, currentProduct.price, currentProduct.img, currentProduct.handle, {}, qty);
+      }
+      window.location.href = '/checkout';
     }
 
     function changeMainImg(url, el) {
@@ -475,14 +819,45 @@
     }
 
     function addCurrentProductToCart() {
-      for (let i = 0; i < currentQty; i++) {
-        addToCart(currentProduct.title, currentProduct.price, currentProduct.img, currentProduct.handle);
-      }
+      if (!currentProduct) return;
+      return addToCart(currentProduct.title,currentProduct.price,currentProduct.img,currentProduct.handle,{},currentQty||1);
+    }
+    function buyViaWhatsApp() { return addCurrentProductToCart(); }
+    async function bookConsultationDirect(variantId) {
+      try { if (!variantId) throw Error('Please select a reading option.');
+        await parityRequest('cart/add.js',{items:[{id:variantId,quantity:1}]});
+        await refreshCart(); openCart();
+      } catch(error) { if(typeof parityError==='function') parityError(error); }
     }
 
-    function buyViaWhatsApp() {
-      const msg = `*ORDER REQUEST - KAVITA TAROT READER*%0A%0A*Item:* ${currentProduct.title}%0A*Quantity:* ${currentQty}%0A*Price:* ₹${currentProduct.price * currentQty}%0A%0APlease arrange immediate dispatch with Cash on Delivery / UPI!`;
-      window.open(`https://wa.me/919876543210?text=${msg}`, '_blank');
+    function selectVoiceTier(price, compare, note, variantId, btn) {
+      currentProduct.price = price;
+      currentProduct.comparePrice = compare;
+      if (variantId) currentProduct.variantId = variantId;
+      document.getElementById('pdpPrice').innerText = `₹${price.toLocaleString('en-IN')}`;
+      if (document.getElementById('pdpCompare')) {
+        document.getElementById('pdpCompare').innerText = `₹${compare.toLocaleString('en-IN')}`;
+      }
+      if (document.getElementById('readingDeliveryNote')) {
+        document.getElementById('readingDeliveryNote').innerText = `✦ ${note}`;
+      }
+      document.querySelectorAll('.tier-pill-btn').forEach(b => {
+        b.style.background = '#FFF';
+        b.style.color = 'var(--v-maroon)';
+      });
+      btn.style.background = 'var(--v-maroon)';
+      btn.style.color = '#FFF';
+    }
+
+    function selectDurationTier(standardPrice, premiumPrice, btn) {
+      currentProduct.price = standardPrice;
+      document.getElementById('pdpPrice').innerText = `₹${standardPrice.toLocaleString('en-IN')}`;
+      document.querySelectorAll('.tier-pill-btn').forEach(b => {
+        b.style.background = '#FFF';
+        b.style.color = 'var(--v-maroon)';
+      });
+      btn.style.background = 'var(--v-maroon)';
+      btn.style.color = '#FFF';
     }
 
     function switchPDPTab(tabIndex, el) {
@@ -541,9 +916,58 @@
     </a>
   </nav>
 
+  <!-- =========================================================
+       SACRED SANCTUARY NEWSLETTER POP-UP (10% OFF FIRST ORDER)
+       Non-permanent: Appears once; dismissed permanently via localStorage
+  ========================================================= -->
+  <div id="kavitaNewsletterOverlay" class="kavita-welcome-overlay" role="dialog" aria-modal="true" aria-hidden="true" style="display: none;">
+    <div class="kavita-welcome-modal kavita-newsletter-modal">
+      <button type="button" class="kavita-welcome-close" id="kavitaNewsletterCloseBtn" aria-label="Close Pop-up">✕</button>
+      <div class="kavita-welcome-icon">💌</div>
+      <div class="kavita-welcome-badge">✦ SACRED SANCTUARY NEWSLETTER ✦</div>
+      <h3 class="kavita-welcome-title">Get 10% Off Your First Order</h3>
+      <p class="kavita-welcome-desc">
+        Subscribe to receive weekly cosmic horoscopes, moon ritual guidance, and an instant <strong>10% OFF coupon code</strong> for your first tarot consultation or crystal order.
+      </p>
+
+      <form id="kavitaNewsletterForm" class="kavita-newsletter-form" onsubmit="return handleNewsletterSubmit(event)">
+        <div class="kavita-newsletter-input-group">
+          <input
+            type="email"
+            id="kavitaNewsletterEmail"
+            name="email"
+            placeholder="Enter your email address..."
+            required
+            class="kavita-newsletter-input"
+            aria-label="Email address for sacred newsletter"
+          >
+          <button type="submit" class="kavita-newsletter-btn" id="kavitaNewsletterSubmitBtn">
+            Subscribe &amp; Get 10% Off
+          </button>
+        </div>
+      </form>
+
+      <div id="kavitaNewsletterSuccess" class="kavita-newsletter-success" style="display: none;">
+        <div class="kavita-newsletter-success-icon">✨</div>
+        <div class="kavita-newsletter-success-title">Welcome to the Sacred Circle!</div>
+        <div class="kavita-newsletter-success-code">Use Code: <strong>WELCOME10</strong> (10% OFF)</div>
+        <div class="kavita-newsletter-success-sub">Discount applied to your cart &amp; WhatsApp checkout!</div>
+      </div>
+
+      <div class="kavita-welcome-perks">
+        <span>✓ Weekly Cosmic Tarot Insights</span>
+        <span>✓ No Spam, Only Divine Guidance</span>
+      </div>
+      <div class="kavita-welcome-footer-note">
+        *We respect your privacy. You can unsubscribe at any time.
+      </div>
+    </div>
+  </div>
+
   <!-- Whole Website Celestial Ice Effect -->
   <script src="assets/ice-effect.js"></script>
   <script src="assets/storefront-ui.js"></script>
+  <script src="assets/sales-popup.js" defer></script>
 </body>
 </html>
 

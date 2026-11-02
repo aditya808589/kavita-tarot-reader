@@ -1,0 +1,925 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Signature Reading & Healing Packages — KAVITA TAROT READER</title>
+  <meta name="description" content="Channeled spiritual solutions: multi-card spreads, comprehensive soul guidance, and private healing packages delivered directly to your WhatsApp by Kavita.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/vanikabir.css">
+  <link rel="stylesheet" href="assets/storefront-refinements.css">
+
+  <style>
+    .packages-hero {
+      background: linear-gradient(180deg, #FDFBF7 0%, #FAF5ED 100%);
+      padding: 3.5rem 0 2.5rem;
+      border-bottom: 1px solid var(--v-border, #E8DFD0);
+      text-align: center;
+    }
+    .packages-kicker {
+      font-family: 'Cinzel', serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: #80142B;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+    .packages-title {
+      font-family: 'Cinzel', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #241C18;
+      line-height: 1.25;
+      margin-bottom: 0.8rem;
+    }
+    .packages-sub {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1rem;
+      color: #6A5E58;
+      max-width: 680px;
+      margin: 0 auto 1.8rem;
+      line-height: 1.65;
+    }
+
+    /* Filter Tabs */
+    .packages-filter-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .pkg-tab-btn {
+      background: #FFFFFF;
+      border: 1px solid #D8CBBB;
+      color: #4A3E39;
+      padding: 0.6rem 1.4rem;
+      border-radius: 999px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .pkg-tab-btn:hover {
+      border-color: #80142B;
+      color: #80142B;
+      background: #FFF9F3;
+    }
+    .pkg-tab-btn.active {
+      background: #80142B;
+      color: #FFFFFF;
+      border-color: #80142B;
+      box-shadow: 0 4px 14px rgba(128, 20, 43, 0.2);
+    }
+
+    /* Packages Grid */
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin: 3rem 0 4rem;
+    }
+    @media (max-width: 989px) {
+      .packages-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+      .packages-title { font-size: 1.85rem; }
+    }
+    @media (max-width: 640px) {
+      .packages-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .packages-title { font-size: 1.5rem; }
+      .packages-sub { font-size: 0.85rem; }
+      .pkg-tab-btn { font-size: 0.75rem; padding: 0.45rem 1rem; }
+    }
+
+    /* Package Card */
+    .pkg-card {
+      background: #FFFFFF;
+      border: 1px solid #EAE1D3;
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    .pkg-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 28px rgba(128, 20, 43, 0.09);
+      border-color: #D4AF37;
+    }
+    .pkg-card.highlight {
+      border: 1.5px solid #80142B;
+    }
+    .pkg-card-media {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      background: #FAF7F2;
+      overflow: hidden;
+    }
+    .pkg-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+    .pkg-card:hover .pkg-card-media img {
+      transform: scale(1.03);
+    }
+    .pkg-card-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #80142B;
+      color: #FFFFFF;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.65rem;
+      border-radius: 6px;
+      z-index: 2;
+    }
+    .pkg-card-badge.gold {
+      background: #D4AF37;
+      color: #1C1917;
+    }
+    .pkg-card-body {
+      padding: 1.25rem 1.15rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .pkg-card-cat {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #80142B;
+    }
+    .pkg-card-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #241C18;
+      line-height: 1.35;
+      margin: 0.25rem 0 0.4rem;
+    }
+    .pkg-card-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .pkg-card-title a:hover {
+      color: #80142B;
+    }
+    .pkg-card-reviews {
+      font-size: 0.78rem;
+      color: #D4AF37;
+      margin-bottom: 0.5rem;
+    }
+    .pkg-card-reviews span {
+      color: #7A6F68;
+      font-size: 0.72rem;
+    }
+    .pkg-card-pricing {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 0.65rem;
+    }
+    .pkg-price-now {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #80142B;
+    }
+    .pkg-price-old {
+      font-size: 0.88rem;
+      color: #888888;
+      text-decoration: line-through;
+    }
+    .pkg-discount-pill {
+      font-size: 0.7rem;
+      font-weight: 700;
+      background: #FFF3D6;
+      color: #80142B;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+    }
+    .pkg-bullets {
+      font-size: 0.78rem;
+      color: #554A44;
+      line-height: 1.5;
+      background: #FAF7F2;
+      border-radius: 8px;
+      padding: 0.65rem 0.8rem;
+      margin-bottom: 0.85rem;
+      border-left: 3px solid #D4AF37;
+    }
+    .pkg-bullets div {
+      margin-bottom: 3px;
+    }
+    .pkg-bullets div:last-child {
+      margin-bottom: 0;
+    }
+    .pkg-btn-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: auto;
+    }
+    .pkg-btn-checkout {
+      background: #80142B;
+      color: #FFFFFF;
+      border: 1px solid #80142B;
+      border-radius: 8px;
+      padding: 0.7rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    .pkg-btn-checkout:hover {
+      background: #600E1F;
+      box-shadow: 0 4px 14px rgba(128, 20, 43, 0.25);
+    }
+    .pkg-btn-bag {
+      background: #FFFFFF;
+      color: #80142B;
+      border: 1px solid #80142B;
+      border-radius: 8px;
+      padding: 0.6rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .pkg-btn-bag:hover {
+      background: #FFF8EE;
+    }
+
+    /* Process Infographic */
+    .pkg-process-section {
+      background: #FAF7F2;
+      border-top: 1px solid #E8DFD0;
+      border-bottom: 1px solid #E8DFD0;
+      padding: 3.5rem 0;
+      margin: 4rem 0;
+    }
+    .pkg-process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 2rem;
+    }
+    @media (max-width: 768px) {
+      .pkg-process-grid { grid-template-columns: 1fr; gap: 20px; }
+    }
+    .pkg-process-card {
+      background: #FFFFFF;
+      border: 1px solid #EAE1D3;
+      border-radius: 12px;
+      padding: 1.8rem 1.4rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+    .pkg-process-num {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #80142B;
+      color: #FFFFFF;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .pkg-process-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #241C18;
+      margin-bottom: 0.5rem;
+    }
+    .pkg-process-desc {
+      font-size: 0.85rem;
+      color: #6A5E58;
+      line-height: 1.6;
+    }
+
+    /* FAQ Section */
+    .pkg-faq-section {
+      max-width: 820px;
+      margin: 3.5rem auto 5rem;
+      padding: 0 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. TOP MARQUEE STRIP -->
+  <div class="top-marquee-strip">
+    <div class="top-marquee-track">
+      <div class="top-marquee-item"><span class="bullet">✦</span> 100% PRIVATE & CONFIDENTIAL CHANNELED SPIRITUAL PACKAGES</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> DETAILED AUDIO VOICE NOTES SENT DIRECTLY TO WHATSAPP</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> PERSONALLY GUIDED & CHANNELED BY KAVITA</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> FREE EXPRESS DELIVERY ON ORDERS OVER ₹999</div>
+      <!-- Loop -->
+      <div class="top-marquee-item"><span class="bullet">✦</span> 100% PRIVATE & CONFIDENTIAL CHANNELED SPIRITUAL PACKAGES</div>
+      <div class="top-marquee-item"><span class="bullet">✦</span> DETAILED AUDIO VOICE NOTES SENT DIRECTLY TO WHATSAPP</div>
+    </div>
+  </div>
+
+  <!-- 2. MAIN HEADER -->
+  <header class="kavita-hdr">
+    <div class="kavita-hdr__main">
+      <div class="container kavita-hdr__container">
+        <div class="kavita-hdr__brand">
+          <a href="index.html" class="kavita-hdr__logo-link">
+            <img src="assets/kavita-logo-gold.png" alt="Kavita Tarot Reader" class="kavita-hdr__logo-img">
+            <span class="kavita-hdr__brand-name">KAVITA TAROT READER</span>
+          </a>
+        </div>
+
+        <div class="kavita-hdr__search-wrap">
+          <form action="collections.html" method="get" class="kavita-hdr__search-form" onsubmit="event.preventDefault(); window.location.href='collections.html?search=' + encodeURIComponent(this.querySelector('input').value);">
+            <svg class="kavita-hdr__search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="search" class="kavita-hdr__search-input" placeholder="Search crystals, decks & readings" aria-label="Search store">
+            <button type="submit" class="kavita-hdr__search-btn">Search</button>
+          </form>
+        </div>
+
+        <div class="kavita-hdr__actions">
+          <a href="collections.html?search=1" class="kavita-hdr__icon-btn kavita-hdr__icon-btn--search-mobile" onclick="event.preventDefault(); document.querySelector('.kavita-hdr__search-input')?.focus();" aria-label="Search">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </a>
+          <a href="consultations.html" class="kavita-hdr__util-link"><span class="kavita-hdr__util-dot">●</span> Book Online</a>
+          <a href="collections.html?wishlist=1" class="kavita-hdr__icon-btn" aria-label="Wishlist">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            <span class="kavita-hdr__badge">0</span>
+          </a>
+          <button class="kavita-hdr__icon-btn kavita-hdr__icon-btn--cart" id="openCartBtn" aria-label="Open Cart" style="background: none; border: none; cursor: pointer;">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="kavita-hdr__badge kavita-hdr__badge--cart" id="cartCount">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category Menu Bar -->
+    <nav class="kavita-hdr__nav-bar" aria-label="Category Navigation">
+      <div class="container kavita-hdr__container">
+        <ul class="kavita-hdr__menu">
+          <li class="kavita-hdr__menu-item"><a href="collections.html" class="kavita-hdr__menu-link">All Collections</a></li>
+          <li class="kavita-hdr__menu-item"><a href="consultations.html" class="kavita-hdr__menu-link">Tarot Readings</a></li>
+          <li class="kavita-hdr__menu-item kavita-hdr__menu-item--dropdown">
+            <a href="packages.html" class="kavita-hdr__menu-link active" style="color: #80142B; font-weight: 700;">
+              Signature Packages
+              <svg class="kavita-hdr__caret" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </a>
+            <div class="kavita-hdr__dropdown">
+              <div class="kavita-hdr__dropdown-grid" style="grid-template-columns: repeat(2, 1fr); min-width: 520px; gap: 1.5rem;">
+                <div class="kavita-hdr__dropdown-col">
+                  <span class="kavita-hdr__dropdown-title">✦ Love &amp; Relationships</span>
+                  <a href="product.html?id=31">No Contact Situation (5 Card)</a>
+                  <a href="product.html?id=32">Future Spouse &amp; Destined Connection</a>
+                  <a href="product.html?id=33">Love &amp; Marriage Pack (8 Questions)</a>
+                  <a href="product.html?id=34">No Contact Situation (4 Questions)</a>
+                  <a href="product.html?id=37">Reunion Reading: Will They Return?</a>
+                </div>
+                <div class="kavita-hdr__dropdown-col">
+                  <span class="kavita-hdr__dropdown-title">✦ Healing &amp; Career Growth</span>
+                  <a href="product.html?id=35">Heart Consultation: 1:1 Healing</a>
+                  <a href="product.html?id=36">Career Growth &amp; Financial Path</a>
+                  <a href="product.html?id=38">Deep Insight Reading (8 Questions)</a>
+                  <div style="margin-top: 0.85rem; padding-top: 0.65rem; border-top: 1px dashed #ECE7DE;">
+                    <a href="packages.html" style="color: #80142B; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
+                      ✦ View Dedicated Packages Portal →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=bracelets" class="kavita-hdr__menu-link">Healing Bracelets</a></li>
+          <li class="kavita-hdr__menu-item"><a href="collections.html?cat=crystals" class="kavita-hdr__menu-link">Crystals &amp; Carvings</a></li>
+          <li class="kavita-hdr__menu-item"><a href="about.html" class="kavita-hdr__menu-link">About Kavita</a></li>
+          <li class="kavita-hdr__menu-item"><a href="contact.html" class="kavita-hdr__menu-link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 3. PAGE HERO -->
+  <section class="packages-hero">
+    <div class="container">
+      <div style="font-size: 0.78rem; color: #8A7A72; margin-bottom: 0.8rem;">
+        <a href="index.html" style="color: inherit; text-decoration: none;">Home</a> / <span style="color: #80142B; font-weight: 600;">Signature Reading &amp; Healing Packages</span>
+      </div>
+      <div class="packages-kicker">✦ CHANNELED SPIRITUAL SOLUTIONS ✦</div>
+      <h1 class="packages-title">Signature Reading &amp; Healing Packages</h1>
+      <p class="packages-sub">
+        Targeted multi-card spreads, comprehensive soul guidance, and private healing sessions delivered directly to your WhatsApp within 3–4 days with 100% sacred privacy.
+      </p>
+
+      <!-- Category Filter Tabs -->
+      <div class="packages-filter-tabs">
+        <button type="button" class="pkg-tab-btn active" onclick="filterPackages('all', this)">✦ All 8 Packages (8)</button>
+        <button type="button" class="pkg-tab-btn" onclick="filterPackages('love', this)">❤️ Love &amp; Relationships (5)</button>
+        <button type="button" class="pkg-tab-btn" onclick="filterPackages('healing', this)">🌿 Healing &amp; Career Growth (3)</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. PACKAGES GRID -->
+  <main class="container">
+    <div class="packages-grid" id="packagesGrid">
+
+      <!-- 1. No Contact Situation (5 Card) -->
+      <div class="pkg-card" data-category="love">
+        <div class="pkg-card-media">
+          <span class="pkg-card-badge">Bestseller · Relationship</span>
+          <a href="product.html?id=31">
+            <img src="assets/package-no-contact-5card.jpg" alt="No Contact Situation Tarot Reading" loading="lazy">
+          </a>
+        </div>
+        <div class="pkg-card-body">
+          <div>
+            <div class="pkg-card-cat">5 Card Voice Note Spread</div>
+            <h3 class="pkg-card-title"><a href="product.html?id=31">No Contact Situation Tarot Reading</a></h3>
+            <div class="pkg-card-reviews">★★★★★ <span>(310 verified reviews)</span></div>
+            <div class="pkg-card-pricing">
+              <span class="pkg-price-now">₹799</span>
+              <span class="pkg-price-old">₹1,499</span>
+              <span class="pkg-discount-pill">47% OFF</span>
+            </div>
+            <div class="pkg-bullets">
+              <div>✦ What they feel but don't say · Will they contact again &amp; when</div>
+              <div>✦ Detailed voice note sent directly to WhatsApp within 3–4 days</div>
+            </div>
+          </div>
+          <div class="pkg-btn-stack">
+            <button type="button" class="pkg-btn-checkout" onclick="directCheckoutPkg('no-contact-situation-5-card-reading', 48490447208609, 'No Contact Situation Tarot Reading (5 Card Spread)', 799, 'assets/package-no-contact-5card.jpg')">
+              ✦ Proceed to Checkout — Buy Now
+            </button>
+            <button type="button" class="pkg-btn-bag" onclick="addToCart('No Contact Situation Tarot Reading (5 Card Spread)', 799, 'assets/package-no-contact-5card.jpg', 'no-contact-situation-5-card-reading')">
+              ✦ Add to Bag
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Future Spouse Reading -->
+      <div class="pkg-card" data-category="love">
+        <div class="pkg-card-media">
+          <span class="pkg-card-badge gold">Destined Connection</span>
+          <a href="product.html?id=32">
+            <img src="assets/package-future-spouse.jpg" alt="Future Spouse Reading" loading="lazy">
+          </a>
+        </div>
+        <div class="pkg-card-body">
+          <div>
+            <div class="pkg-card-cat">Soulmate &amp; Marriage Destiny</div>
+            <h3 class="pkg-card-title"><a href="product.html?id=32">Future Spouse &amp; Destined Connection</a></h3>
+            <div class="pkg-card-reviews">★★★★★ <span>(460 verified reviews)</span></div>
+            <div class="pkg-card-pricing">
+              <span class="pkg-price-now">₹1,499</span>
+              <span class="pkg-price-old">₹2,499</span>
+              <span class="pkg-discount-pill">40% OFF</span>
+            </div>
+            <div class="pkg-bullets">
+              <div>✦ Who your spouse is (Looks, Personality) · How &amp; where you meet</div>
+              <div>✦ Divine timeline of union &amp; angel guidance (Sent in 3–4 days)</div>
+            </div>
+          </div>
+          <div class="pkg-btn-stack">
+            <button type="button" class="pkg-btn-checkout" onclick="directCheckoutPkg('future-spouse-reading', 48490447241377, 'Future Spouse & Destined Connection Tarot Reading', 1499, 'assets/package-future-spouse.jpg')">
+              ✦ Proceed to Checkout — Buy Now
+            </button>
+            <button type="button" class="pkg-btn-bag" onclick="addToCart('Future Spouse & Destined Connection Tarot Reading', 1499, 'assets/package-future-spouse.jpg', 'future-spouse-reading')">
+              ✦ Add to Bag
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Love & Marriage Pack (8 Questions) -->
+      <div class="pkg-card" data-category="love">
+        <div class="pkg-card-media">
+          <span class="pkg-card-badge">High Accuracy · 8 Questions</span>
+          <a href="product.html?id=33">
+            <img src="assets/package-love-marriage-8q.jpg" alt="Love & Marriage Pack" loading="lazy">
+          </a>
+        </div>
+        <div class="pkg-card-body">
+          <div>
+            <div class="pkg-card-cat">Comprehensive 8Q Spread</div>
+            <h3 class="pkg-card-title"><a href="product.html?id=33">Love &amp; Marriage Pack (8 Questions)</a></h3>
+            <div class="pkg-card-reviews">★★★★★ <span>(520 verified reviews)</span></div>
+            <div class="pkg-card-pricing">
+              <span class="pkg-price-now">₹1,999</span>
+              <span class="pkg-price-old">₹3,499</span>
+              <span class="pkg-discount-pill">43% OFF</span>
+            </div>
+            <div class="pkg-bullets">
+              <div>✦ Partner true feelings · Timeline for proposal &amp; wedding</div>
+              <div>✦ Love vs arranged · Blockages &amp; remedies (Sent in 3–4 days)</div>
+            </div>
+          </div>
+          <div class="pkg-btn-stack">
+            <button type="button" class="pkg-btn-checkout" onclick="directCheckoutPkg('love-marriage-pack-8-questions', 48490447274145, 'Love & Marriage Pack (8 Questions In-Depth Reading)', 1999, 'assets/package-love-marriage-8q.jpg')">
+              ✦ Proceed to Checkout — Buy Now
+            </button>
+            <button type="button" class="pkg-btn-bag" onclick="addToCart('Love & Marriage Pack (8 Questions In-Depth Reading)', 1999, 'assets/package-love-marriage-8q.jpg', 'love-marriage-pack-8-questions')">
+              ✦ Add to Bag
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. No Contact Situation Pack (4 Questions) -->
+      <div class="pkg-card" data-category="love">
+        <div class="pkg-card-media">
+          <span class="pkg-card-badge">Reconnection Clarity</span>
+          <a href="product.html?id=34">
+            <img src="assets/package-no-contact-4q.jpg" alt="No Contact Situation Pack" loading="lazy">
+          </a>
+        </div>
+        <div class="pkg-card-body">
+          <div>
+            <div class="pkg-card-cat">4 Core Questions Reading</div>
+            <h3 class="pkg-card-title"><a href="product.html?id=34">No Contact Situation Pack (4 Questions)</a></h3>
+            <div class="pkg-card-reviews">★★★★★ <span>(275 verified reviews)</span></div>
+            <div class="pkg-card-pricing">
+              <span class="pkg-price-now">₹799</span>
+              <span class="pkg-price-old">₹1,299</span>
+              <span class="pkg-discount-pill">38% OFF</span>
+            </div>
+            <div class="pkg-bullets">
+              <div>✦ Why no-contact happened · What they feel now · Will they reach out</div>
+              <div>✦ Delivered as focused WhatsApp voice note within 3–4 days</div>
+            </div>
+          </div>
+          <div class="pkg-btn-stack">
+            <button type="button" class="pkg-btn-checkout" onclick="directCheckoutPkg('no-contact-situation-pack-4-questions', 48490447306913, 'No Contact Situation Pack (4 Questions Reading)', 799, 'assets/package-no-contact-4q.jpg')">
+              ✦ Proceed to Checkout — Buy Now
+            </button>
+            <button type="button" class="pkg-btn-bag" onclick="addToCart('No Contact Situation Pack (4 Questions Reading)', 799, 'assets/package-no-contact-4q.jpg', 'no-contact-situation-pack-4-questions')">
+              ✦ Add to Bag
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Heart Consultation -->
+      <div class="pkg-card highlight" data-category="healing">
+        <div class="pkg-card-media">
+          <span class="pkg-card-badge" style="background: #80142B; color: #FFF;">VIP Deep Healing</span>
+          <a href="product.html?id=35">
+            <img src="assets/package-heart-consultation.jpg" alt="Heart Consultation" loading="lazy">
+          </a>
+        </div>
+        <div class="pkg-card-body">
+          <div>
+            <div class="pkg-card-cat">1:1 Private Session + 7-Day Support</div>
+            <h3 class="pkg-card-title"><a href="product.html?id=35">Heart Consultation (Deep Transformation)</a></h3>
+            <div class="pkg-card-reviews">★★★★★ <span>(180 verified reviews)</span></div>
+            <div class="pkg-card-pricing">
+              <span class="pkg-price-now">₹8,888</span>
+              <span class="pkg-price-old">₹12,999</span>
+              <span class="pkg-discount-pill">32% OFF</span>
+            </div>
+            <div class="pkg-bullets">
+              <div>✦ 1:1 30–45 Min Voice/Video Call · Chakra Scan &amp; Heart Rituals</div>
+              <div>✦ Includes 7-Day continuous follow-up support directly with Kavita</div>
+            </div>
+          </div>
+          <div class="pkg-btn-stack">
+            <button type="button" class="pkg-btn-checkout" onclick="directCheckoutPkg('heart-consultation-private-healing', 48490447437985, 'Heart Consultation: 1:1 Private Healing & Transformation', 8888, 'assets/package-heart-consultation.jpg')">
+              ✦ Proceed to Checkout — Buy Now
+            </button>
+            <button type="button" class="pkg-btn-bag" onclick="addToCart('Heart Consultation: 1:1 Private Healing & Transformation', 8888, 'assets/package-heart-consultation.jpg', 'heart-consultation-private-healing')">
+              ✦ Add to Bag
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Career Growth Reading -->
+      <div class="pkg-card" data-category="healing">
+        <div class="pkg-card-media">
+          <span class="pkg-card-badge">Career &amp; Wealth</span>
+          <a href="product.html?id=36">
+            <img src="assets/package-career-growth.jpg" alt="Career Growth Reading" loading="lazy">
+          </a>
+        </div>
+        <div class="pkg-card-body">
+          <div>
+            <div class="pkg-card-cat">Professional &amp; Financial Clarity</div>
+            <h3 class="pkg-card-title"><a href="product.html?id=36">Career Growth &amp; Financial Trajectory</a></h3>
+            <div class="pkg-card-reviews">★★★★★ <span>(390 verified reviews)</span></div>
+            <div class="pkg-card-pricing">
+              <span class="pkg-price-now">₹1,099</span>
+              <span class="pkg-price-old">₹1,899</span>
+              <span class="pkg-discount-pill">42% OFF</span>
+            </div>
+            <div class="pkg-bullets">
+              <div>✦ Job change timing · Hidden talents · Financial outlook &amp; remedies</div>
+              <div>✦ Delivered as personalized voice note within 3–4 days</div>
+            </div>
+          </div>
+          <div class="pkg-btn-stack">
+            <button type="button" class="pkg-btn-checkout" onclick="directCheckoutPkg('career-growth-reading', 48490447339681, 'Career Growth & Professional Trajectory Tarot Reading', 1099, 'assets/package-career-growth.jpg')">
+              ✦ Proceed to Checkout — Buy Now
+            </button>
+            <button type="button" class="pkg-btn-bag" onclick="addToCart('Career Growth & Professional Trajectory Tarot Reading', 1099, 'assets/package-career-growth.jpg', 'career-growth-reading')">
+              ✦ Add to Bag
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Reunion Reading -->
+      <div class="pkg-card" data-category="love">
+        <div class="pkg-card-media">
+          <span class="pkg-card-badge">Reunion &amp; Timing</span>
+          <a href="product.html?id=37">
+            <img src="assets/package-reunion-reading.jpg" alt="Reunion Reading" loading="lazy">
+          </a>
+        </div>
+        <div class="pkg-card-body">
+          <div>
+            <div class="pkg-card-cat">Reconciliation Guidance</div>
+            <h3 class="pkg-card-title"><a href="product.html?id=37">Reunion Reading: Path to Reconnection</a></h3>
+            <div class="pkg-card-reviews">★★★★★ <span>(415 verified reviews)</span></div>
+            <div class="pkg-card-pricing">
+              <span class="pkg-price-now">₹1,099</span>
+              <span class="pkg-price-old">₹1,899</span>
+              <span class="pkg-discount-pill">42% OFF</span>
+            </div>
+            <div class="pkg-bullets">
+              <div>✦ Chances of reunion · Their next move · Timeline &amp; divine signs</div>
+              <div>✦ If no reunion, ask 3 custom questions! (Sent in 3–4 days)</div>
+            </div>
+          </div>
+          <div class="pkg-btn-stack">
+            <button type="button" class="pkg-btn-checkout" onclick="directCheckoutPkg('reunion-reading', 48490447372449, 'Reunion Reading: Path to Reconnection & Next Move', 1099, 'assets/package-reunion-reading.jpg')">
+              ✦ Proceed to Checkout — Buy Now
+            </button>
+            <button type="button" class="pkg-btn-bag" onclick="addToCart('Reunion Reading: Path to Reconnection & Next Move', 1099, 'assets/package-reunion-reading.jpg', 'reunion-reading')">
+              ✦ Add to Bag
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Deep Insight Reading (8 Questions) -->
+      <div class="pkg-card" data-category="healing">
+        <div class="pkg-card-media">
+          <span class="pkg-card-badge gold">Multi-Deck Soul Spread</span>
+          <a href="product.html?id=38">
+            <img src="assets/package-deep-insight-8q.jpg" alt="Deep Insight Reading" loading="lazy">
+          </a>
+        </div>
+        <div class="pkg-card-body">
+          <div>
+            <div class="pkg-card-cat">8 Custom Questions</div>
+            <h3 class="pkg-card-title"><a href="product.html?id=38">Deep Insight Reading (8 Questions)</a></h3>
+            <div class="pkg-card-reviews">★★★★★ <span>(580 verified reviews)</span></div>
+            <div class="pkg-card-pricing">
+              <span class="pkg-price-now">₹1,999</span>
+              <span class="pkg-price-old">₹3,299</span>
+              <span class="pkg-discount-pill">39% OFF</span>
+            </div>
+            <div class="pkg-bullets">
+              <div>✦ Ask 8 questions on any topic · Multi-deck Tarot &amp; Angel spread</div>
+              <div>✦ Comprehensive detailed voice recording (Sent in 3–4 days)</div>
+            </div>
+          </div>
+          <div class="pkg-btn-stack">
+            <button type="button" class="pkg-btn-checkout" onclick="directCheckoutPkg('deep-insight-reading-8-questions', 48490447405217, 'Deep Insight Reading (8 Custom Questions of Your Choice)', 1999, 'assets/package-deep-insight-8q.jpg')">
+              ✦ Proceed to Checkout — Buy Now
+            </button>
+            <button type="button" class="pkg-btn-bag" onclick="addToCart('Deep Insight Reading (8 Custom Questions of Your Choice)', 1999, 'assets/package-deep-insight-8q.jpg', 'deep-insight-reading-8-questions')">
+              ✦ Add to Bag
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- 5. HOW IT WORKS SECTION -->
+  <section class="pkg-process-section">
+    <div class="container">
+      <div class="section-header" style="text-align: center;">
+        <div class="section-kicker">✦ Effortless & Sacred ✦</div>
+        <h2 class="section-title">How Your Channeled Reading Works</h2>
+        <p class="section-sub">A seamless 3-step sacred journey to receive personalized energetic guidance from Kavita.</p>
+      </div>
+
+      <div class="pkg-process-grid">
+        <div class="pkg-process-card">
+          <div class="pkg-process-num">1</div>
+          <h3 class="pkg-process-title">Choose &amp; Checkout</h3>
+          <p class="pkg-process-desc">Select the reading package tailored to your life situation and complete your secure order online.</p>
+        </div>
+        <div class="pkg-process-card">
+          <div class="pkg-process-num">2</div>
+          <h3 class="pkg-process-title">Submit Details on WhatsApp</h3>
+          <p class="pkg-process-desc">Share your name, date of birth, photo (optional), and specific questions directly with Kavita's sanctuary.</p>
+        </div>
+        <div class="pkg-process-card">
+          <div class="pkg-process-num">3</div>
+          <h3 class="pkg-process-title">Receive Your Channeled Voice Note</h3>
+          <p class="pkg-process-desc">Within 3–4 business days, receive high-clarity voice recordings and photo spreads of your cards right to WhatsApp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. FREQUENTLY ASKED QUESTIONS -->
+  <section class="pkg-faq-section">
+    <div class="section-header" style="text-align: center;">
+      <div class="section-kicker">✦ Clarity & Assurance ✦</div>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-sub">Everything you need to know about Kavita's Signature Reading &amp; Healing Packages.</p>
+    </div>
+
+    <div class="faq-container" style="margin-top: 2rem;">
+      <div class="faq-item">
+        <button type="button" class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+          <span>How are the signature packages delivered?</span>
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          All signature packages (except the 1:1 Live Heart Consultation) are delivered as comprehensive, deeply channeled audio voice notes accompanied by clear photos of your card spread directly to your WhatsApp. You can re-listen to your reading whenever you need guidance.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+          <span>What details do I need to provide?</span>
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          After completing your order, you will be prompted to share your full name, date of birth, and any context or specific questions related to your chosen package. For relationship readings, your partner's first name or initials are helpful.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+          <span>What is the turnaround delivery time?</span>
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Readings are delivered within 3 to 4 business days. Because Kavita channels every session personally in meditation rather than relying on automated scripts, each reading requires focused energetic alignment.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+          <span>Is my personal information and reading confidential?</span>
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          100% strictly confidential. Your queries, background, photos, and channeled messages are never shared, published, or stored publicly. They remain between you and Kavita.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. CONTAINED LUXURY FOOTER -->
+  <footer class="refined-footer">
+    <div class="container">
+      <div class="refined-footer-grid">
+        <div class="refined-footer-brand">
+          <a href="index.html"><img src="assets/kavita-logo-gold.png" alt="Kavita Tarot" width="80" height="80"></a>
+          <h2>A little clarity.<br>A deeper connection.</h2>
+          <p>Personal tarot guidance, thoughtful rituals and sacred tools for your everyday journey.</p>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <a href="packages.html">Signature Packages</a>
+          <a href="consultations.html">Live Tarot Consultations</a>
+          <a href="collections.html?cat=crystals">Healing Crystals</a>
+          <a href="collections.html?cat=bracelets">Gemstone Bracelets</a>
+          <a href="about.html">Meet Kavita</a>
+        </div>
+        <div>
+          <h3>Here to help</h3>
+          <a href="contact.html">Contact Us</a>
+          <a href="faq.html">Questions &amp; Care</a>
+          <a href="cart.html">Your Sacred Cart</a>
+          <a href="consultations.html">Book Online</a>
+        </div>
+      </div>
+      <div class="refined-footer-note">
+        Tarot and energy practices offer personal and spiritual reflection. They do not replace professional medical, legal, or financial advice.
+      </div>
+      <div class="refined-footer-bottom">
+        <span>© 2026 Kavita Tarot Reader</span>
+        <span>Thoughtfully chosen. Personally guided.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 8. CART DRAWER FLYOUT -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <div style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--v-text-dark); font-weight: 700;">
+        Your Sacred Cart (<span id="cartCountHeader">0</span>)
+      </div>
+      <button onclick="closeCart()" style="background: none; border: none; color: var(--v-text-dark); font-size: 1.5rem; cursor: pointer;">✕</button>
+    </div>
+    <div class="cart-progress-bar-wrap">
+      <div id="shippingProgressText">✦ Add ₹999 for FREE Express Delivery!</div>
+      <div class="cart-progress-bar">
+        <div class="cart-progress-fill" id="shippingProgressFill" style="width: 0%;"></div>
+      </div>
+    </div>
+    <div class="cart-body" id="cartItemsList"></div>
+    <div class="cart-footer">
+      <div class="cart-subtotal-row">
+        <span>Subtotal:</span>
+        <span id="cartSubtotal" style="color: var(--v-maroon);">₹0</span>
+      </div>
+      <button class="btn btn-maroon" style="width: 100%; padding: 0.95rem;" onclick="checkoutCart()">
+        ✦ Proceed to Secure Checkout
+      </button>
+      <div style="text-align: center; font-size: 0.74rem; color: var(--v-text-muted); margin-top: 0.8rem;">
+        🔒 256-Bit SSL Encrypted · 100% Authentic Consecrated Items
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="assets/store-data.js"></script>
+  <script src="assets/storefront-cart.js"></script>
+  <script>
+    // Tab Filter for Packages
+    function filterPackages(category, btn) {
+      document.querySelectorAll('.pkg-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.pkg-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Direct Single-Click Checkout Function
+    function directCheckoutPkg(handle, variantId, title, price, img) {
+      if (typeof window !== 'undefined' && window.routes && window.routes.cart_add_url) {
+        // Shopify Environment
+        const vId = (window.KAVITA_LIVE_PRODUCTS && window.KAVITA_LIVE_PRODUCTS[handle] && window.KAVITA_LIVE_PRODUCTS[handle].variants && window.KAVITA_LIVE_PRODUCTS[handle].variants[0])
+          ? window.KAVITA_LIVE_PRODUCTS[handle].variants[0].id
+          : variantId;
+
+        fetch(window.routes.cart_add_url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ id: vId, quantity: 1 })
+        }).then(() => {
+          window.location.href = '/checkout';
+        }).catch(() => {
+          window.location.href = '/checkout';
+        });
+      } else {
+        // Local preview environment
+        addToCart(title, price, img, handle);
+        window.location.href = 'cart.html';
+      }
+    }
+  </script>
+</body>
+</html>
+
