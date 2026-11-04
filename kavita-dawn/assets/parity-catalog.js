@@ -1152,88 +1152,39 @@ var STORE_PRODUCTS = [
     "id": 40,
     "handle": "love-relationships-healing-oil-with-energized-crystals",
     "variantId": 48762496319649,
-    "title": "Love & Relationships Healing Oil (With Energized Crystals)",
+    "title": "Aromatherapy & Sacred Healing Oil (With Energized Crystals)",
     "category": "crystals",
     "categoryLabel": "Aromatherapy & Sacred Healing Oil",
-    "intention": "love relationships self-love harmony communication soulmate peace",
+    "intention": "love relationships self-love harmony communication soulmate peace wealth money prosperity study focus",
     "price": 777,
     "comparePrice": 1299,
     "discount": "40% OFF",
     "rating": 5.0,
-    "reviewsCount": 214,
-    "badge": "Heart Chakra Magnetism",
+    "reviewsCount": 384,
+    "badge": "3 Sacred Blends · Energized Crystals",
     "img": "assets/product-healing-oil-love-relationships.jpg",
     "images": [
-      "assets/product-healing-oil-love-relationships.jpg"
+      "assets/product-healing-oil-love-relationships.jpg",
+      "assets/product-healing-oil-money-attraction.jpg",
+      "assets/product-healing-oil-study-focus.jpg"
     ],
-    "description": "Open your heart chakra to deep unconditional love, emotional harmony, and soulmate magnetism with the Love & Relationships Healing Oil.\n\nFormulated with sacred pure essential oils and infused with genuine, Vedic-energized Rose Quartz crystal chips right inside the roll-on bottle. Apply on pulse points (wrists, behind ears, neck, and heart space) to awaken romantic attraction, soothe relationship misunderstandings, and deepen self-love.\n\n✦ Key Focus Areas:\n• Unconditional Love & Emotional Healing\n• Self-Love, Self-Worth & Inner Peace\n• Harmonious Heart-to-Heart Communication\n• Soul Connection & Relationship Restoration\n\n✦ Package: 10ml Roll-on glass bottle with gold cap & display box.",
-    "sacredSignificance": "Infused with consecrated Rose Quartz chips charged under Venus transit to radiate high-vibrational love and compassion.",
-    "howToWear": "Roll gently onto wrists, neck, collarbone, or heart chakra before sleep, meditation, or dates while setting your loving intention.",
+    "description": "Awaken divine alignment, emotional harmony, and unstoppable prosperity with the Aromatherapy & Sacred Healing Oil.\n\nFormulated with pure therapeutic-grade essential oils and infused with genuine, Vedic-consecrated crystal chips settled right inside the roll-on bottle. Convenient 10ml size with luxury gold cap and presentation box.\n\n✦ Available Sacred Blends:\n• 💖 Love & Relationships: Infused with natural Rose Quartz crystals to awaken unconditional love, heart healing, and soulmate magnetism.\n• 💰 Money Attraction: Infused with golden Pyrite & Citrine crystals to dissolve scarcity fears and magnetize wealth, promotions & financial luck.\n• 🧠 Study & Concentration: Infused with deep-blue Sodalite & Quartz crystals to eliminate brain fog and lock in laser focus & memory retention.\n\n✦ Package: 10ml Roll-on glass bottle with gold cap & display box.",
+    "sacredSignificance": "Vedic consecrated roll-on aromatherapy oils infused with genuine gemstones to balance and activate targeted chakras (Heart, Solar Plexus & Third Eye).",
+    "howToWear": "Roll gently onto pulse points (wrists, behind ears, neck, or collarbone) before sleep, study, work, or dates while setting your loving intention.",
     "benefits": [
-      "Infused with 100% natural energized Rose Quartz crystal chips",
-      "Promotes deep affection, emotional vulnerability, and romantic harmony",
-      "Helps dissolve past relationship heartbreaks and opens heart chakra",
-      "Convenient 10ml roll-on bottle with luxury gold cap and display box"
+      "Infused with genuine natural energized crystals (Rose Quartz, Pyrite/Citrine, or Sodalite)",
+      "3 Sacred Blends available: Love & Harmony, Wealth Attraction, or Focus & Study",
+      "Pure therapeutic-grade aromatherapy oils formulated for deep energetic alignment",
+      "Convenient 10ml leak-proof roll-on bottle with luxury gold cap & presentation box"
+    ],
+    "variants": [
+      { "name": "Love & Relationships (Rose Quartz)", "price": 777, "compare": 1299, "variantId": 48762496319649, "img": "assets/product-healing-oil-love-relationships.jpg" },
+      { "name": "Money Attraction (Pyrite & Citrine)", "price": 777, "compare": 1299, "variantId": 48765447569569, "img": "assets/product-healing-oil-money-attraction.jpg" },
+      { "name": "Study & Concentration (Sodalite & Quartz)", "price": 777, "compare": 1299, "variantId": 48765447602337, "img": "assets/product-healing-oil-study-focus.jpg" }
     ]
   },
   {
     "id": 41,
-    "handle": "money-attraction-healing-oil-with-energized-crystals",
-    "variantId": 48762497106081,
-    "title": "Money Attraction Healing Oil (With Energized Crystals)",
-    "category": "crystals",
-    "categoryLabel": "Aromatherapy & Sacred Healing Oil",
-    "intention": "dhanlabh wealth money prosperity abundance career success",
-    "price": 777,
-    "comparePrice": 1299,
-    "discount": "40% OFF",
-    "rating": 5.0,
-    "reviewsCount": 289,
-    "badge": "Wealth & Prosperity Magnet",
-    "img": "assets/product-healing-oil-money-attraction.jpg",
-    "images": [
-      "assets/product-healing-oil-money-attraction.jpg"
-    ],
-    "description": "Magnetize financial windfalls, career promotions, and steady business prosperity with the Money Attraction Healing Oil.\n\nCharged during auspicious planetary hours and enriched with authentic Pyrite and Citrine crystal chips, this sacred consecrated oil dissolves scarcity fears and aligns your personal aura with unstoppable abundance.\n\n✦ Key Focus Areas:\n• Wealth & Golden Abundance\n• Business Growth & Unexpected Financial Opportunities\n• Career Confidence & Victory in Negotiations\n• Financial Stability & Mindset Cleansing\n\n✦ Package: 10ml Roll-on glass bottle with gold cap & display box.",
-    "sacredSignificance": "Charged with Solar Plexus mantras and consecrated Pyrite crystal chips to dissolve poverty consciousness and magnetize golden opportunities.",
-    "howToWear": "Anoint your wrists, palm centers, wallet, financial documents, or cash box before important meetings, client calls, or trading sessions.",
-    "benefits": [
-      "Infused with genuine energized Pyrite & Citrine gemstone chips",
-      "Activates solar plexus chakra to attract high-frequency financial abundance",
-      "Boosts business confidence, unexpected windfalls, and career opportunities",
-      "10ml roll-on bottle with gold cap and protective packaging box"
-    ]
-  },
-  {
-    "id": 42,
-    "handle": "study-concentration-healing-oil-with-energized-crystals",
-    "variantId": 48762504315041,
-    "title": "Study & Concentration Healing Oil (With Energized Crystals)",
-    "category": "crystals",
-    "categoryLabel": "Aromatherapy & Sacred Healing Oil",
-    "intention": "study focus memory concentration intelligence career",
-    "price": 777,
-    "comparePrice": 1299,
-    "discount": "40% OFF",
-    "rating": 5.0,
-    "reviewsCount": 178,
-    "badge": "Laser Focus & Memory",
-    "img": "assets/product-healing-oil-study-focus.jpg",
-    "images": [
-      "assets/product-healing-oil-study-focus.jpg"
-    ],
-    "description": "Awaken sharp mental clarity, effortless memory recall, and deep laser focus with the Study Healing Oil.\n\nSpecially formulated for students, competitive exam aspirants, and professionals requiring peak cognitive performance. Infused with consecrated Third Eye crystal chips (Sodalite & Quartz), this aromatherapeutic blend clears mental fatigue and locks in concentration.\n\n✦ Key Focus Areas:\n• Laser Focus & Deep Study Retention\n• Exam Anxiety Relief & Mental Calm\n• Quick Memory Recall & Clear Analytical Thinking\n• Distraction Elimination & Brain Stamina\n\n✦ Package: 10ml Roll-on glass bottle with gold cap & display box.",
-    "sacredSignificance": "Infused with Third-Eye chakra stones (Sodalite & Quartz) consecrated with Saraswati mantras for divine intellect and wisdom retention.",
-    "howToWear": "Roll on temples, back of neck, and wrists 5 minutes before studying, reading, or exams.",
-    "benefits": [
-      "Infused with genuine energized Sodalite & Quartz crystal chips",
-      "Sharpens mental focus, eliminates brain fog, and supercharges memory retention",
-      "Calms study exam anxiety and enhances cognitive stamina",
-      "10ml roll-on with luxury gold cap and gift packaging box"
-    ]
-  },
-  {
-    "id": 43,
     "handle": "aura-booster-sacred-bath-salt",
     "variantId": 48762507722913,
     "title": "Aura Booster Sacred Bath Salt (Aura Cleansing & Energy Shield)",
@@ -1261,7 +1212,7 @@ var STORE_PRODUCTS = [
     ]
   },
   {
-    "id": 44,
+    "id": 42,
     "handle": "energy-booster-sacred-bath-salt",
     "variantId": 48762512605345,
     "title": "Energy Booster Sacred Bath Salt (Vitality & Fatigue Relief)",
@@ -1289,7 +1240,7 @@ var STORE_PRODUCTS = [
     ]
   },
   {
-    "id": 45,
+    "id": 43,
     "handle": "coffee-detox-sacred-bath-salt",
     "variantId": 48762516275361,
     "title": "Coffee Detox Sacred Bath Salt (Aromatherapeutic Scrub & Soak)",
@@ -1317,7 +1268,7 @@ var STORE_PRODUCTS = [
     ]
   },
   {
-    "id": 46,
+    "id": 44,
     "handle": "health-booster-sacred-bath-salt",
     "variantId": 48762519584929,
     "title": "Health Booster Sacred Bath Salt (Immunity & Recovery Soak)",

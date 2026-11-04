@@ -595,6 +595,21 @@
             </button>
           `).join('');
           document.getElementById('readingDeliveryNote').innerText = '✦ Direct 1-on-1 private live audio call with Kavita. Instant booking confirmed via checkout.';
+        } else if (currentProduct.handle.includes('healing-oil')) {
+          tierSelector.style.display = 'block';
+          const oilVariants = currentProduct.variants || [
+            { name: 'Love & Relationships (Rose Quartz)', price: 777, compare: 1299, variantId: 48762496319649, img: '{{ 'product-healing-oil-love-relationships.jpg' | asset_url }}' },
+            { name: 'Money Attraction (Pyrite & Citrine)', price: 777, compare: 1299, variantId: 48765447569569, img: '{{ 'product-healing-oil-money-attraction.jpg' | asset_url }}' },
+            { name: 'Study & Concentration (Sodalite & Quartz)', price: 777, compare: 1299, variantId: 48765447602337, img: '{{ 'product-healing-oil-study-focus.jpg' | asset_url }}' }
+          ];
+          tierPills.innerHTML = oilVariants.map((v, idx) => `
+            <button type="button" class="tier-pill-btn ${idx === 0 ? 'active' : ''}" onclick="selectOilOption('${v.name}', ${v.price}, ${v.compare}, ${v.variantId}, '${v.img}', this)" style="padding: 0.55rem 0.95rem; border-radius: 8px; border: 1.5px solid var(--v-maroon); background: ${idx === 0 ? 'var(--v-maroon)' : '#FFF'}; color: ${idx === 0 ? '#FFF' : 'var(--v-maroon)'}; font-weight: 700; font-size: 0.82rem; cursor: pointer;">
+              ${v.name}
+            </button>
+          `).join('');
+          if (document.getElementById('readingDeliveryNote')) {
+            document.getElementById('readingDeliveryNote').innerText = '✦ Choose your sacred energized blend above: Love & Relationships, Money Attraction, or Study & Focus.';
+          }
         } else {
           tierSelector.style.display = 'none';
         }
@@ -833,6 +848,33 @@
       });
       btn.style.background = 'var(--v-maroon)';
       btn.style.color = '#FFF';
+    }
+
+    function selectOilOption(name, price, compare, variantId, imgUrl, btn) {
+      if (!currentProduct) return;
+      currentProduct.price = price;
+      currentProduct.comparePrice = compare;
+      if (variantId) currentProduct.variantId = variantId;
+      if (imgUrl) {
+        currentProduct.img = imgUrl;
+        const mainImg = document.getElementById('pdpMainImg');
+        if (mainImg) mainImg.src = imgUrl;
+      }
+      document.getElementById('pdpPrice').innerText = `₹${price.toLocaleString('en-IN')}`;
+      if (document.getElementById('pdpCompare')) {
+        document.getElementById('pdpCompare').innerText = `₹${compare.toLocaleString('en-IN')}`;
+      }
+      if (document.getElementById('readingDeliveryNote')) {
+        document.getElementById('readingDeliveryNote').innerText = `✦ Selected Blend: ${name}. Handcrafted with genuine energized crystal chips.`;
+      }
+      document.querySelectorAll('#tierPills .tier-pill-btn').forEach(b => {
+        b.style.background = '#FFF';
+        b.style.color = 'var(--v-maroon)';
+      });
+      if (btn) {
+        btn.style.background = 'var(--v-maroon)';
+        btn.style.color = '#FFF';
+      }
     }
 
     function selectDurationTier(standardPrice, premiumPrice, btn) {
