@@ -20,6 +20,7 @@ text_uploads = [
     ('assets/sales-popup.js', ROOT / 'assets/sales-popup.js'),
     ('layout/parity.liquid', ROOT / 'kavita-dawn/layout/parity.liquid'),
     ('layout/theme.liquid', ROOT / 'kavita-dawn/layout/theme.liquid'),
+    ('layout/password.liquid', ROOT / 'kavita-dawn/layout/password.liquid'),
     ('sections/kavita-rajvira-header.liquid', ROOT / 'kavita-dawn/sections/kavita-rajvira-header.liquid'),
     ('sections/parity-index.liquid', ROOT / 'kavita-dawn/sections/parity-index.liquid'),
     ('sections/parity-collections.liquid', ROOT / 'kavita-dawn/sections/parity-collections.liquid'),
@@ -69,6 +70,10 @@ for key, local_file in text_uploads:
 
 print("\nDeploying banner & product image assets...")
 extra_imgs = [
+    ('assets/kavita-favicon.png', ROOT / 'assets/kavita-favicon.png'),
+    ('assets/kavita-favicon-32x32.png', ROOT / 'assets/kavita-favicon-32x32.png'),
+    ('assets/apple-touch-icon.png', ROOT / 'assets/apple-touch-icon.png'),
+    ('assets/favicon.ico', ROOT / 'assets/favicon.ico'),
     ('assets/product-healing-oil-love-relationships.jpg', ROOT / 'assets/product-healing-oil-love-relationships.jpg'),
     ('assets/product-healing-oil-money-attraction.jpg', ROOT / 'assets/product-healing-oil-money-attraction.jpg'),
     ('assets/product-healing-oil-study-focus.jpg', ROOT / 'assets/product-healing-oil-study-focus.jpg'),

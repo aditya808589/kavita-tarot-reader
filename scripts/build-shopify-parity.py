@@ -27,6 +27,10 @@ ui=links((root/'assets/storefront-ui.js').read_text());(r/'assets/parity-ui.js')
 cart=(root/'assets/storefront-cart.js').read_text();a=cart.index('function renderCartDrawer()');b=cart.index('function addToCart(',a)
 (r/'assets/parity-cart-render.js').write_text(links(cart[a:b]))
 layout='''<!doctype html><html lang="{{ request.locale.iso_code }}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{{ page_title | escape }} — Kavita Tarot Reader</title><link rel="canonical" href="{{ canonical_url }}">{{ content_for_header }}
+<link rel="icon" type="image/x-icon" href="{{ 'favicon.ico' | asset_url }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ 'kavita-favicon-32x32.png' | asset_url }}">
+<link rel="icon" type="image/png" sizes="192x192" href="{{ 'kavita-favicon.png' | asset_url }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ 'apple-touch-icon.png' | asset_url }}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 {{ 'parity-vanikabir.css' | asset_url | stylesheet_tag }}
 {{ 'parity-category-grid.css' | asset_url | stylesheet_tag }}
