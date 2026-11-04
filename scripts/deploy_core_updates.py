@@ -69,6 +69,13 @@ for key, local_file in text_uploads:
 
 print("\nDeploying banner & product image assets...")
 extra_imgs = [
+    ('assets/product-healing-oil-love-relationships.jpg', ROOT / 'assets/product-healing-oil-love-relationships.jpg'),
+    ('assets/product-healing-oil-money-attraction.jpg', ROOT / 'assets/product-healing-oil-money-attraction.jpg'),
+    ('assets/product-healing-oil-study-focus.jpg', ROOT / 'assets/product-healing-oil-study-focus.jpg'),
+    ('assets/product-bath-salt-aura-booster.jpg', ROOT / 'assets/product-bath-salt-aura-booster.jpg'),
+    ('assets/product-bath-salt-energy-booster.jpg', ROOT / 'assets/product-bath-salt-energy-booster.jpg'),
+    ('assets/product-bath-salt-coffee.jpg', ROOT / 'assets/product-bath-salt-coffee.jpg'),
+    ('assets/product-bath-salt-health-booster.jpg', ROOT / 'assets/product-bath-salt-health-booster.jpg'),
     ('assets/product-2027-year-ahead-cover.jpg', ROOT / 'assets/product-2027-year-ahead-cover.jpg'),
     ('assets/product-2027-year-ahead-details.jpg', ROOT / 'assets/product-2027-year-ahead-details.jpg'),
     ('assets/banner-desktop-crystal-align-3x1.jpg', ROOT / 'assets/banner-desktop-crystal-align-3x1.jpg'),

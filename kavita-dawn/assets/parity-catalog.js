@@ -1147,6 +1147,202 @@ var STORE_PRODUCTS = [
       "FREE Bonus: Your 2027 lucky colour & power months",
       "Delivered on WhatsApp within 10 days of booking · Limited 21 slots only"
     ]
+  },
+  {
+    "id": 40,
+    "handle": "love-relationships-healing-oil-with-energized-crystals",
+    "variantId": 48762496319649,
+    "title": "Love & Relationships Healing Oil (With Energized Crystals)",
+    "category": "crystals",
+    "categoryLabel": "Aromatherapy & Sacred Healing Oil",
+    "intention": "love relationships self-love harmony communication soulmate peace",
+    "price": 777,
+    "comparePrice": 1299,
+    "discount": "40% OFF",
+    "rating": 5.0,
+    "reviewsCount": 214,
+    "badge": "Heart Chakra Magnetism",
+    "img": "assets/product-healing-oil-love-relationships.jpg",
+    "images": [
+      "assets/product-healing-oil-love-relationships.jpg"
+    ],
+    "description": "Open your heart chakra to deep unconditional love, emotional harmony, and soulmate magnetism with the Love & Relationships Healing Oil.\n\nFormulated with sacred pure essential oils and infused with genuine, Vedic-energized Rose Quartz crystal chips right inside the roll-on bottle. Apply on pulse points (wrists, behind ears, neck, and heart space) to awaken romantic attraction, soothe relationship misunderstandings, and deepen self-love.\n\n✦ Key Focus Areas:\n• Unconditional Love & Emotional Healing\n• Self-Love, Self-Worth & Inner Peace\n• Harmonious Heart-to-Heart Communication\n• Soul Connection & Relationship Restoration\n\n✦ Package: 10ml Roll-on glass bottle with gold cap & display box.",
+    "sacredSignificance": "Infused with consecrated Rose Quartz chips charged under Venus transit to radiate high-vibrational love and compassion.",
+    "howToWear": "Roll gently onto wrists, neck, collarbone, or heart chakra before sleep, meditation, or dates while setting your loving intention.",
+    "benefits": [
+      "Infused with 100% natural energized Rose Quartz crystal chips",
+      "Promotes deep affection, emotional vulnerability, and romantic harmony",
+      "Helps dissolve past relationship heartbreaks and opens heart chakra",
+      "Convenient 10ml roll-on bottle with luxury gold cap and display box"
+    ]
+  },
+  {
+    "id": 41,
+    "handle": "money-attraction-healing-oil-with-energized-crystals",
+    "variantId": 48762497106081,
+    "title": "Money Attraction Healing Oil (With Energized Crystals)",
+    "category": "crystals",
+    "categoryLabel": "Aromatherapy & Sacred Healing Oil",
+    "intention": "dhanlabh wealth money prosperity abundance career success",
+    "price": 777,
+    "comparePrice": 1299,
+    "discount": "40% OFF",
+    "rating": 5.0,
+    "reviewsCount": 289,
+    "badge": "Wealth & Prosperity Magnet",
+    "img": "assets/product-healing-oil-money-attraction.jpg",
+    "images": [
+      "assets/product-healing-oil-money-attraction.jpg"
+    ],
+    "description": "Magnetize financial windfalls, career promotions, and steady business prosperity with the Money Attraction Healing Oil.\n\nCharged during auspicious planetary hours and enriched with authentic Pyrite and Citrine crystal chips, this sacred consecrated oil dissolves scarcity fears and aligns your personal aura with unstoppable abundance.\n\n✦ Key Focus Areas:\n• Wealth & Golden Abundance\n• Business Growth & Unexpected Financial Opportunities\n• Career Confidence & Victory in Negotiations\n• Financial Stability & Mindset Cleansing\n\n✦ Package: 10ml Roll-on glass bottle with gold cap & display box.",
+    "sacredSignificance": "Charged with Solar Plexus mantras and consecrated Pyrite crystal chips to dissolve poverty consciousness and magnetize golden opportunities.",
+    "howToWear": "Anoint your wrists, palm centers, wallet, financial documents, or cash box before important meetings, client calls, or trading sessions.",
+    "benefits": [
+      "Infused with genuine energized Pyrite & Citrine gemstone chips",
+      "Activates solar plexus chakra to attract high-frequency financial abundance",
+      "Boosts business confidence, unexpected windfalls, and career opportunities",
+      "10ml roll-on bottle with gold cap and protective packaging box"
+    ]
+  },
+  {
+    "id": 42,
+    "handle": "study-concentration-healing-oil-with-energized-crystals",
+    "variantId": 48762504315041,
+    "title": "Study & Concentration Healing Oil (With Energized Crystals)",
+    "category": "crystals",
+    "categoryLabel": "Aromatherapy & Sacred Healing Oil",
+    "intention": "study focus memory concentration intelligence career",
+    "price": 777,
+    "comparePrice": 1299,
+    "discount": "40% OFF",
+    "rating": 5.0,
+    "reviewsCount": 178,
+    "badge": "Laser Focus & Memory",
+    "img": "assets/product-healing-oil-study-focus.jpg",
+    "images": [
+      "assets/product-healing-oil-study-focus.jpg"
+    ],
+    "description": "Awaken sharp mental clarity, effortless memory recall, and deep laser focus with the Study Healing Oil.\n\nSpecially formulated for students, competitive exam aspirants, and professionals requiring peak cognitive performance. Infused with consecrated Third Eye crystal chips (Sodalite & Quartz), this aromatherapeutic blend clears mental fatigue and locks in concentration.\n\n✦ Key Focus Areas:\n• Laser Focus & Deep Study Retention\n• Exam Anxiety Relief & Mental Calm\n• Quick Memory Recall & Clear Analytical Thinking\n• Distraction Elimination & Brain Stamina\n\n✦ Package: 10ml Roll-on glass bottle with gold cap & display box.",
+    "sacredSignificance": "Infused with Third-Eye chakra stones (Sodalite & Quartz) consecrated with Saraswati mantras for divine intellect and wisdom retention.",
+    "howToWear": "Roll on temples, back of neck, and wrists 5 minutes before studying, reading, or exams.",
+    "benefits": [
+      "Infused with genuine energized Sodalite & Quartz crystal chips",
+      "Sharpens mental focus, eliminates brain fog, and supercharges memory retention",
+      "Calms study exam anxiety and enhances cognitive stamina",
+      "10ml roll-on with luxury gold cap and gift packaging box"
+    ]
+  },
+  {
+    "id": 43,
+    "handle": "aura-booster-sacred-bath-salt",
+    "variantId": 48762507722913,
+    "title": "Aura Booster Sacred Bath Salt (Aura Cleansing & Energy Shield)",
+    "category": "crystals",
+    "categoryLabel": "Consecrated Spiritual Bath Salt",
+    "intention": "protection peace aura cleansing stress relief relaxation",
+    "price": 555,
+    "comparePrice": 899,
+    "discount": "38% OFF",
+    "rating": 5.0,
+    "reviewsCount": 192,
+    "badge": "Aura Purifying & Nazar Cleansing",
+    "img": "assets/product-bath-salt-aura-booster.jpg",
+    "images": [
+      "assets/product-bath-salt-aura-booster.jpg"
+    ],
+    "description": "Strip away psychic smog, negative vibrations, and emotional exhaustion with the Aura Booster Sacred Bath Salt.\n\nYour aura absorbs dense energy from daily environments, crowded spaces, and negative interactions. This consecrated ritual salt bath revitalizes your electromagnetic field, leaving you spiritually renewed, deeply relaxed, and energetically shielded.\n\n✦ Key Benefits:\n• Immediate Psychic Fatigue & Nazar Cleansing\n• Stress Relief & Deep Muscle Relaxation\n• Recharges Depleted Vitality & Body Aura\n\n✦ Net Weight: 200g Resealable Moisture-Lock Pouch.",
+    "sacredSignificance": "Charged with Vedic purification mantras to break psychic cord hooks, neutralize envious glances (buri nazar), and reset your personal aura.",
+    "howToWear": "Add 2-3 tablespoons into warm bath water or a foot soak tub. Soak for 15-20 minutes while visualizing all fatigue dissolving into the water.",
+    "benefits": [
+      "Clears heavy psychic fatigue, jealousy, nazar, and emotional heaviness",
+      "Formulated with pure mineral salts and consecrated purification botanicals",
+      "Deep bodily relaxation and stress relief after exhausting days",
+      "Resealable moisture-lock pouch (200g)"
+    ]
+  },
+  {
+    "id": 44,
+    "handle": "energy-booster-sacred-bath-salt",
+    "variantId": 48762512605345,
+    "title": "Energy Booster Sacred Bath Salt (Vitality & Fatigue Relief)",
+    "category": "crystals",
+    "categoryLabel": "Consecrated Spiritual Bath Salt",
+    "intention": "energy vitality peace career health relaxation",
+    "price": 555,
+    "comparePrice": 899,
+    "discount": "38% OFF",
+    "rating": 5.0,
+    "reviewsCount": 165,
+    "badge": "Vitality & Prana Recharge",
+    "img": "assets/product-bath-salt-energy-booster.jpg",
+    "images": [
+      "assets/product-bath-salt-energy-booster.jpg"
+    ],
+    "description": "Recharge your physical vitality and banish chronic tiredness with the Energy Booster Sacred Bath Salt.\n\nBlended with invigorating mineral salts and consecrated herbal extracts, this soak awakens sluggish chakras, boosts inner motivation, and restores the active fiery drive needed to conquer your goals.\n\n✦ Key Benefits:\n• Overcomes Lethargy & Chronic Sluggishness\n• Enhances Natural Physical Stamina & Morning Drive\n• Cellular Mineral Rejuvenation & Nervous System Reset\n\n✦ Net Weight: 200g Resealable Moisture-Lock Pouch.",
+    "sacredSignificance": "Vedic consecrated solar energy bath blend formulated to uplift low prana, awaken sluggish metabolism, and restore dynamic life force.",
+    "howToWear": "Dissolve 2-3 spoonfuls in a warm bath or morning foot soak to energize your entire body.",
+    "benefits": [
+      "Infused with energizing herbal botanicals and revitalizing Himalayan minerals",
+      "Banishes sluggishness, lethargy, and mental burnout",
+      "Stimulates circulation and elevates personal vibrational frequency",
+      "Resealable moisture-lock pouch (200g)"
+    ]
+  },
+  {
+    "id": 45,
+    "handle": "coffee-detox-sacred-bath-salt",
+    "variantId": 48762516275361,
+    "title": "Coffee Detox Sacred Bath Salt (Aromatherapeutic Scrub & Soak)",
+    "category": "crystals",
+    "categoryLabel": "Consecrated Spiritual Bath Salt",
+    "intention": "detox peace energy health relaxation",
+    "price": 555,
+    "comparePrice": 899,
+    "discount": "38% OFF",
+    "rating": 5.0,
+    "reviewsCount": 230,
+    "badge": "Detox & Lymphatic Awakening",
+    "img": "assets/product-bath-salt-coffee.jpg",
+    "images": [
+      "assets/product-bath-salt-coffee.jpg"
+    ],
+    "description": "Indulge your senses with the Coffee Detox Sacred Bath Salt — a rich aromatherapeutic blend of real coffee grounds and unrefined mineral crystal salts.\n\nRich in antioxidants and natural caffeine, this stimulating soak detoxifies stagnant fluid buildup, smooths skin texture, and awakens the senses with an irresistible warm roasted coffee aroma.\n\n✦ Key Benefits:\n• Lymphatic Detox & Stagnant Energy Drainage\n• Skin Smoothing & Exfoliating Rejuvenation\n• Instant Mental Alertness & Mood Elevation\n\n✦ Net Weight: 200g Resealable Moisture-Lock Pouch.",
+    "sacredSignificance": "Combines organic antioxidant coffee grains and sacred sea salt crystals to detoxify negative etheric residue and stimulate microcirculation.",
+    "howToWear": "Add to a warm bath or use as a gentle wet body polish in the shower before rinsing.",
+    "benefits": [
+      "Real roasted coffee extracts combined with crystalline bath salts",
+      "Powerful skin exfoliation, lymphatic stimulation, and detoxification",
+      "Uplifting aromatherapeutic roasted coffee fragrance",
+      "Resealable moisture-lock pouch (200g)"
+    ]
+  },
+  {
+    "id": 46,
+    "handle": "health-booster-sacred-bath-salt",
+    "variantId": 48762519584929,
+    "title": "Health Booster Sacred Bath Salt (Immunity & Recovery Soak)",
+    "category": "crystals",
+    "categoryLabel": "Consecrated Spiritual Bath Salt",
+    "intention": "health peace healing relaxation protection",
+    "price": 555,
+    "comparePrice": 899,
+    "discount": "38% OFF",
+    "rating": 5.0,
+    "reviewsCount": 147,
+    "badge": "Holistic Healing & REM Sleep",
+    "img": "assets/product-bath-salt-health-booster.jpg",
+    "images": [
+      "assets/product-bath-salt-health-booster.jpg"
+    ],
+    "description": "Restore physical balance and support holistic wellness with the Health Booster Sacred Bath Salt.\n\nFormulated with restorative mineral salts and consecrated healing herbal infusions, this therapeutic soak draws out bodily inflammation, relaxes tight muscles, and creates the ideal energetic container for cellular repair and peaceful sleep.\n\n✦ Key Benefits:\n• Soothes Muscular Aches & Joint Stiffness\n• Promotes Deep Restorative REM Sleep\n• Immune System Support & Energetic Grounding\n\n✦ Net Weight: 200g Resealable Moisture-Lock Pouch.",
+    "sacredSignificance": "Infused with therapeutic Dhanvantari healing vibration to speed up bodily recovery, relieve aching muscles, and promote peaceful sleep.",
+    "howToWear": "Soak in a warm tub or foot bath for 20 minutes before bedtime.",
+    "benefits": [
+      "Infused with therapeutic healing herbs and restorative mineral salts",
+      "Relieves body stiffness, joint fatigue, and promotes restful restorative sleep",
+      "Boosts natural bodily healing response and clears respiratory congestion",
+      "Resealable moisture-lock pouch (200g)"
+    ]
   }
 ];
 
