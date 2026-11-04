@@ -70,6 +70,7 @@ for key, local_file in text_uploads:
 
 print("\nDeploying banner & product image assets...")
 extra_imgs = [
+    ('assets/kavita-logo-gold.png', ROOT / 'assets/kavita-logo-gold.png'),
     ('assets/kavita-favicon.png', ROOT / 'assets/kavita-favicon.png'),
     ('assets/kavita-favicon-32x32.png', ROOT / 'assets/kavita-favicon-32x32.png'),
     ('assets/apple-touch-icon.png', ROOT / 'assets/apple-touch-icon.png'),
