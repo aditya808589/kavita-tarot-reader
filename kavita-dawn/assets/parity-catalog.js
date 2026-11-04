@@ -1117,6 +1117,36 @@ var STORE_PRODUCTS = [
       "Detailed, thorough 15-20 minute comprehensive voice note",
       "Personalized remedies, chakra alignment tips and timeline forecasts"
     ]
+  },
+  {
+    "id": 39,
+    "handle": "2027-year-ahead-reading-diwali-special",
+    "variantId": 48598240166049,
+    "title": "2027 Year-Ahead Reading – Complete Year, Month-by-Month (Diwali Special)",
+    "category": "readings",
+    "categoryLabel": "Diwali Special · Year-Ahead Voice Note Reading",
+    "intention": "2027 destiny year-ahead prosperity lakshmi diwali wealth career love",
+    "price": 3333,
+    "comparePrice": 5555,
+    "discount": "40% OFF",
+    "rating": 5.0,
+    "reviewsCount": 498,
+    "badge": "Diwali Special · Only 21 Slots",
+    "img": "assets/product-2027-year-ahead-cover.jpg",
+    "images": [
+      "assets/product-2027-year-ahead-cover.jpg",
+      "assets/product-2027-year-ahead-details.jpg"
+    ],
+    "description": "What will 2027 bring for you? ✨\n\nThis Diwali, get your complete year mapped out in one deep, personal tarot reading. I go month by month through all 12 months of 2027 so you know what's coming in love, money and career, and when to act.\n\nWhat you get:\n🗓️ Month-by-month guidance for all 12 months of 2027\n❤️ Love and relationships\n💰 Money and finances\n💼 Career and growth\n🪔 Your personal Lakshmi remedy for prosperity\n✨ FREE bonus: your 2027 lucky colour + lucky months\n\nFormat: Voice note reading, delivered on WhatsApp within 10 days of booking.\n\nAfter payment, share your name, date of birth and any focus area on WhatsApp: +91 93103 87104\n\n⏳ Diwali price ₹3,333 (regular ₹5,555). Only 21 slots.",
+    "sacredSignificance": "Comprehensive astrological and intuitive tarot roadmap channeling Goddess Lakshmi's Diwali blessings across each month of 2027.",
+    "howToWear": "Delivered as personal detailed WhatsApp audio voice note within 10 days of booking with photo spread of all 12-month cards.",
+    "benefits": [
+      "Month-by-month guidance for all 12 months of 2027",
+      "Love, relationship, finance, and career predictions",
+      "Personal Lakshmi prosperity remedy specifically tailored to your chart",
+      "FREE Bonus: Your 2027 lucky colour & power months",
+      "Delivered on WhatsApp within 10 days of booking · Limited 21 slots only"
+    ]
   }
 ];
 

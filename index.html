@@ -2283,6 +2283,73 @@
   </section>
 
   
+  <!-- =========================================================
+       6. EXCLUSIVE DIWALI SPOTLIGHT: 2027 YEAR-AHEAD READING
+       Single Featured Product with 2-Image Slider, Direct Checkout & Tap Navigation
+  ========================================================= -->
+  <section id="spotlight-2027-reading" class="section-wrap spotlight-2027-section">
+    <div class="container">
+      <div class="spotlight-2027-card" onclick="window.location.href='product.html?id=39'">
+        <!-- Left Column: 2-Image Interactive Slider -->
+        <div class="spotlight-slider-wrap" onclick="event.stopPropagation()">
+          <span class="spotlight-badge-flag">🪔 Diwali Special · Only 21 Slots</span>
+          <button type="button" class="spotlight-arrow prev" onclick="slideSpotlight(-1)" aria-label="Previous image">‹</button>
+          <button type="button" class="spotlight-arrow next" onclick="slideSpotlight(1)" aria-label="Next image">›</button>
+          <div class="spotlight-slider-track" id="spotlightTrack">
+            <div class="spotlight-slide" onclick="window.location.href='product.html?id=39'">
+              <img src="assets/product-2027-year-ahead-cover.jpg" alt="2027 Year-Ahead Reading Complete Month-by-Month" loading="lazy">
+            </div>
+            <div class="spotlight-slide" onclick="window.location.href='product.html?id=39'">
+              <img src="assets/product-2027-year-ahead-details.jpg" alt="What You Get in 2027 Year-Ahead Reading" loading="lazy">
+            </div>
+          </div>
+          <div class="spotlight-dots">
+            <span class="spotlight-dot active" onclick="setSpotlightSlide(0)"></span>
+            <span class="spotlight-dot" onclick="setSpotlightSlide(1)"></span>
+          </div>
+        </div>
+
+        <!-- Right Column: Short Description, Live Price & Checkout Actions -->
+        <div class="spotlight-info">
+          <div>
+            <div class="spotlight-kicker">✦ DIWALI SPECIAL EDITION · ONLY 21 SLOTS ✦</div>
+            <h2 class="spotlight-title">
+              <a href="product.html?id=39">2027 Year-Ahead Reading – Complete Year, Month-by-Month (Diwali Special)</a>
+            </h2>
+            <div class="spotlight-reviews">
+              ★★★★★ <span>5.0 (498 Verified Devotee Reviews) · Limited Festive Release</span>
+            </div>
+            <div class="spotlight-pricing-row">
+              <span class="spotlight-price">₹3,333</span>
+              <span class="spotlight-compare">₹5,555</span>
+              <span class="spotlight-discount">40% OFF · SAVE ₹2,222</span>
+            </div>
+            <div style="font-size: 0.85rem; color: #80142B; font-weight: 700; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
+              🔥 Diwali price ₹3,333 (regular ₹5,555). Only 21 slots available.
+            </div>
+            <div class="spotlight-bullets">
+              <div>🗓️ <b>12-Month Guidance:</b> Complete month-by-month roadmap for Love, Money & Career</div>
+              <div>🪔 <b>Personal Lakshmi Remedy:</b> Sacred prosperity rituals tailored specifically to your chart</div>
+              <div>✨ <b>FREE Bonus:</b> Your 2027 personal lucky colour + lucky power months</div>
+              <div>🎙️ <b>Format:</b> Comprehensive voice note reading delivered on WhatsApp within 10 days</div>
+            </div>
+          </div>
+
+          <div class="spotlight-actions" onclick="event.stopPropagation()">
+            <button type="button" class="spotlight-btn-checkout" onclick="directCheckout2027()">
+              ✦ Proceed to Checkout — Buy Now (₹3,333)
+            </button>
+            <button type="button" class="spotlight-btn-bag" onclick="addToCart('2027 Year-Ahead Reading – Complete Year, Month-by-Month (Diwali Special)', 3333, 'assets/product-2027-year-ahead-cover.jpg', '2027-year-ahead-reading-diwali-special')">
+              ✦ Add to Sacred Bag
+            </button>
+            <div class="spotlight-tap-notice" onclick="window.location.href='product.html?id=39'">
+              ✦ Tap anywhere to view full 12-month breakdown &amp; WhatsApp booking guide →
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- =========================================================
        7. INTERACTIVE SLIDER 2: CURATED CRYSTALS & SACRED DECKS
@@ -3642,6 +3709,52 @@
   <script src="assets/storefront-cart.js"></script>
 
   <script>
+
+    // 2027 Year-Ahead Reading Spotlight Slider & Direct Checkout
+    let currentSpotlightSlide = 0;
+    function slideSpotlight(direction) {
+      const totalSlides = 2;
+      currentSpotlightSlide = (currentSpotlightSlide + direction + totalSlides) % totalSlides;
+      updateSpotlightUI();
+    }
+    function setSpotlightSlide(index) {
+      currentSpotlightSlide = index;
+      updateSpotlightUI();
+    }
+    function updateSpotlightUI() {
+      const track = document.getElementById('spotlightTrack');
+      if (track) {
+        track.style.transform = `translateX(-${currentSpotlightSlide * 100}%)`;
+      }
+      const dots = document.querySelectorAll('.spotlight-dot');
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentSpotlightSlide);
+      });
+    }
+
+    async function directCheckout2027() {
+      const vid = 48598240166049;
+      try {
+        if (typeof parityRequest === 'function') {
+          await parityRequest('cart/add.js', { items: [{ id: vid, quantity: 1 }] });
+          window.location.href = '/checkout';
+          return;
+        }
+        if (typeof fetch === 'function') {
+          await fetch('/cart/add.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ items: [{ id: vid, quantity: 1 }] })
+          });
+          window.location.href = '/checkout';
+          return;
+        }
+      } catch (e) {}
+      if (typeof addToCart === 'function') {
+        addToCart('2027 Year-Ahead Reading – Complete Year, Month-by-Month (Diwali Special)', 3333, 'assets/product-2027-year-ahead-cover.jpg', '2027-year-ahead-reading-diwali-special');
+      }
+      window.location.href = '/checkout';
+    }
 
     // Horizontal Carousel Smooth Scroll Helper
     function scrollKavitaCarousel(trackId, direction) {

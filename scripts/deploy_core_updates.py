@@ -69,6 +69,8 @@ for key, local_file in text_uploads:
 
 print("\nDeploying banner & product image assets...")
 extra_imgs = [
+    ('assets/product-2027-year-ahead-cover.jpg', ROOT / 'assets/product-2027-year-ahead-cover.jpg'),
+    ('assets/product-2027-year-ahead-details.jpg', ROOT / 'assets/product-2027-year-ahead-details.jpg'),
     ('assets/banner-desktop-crystal-align-3x1.jpg', ROOT / 'assets/banner-desktop-crystal-align-3x1.jpg'),
     ('assets/banner-mobile-crystal-align-4x5.jpg', ROOT / 'assets/banner-mobile-crystal-align-4x5.jpg'),
     ('assets/banner-desktop-crystal-velvet-3x1.jpg', ROOT / 'assets/banner-desktop-crystal-velvet-3x1.jpg'),

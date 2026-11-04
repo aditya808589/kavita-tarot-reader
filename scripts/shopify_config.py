@@ -16,3 +16,4 @@ load_env()
 TOKEN = os.environ.get('SHOPIFY_ACCESS_TOKEN', '')
 STORE = os.environ.get('SHOPIFY_STORE', 'f0chrv-j7.myshopify.com')
 THEME_ID = os.environ.get('SHOPIFY_THEME_ID', '155909324961')
+

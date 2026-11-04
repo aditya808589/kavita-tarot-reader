@@ -429,4 +429,49 @@
 
   // Backup check in case elements rendered asynchronously
   setTimeout(initNewsletterPopup, 800);
+
+  // 2027 Spotlight Slider & Direct Checkout Handlers
+  let currentSpotlightSlide = 0;
+  window.slideSpotlight = function(direction) {
+    const totalSlides = 2;
+    currentSpotlightSlide = (currentSpotlightSlide + direction + totalSlides) % totalSlides;
+    window.updateSpotlightUI();
+  };
+  window.setSpotlightSlide = function(index) {
+    currentSpotlightSlide = index;
+    window.updateSpotlightUI();
+  };
+  window.updateSpotlightUI = function() {
+    const track = document.getElementById('spotlightTrack');
+    if (track) {
+      track.style.transform = `translateX(-${currentSpotlightSlide * 100}%)`;
+    }
+    const dots = document.querySelectorAll('.spotlight-dot');
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentSpotlightSlide);
+    });
+  };
+  window.directCheckout2027 = async function() {
+    const vid = 48598240166049;
+    try {
+      if (typeof parityRequest === 'function') {
+        await parityRequest('cart/add.js', { items: [{ id: vid, quantity: 1 }] });
+        window.location.href = '/checkout';
+        return;
+      }
+      if (typeof fetch === 'function') {
+        await fetch('/cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ items: [{ id: vid, quantity: 1 }] })
+        });
+        window.location.href = '/checkout';
+        return;
+      }
+    } catch (e) {}
+    if (typeof addToCart === 'function') {
+      addToCart('2027 Year-Ahead Reading – Complete Year, Month-by-Month (Diwali Special)', 3333, 'assets/product-2027-year-ahead-cover.jpg', '2027-year-ahead-reading-diwali-special');
+    }
+    window.location.href = '/checkout';
+  };
 })();
